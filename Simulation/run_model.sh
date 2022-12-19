@@ -19,7 +19,9 @@ please_compile_msg() {
 [ ! -f "$BUILD_SYS" ] && please_compile_msg
 
 help_msg() {
-    echo "Usage: $0 (-m | --model) <MODEL_NAME>"
+    echo "Usage: $0 (-m | --model) <MODEL_NAME> [OPTIONS]"
+    echo "Options:"
+    echo "    -r | --recompile      Force recompilation of model .cpp file"
     exit 2
 }
 
@@ -30,11 +32,29 @@ while [ $# -gt 0 ]; do
             shift
             shift
             ;;
+        -r | --recompile)
+            RECOMPILE="true"
+            shift
+            ;;
         *)
-            echo $1
             help_msg
             ;;
     esac
 done
 
 [ -z "$MODEL_NAME" ] && help_msg
+
+MODELS_DIR="$(pwd)/Models"
+MODEL_DIR="$(find "${MODELS_DIR}" -name "*${MODEL_NAME}")"
+[ -z "$MODEL_DIR" ] && echo "Could not find a model w/ name ${MODEL_NAME}" && exit 1
+
+MODEL_CPP_FILE="$(find "${MODEL_DIR}" -name "*.cpp")"
+[ -z "$MODEL_CPP_FILE" ] && echo "No .cpp file in ${MODEL_DIR}" && exit 1
+
+MODEL_FILE="${MODEL_CPP_FILE%.*}"
+MODEL_SO_FILE="${MODEL_FILE}.so"
+if [ -z "$MODEL_SO_FILE" ] || [ -n "$RECOMPILE" ]; then
+    cd "$MODEL_DIR"
+    "$BUILD_SYS"
+    cd -
+fi
