@@ -1,0 +1,94 @@
+dynamical_system = {
+  type = map,
+  name = "logistic map",
+  parameter_space_dimension = 1,
+  parameters = {
+    parameter[0] = {
+      value = 1.25,
+      name = "a"
+    }
+  },
+  state_space_dimension = 1,
+  initial_state = (0.5),
+  reset_initial_states_from_orbit = false,
+  #number_of_iterations = 20000000,
+  number_of_iterations = 20000,
+  s[0] = {
+    name = "",
+    equation_of_motion = "0"
+  }
+},
+scan = {
+  type = nested_items,
+  mode = 1,
+  item[0] = {
+    type = real_linear,
+    points = 3000,
+    min = 3,
+    max = 4,
+    object = "a"
+  }
+},
+investigation_methods = {
+  general_trajectory_evaluations = {
+    is_active = false,
+    transient = 0,
+    saving = {
+        is_active = false,
+        type = "time_oriented",
+        trajectory = "yes",
+        velocity = "no",
+        phase_portrait = "no",
+        cobweb = "yes",
+        initial_states = "yes",
+        points_step = 1,
+        state_space_distance = 0.1,
+        velocity_space_distance = 0.2,
+        save_only_specific_area = "no",
+        state_space_saving_area = ((1.07888,1.07892),(0.091535,0.091544)),
+        velocity_space_saving_area = ((-1.5,0.5),(-0.2,0.4))
+    },
+    min_max_values = {
+    },
+    wave_numbers = {
+    },
+    statistics = {
+    },
+    pgm_output = {
+    }
+  },
+  period_analysis = {
+    is_active = true,
+    max_period = 128,
+    compare_precision = 1e-09,
+    period = false,
+    period_file = "period.tna",
+    cyclic_asymptotic_set = true,
+    cyclic_bif_dia_file = "bif_cyclic.tna",
+    acyclic_last_states = true,
+    acyclic_bif_dia_file = "bif_acyclic.tna",
+    cyclic_graphical_iteration = false,
+    cyclic_graph_iter_file = "cyclic_cobweb.tna",
+    acyclic_graphical_iteration = false,
+    acyclic_graph_iter_file = "acyclic_cobweb.tna",
+    using_last_points = 1528,
+    period_selections = false,
+    periods_to_select = (),
+    period_selection_file = "period_selection",
+    period_selection_file_extension = "tna"
+  },
+  band_counter = {
+  },
+  symbolic_analysis = {
+  },
+  rim_analysis = {
+  },
+  symbolic_image_analysis = {
+  },
+  lyapunov_exponents_analysis = {
+  },
+  dimensions_analysis = {
+  },
+  check_for_conditions = {
+  }
+}
