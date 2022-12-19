@@ -47,14 +47,21 @@ done
 MODELS_DIR="$(pwd)/Models"
 MODEL_DIR="$(find "${MODELS_DIR}" -name "*${MODEL_NAME}")"
 [ -z "$MODEL_DIR" ] && echo "Could not find a model w/ name ${MODEL_NAME}" && exit 1
+cd "$MODEL_DIR"
 
 MODEL_CPP_FILE="$(find "${MODEL_DIR}" -name "*.cpp")"
 [ -z "$MODEL_CPP_FILE" ] && echo "No .cpp file in ${MODEL_DIR}" && exit 1
 
+# Compile model
+
 MODEL_FILE="${MODEL_CPP_FILE%.*}"
 MODEL_SO_FILE="${MODEL_FILE}.so"
-if [ -z "$MODEL_SO_FILE" ] || [ -n "$RECOMPILE" ]; then
-    cd "$MODEL_DIR"
+if [ ! -f "$MODEL_SO_FILE" ] || [ -n "$RECOMPILE" ]; then
     "$BUILD_SYS"
-    cd -
 fi
+
+# Run model
+
+LD_LIBRARY_PATH="${ANT_LIB_DIR}" "${ANT}" "${MODEL_FILE}" -i "${MODEL_FILE}.ant"
+
+cd -
