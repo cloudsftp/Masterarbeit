@@ -19,7 +19,7 @@ please_compile_msg() {
 [ ! -f "$BUILD_SYS" ] && please_compile_msg
 
 help_msg() {
-    echo "Usage: $0 (-m | --model) <MODEL_NAME> [OPTIONS]"
+    echo "Usage: $0 (-m | --model) <MODEL_NAME> (-c | --config) <CONFIG_NAME> [OPTIONS]"
     echo "Options:"
     echo "    -r | --recompile      Force recompilation of model .cpp file"
     exit 2
@@ -29,6 +29,11 @@ while [ $# -gt 0 ]; do
     case "$1" in
         -m | --model)
             MODEL_NAME="$2"
+            shift
+            shift
+            ;;
+        -c | --config)
+            CONFIG_NAME="$2"
             shift
             shift
             ;;
@@ -43,6 +48,7 @@ while [ $# -gt 0 ]; do
 done
 
 [ -z "$MODEL_NAME" ] && help_msg
+[ -z "$CONFIG_NAME" ] && help_msg
 
 MODELS_DIR="$(pwd)/Models"
 MODEL_DIR="$(find "${MODELS_DIR}" -name "*${MODEL_NAME}")"
@@ -62,6 +68,6 @@ fi
 
 # Run model
 
-LD_LIBRARY_PATH="${ANT_LIB_DIR}" "${ANT}" "${MODEL_FILE}" -i "${MODEL_FILE}.ant"
+LD_LIBRARY_PATH="${ANT_LIB_DIR}" "${ANT}" "${MODEL_FILE}" -i "${MODEL_DIR}/${CONFIG_NAME}.ant"
 
 cd -

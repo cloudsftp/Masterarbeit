@@ -32,21 +32,7 @@ scan = {
 investigation_methods = {
   general_trajectory_evaluations = {
     is_active = false,
-    transient = 0,
     saving = {
-        is_active = false,
-        type = "time_oriented",
-        trajectory = "yes",
-        velocity = "no",
-        phase_portrait = "no",
-        cobweb = "yes",
-        initial_states = "yes",
-        points_step = 1,
-        state_space_distance = 0.1,
-        velocity_space_distance = 0.2,
-        save_only_specific_area = "no",
-        state_space_saving_area = ((1.07888,1.07892),(0.091535,0.091544)),
-        velocity_space_saving_area = ((-1.5,0.5),(-0.2,0.4))
     },
     min_max_values = {
     },
