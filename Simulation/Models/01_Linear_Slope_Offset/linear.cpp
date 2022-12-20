@@ -2,8 +2,10 @@
 
 #define mod(a, b) ((a) - (int((a) / (b)) * (b)))
 
-#define s parameters[0]
-#define o parameters[1]
+#define o (Pi / 2)
+
+#define a parameters[0]
+#define b parameters[1]
 
 #define x currentState[0]
 #define y RHS[0]
@@ -13,12 +15,12 @@ bool f(
     const Array<real_t>& parameters,
     Array<real_t>& RHS
 ) {
-    real_t a = mod(x + (Pi / 2), Pi);
-    y = s * a;
+    real_t x_intern = mod(x + o, Pi);
+    y = a * x_intern;
     
     // discont in both halfs
-    if (a > Pi / 2) {
-        y += o;
+    if (x_intern > Pi / 2) {
+        y += b;
     }
 
     // discont in middle
@@ -32,8 +34,7 @@ bool f(
     return true;
 }
 
-extern "C"
-{
+extern "C" {
     void connectSystem() {
         MapProxy::systemFunction = f;
     }

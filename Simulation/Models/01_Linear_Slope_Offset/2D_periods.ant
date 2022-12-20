@@ -5,11 +5,11 @@ dynamical_system = {
   parameters = {
     parameter[0] = {
       value = 0.8,
-      name = "slope"
+      name = "a"
     },
     parameter[1] = {
       value = 0,
-      name = "offset"
+      name = "b"
     }
   },
   state_space_dimension = 1,
@@ -28,20 +28,20 @@ dynamical_system = {
 },
 scan = {
   type = nested_items,
-  mode = 1,
+  mode = 2,
   item[0] = {
     type = real_linear,
-    points = 3000,
-    min = -1, 
-    max = 0.6,
-    object = "offset"
+    points = 30,
+    min = 0, 
+    max = 1,
+    object = "a"
   },
   item[1] = {
     type = real_linear,
-    points = 300,
+    points = 30,
     min = -1,
     max = 1,
-    object = "offset"
+    object = "b"
   }
 },
 investigation_methods = {
@@ -60,15 +60,15 @@ investigation_methods = {
   },
   period_analysis = {
     is_active = true,
-    max_period = 20,
+    max_period = 128,
     compare_precision = 1e-09,
     period = true,
     period_file = "period.tna",
-    cyclic_asymptotic_set = true,
+    cyclic_asymptotic_set = false,
     cyclic_bif_dia_file = "bif_cyclic.tna",
-    acyclic_last_states = true,
+    acyclic_last_states = false,
     acyclic_bif_dia_file = "bif_acyclic.tna",
-    cyclic_graphical_iteration = true,
+    cyclic_graphical_iteration = false,
     cyclic_graph_iter_file = "cyclic_cobweb.tna",
     acyclic_graphical_iteration = false,
     acyclic_graph_iter_file = "acyclic_cobweb.tna",
