@@ -66,6 +66,21 @@ if [ ! -f "$MODEL_SO_FILE" ] || [ -n "$RECOMPILE" ]; then
     "$BUILD_SYS"
 fi
 
+# Figure out, how many cores to use
+
+case "$(hostname)" in
+    workstation)
+        NUM_CORES="12"
+        ;;
+    openSuseBook)
+        NUM_CORES="6"
+        ;;
+    *)
+        echo "No configuration known for $(hostname)"
+        exit 1
+        ;;
+esac
+
 # Run model
 
 LD_LIBRARY_PATH="${ANT_LIB_DIR}" "${ANT}" "${MODEL_FILE}" -i "${MODEL_DIR}/${CONFIG_NAME}.ant"
