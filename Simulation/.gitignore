@@ -4,4 +4,6 @@
 
 *.tna
 
-Simulation/AnT
+*.log
+
+AnT

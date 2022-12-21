@@ -21,7 +21,7 @@ please_compile_msg() {
 help_msg() {
     echo "Usage: $0 (-m | --model) <MODEL_NAME> (-c | --config) <CONFIG_NAME> [OPTIONS]"
     echo "Options:"
-    echo "    -r | --recompile      Force recompilation of model .cpp file"
+    echo "    -n | --num-cores      Number of cores to use"
     exit 2
 }
 
@@ -37,8 +37,9 @@ while [ $# -gt 0 ]; do
             shift
             shift
             ;;
-        -r | --recompile)
-            RECOMPILE="true"
+        -n | --num-cores)
+            NUM_CORES="$2"
+            shift
             shift
             ;;
         *)
@@ -60,28 +61,29 @@ MODEL_CPP_FILE="$(find "${MODEL_DIR}" -name "*.cpp")"
 
 # Compile model
 
-MODEL_FILE="${MODEL_CPP_FILE%.*}"
-MODEL_SO_FILE="${MODEL_FILE}.so"
-if [ ! -f "$MODEL_SO_FILE" ] || [ -n "$RECOMPILE" ]; then
-    "$BUILD_SYS"
-fi
+"$BUILD_SYS"
 
 # Figure out, how many cores to use
 
-case "$(hostname)" in
-    workstation)
-        NUM_CORES="12"
-        ;;
-    openSuseBook)
-        NUM_CORES="6"
-        ;;
-    *)
-        echo "No configuration known for $(hostname)"
-        exit 1
-        ;;
-esac
+if [ -z "$NUM_CORES" ]; then
+    case "$(hostname)" in
+        workstation)
+            NUM_CORES="12"
+            ;;
+        openSuseBook)
+            NUM_CORES="6"
+            ;;
+        *)
+            echo "No default number of cores known for $(hostname), please specify via option"
+            echo
+            help_msg
+            ;;
+    esac
+fi
 
 # Run model
+
+MODEL_FILE="${MODEL_CPP_FILE%.*}"
 
 LD_LIBRARY_PATH="${ANT_LIB_DIR}" "${ANT}" "${MODEL_FILE}" -i "${MODEL_DIR}/${CONFIG_NAME}.ant"
 
