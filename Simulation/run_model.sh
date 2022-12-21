@@ -88,22 +88,30 @@ fi
 MODEL_FILE="${MODEL_CPP_FILE%.*}"
 mkdir -p "${LOG_DIR}"
 SERVER_LOG="${LOG_DIR}/server.log"
+HOST="0.0.0.0"
 PORT="5555"
 
+echo
 echo "Starting server"
-LD_LIBRARY_PATH="${ANT_LIB_DIR}" "${ANT}" "${MODEL_FILE}" \
-    -i "${MODEL_DIR}/${CONFIG_NAME}.ant" \
-    -m server -p "${PORT}" &> "${SERVER_LOG}" &
+while : ; do
+    LD_LIBRARY_PATH="${ANT_LIB_DIR}" "${ANT}" "${MODEL_FILE}" \
+        -i "${MODEL_DIR}/${CONFIG_NAME}.ant" \
+        -m server -s "${HOST}" -p "${PORT}" \
+        &> "${SERVER_LOG}" &
+
+    sleep 1
+    
+    [ "$(tail -n 1 "${SERVER_LOG}")" = "Bye!" ] || break
+    
+    echo -n "."
+done
+echo success
+echo
 
 for (( i=1; i<=NUM_CORES; i++ )); do
     echo "Starting client ${i}"
     LD_LIBRARY_PATH="${ANT_LIB_DIR}" "${ANT}" "${MODEL_FILE}" \
         -i "${MODEL_DIR}/${CONFIG_NAME}.ant" \
-        -m client -p "${PORT}" -t 20 &> "${LOG_DIR}/client-${i}.log" &
+        -m client -s "${HOST}" -p "${PORT}" -t 20 \
+        &> "${LOG_DIR}/client-${i}.log" &
 done
-
-tail -f "${SERVER_LOG}"
-
-sudo killall AnT
-
-cd -
