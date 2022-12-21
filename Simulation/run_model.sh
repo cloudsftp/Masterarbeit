@@ -61,9 +61,21 @@ cd "$MODEL_DIR"
 MODEL_CPP_FILE="$(find "${MODEL_DIR}" -name "*.cpp")"
 [ -z "$MODEL_CPP_FILE" ] && echo "No .cpp file in ${MODEL_DIR}" && exit 1
 
+################
 # Compile model
+################
 
 "$BUILD_SYS"
+
+############
+# Run model
+############
+
+MODEL_FILE="${MODEL_CPP_FILE%.*}"
+mkdir -p "${LOG_DIR}"
+SERVER_LOG="${LOG_DIR}/server.log"
+HOST="0.0.0.0"
+PORT="5555"
 
 # Figure out, how many cores to use
 
@@ -83,13 +95,7 @@ if [ -z "$NUM_CORES" ]; then
     esac
 fi
 
-# Run model
-
-MODEL_FILE="${MODEL_CPP_FILE%.*}"
-mkdir -p "${LOG_DIR}"
-SERVER_LOG="${LOG_DIR}/server.log"
-HOST="0.0.0.0"
-PORT="5555"
+# Start server
 
 echo
 echo "Starting server"
@@ -108,6 +114,8 @@ done
 echo success
 echo
 
+# Start clients
+
 for (( i=1; i<=NUM_CORES; i++ )); do
     echo "Starting client ${i}"
     LD_LIBRARY_PATH="${ANT_LIB_DIR}" "${ANT}" "${MODEL_FILE}" \
@@ -115,3 +123,17 @@ for (( i=1; i<=NUM_CORES; i++ )); do
         -m client -s "${HOST}" -p "${PORT}" -t 20 \
         &> "${LOG_DIR}/client-${i}.log" &
 done
+
+# Wait for computation to finish
+
+echo
+echo
+while [ "$(tail -n 1 "${SERVER_LOG}")" != "Bye!" ] ; do
+    grep % "${SERVER_LOG}" | tail -n 1 | sed 's/%//'
+    sleep 2
+done
+echo
+
+# Open gnuplot
+
+gnuplot
