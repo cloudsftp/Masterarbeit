@@ -24,7 +24,7 @@ bool f(
     }
 
     // discont in middle
-    if (x > Pi) {
+    if (mod(x, 2 * Pi) > Pi) {
         y += Pi;
     }
     
