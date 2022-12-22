@@ -1,36 +1,40 @@
 #include "AnT.hpp"
 
-#define mod(a, b) ((a) - (int((a) / (b)) * (b)))
+#include <cmath>
 
 #define o (Pi / 2)
 
 #define a parameters[0]
 #define b parameters[1]
 
-#define x currentState[0]
-#define y RHS[0]
-
 bool f(
     const Array<real_t>& currentState,
     const Array<real_t>& parameters,
     Array<real_t>& RHS
 ) {
-    real_t x_intern = mod(x + o, Pi);
-    y = a * x_intern;
-    
+    real_t x_og = currentState[0];
+    real_t x_mod2pi = fmod(x_og + o, 2 * Pi);
+
+    real_t y = 0;
+
+    real_t x_modpi = x_mod2pi;
+    if (x_modpi > Pi) {
+        x_modpi -= Pi;
+
+        y += Pi;
+    }
+
+    y += a * x_modpi;
+
     // discont in both halfs
-    if (x_intern > Pi / 2) {
+    if (x_modpi > Pi / 2) {
         y += b;
     }
 
-    // discont in middle
-    if (mod(x, 2 * Pi) > Pi) {
-        y += Pi;
-    }
-    
     // normalize
-    y = mod(y, 2 * Pi);
+    y = fmod(y, 2 * Pi);
 
+    RHS[0] = y;
     return true;
 }
 

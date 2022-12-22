@@ -74,7 +74,6 @@ MODEL_CPP_FILE="$(find "${MODEL_DIR}" -name "*.cpp")"
 MODEL_FILE="${MODEL_CPP_FILE%.*}"
 mkdir -p "${LOG_DIR}"
 SERVER_LOG="${LOG_DIR}/server.log"
-HOST="0.0.0.0"
 PORT="5555"
 
 # Figure out, how many cores to use
@@ -102,7 +101,7 @@ echo "Starting server"
 while : ; do
     LD_LIBRARY_PATH="${ANT_LIB_DIR}" "${ANT}" "${MODEL_FILE}" \
         -i "${MODEL_DIR}/${CONFIG_NAME}.ant" \
-        -m server -s "${HOST}" -p "${PORT}" \
+        -m server -s "0.0.0.0" -p "${PORT}" \
         &> "${SERVER_LOG}" &
 
     sleep 1
@@ -120,7 +119,7 @@ for (( i=1; i<=NUM_CORES; i++ )); do
     echo "Starting client ${i}"
     LD_LIBRARY_PATH="${ANT_LIB_DIR}" "${ANT}" "${MODEL_FILE}" \
         -i "${MODEL_DIR}/${CONFIG_NAME}.ant" \
-        -m client -s "${HOST}" -p "${PORT}" -t 20 \
+        -m client -s "localhost" -p "${PORT}" -t 20 \
         &> "${LOG_DIR}/client-${i}.log" &
 done
 
