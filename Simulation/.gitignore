@@ -8,7 +8,7 @@
 *.pdf
 *.sts
 Models/**/*_fm
-Models/**/*.VGTdym
+Models/**/fragmaster.*
 Viktor_Figures/*.png
 
 AnT
