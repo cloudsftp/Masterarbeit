@@ -156,13 +156,14 @@ echo
 echo "Plotting figure"
 echo
 
+[ ! -f "dimens.plt" ] && echo "No dimens.plt file in ${DIAGRAM_DIR}" && exit 1
+
 # TODO: select correct script
 GNUPLOT_SCRIPT="${SCRIPT_DIR}/2D_Period.plt"
 
 gnuplot -e "script_dir='${SCRIPT_DIR}'" "${GNUPLOT_SCRIPT}"
 [ "$?" -ne 0 ] && echo "Problem executing gnuplot script ${GNUPLOT_SCRIPT}" && exit 1
 
-cp "${SCRIPT_DIR}/result_fm" "${DIAGRAM_DIR}"
 fragmaster
 
 pdfcrop "result.pdf" "result.pdf"

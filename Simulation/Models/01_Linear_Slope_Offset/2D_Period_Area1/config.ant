@@ -30,14 +30,14 @@ scan = {
   mode = 2,
   item[0] = {
     type = real_linear,
-    points = 1000,
+    points = 500,
     min = -1, 
     max = -0.7,
     object = "a"
   },
   item[1] = {
     type = real_linear,
-    points = 1000,
+    points = 500,
     min = 1.5,
     max = 3.3,
     object = "b"

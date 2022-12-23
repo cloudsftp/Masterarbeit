@@ -7,7 +7,6 @@
 *.eps
 *.pdf
 *.sts
-Models/**/*_fm
 Models/**/fragmaster.*
 Viktor_Figures/*.png
 
