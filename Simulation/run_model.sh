@@ -152,11 +152,20 @@ fi
 # Plot
 #######
 
+echo
+echo "Plotting figure"
+echo
+
 # TODO: select correct script
-gnuplot "${SCRIPT_DIR}/2D_Period.plt"
+GNUPLOT_SCRIPT="${SCRIPT_DIR}/2D_Period.plt"
+
+gnuplot -e "script_dir='${SCRIPT_DIR}'" "${GNUPLOT_SCRIPT}"
+[ "$?" -ne 0 ] && echo "Problem executing gnuplot script ${GNUPLOT_SCRIPT}" && exit 1
 
 cp "${SCRIPT_DIR}/result_fm" "${DIAGRAM_DIR}"
 fragmaster
 
 pdfcrop "result.pdf" "result.pdf"
 convert -rotate 90 -density 600 -alpha off "result.pdf" "result.png"
+
+imv "result.png"

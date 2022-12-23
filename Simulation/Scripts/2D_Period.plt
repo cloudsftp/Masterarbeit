@@ -9,4 +9,6 @@ set size square
 
 set output "result_fm.eps"
 
+load sprintf('%s/load_extras.plt', script_dir)
+
 plot 'period.tna' w dots palette
