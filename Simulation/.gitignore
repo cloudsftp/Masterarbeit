@@ -4,5 +4,12 @@
 
 *.tna
 
+*.eps
+*.pdf
+*.sts
+Models/**/*_fm
+Models/**/*.VGTdym
+Viktor_Figures/*.png
+
 AnT
 Logs

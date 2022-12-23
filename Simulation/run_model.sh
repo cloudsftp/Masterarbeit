@@ -7,6 +7,7 @@ BUILD_SYS="${ANT_BIN_DIR}/build-AnT-system.sh"
 ANT_LIB_DIR="${ANT_DIR}/lib64"
 
 LOG_DIR="$(pwd)/Logs"
+SCRIPT_DIR="$(pwd)/Scripts"
 
 please_compile_msg() {
     echo "AnT is not correctly installed, please run ./build.sh"
@@ -23,7 +24,8 @@ please_compile_msg() {
 help_msg() {
     echo "Usage: $0 (-m | --model) <MODEL_NAME> (-d | --diagram) <DIAGRAM_NAME> [OPTIONS]"
     echo "Options:"
-    echo "    -n | --num-cores      Number of cores to use"
+    echo "    -n | --num-cores          Number of cores to use"
+    echo "    -s | --skip-computation   Skip computation, only plot"
     exit 2
 }
 
@@ -42,6 +44,10 @@ while [ $# -gt 0 ]; do
         -n | --num-cores)
             NUM_CORES="$2"
             shift
+            shift
+            ;;
+        -s | --skip-computation)
+            SKIP_COMPUTATION="true"
             shift
             ;;
         *)
@@ -99,45 +105,58 @@ if [ -z "$NUM_CORES" ]; then
     esac
 fi
 
-# Start server
+if [ -z "$SKIP_COMPUTATION" ]; then
 
-echo
-echo "Starting server"
-while : ; do
-    LD_LIBRARY_PATH="${ANT_LIB_DIR}" "${ANT}" "${MODEL_FILE}" \
-        -i "${DIAGRAM_DIR}/config.ant" \
-        -m server -s "0.0.0.0" -p "${PORT}" \
-        &> "${SERVER_LOG}" &
+    # Start server
 
-    sleep 1
-    
-    [ "$(tail -n 1 "${SERVER_LOG}")" = "Bye!" ] || break
-    
-    echo -n "."
-done
-echo success
-echo
+    echo
+    echo "Starting server"
+    while : ; do
+        LD_LIBRARY_PATH="${ANT_LIB_DIR}" "${ANT}" "${MODEL_FILE}" \
+            -i "${DIAGRAM_DIR}/config.ant" \
+            -m server -s "0.0.0.0" -p "${PORT}" \
+            &> "${SERVER_LOG}" &
 
-# Start clients
+        sleep 1
+        
+        [ "$(tail -n 1 "${SERVER_LOG}")" = "Bye!" ] || break
+        
+        echo -n "."
+    done
+    echo success
+    echo
 
-for (( i=1; i<=NUM_CORES; i++ )); do
-    echo "Starting client ${i}"
-    LD_LIBRARY_PATH="${ANT_LIB_DIR}" "${ANT}" "${MODEL_FILE}" \
-        -i "${DIAGRAM_DIR}/config.ant" \
-        -m client -s "localhost" -p "${PORT}" -t 20 \
-        &> "${LOG_DIR}/client-${i}.log" &
-done
+    # Start clients
 
-# Wait for computation to finish
+    for (( i=1; i<=NUM_CORES; i++ )); do
+        echo "Starting client ${i}"
+        LD_LIBRARY_PATH="${ANT_LIB_DIR}" "${ANT}" "${MODEL_FILE}" \
+            -i "${DIAGRAM_DIR}/config.ant" \
+            -m client -s "localhost" -p "${PORT}" -t 20 \
+            &> "${LOG_DIR}/client-${i}.log" &
+    done
 
-echo
-echo
-while [ "$(tail -n 1 "${SERVER_LOG}")" != "Bye!" ] ; do
-    grep % "${SERVER_LOG}" | tail -n 1 | sed 's/%//'
-    sleep 2
-done
-echo
+    # Wait for computation to finish
 
-# Open gnuplot
+    echo
+    echo
+    while [ "$(tail -n 1 "${SERVER_LOG}")" != "Bye!" ] ; do
+        grep % "${SERVER_LOG}" | tail -n 1 | sed 's/%//'
+        sleep 2
+    done
+    echo
 
-gnuplot
+fi
+
+#######
+# Plot
+#######
+
+# TODO: select correct script
+gnuplot "${SCRIPT_DIR}/2D_Period.plt"
+
+cp "${SCRIPT_DIR}/result_fm" "${DIAGRAM_DIR}"
+fragmaster
+
+pdfcrop "result.pdf" "result.pdf"
+convert -rotate 90 -density 600 -alpha off "result.pdf" "result.png"
