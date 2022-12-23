@@ -21,7 +21,7 @@ please_compile_msg() {
 [ ! -f "$BUILD_SYS" ] && please_compile_msg
 
 help_msg() {
-    echo "Usage: $0 (-m | --model) <MODEL_NAME> (-c | --config) <CONFIG_NAME> [OPTIONS]"
+    echo "Usage: $0 (-m | --model) <MODEL_NAME> (-d | --diagram) <DIAGRAM_NAME> [OPTIONS]"
     echo "Options:"
     echo "    -n | --num-cores      Number of cores to use"
     exit 2
@@ -34,8 +34,8 @@ while [ $# -gt 0 ]; do
             shift
             shift
             ;;
-        -c | --config)
-            CONFIG_NAME="$2"
+        -d | --diagram)
+            DIAGRAM_NAME="$2"
             shift
             shift
             ;;
@@ -51,7 +51,7 @@ while [ $# -gt 0 ]; do
 done
 
 [ -z "$MODEL_NAME" ] && help_msg
-[ -z "$CONFIG_NAME" ] && help_msg
+[ -z "$DIAGRAM_NAME" ] && help_msg
 
 MODELS_DIR="$(pwd)/Models"
 MODEL_DIR="$(find "${MODELS_DIR}" -name "*${MODEL_NAME}")"
@@ -60,6 +60,9 @@ cd "$MODEL_DIR"
 
 MODEL_CPP_FILE="$(find "${MODEL_DIR}" -name "*.cpp")"
 [ -z "$MODEL_CPP_FILE" ] && echo "No .cpp file in ${MODEL_DIR}" && exit 1
+
+DIAGRAM_DIR="${MODEL_DIR}/${DIAGRAM_NAME}"
+[ ! -d "$DIAGRAM_DIR" ] && echo "No dir ${DIAGRAM_NAME} in ${MODEL_DIR}" && exit 1
 
 ################
 # Compile model
@@ -70,6 +73,8 @@ MODEL_CPP_FILE="$(find "${MODEL_DIR}" -name "*.cpp")"
 ############
 # Run model
 ############
+
+cd "${DIAGRAM_DIR}"
 
 MODEL_FILE="${MODEL_CPP_FILE%.*}"
 mkdir -p "${LOG_DIR}"
@@ -100,7 +105,7 @@ echo
 echo "Starting server"
 while : ; do
     LD_LIBRARY_PATH="${ANT_LIB_DIR}" "${ANT}" "${MODEL_FILE}" \
-        -i "${MODEL_DIR}/${CONFIG_NAME}.ant" \
+        -i "${DIAGRAM_DIR}/config.ant" \
         -m server -s "0.0.0.0" -p "${PORT}" \
         &> "${SERVER_LOG}" &
 
@@ -118,7 +123,7 @@ echo
 for (( i=1; i<=NUM_CORES; i++ )); do
     echo "Starting client ${i}"
     LD_LIBRARY_PATH="${ANT_LIB_DIR}" "${ANT}" "${MODEL_FILE}" \
-        -i "${MODEL_DIR}/${CONFIG_NAME}.ant" \
+        -i "${DIAGRAM_DIR}/config.ant" \
         -m client -s "localhost" -p "${PORT}" -t 20 \
         &> "${LOG_DIR}/client-${i}.log" &
 done
