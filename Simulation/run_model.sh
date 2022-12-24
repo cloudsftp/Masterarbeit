@@ -161,14 +161,34 @@ echo
 echo "Plotting figure"
 echo
 
-[ ! -f "dimens.plt" ] && echo "No dimens.plt file in ${DIAGRAM_DIR}" && exit 1
-
-# TODO: select correct script
-GNUPLOT_SCRIPT_NAME="2D-period"
-
 RESULT_FIGURE_NAME="result"
 
-[ -n "$SIMPLIFIED_PLOT" ] && GNUPLOT_SCRIPT_NAME+="-simple" && RESULT_FIGURE_NAME+="-simple"
+case "${DIAGRAM_NAME}" in
+    *Period*)
+        if echo "${DIAGRAM_NAME}" | grep -q "2D"; then
+            GNUPLOT_SCRIPT_NAME="2"
+        else
+            GNUPLOT_SCRIPT_NAME="1"
+        fi
+
+        GNUPLOT_SCRIPT_NAME+="D-period"
+        ;;
+    *Cobweb*)
+        GNUPLOT_SCRIPT_NAME="cobweb"
+        ;;
+    *)
+        echo "No known gnuplot script for ${DIAGRAM_NAME}"
+        exit 1
+        ;;
+esac
+
+if [ -z "$SIMPLIFIED_PLOT" ]; then
+    [ ! -f "dimens.plt" ] && echo "No dimens.plt file in ${DIAGRAM_DIR}" && exit 1
+else
+    GNUPLOT_SCRIPT_NAME+="-simple"
+    RESULT_FIGURE_NAME+="-simple"
+fi
+
 GNUPLOT_SCRIPT="${SCRIPT_DIR}/${GNUPLOT_SCRIPT_NAME}.plt"
 RESULT_FIGURE="${RESULT_FIGURE_NAME}.png"
 
@@ -176,6 +196,7 @@ gnuplot -e "script_dir='${SCRIPT_DIR}'" "${GNUPLOT_SCRIPT}"
 [ "$?" -ne 0 ] && echo "Problem executing gnuplot script ${GNUPLOT_SCRIPT}" && exit 1
 
 if [ -z "$SIMPLIFIED_PLOT" ]; then
+    [ !f "${DIAGRAM_DIR}/${RESULT_FIGURE_NAME}_fm" ] && echo "No ${RESULT_NAME}_fm file in ${DIAGRAM_DIR}" && exit 1
     fragmaster
 
     pdfcrop "${RESULT_FIGURE_NAME}.pdf" "${RESULT_FIGURE_NAME}.pdf"
