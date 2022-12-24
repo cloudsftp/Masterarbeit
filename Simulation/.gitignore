@@ -8,6 +8,7 @@
 *.pdf
 *.sts
 Models/**/fragmaster.*
+Models/**/*-simple.png
 Viktor_Figures/*.png
 
 AnT

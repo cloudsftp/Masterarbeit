@@ -24,8 +24,9 @@ please_compile_msg() {
 help_msg() {
     echo "Usage: $0 (-m | --model) <MODEL_NAME> (-d | --diagram) <DIAGRAM_NAME> [OPTIONS]"
     echo "Options:"
-    echo "    -n | --num-cores          Number of cores to use"
-    echo "    -s | --skip-computation   Skip computation, only plot"
+    echo "    --num-cores           Number of cores to use"
+    echo "    --skip-computation    Skip computation, only plot"
+    echo "    --simple-figure       Only plot a simplified plot"
     exit 2
 }
 
@@ -41,13 +42,17 @@ while [ $# -gt 0 ]; do
             shift
             shift
             ;;
-        -n | --num-cores)
+        --num-cores)
             NUM_CORES="$2"
             shift
             shift
             ;;
-        -s | --skip-computation)
+        --skip-computation)
             SKIP_COMPUTATION="true"
+            shift
+            ;;
+        --simple-figure)
+            SIMPLIFIED_PLOT="true"
             shift
             ;;
         *)
@@ -159,14 +164,22 @@ echo
 [ ! -f "dimens.plt" ] && echo "No dimens.plt file in ${DIAGRAM_DIR}" && exit 1
 
 # TODO: select correct script
-GNUPLOT_SCRIPT="${SCRIPT_DIR}/2D_Period.plt"
+GNUPLOT_SCRIPT_NAME="2D-period"
+
+RESULT_FIGURE_NAME="result"
+
+[ -n "$SIMPLIFIED_PLOT" ] && GNUPLOT_SCRIPT_NAME+="-simple" && RESULT_FIGURE_NAME+="-simple"
+GNUPLOT_SCRIPT="${SCRIPT_DIR}/${GNUPLOT_SCRIPT_NAME}.plt"
+RESULT_FIGURE="${RESULT_FIGURE_NAME}.png"
 
 gnuplot -e "script_dir='${SCRIPT_DIR}'" "${GNUPLOT_SCRIPT}"
 [ "$?" -ne 0 ] && echo "Problem executing gnuplot script ${GNUPLOT_SCRIPT}" && exit 1
 
-fragmaster
+if [ -z "$SIMPLIFIED_PLOT" ]; then
+    fragmaster
 
-pdfcrop "result.pdf" "result.pdf"
-convert -rotate 90 -density 600 -alpha off "result.pdf" "result.png"
+    pdfcrop "${RESULT_FIGURE_NAME}.pdf" "${RESULT_FIGURE_NAME}.pdf"
+    convert -rotate 90 -density 600 -alpha off "${RESULT_FIGURE_NAME}.pdf" "${RESULT_FIGURE}"
+fi
 
-imv "result.png"
+imv "${RESULT_FIGURE}"
