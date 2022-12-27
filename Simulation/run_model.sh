@@ -194,6 +194,7 @@ case "${DIAGRAM_NAME}" in
         ;;
     *Cobweb*)
         GNUPLOT_SCRIPT_NAME="cobweb"
+        CHECK_FOR_DIMENS_FILE_REGARDLESS="true"
         ;;
     *)
         echo "No known gnuplot script for ${DIAGRAM_NAME}"
@@ -201,9 +202,15 @@ case "${DIAGRAM_NAME}" in
         ;;
 esac
 
-if [ -z "$SIMPLIFIED_PLOT" ]; then
+check_for_dimens_file() {
     [ ! -f "dimens.plt" ] && echo "No dimens.plt file in ${DIAGRAM_DIR}" && exit 1
+}
+
+if [ -z "$SIMPLIFIED_PLOT" ]; then
+    check_for_dimens_file
 else
+    [ -n "${CHECK_FOR_DIMENS_FILE_REGARDLESS}" ] && check_for_dimens_file
+
     GNUPLOT_SCRIPT_NAME+="-simple"
     RESULT_FIGURE_NAME+="-simple"
 fi
