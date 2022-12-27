@@ -1,3 +1,12 @@
 set size square
 
-plot 'cyclic_cobweb.tna' w lines notitle
+load 'model.plt'
+
+load 'dimens.plt'
+set xrange [L:R]
+set yrange [D:U]
+
+plot 'cyclic_cobweb.tna' w lines notitle, \
+    f(x) w points ps 0.4 pt 7 lc rgb 'red' notitle, \
+    x w lines lt 1 lw 1 lc rgb 'gray20' notitle
+

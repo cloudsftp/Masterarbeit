@@ -15,7 +15,7 @@ set xrange [L to R]
 set yrange [D to U]
 
 set xtics ("L" L, "R" R)
-set ytics ("D" D, "U" U) rotate by 90 offset -0.5, 0
+set ytics ("D" D, "U" U) rotate by 90
 
 load sprintf('%s/load-extras.plt', script_dir)
 

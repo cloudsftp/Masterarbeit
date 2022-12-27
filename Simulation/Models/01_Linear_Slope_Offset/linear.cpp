@@ -33,7 +33,15 @@ bool f(
     }
 
     // normalize
-    y = fmod(y, 2 * Pi);
+    y = remainder(y, 2 * Pi);
+    
+    /*while (y <= 0) {
+        y += 2 * Pi;
+    }
+
+    while (y >= 2 * Pi) {
+        y -= 2 * Pi;
+    } */
 
     RHS[0] = y;
     return true;

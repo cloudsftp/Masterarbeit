@@ -15,7 +15,7 @@ dynamical_system = {
   state_space_dimension = 1,
   initial_state = (0.1),
   reset_initial_states_from_orbit = false,
-  number_of_iterations = 10000,
+  number_of_iterations = 1000,
   s[0] = {
     name = "",
     equation_of_motion = "0"
@@ -31,15 +31,15 @@ scan = {
   item[0] = {
     type = real_linear,
     points = 1000,
-    min = -1, 
-    max = -0.7,
+    min = 0, 
+    max = 1,
     object = "a"
   },
   item[1] = {
     type = real_linear,
     points = 1000,
-    min = 1.5,
-    max = 3.3,
+    min = 0,
+    max = 6.28,
     object = "b"
   }
 },
