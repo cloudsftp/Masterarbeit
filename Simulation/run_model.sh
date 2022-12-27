@@ -111,35 +111,52 @@ if [ -z "$NUM_CORES" ]; then
 fi
 
 if [ -z "$SKIP_COMPUTATION" ]; then
+    CONFIG_FILE="${DIAGRAM_DIR}/config.ant"
 
-    # Start server
+    case "${DIAGRAM_NAME}" in
+    Cobweb*)
+        ### Standalone mode
 
-    echo
-    echo "Starting server"
-    while : ; do
+        echo
+        echo "Starting Ant in standalone mode"
+
         LD_LIBRARY_PATH="${ANT_LIB_DIR}" "${ANT}" "${MODEL_FILE}" \
-            -i "${DIAGRAM_DIR}/config.ant" \
-            -m server -s "0.0.0.0" -p "${PORT}" \
+            -i "${CONFIG_FILE}" \
             &> "${SERVER_LOG}" &
+        ;;
+    *)
+        ### Server mode
 
-        sleep 1
-        
-        [ "$(tail -n 1 "${SERVER_LOG}")" = "Bye!" ] || break
-        
-        echo -n "."
-    done
-    echo success
-    echo
+        # Start server
 
-    # Start clients
+        echo
+        echo "Starting AnT server"
+        while : ; do
+            LD_LIBRARY_PATH="${ANT_LIB_DIR}" "${ANT}" "${MODEL_FILE}" \
+                -i "${CONFIG_FILE}" \
+                -m server -s "0.0.0.0" -p "${PORT}" \
+                &> "${SERVER_LOG}" &
 
-    for (( i=1; i<=NUM_CORES; i++ )); do
-        echo "Starting client ${i}"
-        LD_LIBRARY_PATH="${ANT_LIB_DIR}" "${ANT}" "${MODEL_FILE}" \
-            -i "${DIAGRAM_DIR}/config.ant" \
-            -m client -s "localhost" -p "${PORT}" -t 20 \
-            &> "${LOG_DIR}/client-${i}.log" &
-    done
+            sleep 1
+            
+            [ "$(tail -n 1 "${SERVER_LOG}")" = "Bye!" ] || break
+            
+            echo -n "."
+        done
+        echo success
+        echo
+
+        # Start clients
+
+        for (( i=1; i<=NUM_CORES; i++ )); do
+            echo "Starting AnT client #${i}"
+            LD_LIBRARY_PATH="${ANT_LIB_DIR}" "${ANT}" "${MODEL_FILE}" \
+                -i "${CONFIG_FILE}" \
+                -m client -s "localhost" -p "${PORT}" -t 20 \
+                &> "${LOG_DIR}/client-${i}.log" &
+        done
+        ;;
+    esac
 
     # Wait for computation to finish
 
@@ -150,7 +167,6 @@ if [ -z "$SKIP_COMPUTATION" ]; then
         sleep 2
     done
     echo
-
 fi
 
 #######
