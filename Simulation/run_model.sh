@@ -112,6 +112,7 @@ fi
 
 if [ -z "$SKIP_COMPUTATION" ]; then
     CONFIG_FILE="${DIAGRAM_DIR}/config.ant"
+    POLL_PERIOD="2"
 
     case "${DIAGRAM_NAME}" in
     Cobweb*)
@@ -123,6 +124,8 @@ if [ -z "$SKIP_COMPUTATION" ]; then
         LD_LIBRARY_PATH="${ANT_LIB_DIR}" "${ANT}" "${MODEL_FILE}" \
             -i "${CONFIG_FILE}" \
             &> "${SERVER_LOG}" &
+        
+        POLL_PERIOD="0.1"
         ;;
     *)
         ### Server mode
@@ -164,7 +167,7 @@ if [ -z "$SKIP_COMPUTATION" ]; then
     echo
     while [ "$(tail -n 1 "${SERVER_LOG}")" != "Bye!" ] ; do
         grep % "${SERVER_LOG}" | tail -n 1 | sed 's/%//'
-        sleep 2
+        sleep "${POLL_PERIOD}"
     done
     echo
 fi

@@ -4,11 +4,11 @@ dynamical_system = {
   parameter_space_dimension = 2,
   parameters = {
     parameter[0] = {
-      value = 0.8,
+      value = -0.99,
       name = "a"
     },
     parameter[1] = {
-      value = 0,
+      value = 2.64,
       name = "b"
     }
   },

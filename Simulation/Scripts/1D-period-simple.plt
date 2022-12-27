@@ -1,6 +1,6 @@
 reset
+set loadpath script_dir
 
-set terminal png
-set output 'result-simple.png'
+load 'terminal-png.plt'
 
-load sprintf('%s/1D-period-core.plt', script_dir)
+load '1D-period-core.plt'
