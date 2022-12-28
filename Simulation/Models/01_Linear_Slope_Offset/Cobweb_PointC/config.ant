@@ -8,7 +8,7 @@ dynamical_system = {
       name = "a"
     },
     parameter[1] = {
-      value = 1.41,
+      value = 1.05,
       name = "b"
     }
   },

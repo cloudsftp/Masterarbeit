@@ -1,6 +1,7 @@
 #include "AnT.hpp"
 
 #include <cmath>
+#include <iostream>
 
 #define a parameters[0]
 #define b parameters[1]
@@ -35,13 +36,9 @@ bool f(
     // normalize
     y = remainder(y, 2 * Pi);
     
-    /*while (y <= 0) {
+    while (y < 0) {
         y += 2 * Pi;
     }
-
-    while (y >= 2 * Pi) {
-        y -= 2 * Pi;
-    } */
 
     RHS[0] = y;
     return true;
