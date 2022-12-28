@@ -1,3 +1,3 @@
 set size square
 
-plot 'period.tna' using 1:3 w dots notitle
+plot 'period.tna' w dots notitle lc rgb 'blue'

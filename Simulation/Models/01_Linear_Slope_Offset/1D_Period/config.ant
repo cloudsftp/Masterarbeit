@@ -4,7 +4,7 @@ dynamical_system = {
   parameter_space_dimension = 2,
   parameters = {
     parameter[0] = {
-      value = 0.8,
+      value = 0.5,
       name = "a"
     },
     parameter[1] = {
@@ -29,14 +29,11 @@ scan = {
   type = nested_items,
   mode = 1,
   item[0] = {
-    type = real_linear_2d,
-    points = 1000,
-    first_min = -1,
-    first_max = -0.85,
-    first_object = "a",
-    second_min = 2.7,
-    second_max = 1.8,
-    second_object = "b"
+    type = real_linear,
+    points = 3000,
+    min = 0.5,
+    max = 4,
+    object = "b"
   }
 },
 investigation_methods = {
