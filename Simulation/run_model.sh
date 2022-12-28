@@ -223,7 +223,7 @@ gnuplot -e "script_dir='${SCRIPT_DIR}'; model_dir='${MODEL_DIR}'" "${GNUPLOT_SCR
 [ "$?" -ne 0 ] && echo "Problem executing gnuplot script ${GNUPLOT_SCRIPT}" && exit 1
 
 if [ -z "$SIMPLIFIED_PLOT" ]; then
-    [ !f "${DIAGRAM_DIR}/${RESULT_FIGURE_NAME}_fm" ] && echo "No ${RESULT_NAME}_fm file in ${DIAGRAM_DIR}" && exit 1
+    [ ! -f "${DIAGRAM_DIR}/${RESULT_FIGURE_NAME}_fm" ] && echo "No ${RESULT_NAME}_fm file in ${DIAGRAM_DIR}" && exit 1
     fragmaster
 
     pdfcrop "${RESULT_FIGURE_NAME}.pdf" "${RESULT_FIGURE_NAME}.pdf"
