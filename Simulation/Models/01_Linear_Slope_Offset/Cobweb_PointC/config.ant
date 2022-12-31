@@ -30,9 +30,9 @@ scan = {
   mode = 1,
   item[0] = {
     type = real_linear,
-    points = 2,
+    points = 6,
     min = 0.1,
-    max = 4.1,
+    max = 6.2,
     object = "initial_state[0][0]"
   }
 },

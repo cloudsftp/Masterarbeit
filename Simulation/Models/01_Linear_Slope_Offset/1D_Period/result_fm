@@ -8,7 +8,8 @@
 \psfrag{M}{\hspace*{0.3em}\raisebox{0.5ex}{$5$}}
 \psfrag{U}{\hspace*{-0.5em}\raisebox{0.5ex}{$10$}}
 
-\psfrag{b}{\hspace*{0.0em}\raisebox{0.5ex}{$\beta$}}
+\psfrag{x}{\hspace*{0.0em}\raisebox{0.5ex}{$\beta$}}
+\psfrag{y}{\hspace*{3.0em}\raisebox{0.5ex}{$p$}}
 
 \psfrag{A}{\hspace*{-0.4em}\raisebox{0.5ex}{$P_A$}}
 \psfrag{B}{\hspace*{-0.5em}\raisebox{0.5ex}{$P_B$}}
