@@ -27,7 +27,14 @@ dynamical_system = {
 },
 scan = {
   type = nested_items,
-  mode = 0
+  mode = 1,
+  item[0] = {
+    type = real_linear,
+    points = 2,
+    min = 0.1,
+    max = 4.1,
+    object = "initial_state[0][0]"
+  }
 },
 investigation_methods = {
   general_trajectory_evaluations = {
