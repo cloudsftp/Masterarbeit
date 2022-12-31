@@ -7,6 +7,7 @@ BUILD_SYS="${ANT_BIN_DIR}/build-AnT-system.sh"
 ANT_LIB_DIR="${ANT_DIR}/lib64"
 
 LOG_DIR="$(pwd)/Logs"
+SCRIPT_DIR="$(pwd)/Scripts"
 
 please_compile_msg() {
     echo "AnT is not correctly installed, please run ./build.sh"
@@ -21,9 +22,11 @@ please_compile_msg() {
 [ ! -f "$BUILD_SYS" ] && please_compile_msg
 
 help_msg() {
-    echo "Usage: $0 (-m | --model) <MODEL_NAME> (-c | --config) <CONFIG_NAME> [OPTIONS]"
+    echo "Usage: $0 (-m | --model) <MODEL_NAME> (-d | --diagram) <DIAGRAM_NAME> [OPTIONS]"
     echo "Options:"
-    echo "    -n | --num-cores      Number of cores to use"
+    echo "    --num-cores           Number of cores to use"
+    echo "    --skip-computation    Skip computation, only plot"
+    echo "    --simple-figure       Only plot a simplified plot"
     exit 2
 }
 
@@ -34,14 +37,22 @@ while [ $# -gt 0 ]; do
             shift
             shift
             ;;
-        -c | --config)
-            CONFIG_NAME="$2"
+        -d | --diagram)
+            DIAGRAM_NAME="$2"
             shift
             shift
             ;;
-        -n | --num-cores)
+        --num-cores)
             NUM_CORES="$2"
             shift
+            shift
+            ;;
+        --skip-computation)
+            SKIP_COMPUTATION="true"
+            shift
+            ;;
+        --simple-figure)
+            SIMPLIFIED_PLOT="true"
             shift
             ;;
         *)
@@ -51,7 +62,7 @@ while [ $# -gt 0 ]; do
 done
 
 [ -z "$MODEL_NAME" ] && help_msg
-[ -z "$CONFIG_NAME" ] && help_msg
+[ -z "$DIAGRAM_NAME" ] && help_msg
 
 MODELS_DIR="$(pwd)/Models"
 MODEL_DIR="$(find "${MODELS_DIR}" -name "*${MODEL_NAME}")"
@@ -61,9 +72,25 @@ cd "$MODEL_DIR"
 MODEL_CPP_FILE="$(find "${MODEL_DIR}" -name "*.cpp")"
 [ -z "$MODEL_CPP_FILE" ] && echo "No .cpp file in ${MODEL_DIR}" && exit 1
 
+DIAGRAM_DIR="${MODEL_DIR}/${DIAGRAM_NAME}"
+[ ! -d "$DIAGRAM_DIR" ] && echo "No dir ${DIAGRAM_NAME} in ${MODEL_DIR}" && exit 1
+
+################
 # Compile model
+################
 
 "$BUILD_SYS"
+
+############
+# Run model
+############
+
+cd "${DIAGRAM_DIR}"
+
+MODEL_FILE="${MODEL_CPP_FILE%.*}"
+mkdir -p "${LOG_DIR}"
+SERVER_LOG="${LOG_DIR}/server.log"
+PORT="5555"
 
 # Figure out, how many cores to use
 
@@ -83,27 +110,124 @@ if [ -z "$NUM_CORES" ]; then
     esac
 fi
 
-# Run model
+if [ -z "$SKIP_COMPUTATION" ]; then
+    CONFIG_FILE="${DIAGRAM_DIR}/config.ant"
+    POLL_PERIOD="2"
 
-MODEL_FILE="${MODEL_CPP_FILE%.*}"
-mkdir -p "${LOG_DIR}"
-SERVER_LOG="${LOG_DIR}/server.log"
-PORT="5555"
+    case "${DIAGRAM_NAME}" in
+    Cobweb*)
+        ### Standalone mode
 
-echo "Starting server"
-LD_LIBRARY_PATH="${ANT_LIB_DIR}" "${ANT}" "${MODEL_FILE}" \
-    -i "${MODEL_DIR}/${CONFIG_NAME}.ant" \
-    -m server -p "${PORT}" &> "${SERVER_LOG}" &
+        echo
+        echo "Starting Ant in standalone mode"
 
-for (( i=1; i<=NUM_CORES; i++ )); do
-    echo "Starting client ${i}"
-    LD_LIBRARY_PATH="${ANT_LIB_DIR}" "${ANT}" "${MODEL_FILE}" \
-        -i "${MODEL_DIR}/${CONFIG_NAME}.ant" \
-        -m client -p "${PORT}" -t 20 &> "${LOG_DIR}/client-${i}.log" &
-done
+        LD_LIBRARY_PATH="${ANT_LIB_DIR}" "${ANT}" "${MODEL_FILE}" \
+            -i "${CONFIG_FILE}" \
+            &> "${SERVER_LOG}" &
+        
+        POLL_PERIOD="0.1"
+        ;;
+    *)
+        ### Server mode
 
-tail -f "${SERVER_LOG}"
+        # Start server
 
-sudo killall AnT
+        echo
+        echo "Starting AnT server"
+        while : ; do
+            LD_LIBRARY_PATH="${ANT_LIB_DIR}" "${ANT}" "${MODEL_FILE}" \
+                -i "${CONFIG_FILE}" \
+                -m server -s "0.0.0.0" -p "${PORT}" \
+                &> "${SERVER_LOG}" &
 
-cd -
+            sleep 1
+            
+            [ "$(tail -n 1 "${SERVER_LOG}")" = "Bye!" ] || break
+            
+            echo -n "."
+        done
+        echo success
+        echo
+
+        # Start clients
+
+        for (( i=1; i<=NUM_CORES; i++ )); do
+            echo "Starting AnT client #${i}"
+            LD_LIBRARY_PATH="${ANT_LIB_DIR}" "${ANT}" "${MODEL_FILE}" \
+                -i "${CONFIG_FILE}" \
+                -m client -s "localhost" -p "${PORT}" -t 20 \
+                &> "${LOG_DIR}/client-${i}.log" &
+        done
+        ;;
+    esac
+
+    # Wait for computation to finish
+
+    echo
+    echo
+    while [ "$(tail -n 1 "${SERVER_LOG}")" != "Bye!" ] ; do
+        grep % "${SERVER_LOG}" | tail -n 1 | sed 's/%//'
+        sleep "${POLL_PERIOD}"
+    done
+    echo
+fi
+
+#######
+# Plot
+#######
+
+echo
+echo "Plotting figure"
+echo
+
+RESULT_FIGURE_NAME="result"
+
+case "${DIAGRAM_NAME}" in
+    *Period*)
+        if echo "${DIAGRAM_NAME}" | grep -q "2D"; then
+            GNUPLOT_SCRIPT_NAME="2"
+        else
+            GNUPLOT_SCRIPT_NAME="1"
+        fi
+
+        GNUPLOT_SCRIPT_NAME+="D-period"
+        ;;
+    *Cobweb*)
+        GNUPLOT_SCRIPT_NAME="cobweb"
+        CHECK_FOR_DIMENS_FILE_REGARDLESS="true"
+        [ ! -f "${MODEL_DIR}/model.plt" ] && echo "No model.plt file in ${MODEL_DIR}" && exit 1
+        ;;
+    *)
+        echo "No known gnuplot script for ${DIAGRAM_NAME}"
+        exit 1
+        ;;
+esac
+
+check_for_dimens_file() {
+    [ ! -f "dimens.plt" ] && echo "No dimens.plt file in ${DIAGRAM_DIR}" && exit 1
+}
+
+if [ -z "$SIMPLIFIED_PLOT" ]; then
+    check_for_dimens_file
+else
+    [ -n "${CHECK_FOR_DIMENS_FILE_REGARDLESS}" ] && check_for_dimens_file
+
+    GNUPLOT_SCRIPT_NAME+="-simple"
+    RESULT_FIGURE_NAME+="-simple"
+fi
+
+GNUPLOT_SCRIPT="${SCRIPT_DIR}/${GNUPLOT_SCRIPT_NAME}.plt"
+RESULT_FIGURE="${RESULT_FIGURE_NAME}.png"
+
+gnuplot -e "script_dir='${SCRIPT_DIR}'; model_dir='${MODEL_DIR}'" "${GNUPLOT_SCRIPT}"
+[ "$?" -ne 0 ] && echo "Problem executing gnuplot script ${GNUPLOT_SCRIPT}" && exit 1
+
+if [ -z "$SIMPLIFIED_PLOT" ]; then
+    [ ! -f "${DIAGRAM_DIR}/${RESULT_FIGURE_NAME}_fm" ] && echo "No ${RESULT_NAME}_fm file in ${DIAGRAM_DIR}" && exit 1
+    fragmaster
+
+    pdfcrop "${RESULT_FIGURE_NAME}.pdf" "${RESULT_FIGURE_NAME}.pdf"
+    convert -rotate 90 -density 600 -alpha off "${RESULT_FIGURE_NAME}.pdf" "${RESULT_FIGURE}"
+fi
+
+imv "${RESULT_FIGURE}"
