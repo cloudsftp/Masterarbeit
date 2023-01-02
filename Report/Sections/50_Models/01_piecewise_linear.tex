@@ -1,11 +1,11 @@
 \section{Piecewise Linear Model}
 
 The first model, we examined, is a simple piecewise linear function with four discontinuities.
-Its discontinuities are at $\frac{\pi}{2}, \pi,$ and $\frac{3 \pi}{2}$.
-\Cref{equ:pcw.lin.sympi} causes the discontinuity at $\pi$ and also the symmetry $f(x + \pi) \equiv f(x) + \pi \mod 2 \pi$.
+Its discontinuities are at $0, \frac{\pi}{2}, \pi,$ and $\frac{3 \pi}{2}$.
+\Cref{equ:pcw.lin.sympi} causes the discontinuities at $0$ and $\pi$ and also the symmetry $f(x + \pi) \equiv f(x) + \pi \mod 2 \pi$.
 
 \begin{align}
-    f(x) & = g(x) \mod 2 \pi \\
+    f(x) & = g(x) \mod 2 \pi \label{equ:pcw.lin.f} \\
     g(x) & = \begin{cases}
         h(x) & \text{ if } r(x) < \pi \\
         h(x) + \pi & \text{ else}
@@ -33,3 +33,21 @@ They give the modulus of $x$ and some multiple of $\frac{\pi}{2}$.
     s(x) & = x \mod \pi \\
     t(x) & = x \mod \frac{\pi}{2} \label{equ:pcw.lin.t}
 \end{align}
+
+
+
+
+
+\Cref{fig:pcw.lin.2d} shows a bifurcation diagram of the model described above.
+The parameter $\beta$ is varied on the interval $[0, 2 \pi]$, because the model will behave the same for $[0, 2 \pi] + k \cdot 2 \pi$.
+This is because the result of the function will be taken modulo $2 \pi$ in \Cref{equ:pcw.lin.f}.
+The parameter $\alpha$ is varied on the interval $[0, 1]$, because for $\alpha < 0$ nothing especially interesting happens and for $\alpha > 1$ the model shows no periodic behavior.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.7\textwidth]{01_Linear_Slope_Offset/2D_Period/result.png}
+    \caption{2D Bifurcation Diagram of Piecewise Linear Model}
+    \label{fig:pcw.lin.2d}
+\end{figure}
+
+The two red lines mark the locations of the following one-dimensional scans keeping the parameter $\alpha$ fixed at $0.5$.
