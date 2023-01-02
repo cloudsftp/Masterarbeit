@@ -3,10 +3,13 @@
 help-msg() {
     echo "Usage: $0 (-m | --model) <MODEL_NAME> (-d | --diagram) <DIAGRAM_NAME> [OPTIONS]"
     echo "Options:"
-    echo "      -c | --copy <COPY_NAME>     Specify if a copy should be created of the original cobweb"
+    echo "      -c | --copy <COPY_NAME>             Specify if a copy should be created of the original cobweb"
+    echo "      -p | --parameter <NAME> <VALUE>     Specify a parameter to change the value"
 
     exit 2
 }
+
+declare -A PARAMETER_CHANGE_VALUES
 
 while [ $# -gt 0 ]; do
     case "$1" in
@@ -22,6 +25,12 @@ while [ $# -gt 0 ]; do
             ;;
         -c | --copy)
             COPY_NAME="$2"
+            shift
+            shift
+            ;;
+        -p | --parameter)
+            PARAMETER_CHANGE_VALUES["$2"]="$3"
+            shift
             shift
             shift
             ;;
@@ -116,10 +125,34 @@ if [ -n "$COPY_NAME" ]; then
     echo
 
     cp -r "${DIAGRAM_DIR}" "${DIAGRAM_COPY_DIR}"
+    DIAGRAM_NAME="${COPY_NAME}"
     DIAGRAM_DIR="${DIAGRAM_COPY_DIR}"
     CONFIG_FILE="${DIAGRAM_DIR}/config.ant"
+    DIMENS_FILE="${DIAGRAM_DIR}/dimens.plt"
 fi
 
 ##########################
 # Change parameter values
 ##########################
+
+echo
+for NAME in "${!PARAMETER_CHANGE_VALUES[@]}"; do
+    OLD_VALUE="${PARAMETER_VALUES["${NAME}"]}"
+    [ -z "${OLD_VALUE}" ] && echo "No old value for parameter ${NAME}" && exit 1
+    NEW_VALUE="${PARAMETER_CHANGE_VALUES["${NAME}"]}"
+
+    echo "Changing parameter ${NAME} to ${NEW_VALUE}"
+    sed -i "${PARAMETER_LINES["${NAME}"]}s/${OLD_VALUE}/${NEW_VALUE}/" "${CONFIG_FILE}"
+    sed -i "${DIMENS_LINES["${NAME}"]}s/${OLD_VALUE}/${NEW_VALUE}/" "${DIMENS_FILE}"
+done
+echo
+
+############
+# Run model
+############
+
+cd -
+echo
+echo "Running updated model"
+echo
+./run-model.sh -m "${MODEL_NAME}" -d "${DIAGRAM_NAME}" --simple-figure
