@@ -42,7 +42,9 @@ cd "$MODEL_DIR"
 DIAGRAM_DIR="${MODEL_DIR}/${DIAGRAM_NAME}"
 [ ! -d "$DIAGRAM_DIR" ] && echo "No dir ${DIAGRAM_NAME} in ${MODEL_DIR}" && exit 1
 
+##########################
 # Load current parameters
+##########################
 
 declare -A PARAMETER_VALUES
 declare -A PARAMETER_LINES
@@ -96,6 +98,14 @@ while read -r LINE; do
         fi
     done
 done < "${DIMENS_FILE}"
+
+for NAME in "${!PARAMETER_VALUES[@]}"; do
+    [ -z "${DIMENS_LINES["${NAME}"]}" ] && echo "Parameter ${NAME} not specified in dimens.plt" && exit 1
+done
+
+###############
+# Copy diagram
+###############
 
 if [ -n "$COPY_NAME" ]; then
     
