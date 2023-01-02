@@ -108,13 +108,18 @@ done
 ###############
 
 if [ -n "$COPY_NAME" ]; then
-    
-    # TODO: output what's happening
-
     DIAGRAM_COPY_DIR="${MODEL_DIR}/${COPY_NAME}"
+    [ -d "${DIAGRAM_COPY_DIR}" ] && echo "Specified directory ${DIAGRAM_COPY_DIR} already exists" && exit 1
+
+    echo
+    echo "Creating new directory ${COPY_NAME} for model"
+    echo
+
     cp -r "${DIAGRAM_DIR}" "${DIAGRAM_COPY_DIR}"
     DIAGRAM_DIR="${DIAGRAM_COPY_DIR}"
     CONFIG_FILE="${DIAGRAM_DIR}/config.ant"
 fi
 
-# TODO: adjust parameters
+##########################
+# Change parameter values
+##########################
