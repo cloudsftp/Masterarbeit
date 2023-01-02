@@ -1,0 +1,35 @@
+\section{Piecewise Linear Model}
+
+The first model, we examined, is a simple piecewise linear function with four discontinuities.
+Its discontinuities are at $\frac{\pi}{2}, \pi,$ and $\frac{3 \pi}{2}$.
+\Cref{equ:pcw.lin.sympi} causes the discontinuity at $\pi$ and also the symmetry $f(x + \pi) \equiv f(x) + \pi \mod 2 \pi$.
+
+\begin{align}
+    f(x) & = g(x) \mod 2 \pi \\
+    g(x) & = \begin{cases}
+        h(x) & \text{ if } r(x) < \pi \\
+        h(x) + \pi & \text{ else}
+    \end{cases} \label{equ:pcw.lin.sympi}
+\end{align}
+
+Each arm then is governed by \Cref{equ:pcw.lin.discpihalves}.
+It causes the discontinuities at $\frac{\pi}{2}$ and $\frac{3 \pi}{2}$ and also shows the linear nature of the function.
+Both parameters $\alpha$ and $\beta$ act here.
+$\alpha$ is the slope of the arms and $\beta$ is the offset of the first and third arms.
+\todo{refer to later cobwebs}
+
+\begin{align}
+    h(x) & = \begin{cases}
+        \alpha \cdot t(x) + \beta & \text{ if } s(x) < \frac{\pi}{2} \\
+        \alpha \cdot t(x) & \text{ else}
+    \end{cases} \label{equ:pcw.lin.discpihalves}
+\end{align}
+
+\Crefrange{equ:pcw.lin.r}{equ:pcw.lin.t} are used to make the above more readable.
+They give the modulus of $x$ and some multiple of $\frac{\pi}{2}$.
+
+\begin{align}
+    r(x) & = x \mod 2 \pi \label{equ:pcw.lin.r} \\
+    s(x) & = x \mod \pi \\
+    t(x) & = x \mod \frac{\pi}{2} \label{equ:pcw.lin.t}
+\end{align}
