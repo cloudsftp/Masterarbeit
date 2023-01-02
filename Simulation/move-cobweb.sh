@@ -77,6 +77,25 @@ for NAME in "${!PARAMETER_VALUES[@]}"; do
 done
 echo
 
+declare -A DIMENS_LINES
+
+DIMENS_FILE="${DIAGRAM_DIR}/dimens.plt"
+LINE_NUM="0"
+while read -r LINE; do
+    LINE_NUM=$((LINE_NUM + 1))
+
+    for NAME in "${!PARAMETER_VALUES[@]}"; do
+        if [[ "${LINE}" == "${NAME}"* ]]; then
+            DIMENS_LINES["${NAME}"]="${LINE_NUM}"
+            
+            VALUE="$(echo "${LINE}" | sed s/${NAME}// | sed s/=// | sed 's/ //g')"
+            [ "${VALUE}" != "${PARAMETER_VALUES["${NAME}"]}" ] \
+                && echo "Parameter ${NAME} value mismatch between config.ant and dimens.plt" \
+                && echo "Expected ${PARAMETER_VALUES["${NAME}"]}, got ${VALUE}" \
+                && exit 1
+        fi
+    done
+done < "${DIMENS_FILE}"
 
 if [ -n "$COPY_NAME" ]; then
     
