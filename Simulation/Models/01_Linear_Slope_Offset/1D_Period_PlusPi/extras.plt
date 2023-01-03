@@ -1,2 +1,2 @@
-set xtics add ("A" 1.59, "B" 1.41, "C" 1.05)
-set ytics add ("1" 1, "M" M) 
+set xtics add ("D" 3.9, "E" 4.3, "F" 4.74)
+set ytics add ("M" M) 
