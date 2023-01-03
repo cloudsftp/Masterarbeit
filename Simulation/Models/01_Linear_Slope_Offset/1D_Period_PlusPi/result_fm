@@ -11,6 +11,6 @@
 \psfrag{x}{\hspace*{2.0em}\raisebox{0.5ex}{$\beta$}}
 \psfrag{y}{\hspace*{3.0em}\raisebox{0.5ex}{$p$}}
 
-\psfrag{D}{\hspace*{0.5em}\raisebox{3.5ex}{$P_D$}}
+\psfrag{PD}{\hspace*{0.5em}\raisebox{3.5ex}{$P_D$}}
 \psfrag{E}{\hspace*{-0.5em}\raisebox{0.5ex}{$P_E$}}
 \psfrag{F}{\hspace*{0.5em}\raisebox{3.5ex}{$P_F$}}
