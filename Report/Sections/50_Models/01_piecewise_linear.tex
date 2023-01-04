@@ -1,7 +1,5 @@
 \section{Piecewise Linear Model}
 
-\todo{more structure?}
-
 The first model, we examined, is a simple piecewise linear function with four discontinuities.
 Its discontinuities are at $0, \frac{\pi}{2}, \pi,$ and $\frac{3 \pi}{2}$.
 \Cref{equ:pcw.lin.sympi} causes the discontinuities at $0$ and $\pi$ and also the symmetry $f(x + \pi) \equiv f(x) + \pi \mod 2 \pi$.
@@ -18,7 +16,7 @@ Each arm then is governed by \Cref{equ:pcw.lin.discpihalves}.
 It causes the discontinuities at $\frac{\pi}{2}$ and $\frac{3 \pi}{2}$ and also shows the linear nature of the function.
 Both parameters $\alpha$ and $\beta$ act here.
 $\alpha$ is the slope of the arms and $\beta$ is the offset of the first and third arms.
-Examples of how the function looks at different parameter values can be seen the cobweb diagrams in \Cref{fig:pcw.lin.CobwebA-C}.
+Examples of how the function looks at different parameter values can be seen in the cobweb diagrams in \Cref{fig:pcw.lin.CobwebA-C}.
 
 \begin{align}
     h(x) & = \begin{cases}
@@ -43,7 +41,7 @@ They give the modulus of $x$ and some multiple of $\frac{\pi}{2}$.
 \Cref{fig:pcw.lin.2d} shows a bifurcation diagram of the model described above.
 The parameter $\beta$ is varied on the interval $[0, 2 \pi]$, because the model will behave the same for $[0, 2 \pi] + k \cdot 2 \pi$.
 This is because the result of the function will be taken modulo $2 \pi$ in \Cref{equ:pcw.lin.f}.
-The parameter $\alpha$ is varied on the interval $[0, 1]$, because for $\alpha < 0$ nothing especially interesting happens and for $\alpha > 1$ the model shows no periodic behavior.
+The parameter $\alpha$ is varied on the interval $[0, 1]$ because for $\alpha < 0$ nothing especially interesting happens and for $\alpha > 1$ the model shows no periodic behavior.
 
 \begin{figure}
     \centering
@@ -84,8 +82,8 @@ When we make the parameter $\beta$ smaller, the cycles move toward the left of t
 \Cref{fig:pcw.lin.CobwebA} shows the cycles at the edge of the arms, shortly after that, the cycles collide with the border of the arms.
 
 In the middle interval of \Cref{fig:pcw.lin.1D} with constant period 3, the cycles of $P_A$ are added with the fixed points of the left side.
-\todo{cite book about farey adding of cycles}
-These fixed points are now shown here but are in the arms $\A$ and $\C$ respectively.
+This Farey-like-adding of cycles is common in period-adding structures~\cite{avrutin2019continuous}.
+The fixed points are not shown here but are in the arms $\A$ and $\C$ respectively.
 The resulting cycles are $\A^2\B$ and $\C^2\D$ and are shown in \Cref{fig:pcw.lin.CobwebB,fig:pcw.lin.CobwebC}.
 These cobweb diagrams also make the movement of the cycles with decreasing parameter $\beta$, mentioned above, clear.
 At $P_B$, $\beta$ is bigger and the cycles are at the right edge of the arms.
@@ -116,7 +114,7 @@ At $P_C$, the cycles are again at the left edge of the arms.
 \end{figure}
 
 \Cref{fig:pcw.lin.CobwebD-F} shows three cobwebs for different points of the second 1D scan in \Cref{fig:pcw.lin.1DPlusPi}.
-You can see, that the cycles here do not follow Farey-adding like in the other 1D scan.
+You can see, that the cycles here do not follow Farey-like-adding like in the other 1D scan.
 This is of course because the three cobwebs do not belong to one period adding structure.
 The cycles are nonetheless interesting.
 The two-cycle at $P_D$, shown in \Cref{fig:pcw.lin.CobwebD}, has the symbolic sequence $\A\C$.
@@ -127,7 +125,7 @@ It is safe to assume, that in the period adding structure between the two points
 \Cref{fig:pcw.lin.CobwebF} shows the 4-cycle at the point $P_F$.
 It has the symbolic sequence $\A\D\C\B$ and is at the left edge of the arms.
 Lowering the parameter $\beta$ will cause the cycle to collide with the borders and this in turn will lead to the period adding structure we see in the 1D scan in \Cref{fig:pcw.lin.1DPlusPi}.
-This period-adding structure will also follow the Farey-adding of this cycle and the 3-cycles at point $P_E$, shown in \Cref{fig:pcw.lin.CobwebE}.
+This period-adding structure will also follow the Farey-like-adding of this cycle and the 3-cycles at point $P_E$, shown in \Cref{fig:pcw.lin.CobwebE}.
 
 \begin{figure}
     \centering
