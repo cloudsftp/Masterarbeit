@@ -52,6 +52,8 @@ The parameter $\alpha$ is varied on the interval $[0, 1]$, because for $\alpha <
     \label{fig:pcw.lin.2d}
 \end{figure}
 
+\todo{add second red line}
+
 The two red lines mark the locations of the following one-dimensional scans keeping the parameter $\alpha$ fixed at $0.5$.
 \Cref{fig:pcw.lin.1D} shows the scan along the lower red line.
 There you can see a period-adding structure.
@@ -86,6 +88,7 @@ When we make the parameter $\beta$ smaller, the cycles move toward the left of t
 \Cref{fig:pcw.lin.CobwebA} shows the cycles at the edge of the arms, shortly after that, the cycles collide with the border of the arms.
 
 In the middle interval of \Cref{fig:pcw.lin.1D} with constant period 3, the cycles of $P_A$ are added with the fixed points of the left side.
+\todo{cite book about farey adding of cycles}
 These fixed points are now shown here but are in the arms $\A$ and $\C$ respectively.
 The resulting cycles are $\A^2\B$ and $\C^2\D$ and are shown in \Cref{fig:pcw.lin.CobwebB,fig:pcw.lin.CobwebC}.
 These cobweb diagrams also make the movement of the cycles with decreasing parameter $\beta$, mentioned above, clear.
@@ -114,4 +117,42 @@ At $P_C$, the cycles are again at the left edge of the arms.
     \end{subfigure}
     \caption{Cobwebs for first 1D Scan}
     \label{fig:pcw.lin.CobwebA-C}
+\end{figure}
+
+\Cref{fig:pcw.lin.CobwebD-F} shows three cobwebs for different points of the second 1D scan in \Cref{fig:pcw.lin.1DPlusPi}.
+You can see, that the cycles here do not follow Farey-adding like in the other 1D scan.
+This is of course because the three cobwebs do not belong to one period adding structure.
+The cycles are nonetheless interesting.
+The two-cycle at $P_D$, shown in \Cref{fig:pcw.lin.CobwebD}, has the symbolic sequence $\A\C$.
+It is on the right edge of the arms at this point and after colliding and skipping the period adding structure, two coexisting cycles appear, shown in \Cref{fig:pcw.lin.CobwebE}.
+They have symbolic sequences $\A\D\C$ and $\A\C\B$ respectively.
+It is safe to assume, that in the period adding structure between the two points, $P_D$ and $P_E$, the cycles follow Farrey-adding.
+
+\Cref{fig:pcw.lin.CobwebF} shows the 4-cycle at the point $P_F$.
+It has the symbolic sequence $\A\D\C\B$ and is at the left edge of the arms.
+Lowering the parameter $\beta$ will cause the cycle to collide with the borders and this in turn will lead to the period adding structure we see in the 1D scan in \Cref{fig:pcw.lin.1DPlusPi}.
+This period-adding structure will also follow the Farey-adding of this cycle and the 3-cycles at point $P_E$, shown in \Cref{fig:pcw.lin.CobwebE}.
+
+\begin{figure}
+    \centering
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{01_Linear_Slope_Offset/Cobweb_PointD/result.png}
+        \caption{$P_D$}
+        \label{fig:pcw.lin.CobwebD}
+    \end{subfigure}
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{01_Linear_Slope_Offset/Cobweb_PointE/result.png}
+        \caption{$P_E$}
+        \label{fig:pcw.lin.CobwebE}
+    \end{subfigure}
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{01_Linear_Slope_Offset/Cobweb_PointF/result.png}
+        \caption{$P_F$}
+        \label{fig:pcw.lin.CobwebF}
+    \end{subfigure}
+    \caption{Cobwebs for first 1D Scan}
+    \label{fig:pcw.lin.CobwebD-F}
 \end{figure}
