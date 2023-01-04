@@ -1,0 +1,15 @@
+*.o
+*.so
+*.tmp
+
+*.tna
+
+*.eps
+*.pdf
+*.sts
+Models/**/fragmaster.*
+Models/**/*-simple.png
+Viktor_Figures/*.png
+
+AnT
+Logs

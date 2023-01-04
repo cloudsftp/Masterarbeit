@@ -1,0 +1,87 @@
+dynamical_system = {
+  type = map,
+  name = "logistic map",
+  parameter_space_dimension = 2,
+  parameters = {
+    parameter[0] = {
+      value = 0.5,
+      name = "a"
+    },
+    parameter[1] = {
+      value = 0,
+      name = "b"
+    }
+  },
+  state_space_dimension = 1,
+  initial_state = (0.1),
+  reset_initial_states_from_orbit = false,
+  number_of_iterations = 10000,
+  s[0] = {
+    name = "",
+    equation_of_motion = "0"
+  },
+  s[1] = {
+    name = "",
+    equation_of_motion = "0"
+  }
+},
+scan = {
+  type = nested_items,
+  mode = 1,
+  item[0] = {
+    type = real_linear,
+    points = 3000,
+    min = 0.7,
+    max = 1.7,
+    object = "b"
+  }
+},
+investigation_methods = {
+  general_trajectory_evaluations = {
+    is_active = false,
+    saving = {
+    },
+    min_max_values = {
+    },
+    wave_numbers = {
+    },
+    statistics = {
+    },
+    pgm_output = {
+    }
+  },
+  period_analysis = {
+    is_active = true,
+    max_period = 128,
+    compare_precision = 1e-09,
+    period = true,
+    period_file = "period.tna",
+    cyclic_asymptotic_set = false,
+    cyclic_bif_dia_file = "bif_cyclic.tna",
+    acyclic_last_states = false,
+    acyclic_bif_dia_file = "bif_acyclic.tna",
+    cyclic_graphical_iteration = false,
+    cyclic_graph_iter_file = "cyclic_cobweb.tna",
+    acyclic_graphical_iteration = false,
+    acyclic_graph_iter_file = "acyclic_cobweb.tna",
+    using_last_points = 1528,
+    period_selections = false,
+    periods_to_select = (),
+    period_selection_file = "period_selection",
+    period_selection_file_extension = "tna"
+  },
+  band_counter = {
+  },
+  symbolic_analysis = {
+  },
+  rim_analysis = {
+  },
+  symbolic_image_analysis = {
+  },
+  lyapunov_exponents_analysis = {
+  },
+  dimensions_analysis = {
+  },
+  check_for_conditions = {
+  }
+}
