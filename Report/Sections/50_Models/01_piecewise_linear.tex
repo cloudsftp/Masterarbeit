@@ -18,7 +18,7 @@ Each arm then is governed by \Cref{equ:pcw.lin.discpihalves}.
 It causes the discontinuities at $\frac{\pi}{2}$ and $\frac{3 \pi}{2}$ and also shows the linear nature of the function.
 Both parameters $\alpha$ and $\beta$ act here.
 $\alpha$ is the slope of the arms and $\beta$ is the offset of the first and third arms.
-\todo{refer to later cobwebs}
+Examples of how the function looks at different parameter values can be seen the cobweb diagrams in \Cref{fig:pcw.lin.CobwebA-C}.
 
 \begin{align}
     h(x) & = \begin{cases}
@@ -77,10 +77,20 @@ The interval in the middle of each structure is not the biggest interval with a 
     \caption{1D Scans of Piecewise Linear Model showing Periods}
 \end{figure}
 
+\todo{adjust labels for second 1d scan}
+
 \Cref{fig:pcw.lin.CobwebA-C} shows a collection of cobwebs diagrams of the three points $P_A$ to $P_C$ marked in \Cref{fig:pcw.lin.1D}.
 Note that in this period-doubling structure, all cycles exist in pairs.
 At point $P_A$, there are two cycles of period 2 with the symbolic sequences $\A\B$ and $\C\D$ respectively.
-\todo{talk about cycles moving left, then period collision}
+When we make the parameter $\beta$ smaller, the cycles move toward the left of the arms.
+\Cref{fig:pcw.lin.CobwebA} shows the cycles at the edge of the arms, shortly after that, the cycles collide with the border of the arms.
+
+In the middle interval of \Cref{fig:pcw.lin.1D} with constant period 3, the cycles of $P_A$ are added with the fixed points of the left side.
+These fixed points are now shown here but are in the arms $\A$ and $\C$ respectively.
+The resulting cycles are $\A^2\B$ and $\C^2\D$ and are shown in \Cref{fig:pcw.lin.CobwebB,fig:pcw.lin.CobwebC}.
+These cobweb diagrams also make the movement of the cycles with decreasing parameter $\beta$, mentioned above, clear.
+At $P_B$, $\beta$ is bigger and the cycles are at the right edge of the arms.
+At $P_C$, the cycles are again at the left edge of the arms.
 
 \begin{figure}
     \centering
