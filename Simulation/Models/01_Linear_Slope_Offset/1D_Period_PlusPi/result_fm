@@ -5,8 +5,8 @@
 
 \psfrag{D}{\hspace*{0.5em}\raisebox{0.5ex}{$0$}}
 \psfrag{1}{\hspace*{0.1em}\raisebox{0.5ex}{$1$}}
-\psfrag{M}{\hspace*{0.3em}\raisebox{0.5ex}{$5$}}
-\psfrag{U}{\hspace*{-0.5em}\raisebox{0.5ex}{$10$}}
+\psfrag{M}{\hspace*{0.3em}\raisebox{0.5ex}{$10$}}
+\psfrag{U}{\hspace*{-0.5em}\raisebox{0.5ex}{$20$}}
 
 \psfrag{x}{\hspace*{2.0em}\raisebox{0.5ex}{$\beta$}}
 \psfrag{y}{\hspace*{3.0em}\raisebox{0.5ex}{$p$}}
