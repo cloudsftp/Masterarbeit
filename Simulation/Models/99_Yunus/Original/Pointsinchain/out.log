@@ -1,0 +1,2304 @@
+
+
+--//------------/-------------------------------
+ // AnT 4.669  / Release 4c, (c) 1999-2011
+//------------/---------------------------------
+Name of the dynamical system: invertorNew
+Name of the configuration file: invertorNew.ant
+runmode: server
+loading the system... 
+Using a share object as systemfunction...
+system loaded successfully
+allocated size of the continuous orbit: 2
+the following real-valued objects are scannable:
+    E0
+    hi
+    initial_state[0][0]
+    mu
+    parameter[0]
+    parameter[1]
+    parameter[2]
+scannable objects inspected.
+starting scanMachine...
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+total: 40000, calculated 500, progress 1.25%%.
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+total: 40000, calculated 911, progress 2.28%%.
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+total: 40000, calculated 1364, progress 3.41%%.
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+total: 40000, calculated 1631, progress 4.08%%.
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+total: 40000, calculated 2083, progress 5.21%%.
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+total: 40000, calculated 2439, progress 6.10%%.
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+total: 40000, calculated 2807, progress 7.02%%.
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+total: 40000, calculated 3348, progress 8.37%%.
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+total: 40000, calculated 3719, progress 9.30%%.
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+total: 40000, calculated 4100, progress 10.25%%.
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+total: 40000, calculated 4471, progress 11.18%%.
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+total: 40000, calculated 4842, progress 12.11%%.
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+total: 40000, calculated 5212, progress 13.03%%.
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+total: 40000, calculated 5764, progress 14.41%%.
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+total: 40000, calculated 6134, progress 15.34%%.
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+total: 40000, calculated 6511, progress 16.28%%.
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+total: 40000, calculated 6881, progress 17.20%%.
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+total: 40000, calculated 7241, progress 18.10%%.
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+total: 40000, calculated 7609, progress 19.02%%.
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+total: 40000, calculated 8151, progress 20.38%%.
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+total: 40000, calculated 8515, progress 21.29%%.
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+total: 40000, calculated 8885, progress 22.21%%.
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+total: 40000, calculated 9241, progress 23.10%%.
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+total: 40000, calculated 9763, progress 24.41%%.
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+total: 40000, calculated 10107, progress 25.27%%.
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+total: 40000, calculated 10456, progress 26.14%%.
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+total: 40000, calculated 10821, progress 27.05%%.
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+total: 40000, calculated 11327, progress 28.32%%.
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+total: 40000, calculated 11665, progress 29.16%%.
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+total: 40000, calculated 12013, progress 30.03%%.
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+total: 40000, calculated 12519, progress 31.30%%.
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+total: 40000, calculated 12851, progress 32.13%%.
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+total: 40000, calculated 13201, progress 33.00%%.
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+total: 40000, calculated 13702, progress 34.26%%.
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+total: 40000, calculated 14031, progress 35.08%%.
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+total: 40000, calculated 14548, progress 36.37%%.
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+total: 40000, calculated 14874, progress 37.19%%.
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+total: 40000, calculated 15206, progress 38.02%%.
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+total: 40000, calculated 15712, progress 39.28%%.
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+total: 40000, calculated 16032, progress 40.08%%.
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+total: 40000, calculated 16539, progress 41.35%%.
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+total: 40000, calculated 16848, progress 42.12%%.
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+total: 40000, calculated 17317, progress 43.29%%.
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+total: 40000, calculated 17630, progress 44.08%%.
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+total: 40000, calculated 18120, progress 45.30%%.
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+total: 40000, calculated 18434, progress 46.09%%.
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+total: 40000, calculated 18928, progress 47.32%%.
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+total: 40000, calculated 19244, progress 48.11%%.
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+total: 40000, calculated 19738, progress 49.34%%.
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+total: 40000, calculated 20045, progress 50.11%%.
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+total: 40000, calculated 20497, progress 51.24%%.
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+total: 40000, calculated 20820, progress 52.05%%.
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+total: 40000, calculated 21285, progress 53.21%%.
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+total: 40000, calculated 21722, progress 54.30%%.
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+total: 40000, calculated 22033, progress 55.08%%.
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+total: 40000, calculated 22490, progress 56.23%%.
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+total: 40000, calculated 22820, progress 57.05%%.
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+total: 40000, calculated 23303, progress 58.26%%.
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+total: 40000, calculated 23777, progress 59.44%%.
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+total: 40000, calculated 24079, progress 60.20%%.
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+total: 40000, calculated 24507, progress 61.27%%.
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+total: 40000, calculated 24809, progress 62.02%%.
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+total: 40000, calculated 25253, progress 63.13%%.
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+total: 40000, calculated 25708, progress 64.27%%.
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+total: 40000, calculated 26010, progress 65.03%%.
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+total: 40000, calculated 26453, progress 66.13%%.
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+total: 40000, calculated 26859, progress 67.15%%.
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+total: 40000, calculated 27312, progress 68.28%%.
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+total: 40000, calculated 27604, progress 69.01%%.
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+total: 40000, calculated 28064, progress 70.16%%.
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+total: 40000, calculated 28486, progress 71.22%%.
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+total: 40000, calculated 28841, progress 72.10%%.
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+total: 40000, calculated 29262, progress 73.16%%.
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+total: 40000, calculated 29707, progress 74.27%%.
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+total: 40000, calculated 30049, progress 75.12%%.
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+total: 40000, calculated 30437, progress 76.09%%.
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+total: 40000, calculated 30801, progress 77.00%%.
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+total: 40000, calculated 31335, progress 78.34%%.
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+total: 40000, calculated 31715, progress 79.29%%.
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+total: 40000, calculated 32026, progress 80.06%%.
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+total: 40000, calculated 32465, progress 81.16%%.
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+total: 40000, calculated 32872, progress 82.18%%.
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+total: 40000, calculated 33272, progress 83.18%%.
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+total: 40000, calculated 33645, progress 84.11%%.
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+total: 40000, calculated 34003, progress 85.01%%.
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+total: 40000, calculated 34411, progress 86.03%%.
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+total: 40000, calculated 34809, progress 87.02%%.
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+total: 40000, calculated 35350, progress 88.38%%.
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+total: 40000, calculated 35649, progress 89.12%%.
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+total: 40000, calculated 36061, progress 90.15%%.
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+total: 40000, calculated 36462, progress 91.16%%.
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+total: 40000, calculated 36894, progress 92.23%%.
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+total: 40000, calculated 37315, progress 93.29%%.
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+total: 40000, calculated 37611, progress 94.03%%.
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+total: 40000, calculated 38004, progress 95.01%%.
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+total: 40000, calculated 38423, progress 96.06%%.
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+total: 40000, calculated 38818, progress 97.05%%.
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+total: 40000, calculated 39242, progress 98.11%%.
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+total: 40000, calculated 39653, progress 99.13%%.
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+total: 40000, calculated 40000, progress 100.00%%.
+closing socket: 4
+accepting connections now
+connection established
+on opened socket: 4
+Done.
+closing socket: 4
+772.08481 sec
+51.80778003 scanpoints/sec
+scanMachine stopped.
+simulation successfully completed.
+Bye!
