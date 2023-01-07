@@ -69,7 +69,7 @@ MODEL_DIR="$(find "${MODELS_DIR}" -name "*${MODEL_NAME}")"
 [ -z "$MODEL_DIR" ] && echo "Could not find a model w/ name ${MODEL_NAME}" && exit 1
 cd "$MODEL_DIR"
 
-MODEL_CPP_FILE="$(find "${MODEL_DIR}" -name "*.cpp")"
+MODEL_CPP_FILE="$(find "${MODEL_DIR}" -name "*.cpp" -maxdepth 1)"
 [ -z "$MODEL_CPP_FILE" ] && echo "No .cpp file in ${MODEL_DIR}" && exit 1
 
 DIAGRAM_DIR="${MODEL_DIR}/${DIAGRAM_NAME}"
@@ -191,6 +191,10 @@ case "${DIAGRAM_NAME}" in
         fi
 
         GNUPLOT_SCRIPT_NAME+="D-period"
+        
+        if echo "${DIAGRAM_NAME}" | grep -q "Diag"; then
+            GNUPLOT_SCRIPT_NAME+="-diag"
+        fi
         ;;
     *Cobweb*)
         GNUPLOT_SCRIPT_NAME="cobweb"
