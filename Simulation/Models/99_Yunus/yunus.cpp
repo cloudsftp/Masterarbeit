@@ -40,9 +40,8 @@ real_t half(real_t xk, real_t Kp, int StepAlg, const Array<real_t>& parameters)
 {
   real_t zk, za, zb, z, fk, fa, fb;
   zk = 0;
-  fa = F(xk, zk, Kp, StepAlg, parameters);
-  do
-  {
+
+  do {
     za = zk;
     fa = F(xk, za, Kp, StepAlg, parameters);
     zk += 0.02;
@@ -53,14 +52,14 @@ real_t half(real_t xk, real_t Kp, int StepAlg, const Array<real_t>& parameters)
   fa = F(xk, za, Kp, StepAlg, parameters);
   fb = F(xk, zb, Kp, StepAlg, parameters);
 
-  do
-  {
+  do {
     z = 0.5*(za+zb);
 
     fk = F(xk, z, Kp, StepAlg, parameters);;
-    if (fa*fk < 0) zb = z;
-    else
-    {
+
+    if (fa*fk < 0) {
+      zb = z;
+    } else {
       za = z;
       fa = fk;
     }
@@ -84,73 +83,44 @@ bool invertor (const Array<real_t>& currentState,
 
   xk = currentState[0];
 
-  static long K = 0;
-  static bool finish = false;
-
-  if ((xk>=0) and (xk<Pi/2))
-  {
+  if ((xk>=0) and (xk<Pi/2)) {
     Kp = 1;
-  }
-  else
-  {
-    if ((xk>=3.0/2*Pi) and (xk<=2*Pi))
-    {
+  } else {
+    if ((xk>=3.0/2*Pi) and (xk<=2*Pi)) {
       Kp = 1;
-    }
-    else
-    {
+    } else {
       Kp = -1;
     }
   }
-  if (Kp == 1)
-  {
-    for (StepAlg = 1; StepAlg <=2; ++StepAlg)
-    {
-      z = half(xk, Kp, StepAlg, parameters);
-      if (StepAlg == 1) z_k = z;
-      else z_0 = z;
-    }
-    if (z_k<z_0)
-    {
+
+  for (StepAlg = 1; StepAlg <=2; ++StepAlg) {
+    z = half(xk, Kp, StepAlg, parameters);
+    if (StepAlg == 1) z_k = z;
+    else z_0 = z;
+  }
+  
+  z_k = half(xk, Kp, 1, parameters);
+  z_0 = half(xk, Kp, 2, parameters);
+  
+  if (Kp == 1) {
+    if (z_k<z_0) {
       xk = mod(xk+z_k, 2*Pi);
-      StepAlg = 3;
-      z_k = half(xk, Kp, StepAlg, parameters);
-      xk = mod(xk+z_k, 2*Pi);
-    }
-    else
-    {
+    } else {
       Kp = -1;
       xk = mod(xk+z_0, 2*Pi);
-      StepAlg = 3;
-      z_k = half(xk, Kp, StepAlg, parameters);
-      xk = mod(xk+z_k, 2*Pi);
     }
-  }
-  else
-  {
-    for (StepAlg = 1; StepAlg <=2; ++StepAlg)
-    {
-      z = half(xk, Kp, StepAlg, parameters);
-      if (StepAlg == 1) z_k = z;
-      else z_0 = z;
-    }
-    if (z_k < z_0)
-    {
+  } else {
+    if (z_k < z_0) {
       Kp = -1;
       xk = mod(xk+z_k, 2*Pi);
-      StepAlg = 3;
-      z_k = half(xk, Kp, StepAlg, parameters);
-      xk = mod(xk+z_k, 2*Pi);
-    }
-    else
-    {
+    } else {
       Kp = +1;
       xk = mod(xk+z_0, 2*Pi);
-      StepAlg = 3;
-      z_k = half(xk, Kp, StepAlg, parameters);
-      xk = mod(xk+z_k, 2*Pi);
     }
   }
+
+  z_k = half(xk, Kp, 3, parameters);
+  xk = mod(xk+z_k, 2*Pi);
 
   RHS[0] = xk;
   return true;
