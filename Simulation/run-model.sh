@@ -184,7 +184,7 @@ echo
 
 RESULT_FIGURE_NAME="result"
 
-case "${DIAGRAM_NAME}" in
+case "$(basename ${DIAGRAM_NAME})" in
     *Period*)
         if echo "${DIAGRAM_NAME}" | grep -q "2D"; then
             GNUPLOT_SCRIPT_NAME="2"
