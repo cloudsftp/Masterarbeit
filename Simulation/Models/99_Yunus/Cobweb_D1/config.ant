@@ -8,11 +8,11 @@ dynamical_system = {
   parameter_space_dimension = 3,
   parameters = {
     parameter[0] = {
-      value = 17.1,
+      value = 17.23,
       name = "E0"
     },
     parameter[1] = {
-      value = 0.549,
+      value = 0.5932,
       name = "hi"
     },
     parameter[2] = {

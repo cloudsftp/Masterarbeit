@@ -9,6 +9,8 @@ ANT_LIB_DIR="${ANT_DIR}/lib64"
 LOG_DIR="$(pwd)/Logs"
 SCRIPT_DIR="$(pwd)/Scripts"
 
+GENERATE_FUNCTION_DATA="$(pwd)/generate-function-data.py"
+
 please_compile_msg() {
     echo "AnT is not correctly installed, please run ./build.sh"
     exit 2
@@ -199,7 +201,8 @@ case "${DIAGRAM_NAME}" in
     *Cobweb*)
         GNUPLOT_SCRIPT_NAME="cobweb"
         CHECK_FOR_DIMENS_FILE_REGARDLESS="true"
-        [ ! -f "${MODEL_DIR}/model.plt" ] && echo "No model.plt file in ${MODEL_DIR}" && exit 1
+        [ ! -f "${MODEL_DIR}/model.plt" ] && [ -f "${MODEL_DIR}/function.py" ] && python "${GENERATE_FUNCTION_DATA}" --model-dir "${MODEL_DIR}" --diagram-name "${DIAGRAM_NAME}"
+        [ ! -f "${MODEL_DIR}/model.plt" ] && [ ! -f "${DIAGRAM_DIR}/function.dat" ] && echo "Requires either model.plt in ${MODEL_DIR} or function.dat in ${DIAGRAM_DIR}" && exit 1
         ;;
     *)
         echo "No known gnuplot script for ${DIAGRAM_NAME}"
@@ -223,7 +226,7 @@ fi
 GNUPLOT_SCRIPT="${SCRIPT_DIR}/${GNUPLOT_SCRIPT_NAME}.plt"
 RESULT_FIGURE="${RESULT_FIGURE_NAME}.png"
 
-gnuplot -e "script_dir='${SCRIPT_DIR}'; model_dir='${MODEL_DIR}'" "${GNUPLOT_SCRIPT}"
+gnuplot -e "script_dir='${SCRIPT_DIR}'; model_dir='${MODEL_DIR}'; diagram_dir='${DIAGRAM_DIR}'" "${GNUPLOT_SCRIPT}"
 [ "$?" -ne 0 ] && echo "Problem executing gnuplot script ${GNUPLOT_SCRIPT}" && exit 1
 
 if [ -z "$SIMPLIFIED_PLOT" ]; then

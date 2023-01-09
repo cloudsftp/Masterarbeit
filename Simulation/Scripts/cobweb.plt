@@ -1,5 +1,5 @@
 reset
-set loadpath script_dir model_dir
+set loadpath script_dir model_dir diagram_dir
 
 load 'terminal-eps.plt'
 load 'ranges-and-tics.plt'
