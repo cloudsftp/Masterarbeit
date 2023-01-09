@@ -67,7 +67,7 @@ while read -r LINE; do
     if [ -z "${PARSING}" ]; then
         [[ "${LINE}" =~ ^parameter"[".+"]" ]] && PARSING="true" 
     else
-        if [[ "${LINE}" =~ ^\},?$ ]]; then
+        if [[ "${LINE}" == *"}"* ]]; then
             PARSING=""
 
             PARAMETER_VALUES["${NAME}"]="${VALUE}"

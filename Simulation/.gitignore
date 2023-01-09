@@ -3,6 +3,7 @@
 *.tmp
 
 *.tna
+*.dat
 
 *.eps
 *.pdf
