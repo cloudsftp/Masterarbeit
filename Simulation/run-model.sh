@@ -81,7 +81,7 @@ DIAGRAM_DIR="${MODEL_DIR}/${DIAGRAM_NAME}"
 # Compile model
 ################
 
-"$BUILD_SYS"
+PATH="${PATH}:${ANT_BIN_DIR}" "${BUILD_SYS}"
 
 ############
 # Run model
