@@ -65,10 +65,11 @@ def load_model_from_dict(
     obj: Model,
     config: Union[Dict[str, Any], Any],
 ):
-    # TODO: check if dict
+    if not isinstance(config, dict):
+        raise Exception('Model configuration should be dict')
 
     if not 'parameters' in config:
-        raise Exception(f'"parameters" missing in {config_file_path}')
+        raise Exception(f'"parameters" missing in model configuration')
     
     parameters = config['parameters']
     if not isinstance(parameters, list):

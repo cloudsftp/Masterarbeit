@@ -67,7 +67,8 @@ def load_parameter_range_specification_from_dict(
     config: Union[Dict[str, Any], Any],
     model: Model,
 ):
-    # TODO check is dict
+    if not isinstance(config, dict):
+        raise Exception('Diagram parameter range specification should be dict')
     
     if 'name' not in config:
         raise Exception('"name" not in diagram  parameter range specification')        
@@ -101,8 +102,9 @@ def load_parameter_range_from_dict(
     config: Union[Dict[str, Any], Any],
     model: Model,
 ):
-    # TODO check is dict
-
+    if not isinstance(config, dict):
+        raise Exception('Diagram parameter range should be dict')
+    
     if 'type' not in config:
         raise Exception('"type" not in diagram parameter range configuration')
 
@@ -135,10 +137,11 @@ def load_diagram_from_dict(
     config: Union[Dict[str, Any], Any],
     model: Model,
 ):
-    # TODO: check if dict
+    if not isinstance(config, dict):
+        raise Exception('Diagram configuration should be dict')
            
     if 'type' not in config:
-        raise Exception(f'"type" missing in {config_file_path}')
+        raise Exception(f'"type" missing in diagram configuration')
 
     type = config['type']
     if type == 'period':
