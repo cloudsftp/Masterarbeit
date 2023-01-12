@@ -53,13 +53,17 @@ class Model(object):
                 str(build_system),
                 cwd=self.path,
                 stdout=subprocess.DEVNULL,
+                stderr=subprocess.PIPE,
             )
             
             if compile_proc.returncode != 0:
+                print(compile_proc.stderr.decode())
+                print()
+
                 raise Exception(f'Could not compile {model_source_file_path}')
             
-            info('Done')
+            info('Done\n')
         
         else:
-            info(f'Not compiling {model_source_file_path}, since it has already been compiled')
+            info(f'Not compiling {model_source_file_path}, since it has already been compiled\n')
 
