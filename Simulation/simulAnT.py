@@ -17,6 +17,7 @@ def main(model_name: str, diagram_name: str):
     model.compile()
     
     diagram = Diagram(diagram_path, model)
+    print(diagram.scan[0].parameter_specs[0].name)
 
 
 if __name__ == "__main__":
