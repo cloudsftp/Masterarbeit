@@ -1,0 +1,20 @@
+{
+    "type": "scan",
+    "scan": [
+        {
+            "type": "1D linear",
+            "resolution": 1000,
+            "parameter": "muL",
+            "start": -0.2,
+            "stop": 2
+        },
+        {
+            "type": "1D linear",
+            "resolution": 1000,
+            "parameter": "muR",
+            "start": 0.2,
+            "stop": -2
+        }
+    ],
+    "animation": null
+}
