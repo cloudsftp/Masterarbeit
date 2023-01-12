@@ -1,8 +1,11 @@
 #!/usr/bin/env python
 
+from typing import Optional
 import argparse
 import re
 import os
+
+from configuration.models import Model
 
 def find_fullpath(name: str, root: str = None) -> str:
     if not root:
@@ -11,7 +14,7 @@ def find_fullpath(name: str, root: str = None) -> str:
     pattern: re.Pattern = re.compile(fr"^.*{name}$")
 
     for candidate, _, _ in os.walk(root):
-        match: re.Match = re.match(pattern, candidate)
+        match: Optional[re.Match] = re.match(pattern, candidate)
         if match:
             return os.path.abspath(candidate)
 
@@ -23,8 +26,7 @@ def main(model_name: str, diagram_name: str):
     model_path: str = find_fullpath(model_name)
     diagram_path: str = find_fullpath(diagram_name, root=model_path)
     
-    print(model_path, diagram_path)
-
+    model = Model(model_path)
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
