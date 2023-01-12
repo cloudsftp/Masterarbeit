@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-from typing import Dict, List, Any
+from typing import Dict, List, Union, Any
 from dataclasses import dataclass
 from pathlib import Path
 import json
@@ -24,22 +24,9 @@ class Model(object):
         config_file_path: Path = model_path / 'model.json'
             
         with config_file_path.open() as config_file:
-            config: Dict[str, Any] = json.load(config_file)
+            config: Union[Dict[str, Any], Any] = json.load(config_file)
             
-            if not 'parameters' in config:
-                raise Exception(f'"parameters" missing in {config_file_path}')
-            
-            parameters = config['parameters']
-            if not isinstance(parameters, list):
-                raise Exception(f'"parameters" in {config_file} should be a list')
-            
-            self.parameters = []
-            for parameter in parameters:
-                if len(parameter) != 1:
-                    raise Exception(f'Parameter {parameter} should only have one entry')
-
-                for name in parameter:
-                    self.parameters.append(Parameter(name, parameter[name]))
+            load_model_from_dict(self, config)
     
     def compile(self):
         model_target_file_path: Path = self.path / 'model.so'
@@ -65,3 +52,32 @@ class Model(object):
         else:
             info(f'Not compiling {model_source_file_path}, since it has already been compiled\n')
 
+
+
+
+
+
+
+
+
+
+def load_model_from_dict(
+    obj: Model,
+    config: Union[Dict[str, Any], Any],
+):
+    # TODO: check if dict
+
+    if not 'parameters' in config:
+        raise Exception(f'"parameters" missing in {config_file_path}')
+    
+    parameters = config['parameters']
+    if not isinstance(parameters, list):
+        raise Exception(f'"parameters" in {config_file} should be a list')
+    
+    obj.parameters = []
+    for parameter in parameters:
+        if len(parameter) != 1:
+            raise Exception(f'Parameter {parameter} should only have one entry')
+
+        for name in parameter:
+            obj.parameters.append(Parameter(name, parameter[name]))
