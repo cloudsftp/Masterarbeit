@@ -16,7 +16,7 @@ def main(model_name: str, diagram_name: str):
     model = Model(model_path)
     model.compile()
     
-    diagram = Diagram(diagram_path)
+    diagram = Diagram(diagram_path, model)
 
 
 if __name__ == "__main__":

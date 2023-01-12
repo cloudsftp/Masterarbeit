@@ -17,7 +17,6 @@ class Parameter(object):
 
 class Model(object):
     path: Path
-    num_parameters: int
     parameters: List[Parameter]
 
     def __init__(self, model_path: Path):
@@ -34,7 +33,6 @@ class Model(object):
             if not isinstance(parameters, list):
                 raise Exception(f'"parameters" in {config_file} should be a list')
             
-            self.num_parameters = len(parameters)
             self.parameters = []
             for parameter in parameters:
                 if len(parameter) != 1:

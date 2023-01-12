@@ -2,18 +2,26 @@
     "type": "period",
     "scan": [
         {
-            "type": "1D linear",
+            "type": "linear",
             "resolution": 1000,
-            "parameter": "muL",
-            "start": -0.2,
-            "stop": 2
+            "parameters": [
+                {
+                    "name": "muL",
+                    "start": -0.2,
+                    "stop": 2
+                }
+            ]
         },
         {
-            "type": "1D linear",
+            "type": "linear",
             "resolution": 1000,
-            "parameter": "muR",
-            "start": 0.2,
-            "stop": -2
+            "parameters": [
+                {
+                    "name": "muR",
+                    "start": 0.2,
+                    "stop": -2
+                }
+            ]
         }
     ],
     "animation": null
