@@ -1,32 +1,20 @@
 #!/usr/bin/env python
 
 from typing import Optional
+from pathlib import Path
 import argparse
-import re
-import os
 
+from util.file import find_fullpath
 from configuration.models import Model
-
-def find_fullpath(name: str, root: str = None) -> str:
-    if not root:
-        root = os.curdir
-
-    pattern: re.Pattern = re.compile(fr"^.*{name}$")
-
-    for candidate, _, _ in os.walk(root):
-        match: Optional[re.Match] = re.match(pattern, candidate)
-        if match:
-            return os.path.abspath(candidate)
-
-    raise Exception(f"Full path of {name} not found in {root}")
-
 
 
 def main(model_name: str, diagram_name: str):
-    model_path: str = find_fullpath(model_name)
-    diagram_path: str = find_fullpath(diagram_name, root=model_path)
+    model_path: Path = find_fullpath(model_name)
+    diagram_path: Path = find_fullpath(diagram_name, root=model_path)
     
     model = Model(model_path)
+    model.compile()
+
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
