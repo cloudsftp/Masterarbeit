@@ -6,6 +6,7 @@ import argparse
 
 from util.file import find_fullpath
 from configuration.models import Model
+from configuration.diagrams import Diagram
 
 
 def main(model_name: str, diagram_name: str):
@@ -14,6 +15,8 @@ def main(model_name: str, diagram_name: str):
     
     model = Model(model_path)
     model.compile()
+    
+    diagram = Diagram(diagram_path)
 
 
 if __name__ == "__main__":

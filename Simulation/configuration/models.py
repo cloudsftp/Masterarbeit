@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-from typing import Dict, List
+from typing import Dict, List, Any
 from dataclasses import dataclass
 from pathlib import Path
 import json
@@ -28,7 +28,7 @@ class Model(object):
             config: Dict[str, Any] = json.load(config_file)
             
             if not 'parameters' in config:
-                raise Exception(f'"parameters" missing in {config_file}')
+                raise Exception(f'"parameters" missing in {config_file_path}')
             
             parameters = config['parameters']
             if not isinstance(parameters, list):

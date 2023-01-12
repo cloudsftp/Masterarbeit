@@ -1,5 +1,5 @@
 {
-    "type": "scan",
+    "type": "period",
     "scan": [
         {
             "type": "1D linear",
