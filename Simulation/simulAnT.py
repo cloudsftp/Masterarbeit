@@ -17,9 +17,7 @@ def main(model_name: str, diagram_name: str):
     model.compile()
     
     diagram = Diagram(diagram_path, model)
-    generate_ant_config_files(model, diagram)
-
-    print(diagram.parameters)
+    generate_ant_config_files(diagram)
 
 
 if __name__ == "__main__":
