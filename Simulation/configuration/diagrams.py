@@ -37,6 +37,7 @@ class Diagram(object):
     model: Model
 
     path: Path
+    config_file_path: Path
     type: DiagramType
 
     parameters: Parameters                  # parameters differing from model parameters
@@ -47,9 +48,9 @@ class Diagram(object):
         self.model = model
 
         self.path = diagram_path
-        config_file_path = diagram_path / 'config.json'
+        self.config_file_path = diagram_path / 'config.json'
 
-        with config_file_path.open() as config_file:
+        with self.config_file_path.open() as config_file:
             config: Dict[str, Any] = json.load(config_file)
  
             load_diagram_from_dict(self, config, model)

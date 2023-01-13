@@ -1,0 +1,4 @@
+dynamical_system = {
+                type = map,
+                name = "map",
+                parameter_space_dimension = 4,

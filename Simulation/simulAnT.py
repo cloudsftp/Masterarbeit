@@ -7,7 +7,7 @@ import argparse
 from util.file import find_fullpath
 from configuration.models import Model
 from configuration.diagrams import Diagram
-from execution.ant import generate_ant_config_files
+from execution.execute import generate_diagram
 
 def main(model_name: str, diagram_name: str):
     model_path: Path = find_fullpath(model_name)
@@ -17,7 +17,7 @@ def main(model_name: str, diagram_name: str):
     model.compile()
     
     diagram = Diagram(diagram_path, model)
-    generate_ant_config_files(diagram)
+    generate_diagram(diagram)
 
 
 if __name__ == "__main__":

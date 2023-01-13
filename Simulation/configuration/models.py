@@ -20,13 +20,14 @@ def join_parameters(old: Parameters, new: Parameters) -> Parameters:
 
 class Model(object):
     path: Path
+    config_file_path: Path
     parameters: Parameters
 
     def __init__(self, model_path: Path):
         self.path = model_path
-        config_file_path: Path = model_path / 'model.json'
+        self.config_file_path: Path = model_path / 'model.json'
             
-        with config_file_path.open() as config_file:
+        with self.config_file_path.open() as config_file:
             config: Union[Dict[str, Any], Any] = json.load(config_file)
             
             load_model_from_dict(self, config)
