@@ -1,5 +1,6 @@
 {
     "type": "period",
+    "parameters": {},
     "scan": [
         {
             "type": "linear",

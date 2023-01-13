@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-from typing import Dict, List, Union, Any
+from typing import Dict, List, Union, Any, Optional
 from dataclasses import dataclass
 from pathlib import Path
 import json
@@ -10,14 +10,17 @@ from util.file import is_outdated
 from util.execute import build_system
 from util.output import info
 
-@dataclass
-class Parameter(object):
-    name: str
-    default: float
+Parameters = Dict[str, Union[float, int]]
+
+def join_parameters(old: Parameters, new: Parameters) -> Parameters:
+    copy = old.copy()
+    copy.update(new)
+    return copy
+
 
 class Model(object):
     path: Path
-    parameters: List[Parameter]
+    parameters: Parameters
 
     def __init__(self, model_path: Path):
         self.path = model_path
@@ -72,13 +75,11 @@ def load_model_from_dict(
         raise Exception(f'"parameters" missing in model configuration')
     
     parameters = config['parameters']
-    if not isinstance(parameters, list):
-        raise Exception(f'"parameters" in {config_file} should be a list')
+    if not isinstance(parameters, dict):
+        raise Exception('"parameters" in model config file should be a dict')
     
-    obj.parameters = []
-    for parameter in parameters:
-        if len(parameter) != 1:
-            raise Exception(f'Parameter {parameter} should only have one entry')
-
-        for name in parameter:
-            obj.parameters.append(Parameter(name, parameter[name]))
+    for name in parameters:
+        if not (isinstance(parameters[name], float) or isinstance(parameters[name], int)):
+            raise Exception(f'Parameter {name} in model config file should be float or int')
+    
+    obj.parameters = parameters

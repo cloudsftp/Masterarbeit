@@ -5,7 +5,7 @@ from pathlib import Path
 from enum import Enum
 import json
 
-from configuration.models import Model
+from configuration.models import Model, Parameters, join_parameters
 
 class DiagramType(Enum):
     PERIOD = 0,
@@ -39,11 +39,12 @@ class Diagram(object):
     path: Path
     type: DiagramType
 
+    parameters: Parameters                  # parameters differing from model parameters
     scan: Optional[List[ParameterRange]]    # up to two dimensions possible (x, y)
     animation: Optional[ParameterRange]     # only one dimension possible (t)
     
     def __init__(self, diagram_path: Path, model: Model):
-        self.model = Model
+        self.model = model
 
         self.path = diagram_path
         config_file_path = diagram_path / 'config.json'
@@ -52,6 +53,8 @@ class Diagram(object):
             config: Dict[str, Any] = json.load(config_file)
  
             load_diagram_from_dict(self, config, model)
+        
+        self.parameters = join_parameters(model.parameters, self.parameters)
 
 
 
@@ -98,7 +101,7 @@ def load_parameter_range_specification_from_dict(
     obj.stop = stop
 
 def load_parameter_range_from_dict(
-    obj: ParameterRangeSpecification,
+    obj: ParameterRange,
     config: Union[Dict[str, Any], Any],
     model: Model,
 ):
@@ -141,7 +144,7 @@ def load_diagram_from_dict(
         raise Exception('Diagram configuration should be dict')
            
     if 'type' not in config:
-        raise Exception(f'"type" missing in diagram configuration')
+        raise Exception('"type" missing in diagram configuration')
 
     type = config['type']
     if type == 'period':
@@ -151,15 +154,30 @@ def load_diagram_from_dict(
     elif type == 'cobweb':
         obj.type = DiagramType.COBWEB
 
+    if 'parameters' not in config or not config['parameters']:
+        obj.parameters = {}
+    else:
+        parameters = config['parameters']
+        if not isinstance(parameters, dict):
+            raise Exception('"parameters" in diagram configuration should be dict')
+        
+        for name in parameters:
+            if not (isinstance(parameters[name], float) or isinstance(parameters[name], int)):
+                raise Exception(f'Parameter "{name}" in diagram configuration file should be float or int')
+        
+        obj.parameters = parameters
+
     if 'scan' not in config or not config['scan']:
         obj.scan = None
     else:
-        # TODO: check is list
+        scan = config['scan']
+        if not isinstance(scan, list):
+            raise Exception('"scan" in diagram configuration should be list')
 
         obj.scan = []
-        for parameter_range in config['scan']:
+        for parameter_range in scan:
             obj.scan.append(ParameterRange(parameter_range, model))
-    
+
     if 'animation' not in config or not config['animation']:
         obj.animation = None
     else:
