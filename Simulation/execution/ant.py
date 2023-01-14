@@ -12,20 +12,21 @@ def generate_ant_config_file(frame: frame.Frame):
         # return
     
     with frame.config_file_path.open('w') as ant_config_file:
-        ant_config_file.write(config_file_start(frame))
-        
-        ant_config_file.write(config_file_parameters(frame))
+        ant_config_file.write(config_dynamical_system_start(frame))
+        ant_config_file.write(config_dynamical_system_parameters(frame))
+        ant_config_file.write(config_dynamical_system_end(frame))
 
 
+# Dynamical System
 
-def config_file_start(frame: frame.Frame) -> str:
+def config_dynamical_system_start(frame: frame.Frame) -> str:
     return f'''dynamical_system = {{
     type = map,
     name = "map",
     parameter_space_dimension = {len(frame.parameters)},
 '''
 
-def config_file_parameters(frame: frame.Frame) -> str:
+def config_dynamical_system_parameters(frame: frame.Frame) -> str:
     res = '    parameters = {\n'
 
     cnt = 0
@@ -38,6 +39,14 @@ def config_file_parameters(frame: frame.Frame) -> str:
         cnt += 1
 
     res = res[:-2]
-    res += '\n    },'
+    res += '\n    },\n'
     
     return res
+
+def config_dynamical_system_end(frame: frame.Frame) -> str:
+    return f'''    state_space_dimension = 1,
+    initial_state = (0.1),
+    reset_initial_states_from_orbit = true,
+    number_of_iterations = 1000
+}},
+'''
