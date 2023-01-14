@@ -87,8 +87,8 @@ def load_parameter_range_specification_from_dict(
         raise Exception('"start" not in diagram  parameter range specification')        
         
     start = config['start']
-    if not isinstance(start, float):
-        raise Exception('"start" in diagram parameter range specification should be float')
+    if not (isinstance(start, float) or isinstance(start, int)):
+        raise Exception('"start" in diagram parameter range specification should be float or int')
 
     obj.start = start
 
@@ -96,8 +96,8 @@ def load_parameter_range_specification_from_dict(
         raise Exception('"stop" not in diagram  parameter range specification')        
         
     stop = config['stop']
-    if not isinstance(start, float):
-        raise Exception('"stop" in diagram parameter range specification should be float')
+    if not (isinstance(stop, float) or isinstance(stop, int)):
+        raise Exception('"stop" in diagram parameter range specification should be float or int')
 
     obj.stop = stop
 

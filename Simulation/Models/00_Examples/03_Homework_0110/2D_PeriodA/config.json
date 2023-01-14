@@ -19,8 +19,8 @@
             "parameters": [
                 {
                     "name": "muR",
-                    "start": 0.2,
-                    "stop": -2
+                    "start": -2,
+                    "stop": 0.2
                 }
             ]
         }
