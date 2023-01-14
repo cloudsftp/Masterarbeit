@@ -62,24 +62,27 @@ def config_dynamical_system_end(frame: frame.Frame) -> str:
 def config_scan_start(frame: frame.Frame) -> str:
     res = f'''scan = {{
     type = nested_items,
-    mode = {len(frame.diagram.scan)}'''
+    mode = '''
+    
+    if frame.diagram.scan and len(frame.diagram.scan) > 0:
+        res += f'{len(frame.diagram.scan)},\n'
 
-    if len(frame.diagram.scan) > 0:
-        res += ','
-    res += '\n'
+    else:
+        res += '0\n'
 
     return res
 
 def config_scan_items(frame: frame.Frame) -> str:
     res = ''
 
-    item_cnt = 0
-    for parameter_range in frame.diagram.scan:
-        if parameter_range.type == ParameterRangeType.LINEAR:
-            scan_type = 'real_linear'
+    if frame.diagram.scan and len(frame.diagram.scan) > 0:
+        item_cnt = 0
+        for parameter_range in frame.diagram.scan:
+            if parameter_range.type == ParameterRangeType.LINEAR:
+                scan_type = 'real_linear'
 
-            if len(parameter_range.parameter_specs) == 1:
-                res += f'''    item[{item_cnt}] = {{
+                if len(parameter_range.parameter_specs) == 1:
+                    res += f'''    item[{item_cnt}] = {{
         type = {scan_type},
         object = "{parameter_range.parameter_specs[0].name},
         points = {parameter_range.resolution},
@@ -87,23 +90,25 @@ def config_scan_items(frame: frame.Frame) -> str:
         min = {parameter_range.parameter_specs[0].stop}
     }},
 '''
+                else:
+                    raise Exception('2D linear diagonal scans not yet implemented!')
+            
             else:
-                raise Exception('2D linear diagonal scans not yet implemented!')
-        
-        else:
-            raise Exception('Parameter ranges besides linear not yet implemented!')
+                raise Exception('Parameter ranges besides linear not yet implemented!')
 
-        item_cnt += 1
-    
-    res = res[:-2]
-    res += '\n},\n'
+            item_cnt += 1
+        
+        res = res[:-2]
+        res += '\n'
+
+    res += '},\n'
     
     return res
 
 # Investigation methods
 
 def config_inverstigation_methods(frame: frame.Frame) -> str:
-    if frame.diagram.type != DiagramType.PERIOD and frame.diagra.type != DiagramType.COBWEB:
+    if frame.diagram.type != DiagramType.PERIOD and frame.diagram.type != DiagramType.COBWEB:
         raise Exception('Only period investigation and cobwebs implemented for now!')
     
     period = 'false'
