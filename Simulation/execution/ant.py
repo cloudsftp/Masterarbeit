@@ -19,6 +19,8 @@ def generate_ant_config_file(frame: frame.Frame):
         
         ant_config_file.write(config_scan_start(frame))
         ant_config_file.write(config_scan_items(frame))
+        
+        ant_config_file.write(config_inverstigation_methods(frame))
 
 
 # Dynamical System
@@ -97,3 +99,46 @@ def config_scan_items(frame: frame.Frame) -> str:
     res += '\n},\n'
     
     return res
+
+# Investigation methods
+
+def config_inverstigation_methods(frame: frame.Frame) -> str:
+    return f'''investigation_methods = {{
+    general_trajectory_evaluations = {{
+    }},
+    period_analysis = {{
+        is_active = true,
+        max_period = 128,
+        compare_precision = 1e-09,
+        period = true,
+        period_file = "period.tna",
+        cyclic_asymptotic_set = false,
+        cyclic_bif_dia_file = "bif_cyclic.tna",
+        acyclic_last_states = false,
+        acyclic_bif_dia_file = "bif_acyclic.tna",
+        cyclic_graphical_iteration = false,
+        cyclic_graph_iter_file = "cyclic_cobweb.tna",
+        acyclic_graphical_iteration = false,
+        acyclic_graph_iter_file = "acyclic_cobweb.tna",
+        using_last_points = 1528,
+        period_selections = false,
+        periods_to_select = (),
+        period_selection_file = "period_selection",
+        period_selection_file_extension = "tna"
+    }},
+    band_counter = {{
+    }},
+    symbolic_analysis = {{
+    }},
+    rim_analysis = {{
+    }},
+    symbolic_image_analysis = {{
+    }},
+    lyapunov_exponents_analysis = {{
+    }},
+    dimensions_analysis = {{
+    }},
+    check_for_conditions = {{
+    }}
+}}
+'''

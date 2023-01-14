@@ -45,17 +45,7 @@ scan = {
 },
 investigation_methods = {
   general_trajectory_evaluations = {
-    is_active = false,
-    saving = {
-    },
-    min_max_values = {
-    },
-    wave_numbers = {
-    },
-    statistics = {
-    },
-    pgm_output = {
-    }
+    is_active = false
   },
   period_analysis = {
     is_active = true,
