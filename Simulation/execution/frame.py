@@ -7,6 +7,7 @@ from util.file import is_outdated
 from util.output import info
 from configuration.models import Parameters, join_parameters
 from configuration.diagrams import Diagram
+from execution.ant import generate_ant_config_file
 
 class Frame:
     diagram: Diagram
@@ -32,17 +33,5 @@ class Frame:
         generate_ant_config_file(self)
 
 
-
-def generate_ant_config_file(frame: Frame):
-    if not is_outdated(frame.config_file_path, frame.diagram.config_file_path, frame.diagram.model.config_file_path):
-        info(f'Skipping generation of AnT config file "{frame.config_file_path}"')
-    
-    with frame.config_file_path.open('w') as ant_config_file:
-        ant_config_file.write(
-f'''dynamical_system = {{
-    type = map,
-    name = "map",
-    parameter_space_dimension = {len(frame.parameters)},'''
-        )
 
 
