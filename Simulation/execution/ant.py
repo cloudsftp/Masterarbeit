@@ -5,7 +5,7 @@ from __future__ import annotations
 from execution import frame
 from util.file import is_outdated
 from util.output import info
-from configuration.diagrams import ParameterRangeType
+from configuration.diagrams import ParameterRangeType, DiagramType
 
 def generate_ant_config_file(frame: frame.Frame):
     if not is_outdated(frame.config_file_path, frame.diagram.config_file_path, frame.diagram.model.config_file_path):
@@ -103,6 +103,16 @@ def config_scan_items(frame: frame.Frame) -> str:
 # Investigation methods
 
 def config_inverstigation_methods(frame: frame.Frame) -> str:
+    if frame.diagram.type != DiagramType.PERIOD and frame.diagra.type != DiagramType.COBWEB:
+        raise Exception('Only period investigation and cobwebs implemented for now!')
+    
+    period = 'false'
+    cobweb = 'false'
+    if frame.diagram.type == DiagramType.PERIOD:
+        period = 'true'
+    elif frame.diagram.type == DiagramType.COBWEB:
+        cobweb = 'true'
+
     return f'''investigation_methods = {{
     general_trajectory_evaluations = {{
     }},
@@ -110,13 +120,13 @@ def config_inverstigation_methods(frame: frame.Frame) -> str:
         is_active = true,
         max_period = 128,
         compare_precision = 1e-09,
-        period = true,
+        period = {period},
         period_file = "period.tna",
         cyclic_asymptotic_set = false,
         cyclic_bif_dia_file = "bif_cyclic.tna",
         acyclic_last_states = false,
         acyclic_bif_dia_file = "bif_acyclic.tna",
-        cyclic_graphical_iteration = false,
+        cyclic_graphical_iteration = {cobweb},
         cyclic_graph_iter_file = "cyclic_cobweb.tna",
         acyclic_graphical_iteration = false,
         acyclic_graph_iter_file = "acyclic_cobweb.tna",
