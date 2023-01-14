@@ -12,9 +12,32 @@ def generate_ant_config_file(frame: frame.Frame):
         # return
     
     with frame.config_file_path.open('w') as ant_config_file:
-        ant_config_file.write(
-f'''dynamical_system = {{
+        ant_config_file.write(config_file_start(frame))
+        
+        ant_config_file.write(config_file_parameters(frame))
+
+
+
+def config_file_start(frame: frame.Frame) -> str:
+    return f'''dynamical_system = {{
     type = map,
     name = "map",
-    parameter_space_dimension = {len(frame.parameters)},'''
-        )
+    parameter_space_dimension = {len(frame.parameters)},
+'''
+
+def config_file_parameters(frame: frame.Frame) -> str:
+    res = '    parameters = {\n'
+
+    cnt = 0
+    for name in frame.parameters:
+        res += f'''        parameter[{cnt}] = {{
+            name = "{name}",
+            value = {frame.parameters[name]}
+        }},
+'''
+        cnt += 1
+
+    res = res[:-2]
+    res += '\n    },'
+    
+    return res
