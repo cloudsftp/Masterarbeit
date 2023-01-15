@@ -9,6 +9,7 @@ from configuration.models import Parameters, join_parameters
 from configuration.diagrams import Diagram
 from configuration.ant import generate_ant_config_file
 from execution.ant import execute_simulation
+from execution.plotting import generate_picture
 
 class Frame:
     diagram: Diagram
@@ -33,5 +34,6 @@ class Frame:
 
         generate_ant_config_file(self)
         execute_simulation(self)
+        generate_picture(self)
 
 

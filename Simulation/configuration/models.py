@@ -7,7 +7,7 @@ import json
 import subprocess
 
 from util.file import is_outdated
-from util.execute import build_system
+from util.paths import build_system
 from util.output import info
 
 Parameters = Dict[str, Union[float, int]]

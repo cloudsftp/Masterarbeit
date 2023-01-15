@@ -11,3 +11,7 @@ ant = ant_executable_path / 'AnT'
 
 ant_log_path = Path('Logs').absolute()
 ant_log_file = ant_log_path / 'server.log'
+
+# Frame specific
+
+

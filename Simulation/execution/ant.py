@@ -10,7 +10,7 @@ import re
 from configuration.diagrams import DiagramType
 from execution import frame
 from util.output import info
-from util.execute import ant, ant_log_file
+from util.paths import ant, ant_log_file
 from util.file import is_outdated
 
 class ExecutionType(Enum):
@@ -33,13 +33,9 @@ network_problem_server_start_pattern = re.compile(r'.*Could not bind to address'
 progress_indicator_pattern = re.compile(r'.*progress\s([^%]+)%')
 
 def execute_simulation(frame: frame.Frame):
-    if frame.diagram.type == DiagramType.PERIOD:
-        result_file_path = frame.path / 'period.tna'
-    else:
-        raise Exception(f'Executing simulation for type {frame.diagram.type} not yet supported!')
-
-    if not is_outdated(result_file_path, frame.config_file_path):
-        info(f'Skipping simulation and generation of {result_file_path}')
+    data_file_path = get_data_file_path(frame)
+    if not is_outdated(data_file_path, frame.config_file_path):
+        info(f'Skipping simulation and generation of {data_file_path}')
         return
 
     if frame.diagram.scan:
@@ -68,6 +64,12 @@ def get_num_cores() -> int:
         raise Exception(f'No number of cores configured for host {host}')
 
     return res
+
+def get_data_file_path(frame: execution.frame.Frame) -> Path:
+    if frame.diagram.type == DiagramType.PERIOD:
+        return frame.path / 'period.tna'
+    else:
+        raise Exception(f'Executing simulation for type {frame.diagram.type} not yet supported!')
 
 # Starting the processes
 
