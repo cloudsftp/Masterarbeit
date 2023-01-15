@@ -123,7 +123,7 @@ def config_inverstigation_methods(frame: frame.Frame) -> str:
     }},
     period_analysis = {{
         is_active = true,
-        max_period = 128,
+        max_period = {frame.diagram.max_periods},
         compare_precision = 1e-09,
         period = {period},
         period_file = "period.tna",

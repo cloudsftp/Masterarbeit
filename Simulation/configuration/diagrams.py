@@ -44,6 +44,8 @@ class Diagram(object):
     scan: Optional[List[ParameterRange]]    # up to two dimensions possible (x, y)
     animation: Optional[ParameterRange]     # only one dimension possible (t)
     
+    max_periods: int = 128
+    
     def __init__(self, diagram_path: Path, model: Model):
         self.model = model
 
