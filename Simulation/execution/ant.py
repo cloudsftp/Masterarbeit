@@ -28,6 +28,7 @@ num_cores = {
 
 successful_server_start_pattern = re.compile(r'.*accepting connections now')
 network_problem_server_start_pattern = re.compile(r'.*Could not bind to address')
+progress_indicator_pattern = re.compile(r'.*progress\s([^%]+)%')
 
 def execute_simulation(frame: frame.Frame):
     if frame.diagram.scan:
@@ -44,8 +45,30 @@ def execute_simulation_server_mode(frame: frame.Frame):
 
     for i in range(num_cores):
         info(f'Starting client #{i}')
+        start_ant(frame, ExecutionType.CLIENT)
         
-    # TODO: wait for completion
+    while True:
+        output = server.stdout.readline()
+
+        if output:
+            output_str = output.decode()
+
+            if progress_indicator_pattern.match(output_str):
+                print(output_str, end='')
+
+        exit_code = server.poll()
+        if exit_code != None:
+            if exit_code == 0:
+                info('Simulation done')
+                break
+            
+            elif exit_code > 0:
+                if server.stderr:
+                    print(server.stderr.decode())
+                
+                raise Exception('Server terminated unexpectedly. Stderr is displayed above')
+        
+        time.sleep(0.01)
 
 def get_num_cores() -> int:
     host = socket.gethostname()
@@ -78,7 +101,6 @@ def start_ant(frame: frame.Frame, exec_type: ExecutionType) -> subprocess.Popen:
                 if server.poll():
                     if server.stderr:
                         print(server.stderr.decode())
-                        print()
 
                     raise Exception('Server terminated unexpectedly. Stderr is displayed above')
 
@@ -86,8 +108,11 @@ def start_ant(frame: frame.Frame, exec_type: ExecutionType) -> subprocess.Popen:
             
             time.sleep(1)
     
+    elif exec_type == ExecutionType.CLIENT:
+        return create_ant_process(frame, ExecutionType.CLIENT)
+
     else:
-        raise Exception('Only starting server supported')
+        raise Exception(f'Execution type {exec_type} not supported')
 
 def create_ant_process(frame: frame.Frame, exec_type: ExecutionType) -> subpro.Popen:
     arguments = [
