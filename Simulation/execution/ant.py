@@ -7,9 +7,11 @@ import socket
 import time
 import re
 
+from configuration.diagrams import DiagramType
 from execution import frame
 from util.output import info
 from util.execute import ant
+from util.file import is_outdated
 
 class ExecutionType(Enum):
     STANDALONE = 0,
@@ -31,6 +33,15 @@ network_problem_server_start_pattern = re.compile(r'.*Could not bind to address'
 progress_indicator_pattern = re.compile(r'.*progress\s([^%]+)%')
 
 def execute_simulation(frame: frame.Frame):
+    if frame.diagram.type == DiagramType.PERIOD:
+        result_file_path = frame.path / 'period.tna'
+    else:
+        raise Exception(f'Executing simulation for type {frame.diagram.type} not yet supported!')
+
+    if not is_outdated(result_file_path, frame.config_file_path):
+        info(f'Skipping simulation and generation of {result_file_path}')
+        return
+
     if frame.diagram.scan:
         execute_simulation_server_mode(frame)
     

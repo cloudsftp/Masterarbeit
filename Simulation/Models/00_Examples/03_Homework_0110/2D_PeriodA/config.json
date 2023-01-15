@@ -4,7 +4,7 @@
     "scan": [
         {
             "type": "linear",
-            "resolution": 10000,
+            "resolution": 1000,
             "parameters": [
                 {
                     "name": "muL",
@@ -15,7 +15,7 @@
         },
         {
             "type": "linear",
-            "resolution": 100000,
+            "resolution": 1000,
             "parameters": [
                 {
                     "name": "muR",

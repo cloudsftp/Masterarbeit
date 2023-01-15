@@ -55,7 +55,7 @@ class Model(object):
             info('Done')
         
         else:
-            info(f'Not compiling {model_source_file_path}, since it has already been compiled')
+            info(f'Skipping compilation of {model_source_file_path}')
 
 
 
