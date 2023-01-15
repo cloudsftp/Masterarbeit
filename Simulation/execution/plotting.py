@@ -28,6 +28,10 @@ def create_gnuplot_program(frame: frame.Frame):
     with get_gnuplot_file_path(frame).open('w') as gnuplot_file:
         gnuplot_file.write(gnuplot_start(frame))
         gnuplot_file.write(dimensions(frame))
+        gnuplot_file.write(range_and_tics())
+        
+        gnuplot_file.write(extras(frame))
+        gnuplot_file.write(plot_commands(frame))
 
 
 def gnuplot_start(frame: frame.Frame) -> str:
@@ -70,8 +74,38 @@ U = {frame.diagram.max_periods}
 
     else:
         raise Exception('Only diagram type period figures supported!')
+    
+    if get_gnuplot_dimens_path(frame).exists():
+        res += f'''
+load '{get_gnuplot_dimens_path(frame)}'
+'''
 
     return res
+
+def range_and_tics() -> str:
+    return '''
+set xrange [L to R]
+set yrange [D to U]
+
+set xtics ("L" L, "R" R) offset 0, -0.2
+set ytics ("D" D, "U" U) rotate by 90
+
+set xlabel 'x' offset 0, 1.3
+set ylabel 'y' offset 4.2, 0 rotate by 90
+'''
+
+def extras(frame: frame.Frame) -> str:
+    if get_gnuplot_extras_file(frame).exists():
+        return f'''
+load '{get_gnuplot_extras_file(frame)}'    
+'''
+    else:
+        return ''
+
+def plot_commands(frame: frame.Frame) -> str:
+    # TODO: add plotting commands
+    return ''
+
 
 
 # Path utils
@@ -81,3 +115,6 @@ def get_result_eps_path(frame: frame.Frame) -> Path:
 
 def get_gnuplot_file_path(frame: execution.frame.Frame) -> Path:
     return frame.path / 'plot.plt'
+
+def get_gnuplot_dimens_path(frame: frame.Frame) -> Path:
+    return frame.diagram.path / 'dimens.plt'
