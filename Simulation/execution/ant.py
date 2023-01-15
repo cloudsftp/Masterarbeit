@@ -10,7 +10,7 @@ import re
 from configuration.diagrams import DiagramType
 from execution import frame
 from util.output import info
-from util.execute import ant
+from util.execute import ant, ant_log_file
 from util.file import is_outdated
 
 class ExecutionType(Enum):
@@ -77,26 +77,28 @@ def start_ant(frame: frame.Frame, exec_type: ExecutionType) -> subprocess.Popen:
             server = create_ant_process(frame, exec_type)
             print('.', end='', flush=True)
 
-            while True:
-                output = server.stdout.readline()
-                
-                if output:
-                    output_str = output.decode()
+            with ant_log_file.open('w') as logfile:
+                while True:
+                    output = server.stdout.readline()
+                    
+                    if output:
+                        output_str = output.decode()
+                        logfile.write(output_str)
 
-                    if successful_server_start_pattern.match(output_str):
-                        print('success')
-                        return server
+                        if successful_server_start_pattern.match(output_str):
+                            print('success\n')
+                            return server
 
-                    elif network_problem_server_start_pattern.match(output_str):
-                        break
+                        elif network_problem_server_start_pattern.match(output_str):
+                            break
 
-                if server.poll():
-                    if server.stderr:
-                        print(server.stderr.decode())
+                    if server.poll():
+                        if server.stderr:
+                            print(server.stderr.decode())
 
-                    raise Exception('Server terminated unexpectedly. Stderr is displayed above')
+                        raise Exception('Server terminated unexpectedly. Stderr is displayed above')
 
-                time.sleep(0.01)
+                    time.sleep(0.01)
             
             time.sleep(1)
     
@@ -119,6 +121,7 @@ def create_ant_process(frame: frame.Frame, exec_type: ExecutionType) -> subpro.P
             '-s', f'{server_ip}',
             '-p', f'{port}',
         ])
+
     elif exec_type == ExecutionType.CLIENT:
         arguments.extend([
             '-m', 'client',
@@ -131,7 +134,7 @@ def create_ant_process(frame: frame.Frame, exec_type: ExecutionType) -> subpro.P
         arguments,
         cwd = frame.path,
         stdout = subprocess.PIPE,
-        stderr = subprocess.PIPE,
+        stderr = subprocess.STDOUT,
     )
 
 # Handling running simulations
@@ -140,36 +143,31 @@ def wait_for_simulation(process: Popen):
     start_time = time.time()
 
     print()
-    while True:
-        output = process.stdout.readline()
+    with ant_log_file.open('a') as logfile:
+        while True:
+            output = process.stdout.readline()
 
-        if output:
-            output_str = output.decode()
+            if output:
+                output_str = output.decode()
+                logfile.write(output_str)
 
-            progress_indicator_match = progress_indicator_pattern.match(output_str)
-            if progress_indicator_match:
-                progress = float(progress_indicator_match.group(1))
+                progress_indicator_match = progress_indicator_pattern.match(output_str)
+                if progress_indicator_match:
+                    progress = float(progress_indicator_match.group(1))
 
-                curr_time = time.time()
-                eta = ((curr_time - start_time) / progress) * (100 - progress)
-                eta_str = format_eta(eta)
+                    curr_time = time.time()
+                    eta = ((curr_time - start_time) / progress) * (100 - progress)
+                    eta_str = format_eta(eta)
 
-                print(100 * '#', end='\r')
-                print(100 * ' ', end='\r')
-                print(f'Progress: {int(progress)}%, ETA: {eta_str}', end='\r', flush=True)
+                    print(100 * '#', end='\r')
+                    print(100 * ' ', end='\r')
+                    print(f'Progress: {int(progress)}%, ETA: {eta_str}', end='\r', flush=True)
 
-        exit_code = process.poll()
-        if exit_code != None:
-            print()
-            if exit_code == 0:
-                info('Simulation done')
+            exit_code = process.poll()
+            if exit_code != None:
+                print('\n')
+                info('Simulation done\n')
                 break
-            
-            elif exit_code > 0:
-                if process.stderr:
-                    print(process.stderr.decode())
-                
-                raise Exception('Server terminated unexpectedly. Stderr is displayed above')
         
 def format_eta(eta: float) -> str:
     eta_int = int(eta)

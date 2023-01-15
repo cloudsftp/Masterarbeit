@@ -9,7 +9,7 @@ import os
 def walk(path: Path): 
     for p in Path(path).iterdir(): 
         if p.is_dir(): 
-            yield p.resolve()
+            yield p
             yield from walk(p)
             continue
 

@@ -8,3 +8,6 @@ ant_executable_path = ant_path / 'bin'
 
 build_system = ant_executable_path / 'build-AnT-system.sh'
 ant = ant_executable_path / 'AnT'
+
+ant_log_path = Path('Logs').absolute()
+ant_log_file = ant_log_path / 'server.log'
