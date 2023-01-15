@@ -5,6 +5,7 @@ from enum import Enum
 import subprocess
 import socket
 import time
+import re
 
 from execution import frame
 from util.output import info
@@ -24,6 +25,9 @@ num_cores = {
     'workstation': 12,
     'openSuseBook': 6,
 }
+
+successful_server_start_pattern = re.compile(r'.*accepting connections now')
+network_problem_server_start_pattern = re.compile(r'.*Could not bind to address')
 
 def execute_simulation(frame: frame.Frame):
     if frame.diagram.scan:
@@ -56,18 +60,31 @@ def start_ant(frame: frame.Frame, exec_type: ExecutionType) -> subprocess.Popen:
     if exec_type == ExecutionType.SERVER:
         while True:
             server = create_ant_process(frame, exec_type)
-            
-            
+            print('.', end='', flush=True)
+
             while True:
                 output = server.stdout.readline()
-                err = server.stderr.readline()
-                if err:
-                    print(err.decode(), end='')
-                else:
-                    print('.', end='')
                 
-                time.sleep(0.1)
+                if output:
+                    output_str = output.decode()
 
+                    if successful_server_start_pattern.match(output_str):
+                        print('success')
+                        return server
+
+                    elif network_problem_server_start_pattern.match(output_str):
+                        break
+
+                if server.poll():
+                    if server.stderr:
+                        print(server.stderr.decode())
+                        print()
+
+                    raise Exception('Server terminated unexpectedly. Stderr is displayed above')
+
+                time.sleep(0.01)
+            
+            time.sleep(1)
     
     else:
         raise Exception('Only starting server supported')
@@ -82,14 +99,14 @@ def create_ant_process(frame: frame.Frame, exec_type: ExecutionType) -> subpro.P
     if exec_type == ExecutionType.SERVER:
         arguments.extend([
             '-m', 'server',
-            '-s', f'"{server_ip}"',
-            '-p', f'"{port}"',
+            '-s', f'{server_ip}',
+            '-p', f'{port}',
         ])
     elif exec_type == ExecutionType.CLIENT:
         arguments.extend([
             '-m', 'client',
-            '-s', f'"{client_ip}"',
-            '-p', f'"{port}"',
+            '-s', f'{client_ip}',
+            '-p', f'{port}',
             '-t', '20',
         ])
 

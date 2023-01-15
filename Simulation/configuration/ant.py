@@ -84,10 +84,10 @@ def config_scan_items(frame: frame.Frame) -> str:
                 if len(parameter_range.parameter_specs) == 1:
                     res += f'''    item[{item_cnt}] = {{
         type = {scan_type},
-        object = "{parameter_range.parameter_specs[0].name},
+        object = "{parameter_range.parameter_specs[0].name}",
         points = {parameter_range.resolution},
         min = {parameter_range.parameter_specs[0].start},
-        min = {parameter_range.parameter_specs[0].stop}
+        max = {parameter_range.parameter_specs[0].stop}
     }},
 '''
                 else:
