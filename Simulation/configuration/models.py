@@ -52,10 +52,10 @@ class Model(object):
 
                 raise Exception(f'Could not compile {model_source_file_path}')
             
-            info('Done\n')
+            info('Done')
         
         else:
-            info(f'Not compiling {model_source_file_path}, since it has already been compiled\n')
+            info(f'Not compiling {model_source_file_path}, since it has already been compiled')
 
 
 

@@ -128,6 +128,7 @@ def create_ant_process(frame: frame.Frame, exec_type: ExecutionType) -> subpro.P
 def wait_for_simulation(process: Popen):
     start_time = time.time()
 
+    print()
     while True:
         output = process.stdout.readline()
 
@@ -140,11 +141,15 @@ def wait_for_simulation(process: Popen):
 
                 curr_time = time.time()
                 eta = ((curr_time - start_time) / progress) * (100 - progress)
-                
-                print(f'Progress: {int(progress)}%, ETA: {eta}')
+                eta_str = format_eta(eta)
+
+                print(100 * '#', end='\r')
+                print(100 * ' ', end='\r')
+                print(f'Progress: {int(progress)}%, ETA: {eta_str}', end='\r', flush=True)
 
         exit_code = process.poll()
         if exit_code != None:
+            print()
             if exit_code == 0:
                 info('Simulation done')
                 break
@@ -155,4 +160,25 @@ def wait_for_simulation(process: Popen):
                 
                 raise Exception('Server terminated unexpectedly. Stderr is displayed above')
         
-        time.sleep(0.01)
+def format_eta(eta: float) -> str:
+    eta_int = int(eta)
+    
+    eta_seconds = eta_int % 60
+    res = f'{eta_seconds:2d}s'
+    eta_int = eta_int - eta_seconds
+    
+    if eta_int <= 0:
+        return res
+    
+    eta_int = int(eta_int / 60)
+    eta_minutes = eta_int % 60
+    res = f'{eta_minutes:2d}m {res}'
+    eta_int -= eta_minutes
+
+    if eta_int <= 0:
+        return res
+    
+    eta_int = int(eta_int / 60)
+    res = f'{eta_int:4d}h {res}'
+
+    return res
