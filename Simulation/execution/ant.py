@@ -47,28 +47,7 @@ def execute_simulation_server_mode(frame: frame.Frame):
         info(f'Starting client #{i}')
         start_ant(frame, ExecutionType.CLIENT)
         
-    while True:
-        output = server.stdout.readline()
-
-        if output:
-            output_str = output.decode()
-
-            if progress_indicator_pattern.match(output_str):
-                print(output_str, end='')
-
-        exit_code = server.poll()
-        if exit_code != None:
-            if exit_code == 0:
-                info('Simulation done')
-                break
-            
-            elif exit_code > 0:
-                if server.stderr:
-                    print(server.stderr.decode())
-                
-                raise Exception('Server terminated unexpectedly. Stderr is displayed above')
-        
-        time.sleep(0.01)
+    wait_for_simulation(server)
 
 def get_num_cores() -> int:
     host = socket.gethostname()
@@ -78,6 +57,8 @@ def get_num_cores() -> int:
         raise Exception(f'No number of cores configured for host {host}')
 
     return res
+
+# Starting the processes
 
 def start_ant(frame: frame.Frame, exec_type: ExecutionType) -> subprocess.Popen:
     if exec_type == ExecutionType.SERVER:
@@ -141,3 +122,37 @@ def create_ant_process(frame: frame.Frame, exec_type: ExecutionType) -> subpro.P
         stdout = subprocess.PIPE,
         stderr = subprocess.PIPE,
     )
+
+# Handling running simulations
+
+def wait_for_simulation(process: Popen):
+    start_time = time.time()
+
+    while True:
+        output = process.stdout.readline()
+
+        if output:
+            output_str = output.decode()
+
+            progress_indicator_match = progress_indicator_pattern.match(output_str)
+            if progress_indicator_match:
+                progress = float(progress_indicator_match.group(1))
+
+                curr_time = time.time()
+                eta = ((curr_time - start_time) / progress) * (100 - progress)
+                
+                print(f'Progress: {int(progress)}%, ETA: {eta}')
+
+        exit_code = process.poll()
+        if exit_code != None:
+            if exit_code == 0:
+                info('Simulation done')
+                break
+            
+            elif exit_code > 0:
+                if process.stderr:
+                    print(process.stderr.decode())
+                
+                raise Exception('Server terminated unexpectedly. Stderr is displayed above')
+        
+        time.sleep(0.01)
