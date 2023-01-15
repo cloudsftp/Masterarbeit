@@ -8,6 +8,7 @@ from util.output import info
 from configuration.models import Parameters, join_parameters
 from configuration.diagrams import Diagram
 from configuration.ant import generate_ant_config_file
+from execution.ant import execute_simulation
 
 class Frame:
     diagram: Diagram
@@ -31,6 +32,6 @@ class Frame:
         self.path.mkdir(exist_ok=True)
 
         generate_ant_config_file(self)
-        #execute_simulation(self)
+        execute_simulation(self)
 
 

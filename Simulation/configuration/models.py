@@ -21,6 +21,7 @@ def join_parameters(old: Parameters, new: Parameters) -> Parameters:
 class Model(object):
     path: Path
     config_file_path: Path
+    library_file_path: Path
     parameters: Parameters
 
     def __init__(self, model_path: Path):
@@ -33,10 +34,10 @@ class Model(object):
             load_model_from_dict(self, config)
     
     def compile(self):
-        model_target_file_path: Path = self.path / 'model.so'
+        self.library_file_path: Path = self.path / 'model.so'
         model_source_file_path: Path = self.path / 'model.cpp'
 
-        if is_outdated(model_target_file_path, model_source_file_path):
+        if is_outdated(self.library_file_path, model_source_file_path):
             info(f'Compiling {model_source_file_path}...')
             compile_proc: subprocess.CompletedProcess = subprocess.run(
                 str(build_system),

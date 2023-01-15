@@ -10,7 +10,7 @@ from configuration.diagrams import ParameterRangeType, DiagramType
 def generate_ant_config_file(frame: frame.Frame):
     if not is_outdated(frame.config_file_path, frame.diagram.config_file_path, frame.diagram.model.config_file_path):
         info(f'Skipping generation of AnT config file "{frame.config_file_path}"')
-        # return
+        return
     
     with frame.config_file_path.open('w') as ant_config_file:
         ant_config_file.write(config_dynamical_system_start(frame))
