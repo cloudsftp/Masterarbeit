@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
 from __future__ import annotations
+from textwrap import dedent
 import subprocess
 import shutil
 
@@ -36,63 +37,66 @@ def create_gnuplot_program(frame: frame.Frame):
 
 
 def gnuplot_start(frame: frame.Frame) -> str:
-    res = f'''
-reset
-set loadpath '{frame.diagram.path}' '{frame.diagram.model.path}'
-'''
+    res = dedent(f'''
+        reset
+        set loadpath '{frame.diagram.path}' '{frame.diagram.model.path}'
+        ''')
 
     if frame.diagram.options.simple_figure:
-        res += f'''
-set terminal png
-set output '{get_simple_result_png_path(frame)}'
-'''
+        res += dedent(f'''
+            set terminal png
+            set output '{get_simple_result_png_path(frame)}'
+            ''')
     else:
-        res += f'''
-set terminal postscript landscape enhanced color blacktext \\
-   dashed dashlength 1.0 linewidth 1.0 defaultplex \\
-   palfuncparam 2000,0.003 \\
-   butt "Helvetica" 20
-set output "{get_result_eps_path(frame)}"
-'''
+        res += dedent(f'''
+            set terminal postscript landscape enhanced color blacktext \\
+               dashed dashlength 1.0 linewidth 1.0 defaultplex \\
+               palfuncparam 2000,0.003 \\
+               butt "Helvetica" 20
+            set output "{get_result_eps_path(frame)}"
+            ''')
 
-    res += f'''
-set size square
-set border lw 1
-'''
+    res += dedent(f'''
+        set size square
+        set border lw 1
+        ''')
+
     return res
 
 def dimensions(frame: frame.Frame):
-    res = ''
+    if get_gnuplot_dimens_path(frame).exists():
+        return dedent(f'''
+            load '{get_gnuplot_dimens_path(frame)}'
+            ''')
 
     if frame.diagram.type == DiagramType.PERIOD:
         if not frame.diagram.scan:
             raise CustomException('Diagram of type period should have at least one scan dimension')
 
-        res += f'''
-L = {frame.diagram.scan[0].parameter_specs[0].start}
-R = {frame.diagram.scan[0].parameter_specs[0].stop}
-'''
+        L = frame.diagram.scan[0].parameter_specs[0].start
+        R = frame.diagram.scan[0].parameter_specs[0].stop
 
         if len(frame.diagram.scan) > 1:
-            res += f'''
-D = {frame.diagram.scan[1].parameter_specs[0].start}
-U = {frame.diagram.scan[1].parameter_specs[0].stop}
-'''
+            D = frame.diagram.scan[1].parameter_specs[0].start
+            U = frame.diagram.scan[1].parameter_specs[0].stop
+
         else:
-            res += f'''
-D = 0
-U = {frame.diagram.max_periods}
-'''
+            D = 0
+            U = frame.diagram.max_periods
+    
+    elif frame.diagram.type == DiagramType.COBWEB:
+        raise CustomException(f'You need to define {get_gnuplot_dimens_path(frame)} for diagram type cobweb')
 
     else:
-        raise CustomException('Only diagram type period figures supported!')
+        raise CustomException('Only diagram type period and cobweb figures supported!')
     
-    if get_gnuplot_dimens_path(frame).exists():
-        res += f'''
-load '{get_gnuplot_dimens_path(frame)}'
-'''
+    return dedent(f'''
+        L = {L}
+        R = {R}
 
-    return res
+        D = {D}
+        U = {U}
+        ''')
 
 def range_and_tics(frame: frame.Frame) -> str:
     L_label = 'L'
@@ -120,22 +124,22 @@ def range_and_tics(frame: frame.Frame) -> str:
                 U_label = frame.diagram.scan[1].parameter_specs[0].stop
                 y_label = frame.diagram.scan[1].parameter_specs[0].name
         
-    return f'''
-set xrange [L to R]
-set yrange [D to U]
+    return dedent(f'''
+        set xrange [L to R]
+        set yrange [D to U]
 
-set xtics ('{L_label}' L, '{R_label}' R)
-set ytics ('{D_label}' D, '{U_label}' U) rotate by 90
+        set xtics ('{L_label}' L, '{R_label}' R)
+        set ytics ('{D_label}' D, '{U_label}' U) rotate by 90
 
-set xlabel '{x_label}' offset 0, 1.3
-set ylabel '{y_label}' offset 4.2, 0 rotate by 90
-'''
+        set xlabel '{x_label}' offset 0, 1.3
+        set ylabel '{y_label}' offset 4.2, 0 rotate by 90
+        ''')
 
 def extras(frame: frame.Frame) -> str:
     if get_gnuplot_extras_path(frame).exists():
-        return f'''
-load '{get_gnuplot_extras_path(frame)}'    
-'''
+        return dedent(f'''
+            load '{get_gnuplot_extras_path(frame)}'
+            ''')
     else:
         return ''
 
@@ -143,21 +147,24 @@ def plot_commands(frame: frame.Frame) -> str:
     if frame.diagram.type == DiagramType.PERIOD:
         if len(frame.diagram.scan) == 1:
             if len(frame.diagram.scan[0].parameter_specs) == 1:
-                return f'''
-plot '{get_data_file_path(frame)}' w dots notitle lc rgb 'blue'
-'''
+                return dedent(f'''
+                    plot '{get_data_file_path(frame)}' w dots notitle lc rgb 'blue'
+                    ''')
             elif  len(frame.diagram.scan[0].parameter_specs) == 2:
-                return f'''
-plot '{get_data_file_path(frame)}' using 1:3 w dots notitle lc rgb 'blue'
-'''
+                return dedent(f'''
+                    plot '{get_data_file_path(frame)}' using 1:3 w dots notitle lc rgb 'blue'
+                    ''')
         elif len(frame.diagram.scan) == 2:
-            return f'''
-unset colorbox
+            return dedent(f'''
+                unset colorbox
+                set palette rgbformulae 30,31,32
+                plot '{get_data_file_path(frame)}' w dots notitle palette
+                ''')
 
-set palette rgbformulae 30,31,32
-
-plot '{get_data_file_path(frame)}' w dots notitle palette
-'''
+    elif frame.diagram.type == DiagramType.COBWEB:
+        return dedent(f'''
+            plot '{get_data_file_path(frame)}' w lines lw 1 lc rgb 'blue' notitle
+            ''')
 
     else:
         raise CustomException(f'Not yet implemented for diagram type {frame.diagram.type}')

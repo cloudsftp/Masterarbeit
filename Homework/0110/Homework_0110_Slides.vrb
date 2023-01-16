@@ -1,0 +1,17 @@
+\frametitle{Code}
+\begin{lstlisting}
+real_t x = currentState[0];
+real_t y = 0;
+
+if (x < 0) {
+    y = aL * x + muL;
+} else {
+    y = aR * x + muR;
+}
+
+RHS[0] = y;
+return true;
+    \end{lstlisting}
+
+    Executed using AnT
+
