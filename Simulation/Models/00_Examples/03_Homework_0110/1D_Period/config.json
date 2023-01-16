@@ -1,5 +1,6 @@
 {
     "type": "period",
+    "max_period": 32,
     "parameters": null,
     "scan": [
         {

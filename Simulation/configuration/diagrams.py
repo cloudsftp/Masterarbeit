@@ -188,3 +188,6 @@ def load_diagram_from_dict(
         obj.animation = None
     else:
         obj.animation = ParameterRange(config['animation'], model)
+    
+    if 'max_period' in config:
+        obj.max_periods = config['max_period']
