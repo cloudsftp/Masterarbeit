@@ -35,7 +35,7 @@ progress_indicator_pattern = re.compile(r'.*progress\s([^%]+)%')
 
 def execute_simulation(frame: frame.Frame):
     data_file_path = get_data_file_path(frame)
-    if not is_outdated(data_file_path, frame.config_file_path):
+    if not is_outdated(data_file_path, frame.config_file_path) or frame.diagram.options.skip_computation:
         info(f'Skipping simulation and generation of {data_file_path}')
         return
 

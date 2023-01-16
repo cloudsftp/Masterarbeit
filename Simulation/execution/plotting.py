@@ -6,6 +6,7 @@ import subprocess
 from util.file import is_outdated
 from util.output import info
 from util.exceptions import CustomException
+from util.execution import execute_and_wait
 from configuration.diagrams import DiagramType
 from execution import frame
 from execution.ant import get_data_file_path
@@ -27,7 +28,7 @@ def create_gnuplot_program(frame: frame.Frame):
     with get_gnuplot_file_path(frame).open('w') as gnuplot_file:
         gnuplot_file.write(gnuplot_start(frame))
         gnuplot_file.write(dimensions(frame))
-        gnuplot_file.write(range_and_tics())
+        gnuplot_file.write(range_and_tics(frame))
         
         gnuplot_file.write(extras(frame))
         gnuplot_file.write(plot_commands(frame))
@@ -92,16 +93,36 @@ load '{get_gnuplot_dimens_path(frame)}'
 
     return res
 
-def range_and_tics() -> str:
-    return '''
+def range_and_tics(frame: frame.Frame) -> str:
+    L_label = 'L'
+    R_label = 'R'
+
+    D_label = 'D'
+    U_label = 'U'
+    
+    x_label = 'x'
+    y_label = 'y'
+
+    if frame.diagram.options.simple_figure:
+        if frame.diagram.type == DiagramType.PERIOD:
+            L_label = frame.diagram.scan[0].parameter_specs[0].start
+            R_label = frame.diagram.scan[0].parameter_specs[0].stop
+            
+            D_label = frame.diagram.scan[1].parameter_specs[0].start
+            U_label = frame.diagram.scan[1].parameter_specs[0].stop
+            
+            x_label = frame.diagram.scan[0].parameter_specs[0].name
+            y_label = frame.diagram.scan[1].parameter_specs[0].name
+        
+    return f'''
 set xrange [L to R]
 set yrange [D to U]
 
-set xtics ("L" L, "R" R) offset 0, -0.2
-set ytics ("D" D, "U" U) rotate by 90
+set xtics ('{L_label}' L, '{R_label}' R)
+set ytics ('{D_label}' D, '{U_label}' U) rotate by 90
 
-set xlabel 'x' offset 0, 1.3
-set ylabel 'y' offset 4.2, 0 rotate by 90
+set xlabel '{x_label}' offset 0, 1.3
+set ylabel '{y_label}' offset 4.2, 0 rotate by 90
 '''
 
 def extras(frame: frame.Frame) -> str:
@@ -133,7 +154,7 @@ plot '{get_data_file_path(frame)}' w dots notitle palette
 
 def run_gnuplot_program(frame: frame.Frame):
     info(f'Executing {get_gnuplot_file_path(frame)}')
-    execute_and_wait(['gnuplot', f'{get_gnuplot_file_path(frame)}'], frame)
+    execute_and_wait(['gnuplot', f'{get_gnuplot_file_path(frame)}'], frame.path)
 
 # Post processing
 
@@ -152,13 +173,13 @@ def frag(frame: frame.Frame):
         raise CustomException('fm files not supported yet')
     
     info('Executing fragmaster')
-    execute_and_wait(['fragmaster'], frame)
+    execute_and_wait(['fragmaster'], frame.path)
 
 def crop(frame: frame.Frame):
     result_pdf_path = get_result_pdf_path(frame)
 
     info(f'Cropping {result_pdf_path}')
-    execute_and_wait(['pdfcrop'] + 2 * [str(result_pdf_path)], frame)
+    execute_and_wait(['pdfcrop'] + 2 * [str(result_pdf_path)], frame.path)
 
 def convert(frame: frame.Frame):
     result_pdf_path = get_result_pdf_path(frame)
@@ -171,24 +192,7 @@ def convert(frame: frame.Frame):
         '-density', '600',
         '-alpha', 'off',
         str(result_pdf_path), str(result_png_path),
-    ], frame)
-
-# Execution utils
-
-def execute_and_wait(args: List[str], frame: frame.Frame):
-    process = subprocess.run(
-        args,
-        cwd = frame.path,
-        stdout = subprocess.PIPE,
-        stderr = subprocess.STDOUT,
-    )
-    
-    if process.returncode > 0:
-        if process.stdout:
-            print()
-            print(process.stdout.decode())
-
-        raise CustomException(f'Problem while executing {args[0]}')
+    ], frame.path)
 
 # Path utils
 
