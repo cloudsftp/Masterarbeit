@@ -18,3 +18,4 @@ AnT
 Logs
 
 __pycache__
+.mypy_cache
