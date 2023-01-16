@@ -12,5 +12,9 @@ Models/**/fragmaster.*
 Models/**/*-simple.png
 Viktor_Figures/*.png
 
+Frame*
+
 AnT
 Logs
+
+__pycache__
