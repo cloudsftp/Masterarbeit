@@ -108,12 +108,17 @@ def range_and_tics(frame: frame.Frame) -> str:
         if frame.diagram.type == DiagramType.PERIOD:
             L_label = frame.diagram.scan[0].parameter_specs[0].start
             R_label = frame.diagram.scan[0].parameter_specs[0].stop
-            
-            D_label = frame.diagram.scan[1].parameter_specs[0].start
-            U_label = frame.diagram.scan[1].parameter_specs[0].stop
-            
             x_label = frame.diagram.scan[0].parameter_specs[0].name
-            y_label = frame.diagram.scan[1].parameter_specs[0].name
+
+            if len(frame.diagram.scan) == 1:
+                D_label = 0
+                U_label = frame.diagram.max_periods
+                y_label = 'Period'
+
+            elif len(frame.diagram.scan) == 2:
+                D_label = frame.diagram.scan[1].parameter_specs[0].start
+                U_label = frame.diagram.scan[1].parameter_specs[0].stop
+                y_label = frame.diagram.scan[1].parameter_specs[0].name
         
     return f'''
 set xrange [L to R]
@@ -137,9 +142,13 @@ load '{get_gnuplot_extras_path(frame)}'
 def plot_commands(frame: frame.Frame) -> str:
     if frame.diagram.type == DiagramType.PERIOD:
         if len(frame.diagram.scan) == 1:
-            raise CustomException('Period figure for one dimension not yet implemented')
-            return f'''
-
+            if len(frame.diagram.scan[0].parameter_specs) == 1:
+                return f'''
+plot '{get_data_file_path(frame)}' w dots notitle lc rgb 'blue'
+'''
+            elif  len(frame.diagram.scan[0].parameter_specs) == 2:
+                return f'''
+plot '{get_data_file_path(frame)}' using 1:3 w dots notitle lc rgb 'blue'
 '''
         elif len(frame.diagram.scan) == 2:
             return f'''
