@@ -136,9 +136,9 @@ def run_gnuplot_program(frame: frame.Frame):
     
     if process.returncode > 0:
         if process.stdout:
-            print(process.stdout.decode())
             print()
-        
+            print(process.stdout.decode())
+
         raise Exception('Problem while executing gnuplot')
 
 # Path utils

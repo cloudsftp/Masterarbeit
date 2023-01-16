@@ -5,6 +5,7 @@ from pathlib import Path
 import argparse
 
 from util.file import find_fullpath
+from util.output import error
 from configuration.models import Model
 from configuration.diagrams import Diagram
 from execution.execute import generate_diagram
@@ -28,4 +29,8 @@ if __name__ == "__main__":
 
     arguments = parser.parse_args()
     
-    main(arguments.model, arguments.diagram)
+    try:
+        main(arguments.model, arguments.diagram)
+    
+    except Exception as e:
+        error(e)
