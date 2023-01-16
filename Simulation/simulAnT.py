@@ -29,8 +29,8 @@ if __name__ == "__main__":
 
     arguments = parser.parse_args()
     
-    try:
-        main(arguments.model, arguments.diagram)
+    #try:
+    main(arguments.model, arguments.diagram)
     
-    except Exception as e:
-        error(e)
+    #except Exception as e:
+    #    error(e)
