@@ -5,6 +5,7 @@ from pathlib import Path
 from enum import Enum
 import json
 
+from util.exceptions import CustomException
 from configuration.models import Model, Parameters, join_parameters
 
 class DiagramType(Enum):
@@ -74,32 +75,32 @@ def load_parameter_range_specification_from_dict(
     model: Model,
 ):
     if not isinstance(config, dict):
-        raise Exception('Diagram parameter range specification should be dict')
+        raise CustomException('Diagram parameter range specification should be dict')
     
     if 'name' not in config:
-        raise Exception('"name" not in diagram  parameter range specification')        
+        raise CustomException('"name" not in diagram  parameter range specification')        
 
     name = config['name']
     if not isinstance(name, str):
-        raise Exception('"name" in diagram parameter range specification should be str')
+        raise CustomException('"name" in diagram parameter range specification should be str')
 
     obj.name = name
     
     if 'start' not in config:
-        raise Exception('"start" not in diagram  parameter range specification')        
+        raise CustomException('"start" not in diagram  parameter range specification')        
         
     start = config['start']
     if not (isinstance(start, float) or isinstance(start, int)):
-        raise Exception('"start" in diagram parameter range specification should be float or int')
+        raise CustomException('"start" in diagram parameter range specification should be float or int')
 
     obj.start = start
 
     if 'stop' not in config:
-        raise Exception('"stop" not in diagram  parameter range specification')        
+        raise CustomException('"stop" not in diagram  parameter range specification')        
         
     stop = config['stop']
     if not (isinstance(stop, float) or isinstance(stop, int)):
-        raise Exception('"stop" in diagram parameter range specification should be float or int')
+        raise CustomException('"stop" in diagram parameter range specification should be float or int')
 
     obj.stop = stop
 
@@ -109,30 +110,30 @@ def load_parameter_range_from_dict(
     model: Model,
 ):
     if not isinstance(config, dict):
-        raise Exception('Diagram parameter range should be dict')
+        raise CustomException('Diagram parameter range should be dict')
     
     if 'type' not in config:
-        raise Exception('"type" not in diagram parameter range configuration')
+        raise CustomException('"type" not in diagram parameter range configuration')
 
     type = config['type']
     if type == 'linear':
         obj.type = ParameterRangeType.LINEAR
     
     if 'resolution' not in config:
-        raise Exception('"resolution" not in diagram parameter range configuration')
+        raise CustomException('"resolution" not in diagram parameter range configuration')
 
     resolution = config['resolution']
     if not isinstance(resolution, int):
-        raise Exception('"resolution" in diagram parameter range configuraion should be int')
+        raise CustomException('"resolution" in diagram parameter range configuraion should be int')
     
     obj.resolution = resolution
     
     if 'parameters' not in config:
-        raise Exception('"parameters" not in diagram parameter range configuration')
+        raise CustomException('"parameters" not in diagram parameter range configuration')
 
     parameters = config['parameters']
     if not isinstance(parameters, list):
-        raise Exception('"parameters" in diagram parameter range configuration should be list')
+        raise CustomException('"parameters" in diagram parameter range configuration should be list')
 
     obj.parameter_specs = []
     for parameter in parameters:
@@ -144,10 +145,10 @@ def load_diagram_from_dict(
     model: Model,
 ):
     if not isinstance(config, dict):
-        raise Exception('Diagram configuration should be dict')
+        raise CustomException('Diagram configuration should be dict')
            
     if 'type' not in config:
-        raise Exception('"type" missing in diagram configuration')
+        raise CustomException('"type" missing in diagram configuration')
 
     type = config['type']
     if type == 'period':
@@ -162,11 +163,11 @@ def load_diagram_from_dict(
     else:
         parameters = config['parameters']
         if not isinstance(parameters, dict):
-            raise Exception('"parameters" in diagram configuration should be dict')
+            raise CustomException('"parameters" in diagram configuration should be dict')
         
         for name in parameters:
             if not (isinstance(parameters[name], float) or isinstance(parameters[name], int)):
-                raise Exception(f'Parameter "{name}" in diagram configuration file should be float or int')
+                raise CustomException(f'Parameter "{name}" in diagram configuration file should be float or int')
         
         obj.parameters = parameters
 
@@ -175,7 +176,7 @@ def load_diagram_from_dict(
     else:
         scan = config['scan']
         if not isinstance(scan, list):
-            raise Exception('"scan" in diagram configuration should be list')
+            raise CustomException('"scan" in diagram configuration should be list')
 
         obj.scan = []
         for parameter_range in scan:

@@ -5,6 +5,7 @@ import subprocess
 
 from util.file import is_outdated
 from util.output import info
+from util.exceptions import CustomException
 from configuration.diagrams import DiagramType
 from execution import frame
 from execution.ant import get_data_file_path
@@ -64,7 +65,7 @@ def dimensions(frame: frame.Frame):
 
     if frame.diagram.type == DiagramType.PERIOD:
         if not frame.diagram.scan:
-            raise Exception('Diagram of type period should have at least one scan dimension')
+            raise CustomException('Diagram of type period should have at least one scan dimension')
 
         res += f'''
 L = {frame.diagram.scan[0].parameter_specs[0].start}
@@ -83,7 +84,7 @@ U = {frame.diagram.max_periods}
 '''
 
     else:
-        raise Exception('Only diagram type period figures supported!')
+        raise CustomException('Only diagram type period figures supported!')
     
     if get_gnuplot_dimens_path(frame).exists():
         res += f'''
@@ -115,7 +116,7 @@ load '{get_gnuplot_extras_path(frame)}'
 def plot_commands(frame: frame.Frame) -> str:
     if frame.diagram.type == DiagramType.PERIOD:
         if len(frame.diagram.scan) == 1:
-            raise Exception('Period figure for one dimension not yet implemented')
+            raise CustomException('Period figure for one dimension not yet implemented')
             return f'''
 
 '''
@@ -125,11 +126,11 @@ unset colorbox
 
 set palette rgbformulae 30,31,32
 
-plot '{get_data_file_path(frame)}' w dots notitle palette
+plot '{get_data_file_path(frame)} w dots notitle palette
 '''
 
     else:
-        raise Exception(f'Not yet implemented for diagram type {frame.diagram.type}')
+        raise CustomException(f'Not yet implemented for diagram type {frame.diagram.type}')
 
 def run_gnuplot_program(frame: frame.Frame):
     info(f'Executing {get_gnuplot_file_path(frame)}')
@@ -149,7 +150,7 @@ def frag(frame: frame.Frame):
             fm_file.write('%% fmopt: width=8cm\n')
         
     else:
-        raise Exception('fm files not supported yet')
+        raise CustomException('fm files not supported yet')
     
     info('Executing fragmaster')
     execute_and_wait(['fragmaster'], frame)
@@ -188,7 +189,7 @@ def execute_and_wait(args: List[str], frame: frame.Frame):
             print()
             print(process.stdout.decode())
 
-        raise Exception(f'Problem while executing {args[0]}')
+        raise CustomException(f'Problem while executing {args[0]}')
 
 # Path utils
 

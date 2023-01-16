@@ -5,6 +5,7 @@ from __future__ import annotations
 from execution import frame
 from util.file import is_outdated
 from util.output import info
+from util.exceptions import CustomException
 from configuration.diagrams import ParameterRangeType, DiagramType
 
 def generate_ant_config_file(frame: frame.Frame):
@@ -91,10 +92,10 @@ def config_scan_items(frame: frame.Frame) -> str:
     }},
 '''
                 else:
-                    raise Exception('2D linear diagonal scans not yet implemented!')
+                    raise CustomException('2D linear diagonal scans not yet implemented!')
             
             else:
-                raise Exception('Parameter ranges besides linear not yet implemented!')
+                raise CustomException('Parameter ranges besides linear not yet implemented!')
 
             item_cnt += 1
         
@@ -109,7 +110,7 @@ def config_scan_items(frame: frame.Frame) -> str:
 
 def config_inverstigation_methods(frame: frame.Frame) -> str:
     if frame.diagram.type != DiagramType.PERIOD and frame.diagram.type != DiagramType.COBWEB:
-        raise Exception('Only period investigation and cobwebs implemented for now!')
+        raise CustomException('Only period investigation and cobwebs implemented for now!')
     
     period = 'false'
     cobweb = 'false'

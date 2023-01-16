@@ -9,6 +9,7 @@ import subprocess
 from util.file import is_outdated
 from util.paths import build_system
 from util.output import info
+from util.exceptions import CustomException
 
 Parameters = Dict[str, Union[float, int]]
 
@@ -50,7 +51,7 @@ class Model(object):
                 print(compile_proc.stderr.decode())
                 print()
 
-                raise Exception(f'Could not compile {model_source_file_path}')
+                raise CustomException(f'Could not compile {model_source_file_path}')
             
             info('Done')
         
@@ -71,17 +72,17 @@ def load_model_from_dict(
     config: Union[Dict[str, Any], Any],
 ):
     if not isinstance(config, dict):
-        raise Exception('Model configuration should be dict')
+        raise CustomException('Model configuration should be dict')
 
     if not 'parameters' in config:
-        raise Exception(f'"parameters" missing in model configuration')
+        raise CustomException(f'"parameters" missing in model configuration')
     
     parameters = config['parameters']
     if not isinstance(parameters, dict):
-        raise Exception('"parameters" in model config file should be a dict')
+        raise CustomException('"parameters" in model config file should be a dict')
     
     for name in parameters:
         if not (isinstance(parameters[name], float) or isinstance(parameters[name], int)):
-            raise Exception(f'Parameter {name} in model config file should be float or int')
+            raise CustomException(f'Parameter {name} in model config file should be float or int')
     
     obj.parameters = parameters

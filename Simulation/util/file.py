@@ -6,6 +6,8 @@ from pathlib import Path
 import re
 import os
 
+from util.exceptions import CustomException
+
 def walk(path: Path): 
     for p in Path(path).iterdir(): 
         if p.is_dir(): 
@@ -24,7 +26,7 @@ def find_fullpath(name: str, root: Path = None) -> Path:
         if match:
             return Path(candidate)
 
-    raise Exception(f"Full path of {name} not found in {root}")
+    raise CustomException(f"Full path of {name} not found in {root}")
 
 def is_outdated(target: Path, *sources: Path) -> bool:
     try:

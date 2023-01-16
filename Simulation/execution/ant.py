@@ -12,6 +12,7 @@ from execution import frame
 from util.output import info
 from util.paths import ant, ant_log_file
 from util.file import is_outdated
+from util.exceptions import CustomException
 
 class ExecutionType(Enum):
     STANDALONE = 0,
@@ -61,7 +62,7 @@ def get_num_cores() -> int:
     res = num_cores.get(host)
 
     if not res:
-        raise Exception(f'No number of cores configured for host {host}')
+        raise CustomException(f'No number of cores configured for host {host}')
 
     return res
 
@@ -69,7 +70,7 @@ def get_data_file_path(frame: execution.frame.Frame) -> Path:
     if frame.diagram.type == DiagramType.PERIOD:
         return frame.path / 'period.tna'
     else:
-        raise Exception(f'Executing simulation for type {frame.diagram.type} not yet supported!')
+        raise CustomException(f'Executing simulation for type {frame.diagram.type} not yet supported!')
 
 # Starting the processes
 
@@ -98,7 +99,7 @@ def start_ant(frame: frame.Frame, exec_type: ExecutionType) -> subprocess.Popen:
                         if server.stderr:
                             print(server.stderr.decode())
 
-                        raise Exception('Server terminated unexpectedly. Stderr is displayed above')
+                        raise CustomException('Server terminated unexpectedly. Stderr is displayed above')
 
                     time.sleep(0.01)
             
@@ -108,7 +109,7 @@ def start_ant(frame: frame.Frame, exec_type: ExecutionType) -> subprocess.Popen:
         return create_ant_process(frame, ExecutionType.CLIENT)
 
     else:
-        raise Exception(f'Execution type {exec_type} not supported')
+        raise CustomException(f'Execution type {exec_type} not supported')
 
 def create_ant_process(frame: frame.Frame, exec_type: ExecutionType) -> subpro.Popen:
     arguments = [

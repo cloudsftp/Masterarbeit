@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 
+from util.exceptions import CustomException
 from configuration.diagrams import Diagram
 from execution.frame import Frame
 
@@ -9,5 +10,5 @@ def generate_diagram(diagram: Diagram):
         frame.run()
     
     else:
-        raise Exception('Animations not yet implemented!')
+        raise CustomException('Animations not yet implemented!')
 
