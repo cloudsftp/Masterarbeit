@@ -7,6 +7,7 @@ import json
 
 from util.exceptions import CustomException
 from configuration.models import Model, Parameters, join_parameters
+from configuration.options import Options
 
 class DiagramType(Enum):
     PERIOD = 0,
@@ -47,8 +48,9 @@ class Diagram(object):
     
     max_periods: int = 128
     
-    def __init__(self, diagram_path: Path, model: Model):
+    def __init__(self, diagram_path: Path, model: Model, options: Options):
         self.model = model
+        self.options = options
 
         self.path = diagram_path
         self.config_file_path = diagram_path / 'config.json'

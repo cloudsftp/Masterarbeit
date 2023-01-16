@@ -126,7 +126,7 @@ unset colorbox
 
 set palette rgbformulae 30,31,32
 
-plot '{get_data_file_path(frame)} w dots notitle palette
+plot '{get_data_file_path(frame)}' w dots notitle palette
 '''
 
     else:
