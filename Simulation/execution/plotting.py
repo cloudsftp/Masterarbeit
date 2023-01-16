@@ -103,8 +103,23 @@ load '{get_gnuplot_extras_file(frame)}'
         return ''
 
 def plot_commands(frame: frame.Frame) -> str:
-    # TODO: add plotting commands
-    return ''
+    if frame.diagram.type == DiagramType.PERIOD:
+        if len(frame.diagram.scan) == 1:
+            raise Exception('Period figure for one dimension not yet implemented')
+            return f'''
+
+'''
+        elif len(frame.diagram.scan) == 2:
+            return f'''
+unset colorbox
+
+set palette rgbformulae 30,31,32
+
+plot 'period.tna' w dots notitle palette
+'''
+
+    else:
+        raise Exception(f'Not yet implemented for diagram type {frame.diagram.type}')
 
 
 
