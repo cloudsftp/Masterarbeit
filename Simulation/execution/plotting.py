@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
 from __future__ import annotations
+import subprocess
 
 from util.file import is_outdated
 from util.output import info
@@ -23,8 +24,11 @@ def generate_simple_picture(frame: frame.Frame):
 
     info(f'Generating {result_eps_path}')
     create_gnuplot_program(frame)
+    run_gnuplot_program(frame)
 
 def create_gnuplot_program(frame: frame.Frame):
+    info(f'Generating {get_gnuplot_file_path(frame)}')
+
     with get_gnuplot_file_path(frame).open('w') as gnuplot_file:
         gnuplot_file.write(gnuplot_start(frame))
         gnuplot_file.write(dimensions(frame))
@@ -37,7 +41,7 @@ def create_gnuplot_program(frame: frame.Frame):
 def gnuplot_start(frame: frame.Frame) -> str:
     return f'''
 reset
-set loadpath {frame.diagram.path} {frame.diagram.model.path}
+set loadpath '{frame.diagram.path}' '{frame.diagram.model.path}'
 
 set terminal postscript landscape enhanced color blacktext \\
    dashed dashlength 1.0 linewidth 1.0 defaultplex \\
@@ -64,7 +68,7 @@ R = {frame.diagram.scan[0].parameter_specs[0].stop}
         if len(frame.diagram.scan) > 1:
             res += f'''
 D = {frame.diagram.scan[1].parameter_specs[0].start}
-R = {frame.diagram.scan[1].parameter_specs[0].stop}
+U = {frame.diagram.scan[1].parameter_specs[0].stop}
 '''
         else:
             res += f'''
@@ -95,9 +99,9 @@ set ylabel 'y' offset 4.2, 0 rotate by 90
 '''
 
 def extras(frame: frame.Frame) -> str:
-    if get_gnuplot_extras_file(frame).exists():
+    if get_gnuplot_extras_path(frame).exists():
         return f'''
-load '{get_gnuplot_extras_file(frame)}'    
+load '{get_gnuplot_extras_path(frame)}'    
 '''
     else:
         return ''
@@ -115,13 +119,27 @@ unset colorbox
 
 set palette rgbformulae 30,31,32
 
-plot 'period.tna' w dots notitle palette
+plot '{get_data_file_path(frame)}' w dots notitle palette
 '''
 
     else:
         raise Exception(f'Not yet implemented for diagram type {frame.diagram.type}')
 
-
+def run_gnuplot_program(frame: frame.Frame):
+    info(f'Executing {get_gnuplot_file_path(frame)}')
+    
+    process = subprocess.run(
+        ['gnuplot', f'{get_gnuplot_file_path(frame)}'],
+        stdout = subprocess.PIPE,
+        stderr = subprocess.STDOUT,
+    )
+    
+    if process.returncode > 0:
+        if process.stdout:
+            print(process.stdout.decode())
+            print()
+        
+        raise Exception('Problem while executing gnuplot')
 
 # Path utils
 
@@ -133,3 +151,6 @@ def get_gnuplot_file_path(frame: execution.frame.Frame) -> Path:
 
 def get_gnuplot_dimens_path(frame: frame.Frame) -> Path:
     return frame.diagram.path / 'dimens.plt'
+
+def get_gnuplot_extras_path(frame: frame.Frame) -> Path:
+    return frame.diagram.path / 'extras.plt'
