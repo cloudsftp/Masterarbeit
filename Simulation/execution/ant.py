@@ -72,6 +72,8 @@ def get_num_cores(frame: frame.Frame) -> int:
 def get_data_file_path(frame: execution.frame.Frame) -> Path:
     if frame.diagram.type == DiagramType.PERIOD:
         return frame.path / 'period.tna'
+    elif frame.diagram.type == DiagramType.COBWEB:
+        return frame.path / 'cyclic_cobweb.tna'
     else:
         raise CustomException(f'Executing simulation for type {frame.diagram.type} not yet supported!')
 
@@ -98,9 +100,7 @@ def start_ant(frame: frame.Frame, exec_type: ExecutionType) -> subprocess.Popen:
                         elif network_problem_server_start_pattern.match(output_str):
                             break
 
-                    if server.poll() != None:
-                        print()
-                        raise CustomException(f'Server terminated unexpectedly, see {ant_log_file}')
+                            raise CustomException(f'Server terminated unexpectedly, see {ant_log_file}')
 
                     time.sleep(0.01)
             
