@@ -46,7 +46,7 @@ def execute_simulation(frame: frame.Frame):
         execute_simulation_standalone_mode(frame)
 
 def execute_simulation_server_mode(frame: frame.Frame):
-    num_cores = get_num_cores()
+    num_cores = get_num_cores(frame)
 
     info('Starting server')
     server = start_ant(frame, ExecutionType.SERVER)
@@ -57,12 +57,15 @@ def execute_simulation_server_mode(frame: frame.Frame):
         
     wait_for_simulation(server)
 
-def get_num_cores() -> int:
+def get_num_cores(frame: frame.Frame) -> int:
+    if frame.diagram.options.num_cores:
+        return frame.diagram.options.num_cores
+
     host = socket.gethostname()
     res = num_cores.get(host)
 
     if not res:
-        raise CustomException(f'No number of cores configured for host {host}')
+        raise CustomException(f'No number of cores configured for host {host}, please specify with option --num-cores')
 
     return res
 

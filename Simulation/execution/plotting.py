@@ -11,25 +11,15 @@ from execution import frame
 from execution.ant import get_data_file_path
 
 def generate_picture(frame):
-    generate_simple_picture(frame)
-
-# Gnuplot plotting
-
-def generate_simple_picture(frame: frame.Frame):
-    result_eps_path = get_result_eps_path(frame)
-    gnuplot_file_path = get_gnuplot_file_path(frame)
-
-    if not is_outdated(result_eps_path, get_data_file_path(frame)):
-        info(f'Skipping generation of {result_eps_path}')
-        # return
-
-    info(f'Generating {result_eps_path}')
     create_gnuplot_program(frame)
     run_gnuplot_program(frame)
-    
-    frag(frame)
-    crop(frame)
-    convert(frame)
+
+    if not frame.diagram.options.simple_figure: 
+        frag(frame)
+        crop(frame)
+        convert(frame)
+
+# Gnuplot plotting
 
 def create_gnuplot_program(frame: frame.Frame):
     info(f'Generating {get_gnuplot_file_path(frame)}')
@@ -44,21 +34,30 @@ def create_gnuplot_program(frame: frame.Frame):
 
 
 def gnuplot_start(frame: frame.Frame) -> str:
-    return f'''
+    res = f'''
 reset
 set loadpath '{frame.diagram.path}' '{frame.diagram.model.path}'
+'''
 
+    if frame.diagram.options.simple_figure:
+        res += f'''
+set terminal png
+set output '{get_simple_result_png_path(frame)}'
+'''
+    else:
+        res += f'''
 set terminal postscript landscape enhanced color blacktext \\
    dashed dashlength 1.0 linewidth 1.0 defaultplex \\
    palfuncparam 2000,0.003 \\
    butt "Helvetica" 20
-
-set size square
-
 set output "{get_result_eps_path(frame)}"
+'''
 
+    res += f'''
+set size square
 set border lw 1
 '''
+    return res
 
 def dimensions(frame: frame.Frame):
     res = ''
@@ -201,6 +200,9 @@ def get_result_pdf_path(frame: frame.Frame) -> Path:
 
 def get_result_png_path(frame: frame.Frame) -> Path:
     return frame.path / 'result.png'
+
+def get_simple_result_png_path(frame: frame.Frame) -> Path:
+    return frame.path / 'result-simple.png'
 
 def get_gnuplot_file_path(frame: execution.frame.Frame) -> Path:
     return frame.path / 'plot.plt'
