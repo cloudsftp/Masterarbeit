@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 import subprocess
+import shutil
 
 from util.file import is_outdated
 from util.output import info
@@ -170,7 +171,8 @@ def frag(frame: frame.Frame):
             fm_file.write('%% fmopt: width=8cm\n')
         
     else:
-        raise CustomException('fm files not supported yet')
+        info(f'Copying {diagram_fm_path} to current frame')
+        shutil.copy(diagram_fm_path, frame_fm_path)
     
     info('Executing fragmaster')
     execute_and_wait(['fragmaster'], frame.path)
@@ -185,7 +187,7 @@ def convert(frame: frame.Frame):
     result_pdf_path = get_result_pdf_path(frame)
     result_png_path = get_result_png_path(frame)
 
-    info(f'Coverting {result_pdf_path} to {result_png_path}')
+    info(f'Converting {result_pdf_path} to {result_png_path}')
     execute_and_wait([
         'convert',
         '-rotate', '90',
