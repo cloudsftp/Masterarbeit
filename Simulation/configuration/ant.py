@@ -80,11 +80,9 @@ def config_scan_items(frame: frame.Frame) -> str:
         item_cnt = 0
         for parameter_range in frame.diagram.scan:
             if parameter_range.type == ParameterRangeType.LINEAR:
-                scan_type = 'real_linear'
-
                 if len(parameter_range.parameter_specs) == 1:
                     res += f'''    item[{item_cnt}] = {{
-        type = {scan_type},
+        type = "real_linear",
         object = "{parameter_range.parameter_specs[0].name}",
         points = {parameter_range.resolution},
         min = {parameter_range.parameter_specs[0].start},
@@ -92,7 +90,17 @@ def config_scan_items(frame: frame.Frame) -> str:
     }},
 '''
                 else:
-                    raise CustomException('2D linear diagonal scans not yet implemented!')
+                    res += f'''    item[{item_cnt}] = {{
+        type = "real_linear_2d",
+        points = {parameter_range.resolution},
+        first_object = "{parameter_range.parameter_specs[0].name}",
+        first_min = {parameter_range.parameter_specs[0].start},
+        first_max = {parameter_range.parameter_specs[0].stop},
+        second_object = "{parameter_range.parameter_specs[1].name}",
+        second_min = {parameter_range.parameter_specs[1].start},
+        second_max = {parameter_range.parameter_specs[1].stop}
+    }},
+'''
             
             else:
                 raise CustomException('Parameter ranges besides linear not yet implemented!')

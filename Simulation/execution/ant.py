@@ -98,11 +98,9 @@ def start_ant(frame: frame.Frame, exec_type: ExecutionType) -> subprocess.Popen:
                         elif network_problem_server_start_pattern.match(output_str):
                             break
 
-                    if server.poll():
-                        if server.stderr:
-                            print(server.stderr.decode())
-
-                        raise CustomException('Server terminated unexpectedly. Stderr is displayed above')
+                    if server.poll() != None:
+                        print()
+                        raise CustomException(f'Server terminated unexpectedly, see {ant_log_file}')
 
                     time.sleep(0.01)
             
