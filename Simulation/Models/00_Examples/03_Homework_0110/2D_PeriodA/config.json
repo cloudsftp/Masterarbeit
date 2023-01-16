@@ -1,18 +1,7 @@
 {
     "type": "period",
-    "parameters": {},
+    "parameters": null,
     "scan": [
-        {
-            "type": "linear",
-            "resolution": 3000,
-            "parameters": [
-                {
-                    "name": "muL",
-                    "start": -0.2,
-                    "stop": 2
-                }
-            ]
-        },
         {
             "type": "linear",
             "resolution": 3000,
@@ -21,6 +10,17 @@
                     "name": "muR",
                     "start": -2,
                     "stop": 0.2
+                }
+            ]
+        },
+        {
+            "type": "linear",
+            "resolution": 3000,
+            "parameters": [
+                {
+                    "name": "muL",
+                    "start": -0.2,
+                    "stop": 2
                 }
             ]
         }

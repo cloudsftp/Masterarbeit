@@ -30,11 +30,16 @@ if __name__ == "__main__":
     parser.add_argument("-d", "--diagram", type=str, required=True)
     
     parser.add_argument('-n', '--num-cores', type=int, default=None)
-    parser.add_argument('-s', '--simple-figure', action=argparse.BooleanOptionalAction)
+    parser.add_argument('--simple-figure', action=argparse.BooleanOptionalAction)
+    parser.add_argument('--skip-computation', action=argparse.BooleanOptionalAction)
 
     arguments = parser.parse_args()
     
-    options = Options(arguments.simple_figure, arguments.num_cores)
+    options = Options(
+        arguments.simple_figure,
+        arguments.skip_computation,
+        arguments.num_cores,
+    )
     
     try:
         main(arguments.model, arguments.diagram, options)
