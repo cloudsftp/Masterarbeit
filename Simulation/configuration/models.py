@@ -5,9 +5,10 @@ from dataclasses import dataclass
 from pathlib import Path
 import json
 import subprocess
+import os
 
 from util.file import is_outdated
-from util.paths import build_system
+from util.paths import build_system, ant_executable_path
 from util.output import info
 from util.exceptions import CustomException
 
@@ -38,26 +39,29 @@ class Model(object):
         self.library_file_path: Path = self.path / 'model.so'
         model_source_file_path: Path = self.path / 'model.cpp'
 
-        if is_outdated(self.library_file_path, model_source_file_path):
-            info(f'Compiling {model_source_file_path}...')
-            compile_proc: subprocess.CompletedProcess = subprocess.run(
-                str(build_system),
-                cwd=self.path,
-                stdout=subprocess.DEVNULL,
-                stderr=subprocess.PIPE,
-            )
-            
-            if compile_proc.returncode != 0:
-                print(compile_proc.stderr.decode())
-                print()
-
-                raise CustomException(f'Could not compile {model_source_file_path}')
-            
-            info('Done')
-        
-        else:
+        if not is_outdated(self.library_file_path, model_source_file_path):
             info(f'Skipping compilation of {model_source_file_path}')
+            
+        env = os.environ.copy()
+        env['PATH'] = str(ant_executable_path) + ':' + env['PATH']
 
+        info(f'Compiling {model_source_file_path}...')
+        compile_proc: subprocess.CompletedProcess = subprocess.run(
+            str(build_system),
+            cwd=self.path,
+            env = env,
+            stdout=subprocess.DEVNULL,
+            stderr=subprocess.PIPE,
+        )
+        
+        if compile_proc.returncode != 0:
+            print(compile_proc.stderr.decode())
+            print()
+
+            raise CustomException(f'Could not compile {model_source_file_path}')
+        
+        info('Done')
+        
 
 
 
