@@ -183,8 +183,8 @@ def plot_commands(frame: frame.Frame) -> str:
                 ''')
         
         res += f'''\\
-            x w lines lt 1 lw 1.5 lc rgb 'gray20' notitle, \\
-            '{get_data_file_path(frame)}' w lines lw 1 lc rgb 'blue' notitle
+            '{get_data_file_path(frame)}' w lines lw 1 lc rgb 'blue' notitle, \\
+            x w lines lt 1 lw 1.5 lc rgb 'gray20' notitle
             '''
         return res
 
