@@ -177,6 +177,9 @@ def plot_commands(frame: frame.Frame) -> str:
             
             return res
 
+        else:
+            raise CustomException('Cobwebs for models with python file not yet supported!')
+
     else:
         raise CustomException(f'Not yet implemented for diagram type {frame.diagram.type}')
 
