@@ -11,7 +11,7 @@
             "parameters": [
                 {
                     "name": "initial_state[0][0]",
-                    "start": 0.1,
+                    "start": 0.01,
                     "stop": 6.2
                 }
             ]
