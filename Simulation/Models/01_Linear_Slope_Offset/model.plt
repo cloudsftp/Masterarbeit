@@ -1,6 +1,4 @@
-load 'common-math.plt'
-
-load 'dimens.plt'
+mod(a, b) = a - (floor(a/b) * b)
 
 r(x) =  mod(x, 2*pi)
 s(x) =  mod(x, pi)

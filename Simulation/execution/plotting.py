@@ -257,7 +257,7 @@ def get_gnuplot_extras_path(frame: frame.Frame) -> Path:
     return frame.diagram.path / 'extras.plt'
 
 def get_gnuplot_model_path(frame: frame.Frame) -> Path:
-    return frame.diagram.path / 'model.plt'
+    return frame.diagram.model.path / 'model.plt'
 
 def get_gnuplot_model_generation_path(frame: frame.Frame) -> Path:
     return frame.diagram.model.path / 'model.py'
