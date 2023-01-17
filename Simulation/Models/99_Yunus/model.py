@@ -1,8 +1,7 @@
 #!/usr/bin/env python
 
 from math import cos, exp, floor, pi
-
-mu = 0.5
+import argparse
 
 R = 2.
 L = 4.2e-3
@@ -18,7 +17,7 @@ Lr = Lr1 / omega
 def mod(a, b):
     return a - floor(a/b) * b
 
-def F(xk, z, Kp, stepAlg, E0, hi, q, chi):
+def F(xk, z, Kp, stepAlg, E0, hi, q, chi, mu):
     if stepAlg == 1:
         return q*cos(xk+z)-Kp*chi-(q*cos(xk)-Kp*mu*chi)*exp(Lr*z)
     elif stepAlg == 2:
@@ -26,16 +25,16 @@ def F(xk, z, Kp, stepAlg, E0, hi, q, chi):
     elif stepAlg == 3:
         return Kp+(q*cos(xk)-Kp*chi-Kp)*exp(Lr*z)-q*cos(xk+z)+Kp*chi*mu
 
-def half(xk, Kp, stepAlg, E0, hi, q, chi):
+def half(xk, Kp, stepAlg, E0, hi, q, chi, mu):
     za = 0
 
     # Find 0.02 interval where 0point is
 
-    fb = F(xk, za, Kp, stepAlg, E0, hi, q, chi)
+    fb = F(xk, za, Kp, stepAlg, E0, hi, q, chi, mu)
     while True:
         fa = fb
         zb = za + 0.02
-        fb = F(xk, zb, Kp, stepAlg, E0, hi, q, chi)
+        fb = F(xk, zb, Kp, stepAlg, E0, hi, q, chi, mu)
 
         if fa * fb <= 0:
             break
@@ -46,7 +45,7 @@ def half(xk, Kp, stepAlg, E0, hi, q, chi):
 
     while True:
         z = (za + zb) / 2
-        fb = F(xk, z, Kp, stepAlg, E0, hi, q, chi)
+        fb = F(xk, z, Kp, stepAlg, E0, hi, q, chi, mu)
 
         if fa * fb < 0:
             zb = z
@@ -59,14 +58,14 @@ def half(xk, Kp, stepAlg, E0, hi, q, chi):
 
     return (za + zb) / 2
 
-def invert(xk, E0, hi, q, chi):
+def invert(xk, E0, hi, q, chi, mu):
     if cos(xk) > 0:
         Kp = 1
     else:
         Kp = -1
 
-    z_k = half(xk, Kp, 1, E0, hi, q, chi)
-    z_0 = half(xk, Kp, 2, E0, hi, q, chi)
+    z_k = half(xk, Kp, 1, E0, hi, q, chi, mu)
+    z_0 = half(xk, Kp, 2, E0, hi, q, chi, mu)
 
     if Kp == 1:
         if z_k < z_0:
@@ -83,19 +82,32 @@ def invert(xk, E0, hi, q, chi):
             Kp = 1
             xk = mod(xk + z_0, 2 * pi)
 
-    z_k = half(xk, Kp, 3, E0, hi, q, chi)
+    z_k = half(xk, Kp, 3, E0, hi, q, chi, mu)
     xk = mod(xk + z_k, 2 * pi)
 
     return xk
 
-def function(x, parameters):
-    if "E0" not in parameters or "hi" not in parameters:
-        raise Exception("Missing parameters")
-
-    E0 = parameters["E0"]
-    hi = parameters["hi"]
-
+def function(x: float, E0: float, hi: float, mu: float) -> float:
     q = R * Vref / bt / E0
     chi = R * hi / bt / E0
+    
+    return invert(x, E0, hi, q, chi, mu)
 
-    return invert(x, E0, hi, q, chi)
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+
+    parser.add_argument('--start', type=float, required=True)
+    parser.add_argument('--end', type=float, required=True)
+    parser.add_argument('--resolution', type=int, required=True)
+    
+    parser.add_argument('--E0', type=float, required=True)
+    parser.add_argument('--hi', type=float, required=True)
+    parser.add_argument('--mu', type=float, required=True)
+    
+    args = parser.parse_args()
+
+    for i in range(args.resolution):
+        x = args.start + ((args.end - args.start) / args.resolution) * i
+        y = function(x, args.E0, args.hi, args.mu)
+
+        print(f'{x} {y}')

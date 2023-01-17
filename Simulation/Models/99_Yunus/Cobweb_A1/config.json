@@ -1,8 +1,8 @@
 {
     "type": "cobweb",
     "parameters": {
-        "muL": 1,
-        "muR": -2
+        "E0": 16.8,
+        "hi": 0.44
     },
     "scan": [
         {
@@ -11,15 +11,15 @@
             "parameters": [
                 {
                     "name": "initial_state[0][0]",
-                    "start": -2,
-                    "stop": 2
+                    "start": 0.1,
+                    "stop": 6.2
                 }
             ]
         }
     ],
     "animation": null,
-    "L": -4,
-    "R":  2,
-    "D": -4,
-    "U":  2
+    "L": 0,
+    "R": 6.283,
+    "D": 0,
+    "U": 6.283
 }

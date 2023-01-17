@@ -32,6 +32,7 @@ num_cores = {
 successful_server_start_pattern = re.compile(r'.*accepting connections now')
 network_problem_server_start_pattern = re.compile(r'.*Could not bind to address')
 progress_indicator_pattern = re.compile(r'.*progress\s([^%]+)%')
+exit_pattern = re.compile(r'Bye!')
 
 def execute_simulation(frame: frame.Frame):
     data_file_path = get_data_file_path(frame)
@@ -100,6 +101,7 @@ def start_ant(frame: frame.Frame, exec_type: ExecutionType) -> subprocess.Popen:
                         elif network_problem_server_start_pattern.match(output_str):
                             break
 
+                        elif exit_pattern.match(output_str):
                             raise CustomException(f'Server terminated unexpectedly, see {ant_log_file}')
 
                     time.sleep(0.01)
