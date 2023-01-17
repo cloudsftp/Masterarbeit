@@ -87,12 +87,14 @@ def start_ant(frame: frame.Frame, exec_type: ExecutionType) -> subprocess.Popen:
             print('.', end='', flush=True)
 
             with ant_log_file.open('w') as logfile:
+                log = ''
                 while True:
                     output = server.stdout.readline()
                     
                     if output:
                         output_str = output.decode()
                         logfile.write(output_str)
+                        log += output_str
 
                         if successful_server_start_pattern.match(output_str):
                             print('success\n')
@@ -102,7 +104,10 @@ def start_ant(frame: frame.Frame, exec_type: ExecutionType) -> subprocess.Popen:
                             break
 
                         elif exit_pattern.match(output_str):
-                            raise CustomException(f'Server terminated unexpectedly, see {ant_log_file}')
+                            print()
+                            print(log)
+                            
+                            raise CustomException(f'Server terminated unexpectedly')
 
                     time.sleep(0.01)
             

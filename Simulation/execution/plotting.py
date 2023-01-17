@@ -88,10 +88,11 @@ def dimensions(frame: frame.Frame):
         else:
             raise CustomException('Only diagram type period and cobweb figures supported!')
 
-    L = frame.diagram.L
-    R = frame.diagram.R
-    D = frame.diagram.D
-    U = frame.diagram.U
+    else:
+        L = frame.diagram.L
+        R = frame.diagram.R
+        D = frame.diagram.D
+        U = frame.diagram.U
     
     return dedent(f'''
         L = {L}
