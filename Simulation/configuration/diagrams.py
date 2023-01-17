@@ -47,6 +47,10 @@ class Diagram(object):
     animation: Optional[ParameterRange]     # only one dimension possible (t)
     
     max_periods: int = 128
+    L: Optional[float] = None
+    R: Optional[float] = None
+    D: Optional[float] = None
+    U: Optional[float] = None
     
     def __init__(self, diagram_path: Path, model: Model, options: Options):
         self.model = model
@@ -191,3 +195,15 @@ def load_diagram_from_dict(
     
     if 'max_period' in config:
         obj.max_periods = config['max_period']
+    
+    if 'L' in config:
+        obj.L = config['L']
+ 
+    if 'R' in config:
+        obj.R = config['R']
+ 
+    if 'D' in config:
+        obj.D = config['D']
+ 
+    if 'U' in config:
+        obj.U = config['U']

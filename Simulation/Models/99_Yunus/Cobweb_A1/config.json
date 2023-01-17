@@ -17,5 +17,9 @@
             ]
         }
     ],
-    "animation": null
+    "animation": null,
+    "L": 0,
+    "R": 6.283,
+    "D": 0,
+    "U": 6.283
 }

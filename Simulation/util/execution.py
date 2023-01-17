@@ -5,7 +5,7 @@ from pathlib import Path
 import subprocess
 from util.exceptions import CustomException
 
-def execute_and_wait(args: List[str], cwd: Optional[Path] = None):
+def execute_and_wait(args: List[str], cwd: Optional[Path] = None) -> subprocess.Popen:
     if not cwd:
         cwd = Path.cwd()
 
@@ -22,3 +22,5 @@ def execute_and_wait(args: List[str], cwd: Optional[Path] = None):
             print(process.stdout.decode())
 
         raise CustomException(f'Problem while executing {args[0]}')
+
+    return process

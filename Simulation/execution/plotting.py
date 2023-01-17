@@ -64,36 +64,38 @@ def gnuplot_start(frame: frame.Frame) -> str:
     return res
 
 def dimensions(frame: frame.Frame):
-    if get_gnuplot_dimens_path(frame).exists():
-        return dedent(f'''
-            load '{get_gnuplot_dimens_path(frame)}'
-            ''')
+    if frame.diagram.L == None or frame.diagram.R == None \
+        or frame.diagram.D == None or frame.diagram.U == None:
 
-    if frame.diagram.type == DiagramType.PERIOD:
-        if not frame.diagram.scan:
-            raise CustomException('Diagram of type period should have at least one scan dimension')
+        if frame.diagram.type == DiagramType.PERIOD:
+            if not frame.diagram.scan:
+                raise CustomException('Diagram of type period should have at least one scan dimension')
 
-        L = frame.diagram.scan[0].parameter_specs[0].start
-        R = frame.diagram.scan[0].parameter_specs[0].stop
+            L = frame.diagram.scan[0].parameter_specs[0].start
+            R = frame.diagram.scan[0].parameter_specs[0].stop
 
-        if len(frame.diagram.scan) > 1:
-            D = frame.diagram.scan[1].parameter_specs[0].start
-            U = frame.diagram.scan[1].parameter_specs[0].stop
+            if len(frame.diagram.scan) > 1:
+                D = frame.diagram.scan[1].parameter_specs[0].start
+                U = frame.diagram.scan[1].parameter_specs[0].stop
+
+            else:
+                D = 0
+                U = frame.diagram.max_periods
+        
+        elif frame.diagram.type == DiagramType.COBWEB:
+            raise CustomException(f'You need to define L, R, D, and U in {frame.diagram.config_file_path} for diagram type cobweb')
 
         else:
-            D = 0
-            U = frame.diagram.max_periods
-    
-    elif frame.diagram.type == DiagramType.COBWEB:
-        raise CustomException(f'You need to define {get_gnuplot_dimens_path(frame)} for diagram type cobweb')
+            raise CustomException('Only diagram type period and cobweb figures supported!')
 
-    else:
-        raise CustomException('Only diagram type period and cobweb figures supported!')
+    L = frame.diagram.L
+    R = frame.diagram.R
+    D = frame.diagram.D
+    U = frame.diagram.U
     
     return dedent(f'''
         L = {L}
         R = {R}
-
         D = {D}
         U = {U}
         ''')
@@ -171,14 +173,19 @@ def plot_commands(frame: frame.Frame) -> str:
                 res += f'{name} = {frame.parameters[name]}\n'
 
             res += dedent(f'''
-                plot '{get_data_file_path(frame)}' w lines lw 1 lc rgb 'blue' notitle, \\
-                    f(x) w points ps 0.3 pt 7 lc rgb 'red' notitle
+                plot f(x) w points ps 0.3 pt 7 lc rgb 'red' notitle, \\
                 ''')
             
-            return res
-
         else:
-            raise CustomException('Cobwebs for models with python file not yet supported!')
+            res = dedent(f'''
+                plot '{get_gnuplot_model_data_path(frame)}' w points ps 0.3 pt 7 lc rgb 'red' notitle, \\
+                ''')
+        
+        res += f'''\\
+            x w lines lt 1 lw 1.5 lc rgb 'gray20' notitle, \\
+            '{get_data_file_path(frame)}' w lines lw 1 lc rgb 'blue' notitle
+            '''
+        return res
 
     else:
         raise CustomException(f'Not yet implemented for diagram type {frame.diagram.type}')
@@ -251,6 +258,12 @@ def get_gnuplot_extras_path(frame: frame.Frame) -> Path:
 
 def get_gnuplot_model_path(frame: frame.Frame) -> Path:
     return frame.diagram.path / 'model.plt'
+
+def get_gnuplot_model_generation_path(frame: frame.Frame) -> Path:
+    return frame.diagram.model.path / 'model.py'
+
+def get_gnuplot_model_data_path(frame: frame.Frame) -> Path:
+    return frame.path / 'model.dat'
 
 def get_diagram_fm_path(frame: frame.Frame) -> Path:
     return frame.diagram.path / 'result_fm'
