@@ -162,9 +162,20 @@ def plot_commands(frame: frame.Frame) -> str:
                 ''')
 
     elif frame.diagram.type == DiagramType.COBWEB:
-        return dedent(f'''
-            plot '{get_data_file_path(frame)}' w lines lw 1 lc rgb 'blue' notitle
-            ''')
+        if get_gnuplot_model_path(frame).exists():
+            res = dedent(f'''
+                load '{get_gnuplot_model_path(frame)}'
+                ''')
+            
+            for name in frame.parameters:
+                res += f'{name} = {frame.parameters[name]}\n'
+
+            res += dedent(f'''
+                plot '{get_data_file_path(frame)}' w lines lw 1 lc rgb 'blue' notitle, \\
+                    f(x) w points ps 0.3 pt 7 lc rgb 'red' notitle
+                ''')
+            
+            return res
 
     else:
         raise CustomException(f'Not yet implemented for diagram type {frame.diagram.type}')
@@ -234,6 +245,9 @@ def get_gnuplot_dimens_path(frame: frame.Frame) -> Path:
 
 def get_gnuplot_extras_path(frame: frame.Frame) -> Path:
     return frame.diagram.path / 'extras.plt'
+
+def get_gnuplot_model_path(frame: frame.Frame) -> Path:
+    return frame.diagram.path / 'model.plt'
 
 def get_diagram_fm_path(frame: frame.Frame) -> Path:
     return frame.diagram.path / 'result_fm'
