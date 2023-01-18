@@ -13,6 +13,8 @@ def generate_ant_config_file(frame: frame.Frame):
         info(f'Skipping generation of {frame.config_file_path}')
         return
     
+    info(f'Generating {frame.config_file_path}')
+    
     with frame.config_file_path.open('w') as ant_config_file:
         ant_config_file.write(config_dynamical_system_start(frame))
         ant_config_file.write(config_dynamical_system_parameters(frame))
