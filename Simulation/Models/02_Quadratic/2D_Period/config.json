@@ -1,0 +1,39 @@
+{
+    "type": "period",
+    "parameters": null,
+    "scan": [
+        {
+            "type": "linear",
+            "resolution": 1000,
+            "parameters": [
+                {
+                    "name": "cL",
+                    "start": 0,
+                    "stop": 6.283
+                }
+            ]
+        },
+        {
+            "type": "linear",
+            "resolution": 1000,
+            "parameters": [
+                {
+                    "name": "cR",
+                    "start": 0,
+                    "stop": 6.283
+                }
+            ]
+        }
+    ],
+    "animation": {
+        "type": "linear",
+        "resolution": 3,
+        "parameters": [
+            {
+                "name": "bL",
+                "start": 0,
+                "stop": 1
+            }
+        ]
+    }
+}
