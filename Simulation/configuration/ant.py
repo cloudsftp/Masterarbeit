@@ -53,7 +53,7 @@ def config_dynamical_system_parameters(frame: frame.Frame) -> str:
 def config_dynamical_system_end(frame: frame.Frame) -> str:
     return f'''    state_space_dimension = 1,
     initial_state = (0.1),
-    reset_initial_states_from_orbit = true,
+    reset_initial_states_from_orbit = {'false' if frame.diagram.reset_orbit else 'true'},
     number_of_iterations = {frame.diagram.num_iterations}
 }},
 '''
