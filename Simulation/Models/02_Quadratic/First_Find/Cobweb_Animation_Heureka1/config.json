@@ -27,13 +27,13 @@
         "parameters": [
             {
                 "name": "cL",
-                "start": 1.28,
-                "stop": 1.32
+                "start": 1.15,
+                "stop": 1.135
             },
             {
                 "name": "cR",
-                "start": 4.13,
-                "stop": 4.17
+                "start": 4.1,
+                "stop": 4.4
             }
         ]
     },
