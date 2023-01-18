@@ -41,6 +41,7 @@ class Model(object):
 
         if not is_outdated(self.library_file_path, model_source_file_path):
             info(f'Skipping compilation of {model_source_file_path}')
+            return
             
         env = os.environ.copy()
         env['PATH'] = str(ant_executable_path) + ':' + env['PATH']
