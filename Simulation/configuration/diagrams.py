@@ -47,6 +47,7 @@ class Diagram(object):
     animation: Optional[ParameterRange]     # only one dimension possible (t)
     
     max_periods: int = 128
+    num_iterations: int = 1000
     L: Optional[float] = None
     R: Optional[float] = None
     D: Optional[float] = None
@@ -195,6 +196,9 @@ def load_diagram_from_dict(
     
     if 'max_period' in config:
         obj.max_periods = config['max_period']
+    
+    if 'num_iterations' in config:
+        obj.num_iterations = config['num_iterations']
     
     if 'L' in config:
         obj.L = config['L']

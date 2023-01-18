@@ -88,10 +88,11 @@ def dimensions(frame: frame.Frame):
         else:
             raise CustomException('Only diagram type period and cobweb figures supported!')
 
-    L = frame.diagram.L
-    R = frame.diagram.R
-    D = frame.diagram.D
-    U = frame.diagram.U
+    else:
+        L = frame.diagram.L
+        R = frame.diagram.R
+        D = frame.diagram.D
+        U = frame.diagram.U
     
     return dedent(f'''
         L = {L}
@@ -182,8 +183,8 @@ def plot_commands(frame: frame.Frame) -> str:
                 ''')
         
         res += f'''\\
-            x w lines lt 1 lw 1.5 lc rgb 'gray20' notitle, \\
-            '{get_data_file_path(frame)}' w lines lw 1 lc rgb 'blue' notitle
+            '{get_data_file_path(frame)}' w lines lw 1 lc rgb 'blue' notitle, \\
+            x w lines lt 1 lw 1.5 lc rgb 'gray20' notitle
             '''
         return res
 
