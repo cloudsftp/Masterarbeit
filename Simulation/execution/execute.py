@@ -2,9 +2,11 @@
 
 import shutil
 from pathlib import Path
+from copy import copy
 
 from util.exceptions import CustomException
 from util.execution import execute_and_wait
+from util.ranges import generate_parameters_for_animation
 from configuration.diagrams import Diagram
 from execution.frame import Frame
 from execution.plotting import get_result_png_path, get_simple_result_png_path
@@ -23,7 +25,17 @@ def generate_diagram(diagram: Diagram):
             show_pic(result_png_path)
     
     else:
-        raise CustomException('Animations not yet implemented!')
+        cnt = 0
+        frames = []
+        for parameters in generate_parameters_for_animation(diagram.animation):
+            frames.append(Frame(diagram, cnt, parameters))
+            cnt += 1
+        
+        for frame in frames:
+            frame.run()
+        
+        
+        
 
 def show_pic(pic_path: Path):
     execute_and_wait(['imv', str(pic_path)])
