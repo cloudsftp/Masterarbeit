@@ -48,7 +48,7 @@ class Diagram(object):
     
     max_periods: int = 128
     num_iterations: int = 1000
-    reset_orbit: bool = False
+    reset_orbit: bool = True
 
     L: Optional[float] = None
     R: Optional[float] = None
