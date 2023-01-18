@@ -3,8 +3,12 @@
 #include <cmath>
 #include <iostream>
 
-#define a parameters[0]
-#define b parameters[1]
+#define aL parameters[0]
+#define aR parameters[1]
+#define bL parameters[2]
+#define bR parameters[3]
+#define cL parameters[4]
+#define cR parameters[5]
 
 bool f(
     const Array<real_t>& currentState,
@@ -21,16 +25,12 @@ bool f(
         y += Pi;
     }
     
-    real_t x_modpihalves = x_modpi;
-    if (x_modpihalves >= Pi / 2) {
-        x_modpihalves -= Pi / 2;
-    }
-
-    y += a * x_modpihalves;
-
-    // offset A, C
-    if (x_modpi <= Pi / 2) {
-        y += b;
+    if (x_modpi < Pi / 2) {
+        real_t x = x_modpi - Pi / 4;
+        y += aL * x * x + bL * x + cL;
+    } else {
+        real_t x = x_modpi - 3 * Pi / 4;
+        y += aR * x * x + bR * x + cR;
     }
 
     // normalize
