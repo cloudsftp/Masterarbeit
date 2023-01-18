@@ -42,7 +42,7 @@ def generate_diagram(diagram: Diagram):
 def synthesize_gif(diagram: Diagram, frames: List[Frame]):
     args = [
         'convert',
-        '-delay', '100',
+        '-delay', str(int(2000 / diagram.animation.resolution)),
         '-loop', '0',
     ]
 

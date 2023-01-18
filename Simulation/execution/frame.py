@@ -24,7 +24,7 @@ class Frame:
     def __init__(self, diagram: Diagram, id: int, parameters: Optional[Parameters] = None):
         self.diagram = diagram
 
-        self.path = diagram.path / f'Frame_{id:04d}'
+        self.path = diagram.path / 'Autogen' / f'Frame_{id:04d}'
         self.config_file_path = self.path / 'config.ant'
         
         if parameters:
@@ -33,7 +33,7 @@ class Frame:
             self.parameters = diagram.parameters
             
     def run(self):
-        self.path.mkdir(exist_ok=True)
+        self.path.mkdir(parents=True, exist_ok=True)
 
         generate_ant_config_file(self)
         execute_simulation(self)
