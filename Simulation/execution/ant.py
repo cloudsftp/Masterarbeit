@@ -40,11 +40,13 @@ def execute_simulation(frame: frame.Frame):
         info(f'Skipping simulation and generation of {data_file_path}')
         return
 
-    if frame.diagram.scan:
+    if frame.diagram.scan and not frame.diagram.options.num_cores == 1:
         execute_simulation_server_mode(frame)
     
     else:
         execute_simulation_standalone_mode(frame)
+
+# Executing
 
 def execute_simulation_server_mode(frame: frame.Frame):
     num_cores = get_num_cores(frame)
@@ -70,13 +72,10 @@ def get_num_cores(frame: frame.Frame) -> int:
 
     return res
 
-def get_data_file_path(frame: execution.frame.Frame) -> Path:
-    if frame.diagram.type == DiagramType.PERIOD:
-        return frame.path / 'period.tna'
-    elif frame.diagram.type == DiagramType.COBWEB:
-        return frame.path / 'cyclic_cobweb.tna'
-    else:
-        raise CustomException(f'Executing simulation for type {frame.diagram.type} not yet supported!')
+def execute_simulation_standalone_mode(frame: frame.Frame):
+    info('Executing simulation in standalone mode')
+    process = start_ant(frame,ExecutionType.STANDALONE)
+    wait_for_simulation(process)
 
 # Starting the processes
 
@@ -113,11 +112,8 @@ def start_ant(frame: frame.Frame, exec_type: ExecutionType) -> subprocess.Popen:
             
             time.sleep(1)
     
-    elif exec_type == ExecutionType.CLIENT:
-        return create_ant_process(frame, ExecutionType.CLIENT)
-
     else:
-        raise CustomException(f'Execution type {exec_type} not supported')
+        return create_ant_process(frame, exec_type)
 
 def create_ant_process(frame: frame.Frame, exec_type: ExecutionType) -> subpro.Popen:
     arguments = [
@@ -202,3 +198,13 @@ def format_eta(eta: float) -> str:
     res = f'{eta_int:4d}h {res}'
 
     return res
+
+# Path utils
+
+def get_data_file_path(frame: execution.frame.Frame) -> Path:
+    if frame.diagram.type == DiagramType.PERIOD:
+        return frame.path / 'period.tna'
+    elif frame.diagram.type == DiagramType.COBWEB:
+        return frame.path / 'cyclic_cobweb.tna'
+    else:
+        raise CustomException(f'Executing simulation for type {frame.diagram.type} not yet supported!')
