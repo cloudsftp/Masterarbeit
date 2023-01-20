@@ -23,7 +23,9 @@ def join_parameters(old: Parameters, new: Parameters) -> Parameters:
 class Model(object):
     path: Path
     config_file_path: Path
+    model_source_file_path: Path
     library_file_path: Path
+
     parameters: Parameters
 
     def __init__(self, model_path: Path):
@@ -37,16 +39,16 @@ class Model(object):
     
     def compile(self):
         self.library_file_path: Path = self.path / 'model.so'
-        model_source_file_path: Path = self.path / 'model.cpp'
+        self.model_source_file_path: Path = self.path / 'model.cpp'
 
-        if not is_outdated(self.library_file_path, model_source_file_path):
-            info(f'Skipping compilation of {model_source_file_path}')
+        if not is_outdated(self.library_file_path, self.model_source_file_path):
+            info(f'Skipping compilation of {self.model_source_file_path}')
             return
             
         env = os.environ.copy()
         env['PATH'] = str(ant_executable_path) + ':' + env['PATH']
 
-        info(f'Compiling {model_source_file_path}...')
+        info(f'Compiling {self.model_source_file_path}...')
         compile_proc: subprocess.CompletedProcess = subprocess.run(
             str(build_system),
             cwd=self.path,
@@ -59,7 +61,7 @@ class Model(object):
             print(compile_proc.stderr.decode())
             print()
 
-            raise CustomException(f'Could not compile {model_source_file_path}')
+            raise CustomException(f'Could not compile {self.model_source_file_path}')
         
         info('Done')
         

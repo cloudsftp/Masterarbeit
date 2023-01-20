@@ -42,7 +42,7 @@ def generate_diagram(diagram: Diagram):
 def synthesize_gif(diagram: Diagram, frames: List[Frame]):
     args = [
         'convert',
-        '-delay', str(100),
+        '-delay', str(50),
         '-loop', '0',
     ]
 

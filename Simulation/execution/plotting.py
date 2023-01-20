@@ -5,7 +5,6 @@ from textwrap import dedent
 import subprocess
 import shutil
 
-from util.file import is_outdated
 from util.output import info
 from util.exceptions import CustomException
 from util.execution import execute_and_wait
@@ -30,7 +29,7 @@ def create_gnuplot_program(frame: frame.Frame):
     with get_gnuplot_file_path(frame).open('w') as gnuplot_file:
         gnuplot_file.write(gnuplot_start(frame))
         gnuplot_file.write(dimensions(frame))
-        gnuplot_file.write(range_and_tics(frame))
+        gnuplot_file.write(tics(frame))
         
         gnuplot_file.write(extras(frame))
         gnuplot_file.write(plot_commands(frame))
@@ -99,44 +98,39 @@ def dimensions(frame: frame.Frame):
         R = {R}
         D = {D}
         U = {U}
+
+        set xrange [L to R]
+        set yrange [D to U]
         ''')
 
-def range_and_tics(frame: frame.Frame) -> str:
-    L_label = 'L'
-    R_label = 'R'
+def tics(frame: frame.Frame) -> str:
+    if not frame.diagram.options.simple_figure:
+        return dedent(f'''
+        set xtics ('L' L, 'R' R)
+        set ytics ('D' D, 'U' U) rotate by 90
 
-    D_label = 'D'
-    U_label = 'U'
-    
+        set xlabel 'x' offset 0, 1.3
+        set ylabel 'y' offset 4.2, 0 rotate by 90
+        ''')
+        
     x_label = 'x'
     y_label = 'y'
 
     if frame.diagram.options.simple_figure:
         if frame.diagram.type == DiagramType.PERIOD:
-            L_label = frame.diagram.scan[0].parameter_specs[0].start
-            R_label = frame.diagram.scan[0].parameter_specs[0].stop
             x_label = frame.diagram.scan[0].parameter_specs[0].name
 
             if len(frame.diagram.scan) == 1:
-                D_label = 0
-                U_label = frame.diagram.max_periods
                 y_label = 'Period'
 
             elif len(frame.diagram.scan) == 2:
-                D_label = frame.diagram.scan[1].parameter_specs[0].start
-                U_label = frame.diagram.scan[1].parameter_specs[0].stop
                 y_label = frame.diagram.scan[1].parameter_specs[0].name
-        
-    return dedent(f'''
-        set xrange [L to R]
-        set yrange [D to U]
-
-        set xtics ('{L_label}' L, '{R_label}' R)
-        set ytics ('{D_label}' D, '{U_label}' U) rotate by 90
-
-        set xlabel '{x_label}' offset 0, 1.3
-        set ylabel '{y_label}' offset 4.2, 0 rotate by 90
+    
+    return  dedent(f'''
+        set xlabel '{x_label}'
+        set ylabel '{y_label}'
         ''')
+    
 
 def extras(frame: frame.Frame) -> str:
     if get_gnuplot_extras_path(frame).exists():
