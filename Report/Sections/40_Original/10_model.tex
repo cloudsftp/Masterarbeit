@@ -48,12 +48,27 @@ While $z_1, z_2, z_3,$ and $z_4$ must satisfy these equations.
 
 \todo{validate formulas, 2.5b and 2.5c missing $+ z_i$ in cos}
 
-The values for $\chi, \mu,$ and $q$ come from the parameters of the model.
+The values for $\chi, \lambda, \mu,$ and $q$ come from the parameters of the model.
 The parameters are $\chi_0, E_0, \beta, f, L, R, V_m,$ and $\mu$.
 $\mu$ is directly applied in the equations above, while $\chi$ and $q$ consist of multiple parameters.
 The values of $\chi$ and $q$ are given by the following equations.
 \begin{align}
     \chi & = \dfrac{R \cdot \chi_0}{\beta \cdot E_0} \\
+    \lambda & = \dfrac{-R}{L \cdot 2 \cdot \pi \cdot f} \\
     q & = \dfrac{R \cdot V_m}{\beta \cdot E_0}
 \end{align}
 \todo{stimmt das so?}
+
+We are interested in the dynamics that emerge when fixing the parameters $\beta = 1, f = 150, L = 4.2 \cdot 10^{-3}, R = 2, V_m = 5,$ and $\mu = 0.5$.
+The parameters $E_0$ and $\chi_0$ are varied.
+$E_0$ is in the range $[14, 28]$, while $\chi_0$ is in the range $[0.1, 0.65]$.
+When scanning this parameter plane for the period of emerging cycles, \Cref{fig:yunus.2pi.2d.full} emerges.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.6\textwidth]{99_Yunus/2D_Period/result.png}
+    \caption{2D Scan of Original Model}
+    \label{fig:yunus.2pi.2d.full}
+\end{figure}
+
+\todo{cobwebs along red line}
