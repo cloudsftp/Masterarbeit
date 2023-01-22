@@ -15,6 +15,42 @@ This means that the period of the cycle or cycles in that area now have a higher
 \begin{figure}
     \centering
     \includegraphics[width=0.6\textwidth]{98_Yunus_modpi/2D_Period/result.png}
-    \caption{2D Scan of Original Model}
+    \caption{2D Scan of Halved Original Model}
     \label{fig:yunus.pi.2d.full}
+\end{figure}
+
+It is not immediately clear, what is happening.
+Looking at the cobwebs helps.
+\Cref{fig:yunus.pi.CobwebA2} shows the cycle before the thin area with period 6.
+It has period 6 which is exactly one-half the cycle in the full model at the same parameter values for $E_0$ and $\chi_0$, since it is just one-half of the model.
+Its symbolic sequence is $\L^3\R^3$.
+\todo{relation to other pair of cobwebs, farey adding but no period adding bifurcation, etc.}
+
+\begin{figure}
+    \centering
+    \begin{subfigure}{0.4\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{98_Yunus_modpi/Period6/Cobweb_A2/result.png}
+        \caption{Before the thin area begins}
+        \label{fig:yunus.pi.CobwebA2}
+    \end{subfigure}
+    \begin{subfigure}{0.4\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{98_Yunus_modpi/Period6/Cobweb_B2/result.png}
+        \caption{After the thin area begins}
+        \label{fig:yunus.pi.CobwebB2}
+    \end{subfigure}
+    \begin{subfigure}{0.4\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{98_Yunus_modpi/Period6/Cobweb_C2/result.png}
+        \caption{the thin area ends}
+        \label{fig:yunus.pi.CobwebC2}
+    \end{subfigure}
+    \begin{subfigure}{0.4\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{98_Yunus_modpi/Period6/Cobweb_D2/result.png}
+        \caption{After the thin area ends}
+        \label{fig:yunus.pi.CobwebD2}
+    \end{subfigure}
+    \caption{Cobwebs of Halfed Original Model}
 \end{figure}
