@@ -5,13 +5,13 @@
         "aR": 1,
         "bL": 0,
         "bR": 0,
-        "cL": 1.2,
-        "cR": 3.5
+        "cL": 1.3,
+        "cR": 4.15
     },
     "scan": [
         {
             "type": "linear",
-            "resolution": 200,
+            "resolution": 100,
             "parameters": [
                 {
                     "name": "initial_state[0][0]",
@@ -21,7 +21,22 @@
             ]
         }
     ],
-    "animation": null,
+    "animation": {
+        "type": "linear",
+        "resolution": 100,
+        "parameters": [
+            {
+                "name": "cL",
+                "start": 1.70,
+                "stop": 2.4
+            },
+            {
+                "name": "cR",
+                "start": -0.22,
+                "stop": -0.15
+            }
+        ]
+    },
     "L": 0,
     "R": 6,
     "D": 0,
