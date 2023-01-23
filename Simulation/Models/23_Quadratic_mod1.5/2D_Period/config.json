@@ -1,0 +1,32 @@
+{
+    "type": "period",
+    "max_period": 32,
+    "parameters": {
+        "a": 1
+    },
+    "scan": [
+        {
+            "type": "linear",
+            "resolution":1000,
+            "parameters": [
+                {
+                    "name": "b",
+                    "start": 0.6,
+                    "stop": 2
+                }
+            ]
+        },
+        {
+            "type": "linear",
+            "resolution": 1000,
+            "parameters": [
+                {
+                    "name": "c",
+                    "start": 0.8,
+                    "stop": 1.2
+                }
+            ]
+        }
+    ],
+    "animation": null
+}

@@ -18,12 +18,14 @@ def generate_diagram(diagram: Diagram):
         frame.run()
         
         if diagram.options.simple_figure:
-            show_pic(get_simple_result_png_path(frame))
-
+            final_result_png_path = get_final_simple_result_png_path(diagram)
+            result_png_path = get_simple_result_png_path(frame)
         else:
-            result_png_path = get_final_result_png_path(diagram)
-            shutil.copy(get_result_png_path(frame), result_png_path)
-            show_pic(result_png_path)
+            final_result_png_path = get_final_result_png_path(diagram)
+            result_png_path = get_result_png_path(frame)
+
+        shutil.copy(result_png_path, final_result_png_path)
+        show_pic(result_png_path)
     
     else:
         cnt = 0
@@ -74,6 +76,9 @@ def show_pic(pic_path: Path):
 
 def get_final_result_png_path(diagram: Diagram) -> Path:
     return diagram.path / 'result.png'
+
+def get_final_simple_result_png_path(diagram: Diagram) -> Path:
+    return diagram.path / 'result-simple.png'
 
 def get_final_result_gif_path(diagram: Diagram) -> Path:
     return diagram.path / 'result.gif'
