@@ -55,7 +55,7 @@ real_t half(real_t xk, real_t Kp, int StepAlg, const Array<real_t>& parameters)
   do {
     z = 0.5*(za+zb);
 
-    fk = F(xk, z, Kp, StepAlg, parameters);;
+    fk = F(xk, z, Kp, StepAlg, parameters);
 
     if (fa*fk < 0) {
       zb = z;
@@ -75,7 +75,7 @@ bool invertor (const Array<real_t>& currentState,
   const Array<real_t>& parameters,
 	Array<real_t>& RHS)
 {
-  real_t xk, Kp;
+  real_t xk, Kp = 1;
   real_t et;
   real_t tk, tk1, tk2;
   real_t z, z_0, z_k;
@@ -83,20 +83,8 @@ bool invertor (const Array<real_t>& currentState,
 
   xk = currentState[0];
 
-  if ((xk>=0) and (xk<Pi/2)) {
-    Kp = 1;
-  } else {
-    if ((xk>=3.0/2*Pi) and (xk<=2*Pi)) {
-      Kp = 1;
-    } else {
-      Kp = -1;
-    }
-  }
-
-  for (StepAlg = 1; StepAlg <=2; ++StepAlg) {
-    z = half(xk, Kp, StepAlg, parameters);
-    if (StepAlg == 1) z_k = z;
-    else z_0 = z;
+  if (xk < 3.0 / 2 * Pi and xk > Pi / 2) {
+    Kp = -1;
   }
   
   z_k = half(xk, Kp, 1, parameters);
@@ -104,18 +92,18 @@ bool invertor (const Array<real_t>& currentState,
   
   if (Kp == 1) {
     if (z_k<z_0) {
-      xk = mod(xk+z_k, 2*Pi);
+      xk = xk+z_k;
     } else {
       Kp = -1;
-      xk = mod(xk+z_0, 2*Pi);
+      xk = xk+z_0;
     }
   } else {
     if (z_k < z_0) {
       Kp = -1;
-      xk = mod(xk+z_k, 2*Pi);
+      xk = xk+z_k;
     } else {
       Kp = +1;
-      xk = mod(xk+z_0, 2*Pi);
+      xk = xk+z_0;
     }
   }
 
