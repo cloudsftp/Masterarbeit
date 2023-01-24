@@ -23,7 +23,7 @@
     ],
     "animation": {
         "type": "linear",
-        "resolution": 100,
+        "resolution": 20,
         "parameters": [
             {
                 "name": "cL",
@@ -38,7 +38,7 @@
         ]
     },
     "L": 0,
-    "R": 3,
+    "R": 6,
     "D": 0,
-    "U": 3
+    "U": 6
 }
