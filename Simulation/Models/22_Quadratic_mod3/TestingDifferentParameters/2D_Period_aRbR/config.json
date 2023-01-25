@@ -1,0 +1,38 @@
+{
+    "type": "period",
+    "max_period": 128,
+    "parameters": {
+        "aL": 1,
+        "aR": 1,
+        "bL": 1,
+        "bR": 1,
+        "cL": 1.03,
+        "cR": 2.65,
+        "n": 3
+    },
+    "scan": [
+        {
+            "type": "linear",
+            "resolution": 1000,
+            "parameters": [
+                {
+                    "name": "aR",
+                    "start": -2,
+                    "stop": 1
+                }
+            ]
+        },
+        {
+            "type": "linear",
+            "resolution": 1000,
+            "parameters": [
+                {
+                    "name": "bR",
+                    "start": 1,
+                    "stop": 5
+                }
+            ]
+        }
+    ],
+    "animation": null
+}
