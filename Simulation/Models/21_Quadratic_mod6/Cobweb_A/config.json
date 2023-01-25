@@ -5,8 +5,8 @@
         "aR": 1,
         "bL": 0,
         "bR": 0,
-        "cL": 1.35,
-        "cR": 3.95
+        "cL": 1.2,
+        "cR": 3.5
     },
     "scan": [
         {
@@ -21,22 +21,7 @@
             ]
         }
     ],
-    "animation": {
-        "type": "linear",
-        "resolution": 10,
-        "parameters": [
-            {
-                "name": "cL",
-                "start": 1.1,
-                "stop": 1.1
-            },
-            {
-                "name": "cR",
-                "start": 3.55,
-                "stop": 3.65
-            }
-        ]
-    },
+    "animation": null,
     "L": 0,
     "R": 6,
     "D": 0,
