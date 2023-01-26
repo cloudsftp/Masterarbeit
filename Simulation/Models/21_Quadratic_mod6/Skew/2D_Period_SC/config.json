@@ -1,6 +1,7 @@
 {
     "type": "period",
     "max_period": 32,
+    "num_iterations": 5000,
     "parameters": {
         "aL": 1,
         "aR": 1,
@@ -12,7 +13,7 @@
     "scan": [
         {
             "type": "linear",
-            "resolution": 1000,
+            "resolution": 3000,
             "parameters": [
                 {
                     "name": "cL",
@@ -23,12 +24,12 @@
         },
         {
             "type": "linear",
-            "resolution": 1000,
+            "resolution": 3000,
             "parameters": [
                 {
                     "name": "cR",
-                    "start": 2.67,
-                    "stop": 2.63
+                    "start": 2.50,
+                    "stop": 2.75
                 }
             ]
         }

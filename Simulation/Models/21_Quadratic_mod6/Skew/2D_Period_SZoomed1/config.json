@@ -1,6 +1,7 @@
 {
     "type": "period",
-    "max-period": 64,
+    "max_period": 64,
+    "num_iterations": 5000,
     "parameters": {
         "aL": 1,
         "aR": 1,
