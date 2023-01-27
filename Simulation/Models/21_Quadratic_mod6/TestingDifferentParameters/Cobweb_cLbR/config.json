@@ -7,7 +7,7 @@
         "bL": 1,
         "bR": 1,
         "cL": 1.03,
-        "cR": 2.30,
+        "cR": 2.50,
         "n": 3
     },
     "scan": [
@@ -25,17 +25,17 @@
     ],
     "animation": {
         "type": "linear",
-        "resolution": 100,
+        "resolution": 20,
         "parameters": [
             {
                 "name": "bR",
-                "start": 1.50,
-                "stop": 2.50
+                "start": 1.00,
+                "stop": 1.42
             },
             {
                 "name": "cL",
-                "start": 1.64,
-                "stop": 1.60
+                "start": 1.08,
+                "stop": 1.125
             }
         ]
     },
