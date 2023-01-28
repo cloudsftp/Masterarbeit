@@ -1,35 +1,36 @@
 {
     "type": "period",
     "max_period": 64,
-    "num_iterations": 5000,
+    "num_iterations": 1000,
     "parameters": {
         "aL": 1,
         "aR": 1,
         "bL": 1,
         "bR": 1,
-        "cL": 1,
-        "cR": 2.2
+        "cL": 1.03,
+        "cR": 2.50,
+        "n": 3
     },
     "scan": [
         {
             "type": "linear",
-            "resolution": 3000,
+            "resolution": 1000,
             "parameters": [
                 {
-                    "name": "cL",
-                    "start": 0.7,
-                    "stop": 3.3
+                    "name": "bR",
+                    "start": 0,
+                    "stop": 2
                 }
             ]
         },
         {
             "type": "linear",
-            "resolution": 3000,
+            "resolution": 1000,
             "parameters": [
                 {
-                    "name": "cR",
-                    "start": 2.2,
-                    "stop": 4.8
+                    "name": "cL",
+                    "start": 1.50,
+                    "stop": 3
                 }
             ]
         }

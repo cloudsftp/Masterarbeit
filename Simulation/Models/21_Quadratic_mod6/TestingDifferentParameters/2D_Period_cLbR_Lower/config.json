@@ -7,8 +7,9 @@
         "aR": 1,
         "bL": 1,
         "bR": 1,
-        "cL": 1,
-        "cR": 2.2
+        "cL": 1.03,
+        "cR": 2.50,
+        "n": 3
     },
     "scan": [
         {
@@ -16,9 +17,9 @@
             "resolution": 3000,
             "parameters": [
                 {
-                    "name": "cL",
-                    "start": 0.7,
-                    "stop": 3.3
+                    "name": "bR",
+                    "start": 0,
+                    "stop": 2
                 }
             ]
         },
@@ -27,9 +28,9 @@
             "resolution": 3000,
             "parameters": [
                 {
-                    "name": "cR",
-                    "start": 2.2,
-                    "stop": 4.8
+                    "name": "cL",
+                    "start": 0.80,
+                    "stop": 1.4
                 }
             ]
         }

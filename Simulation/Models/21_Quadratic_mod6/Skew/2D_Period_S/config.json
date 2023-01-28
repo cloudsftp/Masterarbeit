@@ -27,8 +27,8 @@
             "parameters": [
                 {
                     "name": "cR",
-                    "start": -1,
-                    "stop": 1.7
+                    "start": 2,
+                    "stop": 4.7
                 }
             ]
         }
