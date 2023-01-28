@@ -9,12 +9,12 @@
     "scan": null,
     "animation": {
         "type": "linear",
-        "resolution": 20,
+        "resolution": 4,
         "parameters": [
             {
                 "name": "mu",
-                "start": 0.05,
-                "stop": -0.05
+                "start": 0.01,
+                "stop": -0.03
             }
         ]
     },
