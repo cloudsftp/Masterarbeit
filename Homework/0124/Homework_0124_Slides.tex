@@ -1,0 +1,63 @@
+\documentclass{beamer}
+%Information to be included in the title page:
+\title{Piecewise Linear Function}
+\subtitle{with discontinuity at $x = 0$}
+\author{Fabian Weik}
+\institute{Overleaf}
+\date{\today}
+
+\usepackage{listings}
+
+\graphicspath{{../../Simulation/Models/00_Examples/05_Homework_0124}}
+
+\usepackage{forloop}
+\newcounter{n}
+\newcounter{mu}
+\makeatletter
+\newcommand{\twodigits}{\two@digits}
+\makeatother
+
+\begin{document}
+
+\frame{\titlepage}
+
+\begin{frame}[fragile]{Code}
+    \begin{lstlisting}
+real_t x = currentState[0];
+real_t y = 0;
+
+if (x < 0) {
+    y = aL * x + mu;
+} else {
+    y = aR * x + mu;
+}
+
+RHS[0] = y;
+return true;
+    \end{lstlisting}
+    
+    Executed using AnT
+    
+\end{frame}
+
+\begin{frame}{$a_L = -1, a_R = 2$}
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.6\textwidth]{1D_i/result.png}
+        \caption{Varying $\mu$}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{$a_L = -1, a_R = 2$}
+    \begin{figure}
+        \centering
+            \forloop{n}{0}{\value{n} < 5}{
+                \includegraphics<\arabic{n}>[width=0.6\textwidth]{
+                    Cob_i/Autogen/Frame_00\twodigits{\value{n}}/result.png
+                }
+            }
+        \caption{Cobwebs $\mu \in \{0.01, 0, -0.01, -0.02, -0.03\}$}
+    \end{figure}
+\end{frame}
+
+\end{document}
