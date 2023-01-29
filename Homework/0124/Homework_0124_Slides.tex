@@ -3,7 +3,6 @@
 \title{Piecewise Linear Function}
 \subtitle{with discontinuity at $x = 0$}
 \author{Fabian Weik}
-\institute{Overleaf}
 \date{\today}
 
 \usepackage{listings}
@@ -16,6 +15,8 @@
 \makeatletter
 \newcommand{\twodigits}{\two@digits}
 \makeatother
+
+\usepackage{subfig}
 
 \begin{document}
 
@@ -40,7 +41,7 @@ return true;
     
 \end{frame}
 
-\begin{frame}{$a_L = -1, a_R = 2$}
+\begin{frame}{(i) $a_L = -1, a_R = 2$}
     \begin{figure}
         \centering
         \includegraphics[width=0.6\textwidth]{1D_i/result.png}
@@ -48,7 +49,7 @@ return true;
     \end{figure}
 \end{frame}
 
-\begin{frame}{$a_L = -1, a_R = 2$}
+\begin{frame}{(i) $a_L = -1, a_R = 2$}
     \begin{figure}
         \centering
             \forloop{n}{0}{\value{n} < 5}{
@@ -57,6 +58,21 @@ return true;
                 }
             }
         \caption{Cobwebs $\mu \in \{0.01, 0, -0.01, -0.02, -0.03\}$}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{(i) What happens if we change $a_R$?}
+    \begin{figure}
+        \centering
+        \subfloat[Initial State $-\epsilon$]{
+            \includegraphics<1>[width=0.4\textwidth]{2D_i_aR/result.png}
+            \includegraphics<2>[width=0.4\textwidth]{2D_i_aR_Zoomed/result.png}
+        } \qquad
+        \subfloat[Initial State $\epsilon$]{
+            \includegraphics<1>[width=0.4\textwidth]{2D_i_aRp/result.png}
+            \includegraphics<2>[width=0.4\textwidth]{2D_i_aRp_Zoomed/result.png}
+        }
+        \caption{Varying $a_R$}
     \end{figure}
 \end{frame}
 
