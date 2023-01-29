@@ -74,6 +74,32 @@ return true;
         }
         \caption{Varying $a_R$}
     \end{figure}
+    
+    blue/black: no cycle
+    \hspace*{\fill}
+    pink: fixed point
+    \hspace*{\fill}
+    white: 2-cycle
+\end{frame}
+
+\begin{frame}{(i.b) $a_L = -1, a_R = 0.5$}
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.6\textwidth]{1D_ib/result.png}
+        \caption{Varying $\mu$}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{(i.b) $a_L = -1, a_R = 0.5$}
+    \begin{figure}
+        \centering
+            \forloop{n}{0}{\value{n} < 5}{
+                \includegraphics<\arabic{n}>[width=0.6\textwidth]{
+                    Cob_ib/Autogen/Frame_00\twodigits{\value{n}}/result.png
+                }
+            }
+        \caption{Cobwebs $\mu \in \{0.02, 0.01, 0, -0.01, -0.02\}$}
+    \end{figure}
 \end{frame}
 
 \end{document}
