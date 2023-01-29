@@ -1,0 +1,23 @@
+{
+    "type": "period",
+    "max_period": 16,
+    "initial": -0.001,
+    "parameters": {
+        "aL": -2,
+        "aR": 0.5
+    },
+    "scan": [
+        {
+            "type": "linear",
+            "resolution": 1000,
+            "parameters": [
+                {
+                    "name": "mu",
+                    "start": -1,
+                    "stop": 1
+                }
+            ]
+        }
+    ],
+    "animation": null
+}

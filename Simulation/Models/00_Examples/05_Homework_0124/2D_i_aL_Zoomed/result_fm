@@ -1,0 +1,10 @@
+% fmopt: width=8cm
+
+\psfrag{L}{\hspace*{0.0em}\raisebox{0.5ex}{$-0.25$}}
+\psfrag{R}{\hspace*{-1.7em}\raisebox{0.5ex}{$0.25$}}
+
+\psfrag{D}{\hspace*{0.5em}\raisebox{0.5ex}{$-1.25$}}
+\psfrag{U}{\hspace*{-2.0em}\raisebox{0.5ex}{$-0.75$}}
+
+\psfrag{x}{\hspace*{-0.0em}\raisebox{0.5ex}{$\mu$}}
+\psfrag{y}{\hspace*{0.0em}\raisebox{0.5ex}{$a_R$}}
