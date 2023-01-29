@@ -41,7 +41,7 @@ return true;
     
 \end{frame}
 
-\begin{frame}{(i) $a_L = -1, a_R = 2$}
+\begin{frame}{(i.a) $a_L = -1, a_R = 2$}
     \begin{figure}
         \centering
         \includegraphics[width=0.6\textwidth]{1D_i/result.png}
@@ -49,7 +49,7 @@ return true;
     \end{figure}
 \end{frame}
 
-\begin{frame}{(i) $a_L = -1, a_R = 2$}
+\begin{frame}{(i.a) $a_L = -1, a_R = 2$}
     \begin{figure}
         \centering
             \forloop{n}{0}{\value{n} < 5}{
@@ -61,7 +61,7 @@ return true;
     \end{figure}
 \end{frame}
 
-\begin{frame}{(i) What happens if we change $a_R$?}
+\begin{frame}{(i.a) What happens if we change $a_R$?}
     \begin{figure}
         \centering
         \subfloat[Initial State $-\epsilon$]{
@@ -96,6 +96,26 @@ return true;
             \forloop{n}{0}{\value{n} < 5}{
                 \includegraphics<\arabic{n}>[width=0.6\textwidth]{
                     Cob_ib/Autogen/Frame_00\twodigits{\value{n}}/result.png
+                }
+            }
+        \caption{Cobwebs $\mu \in \{0.02, 0.01, 0, -0.01, -0.02\}$}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{(i.c) $a_L = a_R = -1$}
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.6\textwidth]{1D_ic/result.png}
+        \caption{Varying $\mu$}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{(i.c) $a_L = a_R = -1$}
+    \begin{figure}
+        \centering
+            \forloop{n}{0}{\value{n} < 5}{
+                \includegraphics<\arabic{n}>[width=0.6\textwidth]{
+                    Cob_ic/Autogen/Frame_00\twodigits{\value{n}}/result.png
                 }
             }
         \caption{Cobwebs $\mu \in \{0.02, 0.01, 0, -0.01, -0.02\}$}
