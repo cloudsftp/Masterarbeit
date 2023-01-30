@@ -69,8 +69,9 @@ return true;
         \item[$\mu = 0$] Unstable fixed point at $0$
         \item[$\mu < 0$] \begin{itemize}
             \item Infinite unstable 2-cycles in interval $(\mu, 0)$
-            \item Unstable fixed at $\frac{\mu}{2}$
-            \item Absorbing interval $\left(\mu, \frac{\mu}{1 - a_R}\right)$
+            \item Unstable fixed point at $\frac{\mu}{2}$
+            \item Unstable fixed point at $-\mu$
+            \item Absorbing interval $(\mu, -\mu)$
         \end{itemize}
     \end{enumerate}
 \end{frame}
@@ -129,7 +130,7 @@ return true;
 
 \begin{frame}{(i.b) $a_L = -1, a_R = 0.5$}
     \begin{itemize}
-        \item[$\mu >= 0$] Stable fixpoint at $\frac{\mu}{1 - a_R}$, \\
+        \item[$\mu >= 0$] Stable fixpoint at $2 \mu$, \\
         \item[$\mu < 0$] \begin{itemize}
             \item Infinite unstable 2-cycles in $(\mu, 0)$
             \item Unstable fixed point at $\frac{\mu}{2}$
@@ -180,7 +181,7 @@ return true;
     \end{figure}
 \end{frame}
 
-\begin{frame}{(i.c) $a_L = a_R = -1$ (Not a bifurcation)}
+\begin{frame}{(i.d) $a_L = -1, a_R = -2$}
     \begin{enumerate}
         \item[$\mu >= 0$] Unstable fixed point at $\frac{\mu}{3}$
         \item[$\mu < 0$] \begin{itemize}
@@ -246,14 +247,14 @@ return true;
 \begin{frame}{(0) what happens if we change $a_R$?}
     Not yet seen dynamics:
     \begin{enumerate}
-        \item[(0.a)] Fixpoint to no cyclic behaviour for $a_R \in (0.5, 1)$
-        \item[(0.b)] Fixpoint to 4-cycle for $a_R = 0.5$
+        \item[(0.a)] Fixed point to no cyclic behaviour for $a_R \in (0.5, 1)$
+        \item[(0.b)] Fixed point to 4-cycle for $a_R = 0.5$
     \end{enumerate}
 
     \vspace*{2em}
     Already seen, but slightly different:
     \begin{enumerate}
-        \item[(0.c)] Fixpoint to \textit{single} 2-cycle for $a_R \in (-0.5, 0.5)$
+        \item[(0.c)] Fixed point to \textit{single} 2-cycle for $a_R \in (-0.5, 0.5)$
     \end{enumerate}
 \end{frame}
 
@@ -280,10 +281,9 @@ return true;
 \end{frame}
 
 \begin{frame}{(0.a) Fixing $a_L = -2, a_R = 0.75$}
-    
     \begin{enumerate}
-        \item[$\mu >= 0$] stable fixpoint at $\frac{\mu}{1 - a_R}$ w/ absorbing interval $(-\infty, \infty)$
-        \item[$\mu < 0$] unstable fixpoint at $\frac{\mu}{2}$
+        \item[$\mu >= 0$] Stable fixed point at $4 \mu$ w/ absorbing interval $(-\infty, \infty)$
+        \item[$\mu < 0$] Unstable fixed point at $\frac{\mu}{3}$
     \end{enumerate}
 \end{frame}
 
@@ -306,7 +306,17 @@ return true;
             }
         \caption{Cobwebs $\mu \in \{0.01, 0, -0.01, -0.02, -0.03\}$}
     \end{figure}
-    
+\end{frame}
+
+\begin{frame}{(0.b) Fixing $a_L = -2, a_R = 0.5$}
+    \begin{itemize}
+        \item[$\mu >= 0$] Stable fixed point at $2 \mu$
+        \item[$\mu < 0$] \begin{itemize}
+            \item Infinite unstable 4-cycles in $(2 \mu, -\mu)$
+            \item Unstable 2-cycle at $\frac{3 \mu}{4}$ and $\frac{-\mu}{2}$
+            \item Unstable fixed point at $\frac{\mu}{3}$
+        \end{itemize}
+    \end{itemize}
     Absorbing interval: $(-\infty, \infty)$
 \end{frame}
 
@@ -318,7 +328,7 @@ return true;
     \end{figure}
 \end{frame}
 
-\begin{frame}{(0.b) Fixing $a_L = -2, a_R = 0$}
+\begin{frame}{(0.c) Fixing $a_L = -2, a_R = 0$}
     \begin{figure}
         \centering
             \forloop{n}{0}{\value{n} < 5}{
@@ -329,7 +339,16 @@ return true;
             }
         \caption{Cobwebs $\mu \in \{0.01, 0, -0.01, -0.02, -0.03\}$}
     \end{figure}
-    
+\end{frame}
+
+\begin{frame}{(0.c) Fixing $a_L = -2, a_R = 0$}
+    \begin{enumerate}
+        \item[$\mu >= 0$] Stable fixed point at $\mu$
+        \item[$\mu < 0$] \begin{itemize}
+            \item Stable 2-cycle at $-\mu$ and $\mu$
+            \item Unstable fixed point at $\frac{\mu}{3}$
+        \end{itemize}
+    \end{enumerate}
     Absorbing interval: $(-\infty, \infty)$
 \end{frame}
 
