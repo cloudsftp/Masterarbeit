@@ -192,7 +192,7 @@ return true;
     \end{enumerate}
 \end{frame}
 
-\begin{frame}{(i.a) What happens if we change $a_L$?}
+\begin{frame}{(i) What happens if we change $a_L$?}
     \begin{figure}
         \centering
         \subfloat[Initial State $-\epsilon$]{
@@ -350,6 +350,35 @@ return true;
         \end{itemize}
     \end{enumerate}
     Absorbing interval: $(-\infty, \infty)$
+\end{frame}
+
+\begin{frame}{(ii) Fix $a_L = 0$}
+    Different dynamic for $a_L = 0$ from $a_L= -1$
+\end{frame}
+
+\begin{frame}{(ii) What happens if we change $a_R$?}
+    \begin{figure}
+        \centering
+        \subfloat[Initial State $-\epsilon$]{
+            \includegraphics<1>[width=0.4\textwidth]{2D_ii_aR/result.png}
+            %\includegraphics<2>[width=0.4\textwidth]{2D_ii_aL_Zoomed/result.png}
+        } \qquad
+        \subfloat[Initial State $\epsilon$]{
+            \includegraphics<1>[width=0.4\textwidth]{2D_ii_aRp/result.png}
+            %\includegraphics<2>[width=0.4\textwidth]{2D_ii_aLp_Zoomed/result.png}
+        }
+        \caption{Varying $a_L$}
+    \end{figure}
+
+    blue/black: no cycle
+    \hspace*{\fill}
+    pink: fixed point
+    \hspace*{\fill}
+    white: 2-cycle
+\end{frame}
+
+\begin{frame}{(ii) What happens if we change $a_R$?}
+    Nothing we haven't seen before
 \end{frame}
 
 \end{document}
