@@ -40,6 +40,9 @@ def gnuplot_start(frame: frame.Frame) -> str:
         reset
         set loadpath '{frame.diagram.path}' '{frame.diagram.model.path}'
         ''')
+            
+    for name in frame.parameters:
+        res += f'{name} = {frame.parameters[name]}\n'
 
     if frame.diagram.options.simple_figure:
         res += dedent(f'''
@@ -162,22 +165,17 @@ def plot_commands(frame: frame.Frame) -> str:
         if get_gnuplot_model_path(frame).exists():
             res = dedent(f'''
                 load '{get_gnuplot_model_path(frame)}'
-                ''')
-            
-            for name in frame.parameters:
-                res += f'{name} = {frame.parameters[name]}\n'
 
-            res += dedent(f'''
-                plot f(x) w points ps 0.3 pt 7 lc rgb 'red' notitle, \\
+                plot f(x) w points ps 0.3 pt 7 lc rgb 'black' notitle, \\
                 ''')
             
         else:
             res = dedent(f'''
-                plot '{get_gnuplot_model_data_path(frame)}' w points ps 0.3 pt 7 lc rgb 'red' notitle, \\
+                plot '{get_gnuplot_model_data_path(frame)}' w points ps 0.3 pt 7 lc rgb 'black' notitle, \\
                 ''')
         
         res += f'''\\
-            '{get_data_file_path(frame)}' w lines lw 1 lc rgb 'blue' notitle, \\
+            '{get_data_file_path(frame)}' w lines lw 1 lc rgb 'red' notitle, \\
             x w lines lt 1 lw 1.5 lc rgb 'gray20' notitle
             '''
         return res

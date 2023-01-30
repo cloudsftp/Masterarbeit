@@ -1,0 +1,16 @@
+{
+    "type": "cobweb",
+    "max_period": 16,
+    "initial": -0.0025,
+    "parameters": {
+        "aL": -2,
+        "aR": -0.25,
+        "mu": -0.025
+    },
+    "scan": null,
+    "animation": null,
+    "L": -0.1,
+    "R": 0.1,
+    "D": -0.1,
+    "U": 0.1
+}

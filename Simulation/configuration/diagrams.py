@@ -48,6 +48,7 @@ class Diagram(object):
     
     max_periods: int = 128
     num_iterations: int = 1000
+    initial: float = 0.1
     reset_orbit: bool = True
 
     L: Optional[float] = None
@@ -201,6 +202,9 @@ def load_diagram_from_dict(
     
     if 'num_iterations' in config:
         obj.num_iterations = config['num_iterations']
+    
+    if 'initial' in config:
+        obj.initial = config['initial']
     
     if 'reset_orbit' in config:
         obj.reset_orbit = config['reset_orbit']
