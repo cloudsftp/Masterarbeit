@@ -61,9 +61,18 @@ return true;
             }
         \caption{Cobwebs $\mu \in \{0.01, 0, -0.01, -0.02, -0.03\}$}
     \end{figure}
-        
-    $\mu < 0$: infinite unstable 2-cycles and one unstable fixpoint
-    Absorbing interval: $(\mu, 0)$
+\end{frame}
+
+\begin{frame}{(i.a) $a_L = -1, a_R = 2$}
+    \begin{enumerate}
+        \item[$\mu > 0$] No cyclic behavior
+        \item[$\mu = 0$] Unstable fixed point at $0$
+        \item[$\mu < 0$] \begin{itemize}
+            \item Infinite unstable 2-cycles in interval $[\mu, 0]$
+            \item Unstable fixed at $\frac{\mu}{2}$
+            \item Absorbing interval $\left[\mu, \frac{\mu}{1 - a_R}\right]$
+        \end{itemize}
+    \end{enumerate}
 \end{frame}
 
 \begin{frame}{(i) What happens if we change $a_R$?}
@@ -118,8 +127,8 @@ return true;
         
     Absorbing interval: $(-\infty, \infty)$
         
-    $\mu >= 0$: stable fixpoint at $2 \mu$, \\
-    $\mu < 0$: infinite unstable 2-cycles and one unstable fixpoint
+    $\mu >= 0$: stable fixpoint at $\frac{\mu}{1 - a_R}$, \\
+    $\mu < 0$: infinite unstable 2-cycles in $[\mu, 0]$ and unstable fixpoint at $\frac{\mu}{2}$
 \end{frame}
 
 \begin{frame}{(i.c) $a_L = a_R = -1$ (Not a bifurcation)}
@@ -230,8 +239,15 @@ return true;
             }
         \caption{Cobwebs $\mu \in \{0.02, 0.01, 0, -0.01, -0.02\}$}
     \end{figure}
+
+\end{frame}
+
+\begin{frame}{(0.a) Fixing $a_L = -2, a_R = 0.75$}
     
-    Absorbing interval: $(-\infty, \infty)$
+    \begin{enumerate}
+        \item[$\mu >= 0$] stable fixpoint at $\frac{\mu}{1 - a_R}$ w/ absorbing interval $(-\infty, \infty)$
+        \item[$\mu < 0$] unstable fixpoint at $\frac{\mu}{2}$
+    \end{enumerate}
 \end{frame}
 
 \begin{frame}{(0.b) Fixing $a_L = -2, a_R = 0.5$}

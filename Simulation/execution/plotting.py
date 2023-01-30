@@ -166,12 +166,12 @@ def plot_commands(frame: frame.Frame) -> str:
             res = dedent(f'''
                 load '{get_gnuplot_model_path(frame)}'
 
-                plot f(x) w points ps 0.3 pt 7 lc rgb 'red' notitle, \\
+                plot f(x) w points ps 0.3 pt 7 lc rgb 'black' notitle, \\
                 ''')
             
         else:
             res = dedent(f'''
-                plot '{get_gnuplot_model_data_path(frame)}' w points ps 0.3 pt 7 lc rgb 'red' notitle, \\
+                plot '{get_gnuplot_model_data_path(frame)}' w points ps 0.3 pt 7 lc rgb 'black' notitle, \\
                 ''')
         
         res += f'''\\
