@@ -4,12 +4,12 @@
     "initial": -0.001,
     "parameters": {
         "aL": -2,
-        "aR": 0.75
+        "aR": 0.5
     },
     "scan": [
         {
             "type": "linear",
-            "resolution": 1000,
+            "resolution": 3000,
             "parameters": [
                 {
                     "name": "mu",

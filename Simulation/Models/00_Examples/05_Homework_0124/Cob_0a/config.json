@@ -4,7 +4,7 @@
     "initial": -0.0025,
     "parameters": {
         "aL": -2,
-        "aR": -0.75
+        "aR": 0.75
     },
     "scan": null,
     "animation": {

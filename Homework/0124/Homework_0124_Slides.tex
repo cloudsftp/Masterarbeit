@@ -10,8 +10,9 @@
 \graphicspath{{../../Simulation/Models/00_Examples/05_Homework_0124}}
 
 \usepackage{forloop}
+\usepackage{calc}
 \newcounter{n}
-\newcounter{mu}
+\newcounter{f}
 \makeatletter
 \newcommand{\twodigits}{\two@digits}
 \makeatother
@@ -53,7 +54,8 @@ return true;
     \begin{figure}
         \centering
             \forloop{n}{0}{\value{n} < 5}{
-                \includegraphics<\arabic{n}>[width=0.6\textwidth]{
+                \setcounter{f}{\value{n}+1}
+                \includegraphics<\arabic{f}>[width=0.6\textwidth]{
                     Cob_i/Autogen/Frame_00\twodigits{\value{n}}/result.png
                 }
             }
@@ -94,7 +96,8 @@ return true;
     \begin{figure}
         \centering
             \forloop{n}{0}{\value{n} < 5}{
-                \includegraphics<\arabic{n}>[width=0.6\textwidth]{
+                \setcounter{f}{\value{n}+1}
+                \includegraphics<\arabic{f}>[width=0.6\textwidth]{
                     Cob_ib/Autogen/Frame_00\twodigits{\value{n}}/result.png
                 }
             }
@@ -114,7 +117,8 @@ return true;
     \begin{figure}
         \centering
             \forloop{n}{0}{\value{n} < 5}{
-                \includegraphics<\arabic{n}>[width=0.6\textwidth]{
+                \setcounter{f}{\value{n}+1}
+                \includegraphics<\arabic{f}>[width=0.6\textwidth]{
                     Cob_ic/Autogen/Frame_00\twodigits{\value{n}}/result.png
                 }
             }
@@ -126,6 +130,31 @@ return true;
     \begin{figure}
         \centering
         \subfloat[Initial State $-\epsilon$]{
+            \includegraphics<1>[width=0.4\textwidth]{2D_i_aL/result.png}
+            \includegraphics<2>[width=0.4\textwidth]{2D_i_aL_Zoomed/result.png}
+        } \qquad
+        \subfloat[Initial State $\epsilon$]{
+            \includegraphics<1>[width=0.4\textwidth]{2D_i_aLp/result.png}
+            \includegraphics<2>[width=0.4\textwidth]{2D_i_aLp_Zoomed/result.png}
+        }
+        \caption{Varying $a_L$}
+    \end{figure}
+
+    blue/black: no cycle
+    \hspace*{\fill}
+    pink: fixed point
+    \hspace*{\fill}
+    white: 2-cycle
+\end{frame}
+
+\begin{frame}{(0) Fix $a_L = -2$}
+    Different dynamic for $a_L = -2$ from $a_L = -1$
+\end{frame}
+
+\begin{frame}{(0) what happens if we change $a_R$?}
+    \begin{figure}
+        \centering
+        \subfloat[Initial State $-\epsilon$]{
             \includegraphics<1>[width=0.4\textwidth]{2D_0_aR/result.png}
             \includegraphics<2>[width=0.4\textwidth]{2D_0_aR_Zoomed/result.png}
         } \qquad
@@ -133,7 +162,7 @@ return true;
             \includegraphics<1>[width=0.4\textwidth]{2D_0_aRp/result.png}
             \includegraphics<2>[width=0.4\textwidth]{2D_0_aRp_Zoomed/result.png}
         }
-        \caption{Varying $a_L$}
+        \caption{Varying $a_R$}
     \end{figure}
     
     \hspace*{\fill}
@@ -147,6 +176,41 @@ return true;
     \hspace*{\fill}
     white: 4-cycle
     \hspace*{\fill}
+\end{frame}
+
+\begin{frame}{(0) what happens if we change $a_R$?}
+    Not yet seen dynamics:
+    \begin{enumerate}
+        \item[(0.a)] Fixpoint to no cyclic behaviour for $a_R \in (0.5, 1)$
+        \item[(0.b)] Fixpoint to 4-cycle for $a_R = 0.5$
+    \end{enumerate}
+
+    \vspace*{2em}
+    Already seen, but slightly different:
+    \begin{enumerate}
+        \item[(0.c)] Fixpoint to \textit{single} 2-cycle for $a_R \in (-0.5, 0.5)$
+    \end{enumerate}
+\end{frame}
+
+\begin{frame}{(0.a) Fixing $a_L = -2, a_R = 0.75$}
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.6\textwidth]{1D_0a/result.png}
+        \caption{Varying $\mu$}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{(0.a) Fixing $a_L = -2, a_R = 0.75$}
+    \begin{figure}
+        \centering
+            \forloop{n}{0}{\value{n} < 5}{
+                \setcounter{f}{\value{n}+1}
+                \includegraphics<\arabic{f}>[width=0.6\textwidth]{
+                    Cob_0a/Autogen/Frame_00\twodigits{\value{n}}/result.png
+                }
+            }
+        \caption{Cobwebs $\mu \in \{0.02, 0.01, 0, -0.01, -0.02\}$}
+    \end{figure}
 \end{frame}
 
 \end{document}

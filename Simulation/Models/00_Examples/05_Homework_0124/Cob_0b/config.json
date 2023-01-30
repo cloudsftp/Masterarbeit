@@ -4,7 +4,7 @@
     "initial": -0.0025,
     "parameters": {
         "aL": -2,
-        "aR": 0
+        "aR": 0.5
     },
     "scan": null,
     "animation": {
@@ -13,8 +13,8 @@
         "parameters": [
             {
                 "name": "mu",
-                "start": 0.02,
-                "stop": -0.02
+                "start": 0.01,
+                "stop": -0.03
             }
         ]
     },
