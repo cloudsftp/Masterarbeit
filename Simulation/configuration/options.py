@@ -8,3 +8,4 @@ class Options:
     simple_figure: bool = False
     skip_computation: bool = False
     num_cores: Optional[int] = None
+    dont_show: bool = False
