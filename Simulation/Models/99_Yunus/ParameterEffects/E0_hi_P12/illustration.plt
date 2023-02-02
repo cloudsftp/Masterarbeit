@@ -26,5 +26,5 @@ set xlabel 'x'
 set ylabel 'y'
 
 plot 'Autogen/Frame_0000/model.dat' w dots notitle lc rgb 'blue', \
-    'Autogen/Frame_0010/model.dat' w dots notitle lc rgb 'purple', \
+    'Autogen/Frame_0007/model.dat' w dots notitle lc rgb 'purple', \
     'Autogen/Frame_0020/model.dat' w dots notitle lc rgb 'red'
