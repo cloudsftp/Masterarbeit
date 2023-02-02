@@ -32,6 +32,7 @@ if __name__ == "__main__":
     parser.add_argument('-n', '--num-cores', type=int, default=None)
     parser.add_argument('--simple-figure', action=argparse.BooleanOptionalAction)
     parser.add_argument('--skip-computation', action=argparse.BooleanOptionalAction)
+    parser.add_argument('--dont-show', action=argparse.BooleanOptionalAction)
 
     arguments = parser.parse_args()
     
@@ -39,6 +40,7 @@ if __name__ == "__main__":
         arguments.simple_figure,
         arguments.skip_computation,
         arguments.num_cores,
+        arguments.dont_show,
     )
     
     try:
