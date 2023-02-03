@@ -1,0 +1,66 @@
+{
+    "type": "analysis",
+    "max_period": 32,
+    "parameters": {
+        "aL": 1,
+        "aR": 1,
+        "n": 6
+    },
+    "scan": [
+        {
+            "type": "linear",
+            "resolution": 40,
+            "parameters": [
+                {
+                    "name": "bL",
+                    "start": 0,
+                    "stop": 2
+                }
+            ]
+        },
+        {
+            "type": "linear",
+            "resolution": 40,
+            "parameters": [
+                {
+                    "name": "bR",
+                    "start": 0,
+                    "stop": 2
+                }
+            ]
+        },
+        {
+            "type": "linear",
+            "resolution": 40,
+            "parameters": [
+                {
+                    "name": "cL",
+                    "start": 1,
+                    "stop": 6
+                }
+            ]
+        },
+        {
+            "type": "linear",
+            "resolution": 40,
+            "parameters": [
+                {
+                    "name": "cR",
+                    "start": 2.5,
+                    "stop": 6
+                }
+            ]
+        },
+        {
+            "type": "linear",
+            "resolution": 50,
+            "parameters": [
+                {
+                    "name": "initial_state[0][0]",
+                    "start": 0,
+                    "stop": 1.5
+                }
+            ]
+        }
+    ]
+}

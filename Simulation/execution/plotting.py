@@ -10,7 +10,7 @@ from util.exceptions import CustomException
 from util.execution import execute_and_wait
 from configuration.diagrams import DiagramType
 from execution import frame
-from execution.ant import get_data_file_path
+from execution.ant import get_data_file_paths
 
 def generate_picture(frame):
     create_gnuplot_program(frame)
@@ -148,17 +148,17 @@ def plot_commands(frame: frame.Frame) -> str:
         if len(frame.diagram.scan) == 1:
             if len(frame.diagram.scan[0].parameter_specs) == 1:
                 return dedent(f'''
-                    plot '{get_data_file_path(frame)}' w dots notitle lc rgb 'blue'
+                    plot '{get_data_file_paths(frame)[0]}' w dots notitle lc rgb 'blue'
                     ''')
             elif  len(frame.diagram.scan[0].parameter_specs) == 2:
                 return dedent(f'''
-                    plot '{get_data_file_path(frame)}' using 1:3 w dots notitle lc rgb 'blue'
+                    plot '{get_data_file_paths(frame)[0]}' using 1:3 w dots notitle lc rgb 'blue'
                     ''')
         elif len(frame.diagram.scan) == 2:
             return dedent(f'''
                 unset colorbox
                 set palette rgbformulae 30,31,32
-                plot '{get_data_file_path(frame)}' w dots notitle palette
+                plot '{get_data_file_paths(frame)[0]}' w dots notitle palette
                 ''')
 
     elif frame.diagram.type == DiagramType.COBWEB:
@@ -175,7 +175,7 @@ def plot_commands(frame: frame.Frame) -> str:
                 ''')
         
         res += f'''\\
-            '{get_data_file_path(frame)}' w lines lw 1 lc rgb 'red' notitle, \\
+            '{get_data_file_paths(frame)[0]}' w lines lw 1 lc rgb 'red' notitle, \\
             x w lines lt 1 lw 1.5 lc rgb 'gray20' notitle
             '''
         return res

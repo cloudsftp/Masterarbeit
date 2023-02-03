@@ -13,6 +13,7 @@ class DiagramType(Enum):
     PERIOD = 0,
     PERIOD_REGIONS = 1,
     COBWEB = 2,
+    ANALYSIS = 3,
 
 class ParameterRangeType(Enum):
     LINEAR = 0,
@@ -167,6 +168,10 @@ def load_diagram_from_dict(
         obj.type = DiagramType.PERIOD_REGIONS
     elif type == 'cobweb':
         obj.type = DiagramType.COBWEB
+    elif type == 'analysis':
+        obj.type = DiagramType.ANALYSIS
+    else:
+        raise CustomException(f'Diagram type "{type}" not supported')
 
     if 'parameters' not in config or not config['parameters']:
         obj.parameters = {}

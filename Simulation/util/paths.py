@@ -11,6 +11,8 @@ ant = ant_executable_path / 'AnT'
 
 ant_log_path = Path('Logs').absolute()
 ant_log_file = ant_log_path / 'server.log'
+def ant_client_log_file(i: int) -> Path:
+    return ant_log_path / f'client{i:03d}'
 
 # Frame specific
 
