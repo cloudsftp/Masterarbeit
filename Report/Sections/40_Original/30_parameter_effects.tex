@@ -63,13 +63,20 @@ For the period 10, points $A_{10}, B_{10},$ and $C_{10}$ are used and for period
 The effects of the parameters described above, always include a change in both parameters $E_0$ and $\chi_0$.
 To reproduce the bifurcation structures, it is important to know which effects on the function each parameter has individually.
 
+\begin{figure}
+    \centering
+    \includegraphics[width=0.4\textwidth]{99_Yunus/2D_Period_Zoomed_EffectsSingle/result.png}
+    \label{fig:yunus.function.evolution.single.map}
+    \caption{Parameter Ranges Scanned for Individual Effects of Parameters}
+\end{figure}
+
 For the parameter $E_0$, we fixed $\chi_0 = 0.2$ and varied $E_0$ in the parameter range $[15, 19]$, it is marked as the green arrow in \Cref{fig:yunus.function.evolution.single.map}.
 Like before, we took the function at three points and put them in one figure with color codes.
 \Cref{fig:yunus.function.evolution.e0} shows this.
 The blue function is the function of the original model at the start of the parameter range, $E_0 = 15$ and $\chi_0 = 0.2$.
 The purple function is in the middle at $E_0 = 17$, $\chi_0$ stays the same.
 And the red function is at the end at $E_0 = 19$.
-From the figure we can see three effects, the parameter has on the function of the original model in this parameter area.
+From the figure we can see three effects, the parameter has on the function of the original model in this parameter range.
 The observed changes are
 \begin{enumerate*}
     \item The left part of branches $\B$ and $\D$ move downwards
@@ -78,12 +85,21 @@ The observed changes are
     \item The Right side of branches $\A$ and $C$ move up \todo{more precise since moves down for previous border location etc.}
 \end{enumerate*}
 
-\begin{figure}
-    \centering
-    \includegraphics[width=0.4\textwidth]{99_Yunus/2D_Period_Zoomed_EffectsSingle/result.png}
-    \label{fig:yunus.function.evolution.single.map}
-    \caption{Parameter Ranges Scanned for Individual Effects of Parameters}
-\end{figure}
+For the parameter $\chi_0$, we fixed $E_0 = 17$ and varied $\chi_0$ in the parameter range $[0.125, 0.3]$.
+This parameter range is marked orange in \Cref{fig:yunus.function.evolution.single.map}.
+The function is displayed at three points of the parameter range in \Cref{fig:yunus.function.evolution.hi}.
+As before, the blue function is the function of the original model at the start of the parameter range, $E_0 = 17$ and $\chi_0 = 0.125$.
+The purple function is at $\chi_0 = 0.2125$, and the red one is at $\chi_0 = 0.3$.
+The observed changes are
+\begin{enumerate*}
+    \item The branches $\A$ and $\C$ move upwards
+    \item The border between $\A$ and $\B$ moves left (also the border between branches $\C$ and $\D$).
+\end{enumerate*}
+There are two more changes that are smaller in comparison
+\begin{enumerate*}
+    \item The right part of branches $\B$ and $\D$ move upwards
+    \item The border between branches $\B$ and $\C$ moves left (also the border between branches $\D$ and $\A$)
+\end{enumerate*}
 
 \begin{figure}
     \centering
