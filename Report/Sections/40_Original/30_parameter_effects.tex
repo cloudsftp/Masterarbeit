@@ -1,6 +1,12 @@
 \subsection{Behaviour of Model under Parameter Changes}
 \label{sec:og.param.effects}
 
+In this section, we examine the effects of the parameters on the function of the original model.
+Starting with the combined effects of the parameters along areas of the same period.
+And then also the individual effects of either parameter.
+
+\subsubsection{Combined Effects of Parameters}
+
 To replicate the dynamics seen in the model, it is helpful to know, how the model changes along the areas of the same period.
 \Cref{fig:yunus.function.evolution.12} shows, how the model function changes along the area of period 12.
 In the figure, there are three functions in three different colors.
@@ -51,3 +57,45 @@ The same effects can be observed for the areas of period 8 and 10.
 The effects are visualized in \Cref{fig:yunus.function.evolution.10,fig:yunus.function.evolution.08}.
 The points used for measurement are visualized in \Cref{fig:yunus.function.evolution.map}.
 For the period 10, points $A_{10}, B_{10},$ and $C_{10}$ are used and for period 8, points $B_8$ and $C_8$.
+
+\subsubsection{Individual Effects of Parameters}
+
+The effects of the parameters described above, always include a change in both parameters $E_0$ and $\chi_0$.
+To reproduce the bifurcation structures, it is important to know which effects on the function each parameter has individually.
+
+For the parameter $E_0$, we fixed $\chi_0 = 0.2$ and varied $E_0$ in the parameter range $[15, 19]$, it is marked as the green arrow in \Cref{fig:yunus.function.evolution.single.map}.
+Like before, we took the function at three points and put them in one figure with color codes.
+\Cref{fig:yunus.function.evolution.e0} shows this.
+The blue function is the function of the original model at the start of the parameter range, $E_0 = 15$ and $\chi_0 = 0.2$.
+The purple function is in the middle at $E_0 = 17$, $\chi_0$ stays the same.
+And the red function is at the end at $E_0 = 19$.
+From the figure we can see three effects, the parameter has on the function of the original model in this parameter area.
+The observed changes are
+\begin{enumerate*}
+    \item The left part of branches $\B$ and $\D$ move downwards
+    \item The local minima of these branches move to the left and downwards
+    \item The border between branches $\A$ and $\B$ moves right (also border between branches $\C$ and $\D$)
+    \item The Right side of branches $\A$ and $C$ move up \todo{more precise since moves down for previous border location etc.}
+\end{enumerate*}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.4\textwidth]{99_Yunus/2D_Period_Zoomed_EffectsSingle/result.png}
+    \label{fig:yunus.function.evolution.single.map}
+    \caption{Parameter Ranges Scanned for Individual Effects of Parameters}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \begin{subfigure}{0.4\textwidth}
+        \includegraphics[width=\textwidth]{99_Yunus/ParameterEffects/E0/illustration.png}
+        \caption{Evolution for Parameter $E_0$}
+        \label{fig:yunus.function.evolution.e0}
+    \end{subfigure}
+    \begin{subfigure}{0.4\textwidth}
+        \includegraphics[width=\textwidth]{99_Yunus/ParameterEffects/hi/illustration.png}
+        \caption{Evolution for Parameter $\chi_0$}
+        \label{fig:yunus.function.evolution.hi}
+    \end{subfigure}
+    \caption{Effects of the Individual Parameters on the Original Funtion}
+\end{figure}
