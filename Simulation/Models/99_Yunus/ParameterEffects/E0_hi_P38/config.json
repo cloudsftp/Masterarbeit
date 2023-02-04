@@ -1,0 +1,41 @@
+{
+    "type": "cobweb",
+    "reset_orbits": true,
+    "parameters": {
+        "E0": 17,
+        "hi": 0.2
+    },
+    "scan": [
+        {
+            "type": "linear",
+            "resolution": 100,
+            "parameters": [
+                {
+                    "name": "initial_state[0][0]",
+                    "start": 0,
+                    "stop": 3.14
+                }
+            ]
+        }
+    ],
+    "animation": {
+        "type": "linear",
+        "resolution": 20,
+        "parameters": [
+            {
+                "name": "E0",
+                "start": 20.32,
+                "stop": 20.83
+            },
+            {
+                "name": "hi",
+                "start": 0.135,
+                "stop": 0.154
+            }
+        ]
+    },
+    "L": 0,
+    "R": 6.283,
+    "D": 0,
+    "U": 6.283
+}
