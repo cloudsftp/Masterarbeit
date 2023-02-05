@@ -45,13 +45,8 @@ The most notable changes are
     \item The left part of branches $\B$ and $\D$ move downwards 
     \item The local minima of these branches move to the left and downwards.
 \end{enumerate*}
-Smaller changes include
-\begin{enumerate*}
-    \item The border between branches $\B$ and $\C$ moves left
-    \item The border between branches $\A$ and $\B$ moves right.
-\end{enumerate*}
-Note that regarding the borders, what happens to the border from $\B$ to $\C$, also applies to the border from $\D$ to $\A$.
-Analogous for the borders from $\A$ to $\B$ and from $\C$ to $\D$ respectively.
+One smaller change is that the border between branches $\B$ and $\C$ moves left.
+Note that the same change happens to the border between the branches $\D$ and $\A$.
 
 The same effects can be observed for the areas of period 8 and 10.
 The effects are visualized in \Cref{fig:yunus.function.evolution.10,fig:yunus.function.evolution.08}.
@@ -95,7 +90,7 @@ The observed changes are
     \item The branches $\A$ and $\C$ move upwards
     \item The border between $\A$ and $\B$ moves left (also the border between branches $\C$ and $\D$).
 \end{enumerate*}
-There are two more changes that are smaller in comparison
+Two more changes are smaller in comparison
 \begin{enumerate*}
     \item The right part of branches $\B$ and $\D$ move upwards
     \item The border between branches $\B$ and $\C$ moves left (also the border between branches $\D$ and $\A$)
@@ -115,3 +110,34 @@ There are two more changes that are smaller in comparison
     \end{subfigure}
     \caption{Effects of the Individual Parameters on the Original Funtion}
 \end{figure}
+
+\subsubsection{Decomposition of Combined Effects}
+
+Now we can take a closer look at the combined effects of the parameters along areas of the same period and trace them back to the isolated effects of both parameters.
+For this, we introduce a notation for the effects.
+The effect of moving the left side of a branch up is denoted $\AL$, for the right side $\AR$, and for the whole branch $\AW$
+The subscript indicates, which branch the change effects, and the superscript indicates, whether the branch moves upwards $+$ or downwards $-$.
+The effect of moving a local minimum is denoted as $\AMi$.
+The meaning of the subscript stays the same as above, but the superscript also can include $L$ for left and $R$ for right.
+Finally, the effect of moving borders is denoted as $\AB$.
+The subscript now includes the two branches, to which the border belongs, and the superscript now has only $L$ or $R$.
+For brevity, we do not write redundant branch names, so changes happening to branch $\A$ are also happening to branch $\C$.
+For borders, changes to the border between branches $\A$ and $\B$ are also happening to the border between branches $\C$ and $\D$.
+
+\Cref{tab:yunus.parameter.effects} lists all observed effects along the areas of the same period and their decomposition into effects of the single parameters.
+
+\begin{table}
+    \centering
+    \begin{tabular}{|c|c|c|l|} \hline
+        Combined & $E_0$ & $\chi_0$ & Comment \\ \hline \hline
+        $\AL_{\B}^{-}$ & $\AL_{\B}^{-}$ & 0 & Only $E_0$ causes this \\ \hline
+        $\AMi_{\B}^{L-}$ & $\AMi_{\B}^{L-}$ & $-\AMi_{\B}^{+}$ &
+            $E_0$ and $\chi_0$ have opposing effects, the effect of $E_0$ is stronger \\ \hline
+        $\AW_{\A}^{+}$ & 0 & $\AW_{\A}^{+}$ & Only $\chi_0$ causes this \\ \hline \hline
+        $\AB_{\B\C}^{L}$ & 0 & $\AB_{\B\C}^{L}$ & Only $\chi_0$ causes this \\ \hline
+        0 & $\AB_{\A\B}^{R}$ & $-\AB_{\A\B}^{L}$ &
+            $E_0$ and $\chi_0$ have opposing effects, they cancel out \\ \hline
+    \end{tabular}
+    \caption{Decomposition of Combined Effects of Parameters}
+    \label{tab:yunus.parameter.effects}
+\end{table}
