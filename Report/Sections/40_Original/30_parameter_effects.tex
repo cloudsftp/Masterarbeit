@@ -1,11 +1,12 @@
-\subsection{Behaviour of Model under Parameter Changes}
-\label{sec:og.param.effects}
+\section{Behaviour of Model under Parameter Changes}
+\label{sec:yunus.param.effects}
 
 In this section, we examine the effects of the parameters on the function of the original model.
 Starting with the combined effects of the parameters along areas of the same period.
 And then also the individual effects of either parameter.
 
-\subsubsection{Combined Effects of Parameters}
+\subsection{Combined Effects of Parameters}
+\label{sec:yunus.param.effects.combined}
 
 To replicate the dynamics seen in the model, it is helpful to know, how the model changes along the areas of the same period.
 \Cref{fig:yunus.function.evolution.12} shows, how the model function changes along the area of period 12.
@@ -53,7 +54,8 @@ The effects are visualized in \Cref{fig:yunus.function.evolution.10,fig:yunus.fu
 The points used for measurement are visualized in \Cref{fig:yunus.function.evolution.map}.
 For the period 10, points $A_{10}, B_{10},$ and $C_{10}$ are used and for period 8, points $B_8$ and $C_8$.
 
-\subsubsection{Individual Effects of Parameters}
+\subsection{Individual Effects of Parameters}
+\label{sec:yunus.param.effects.individual}
 
 The effects of the parameters described above, always include a change in both parameters $E_0$ and $\chi_0$.
 To reproduce the bifurcation structures, it is important to know which effects on the function each parameter has individually.
@@ -69,7 +71,7 @@ For the parameter $E_0$, we fixed $\chi_0 = 0.2$ and varied $E_0$ in the paramet
 Like before, we took the function at three points and put them in one figure with color codes.
 \Cref{fig:yunus.function.evolution.e0} shows this.
 The blue function is the function of the original model at the start of the parameter range, $E_0 = 15$ and $\chi_0 = 0.2$.
-The purple function is in the middle at $E_0 = 17$, $\chi_0$ stays the same.
+The purple function is in the middle at $E_0 = 17$ and $\chi_0$ stays the same.
 And the red function is at the end at $E_0 = 19$.
 From the figure we can see three effects, the parameter has on the function of the original model in this parameter range.
 The observed changes are
@@ -77,7 +79,7 @@ The observed changes are
     \item The left part of branches $\B$ and $\D$ move downwards
     \item The local minima of these branches move to the left and downwards
     \item The border between branches $\A$ and $\B$ moves right (also border between branches $\C$ and $\D$)
-    \item The Right side of branches $\A$ and $C$ move up \todo{more precise since moves down for previous border location etc.}
+    \item The Right side of branches $\A$ and $C$ move up (This is a direct effect of the border between branches $\A$ and $\B$ moving right).
 \end{enumerate*}
 
 For the parameter $\chi_0$, we fixed $E_0 = 17$ and varied $\chi_0$ in the parameter range $[0.125, 0.3]$.
@@ -92,8 +94,8 @@ The observed changes are
 \end{enumerate*}
 Two more changes are smaller in comparison
 \begin{enumerate*}
-    \item The right part of branches $\B$ and $\D$ move upwards
-    \item The border between branches $\B$ and $\C$ moves left (also the border between branches $\D$ and $\A$)
+    \item The right part of branches $\B$ and $\D$ move upwards (including the minima)
+    \item The border between branches $\B$ and $\C$ moves left (also the border between branches $\D$ and $\A$).
 \end{enumerate*}
 
 \begin{figure}
@@ -111,7 +113,8 @@ Two more changes are smaller in comparison
     \caption{Effects of the Individual Parameters on the Original Funtion}
 \end{figure}
 
-\subsubsection{Decomposition of Combined Effects}
+\subsection{Decomposition of Combined Effects}
+\label{sec:yunus.param.effects.decomposition}
 
 Now we can take a closer look at the combined effects of the parameters along areas of the same period and trace them back to the isolated effects of both parameters.
 For this, we introduce a notation for the effects.
@@ -125,6 +128,10 @@ For brevity, we do not write redundant branch names, so changes happening to bra
 For borders, changes to the border between branches $\A$ and $\B$ are also happening to the border between branches $\C$ and $\D$.
 
 \Cref{tab:yunus.parameter.effects} lists all observed effects along the areas of the same period and their decomposition into effects of the single parameters.
+The first part of the table includes all major changes observed in \Cref{sec:yunus.param.effects.combined}, while the second part focuses on the minor change.
+The second part also includes the changes observed in \Cref{sec:yunus.param.effects.individual} that cancel out.
+From this table we can see, that $E_0$ causes the feects on the branches $\B$ and $\D$, while $\chi_0$ causes the changes to the branches $\A$ and $\C$, as well as the minor movement of the borders between branches $\B$ and $\C$.
+Note again, that the change to the border of branches $\B$ and $\C$ also applies for the border between branches $\D$ and $\A$.
 
 \begin{table}
     \centering
