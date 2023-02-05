@@ -70,15 +70,15 @@ def dimensions(frame: frame.Frame):
         or frame.diagram.D == None or frame.diagram.U == None:
 
         if frame.diagram.type == DiagramType.PERIOD:
-            if not frame.diagram.scan:
+            if not frame.scan:
                 raise CustomException('Diagram of type period should have at least one scan dimension')
 
-            L = frame.diagram.scan[0].parameter_specs[0].start
-            R = frame.diagram.scan[0].parameter_specs[0].stop
+            L = frame.scan[0].parameter_specs[0].start
+            R = frame.scan[0].parameter_specs[0].stop
 
-            if len(frame.diagram.scan) > 1:
-                D = frame.diagram.scan[1].parameter_specs[0].start
-                U = frame.diagram.scan[1].parameter_specs[0].stop
+            if len(frame.scan) > 1:
+                D = frame.scan[1].parameter_specs[0].start
+                U = frame.scan[1].parameter_specs[0].stop
 
             else:
                 D = 0
@@ -121,13 +121,13 @@ def tics(frame: frame.Frame) -> str:
 
     if frame.diagram.options.simple_figure:
         if frame.diagram.type == DiagramType.PERIOD:
-            x_label = frame.diagram.scan[0].parameter_specs[0].name
+            x_label = frame.scan[0].parameter_specs[0].name
 
-            if len(frame.diagram.scan) == 1:
+            if len(frame.scan) == 1:
                 y_label = 'Period'
 
-            elif len(frame.diagram.scan) == 2:
-                y_label = frame.diagram.scan[1].parameter_specs[0].name
+            elif len(frame.scan) == 2:
+                y_label = frame.scan[1].parameter_specs[0].name
     
     return  dedent(f'''
         set xlabel '{x_label}'
@@ -145,16 +145,16 @@ def extras(frame: frame.Frame) -> str:
 
 def plot_commands(frame: frame.Frame) -> str:
     if frame.diagram.type == DiagramType.PERIOD:
-        if len(frame.diagram.scan) == 1:
-            if len(frame.diagram.scan[0].parameter_specs) == 1:
+        if len(frame.scan) == 1:
+            if len(frame.scan[0].parameter_specs) == 1:
                 return dedent(f'''
                     plot '{get_data_file_paths(frame)[0]}' w dots notitle lc rgb 'blue'
                     ''')
-            elif  len(frame.diagram.scan[0].parameter_specs) == 2:
+            elif  len(frame.scan[0].parameter_specs) == 2:
                 return dedent(f'''
                     plot '{get_data_file_paths(frame)[0]}' using 1:3 w dots notitle lc rgb 'blue'
                     ''')
-        elif len(frame.diagram.scan) == 2:
+        elif len(frame.scan) == 2:
             return dedent(f'''
                 unset colorbox
                 set palette rgbformulae 30,31,32

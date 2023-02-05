@@ -67,8 +67,8 @@ def config_scan_start(frame: frame.Frame) -> str:
     type = nested_items,
     mode = '''
     
-    if frame.diagram.scan and len(frame.diagram.scan) > 0:
-        res += f'{len(frame.diagram.scan)},\n'
+    if frame.scan and len(frame.scan) > 0:
+        res += f'{len(frame.scan)},\n'
 
     else:
         res += '0\n'
@@ -78,9 +78,9 @@ def config_scan_start(frame: frame.Frame) -> str:
 def config_scan_items(frame: frame.Frame) -> str:
     res = ''
 
-    if frame.diagram.scan and len(frame.diagram.scan) > 0:
+    if frame.scan and len(frame.scan) > 0:
         item_cnt = 0
-        for parameter_range in frame.diagram.scan:
+        for parameter_range in frame.scan:
             if parameter_range.type == ParameterRangeType.LINEAR:
                 if len(parameter_range.parameter_specs) == 1:
                     res += f'''    item[{item_cnt}] = {{
@@ -119,20 +119,25 @@ def config_scan_items(frame: frame.Frame) -> str:
 # Investigation methods
 
 def config_inverstigation_methods(frame: frame.Frame) -> str:
-    if frame.diagram.type not in [DiagramType.PERIOD, DiagramType.COBWEB, DiagramType.ANALYSIS]:
-        raise CustomException('Only period investigation, cobwebs, and analysis implemented for now!')
-    
     period = 'false'
     cobweb = 'false'
     cyclic_bif_set = 'false'
-    if frame.diagram.type == DiagramType.PERIOD:
-        period = 'true'
-    elif frame.diagram.type == DiagramType.COBWEB:
-        cobweb = 'true'
-    elif frame.diagram.type == DiagramType.ANALYSIS:
-        period = 'true'
-        cyclic_bif_set = 'true'
+    regions = 'false'
+    
+    match frame.diagram.type:
+        case DiagramType.PERIOD:
+            period = 'true'
+        case DiagramType.COBWEB:
+            cobweb = 'true'
+        case DiagramType.PERIOD_REGIONS:
+            regions = 'true'
+        case DiagramType.ANALYSIS:
+            period = 'true'
+            cyclic_bif_set = 'true'
+        case _:
+            raise CustomException(f'AnT configuration for type {frame.diagram.type} not yet supported!')
 
+    
     return f'''investigation_methods = {{
     general_trajectory_evaluations = {{
     }},
@@ -155,6 +160,11 @@ def config_inverstigation_methods(frame: frame.Frame) -> str:
         periods_to_select = (),
         period_selection_file = "period_selection",
         period_selection_file_extension = "tna"
+    }},
+    regions_analysis = {{
+        is_active = {regions},
+        period_regions_file = "regions_period.tna",
+        period_file = "periods_ij.tmp"
     }},
     band_counter = {{
     }},
