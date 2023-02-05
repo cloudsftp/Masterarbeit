@@ -119,15 +119,19 @@ def config_scan_items(frame: frame.Frame) -> str:
 # Investigation methods
 
 def config_inverstigation_methods(frame: frame.Frame) -> str:
-    if frame.diagram.type != DiagramType.PERIOD and frame.diagram.type != DiagramType.COBWEB:
-        raise CustomException('Only period investigation and cobwebs implemented for now!')
+    if frame.diagram.type not in [DiagramType.PERIOD, DiagramType.COBWEB, DiagramType.ANALYSIS]:
+        raise CustomException('Only period investigation, cobwebs, and analysis implemented for now!')
     
     period = 'false'
     cobweb = 'false'
+    cyclic_bif_set = 'false'
     if frame.diagram.type == DiagramType.PERIOD:
         period = 'true'
     elif frame.diagram.type == DiagramType.COBWEB:
         cobweb = 'true'
+    elif frame.diagram.type == DiagramType.ANALYSIS:
+        period = 'true'
+        cyclic_bif_set = 'true'
 
     return f'''investigation_methods = {{
     general_trajectory_evaluations = {{
@@ -138,7 +142,7 @@ def config_inverstigation_methods(frame: frame.Frame) -> str:
         compare_precision = 1e-09,
         period = {period},
         period_file = "period.tna",
-        cyclic_asymptotic_set = false,
+        cyclic_asymptotic_set = {cyclic_bif_set},
         cyclic_bif_dia_file = "bif_cyclic.tna",
         acyclic_last_states = false,
         acyclic_bif_dia_file = "bif_acyclic.tna",

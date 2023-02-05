@@ -23,9 +23,14 @@
         "resolution": 20,
         "parameters": [
             {
+                "name": "E0",
+                "start": 20.32,
+                "stop": 20.83
+            },
+            {
                 "name": "hi",
-                "start": 0.125,
-                "stop": 0.30
+                "start": 0.135,
+                "stop": 0.154
             }
         ]
     },

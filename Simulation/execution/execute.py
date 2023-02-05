@@ -8,7 +8,7 @@ from typing import List
 from util.exceptions import CustomException
 from util.execution import execute_and_wait
 from util.ranges import generate_parameters_for_animation
-from configuration.diagrams import Diagram
+from configuration.diagrams import Diagram, DiagramType
 from execution.frame import Frame
 from execution.plotting import get_result_png_path, get_simple_result_png_path
 
@@ -16,6 +16,9 @@ def generate_diagram(diagram: Diagram):
     if not diagram.animation:
         frame = Frame(diagram, 0)
         frame.run()
+
+        if diagram.type == DiagramType.ANALYSIS:
+            return
         
         if diagram.options.simple_figure:
             final_result_png_path = get_final_simple_result_png_path(diagram)
@@ -36,6 +39,9 @@ def generate_diagram(diagram: Diagram):
         
         for frame in frames:
             frame.run()
+        
+        if diagram.type == DiagramType.ANALYSIS:
+            return
         
         synthesize_gif(diagram, frames)
         

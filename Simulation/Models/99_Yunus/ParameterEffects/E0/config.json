@@ -8,12 +8,12 @@
     "scan": [
         {
             "type": "linear",
-            "resolution": 200,
+            "resolution": 100,
             "parameters": [
                 {
                     "name": "initial_state[0][0]",
                     "start": 0,
-                    "stop": 6.2
+                    "stop": 3.14
                 }
             ]
         }
@@ -23,9 +23,9 @@
         "resolution": 20,
         "parameters": [
             {
-                "name": "hi",
-                "start": 0.1,
-                "stop": 0.35
+                "name": "E0",
+                "start": 15,
+                "stop": 19
             }
         ]
     },

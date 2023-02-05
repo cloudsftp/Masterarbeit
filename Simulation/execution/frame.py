@@ -37,8 +37,10 @@ class Frame:
 
         generate_ant_config_file(self)
         execute_simulation(self)
-        generate_function_data(self)
-        generate_picture(self)
+            
+        if self.diagram.type != DiagramType.ANALYSIS:
+            generate_function_data(self)
+            generate_picture(self)
 
 # Generating the function data for cobwebs
 
