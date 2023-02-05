@@ -11,6 +11,8 @@ from util.ranges import generate_parameters_for_animation
 from configuration.diagrams import Diagram, DiagramType, invert_parameter_ranges
 from execution.frame import Frame
 from execution.plotting import get_result_png_path, get_simple_result_png_path
+from execution.composite_plotting import generate_composite_picture
+from execution import composite_plotting
 
 def generate_diagram(diagram: Diagram):
     if diagram.animation:
@@ -50,6 +52,19 @@ def generate_regions_diagram(diagram: Diagram):
     
     for frame in frames:
         frame.run()
+    
+    generate_composite_picture(frames)
+
+    if diagram.options.simple_figure:
+        final_result_png_path = get_final_simple_result_png_path(diagram)
+        result_png_path = composite_plotting.get_simple_result_png_path(diagram)
+    else:
+        final_result_png_path = get_final_result_png_path(diagram)
+        result_png_path = composite_plotting.get_result_png_path(diagram)
+
+    shutil.copy(result_png_path, final_result_png_path)
+    if not diagram.options.dont_show:
+        show_pic(result_png_path)
 
 def generate_animated_diagram(diagram: Diagram):
     cnt = 0

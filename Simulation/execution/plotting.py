@@ -84,11 +84,21 @@ def dimensions(frame: frame.Frame):
                 D = 0
                 U = frame.diagram.max_periods
         
+        elif frame.diagram.type == DiagramType.PERIOD_REGIONS:
+            if not frame.scan or len(frame.scan) != 2:
+                raise CustomException('Diagram of type period regions should have two scan dimension')
+            
+            L = frame.scan[0].parameter_specs[0].start
+            R = frame.scan[0].parameter_specs[0].stop
+
+            D = frame.scan[1].parameter_specs[0].start
+            U = frame.scan[1].parameter_specs[0].stop
+        
         elif frame.diagram.type == DiagramType.COBWEB:
             raise CustomException(f'You need to define L, R, D, and U in {frame.diagram.config_file_path} for diagram type cobweb')
 
         else:
-            raise CustomException('Only diagram type period and cobweb figures supported!')
+            raise CustomException('Only diagram type period, period region, and cobweb figures supported!')
 
     else:
         L = frame.diagram.L
@@ -128,6 +138,10 @@ def tics(frame: frame.Frame) -> str:
 
             elif len(frame.scan) == 2:
                 y_label = frame.scan[1].parameter_specs[0].name
+            
+        elif frame.diagram.type == DiagramType.PERIOD_REGIONS:
+            x_label = frame.scan[0].parameter_specs[0].name
+            y_label = frame.scan[1].parameter_specs[0].name
     
     return  dedent(f'''
         set xlabel '{x_label}'

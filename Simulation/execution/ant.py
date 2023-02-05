@@ -46,7 +46,7 @@ def execute_simulation(frame: frame.Frame):
         info(f'Skipping simulation and generation of {data_file_paths}')
         return
 
-    if frame.diagram.scan and not frame.diagram.options.num_cores == 1:
+    if frame.scan and not frame.diagram.options.num_cores == 1:
         execute_simulation_server_mode(frame)
     
     else:

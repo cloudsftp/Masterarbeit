@@ -7,7 +7,7 @@
     "scan": [
         {
             "type": "linear",
-            "resolution": 1000,
+            "resolution": 200,
             "parameters": [
                 {
                     "name": "E0",
@@ -18,7 +18,7 @@
         },
         {
             "type": "linear",
-            "resolution": 1000,
+            "resolution": 200,
             "parameters": [
                 {
                     "name": "hi",
