@@ -1,0 +1,25 @@
+{
+    "type": "cobweb",
+    "parameters": {
+        "muL": 1,
+        "muR": -2
+    },
+    "scan": [
+        {
+            "type": "linear",
+            "resolution": 100,
+            "parameters": [
+                {
+                    "name": "initial_state[0][0]",
+                    "start": -2,
+                    "stop": 2
+                }
+            ]
+        }
+    ],
+    "animation": null,
+    "L": -4,
+    "R":  2,
+    "D": -4,
+    "U":  2
+}

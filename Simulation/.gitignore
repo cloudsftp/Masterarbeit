@@ -3,6 +3,7 @@
 *.tmp
 
 *.tna
+*.dat
 
 *.eps
 *.pdf
@@ -11,5 +12,12 @@ Models/**/fragmaster.*
 Models/**/*-simple.png
 Viktor_Figures/*.png
 
+*.gif
+
+Frame*
+
 AnT
 Logs
+
+__pycache__
+.mypy_cache

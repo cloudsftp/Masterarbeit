@@ -1,0 +1,27 @@
+{
+    "type": "period",
+    "reset_orbits": true,
+    "parameters": {
+        "E0": 17.48,
+        "hi": 0.19
+    },
+    "scan": [
+        {
+            "type": "linear",
+            "resolution": 3000,
+            "parameters": [
+                {
+                    "name": "E0",
+                    "start": 17.627,
+                    "stop": 17.872
+                },
+                {
+                    "name": "hi",
+                    "start": 0.205,
+                    "stop": 0.23
+                }
+            ]
+        }
+    ],
+    "animation": null
+}

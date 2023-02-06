@@ -1,0 +1,32 @@
+{
+    "type": "period",
+    "max_period": 150,
+    "num_iterations": 2000,
+    "reset_orbit": true,
+    "parameters": null,
+    "scan": [
+        {
+            "type": "linear",
+            "resolution": 1000,
+            "parameters": [
+                {
+                    "name": "E0",
+                    "start": 14,
+                    "stop": 20
+                }
+            ]
+        },
+        {
+            "type": "linear",
+            "resolution": 1000,
+            "parameters": [
+                {
+                    "name": "hi",
+                    "start": 0.1,
+                    "stop": 0.35
+                }
+            ]
+        }
+    ],
+    "animation": null
+}
