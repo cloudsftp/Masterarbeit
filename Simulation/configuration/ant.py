@@ -53,9 +53,14 @@ def config_dynamical_system_parameters(frame: frame.Frame) -> str:
     return res
 
 def config_dynamical_system_end(frame: frame.Frame) -> str:
+    reset_orbit = 'false'
+    if frame.diagram.reset_orbit \
+        or frame.diagram.type == DiagramType.PERIOD_REGIONS:
+        reset_orbit = 'true'
+
     return f'''    state_space_dimension = 1,
     initial_state = ({frame.diagram.initial}),
-    reset_initial_states_from_orbit = {'false' if frame.diagram.reset_orbit else 'true'},
+    reset_initial_states_from_orbit = {reset_orbit},
     number_of_iterations = {frame.diagram.num_iterations}
 }},
 '''
