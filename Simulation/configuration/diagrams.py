@@ -54,6 +54,12 @@ def invert_parameter_ranges(ranges: List[ParameterRange], *indices: int) -> List
     
     return res
 
+def invert_scan(scan: List[ParameterRange]) -> List[ParameterRange]:
+    return [
+        scan[1],
+        scan[0],
+    ]
+
 
 
 class Diagram(object):

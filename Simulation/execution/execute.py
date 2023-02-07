@@ -8,7 +8,7 @@ from typing import List
 from util.exceptions import CustomException
 from util.execution import execute_and_wait
 from util.ranges import generate_parameters_for_animation
-from configuration.diagrams import Diagram, DiagramType, invert_parameter_ranges
+from configuration.diagrams import Diagram, DiagramType, invert_parameter_ranges, invert_scan
 from execution.frame import Frame
 from execution.plotting import get_result_png_path, get_simple_result_png_path
 from execution.composite_plotting import generate_composite_picture
@@ -46,8 +46,8 @@ def generate_regions_diagram(diagram: Diagram):
     frames = [
         Frame(diagram, 0),
         Frame(diagram, 1, scan=invert_parameter_ranges(diagram.scan, 0)),
-        Frame(diagram, 2, scan=invert_parameter_ranges(diagram.scan, 1)),
-        Frame(diagram, 3, scan=invert_parameter_ranges(diagram.scan, 0, 1)),
+        Frame(diagram, 2, scan=invert_scan(diagram.scan)),
+        Frame(diagram, 3, scan=invert_scan(invert_parameter_ranges(diagram.scan, 1))),
     ]
     
     for frame in frames:
