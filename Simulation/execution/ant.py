@@ -144,7 +144,9 @@ def create_ant_process(frame: frame.Frame, exec_type: ExecutionType) -> subpro.P
         ])
         
         if len(frame.diagram.scan) > 1:
-            arguments.extend(['-n', f'get_num_points(frame)'])
+            print('yes')
+            arguments.extend(['-n', f'{get_num_points(frame)}'])
+            print(arguments)
         else:
             arguments.extend(['-t', 20])
 
@@ -156,7 +158,13 @@ def create_ant_process(frame: frame.Frame, exec_type: ExecutionType) -> subpro.P
     )
 
 def get_num_points(frame: frame.Frame) -> int:
-    return frame.scan[-1].resolution
+    row_len = [s.resolution for s in frame.scan]
+
+    if len(frame.scan) == 2:
+        return row_len[1]
+
+    else:
+        raise CustomException(f'get_num_points not implemented for {len(frame.scan)} scans')
 
 
 # Handling running simulations
