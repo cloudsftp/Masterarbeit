@@ -56,8 +56,8 @@ def gnuplot_commands(frames: List[frame.Frame]) -> str:
             raise CustomException(f'Composite picture not supported for type {frames[0].diagram.type}')
 
         return dedent(f'''
-            plot '{get_data_file_paths(frames[0])[0]}' w dots lc rgb 'purple' notitle, \\
-                '{get_data_file_paths(frames[1])[0]}' w dots lc rgb 'orange' notitle, \\
+            plot '{get_data_file_paths(frames[0])[0]}' w dots lc rgb 'orange' notitle, \\
+                '{get_data_file_paths(frames[1])[0]}' w dots lc rgb 'purple' notitle, \\
                 '{get_data_file_paths(frames[2])[0]}' u 2:1 w dots lc rgb 'blue' notitle, \\
                 '{get_data_file_paths(frames[3])[0]}' u 2:1 w dots lc rgb 'red' notitle
             ''')

@@ -141,7 +141,7 @@ def create_ant_process(frame: frame.Frame, exec_type: ExecutionType) -> subpro.P
             '-m', 'client',
             '-s', f'{client_ip}',
             '-p', f'{port}',
-            '-t', '20',
+            '-n', f'{get_num_points(frame)}',
         ])
 
     return subprocess.Popen(
@@ -150,6 +150,10 @@ def create_ant_process(frame: frame.Frame, exec_type: ExecutionType) -> subpro.P
         stdout = subprocess.PIPE,
         stderr = subprocess.STDOUT,
     )
+
+def get_num_points(frame: frame.Frame) -> int:
+    return frame.scan[-1].resolution
+
 
 # Handling running simulations
 
