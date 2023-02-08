@@ -141,8 +141,12 @@ def create_ant_process(frame: frame.Frame, exec_type: ExecutionType) -> subpro.P
             '-m', 'client',
             '-s', f'{client_ip}',
             '-p', f'{port}',
-            '-n', f'{get_num_points(frame)}',
         ])
+        
+        if len(frame.diagram.scan) > 1:
+            arguments.extend(['-n', get_num_points(frame)])
+        else:
+            arguments.extend(['-t', 20])
 
     return subprocess.Popen(
         arguments,
