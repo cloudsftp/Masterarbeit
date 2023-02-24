@@ -6,11 +6,12 @@ import subprocess
 import socket
 import time
 import re
+import threading
 
 from configuration.diagrams import DiagramType
 from execution import frame
 from util.output import info
-from util.paths import ant, ant_log_file
+from util.paths import ant, ant_log_file, ant_client_log_file
 from util.file import is_outdated
 from util.exceptions import CustomException
 
@@ -35,14 +36,17 @@ progress_indicator_pattern = re.compile(r'.*progress\s([^%]+)%')
 exit_pattern = re.compile(r'Bye!')
 
 def execute_simulation(frame: frame.Frame):
-    data_file_path = get_data_file_path(frame)
-    if not is_outdated(data_file_path, frame.config_file_path, frame.diagram.model.model_source_file_path) \
+    data_file_paths = get_data_file_paths(frame)
+    if not any([
+            is_outdated(data_file_path, frame.config_file_path, frame.diagram.model.model_source_file_path)
+            for data_file_path in data_file_paths
+        ]) \
         or frame.diagram.options.skip_computation:
         
-        info(f'Skipping simulation and generation of {data_file_path}')
+        info(f'Skipping simulation and generation of {data_file_paths}')
         return
 
-    if frame.diagram.scan and not frame.diagram.options.num_cores == 1:
+    if frame.scan and not frame.diagram.options.num_cores == 1:
         execute_simulation_server_mode(frame)
     
     else:
@@ -58,8 +62,9 @@ def execute_simulation_server_mode(frame: frame.Frame):
 
     for i in range(num_cores):
         info(f'Starting client #{i}')
-        start_ant(frame, ExecutionType.CLIENT)
-        
+        client = start_ant(frame, ExecutionType.CLIENT)
+        write_client_log_async(client, i)
+ 
     wait_for_simulation(server)
 
 def get_num_cores(frame: frame.Frame) -> int:
@@ -136,8 +141,14 @@ def create_ant_process(frame: frame.Frame, exec_type: ExecutionType) -> subpro.P
             '-m', 'client',
             '-s', f'{client_ip}',
             '-p', f'{port}',
-            '-t', '20',
         ])
+        
+        if len(frame.diagram.scan) > 1:
+            arguments.extend(['-n', f'{get_num_points(frame)}'])
+        else:
+            arguments.extend(['-t', 20])
+
+        #info(f'With arguments {arguments[6:]}')
 
     return subprocess.Popen(
         arguments,
@@ -145,6 +156,16 @@ def create_ant_process(frame: frame.Frame, exec_type: ExecutionType) -> subpro.P
         stdout = subprocess.PIPE,
         stderr = subprocess.STDOUT,
     )
+
+def get_num_points(frame: frame.Frame) -> int:
+    row_len = [s.resolution for s in frame.scan]
+
+    if len(frame.scan) == 2:
+        return row_len[1]
+
+    else:
+        raise CustomException(f'get_num_points not implemented for {len(frame.scan)} scans')
+
 
 # Handling running simulations
 
@@ -159,6 +180,7 @@ def wait_for_simulation(process: Popen):
             if output:
                 output_str = output.decode()
                 logfile.write(output_str)
+                logfile.flush()
 
                 progress_indicator_match = progress_indicator_pattern.match(output_str)
                 if progress_indicator_match:
@@ -173,10 +195,22 @@ def wait_for_simulation(process: Popen):
                     print(f'Progress: {int(progress)}%, ETA: {eta_str}', end='\r', flush=True)
 
             exit_code = process.poll()
-            if exit_code != None:
+            if exit_code is not None:
                 print('\n')
                 info('Simulation done\n')
                 break
+
+def write_client_log_async(process: Popen, id: int):
+    threading.Thread(None, write_client_log, args=(process, id)).start()
+
+def write_client_log(process: Popen, id: int):
+    with open(ant_client_log_file(id), 'w') as logfile:
+        while True:
+            line = process.stdout.readline().decode()
+            if line == '' and process.poll() is not None:
+                break
+            logfile.write(line)
+            logfile.flush()
         
 def format_eta(eta: float) -> str:
     eta_int = int(eta)
@@ -203,10 +237,26 @@ def format_eta(eta: float) -> str:
 
 # Path utils
 
-def get_data_file_path(frame: execution.frame.Frame) -> Path:
+def get_data_file_paths(frame: execution.frame.Frame) -> List[Path]:
     if frame.diagram.type == DiagramType.PERIOD:
-        return frame.path / 'period.tna'
+        return [get_period_path(frame)]
     elif frame.diagram.type == DiagramType.COBWEB:
-        return frame.path / 'cyclic_cobweb.tna'
+        return [get_cyclic_cobweb_path(frame)]
+    elif frame.diagram.type == DiagramType.PERIOD_REGIONS:
+        return [get_regions_path(frame)]
+    elif frame.diagram.type == DiagramType.ANALYSIS:
+        return [get_period_path(frame), get_cyclic_bif_path(frame)]
     else:
         raise CustomException(f'Executing simulation for type {frame.diagram.type} not yet supported!')
+
+def get_period_path(frame: execution.frame.Frame) -> Path:
+    return frame.path / 'period.tna'
+
+def get_cyclic_cobweb_path(frame: execution.frame.Frame) -> Path:
+    return frame.path / 'cyclic_cobweb.tna'
+
+def get_cyclic_bif_path(frame:execution.frame.Frame) -> Path:
+    return frame.path / 'cyclic_bif_set.tna'
+
+def get_regions_path(frame: exeution.frame.Frame) -> Path:
+    return frame.path / 'regions_period.tna'

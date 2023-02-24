@@ -10,7 +10,7 @@ from util.exceptions import CustomException
 from util.execution import execute_and_wait
 from configuration.diagrams import DiagramType
 from execution import frame
-from execution.ant import get_data_file_path
+from execution.ant import get_data_file_paths
 
 def generate_picture(frame):
     create_gnuplot_program(frame)
@@ -70,25 +70,35 @@ def dimensions(frame: frame.Frame):
         or frame.diagram.D == None or frame.diagram.U == None:
 
         if frame.diagram.type == DiagramType.PERIOD:
-            if not frame.diagram.scan:
+            if not frame.scan:
                 raise CustomException('Diagram of type period should have at least one scan dimension')
 
-            L = frame.diagram.scan[0].parameter_specs[0].start
-            R = frame.diagram.scan[0].parameter_specs[0].stop
+            L = frame.scan[0].parameter_specs[0].start
+            R = frame.scan[0].parameter_specs[0].stop
 
-            if len(frame.diagram.scan) > 1:
-                D = frame.diagram.scan[1].parameter_specs[0].start
-                U = frame.diagram.scan[1].parameter_specs[0].stop
+            if len(frame.scan) > 1:
+                D = frame.scan[1].parameter_specs[0].start
+                U = frame.scan[1].parameter_specs[0].stop
 
             else:
                 D = 0
                 U = frame.diagram.max_periods
         
+        elif frame.diagram.type == DiagramType.PERIOD_REGIONS:
+            if not frame.scan or len(frame.scan) != 2:
+                raise CustomException('Diagram of type period regions should have two scan dimension')
+            
+            L = frame.scan[0].parameter_specs[0].start
+            R = frame.scan[0].parameter_specs[0].stop
+
+            D = frame.scan[1].parameter_specs[0].start
+            U = frame.scan[1].parameter_specs[0].stop
+        
         elif frame.diagram.type == DiagramType.COBWEB:
             raise CustomException(f'You need to define L, R, D, and U in {frame.diagram.config_file_path} for diagram type cobweb')
 
         else:
-            raise CustomException('Only diagram type period and cobweb figures supported!')
+            raise CustomException('Only diagram type period, period region, and cobweb figures supported!')
 
     else:
         L = frame.diagram.L
@@ -121,13 +131,17 @@ def tics(frame: frame.Frame) -> str:
 
     if frame.diagram.options.simple_figure:
         if frame.diagram.type == DiagramType.PERIOD:
-            x_label = frame.diagram.scan[0].parameter_specs[0].name
+            x_label = frame.scan[0].parameter_specs[0].name
 
-            if len(frame.diagram.scan) == 1:
+            if len(frame.scan) == 1:
                 y_label = 'Period'
 
-            elif len(frame.diagram.scan) == 2:
-                y_label = frame.diagram.scan[1].parameter_specs[0].name
+            elif len(frame.scan) == 2:
+                y_label = frame.scan[1].parameter_specs[0].name
+            
+        elif frame.diagram.type == DiagramType.PERIOD_REGIONS:
+            x_label = frame.scan[0].parameter_specs[0].name
+            y_label = frame.scan[1].parameter_specs[0].name
     
     return  dedent(f'''
         set xlabel '{x_label}'
@@ -145,20 +159,20 @@ def extras(frame: frame.Frame) -> str:
 
 def plot_commands(frame: frame.Frame) -> str:
     if frame.diagram.type == DiagramType.PERIOD:
-        if len(frame.diagram.scan) == 1:
-            if len(frame.diagram.scan[0].parameter_specs) == 1:
+        if len(frame.scan) == 1:
+            if len(frame.scan[0].parameter_specs) == 1:
                 return dedent(f'''
-                    plot '{get_data_file_path(frame)}' w dots notitle lc rgb 'blue'
+                    plot '{get_data_file_paths(frame)[0]}' w dots notitle lc rgb 'blue'
                     ''')
-            elif  len(frame.diagram.scan[0].parameter_specs) == 2:
+            elif  len(frame.scan[0].parameter_specs) == 2:
                 return dedent(f'''
-                    plot '{get_data_file_path(frame)}' using 1:3 w dots notitle lc rgb 'blue'
+                    plot '{get_data_file_paths(frame)[0]}' using 1:3 w dots notitle lc rgb 'blue'
                     ''')
-        elif len(frame.diagram.scan) == 2:
+        elif len(frame.scan) == 2:
             return dedent(f'''
                 unset colorbox
                 set palette rgbformulae 30,31,32
-                plot '{get_data_file_path(frame)}' w dots notitle palette
+                plot '{get_data_file_paths(frame)[0]}' w dots notitle palette
                 ''')
 
     elif frame.diagram.type == DiagramType.COBWEB:
@@ -175,7 +189,7 @@ def plot_commands(frame: frame.Frame) -> str:
                 ''')
         
         res += f'''\\
-            '{get_data_file_path(frame)}' w lines lw 1 lc rgb 'red' notitle, \\
+            '{get_data_file_paths(frame)[0]}' w lines lw 1 lc rgb 'red' notitle, \\
             x w lines lt 1 lw 1.5 lc rgb 'gray20' notitle
             '''
         return res

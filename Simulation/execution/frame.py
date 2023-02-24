@@ -9,7 +9,7 @@ from util.output import info
 from util.exceptions import CustomException
 from util.execution import execute_and_wait
 from configuration.models import Parameters, join_parameters
-from configuration.diagrams import Diagram, DiagramType
+from configuration.diagrams import Diagram, DiagramType, ParameterRange
 from configuration.ant import generate_ant_config_file
 from execution.ant import execute_simulation
 from execution.plotting import generate_picture, get_gnuplot_model_generation_path, get_gnuplot_model_data_path, get_gnuplot_model_path
@@ -20,8 +20,14 @@ class Frame:
     path: Path
     config_file_path: Path
     parameters: Parameters
+    scan: Optional[List[ParameterRange]]
     
-    def __init__(self, diagram: Diagram, id: int, parameters: Optional[Parameters] = None):
+    def __init__(
+        self,
+        diagram: Diagram, id: int,
+        parameters: Optional[Parameters] = None,
+        scan: Optional[List[ParameterRange]] = None,
+    ):
         self.diagram = diagram
 
         self.path = diagram.path / 'Autogen' / f'Frame_{id:04d}'
@@ -31,13 +37,27 @@ class Frame:
             self.parameters = join_parameters(diagram.parameters, parameters)
         else:
             self.parameters = diagram.parameters
+        
+        if scan:
+            self.scan = scan
+        else:
+            self.scan = diagram.scan
             
     def run(self):
         self.path.mkdir(parents=True, exist_ok=True)
 
         generate_ant_config_file(self)
         execute_simulation(self)
-        generate_function_data(self)
+            
+        if self.diagram.type in [
+            DiagramType.ANALYSIS,
+            DiagramType.PERIOD_REGIONS,
+        ]:
+            return
+
+        if self.diagram.type == DiagramType.COBWEB:
+            generate_function_data(self)
+
         generate_picture(self)
 
 # Generating the function data for cobwebs

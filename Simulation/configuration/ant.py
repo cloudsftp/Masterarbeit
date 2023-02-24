@@ -53,9 +53,14 @@ def config_dynamical_system_parameters(frame: frame.Frame) -> str:
     return res
 
 def config_dynamical_system_end(frame: frame.Frame) -> str:
+    reset_initial = 'false'
+    if (frame.diagram.reset_orbit and not frame.diagram.reset_orbit) \
+        or frame.diagram.type == DiagramType.PERIOD_REGIONS:
+        reset_initial = 'true'
+
     return f'''    state_space_dimension = 1,
     initial_state = ({frame.diagram.initial}),
-    reset_initial_states_from_orbit = {'false' if frame.diagram.reset_orbit else 'true'},
+    reset_initial_states_from_orbit = {reset_initial},
     number_of_iterations = {frame.diagram.num_iterations}
 }},
 '''
@@ -67,8 +72,8 @@ def config_scan_start(frame: frame.Frame) -> str:
     type = nested_items,
     mode = '''
     
-    if frame.diagram.scan and len(frame.diagram.scan) > 0:
-        res += f'{len(frame.diagram.scan)},\n'
+    if frame.scan and len(frame.scan) > 0:
+        res += f'{len(frame.scan)},\n'
 
     else:
         res += '0\n'
@@ -78,9 +83,9 @@ def config_scan_start(frame: frame.Frame) -> str:
 def config_scan_items(frame: frame.Frame) -> str:
     res = ''
 
-    if frame.diagram.scan and len(frame.diagram.scan) > 0:
+    if frame.scan and len(frame.scan) > 0:
         item_cnt = 0
-        for parameter_range in frame.diagram.scan:
+        for parameter_range in frame.scan:
             if parameter_range.type == ParameterRangeType.LINEAR:
                 if len(parameter_range.parameter_specs) == 1:
                     res += f'''    item[{item_cnt}] = {{
@@ -119,16 +124,25 @@ def config_scan_items(frame: frame.Frame) -> str:
 # Investigation methods
 
 def config_inverstigation_methods(frame: frame.Frame) -> str:
-    if frame.diagram.type != DiagramType.PERIOD and frame.diagram.type != DiagramType.COBWEB:
-        raise CustomException('Only period investigation and cobwebs implemented for now!')
-    
     period = 'false'
     cobweb = 'false'
-    if frame.diagram.type == DiagramType.PERIOD:
-        period = 'true'
-    elif frame.diagram.type == DiagramType.COBWEB:
-        cobweb = 'true'
+    cyclic_bif_set = 'false'
+    regions = 'false'
+    
+    match frame.diagram.type:
+        case DiagramType.PERIOD:
+            period = 'true'
+        case DiagramType.COBWEB:
+            cobweb = 'true'
+        case DiagramType.PERIOD_REGIONS:
+            regions = 'true'
+        case DiagramType.ANALYSIS:
+            period = 'true'
+            cyclic_bif_set = 'true'
+        case _:
+            raise CustomException(f'AnT configuration for type {frame.diagram.type} not yet supported!')
 
+    
     return f'''investigation_methods = {{
     general_trajectory_evaluations = {{
     }},
@@ -138,7 +152,7 @@ def config_inverstigation_methods(frame: frame.Frame) -> str:
         compare_precision = 1e-09,
         period = {period},
         period_file = "period.tna",
-        cyclic_asymptotic_set = false,
+        cyclic_asymptotic_set = {cyclic_bif_set},
         cyclic_bif_dia_file = "bif_cyclic.tna",
         acyclic_last_states = false,
         acyclic_bif_dia_file = "bif_acyclic.tna",
@@ -151,6 +165,11 @@ def config_inverstigation_methods(frame: frame.Frame) -> str:
         periods_to_select = (),
         period_selection_file = "period_selection",
         period_selection_file_extension = "tna"
+    }},
+    regions_analysis = {{
+        is_active = {regions},
+        period_regions_file = "regions_period.tna",
+        period_file = "periods_ij.tmp"
     }},
     band_counter = {{
     }},
