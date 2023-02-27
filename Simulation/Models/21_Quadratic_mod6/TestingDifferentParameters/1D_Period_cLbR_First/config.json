@@ -1,7 +1,7 @@
 {
-    "type": "period",
+    "type": "bifurcation",
     "max_period": 64,
-    "num_iterations": 5000,
+    "num_iterations": 1000,
     "parameters": {
         "aL": 1,
         "aR": 1,
@@ -14,23 +14,28 @@
     "scan": [
         {
             "type": "linear",
-            "resolution": 3000,
+            "resolution": 1000,
             "parameters": [
                 {
+                    "name": "cL",
+                    "start": 1.9,
+                    "stop": 2.21
+                },
+                {
                     "name": "bR",
-                    "start": 0,
-                    "stop": 2
+                    "start": 0.5,
+                    "stop": 1.6
                 }
             ]
         },
         {
             "type": "linear",
-            "resolution": 3000,
+            "resolution": 500,
             "parameters": [
                 {
-                    "name": "cL",
-                    "start": 0.80,
-                    "stop": 1.4
+                    "name": "initial_state[0][0]",
+                    "start": 0,
+                    "stop": 3
                 }
             ]
         }

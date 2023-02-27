@@ -246,6 +246,8 @@ def get_data_file_paths(frame: execution.frame.Frame) -> List[Path]:
         return [get_regions_path(frame)]
     elif frame.diagram.type == DiagramType.ANALYSIS:
         return [get_period_path(frame), get_cyclic_bif_path(frame)]
+    elif frame.diagram.type == DiagramType.BIFURCATION:
+        return [get_cyclic_bif_path(frame)]
     else:
         raise CustomException(f'Executing simulation for type {frame.diagram.type} not yet supported!')
 
@@ -256,7 +258,7 @@ def get_cyclic_cobweb_path(frame: execution.frame.Frame) -> Path:
     return frame.path / 'cyclic_cobweb.tna'
 
 def get_cyclic_bif_path(frame:execution.frame.Frame) -> Path:
-    return frame.path / 'cyclic_bif_set.tna'
+    return frame.path / 'bif_cyclic.tna'
 
 def get_regions_path(frame: exeution.frame.Frame) -> Path:
     return frame.path / 'regions_period.tna'

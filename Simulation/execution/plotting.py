@@ -94,6 +94,13 @@ def dimensions(frame: frame.Frame):
             D = frame.scan[1].parameter_specs[0].start
             U = frame.scan[1].parameter_specs[0].stop
         
+        elif frame.diagram.type == DiagramType.BIFURCATION:
+            L = frame.scan[0].parameter_specs[0].start
+            R = frame.scan[0].parameter_specs[0].stop
+            
+            D = frame.scan[-1].parameter_specs[0].start
+            U = frame.scan[-1].parameter_specs[0].stop * 2 # TODO: better solution
+        
         elif frame.diagram.type == DiagramType.COBWEB:
             raise CustomException(f'You need to define L, R, D, and U in {frame.diagram.config_file_path} for diagram type cobweb')
 
@@ -193,6 +200,13 @@ def plot_commands(frame: frame.Frame) -> str:
             x w lines lt 1 lw 1.5 lc rgb 'gray20' notitle
             '''
         return res
+
+    elif frame.diagram.type == DiagramType.BIFURCATION:
+        x_coord = 1
+        y_coord = sum(len(s.parameter_specs) for s in frame.scan) + 1
+        return dedent(f'''
+            plot '{get_data_file_paths(frame)[0]}' using {x_coord}:{y_coord} w dots notitle lc rgb 'blue'
+            ''')
 
     else:
         raise CustomException(f'Not yet implemented for diagram type {frame.diagram.type}')
