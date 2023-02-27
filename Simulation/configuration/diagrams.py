@@ -15,6 +15,7 @@ class DiagramType(Enum):
     PERIOD_REGIONS = 1,
     COBWEB = 2,
     ANALYSIS = 3,
+    BIFURCATION = 4,
 
 class ParameterRangeType(Enum):
     LINEAR = 0,
@@ -196,6 +197,8 @@ def load_diagram_from_dict(
         obj.type = DiagramType.COBWEB
     elif type == 'analysis':
         obj.type = DiagramType.ANALYSIS
+    elif type == 'bifurcation':
+        obj.type = DiagramType.BIFURCATION
     else:
         raise CustomException(f'Diagram type "{type}" not supported')
 

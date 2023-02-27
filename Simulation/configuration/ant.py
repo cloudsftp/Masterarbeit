@@ -139,6 +139,8 @@ def config_inverstigation_methods(frame: frame.Frame) -> str:
         case DiagramType.ANALYSIS:
             period = 'true'
             cyclic_bif_set = 'true'
+        case DiagramType.BIFURCATION:
+            cyclic_bif_set = 'true'
         case _:
             raise CustomException(f'AnT configuration for type {frame.diagram.type} not yet supported!')
 
