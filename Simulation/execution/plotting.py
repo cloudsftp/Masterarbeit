@@ -166,20 +166,18 @@ def extras(frame: frame.Frame) -> str:
 
 def plot_commands(frame: frame.Frame) -> str:
     if frame.diagram.type == DiagramType.PERIOD:
+        x = 1
+        y = x + len(frame.scan[0].parameter_specs)
         if len(frame.scan) == 1:
-            if len(frame.scan[0].parameter_specs) == 1:
-                return dedent(f'''
-                    plot '{get_data_file_paths(frame)[0]}' w dots notitle lc rgb 'blue'
-                    ''')
-            elif  len(frame.scan[0].parameter_specs) == 2:
-                return dedent(f'''
-                    plot '{get_data_file_paths(frame)[0]}' using 1:3 w dots notitle lc rgb 'blue'
-                    ''')
+            return dedent(f'''
+                plot '{get_data_file_paths(frame)[0]}' using {x}:{y} w dots notitle lc rgb 'blue'
+                ''')
         elif len(frame.scan) == 2:
+            z = y + len(frame.scan[1].parameter_specs)
             return dedent(f'''
                 unset colorbox
                 set palette rgbformulae 30,31,32
-                plot '{get_data_file_paths(frame)[0]}' w dots notitle palette
+                plot '{get_data_file_paths(frame)[0]}' using {x}:{y}:{z} w dots notitle palette
                 ''')
 
     elif frame.diagram.type == DiagramType.COBWEB:
@@ -202,10 +200,10 @@ def plot_commands(frame: frame.Frame) -> str:
         return res
 
     elif frame.diagram.type == DiagramType.BIFURCATION:
-        x_coord = 1
-        y_coord = sum(len(s.parameter_specs) for s in frame.scan) + 1
+        x = 1
+        y = sum(len(s.parameter_specs) for s in frame.scan)
         return dedent(f'''
-            plot '{get_data_file_paths(frame)[0]}' using {x_coord}:{y_coord} w dots notitle lc rgb 'blue'
+            plot '{get_data_file_paths(frame)[0]}' using {x}:{y} w dots notitle lc rgb 'blue'
             ''')
 
     else:
