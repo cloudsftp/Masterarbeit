@@ -201,7 +201,7 @@ def plot_commands(frame: frame.Frame) -> str:
 
     elif frame.diagram.type == DiagramType.BIFURCATION:
         x = 1
-        y = sum(len(s.parameter_specs) for s in frame.scan)
+        y = x + sum(len(s.parameter_specs) for s in frame.scan)
         return dedent(f'''
             plot '{get_data_file_paths(frame)[0]}' using {x}:{y} w dots notitle lc rgb 'blue'
             ''')
