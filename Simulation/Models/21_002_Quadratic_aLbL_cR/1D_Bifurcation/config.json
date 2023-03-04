@@ -1,6 +1,7 @@
 {
     "type": "bifurcation",
     "max_period": 32,
+    "num_iterations": 1e5,
     "parameters": {
         "aL": 1,
         "aR": 1,
@@ -16,13 +17,13 @@
             "parameters": [
                 {
                     "name": "px",
-                    "start": 0.81,
-                    "stop": 0.95
+                    "start": 0.65,
+                    "stop": 0.75
                 },
                 {
                     "name": "py",
-                    "start": 0.737,
-                    "stop": 0.750
+                    "start": 0.660,
+                    "stop": 0.663
                 }
             ]
         },

@@ -26,17 +26,17 @@
         "type": "linear",
         "resolution": 10,
         "parameters": [
-            {
-                "name": "px",
-                "start": 0.81,
-                "stop": 0.95
-            },
-            {
-                "name": "py",
-                "start": 0.737,
-                "stop": 0.750
-            }
-        ]
+                {
+                    "name": "px",
+                    "start": 0.65,
+                    "stop": 0.75
+                },
+                {
+                    "name": "py",
+                    "start": 0.660,
+                    "stop": 0.663
+                }
+            ]
     },
     "L": 0,
     "R": 6,

@@ -12,7 +12,7 @@
 #define px parameters[6]
 #define py parameters[7]
 
-#define border (1.5 - 0.05 * py)
+#define border 1.5
 
 #define _aL (aL + 2 * px)
 #define _aR (aR)
