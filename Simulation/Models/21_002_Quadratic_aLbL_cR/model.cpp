@@ -14,12 +14,12 @@
 
 #define border 1.5
 
-#define _aL (aL + 2 * px)
-#define _aR (aR)
-#define _bL (bL + px)
-#define _bR (bR)
-#define _cL (cL)
-#define _cR (cR + py)
+#define _aL (aL)
+#define _aR (aR + 2 * px)
+#define _bL (bL)
+#define _bR (bR + px)
+#define _cL (cL + py)
+#define _cR (cR)
 
 #define  n 3.0
 
@@ -47,10 +47,10 @@ bool f(
     }
 
     // normalize
-    y = remainder(y, 2 * n);
+    y = remainder(y, 1 * n);
     
     while (y < 0) {
-        y += 2 * n;
+        y += 1 * n;
     }
 
     RHS[0] = y;

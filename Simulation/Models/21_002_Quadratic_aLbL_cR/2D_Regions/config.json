@@ -1,5 +1,5 @@
 {
-    "type": "period",
+    "type": "period regions",
     "max_period": 32,
     "parameters": {
         "aL": 1,
@@ -12,23 +12,23 @@
     "scan": [
         {
             "type": "linear",
-            "resolution": 500,
+            "resolution": 1000,
             "parameters": [
                 {
                     "name": "px",
-                    "start": 0,
-                    "stop": 2
+                    "start": 0.4,
+                    "stop": 0.9
                 }
             ]
         },
         {
             "type": "linear",
-            "resolution": 500,
+            "resolution": 1000,
             "parameters": [
                 {
                     "name": "py",
-                    "start": 0.1,
-                    "stop": 0.2
+                    "start": 0.24,
+                    "stop": 0.255
                 }
             ]           
         }

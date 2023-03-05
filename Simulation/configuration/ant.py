@@ -65,7 +65,7 @@ def config_dynamical_system_end(frame: frame.Frame) -> str:
         state_space_dimension = 1,
         initial_state = ({frame.diagram.initial}),
         reset_initial_states_from_orbit = {reset_initial},
-        number_of_iterations = {frame.diagram.num_iterations}
+        number_of_iterations = {int(frame.diagram.num_iterations)}
         }},
         ''')
 
