@@ -6,8 +6,8 @@
         "aR": 1,
         "bL": 0,
         "bR": 0,
-        "cL": 1.5,
-        "cR": 2
+        "cL": 1,
+        "cR": 3
     },
     "scan": [
         {
@@ -23,21 +23,21 @@
         }
     ],
     "animation": {
-        "type": "linear",
-        "resolution": 10,
-        "parameters": [
+            "type": "linear",
+            "resolution": 4,
+            "parameters": [
                 {
                     "name": "px",
-                    "start": 0.67,
-                    "stop": 0.69
+                    "start": 0.86,
+                    "stop": 0.88
                 },
                 {
                     "name": "py",
-                    "start": 0.7433,
-                    "stop": 0.75
+                    "start": 0.24,
+                    "stop": 0.2405
                 }
             ]
-    },
+        },
     "L": 0,
     "R": 6,
     "D": 0,

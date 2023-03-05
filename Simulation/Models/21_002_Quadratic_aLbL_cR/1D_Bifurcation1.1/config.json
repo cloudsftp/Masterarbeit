@@ -7,29 +7,29 @@
         "aR": 1,
         "bL": 0,
         "bR": 0,
-        "cL": 1.5,
-        "cR": 2
+        "cL": 1,
+        "cR": 3
     },
     "scan": [
         {
             "type": "linear",
-            "resolution": 1000,
+            "resolution": 500,
             "parameters": [
                 {
                     "name": "px",
-                    "start": 0.65,
-                    "stop": 0.75
+                    "start": 0.86,
+                    "stop": 0.88
                 },
                 {
                     "name": "py",
-                    "start": 0.660,
-                    "stop": 0.663
+                    "start": 0.24,
+                    "stop": 0.2405
                 }
             ]
         },
         {
             "type": "linear",
-            "resolution": 4,
+            "resolution": 50,
             "parameters": [
                 {
                     "name": "initial_state[0][0]",
