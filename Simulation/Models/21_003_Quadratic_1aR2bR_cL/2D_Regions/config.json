@@ -1,37 +1,37 @@
 {
     "type": "period regions",
     "max_period": 32,
-    "num_iterations": 1e4,
+    "num_iterations": 1e3,
     "parameters": {
-        "aL": 1,
+        "aL": 1.25,
         "aR": 1,
-        "bL": 0,
+        "bL": 0.5,
         "bR": 0,
-        "cL": 1.1,
+        "cL": 0,
         "cR": 2.6
     },
     "scan": [
         {
             "type": "linear",
-            "resolution": 300,
+            "resolution": 1000,
             "parameters": [
                 {
                     "name": "px",
-                    "start": -1,
-                    "stop": 1
+                    "start": 0.65,
+                    "stop": 0.85
                 }
             ]
         },
         {
             "type": "linear",
-            "resolution": 300,
+            "resolution": 1000,
             "parameters": [
                 {
                     "name": "py",
-                    "start": 0.2,
-                    "stop": 1.2
+                    "start": 1.25,
+                    "stop": 1.35
                 }
-            ]           
+            ]
         }
     ],
     "animation": null
