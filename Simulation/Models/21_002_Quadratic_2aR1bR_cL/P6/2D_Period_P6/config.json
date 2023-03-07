@@ -1,6 +1,7 @@
 {
     "type": "period",
     "max_period": 32,
+    "num_iterations": 1e4,
     "parameters": {
         "aL": 1,
         "aR": 1,
@@ -16,8 +17,8 @@
             "parameters": [
                 {
                     "name": "px",
-                    "start": 0.5,
-                    "stop": 0.8
+                    "start": 0.8,
+                    "stop": 0.95
                 }
             ]
         },
@@ -27,8 +28,8 @@
             "parameters": [
                 {
                     "name": "py",
-                    "start": 0.24,
-                    "stop": 0.252
+                    "start": 0.238,
+                    "stop": 0.245
                 }
             ]           
         }

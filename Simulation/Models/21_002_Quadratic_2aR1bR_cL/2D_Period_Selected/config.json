@@ -28,7 +28,7 @@
             "parameters": [
                 {
                     "name": "py",
-                    "start": 0.0,
+                    "start": 0.05,
                     "stop": 0.3
                 }
             ]           
