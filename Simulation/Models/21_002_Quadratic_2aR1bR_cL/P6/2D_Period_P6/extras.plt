@@ -1,2 +1,3 @@
-set arrow from 0.81, 0.737 to 0.95, 0.750 nohead front lw 2 lc rgb 'red'
-set arrow from 0.65, 0.660 to 0.80, 0.663 nohead front lw 2 lc rgb 'red'
+set label 1 "A" at 0.84, 0.24 point pointtype 7 lc rgb 'red' front
+set label 2 "B" at 0.88, 0.2415 point pointtype 7 lc rgb 'red' front
+set label 3 "C" at 0.92, 0.244 point pointtype 7 lc rgb 'red' front

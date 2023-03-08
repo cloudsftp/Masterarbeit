@@ -7,7 +7,9 @@
         "bL": 0,
         "bR": 0,
         "cL": 1,
-        "cR": 3
+        "cR": 3,
+        "px": 0.88,
+        "py": 0.2415
     },
     "scan": [
         {
@@ -22,22 +24,7 @@
             ]
         }
     ],
-    "animation": {
-            "type": "linear",
-            "resolution": 4,
-            "parameters": [
-                {
-                    "name": "px",
-                    "start": 0.86,
-                    "stop": 0.88
-                },
-                {
-                    "name": "py",
-                    "start": 0.24,
-                    "stop": 0.2405
-                }
-            ]
-        },
+    "animation": null,
     "L": 0,
     "R": 6,
     "D": 0,

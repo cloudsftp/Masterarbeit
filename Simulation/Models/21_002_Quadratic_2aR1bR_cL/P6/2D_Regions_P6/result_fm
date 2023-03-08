@@ -8,3 +8,7 @@
 
 \psfrag{x}{\hspace*{0.0em}\raisebox{0.5ex}{$p_x$}}
 \psfrag{y}{\hspace*{0.0em}\raisebox{0.5ex}{$c_L$}}
+
+\psfrag{A}{\hspace*{0.0em}\raisebox{0.5ex}{$A$}}
+\psfrag{B}{\hspace*{0.0em}\raisebox{0.5ex}{$B$}}
+\psfrag{C}{\hspace*{0.0em}\raisebox{0.5ex}{$C$}}
