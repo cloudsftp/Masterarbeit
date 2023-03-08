@@ -146,9 +146,8 @@ def create_ant_process(frame: frame.Frame, exec_type: ExecutionType) -> subpro.P
         if len(frame.diagram.scan) > 1:
             arguments.extend(['-n', f'{get_num_points(frame)}'])
         else:
-            arguments.extend(['-t', 20])
+            arguments.extend(['-t', '20'])
 
-        #info(f'With arguments {arguments[6:]}')
 
     return subprocess.Popen(
         arguments,

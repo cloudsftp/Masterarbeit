@@ -1,0 +1,51 @@
+{
+    "type": "cobweb",
+    "max_period": 32,
+    "parameters": {
+        "aL": 1,
+        "aR": 1,
+        "bL": 0,
+        "bR": 1,
+        "cL": 1.5,
+        "cR": 3,
+        "z": 1.5
+    },
+    "scan": [
+        {
+            "type": "linear",
+            "resolution": 200,
+            "parameters": [
+                { 
+                    "name": "initial_state[0][0]",
+                    "start": 0,
+                    "stop": 3
+                }
+            ]
+        }
+    ],
+    "animation": {
+        "type": "linear",
+        "resolution": 10,
+        "parameters": [
+            {
+                "name": "z",
+                "start": 1.45,
+                "stop": 1.5
+            },
+            {
+                "name": "cR",
+                "start": 3.225,
+                "stop": 3.15
+            },
+            {
+                "name": "bL",
+                "start": 0.3,
+                "stop": 1.6
+            }
+        ]
+    },
+    "L": 0,
+    "D": 0,
+    "R": 6,
+    "U": 6
+}
