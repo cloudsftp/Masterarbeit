@@ -1,5 +1,3 @@
-border = 1.5 - 0.1 * py
-
 _aL = aL
 _aR = aR + 2 * px
 _bL = bL
