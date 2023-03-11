@@ -1,9 +1,9 @@
-_aL = aL
-_aR = aR + 2 * px
-_bL = bL
-_bR = bR + px
-_cL = cL + py
-_cR = cR
+_aL = aL + 2 * 0.88 * px
+_aR = aR - 2 * 0.88 * px
+_bL = bL + 0.88 * px
+_bR = bR - 0.88 * px
+_cL = cL + 0.2585 * py
+_cR = cR - 0.2585 * py
 
 mod(a, b) = a - (floor(a/b) * b)
 
