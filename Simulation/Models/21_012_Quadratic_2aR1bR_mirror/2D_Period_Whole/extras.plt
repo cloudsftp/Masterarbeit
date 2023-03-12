@@ -6,3 +6,4 @@ set label 4 "DL" at 0.325, 0.13 point pointtype 7 lc rgb 'red' front
 
 set label 6 "E" at 0.4, 0.4 point pointtype 7 lc rgb 'red' front
 
+set label 7 "Ap" at 1, 1 point pointtype 7 lc rgb 'red' front
