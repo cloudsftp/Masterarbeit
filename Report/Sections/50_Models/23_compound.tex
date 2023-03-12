@@ -128,3 +128,39 @@ You can see it in \Cref{fig:quad.full.2aR1bR_cL.2.CobwebC}, it was generated at 
     \caption{Cobwebs at Different Points}
     \label{fig:quad.full.2aR1bR_cL.2.Cobwebs}
 \end{figure}
+
+\subsubsection{Mirrored Configuration}
+
+One idea to obtain chains from the overlapping area found above, is to move from the parameter values that are inside this area to parameter values that produce the same function rotated by one branch.
+This is equivalent to the function, where parameters $a_L$ and $b_L$ are swapped with $a_R$ and $b_R$ and the parameters $c_L$ and $c_R$ are swapped with an offset of $1.5$.
+Let point $A$ be the point inside the overlapping area (point $B$) in \Cref{fig:quadratic.full.2aR1bR_cL.2d.1} and point $A'$ the mirrored configuration, just described.
+\Cref{fig:quad.full.2aR1bR_cL_mirr.1.Cobwebsprime}
+
+\begin{figure}
+    \centering
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{21_012_Quadratic_2aR1bR_mirror/Cobweb_A/result.png}
+        \caption{At Point $A$}
+        \label{fig:quad.full.2aR1bR_cL_mirr.1.CobwebA}
+    \end{subfigure}
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{21_012_Quadratic_2aR1bR_mirror/Cobweb_Aprime/result.png}
+        \caption{At Point $A'$}
+        \label{fig:quad.full.2aR1bR_cL_mirr.1.CobwebAprime}
+    \end{subfigure}
+    \caption{Cobwebs at Different Points}
+    \label{fig:quad.full.2aR1bR_cL_mirr.1.Cobwebsprime}
+\end{figure}
+
+Now we choose the parameters $p_x$ and $p_y$ in such a way, that $p_x = p_y = 0$ corresponds to the configuration in point $A$ AND $p_x = p_y = 1$ to the configuration in point $A'$.
+While $p_x$ influences $a_L, a_R, b_L,$ and $b_R$, while $p_y$ only influences $c_L$ and $c_R$.
+The resulting scan of the periods is \Cref{fig:quadratic.full.2aR1bR_mirr.1.2d.whole}.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.6\textwidth]{21_012_Quadratic_2aR1bR_mirror/2D_Period_Whole/result.png}
+    \caption{2D Scan of Periods of Quadratic Model with ...}
+    \label{fig:quadratic.full.2aR1bR_mirr.1.2d.whole}
+\end{figure}
