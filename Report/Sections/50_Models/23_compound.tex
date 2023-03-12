@@ -138,13 +138,13 @@ Let point $A$ be the point inside the overlapping area (point $B$) in \Cref{fig:
 
 \begin{figure}
     \centering
-    \begin{subfigure}{0.3\textwidth}
+    \begin{subfigure}{0.4\textwidth}
         \centering
         \includegraphics[width=\textwidth]{21_012_Quadratic_2aR1bR_mirror/Cobweb_A/result.png}
         \caption{At Point $A$}
         \label{fig:quad.full.2aR1bR_cL_mirr.1.CobwebA}
     \end{subfigure}
-    \begin{subfigure}{0.3\textwidth}
+    \begin{subfigure}{0.4\textwidth}
         \centering
         \includegraphics[width=\textwidth]{21_012_Quadratic_2aR1bR_mirror/Cobweb_Aprime/result.png}
         \caption{At Point $A'$}
@@ -163,4 +163,51 @@ The resulting scan of the periods is \Cref{fig:quadratic.full.2aR1bR_mirr.1.2d.w
     \includegraphics[width=0.6\textwidth]{21_012_Quadratic_2aR1bR_mirror/2D_Period_Whole/result.png}
     \caption{2D Scan of Periods of Quadratic Model with ...}
     \label{fig:quadratic.full.2aR1bR_mirr.1.2d.whole}
+\end{figure}
+
+The behavior of the model at the point $B$ here is equivalent to point $C$ in \Cref{fig:quadratic.full.2aR1bR_cL.2d.1}, therefore its cobweb is omitted here.
+The cobwebs of points $C$ and $D$ in \Cref{fig:quad.full.2aR1bR_cL_mirr.1.CobwebsCD} show that there is also the same situation of a type A and a type B area.
+At the point $C$ we have one stable cycle of period 6 with the symbolic sequence $\A\B^2\C\D^2$.
+At the point $D$ we have two stable cycles of period 6 with the same symbolic sequence $\A\B^2\C\D^2$.
+But in that case, they do not overlap, as you can see in \Cref{fig:quadratic.full.2aR1bR_mirr.1.2d.CD}.
+Also, the coexisting cycles are situated differently from the original model, where it is characteristic that one cycle runs near the right of a border between two branches, while the other cycle runs near the left of it.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.6\textwidth]{21_012_Quadratic_2aR1bR_mirror/2D_Period_CD/result.png}
+    \caption{2D Scan of Periods of Quadratic Model with ...}
+    \label{fig:quadratic.full.2aR1bR_mirr.1.2d.CD}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \begin{subfigure}{0.4\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{21_012_Quadratic_2aR1bR_mirror/Cobweb_C/result.png}
+        \caption{At Point $C$}
+        \label{fig:quad.full.2aR1bR_cL_mirr.1.CobwebC}
+    \end{subfigure}
+    \begin{subfigure}{0.4\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{21_012_Quadratic_2aR1bR_mirror/Cobweb_D/result.png}
+        \caption{At Point $D$}
+        \label{fig:quad.full.2aR1bR_cL_mirr.1.CobwebD}
+    \end{subfigure}
+    \caption{Cobwebs at Different Points}
+    \label{fig:quad.full.2aR1bR_cL_mirr.1.CobwebsCD}
+\end{figure}
+
+At the point $E$ we also have a type B area with two coexisting cycles of period 6.
+The symbolic sequences of these cycles are $\A^2\B^2\C\D$ and $\A\B\C^2\D^2$ and the cycles are situated like in the original model again.
+But this area is not something we are searching for.
+The type B areas we are searching for should have the same number of points on their left half as they have on their right half.
+Because in the original model, the two type A areas on either side of a type B area behave like in one half of one cycle in the type B area on both halves.
+And it has the same period, therefore the points in the type B area must be distributed equally on both halves,
+\todo{better explanation - maybe earlier in the original model, reference here}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.6\textwidth]{21_012_Quadratic_2aR1bR_mirror/Cobweb_E/result.png}
+    \caption{Cobweb at Point $E$}
+    \label{fig:quadratic.full.2aR1bR_mirr.1.CobwebE}
 \end{figure}
