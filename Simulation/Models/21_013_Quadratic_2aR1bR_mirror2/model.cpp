@@ -47,10 +47,10 @@ bool f(
     }
 
     // normalize
-    y = remainder(y, 1 * n);
+    y = remainder(y, 2 * n);
     
     while (y < 0) {
-        y += 1 * n;
+        y += 2 * n;
     }
 
     RHS[0] = y;
