@@ -7,6 +7,7 @@ import socket
 import time
 import re
 import threading
+import random
 
 from configuration.diagrams import DiagramType
 from execution import frame
@@ -23,7 +24,7 @@ class ExecutionType(Enum):
 server_ip = '0.0.0.0'
 client_ip = 'localhost'
 
-port = 5555
+port = random.choice(range(9000, 10000))
 
 num_cores = {
     'workstation': 12,
