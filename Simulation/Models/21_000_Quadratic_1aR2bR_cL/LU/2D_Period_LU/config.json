@@ -1,5 +1,5 @@
 {
-    "type": "period regions",
+    "type": "period",
     "max_period": 64,
     "num_iterations": 1e4,
     "parameters": {

@@ -1,5 +1,5 @@
 {
-    "type": "period regions",
+    "type": "period",
     "max_period": 64,
     "num_iterations": 1e4,
     "parameters": {
@@ -18,7 +18,7 @@
                 {
                     "name": "px",
                     "start": 0,
-                    "stop": 0.1
+                    "stop": 0.5
                 }
             ]
         },
@@ -28,8 +28,8 @@
             "parameters": [
                 {
                     "name": "py",
-                    "start": 1.4,
-                    "stop": 2.2
+                    "start": 0.8,
+                    "stop": 2.5
                 }
             ]
         }
