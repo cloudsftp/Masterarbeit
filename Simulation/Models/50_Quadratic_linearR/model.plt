@@ -3,7 +3,6 @@ A = px
 B = 2.1
 
 _aL = aL
-_aR = 0
 _bL = bL
 _bR = B - A
 _cL = cL + py
