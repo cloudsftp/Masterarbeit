@@ -1,18 +1,20 @@
 {
     "type": "period",
-    "max_period": 32,
+    "max_period": 128,
+    "num_iterations": 1e3,
     "parameters": {
-        "a": 1
+        "px": 0,
+        "py": 0
     },
     "scan": [
         {
             "type": "linear",
-            "resolution":1000,
+            "resolution": 1000,
             "parameters": [
                 {
-                    "name": "b",
-                    "start": 0.6,
-                    "stop": 2
+                    "name": "px",
+                    "start": 1.1,
+                    "stop": 1.8
                 }
             ]
         },
@@ -21,9 +23,9 @@
             "resolution": 1000,
             "parameters": [
                 {
-                    "name": "c",
-                    "start": 0.8,
-                    "stop": 1.2
+                    "name": "py",
+                    "start": 0.6,
+                    "stop": 0.75
                 }
             ]
         }
