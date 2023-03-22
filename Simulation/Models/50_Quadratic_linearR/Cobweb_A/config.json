@@ -3,7 +3,7 @@
     "max_period": 32,
     "num_iterations": 1e3,
     "parameters": {
-        "px": 1.35,
+        "px": 1.6,
         "py": 0.625
     },
     "scan": [
