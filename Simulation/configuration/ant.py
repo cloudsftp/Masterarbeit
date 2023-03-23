@@ -137,12 +137,14 @@ def config_inverstigation_methods(frame: frame.Frame) -> str:
     cobweb = 'false'
     cyclic_bif_set = 'false'
     regions = 'false'
+    symbolic = 'false'
     
     match frame.diagram.type:
         case DiagramType.PERIOD:
             period = 'true'
         case DiagramType.COBWEB:
             cobweb = 'true'
+            symbolic = 'true'
         case DiagramType.PERIOD_REGIONS:
             regions = 'true'
         case DiagramType.ANALYSIS:
@@ -186,6 +188,19 @@ def config_inverstigation_methods(frame: frame.Frame) -> str:
             band_counter = {{
             }},
             symbolic_analysis = {{
+                is_active = {symbolic},
+                symbolic_function = using_user_defined_symbolic_dynamics,
+                critical_points_for_<L/R>_symbolic_dynamics = (0,10000),
+                transient = 0,
+                symbolic_description_level = 1,
+                symbolic_entropy_approximate = false,
+                symb_entr_a_file = "symbolic_entropy_approximate.tna",
+                symbolic_entropy_exact = false,
+                symb_entr_e_file = "symbolic_entropy_exact.tna",
+                symbolic_sequence = false,
+                symbolic_sequence_file = "symbolic_sequence.tna",
+                periodic_symbolic_sequence = true,
+                periodic_symbolic_sequence_file = "periodic_symbolic_sequence.tna"
             }},
             rim_analysis = {{
             }},
