@@ -1,1 +1,0 @@
-set arrow from 0.50, 1.90 to 1.60, 2.21 nohead front lc rgb 'red'

@@ -3,6 +3,7 @@
 from typing import Optional, List, Dict, Any, Union
 from pathlib import Path
 from enum import Enum
+from copy import deepcopy
 import json
 
 from util.exceptions import CustomException
@@ -14,6 +15,7 @@ class DiagramType(Enum):
     PERIOD_REGIONS = 1,
     COBWEB = 2,
     ANALYSIS = 3,
+    BIFURCATION = 4,
 
 class ParameterRangeType(Enum):
     LINEAR = 0,
@@ -34,6 +36,31 @@ class ParameterRange:
     
     def __init__(self, config: Union[Dict[str, Any], Any], model: Model):
         load_parameter_range_from_dict(self, config, model)
+
+def invert_parameter_range(range: ParameterRange) -> ParameterRange:
+    res = deepcopy(range)
+    
+    for param_spec in res.parameter_specs:
+        tmp = param_spec.start
+        param_spec.start = param_spec.stop
+        param_spec.stop = tmp
+        
+    return res
+
+def invert_parameter_ranges(ranges: List[ParameterRange], *indices: int) -> List[ParameterRange]:
+    res = deepcopy(ranges)
+
+    for i in indices:
+        res[i] = invert_parameter_range(res[i])
+    
+    return res
+
+def invert_scan(scan: List[ParameterRange]) -> List[ParameterRange]:
+    return [
+        scan[1],
+        scan[0],
+    ]
+
 
 
 class Diagram(object):
@@ -170,6 +197,8 @@ def load_diagram_from_dict(
         obj.type = DiagramType.COBWEB
     elif type == 'analysis':
         obj.type = DiagramType.ANALYSIS
+    elif type == 'bifurcation':
+        obj.type = DiagramType.BIFURCATION
     else:
         raise CustomException(f'Diagram type "{type}" not supported')
 

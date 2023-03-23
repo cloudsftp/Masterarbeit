@@ -6,5 +6,9 @@
 \psfrag{D}{\hspace*{0.5em}\raisebox{0.5ex}{$0.1$}}
 \psfrag{U}{\hspace*{-1.3em}\raisebox{0.5ex}{$0.35$}}
 
-\psfrag{x}{\hspace*{0.0em}\raisebox{0.5ex}{$\chi_0$}}
-\psfrag{y}{\hspace*{0.0em}\raisebox{0.5ex}{$E_0$}}
+\psfrag{x}{\hspace*{0.0em}\raisebox{0.5ex}{$E_0$}}
+\psfrag{y}{\hspace*{0.0em}\raisebox{0.5ex}{$\chi_0$}}
+
+\psfrag{A}{\hspace*{0.0em}\raisebox{0.5ex}{\color[RGB]{255, 110, 0}{$A$}}}
+\psfrag{B}{\hspace*{0.0em}\raisebox{0.5ex}{\color[RGB]{255, 110, 0}{$B$}}}
+\psfrag{C}{\hspace*{0.0em}\raisebox{0.5ex}{\color[RGB]{255, 110, 0}{$C$}}}

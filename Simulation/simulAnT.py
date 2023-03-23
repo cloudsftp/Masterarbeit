@@ -48,3 +48,5 @@ if __name__ == "__main__":
     
     except CustomException as e:
         error(e)
+        print()
+        raise e

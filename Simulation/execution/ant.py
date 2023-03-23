@@ -7,6 +7,7 @@ import socket
 import time
 import re
 import threading
+import random
 
 from configuration.diagrams import DiagramType
 from execution import frame
@@ -23,7 +24,7 @@ class ExecutionType(Enum):
 server_ip = '0.0.0.0'
 client_ip = 'localhost'
 
-port = 5555
+port = random.choice(range(9000, 10000))
 
 num_cores = {
     'workstation': 12,
@@ -46,7 +47,7 @@ def execute_simulation(frame: frame.Frame):
         info(f'Skipping simulation and generation of {data_file_paths}')
         return
 
-    if frame.diagram.scan and not frame.diagram.options.num_cores == 1:
+    if frame.scan and not frame.diagram.options.num_cores == 1:
         execute_simulation_server_mode(frame)
     
     else:
@@ -141,8 +142,13 @@ def create_ant_process(frame: frame.Frame, exec_type: ExecutionType) -> subpro.P
             '-m', 'client',
             '-s', f'{client_ip}',
             '-p', f'{port}',
-            '-t', '20',
         ])
+        
+        if len(frame.diagram.scan) > 1:
+            arguments.extend(['-n', f'{get_num_points(frame)}'])
+        else:
+            arguments.extend(['-t', '20'])
+
 
     return subprocess.Popen(
         arguments,
@@ -150,6 +156,16 @@ def create_ant_process(frame: frame.Frame, exec_type: ExecutionType) -> subpro.P
         stdout = subprocess.PIPE,
         stderr = subprocess.STDOUT,
     )
+
+def get_num_points(frame: frame.Frame) -> int:
+    row_len = [s.resolution for s in frame.scan]
+
+    if len(frame.scan) == 2:
+        return row_len[1]
+
+    else:
+        raise CustomException(f'get_num_points not implemented for {len(frame.scan)} scans')
+
 
 # Handling running simulations
 
@@ -226,8 +242,12 @@ def get_data_file_paths(frame: execution.frame.Frame) -> List[Path]:
         return [get_period_path(frame)]
     elif frame.diagram.type == DiagramType.COBWEB:
         return [get_cyclic_cobweb_path(frame)]
+    elif frame.diagram.type == DiagramType.PERIOD_REGIONS:
+        return [get_regions_path(frame)]
     elif frame.diagram.type == DiagramType.ANALYSIS:
         return [get_period_path(frame), get_cyclic_bif_path(frame)]
+    elif frame.diagram.type == DiagramType.BIFURCATION:
+        return [get_cyclic_bif_path(frame)]
     else:
         raise CustomException(f'Executing simulation for type {frame.diagram.type} not yet supported!')
 
@@ -238,4 +258,7 @@ def get_cyclic_cobweb_path(frame: execution.frame.Frame) -> Path:
     return frame.path / 'cyclic_cobweb.tna'
 
 def get_cyclic_bif_path(frame:execution.frame.Frame) -> Path:
-    return frame.path / 'cyclic_bif_set.tna'
+    return frame.path / 'bif_cyclic.tna'
+
+def get_regions_path(frame: exeution.frame.Frame) -> Path:
+    return frame.path / 'regions_period.tna'

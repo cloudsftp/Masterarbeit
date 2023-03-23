@@ -6,17 +6,19 @@ After that, we will reduce the model to just two branches using symmetry.
 
 \subsection{Full Model}
 
+\todo{make mod generic}
+
 The full model is the map $x \mapsto f(x) \mod 6$.
 Where $f$ is given by the following collection of equations.
 \begin{align}
     f(x) & = \begin{cases}
-        g(x) & \text{if } r(x) < 3 \\
-        g(x) + 3 & \text{else}
-    \end{cases} \label{equ:quad.full.f} \\
+                 g(x)     & \text{if } r(x) < 3 \\
+                 g(x) + 3 & \text{else}
+             \end{cases} \label{equ:quad.full.f}                                    \\
     g(x) & = \begin{cases}
-        a_L \cdot s_L(x)^2 + b_L \cdot x + c_L & \text{if } s(x) < \frac{3}{2} \\
-        a_R \cdot s_R(x)^2 + b_R \cdot x + c_R & \text{else}
-    \end{cases} \label{equ:quad.full.g}
+                 a_L \cdot s_L(x)^2 + b_L \cdot x + c_L & \text{if } s(x) < \frac{3}{2} \\
+                 a_R \cdot s_R(x)^2 + b_R \cdot x + c_R & \text{else}
+             \end{cases} \label{equ:quad.full.g}
 \end{align}
 
 \Cref{equ:quad.full.f} causes the disontinuity in the middle at $x = 3$.
@@ -24,14 +26,21 @@ It also makes sure, the symmetry $f(x + 3) \equiv f(x) + 3 \mod 6$ is true.
 Each half of the model is then governed by \Cref{equ:quad.full.g}.
 Here all the 6 parameters $a_L, a_R, b_L, b_R, c_L,$ and $c_R$ act.
 
+\todo{describe offset by s and t}
+\todo{split g into l and r needed later for fitting}
+
 \Crefrange{equ:quad.full.s}{equ:quad.full.sr} provide adjusted values of x for either choosing between branches in both halves or substituting in the quadratic formulas of each branch.
 \begin{subequations}
-\begin{align}
-    s(x) & = x \mod 3 \label{equ:quad.full.s} \\
-    s_L(x) & = s(x) - \frac{3}{4} \\
-    s_R(x) & = s(x) - \frac{9}{4} \label{equ:quad.full.sr}
-\end{align}
+    \begin{align}
+        s(x)   & = x \mod 3 \label{equ:quad.full.s}            \\
+        s_L(x) & = s(x) - \frac{3}{4}                          \\
+        s_R(x) & = s(x) - \frac{9}{4} \label{equ:quad.full.sr}
+    \end{align}
 \end{subequations}
+
+\subsection{Variation of Single Parameters}
+
+We start by examining the behavior of the quadratic model under variations of single parameters like $a_L, a_R, b_L, b_R, c_L,$ and $c_R$.
 
 \subsubsection{Fixing $a_L = a_R = 1, b_L = b_R = 0$}
 

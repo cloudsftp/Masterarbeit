@@ -1,0 +1,44 @@
+{
+    "type": "bifurcation",
+    "max_period": 64,
+    "num_iterations": 1000,
+    "parameters": {
+        "aL": 1,
+        "aR": 1,
+        "bL": 0,
+        "bR": 1,
+        "cL": 1,
+        "cR": 2.50,
+        "n": 3
+    },
+    "scan": [
+        {
+            "type": "linear",
+            "resolution": 1000,
+            "parameters": [
+                {
+                    "name": "bR",
+                    "start": 1.15,
+                    "stop": 1.3
+                },
+                {
+                    "name": "cL",
+                    "start": 1.5,
+                    "stop": 1.05
+                }
+            ]
+        },
+        {
+            "type": "linear",
+            "resolution": 200,
+            "parameters": [
+                {
+                    "name": "initial_state[0][0]",
+                    "start": 0,
+                    "stop": 3
+                }
+            ]
+        }
+    ],
+    "animation": null
+}
