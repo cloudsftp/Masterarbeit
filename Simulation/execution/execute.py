@@ -18,6 +18,7 @@ from execution.frame import Frame
 from execution.plotting import get_result_png_path, get_simple_result_png_path
 from execution.composite_plotting import generate_composite_picture
 from execution import composite_plotting
+from execution.symbolic import process_simple_symbolic
 
 
 def generate_diagram(diagram: Diagram):
@@ -30,9 +31,6 @@ def generate_diagram(diagram: Diagram):
     else:
         generate_simple_diagram(diagram)
 
-    if diagram.type == DiagramType.COBWEB:
-        process_symbolic(diagram)
-
 
 def generate_simple_diagram(diagram: Diagram):
     frame = Frame(diagram, 0)
@@ -40,6 +38,9 @@ def generate_simple_diagram(diagram: Diagram):
 
     if diagram.type == DiagramType.ANALYSIS:
         return
+
+    if diagram.type == DiagramType.COBWEB:
+        process_simple_symbolic(frame)
 
     if diagram.options.simple_figure:
         final_result_png_path = get_final_simple_result_png_path(diagram)
@@ -130,13 +131,6 @@ def synthesize_gif(diagram: Diagram, frames: List[Frame]):
 
 def show_pic(pic_path: Path):
     execute_and_wait(["imv", str(pic_path)])
-
-
-# Symbolic Sequences
-
-
-def process_symbolic(diagram: Diagram):
-    pass
 
 
 # Path utils
