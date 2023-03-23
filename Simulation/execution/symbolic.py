@@ -12,7 +12,7 @@ SYMBOLS = ["A", "B", "C", "D"]
 
 
 def process_simple_symbolic(frame: Frame):
-    cycles = {}
+    cycles = []
 
     with open(get_symbolic_raw_file(frame)) as raw_file:
         for line in raw_file:
@@ -22,7 +22,14 @@ def process_simple_symbolic(frame: Frame):
                 if char in SYMBOLS:
                     num_symbols[char] += 1
 
-            cycles.append(num_symbols)
+            cycle = ""
+            for symbol in SYMBOLS:
+                cycle += f"{symbol}{num_symbols[symbol]} "
+            cycle = cycle[:-1]
+
+            cycles.append(cycle)
+
+    cycles = {cycle for cycle in cycles}  # filter duplicated
 
     for cycle in cycles:
         print(cycle)
