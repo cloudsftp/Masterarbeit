@@ -4,7 +4,7 @@
     "num_iterations": 1e3,
     "initial": 0.25,
     "parameters": {
-        "px": -0.3775,
+        "px": -0.4,
         "py": 0
     },
     "scan": [
@@ -14,26 +14,26 @@
             "parameters": [
                 {
                     "name": "py",
-                    "start": 0.1665,
-                    "stop": 0.1695
+                    "start": 0.16165,
+                    "stop": 0.161525
                 }
             ]
         },
         {
             "type": "linear",
-            "resolution": 4,
+            "resolution": 100,
             "parameters": [
                 {
                     "name": "initial_state[0][0]",
                     "start": 0,
-                    "stop": 0.75
+                    "stop": 1
                 }
             ]
         }
     ],
     "animation": null,
-    "D": 0,
-    "U": 1,
-    "L": 0.1665,
-    "R": 0.1695
+    "D": 0.24,
+    "U": 0.26,
+    "L": 0.16165,
+    "R": 0.161525
 }
