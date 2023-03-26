@@ -1,5 +1,9 @@
 \section{Bifurcations}
 
+This section lists the bifurcations that happen at the borders of ``type A'' and ``type B'' parameter regions, respectively.
+\Cref{fig:final.regions.whole.halved} shows the borders of the period regions in full.
+\Cref{fig:final.regions.CandD16.halved} is a zoomed-in version, that pictures the two regions that this section investigates, $C_{16}$ and $D_{16}$.
+The arrows in that figure mark, where the bifurcation diagrams in this section are computed.
 
 \begin{figure}
     \centering
@@ -18,11 +22,24 @@
     \caption{2D Period Regions of Halved Final Model}
 \end{figure}
 
-\todo{what bifurcations (which borders) in type A / type B regions}
-
 \subsection{``Type'' A Parameter Regions}
 
-\subsubsection{$C_{16}^\uparrow$}
+We start with the bifurcations bounding the ``type A'' parameter region of the point $C_{16}$.
+The borders are enumerated as $C_{16}^\uparrow, C_{16}^\rightarrow, C_{16}^\downarrow,$ and $C_{16}^\leftarrow$, where the arrow in the superscript indicates the side of the border.
+So $C_{16}^\uparrow$ means the upper border of the period region, that contains the point $C_{16}$.
+
+\subsubsection{The Boundary $C_{16}^\uparrow$}
+
+When scanning across the upper border of this parameter region, one gets the figure \Cref{fig:final.bifurcation.C.up}
+It is not immediately clear, what kind of bifurcation happens.
+The bifurcation diagram has to be read from left to right, this is also true for all other bifurcation diagrams in this section.
+We are interested in what happens to the stable cycle that exists at the start and causes it to vanish.
+The cycle is near the border $\A\B$ when it vanishes, so we can zoom into that area.
+It is marked red in the bifurcation diagram and pictured in \Cref{fig:bifurcation.C.up.zoomed}.
+It is immediately clear, that this is a border bifurcation with the stable cycle $\A^5\B^3\C^5\D^3$ colliding with the border $\A\B$ from the left side, meaning one point on the branch $\A$ collides with this border.
+We will write $BB_{\A\B}^{\rightarrow}$, which means that this is a border bifurcation at the border $\A\B$ where the point collides from the left (branch $\A$).
+
+\todo{$BB_{\C\D}^\rightarrow$ at the same time}
 
 \begin{figure}
     \centering
@@ -41,7 +58,9 @@
     \caption{1D Bifurcation Diagrams of $C_{16}^\uparrow$}
 \end{figure}
 
-\subsubsection{$C_{16}^\rightarrow$}
+\subsubsection{The Boundary $C_{16}^\rightarrow$}
+
+$BB_{\B\C}^\leftarrow \land BB_{\D\A}^\leftarrow$ at the same time.
 
 \begin{figure}
     \centering
@@ -60,7 +79,9 @@
     \caption{1D Bifurcation Diagrams of $C_{16}^\rightarrow$}
 \end{figure}
 
-\subsubsection{$C_{16}^\downarrow$}
+\subsubsection{The Boundary $C_{16}^\downarrow$}
+
+$BB_{\A\B}^\leftarrow \land BB_{\C\D}^\leftarrow$ at the same time.
 
 \begin{figure}
     \centering
@@ -79,7 +100,9 @@
     \caption{1D Bifurcation Diagrams of $C_{16}^\downarrow$}
 \end{figure}
 
-\subsubsection{$C_{16}^\leftarrow$}
+\subsubsection{The Boundary $C_{16}^\leftarrow$}
+
+$BB_{\B\C}^\rightarrow \land BB_{\D\A}^\rightarrow$ at the same time.
 
 \begin{figure}
     \centering
@@ -100,7 +123,7 @@
 
 \subsection{``Type B'' Parameter Regions}
 
-\subsubsection{$D_{16}^\uparrow$}
+\subsubsection{The Boundary $D_{16}^\uparrow$}
 
 \begin{figure}
     \centering
@@ -125,7 +148,7 @@
     \caption{1D Bifurcation Diagrams and Cobweb of $D_{16}^\uparrow$}
 \end{figure}
 
-\subsubsection{$D_{16}^\rightarrow$}
+\subsubsection{The Boundary $D_{16}^\rightarrow$}
 
 \begin{figure}
     \centering
@@ -150,7 +173,7 @@
     \caption{1D Bifurcation Diagrams and Cobweb of $D_{16}^\rightarrow$}
 \end{figure}
 
-\subsubsection{$D_{16}^\downarrow$}
+\subsubsection{The Boundary $D_{16}^\downarrow$}
 
 \begin{figure}
     \centering
@@ -175,7 +198,7 @@
     \caption{1D Bifurcation Diagrams and Cobweb of $D_{16}^\downarrow$}
 \end{figure}
 
-\subsubsection{$D_{16}^\leftarrow$}
+\subsubsection{The Boundary $D_{16}^\leftarrow$}
 
 \begin{figure}
     \centering
