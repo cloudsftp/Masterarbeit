@@ -8,3 +8,13 @@
 
 \psfrag{x}{\hspace*{0.0em}\raisebox{0.5ex}{$p_x$}}
 \psfrag{y}{\hspace*{0.0em}\raisebox{0.5ex}{$p_y$}}
+
+\psfrag{LCU16}{\hspace*{0.0em}\raisebox{0.5ex}{$C_{16}^\uparrow$}}
+\psfrag{LCR16}{\hspace*{0.0em}\raisebox{0.5ex}{$C_{16}^\rightarrow$}}
+\psfrag{LCD16}{\hspace*{0.0em}\raisebox{0.5ex}{$C_{16}^\downarrow$}}
+\psfrag{LCL16}{\hspace*{0.0em}\raisebox{0.5ex}{$C_{16}^\leftarrow$}}
+
+\psfrag{LDU16}{\hspace*{0.0em}\raisebox{0.5ex}{$D_{16}^\uparrow$}}
+\psfrag{LDR16}{\hspace*{0.0em}\raisebox{0.5ex}{$D_{16}^\rightarrow$}}
+\psfrag{LDD16}{\hspace*{0.0em}\raisebox{0.5ex}{$D_{16}^\downarrow$}}
+\psfrag{LDL16}{\hspace*{0.0em}\raisebox{0.5ex}{$D_{16}^\leftarrow$}}
