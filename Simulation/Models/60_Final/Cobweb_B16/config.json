@@ -7,7 +7,19 @@
         "px": -0.428,
         "py": 0.1615
     },
-    "scan": null,
+    "scan": [
+        {
+            "type": "linear",
+            "resolution": 100,
+            "parameters": [
+                {
+                    "name": "initial_state[0][0]",
+                    "start": 0,
+                    "stop": 0.5
+                }
+            ]
+        }
+    ],
     "animation": null,
     "L": 0,
     "R": 1,
