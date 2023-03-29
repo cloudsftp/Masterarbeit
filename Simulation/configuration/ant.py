@@ -183,6 +183,8 @@ def config_inverstigation_methods(frame: frame.Frame) -> str:
             cyclic_bif_set = "true"
         case DiagramType.BIFURCATION:
             cyclic_bif_set = "true"
+        case DiagramType.BIFURCATION_MULTICOLOR:
+            cyclic_bif_set = "true"
         case _:
             raise CustomException(
                 f"AnT configuration for type {frame.diagram.type} not yet supported!"

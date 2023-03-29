@@ -25,6 +25,11 @@ def generate_diagram(diagram: Diagram):
     if diagram.type == DiagramType.PERIOD_REGIONS:
         generate_regions_diagram(diagram)
 
+    elif diagram.type == DiagramType.BIFURCATION_MULTICOLOR and diagram.animation:
+        generate_regions_diagram(
+            diagram
+        )  # this does exactly what we need, is just named differently
+
     elif diagram.animation:
         generate_animated_diagram(diagram)
 

@@ -12,7 +12,13 @@ from configuration.models import Parameters, join_parameters
 from configuration.diagrams import Diagram, DiagramType, ParameterRange
 from configuration.ant import generate_ant_config_file
 from execution.ant import execute_simulation
-from execution.plotting import generate_picture, get_gnuplot_model_generation_path, get_gnuplot_model_data_path, get_gnuplot_model_path
+from execution.plotting import (
+    generate_picture,
+    get_gnuplot_model_generation_path,
+    get_gnuplot_model_data_path,
+    get_gnuplot_model_path,
+)
+
 
 class Frame:
     diagram: Diagram
@@ -21,37 +27,39 @@ class Frame:
     config_file_path: Path
     parameters: Parameters
     scan: Optional[List[ParameterRange]]
-    
+
     def __init__(
         self,
-        diagram: Diagram, id: int,
+        diagram: Diagram,
+        id: int,
         parameters: Optional[Parameters] = None,
         scan: Optional[List[ParameterRange]] = None,
     ):
         self.diagram = diagram
 
-        self.path = diagram.path / 'Autogen' / f'Frame_{id:04d}'
-        self.config_file_path = self.path / 'config.ant'
-        
+        self.path = diagram.path / "Autogen" / f"Frame_{id:04d}"
+        self.config_file_path = self.path / "config.ant"
+
         if parameters:
             self.parameters = join_parameters(diagram.parameters, parameters)
         else:
             self.parameters = diagram.parameters
-        
+
         if scan:
             self.scan = scan
         else:
             self.scan = diagram.scan
-            
+
     def run(self):
         self.path.mkdir(parents=True, exist_ok=True)
 
         generate_ant_config_file(self)
         execute_simulation(self)
-            
+
         if self.diagram.type in [
             DiagramType.ANALYSIS,
             DiagramType.PERIOD_REGIONS,
+            DiagramType.BIFURCATION_MULTICOLOR,
         ]:
             return
 
@@ -60,40 +68,52 @@ class Frame:
 
         generate_picture(self)
 
+
 # Generating the function data for cobwebs
 
+
 def generate_function_data(frame: Frame):
-    if frame.diagram.type != DiagramType.COBWEB or get_gnuplot_model_path(frame).exists():
+    if (
+        frame.diagram.type != DiagramType.COBWEB
+        or get_gnuplot_model_path(frame).exists()
+    ):
         return
 
     data_path = get_gnuplot_model_data_path(frame)
     model_gen_path = get_gnuplot_model_generation_path(frame)
-    
+
     if not model_gen_path.exists():
-        raise CustomException(f'{model_gen_path} missing')
-    
-    if not is_outdated(data_path, model_gen_path, frame.diagram.config_file_path, frame.diagram.model.config_file_path):
-        info(f'Skipping generation of {data_path}')
+        raise CustomException(f"{model_gen_path} missing")
+
+    if not is_outdated(
+        data_path,
+        model_gen_path,
+        frame.diagram.config_file_path,
+        frame.diagram.model.config_file_path,
+    ):
+        info(f"Skipping generation of {data_path}")
         return
 
-    info(f'Generating {data_path}')
+    info(f"Generating {data_path}")
 
     args = [
-        'python',
+        "python",
         str(get_gnuplot_model_generation_path(frame)),
     ]
 
     for name in frame.parameters:
-        args += [f'--{name}', str(frame.parameters[name])]
-    
+        args += [f"--{name}", str(frame.parameters[name])]
+
     args += [
-        '--start', str(frame.diagram.L),
-        '--end', str(frame.diagram.R),
-        '--resolution', str(3000)
+        "--start",
+        str(frame.diagram.L),
+        "--end",
+        str(frame.diagram.R),
+        "--resolution",
+        str(3000),
     ]
 
     process = execute_and_wait(args)
-    
-    with data_path.open('w') as data_file:
+
+    with data_path.open("w") as data_file:
         data_file.write(process.stdout.decode())
-    

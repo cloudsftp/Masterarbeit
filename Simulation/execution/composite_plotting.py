@@ -82,6 +82,15 @@ def gnuplot_commands(frames: List[frame.Frame]) -> str:
                 f"Wrong number of frames for period regions. Has to be either 2 or 4"
             )
 
+    elif frames[0].diagram.type == DiagramType.BIFURCATION_MULTICOLOR:
+        if len(frames) == 2:
+            return dedent(
+                f"""
+                plot '{get_data_file_paths(frames[0])[0]}' w dots lc rgb 'red' notitle, \\
+                    '{get_data_file_paths(frames[1])[0]}' w dots lc rgb 'blue' notitle
+                """
+            )
+
 
 def run_composite_gnuplot_program(diagram: Diagram):
     info(f"Executing {get_gnuplot_file_path(diagram)}")
