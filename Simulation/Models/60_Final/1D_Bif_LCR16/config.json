@@ -3,6 +3,7 @@
     "max_period": 128,
     "num_iterations": 1e3,
     "initial": 0.25,
+    "reset_orbit": false,
     "parameters": {
         "px": 0,
         "py": 0.164
@@ -16,17 +17,6 @@
                     "name": "px",
                     "start": -0.38,
                     "stop": -0.3725
-                }
-            ]
-        },
-        {
-            "type": "linear",
-            "resolution": 100,
-            "parameters": [
-                {
-                    "name": "initial_state[0][0]",
-                    "start": 0,
-                    "stop": 1
                 }
             ]
         }

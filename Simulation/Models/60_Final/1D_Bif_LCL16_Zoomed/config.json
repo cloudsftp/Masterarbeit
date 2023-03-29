@@ -3,6 +3,7 @@
     "max_period": 128,
     "num_iterations": 1e3,
     "initial": 0.25,
+    "reset_orbit": false,
     "parameters": {
         "px": 0,
         "py": 0.164
@@ -10,7 +11,7 @@
     "scan": [
         {
             "type": "linear",
-            "resolution": 3000,
+            "resolution": 2000,
             "parameters": [
                 {
                     "name": "px",
@@ -18,22 +19,11 @@
                     "stop": -0.4305
                 }
             ]
-        },
-        {
-            "type": "linear",
-            "resolution": 100,
-            "parameters": [
-                {
-                    "name": "initial_state[0][0]",
-                    "start": 0,
-                    "stop": 1
-                }
-            ]
         }
     ],
     "animation": null,
-    "D": 0.49,
-    "U": 0.51,
+    "D": 0.497,
+    "U": 0.503,
     "L": -0.4295,
     "R": -0.4305
 }

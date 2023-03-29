@@ -2,7 +2,8 @@
     "type": "bifurcation",
     "max_period": 128,
     "num_iterations": 1e3,
-    "initial": 0.25,
+    "initial": 0.500001,
+    "reset_orbit": false,
     "parameters": {
         "px": 0,
         "py": 0.164
@@ -18,22 +19,11 @@
                     "stop": -0.3745
                 }
             ]
-        },
-        {
-            "type": "linear",
-            "resolution": 100,
-            "parameters": [
-                {
-                    "name": "initial_state[0][0]",
-                    "start": 0,
-                    "stop": 1
-                }
-            ]
         }
     ],
     "animation": null,
-    "D": 0.49,
-    "U": 0.51,
+    "D": 0.497,
+    "U": 0.503,
     "L": -0.3755,
     "R": -0.3745
 }
