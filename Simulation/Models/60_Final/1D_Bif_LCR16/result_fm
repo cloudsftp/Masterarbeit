@@ -10,6 +10,6 @@
 \psfrag{y}{\hspace*{1.0em}\raisebox{0.5ex}{$f(x)$}}
 
 
-\psfrag{dl}{\hspace*{0.0em}\raisebox{0.5ex}{$d_l$}}
-\psfrag{dm}{\hspace*{0.0em}\raisebox{0.5ex}{$d_m$}}
-\psfrag{dr}{\hspace*{0.0em}\raisebox{0.5ex}{$d_r$}}
+\psfrag{dl}{\hspace*{0.0em}\raisebox{0.5ex}{$d_1$}}
+\psfrag{dm}{\hspace*{0.0em}\raisebox{0.5ex}{$d_2$}}
+\psfrag{dr}{\hspace*{0.0em}\raisebox{0.5ex}{$d_3$}}
