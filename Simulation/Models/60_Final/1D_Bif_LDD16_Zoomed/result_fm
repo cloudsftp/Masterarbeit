@@ -7,9 +7,9 @@
 \psfrag{U}{\hspace*{-2.0em}\raisebox{0.5ex}{$0.252$}}
 
 \psfrag{x}{\hspace*{0.0em}\raisebox{0.5ex}{$p_y$}}
-\psfrag{y}{\hspace*{1.0em}\raisebox{0.5ex}{$f(x)$}}
+\psfrag{y}{\hspace*{2.0em}\raisebox{0.5ex}{$f(x)$}}
 
 
-\psfrag{dl}{\hspace*{0.0em}\raisebox{0.5ex}{$d_1$}}
-\psfrag{dm}{\hspace*{0.0em}\raisebox{0.5ex}{$d_2$}}
-\psfrag{dr}{\hspace*{0.0em}\raisebox{0.5ex}{$d_3$}}
+\psfrag{d1}{\hspace*{0.3em}\raisebox{0.5ex}{$d_1$}}
+\psfrag{d2}{\hspace*{0.3em}\raisebox{0.5ex}{$d_2$}}
+\psfrag{d3}{\hspace*{0.3em}\raisebox{0.5ex}{$d_3$}}

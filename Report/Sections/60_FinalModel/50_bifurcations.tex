@@ -30,6 +30,7 @@ The boundaries are enumerated as $C_{16}^\uparrow, C_{16}^\rightarrow, C_{16}^\d
 So $C_{16}^\uparrow$ means the upper border of the period region, that contains the point $C_{16}$.
 
 \subsubsection{The Boundary $C_{16}^\uparrow$}
+\label{sec:final.bifurcation.typeA.up}
 
 When scanning across the upper boundary of this parameter region, one gets the figure \Cref{fig:final.bifurcation.C.up}.
 It is not immediately clear, what kind of bifurcation happens.
@@ -134,10 +135,22 @@ From these bifurcation diagrams, we can conclude that the bifurcation at this bo
 
 \subsection{``Type B'' Parameter Regions}
 
+This section covers the bifurcations happening at the bounds of ``type B'' parameter regions.
+For this purpose, we consider the parameter region $\P_{\A^5\B^3\C^4\D^4, \A^4\B^4\C^5\D^3}$ that contains the point $D_{16}$.
+In contrast to the last section covering ``type A'' parameter regions, here there are two coexisting stable cycles.
+The boundaries are enumerated as $D_{16}^\uparrow, D_{16}^\rightarrow, D_{16}^\downarrow,$ and $D_{16}^\leftarrow$.
+
 \subsubsection{The Boundary $D_{16}^\uparrow$}
 
-$\A^5\B^3\C^4\D^4$: $BB_{\A\B}^\rightarrow$ \\
-$\A^4\B^4\C^5\D^3$: $BB_{\C\D}^\rightarrow$
+\Cref{fig:final.bifurcation.D.up} shows the bifurcation diagram of the first considered border, $D_{16}^\uparrow$.
+The two existing stable cycles at the beginning are drawn in different colors to differentiate them.
+The cycle $\A^5\B^3\C^4\D^4$ is blue and its rotated twin $\A^4\B^4\C^5\D^3$ is red.
+One can see that the blue cycle is near $d_1$ when it vanishes, while the red cycle is near $d_3$.
+\Cref{fig:final.bifurcation.D.up.zoomed} shows the black region that is marked in the full bifurcation diagram.
+So as before in \Cref{sec:final.bifurcation.typeA.up} there is a border collision bifurcation of a point of the stable cycle on branch $\A$ with the border $d_1$.
+But this time, the same cycle does not collide with the border $d_3$ at the same time, because the cycle $\A^5\B^3\C^4\D^4$ is not symmetric.
+Instead, its twin cycle $\A^4\B^4\C^5\D^3$ collides with the border $d_3$.
+This means there are two bifurcations, $\BCB_{d_1}^{\A^5\B^3\C^4\D^4, r}$ and $\BCB_{d_3}^{\A^4\B^4\C^5\D^3, r}$.
 
 \begin{figure}
     \centering
@@ -150,7 +163,7 @@ $\A^4\B^4\C^5\D^3$: $BB_{\C\D}^\rightarrow$
     \begin{subfigure}{0.4\textwidth}
         \centering
         \includegraphics[width=\textwidth]{60_Final/1D_Bif_LDU16_Zoomed/result.png}
-        \caption{Zoomed in at Border $\A\B$}
+        \caption{Zoomed-in at Border $d_1$}
         \label{fig:final.bifurcation.D.up.zoomed}
     \end{subfigure}
     %\begin{subfigure}{0.3\textwidth}
@@ -178,7 +191,7 @@ $\A^4\B^4\C^5\D^3$: $BB_{\B\C}^\leftarrow$
     \begin{subfigure}{0.4\textwidth}
         \centering
         \includegraphics[width=\textwidth]{60_Final/1D_Bif_LDR16_Zoomed/result.png}
-        \caption{Zoomed in at Border $\B\C$}
+        \caption{Zoomed-in at Border $d_2$}
         \label{fig:final.bifurcation.D.right.zoomed}
     \end{subfigure}
     %\begin{subfigure}{0.3\textwidth}
@@ -206,7 +219,7 @@ $\A^4\B^4\C^5\D^3$: $BB_{\A\B}^\leftarrow$
     \begin{subfigure}{0.4\textwidth}
         \centering
         \includegraphics[width=\textwidth]{60_Final/1D_Bif_LDD16_Zoomed/result.png}
-        \caption{Zoomed in at Border $\A\B$}
+        \caption{Zoomed-in at Border $d_1$}
         \label{fig:final.bifurcation.D.down.zoomed}
     \end{subfigure}
     %\begin{subfigure}{0.3\textwidth}
@@ -234,7 +247,7 @@ $\A^4\B^4\C^5\D^3$: $BB_{\B\C}^\rightarrow$
     \begin{subfigure}{0.4\textwidth}
         \centering
         \includegraphics[width=\textwidth]{60_Final/1D_Bif_LDL16_Zoomed/result.png}
-        \caption{Zoomed in at Border $\B\C$}
+        \caption{Zoomed-in at Border $d_2$}
         \label{fig:final.bifurcation.D.left.zoomed}
     \end{subfigure}
     %\begin{subfigure}{0.3\textwidth}
