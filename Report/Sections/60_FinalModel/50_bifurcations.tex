@@ -177,8 +177,10 @@ This means there are two bifurcations, $\BCB_{d_1}^{\A^5\B^3\C^4\D^4, r}$ and $\
 
 \subsubsection{The Boundary $D_{16}^\rightarrow$}
 
-$\A^5\B^3\C^4\D^4$: $BB_{\D\A}^\leftarrow$ \\
-$\A^4\B^4\C^5\D^3$: $BB_{\B\C}^\leftarrow$
+The bifurcation diagram for the right boundary is depicted in \Cref{fig:final.bifurcation.D.right}.
+Here, the blue stable cycle, $\A^5\B^3\C^4\D^4$, is near the border $d_2$.
+Zooming into the marked area, generate \Cref{fig:final.bifurcation.D.right.zoomed}.
+From these bifurcation diagrams, we can conclude that the bifurcations at this boundary are $\BCB_{d_2}^{\A^5\B^3\C^4\D^4, l}$ and $\BCB_{d_0}^{\A^4\B^4\C^5\D^3, l}$.
 
 \begin{figure}
     \centering
@@ -205,8 +207,10 @@ $\A^4\B^4\C^5\D^3$: $BB_{\B\C}^\leftarrow$
 
 \subsubsection{The Boundary $D_{16}^\downarrow$}
 
-$\A^5\B^3\C^4\D^4$: $BB_{\C\D}^\leftarrow$ \\
-$\A^4\B^4\C^5\D^3$: $BB_{\A\B}^\leftarrow$
+For the lower boundary, the stable cycles are again near the borders $d_1$ and $d_3$, as can be seen in \Cref{fig:final.bifurcation.D.down}.
+But this time, the blue cycle, $\A^5\B^3\C^4\D^4$, is not near the border $d_1$ but rather $d_3$.
+We also see that in the zoomed-in version of the bifurcation diagram in \Cref{fig:final.bifurcation.D.down.zoomed} since here the red cycle collides with the border $d_1$, meaning its twin collides with the border $d_3$ at the same time.
+Therefore we know, that the bifurcations at this boundary are $\BCB_{d_3}^{\A^5\B^3\C^4\D^4, l}$ and $\BCB_{d_1}^{\A^4\B^4\C^5\D^3, l}$.
 
 \begin{figure}
     \centering
@@ -236,6 +240,11 @@ $\A^4\B^4\C^5\D^3$: $BB_{\A\B}^\leftarrow$
 $\A^5\B^3\C^4\D^4$: $BB_{\D\A}^\rightarrow$ \\
 $\A^4\B^4\C^5\D^3$: $BB_{\B\C}^\rightarrow$
 
+At the left boundary, the cycles are near the borders $d_0$ and $d_2$ as can be seen in \Cref{fig:final.bifurcation.D.left}.
+The red cycle, $\A^4\B^4\C^5\D^3$, is near the border $d_2$.
+This is enhanced in \Cref{fig:final.bifurcation.D.left.zoomed}.
+From these bifurcation diagrams, we can conclude that the bifurcations at this boundary are $\BCB_{d_0}^{\A^5\B^3\C^4\D^4, r}$ and $\BCB_{d_2}^{\A^4\B^4\C^5\D^3, r}$.
+
 \begin{figure}
     \centering
     \begin{subfigure}{0.4\textwidth}
@@ -258,3 +267,18 @@ $\A^4\B^4\C^5\D^3$: $BB_{\B\C}^\rightarrow$
     %\end{subfigure}
     \caption{1D Bifurcation Diagrams and Cobweb of $D_{16}^\leftarrow$}
 \end{figure}
+
+%\subsection{Listing the Bifurcations}
+
+\begin{table}
+    \centering
+    \begin{tabular}{| l || c | c |}
+        \hline
+                      & $C_16$                                  & $D_16$                                                                    \\ \hline \hline
+        $\uparrow$    & $\BCB_{d_1, d_3}^{\A^5\B^3\C^5\D^3, r}$ & $\BCB_{d_1}^{\A^5\B^3\C^4\D^4, r}$ and $\BCB_{d_3}^{\A^4\B^4\C^5\D^3, r}$ \\ \hline
+        $\rightarrow$ & $\BCB_{d_0, d_2}^{\A^5\B^3\C^5\D^3, l}$ & $\BCB_{d_2}^{\A^5\B^3\C^4\D^4, l}$ and $\BCB_{d_0}^{\A^4\B^4\C^5\D^3, l}$ \\ \hline
+        $\downarrow$  & $\BCB_{d_1, d_3}^{\A^5\B^3\C^5\D^3, l}$ & $\BCB_{d_3}^{\A^5\B^3\C^4\D^4, l}$ and $\BCB_{d_1}^{\A^4\B^4\C^5\D^3, l}$ \\ \hline
+        $\leftarrow$  & $\BCB_{d_0, d_2}^{\A^5\B^3\C^5\D^3, r}$ & $\BCB_{d_0}^{\A^5\B^3\C^4\D^4, r}$ and $\BCB_{d_2}^{\A^4\B^4\C^5\D^3, r}$ \\ \hline
+    \end{tabular}
+    \caption{Table of the Bifurcations}
+\end{table}
