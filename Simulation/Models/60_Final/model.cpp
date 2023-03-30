@@ -47,7 +47,7 @@ bool f(
     }
 
     // Normalize
-    if (y > 2 * n) {
+    if (y >= 2 * n) {
         y -= 2 * n;
     }
 

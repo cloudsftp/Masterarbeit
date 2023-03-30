@@ -1,0 +1,27 @@
+{
+    "type": "cobweb",
+    "max_period": 32,
+    "num_iterations": 1e3,
+    "parameters": {
+        "px": -0.3775,
+        "py": 0.16855
+    },
+    "scan": [
+        {
+            "type": "linear",
+            "resolution": 100,
+            "parameters": [
+                {
+                    "name": "initial_state[0][0]",
+                    "start": 0,
+                    "stop": 0.5
+                }
+            ]
+        }
+    ],
+    "animation": null,
+    "L": 0,
+    "R": 1,
+    "D": 0,
+    "U": 1
+}

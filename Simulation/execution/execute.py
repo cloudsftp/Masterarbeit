@@ -22,11 +22,16 @@ from execution.symbolic import process_simple_symbolic
 
 
 def generate_diagram(diagram: Diagram):
-    if diagram.animation:
-        generate_animated_diagram(diagram)
-
-    elif diagram.type == DiagramType.PERIOD_REGIONS:
+    if diagram.type == DiagramType.PERIOD_REGIONS:
         generate_regions_diagram(diagram)
+
+    elif diagram.type == DiagramType.BIFURCATION_MULTICOLOR and diagram.animation:
+        generate_regions_diagram(
+            diagram
+        )  # this does exactly what we need, is just named differently
+
+    elif diagram.animation:
+        generate_animated_diagram(diagram)
 
     else:
         generate_simple_diagram(diagram)
@@ -55,12 +60,30 @@ def generate_simple_diagram(diagram: Diagram):
 
 
 def generate_regions_diagram(diagram: Diagram):
-    frames = [
-        Frame(diagram, 0),
-        Frame(diagram, 1, scan=invert_parameter_ranges(diagram.scan, 0)),
-        Frame(diagram, 2, scan=invert_scan(diagram.scan)),
-        Frame(diagram, 3, scan=invert_scan(invert_parameter_ranges(diagram.scan, 1))),
-    ]
+    if diagram.animation == None:
+        frames = [
+            Frame(diagram, 0),
+            Frame(diagram, 1, scan=invert_parameter_ranges(diagram.scan, 0)),
+            Frame(diagram, 2, scan=invert_scan(diagram.scan)),
+            Frame(
+                diagram, 3, scan=invert_scan(invert_parameter_ranges(diagram.scan, 1))
+            ),
+        ]
+
+    else:
+        frames = []
+        for i in range(diagram.animation.resolution):
+            full = (
+                diagram.animation.parameter_specs[0].stop
+                - diagram.animation.parameter_specs[0].start
+            )
+            initial = diagram.animation.parameter_specs[0].start + i * (
+                full / (diagram.animation.resolution - 1)
+            )
+
+            diagram_copy = copy(diagram)
+            diagram_copy.initial = initial
+            frames.append(Frame(diagram_copy, i))
 
     for frame in frames:
         frame.run()

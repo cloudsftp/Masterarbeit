@@ -17,6 +17,9 @@ def process_simple_symbolic(frame: Frame):
 
     with open(get_symbolic_raw_file(frame)) as raw_file:
         for line in raw_file:
+            if line == "\n" or line[0] == "#":
+                continue
+
             period = 0
             num_symbols = {symbol: 0 for symbol in SYMBOLS}
 
