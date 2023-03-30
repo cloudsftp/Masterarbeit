@@ -25,13 +25,13 @@ The arrows in that figure mark, where the bifurcation diagrams in this section a
 
 \subsection{``Type'' A Parameter Regions}
 
-We start with the bifurcations bounding the ``type A'' parameter region of the point $C_{16}$.
-The borders are enumerated as $C_{16}^\uparrow, C_{16}^\rightarrow, C_{16}^\downarrow,$ and $C_{16}^\leftarrow$, where the arrow in the superscript indicates the side of the border.
+We start with the bifurcations bounding the ``type A'' parameter region containing the point $C_{16}$, $\P_{\A^5\B^3\C^5\D^3}$.
+The boundaries are enumerated as $C_{16}^\uparrow, C_{16}^\rightarrow, C_{16}^\downarrow,$ and $C_{16}^\leftarrow$, where the arrow in the superscript indicates the side of the border.
 So $C_{16}^\uparrow$ means the upper border of the period region, that contains the point $C_{16}$.
 
 \subsubsection{The Boundary $C_{16}^\uparrow$}
 
-When scanning across the upper border of this parameter region, one gets the figure \Cref{fig:final.bifurcation.C.up}.
+When scanning across the upper boundary of this parameter region, one gets the figure \Cref{fig:final.bifurcation.C.up}.
 It is not immediately clear, what kind of bifurcation happens.
 The bifurcation diagram has to be read from left to right, this is also true for all other bifurcation diagrams in this section.
 It does not show the stable cycle of the next parameter region above $\P_{\A^5\B^3\C^5\D^3}$ while the stable cycle $\A^5\B^3\C^5\D^3$ still exists.
@@ -53,7 +53,7 @@ We will write $\BCB_{d_1, d_3}^{\A^5\B^3\C^5\D^3, r}$, which means that this is 
     \begin{subfigure}{0.4\textwidth}
         \centering
         \includegraphics[width=\textwidth]{60_Final/1D_Bif_LCU16_Zoomed/result.png}
-        \caption{Zoomed in at Border $d_0$}
+        \caption{Zoomed-in at Border $d_1$}
         \label{fig:bifurcation.C.up.zoomed}
     \end{subfigure}
     \caption{1D Bifurcation Diagrams of $C_{16}^\uparrow$}
@@ -61,7 +61,11 @@ We will write $\BCB_{d_1, d_3}^{\A^5\B^3\C^5\D^3, r}$, which means that this is 
 
 \subsubsection{The Boundary $C_{16}^\rightarrow$}
 
-$BB_{\B\C}^\leftarrow \land BB_{\D\A}^\leftarrow$ at the same time.
+Taking a look at the right boundary of this parameter region, we get the bifurcation diagram in \Cref{fig:final.bifurcation.C.right}.
+This time, the stable cycle existing at the start is nowhere near the borders $d_1$ or $d_3$ when it vanishes.
+Instead, it is near the border $d_2$ and $d_0$ respectively.
+Zooming into the marked region again, we get \Cref{fig:final.bifurcation.C.right.zoomed}.
+From these bifurcation diagrams, we can conclude that the bifurcation at this boundary is $\BCB_{d_0, d_2}^{\A^5\B^3\C^5\D^3, l}$.
 
 \begin{figure}
     \centering
@@ -74,7 +78,7 @@ $BB_{\B\C}^\leftarrow \land BB_{\D\A}^\leftarrow$ at the same time.
     \begin{subfigure}{0.4\textwidth}
         \centering
         \includegraphics[width=\textwidth]{60_Final/1D_Bif_LCR16_Zoomed/result.png}
-        \caption{Zoomed in at Border $\B\C$}
+        \caption{Zoomed-in at Border $d_2$}
         \label{fig:final.bifurcation.C.right.zoomed}
     \end{subfigure}
     \caption{1D Bifurcation Diagrams of $C_{16}^\rightarrow$}
@@ -82,7 +86,10 @@ $BB_{\B\C}^\leftarrow \land BB_{\D\A}^\leftarrow$ at the same time.
 
 \subsubsection{The Boundary $C_{16}^\downarrow$}
 
-$BB_{\A\B}^\leftarrow \land BB_{\C\D}^\leftarrow$ at the same time.
+\Cref{fig:final.bifurcation.C.down} shows the bifurcation diagram for the lower boundary of the parameter region $\P_{\A^5\B^3\C^5\D^3}$.
+We can see, that the stable cycle is near the borders $d_1$ and $d_3$ when it vanishes.
+\Cref{fig:final.bifurcation.C.down.zoomed} shows the zoomed-in region marked black in the full bifurcation diagram \Cref{fig:final.bifurcation.C.down}.
+From these bifurcation diagrams, we can conclude that the bifurcation at this boundary is $\BCB_{d_1, d_3}^{\A^5\B^3\C^5\D^3, l}$
 
 \begin{figure}
     \centering
@@ -95,7 +102,7 @@ $BB_{\A\B}^\leftarrow \land BB_{\C\D}^\leftarrow$ at the same time.
     \begin{subfigure}{0.4\textwidth}
         \centering
         \includegraphics[width=\textwidth]{60_Final/1D_Bif_LCD16_Zoomed/result.png}
-        \caption{Zoomed in at Border $\A\B$}
+        \caption{Zoomed-in at Border $d_1$}
         \label{fig:final.bifurcation.C.down.zoomed}
     \end{subfigure}
     \caption{1D Bifurcation Diagrams of $C_{16}^\downarrow$}
@@ -103,7 +110,10 @@ $BB_{\A\B}^\leftarrow \land BB_{\C\D}^\leftarrow$ at the same time.
 
 \subsubsection{The Boundary $C_{16}^\leftarrow$}
 
-$BB_{\B\C}^\rightarrow \land BB_{\D\A}^\rightarrow$ at the same time.
+Similarly, \Cref{fig:final.bifurcation.C.left} shows the bifurcation diagram at the lower boundary of the parameter region $\P_{\A^5\B^3\C^5\D^3}$.
+The stable cycle is near the borders $d_0$ and $d_2$ when it vanishes and \Cref{fig:final.bifurcation.C.left.zoomed} shows a zoomed-in version of the bifurcation diagram.
+The region that is depicted in the zoomed-in version is marked black in \Cref{fig:final.bifurcation.C.left}.
+From these bifurcation diagrams, we can conclude that the bifurcation at this boundary is $\BCB_{d_0, d_2}^{\A^5\B^3\C^5\D^3, r}$.
 
 \begin{figure}
     \centering
@@ -116,7 +126,7 @@ $BB_{\B\C}^\rightarrow \land BB_{\D\A}^\rightarrow$ at the same time.
     \begin{subfigure}{0.4\textwidth}
         \centering
         \includegraphics[width=\textwidth]{60_Final/1D_Bif_LCL16_Zoomed/result.png}
-        \caption{Zoomed in at Border $\B\C$}
+        \caption{Zoomed-in at Border $d_2$}
         \label{fig:final.bifurcation.C.left.zoomed}
     \end{subfigure}
     \caption{1D Bifurcation Diagrams of $C_{16}^\leftarrow$}
