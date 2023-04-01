@@ -1,3 +1,43 @@
 \section{Model Definition}
 
-\todo{model definition}
+The final model, which shows the same bifurcation phenomenon as the original model, is fairly simple.
+Now there are no implicit equations and the model can be defined by the following explicit equations.
+The model maps $x \mapsto f(x) \mod 1$ where ... define $f$.
+
+\begin{align}
+    f(x) & = \begin{cases}
+                 g(x)       & \text{ if } x < 0.5 \\
+                 g(x) + 0.5 & \text{ else}
+             \end{cases} \\
+    g(x) & = \begin{cases}
+                 l(x) & \text{ if } x < 0.25 \\
+                 r(x) & \text{ else}
+             \end{cases}
+\end{align}
+
+For the definitions of $l$ and $r$, we center the variable to better understand the effects of the coefficients.
+Branches $\A$ and $\C$ exist on the intervals $[0, 0.25)$ and $[0.5, 0.75)$ respectively.
+Therefore, we center the variable for the polynomials of these branches by moving it $0.125$ to the left.
+\Cref{equ:final.def.tl} achieves this.
+Branches $\B$ and $\D$ exist on the intervals $[0.25, 0.5)$ and $[0.75, 1)$ respectively.
+The offset here is $0.375$ by the same logic and \Cref{equ:final.def.tr} achieves this.
+
+\begin{align}
+    s(x)   & = x \mod 0.5                                   \\
+    t_L(x) & = s(x) - \dfrac{1}{8} \label{equ:final.def.tl} \\
+    t_R(x) & = s(x) - \dfrac{3}{8} \label{equ:final.def.tr}
+\end{align}
+
+The actual polynomials defining $l$ and $r$ are then defined by the following equations.
+
+\begin{align}
+    l(x) & = a_L \cdot t_L(x)^2 + b_L \cdot t_L(x) + c_L \\
+    r(x) & = b_R \cdot t_R(x) + c_R
+\end{align}
+
+\subsection{The Parameters}
+
+To get this model to show the desired behavior, we only change the coefficient $c_L$ directly via the parameter $p_y$.
+The coefficients $a_L = 4$ and $b_L = 0.5$ are fixed.
+The coefficients $b_R$ and $c_R$ are changed indirectly by the two parameters $A$ and $B$.
+The parameter $A$
