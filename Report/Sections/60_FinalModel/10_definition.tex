@@ -43,7 +43,7 @@ The actual polynomials defining $l$ and $r$ are then defined by the following eq
 
 \subsection{The Model Parameters}
 
-To get this model to show the desired behavior, we only change the coefficient $c_L$ directly via the parameter $p_y$.
+To get this model to show the desired behavior, we only change the coefficient $c_L$ directly via the parameter $p_y$ ($c_L = p_y$).
 The coefficients $a_L = 4$ and $b_L = 0.5$ are fixed.
 The coefficients $b_R$ and $c_R$ are changed indirectly by the two parameters $A$ and $B$, which define characteristics of the function $r$.
 $A$ is the value of the function $r$ at the left border of branch $\B$, so $r(0.25) = A$.
@@ -51,10 +51,10 @@ And $B$ is the value of the function $r$ at the right border of branch $\B$, so 
 These constraints will yield the following set of equations.
 \begin{subequations}
     \begin{align}
-        r(0.25) & = - b_R \cdot \dfrac{1}{8} + c_R = A
+        r(0.25) & = - b_R \cdot \frac{1}{8} + c_R = A
         \label{equ:final.def.param.constr.A}
         \\
-        r(0.5)  & = b_R \cdot \dfrac{1}{8} + c_R = B
+        r(0.5)  & = b_R \cdot \frac{1}{8} + c_R = B
         \label{equ:final.def.param.constr.B}
     \end{align}
 \end{subequations}
@@ -73,5 +73,29 @@ Similarily, subtracting \Cref{equ:final.def.param.constr.A} from \Cref{equ:final
 \end{align}
 
 For our purposes, we also fix the parameter $B = 0.525$, so that the right border of the branches $\B$ and $\D$ are just above the bisector.
-We only change the parameter $A$ via the parameter $p_x$.
+We only change the parameter $A$ via the parameter $p_x$, where we negate the value of $p_x$ to get a similar 2D-scan to the original function.
+So $A = -p_x$.
 
+\Cref{tab:final.def.parameters.overview} lists the values of all parameters of the model.
+The first part focuses on the parameters of the function $l$, while the second part lists the parameters needed for the function $r$.
+
+\begin{table}
+    \centering
+    \begin{tabular}{|c|c|}
+        \hline
+        Model Parameter & Value                       \\ \hline \hline
+        $a_L$           & $4$                         \\ \hline
+        $b_L$           & $0.5$                       \\ \hline
+        $c_L$           & $p_y$                       \\ \hline \hline
+        $b_R$           & $4 \cdot (B - A)$           \\ \hline
+        $c_R$           & $\frac{1}{2} \cdot (A + B)$ \\ \hline
+        $A$             & $-p_x$                      \\ \hline
+        $B$             & $0.525$                     \\ \hline
+    \end{tabular}
+    \caption{Overview of Parameter Values of Final Model}
+    \label{tab:final.def.parameters.overview}
+\end{table}
+
+\subsection{Parameter Effects}
+
+\todo{effects of parameters, comparison to original function (table, illustration)}
