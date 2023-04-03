@@ -96,31 +96,3 @@ The first part focuses on the parameters of the function $l$, while the second p
     \caption{Overview of Parameter Values of Final Model}
     \label{tab:final.def.parameters.overview}
 \end{table}
-
-\subsection{Parameter Effects}
-
-The effects of the parameters on the model function are straightforward and can be read directly from the previous section.
-In summary, the parameter $p_x$ changes the height of the branches $\B$ and $\D$ at their left border, where a lower $p_x$ means a higher value of the model function at these points.
-In the previously defined notation, this is written as $\AL_{\B}^-$.
-The parameter $p_y$ changes the offset of branches $\A$ and $\C$, so it moves the whole branches in contrast to $p_x$.
-A higher $p_y$ means a higher offset and it is written as $\AW_{\A}^+$.
-\todo{refer to section where notation is defined}
-
-\todo{illustration of parameter effects}
-
-\todo{refer to table}
-
-\begin{table}
-    \centering
-    \begin{tabular}{|c||c|c||c|c|} \hline
-        Combined         & $E_0$            & $\chi_0$          & $p_x$        & $p_y$          \\ \hline \hline
-        $\AL_{\B}^{-}$   & $\AL_{\B}^{-}$   &                   & $\AL_{\B}^-$ &                \\ \hline
-        $\AMi_{\B}^{L-}$ & $\AMi_{\B}^{L-}$ & $-\AMi_{\B}^{+}$  &              &                \\ \hline
-        $\AW_{\A}^{+}$   &                  & $\AW_{\A}^{+}$    &              & $\AW_{\A}^{+}$ \\ \hline \hline
-        $\AB_{\B\C}^{L}$ &                  & $\AB_{\B\C}^{L}$  &              &                \\ \hline
-                         & $\AB_{\A\B}^{R}$ & $-\AB_{\A\B}^{L}$ &              &                \\ \hline
-    \end{tabular}
-    \caption{Comparison of Parameter Effects}
-    \label{tab:final.def.parameters.effects}
-\end{table}
-
