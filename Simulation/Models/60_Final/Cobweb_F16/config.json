@@ -3,8 +3,8 @@
     "max_period": 32,
     "num_iterations": 1e3,
     "parameters": {
-        "px": -0.3425,
-        "py": 0.178
+        "px": -0.375,
+        "py": 0.1675
     },
     "scan": [
         {
