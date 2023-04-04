@@ -2,6 +2,7 @@
     "type": "period regions",
     "max_period": 128,
     "num_iterations": 1e4,
+    "initial": 0.25,
     "parameters": {
         "px": 0,
         "py": 0
@@ -13,8 +14,8 @@
             "parameters": [
                 {
                     "name": "px",
-                    "start": -0.55,
-                    "stop": -0.275
+                    "start": -0.44,
+                    "stop": -0.36
                 }
             ]
         },
@@ -24,8 +25,8 @@
             "parameters": [
                 {
                     "name": "py",
-                    "start": 0.15,
-                    "stop": 0.1875
+                    "start": 0.16,
+                    "stop": 0.17
                 }
             ]
         }

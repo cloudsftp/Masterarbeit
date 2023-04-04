@@ -1,7 +1,8 @@
 {
-    "type": "period regions",
+    "type": "period",
     "max_period": 128,
     "num_iterations": 1e4,
+    "initial": 0.25,
     "parameters": {
         "px": 0,
         "py": 0

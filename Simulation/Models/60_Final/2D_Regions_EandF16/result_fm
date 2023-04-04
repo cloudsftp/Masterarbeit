@@ -1,0 +1,20 @@
+% fmopt: width=8cm
+
+\psfrag{L}{\hspace*{0.3em}\raisebox{0.5ex}{$-0.44$}}
+\psfrag{R}{\hspace*{-2.2em}\raisebox{0.5ex}{$-0.36$}}
+
+\psfrag{D}{\hspace*{0.5em}\raisebox{0.5ex}{$0.16$}}
+\psfrag{U}{\hspace*{-1.5em}\raisebox{0.5ex}{$0.17$}}
+
+\psfrag{x}{\hspace*{0.0em}\raisebox{0.5ex}{$p_x$}}
+\psfrag{y}{\hspace*{0.0em}\raisebox{0.5ex}{$p_y$}}
+
+\psfrag{LEU16}{\hspace*{0.0em}\raisebox{0.5ex}{$E_{16}^\uparrow$}}
+\psfrag{LER16}{\hspace*{0.0em}\raisebox{0.5ex}{$E_{16}^\rightarrow$}}
+\psfrag{LED16}{\hspace*{0.0em}\raisebox{0.5ex}{$E_{16}^\downarrow$}}
+\psfrag{LEL16}{\hspace*{0.0em}\raisebox{0.5ex}{$E_{16}^\leftarrow$}}
+
+\psfrag{LFU16}{\hspace*{0.0em}\raisebox{0.5ex}{$F_{16}^\uparrow$}}
+\psfrag{LFR16}{\hspace*{0.0em}\raisebox{0.5ex}{$F_{16}^\rightarrow$}}
+\psfrag{LFD16}{\hspace*{0.0em}\raisebox{0.5ex}{$F_{16}^\downarrow$}}
+\psfrag{LFL16}{\hspace*{0.0em}\raisebox{0.5ex}{$F_{16}^\leftarrow$}}
