@@ -1,0 +1,39 @@
+{
+    "type": "bifurcation multicolor",
+    "max_period": 128,
+    "num_iterations": 1e3,
+    "initial": 0.25,
+    "reselt_orbit": false,
+    "parameters": {
+        "px": 0,
+        "py": 0.1675
+    },
+    "scan": [
+        {
+            "type": "linear",
+            "resolution": 2000,
+            "parameters": [
+                {
+                    "name": "px",
+                    "start": -0.38,
+                    "stop": -0.3825
+                }
+            ]
+        }
+    ],
+    "animation": {
+        "type": "linear",
+        "resolution": 2,
+        "parameters": [
+            {
+                "name": "initial_state[0][0]",
+                "start": 0.25,
+                "stop": 0.75
+            }
+        ]
+    },
+    "D": 0,
+    "U": 1,
+    "L": -0.38,
+    "R": -0.3825
+}

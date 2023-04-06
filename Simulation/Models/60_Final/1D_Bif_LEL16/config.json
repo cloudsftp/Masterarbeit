@@ -1,0 +1,29 @@
+{
+    "type": "bifurcation",
+    "max_period": 128,
+    "num_iterations": 1e3,
+    "initial": 0.25,
+    "reset_orbit": false,
+    "parameters": {
+        "px": 0,
+        "py": 0.164
+    },
+    "scan": [
+        {
+            "type": "linear",
+            "resolution": 2000,
+            "parameters": [
+                {
+                    "name": "px",
+                    "start": -0.425,
+                    "stop": -0.4325
+                }
+            ]
+        }
+    ],
+    "animation": null,
+    "D": 0,
+    "U": 1,
+    "L": -0.425,
+    "R": -0.4325
+}

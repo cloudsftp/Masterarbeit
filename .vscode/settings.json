@@ -4,5 +4,6 @@
             "language": "latex",
             "scheme": "file"
         }
-    ]
+    ],
+    "python.formatting.provider": "black"
 }

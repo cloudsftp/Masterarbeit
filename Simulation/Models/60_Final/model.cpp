@@ -47,7 +47,7 @@ bool f(
     }
 
     // Normalize
-    if (y > 2 * n) {
+    if (y >= 2 * n) {
         y -= 2 * n;
     }
 
@@ -55,8 +55,33 @@ bool f(
     return true;
 }
 
+bool symbolic(
+    const Array<real_t>& currentState,
+    const Array<real_t>& parameters,
+    string& RHS
+) {
+    real_t x = currentState[0];
+
+    if (x < n) {
+        if (x < border) {
+            RHS = "A";
+        } else {
+            RHS = "B";
+        }
+    } else {
+        if (x < n + border) {
+            RHS = "C";
+        } else {
+            RHS = "D";
+        }
+    }
+
+    return true;
+}
+
 extern "C" {
     void connectSystem() {
         MapProxy::systemFunction = f;
+        MapProxy::symbolicFunction = symbolic;
     }
 }
