@@ -12,25 +12,25 @@ Furthermore, this section then will discuss the effects of the parameters on the
 The model maps $x \mapsto f(x) \mod 1$ where \Crefrange{equ:final.def.f}{equ:final.def.r} define $f$.
 \begin{align}
     f(x) & = \begin{cases}
-                 g(x)       & \text{ if } x < 0.5 \\
-                 g(x) + 0.5 & \text{ else}
+                 g(x)                                        & \text{ if } x < \frac{1}{2} \\
+                 g\left(x - \frac{1}{2}\right) + \frac{1}{2} & \text{ else}
              \end{cases}
     \label{equ:final.def.f}
     \\
     g(x) & = \begin{cases}
-                 l(x) & \text{ if } x < 0.25 \\
+                 l(x) & \text{ if } x < \frac{1}{4} \\
                  r(x) & \text{ else}
              \end{cases}
 \end{align}
 
 For the definitions of $l$ and $r$, we center the variable to better understand the effects of the coefficients.
-Branches $\A$ and $\C$ exist on the intervals $[0, 0.25)$ and $[0.5, 0.75)$ respectively.
+Branches $\A$ and $\C$ exist on the intervals $[0, \frac{1}{4})$ and $[\frac{1}{2}, \frac{3}{4})$ respectively.
 Therefore, we center the variable for the polynomials of these branches by moving it $0.125$ to the left.
 \Cref{equ:final.def.tl} achieves this.
-Branches $\B$ and $\D$ exist on the intervals $[0.25, 0.5)$ and $[0.75, 1)$ respectively.
-The offset here is $0.375$ by the same logic and \Cref{equ:final.def.tr} achieves this.
+Branches $\B$ and $\D$ exist on the intervals $[\frac{1}{4}, \frac{1}{2})$ and $[\frac{3}{4}, 1)$ respectively.
+The offset here is $\frac{3}{8}$ by the same logic and \Cref{equ:final.def.tr} achieves this.
 \begin{align}
-    s(x)   & = x \mod 0.5                                   \\
+    s(x)   & = x \mod \frac{1}{2}                           \\
     t_L(x) & = s(x) - \dfrac{1}{8} \label{equ:final.def.tl} \\
     t_R(x) & = s(x) - \dfrac{3}{8} \label{equ:final.def.tr}
 \end{align}
@@ -45,17 +45,17 @@ The actual polynomials defining $l$ and $r$ are then given by the following equa
 \subsection{The Model Parameters}
 
 To get this model to show the desired behavior, we only change the coefficient $c_L$ directly via the parameter $p_y$ ($c_L = p_y$).
-The coefficients $a_L = 4$ and $b_L = 0.5$ are fixed.
+The coefficients $a_L = 4$ and $b_L = \frac{1}{2}$ are fixed.
 The coefficients $b_R$ and $c_R$ are changed indirectly by the two parameters $A$ and $B$, which define characteristics of the function $r$.
-$A$ is the value of the function $r$ at the left border of branch $\B$, so $r(0.25) = A$.
-And $B$ is the value of the function $r$ at the right border of branch $\B$, so $r(0.5) = B$.
+$A$ is the value of the function $r$ at the left border of branch $\B$, so $r(\frac{1}{4}) = A$.
+And $B$ is the value of the function $r$ at the right border of branch $\B$, so $r(\frac{1}{2}) = B$.
 These constraints will yield the following set of equations.
 \begin{subequations}
     \begin{align}
-        r(0.25) & = - b_R \cdot \frac{1}{8} + c_R = A
+        r\left(\frac{1}{4}\right) & = - b_R \cdot \frac{1}{8} + c_R = A
         \label{equ:final.def.param.constr.A}
         \\
-        r(0.5)  & = b_R \cdot \frac{1}{8} + c_R = B
+        r\left(\frac{1}{2}\right) & = b_R \cdot \frac{1}{8} + c_R = B
         \label{equ:final.def.param.constr.B}
     \end{align}
 \end{subequations}
@@ -73,7 +73,7 @@ Similarily, subtracting \Cref{equ:final.def.param.constr.A} from \Cref{equ:final
     \label{equ:final.def.param.bR}
 \end{align}
 
-For our purposes, we also fix the parameter $B = 0.525$, so that the right border of the branches $\B$ and $\D$ are just above the bisector.
+For our purposes, we also fix the parameter $B = \frac{1}{2} + \frac{1}{40}$, so that the right border of the branches $\B$ and $\D$ are just above the bisector.
 We only change the parameter $A$ via the parameter $p_x$, where we negate the value of $p_x$ to get a similar 2D-scan to the original function.
 So $A = -p_x$.
 
@@ -84,14 +84,14 @@ The first part focuses on the parameters of the function $l$, while the second p
     \centering
     \begin{tabular}{|c|c|}
         \hline
-        Model Parameter & Value                       \\ \hline \hline
-        $a_L$           & $4$                         \\ \hline
-        $b_L$           & $0.5$                       \\ \hline
-        $c_L$           & $p_y$                       \\ \hline \hline
-        $b_R$           & $4 \cdot (B - A)$           \\ \hline
-        $c_R$           & $\frac{1}{2} \cdot (A + B)$ \\ \hline
-        $A$             & $-p_x$                      \\ \hline
-        $B$             & $0.525$                     \\ \hline
+        Model Parameter & Value                        \\ \hline \hline
+        $a_L$           & $4$                          \\ \hline
+        $b_L$           & $\frac{1}{2}$                \\ \hline
+        $c_L$           & $p_y$                        \\ \hline \hline
+        $b_R$           & $4 \cdot (B - A)$            \\ \hline
+        $c_R$           & $\frac{1}{2} \cdot (A + B)$  \\ \hline
+        $A$             & $-p_x$                       \\ \hline
+        $B$             & $\frac{1}{2} + \frac{1}{40}$ \\ \hline
     \end{tabular}
     \caption{Overview of Parameter Values of Final Model}
     \label{tab:final.def.parameters.overview}
