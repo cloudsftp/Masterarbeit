@@ -24,10 +24,10 @@ The model maps $x \mapsto f(x) \mod 1$ where \Crefrange{equ:final.def.f}{equ:fin
 \end{align}
 
 For the definitions of $l$ and $r$, we center the variable to better understand the effects of the coefficients.
-Branches $\A$ and $\C$ exist on the intervals $[0, \frac{1}{4})$ and $[\frac{1}{2}, \frac{3}{4})$ respectively.
+Branches $\Branch_\A$ and $\Branch_\C$ exist on the intervals $\BranchInterval_\A = [0, \frac{1}{4})$ and $\BranchInterval_\C = [\frac{1}{2}, \frac{3}{4})$ respectively.
 Therefore, we center the variable for the polynomials of these branches by moving it $0.125$ to the left.
 \Cref{equ:final.def.tl} achieves this.
-Branches $\B$ and $\D$ exist on the intervals $[\frac{1}{4}, \frac{1}{2})$ and $[\frac{3}{4}, 1)$ respectively.
+Branches $\Branch_\B$ and $\Branch_\D$ exist on the intervals $\BranchInterval_\B = [\frac{1}{4}, \frac{1}{2})$ and $\BranchInterval_\D = [\frac{3}{4}, 1)$ respectively.
 The offset here is $\frac{3}{8}$ by the same logic and \Cref{equ:final.def.tr} achieves this.
 \begin{align}
     s(x)   & = x \mod \frac{1}{2}                           \\
@@ -47,8 +47,8 @@ The actual polynomials defining $l$ and $r$ are then given by the following equa
 To get this model to show the desired behavior, we only change the coefficient $c_L$ directly via the parameter $p_y$ ($c_L = p_y$).
 The coefficients $a_L = 4$ and $b_L = \frac{1}{2}$ are fixed.
 The coefficients $b_R$ and $c_R$ are changed indirectly by the two parameters $A$ and $B$, which define characteristics of the function $r$.
-$A$ is the value of the function $r$ at the left border of branch $\B$, so $r(\frac{1}{4}) = A$.
-And $B$ is the value of the function $r$ at the right border of branch $\B$, so $r(\frac{1}{2}) = B$.
+$A$ is the value of the function $r$ at the left border of branch $\Branch_\B$, so $r(\frac{1}{4}) = A$.
+And $B$ is the value of the function $r$ at the right border of branch $\Branch_\B$, so $r(\frac{1}{2}) = B$.
 These constraints will yield the following set of equations.
 \begin{subequations}
     \begin{align}
@@ -73,7 +73,7 @@ Similarily, subtracting \Cref{equ:final.def.param.constr.A} from \Cref{equ:final
     \label{equ:final.def.param.bR}
 \end{align}
 
-For our purposes, we also fix the parameter $B = \frac{1}{2} + \frac{1}{40}$, so that the right border of the branches $\B$ and $\D$ are just above the bisector.
+For our purposes, we also fix the parameter $B = \frac{1}{2} + \frac{1}{40}$, so that the right border of the branches $\Branch_\B$ and $\Branch_\D$ are just above the bisector.
 We only change the parameter $A$ via the parameter $p_x$, where we negate the value of $p_x$ to get a similar 2D-scan to the original function.
 So $A = -p_x$.
 
