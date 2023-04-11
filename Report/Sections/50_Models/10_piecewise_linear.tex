@@ -7,9 +7,9 @@ Its discontinuities are at $0, \frac{\pi}{2}, \pi,$ and $\frac{3 \pi}{2}$.
 \begin{align}
     f(x) & = g(x) \mod 2 \pi \label{equ:pcw.lin.f} \\
     g(x) & = \begin{cases}
-        h(x) & \text{ if } r(x) < \pi \\
-        h(x) + \pi & \text{ else}
-    \end{cases} \label{equ:pcw.lin.sympi}
+                 h(x)       & \text{ if } r(x) < \pi \\
+                 h(x) + \pi & \text{ else}
+             \end{cases} \label{equ:pcw.lin.sympi}
 \end{align}
 
 Each arm then is governed by \Cref{equ:pcw.lin.discpihalves}.
@@ -20,9 +20,9 @@ Examples of how the function looks at different parameter values can be seen in 
 
 \begin{align}
     h(x) & = \begin{cases}
-        \alpha \cdot t(x) + \beta & \text{ if } s(x) < \frac{\pi}{2} \\
-        \alpha \cdot t(x) - \alpha \cdot \frac{\pi}{2} & \text{ else}
-    \end{cases} \label{equ:pcw.lin.discpihalves}
+                 \alpha \cdot t(x) + \beta                      & \text{ if } s(x) < \frac{\pi}{2} \\
+                 \alpha \cdot t(x) - \alpha \cdot \frac{\pi}{2} & \text{ else}
+             \end{cases} \label{equ:pcw.lin.discpihalves}
 \end{align}
 
 \Cref{equ:pcw.lin.r,equ:pcw.lin.s} are used to make the above more readable.
@@ -51,7 +51,7 @@ The parameter $\alpha$ is varied on the interval $[0, 1]$ because for $\alpha < 
 
 The two red lines mark the locations of the following one-dimensional scans keeping the parameter $\alpha$ fixed at $0.5$.
 \Cref{fig:pcw.lin.1D} shows the scan along the lower red line.
-There you can see a period-adding structure.
+There one can see a period-adding structure.
 \Cref{fig:pcw.lin.1DPlusPi} shows the scan along the other red line.
 The whole thing is not a period-adding structure, but there is a period-adding structure on the left and on the right of the line in the middle.
 Both these structures don't look like period-adding structures normally do.
