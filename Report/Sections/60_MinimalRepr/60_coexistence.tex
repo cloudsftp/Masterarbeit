@@ -30,20 +30,48 @@ A point where this is the case is the point $L$ in \Cref{fig:final.regions.E.hal
 Here there is only one stable cycle, $\Cycle{\A^5\B^3\C^5\D^3}$.
 
 \subsection{Two ``Type A'' Parameter Regions Overlapping}
+\label{sec:minrep.coex.AA}
 
 ``Type A'' parameter regions can overlap with one another.
 This can happen in four different ways.
-Assuming the stable cycle of the starting parameter region is $\Cycle{\A^x\B^y\C^x\D^y}$, it can overlap with parameter regions, where either one of the following cycles is stable
+Assuming the stable cycle of the parameter region in the middle is $\Cycle{\A^x\B^y\C^x\D^y}$, it can overlap with parameter regions, where either one of the following cycles is stable
 \begin{enumerate*}
     \item $\Cycle{\A^{x-1}\B^y\C^{x-1}\D^y}$,
     \item $\Cycle{\A^x\B^{y+1}\C^x\D^{y+1}}$,
     \item $\Cycle{\A^{x+1}\B^y\C^{x+1}\D^y}$, and
     \item $\Cycle{\A^x\B^{y-1}\C^x\D^{y-1}}$.
 \end{enumerate*}
-For this concrete case pictured in \Cref{fig:final.regions.E.halved}, it results in the following parameter regions
+For the concrete case pictured in \Cref{fig:final.regions.E.halved}, this results in the following parameter regions
 \begin{enumerate*}
     \item $\P_{\A^5\B^3\C^5\D^3, \A^4\B^3\C^4\D^3}$ marked with $M$,
     \item $\P_{\A^5\B^3\C^5\D^3, \A^5\B^4\C^5\D^4}$ marked with $N$,
     \item $\P_{\A^5\B^3\C^5\D^3, \A^6\B^3\C^6\D^3}$ marked with $O$, and
     \item $\P_{\A^5\B^3\C^5\D^3, \A^5\B^2\C^5\D^2}$ marked with $P$.
+\end{enumerate*}
+
+\subsection{Only one ``Type B'' Parameter Region}
+
+Another very simple case is when a ``Type B'' parameter region does not overlap with any other region.
+In this case, there are two coexisting stable cycles as discussed before in \Cref{sec:og.dynamics}.
+Here the cycles are asymmetrical, if one of the cycles is $\Cycle{\A^x\B^y\C^{x-1}\D^{y+1}}$, the other cycle is $\Cycle{\A^{x-1}\B^{y+1}\C^x\D^y}$.
+In the concrete case marked in \Cref{fig:final.regions.F.halved} as point $Q$, these cycles are $\Cycle{\A^5\B^3\C^4\D^4}$ and $\Cycle{\A^4\B^4\C^5\D^3}$.
+
+\subsection{One ``Type B'' and One ``Type A'' Parameter Region Overlapping}
+
+We can see in \Cref{fig:final.regions.F.halved}, that this ``Type B'' parameter region can overlap with ``Type A'' parameter regions.
+This can also happen in four different ways, as was the case with ``Type A'' parameter regions overlapping with one another (described in \Cref{sec:minrep.coex.AA}).
+Assuming the stable cycles of the parameter region in the middle are $\Cycle{\A^x\B^y\C^{x-1}\D^{y+1}}$ and $\Cycle{\A^{x-1}\B^{y+1}\C^x\D^y}$, it can overlap with parameter regions, where either one of the following cycles is stable
+\begin{enumerate*}
+    \item $\Cycle{\A^{x-1}\B^{y+1}\C^{x-1}\D^{y+1}}$,
+    \item $\Cycle{\A^x\B^{y+1}\C^x\D^{y+1}}$,
+    \item $\Cycle{\A^x\B^y\C^x\D^y}$, and
+    \item $\Cycle{\A^{x-1}\B^y\C^{x-1}\D^y}$.
+\end{enumerate*}
+So in these cases, there will be three coexisting stable cycles.
+For the concrete case pictured in \Cref{fig:final.regions.F.halved}, this results in the following parameter regions
+\begin{enumerate*}
+    \item $\P_{\A^5\B^3\C^4\D^4, \A^4\B^4\C^5\D^3, \A^4\B^4\C^4\D^4}$ marked with $R$,
+    \item $\P_{\A^5\B^3\C^4\D^4, \A^4\B^4\C^5\D^3, \A^5\B^4\C^5\D^4}$ marked with $S$,
+    \item $\P_{\A^5\B^3\C^4\D^4, \A^4\B^4\C^5\D^3, \A^5\B^3\C^5\D^3}$ marked with $T$, and
+    \item $\P_{\A^5\B^3\C^4\D^4, \A^4\B^4\C^5\D^3, \A^4\B^3\C^4\D^3}$ marked with $U$.
 \end{enumerate*}
