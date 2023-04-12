@@ -47,8 +47,8 @@ bool f(
     }
 
     // Normalize
-    if (y >= 1 * n) {
-        y -= 1 * n;
+    if (y >= 2 * n) {
+        y -= 2 * n;
     }
 
     RHS[0] = y;
