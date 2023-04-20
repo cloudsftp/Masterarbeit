@@ -4,8 +4,8 @@
     "num_iterations": 1e4,
     "initial": 0.25,
     "parameters": {
-        "px": 1,
-        "py": 0
+        "px": -0.75,
+        "py": 0.25
     },
     "scan": [
         {
@@ -22,7 +22,7 @@
     ],
     "animation": null,
     "L": 0,
-    "R": 4,
+    "R": 1,
     "D": 0,
-    "U": 4
+    "U": 1
 }
