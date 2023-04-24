@@ -9,23 +9,23 @@
     "scan": [
         {
             "type": "linear",
-            "resolution": 500,
+            "resolution": 2000,
             "parameters": [
                 {
                     "name": "px",
-                    "start": -0.65,
-                    "stop": -0.6
+                    "start": -0.655,
+                    "stop": -0.61
                 }
             ]
         },
         {
             "type": "linear",
-            "resolution": 500,
+            "resolution": 2000,
             "parameters": [
                 {
                     "name": "py",
-                    "start": 0.1,
-                    "stop": 0.15
+                    "start": 0.11,
+                    "stop": 0.155
                 }
             ]
         }

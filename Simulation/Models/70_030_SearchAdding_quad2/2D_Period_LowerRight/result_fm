@@ -1,17 +1,40 @@
 % fmopt: width=8cm
 
-\psfrag{L}{\hspace*{0.3em}\raisebox{0.5ex}{$-0.75$}}
-\psfrag{R}{\hspace*{-1.7em}\raisebox{0.5ex}{$-0.5$}}
+\psfrag{L}{\hspace*{0.3em}\raisebox{0.5ex}{$-0.69$}}
+\psfrag{R}{\hspace*{-2.2em}\raisebox{0.5ex}{$-0.58$}}
 
-\psfrag{D}{\hspace*{0.5em}\raisebox{0.5ex}{$0$}}
-\psfrag{U}{\hspace*{-1.0em}\raisebox{0.5ex}{$0.25$}}
+\psfrag{D}{\hspace*{0.5em}\raisebox{0.5ex}{$0.08$}}
+\psfrag{U}{\hspace*{-1.0em}\raisebox{0.5ex}{$0.19$}}
 
 \psfrag{x}{\hspace*{0.0em}\raisebox{0.5ex}{$p_x$}}
 \psfrag{y}{\hspace*{0.0em}\raisebox{0.5ex}{$p_y$}}
 
-\psfrag{A}{\hspace*{0.0em}\raisebox{0.5ex}{\color[RGB]{255, 110, 0}{$A$}}}
-\psfrag{B}{\hspace*{0.0em}\raisebox{0.5ex}{\color[RGB]{255, 110, 0}{$B$}}}
-\psfrag{C}{\hspace*{0.0em}\raisebox{0.5ex}{\color[RGB]{255, 110, 0}{$C$}}}
-\psfrag{DL}{\hspace*{0.0em}\raisebox{0.5ex}{\color[RGB]{255, 110, 0}{$D$}}}
-\psfrag{E}{\hspace*{0.0em}\raisebox{0.5ex}{\color[RGB]{255, 110, 0}{$E$}}}
+\psfrag{A16}{\hspace*{0.0em}\raisebox{0.5ex}{\color[RGB]{255, 110, 0}{$A_{16}$}}}
+\psfrag{A17}{\hspace*{0.0em}\raisebox{0.5ex}{\color[RGB]{255, 110, 0}{$A_{17}$}}}
+\psfrag{A18}{\hspace*{0.0em}\raisebox{0.5ex}{\color[RGB]{255, 110, 0}{$A_{18}$}}}
+\psfrag{A19}{\hspace*{0.0em}\raisebox{0.5ex}{\color[RGB]{255, 110, 0}{$A_{19}$}}}
+\psfrag{A20}{\hspace*{0.0em}\raisebox{0.5ex}{\color[RGB]{255, 110, 0}{$A_{20}$}}}
 
+\psfrag{B17}{\hspace*{0.0em}\raisebox{0.5ex}{\color[RGB]{255, 110, 0}{$B_{17}$}}}
+\psfrag{B18}{\hspace*{0.0em}\raisebox{0.5ex}{\color[RGB]{255, 110, 0}{$B_{18}$}}}
+\psfrag{B19}{\hspace*{0.0em}\raisebox{0.5ex}{\color[RGB]{255, 110, 0}{$B_{19}$}}}
+\psfrag{B20}{\hspace*{0.0em}\raisebox{0.5ex}{\color[RGB]{255, 110, 0}{$B_{20}$}}}
+\psfrag{B21}{\hspace*{0.0em}\raisebox{0.5ex}{\color[RGB]{255, 110, 0}{$B_{21}$}}}
+
+\psfrag{C18}{\hspace*{0.0em}\raisebox{0.5ex}{\color[RGB]{255, 110, 0}{$C_{18}$}}}
+\psfrag{C19}{\hspace*{0.0em}\raisebox{0.5ex}{\color[RGB]{255, 110, 0}{$C_{19}$}}}
+\psfrag{C20}{\hspace*{0.0em}\raisebox{0.5ex}{\color[RGB]{255, 110, 0}{$C_{20}$}}}
+\psfrag{C21}{\hspace*{0.0em}\raisebox{0.5ex}{\color[RGB]{255, 110, 0}{$C_{21}$}}}
+\psfrag{C22}{\hspace*{0.0em}\raisebox{0.5ex}{\color[RGB]{255, 110, 0}{$C_{22}$}}}
+
+\psfrag{D19}{\hspace*{0.0em}\raisebox{0.5ex}{\color[RGB]{255, 110, 0}{$D_{19}$}}}
+\psfrag{D20}{\hspace*{0.0em}\raisebox{0.5ex}{\color[RGB]{255, 110, 0}{$D_{20}$}}}
+\psfrag{D21}{\hspace*{0.0em}\raisebox{0.5ex}{\color[RGB]{255, 110, 0}{$D_{21}$}}}
+\psfrag{D22}{\hspace*{0.0em}\raisebox{0.5ex}{\color[RGB]{255, 110, 0}{$D_{22}$}}}
+\psfrag{D23}{\hspace*{0.0em}\raisebox{0.5ex}{\color[RGB]{255, 110, 0}{$D_{23}$}}}
+
+\psfrag{E20}{\hspace*{-1.0em}\raisebox{-1.8ex}{\color[RGB]{255, 110, 0}{$E_{20}$}}}
+\psfrag{E21}{\hspace*{-1.0em}\raisebox{1.5ex}{\color[RGB]{255, 110, 0}{$E_{21}$}}}
+\psfrag{E22}{\hspace*{-1.0em}\raisebox{1.5ex}{\color[RGB]{255, 110, 0}{$E_{22}$}}}
+\psfrag{E23}{\hspace*{-1.0em}\raisebox{1.5ex}{\color[RGB]{255, 110, 0}{$E_{23}$}}}
+\psfrag{E24}{\hspace*{-1.0em}\raisebox{1.5ex}{\color[RGB]{255, 110, 0}{$E_{24}$}}}
