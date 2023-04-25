@@ -4,18 +4,18 @@
     "num_iterations": 1e4,
     "initial": 0.25,
     "parameters": {
-        "px": -0.75,
-        "py": 0.25
+        "px": -0.89,
+        "py": 0.145
     },
     "scan": [
         {
             "type": "linear",
-            "resolution": 50,
+            "resolution": 100,
             "parameters": [
                 {
                     "name": "initial_state[0][0]",
                     "start": 0,
-                    "stop": 2
+                    "stop": 1
                 }
             ]
         }
