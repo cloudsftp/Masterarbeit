@@ -1,0 +1,50 @@
+\sectionframe{The Next Step}
+
+\section{The Next Step}
+
+\begin{frame}{Motivation}
+    \vspace{-2.0em}
+    Full Model:
+    \begin{itemize}
+        \item $\Cycle{\A^x\B^y\C^x\D^y}$
+        \item $\Cycle{\A^x\B^y\C^{x-1}\D^{y+1}}$ and $\Cycle{\A^{x-1}\B^{y+1}\C^x\D^y}$ coexisting
+        \item $\Cycle{\A^{x-1}\B^{y+1}\C^{x-1}\D^{y+1}}$
+    \end{itemize}
+
+    \vspace{1.0em}
+    Halved Model:
+    \begin{itemize}
+        \item $\Cycle{\L^x\R^y}$
+        \item $\Cycle{\L^x\R^y\L^{x-1}\R^{y+1}}$
+        \item $\Cycle{\L^{x-1}\R^{y+1}}$
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Period-Adding Structures}
+    \vspace{-2.0em}
+    Pattern, period-adding structures follow:
+    \begin{itemize}
+        \item Some cycle $\Cycle{L}$ on the left
+        \item Some cycle $\Cycle{R}$ on the right
+        \item The cycle $\Cycle{LR}$ in the middle
+    \end{itemize}
+
+    \vspace{1.0em}
+    This will hold recursively.
+    \begin{itemize}
+        \item Between $\Cycle{LR}$ and $\Cycle{R}$ there is $\Cycle{LR^2}$
+        \item Between $\Cycle{LR^2}$ and $\Cycle{LR}$ there is $\Cycle{LR^2LR}$
+        \item etc.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Searching Period-Adding Structures}
+    Search for period-adding scenarios in the minimal model by
+    \begin{itemize}
+        \item Changing parameters, or
+        \item Changing the model slightly
+    \end{itemize}
+
+    \vspace{1em}
+    With a focus on the halved model (only two branches)
+\end{frame}
