@@ -49,3 +49,41 @@
               \end{itemize}
     \end{itemize}
 \end{frame}
+
+\begin{frame}{Definition of Minimal Reproducing Model (1/2)}
+    \vspace{-3.0em}
+    \begin{align}
+        x \mapsto f(x) \mod 1
+    \end{align}
+
+    \begin{align}
+        f(x) & = \begin{cases}
+                     g(x)                                        & \text{ if } x < \frac{1}{2} \\
+                     g\left(x - \frac{1}{2}\right) + \frac{1}{2} & \text{ else}
+                 \end{cases}
+    \end{align}
+
+    \begin{align}
+        g(x) & = \begin{cases}
+                     l(x) & \text{ if } x < \frac{1}{4} \\
+                     r(x) & \text{ else}
+                 \end{cases}
+    \end{align}
+\end{frame}
+
+\begin{frame}{Definition of Minimal Reproducing Model (2/2)}
+    \vspace{-3.0em}
+    \begin{align}
+        l(x) & = a_L \cdot t_L(x)^2 + b_L \cdot t_L(x) + c_L
+    \end{align}
+
+    \begin{align}
+        r(x) & = b_R \cdot t_R(x) + c_R
+    \end{align}
+
+    \begin{align}
+        s(x)   & = x \mod 1            \\
+        t_L(x) & = s(x) - \dfrac{1}{8} \\
+        t_R(x) & = s(x) - \dfrac{3}{8}
+    \end{align}
+\end{frame}
