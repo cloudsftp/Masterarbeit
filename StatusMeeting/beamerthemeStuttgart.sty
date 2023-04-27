@@ -604,7 +604,7 @@
     \begin{textblock}{128}(\@mainCircleX,\@mainCircleY)
         \begin{tikzpicture}
             \draw[white,fill=white] (0,0) circle ({\@mainCircleRadius mm});
-            \clip (0,0) circle ({\fpeval{\@mainCircleRadius - 0.5}mm});
+            \clip (0,0) circle ({\fpeval{\@mainCircleRadius + 0.5}mm});
             \node[inner sep=0pt, outer sep=0pt] at (0,0) {\includegraphics[scale=\stuttgart@thanksPageBigGraphicsScale]{\stuttgart@thanksPageBigGraphics}};
         \end{tikzpicture}
     \end{textblock}
@@ -646,7 +646,7 @@
     \ifdefempty{\stuttgart@thanksPageBigLogo}{}{%
         \begin{textblock}{40}(\fpeval{\@mainCircleX -30},\fpeval{\@mainCircleY + 35})
             \parbox[c][40mm]{40mm}{%
-                \centering\includegraphics[width=34mm]{\stuttgart@thanksPageBigLogo}%
+                \centering\includegraphics[width=100mm]{\stuttgart@thanksPageBigLogo}%
             }
         \end{textblock}
     }
