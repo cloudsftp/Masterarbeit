@@ -2,8 +2,11 @@
 
 \section{Minimal Reproducing Model}
 
-\begin{frame}{Original Model Effects of Parameters}
-    \vspace{-3.0em}
+\begin{frame}{Approach for Reproducing the Behaviour}
+    Idea:
+    Try to mimic the evolution of the model function under parameter changes
+
+    \vspace{-2.0em}
     \begin{figure}
         \centering
         \subfloat[Directions]{
@@ -17,6 +20,43 @@
         }
         \caption{Effects of the Individual Parameters on the Function of the Original Model}
     \end{figure}
+\end{frame}
+
+\begin{frame}{Path to the Reproducing Model}
+    Different Models
+    \begin{itemize}
+        \item Linear branches
+        \item Quadratic branches
+    \end{itemize}
+
+    \vspace{2em}
+    With different
+    \begin{itemize}
+        \item sets of fixed parameters
+        \item sets of free parameters
+        \item values of the fixed parameters
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Definition of Minimal Reproducing Model (1/2)}
+    \vspace{-3.0em}
+    \begin{align}
+        x \mapsto f(x) \mod 1
+    \end{align}
+
+    \begin{align}
+        f(x) & = \begin{cases}
+                     g(x)                                        & \text{ if } x < \frac{1}{2} \\
+                     g\left(x - \frac{1}{2}\right) + \frac{1}{2} & \text{ else}
+                 \end{cases}
+    \end{align}
+
+    \begin{align}
+        g(x) & = \begin{cases}
+                     l(x) = a_L \cdot x^2 + b_L \cdot x + c_L & \text{ if } x < \frac{1}{4} \\
+                     r(x) = b_R \cdot x + c_R                 & \text{ else}
+                 \end{cases}
+    \end{align}
 \end{frame}
 
 \begin{frame}{Minimal Reproducing Model Parameter Effects}
@@ -65,42 +105,4 @@
                   \item Example at point $D_{16}$: $\Cycle{\A^6\B^2\C^5\D^3}$ and $\Cycle{\A^5\B^3\C^6\D^2}$
               \end{itemize}
     \end{itemize}
-\end{frame}
-
-\begin{frame}{Definition of Minimal Reproducing Model (1/2)}
-    \vspace{-3.0em}
-    \begin{align}
-        x \mapsto f(x) \mod 1
-    \end{align}
-
-    \begin{align}
-        f(x) & = \begin{cases}
-                     g(x)                                        & \text{ if } x < \frac{1}{2} \\
-                     g\left(x - \frac{1}{2}\right) + \frac{1}{2} & \text{ else}
-                 \end{cases}
-    \end{align}
-
-    \begin{align}
-        g(x) & = \begin{cases}
-                     l(x) & \text{ if } x < \frac{1}{4} \\
-                     r(x) & \text{ else}
-                 \end{cases}
-    \end{align}
-\end{frame}
-
-\begin{frame}{Definition of Minimal Reproducing Model (2/2)}
-    \vspace{-3.0em}
-    \begin{align}
-        l(x) & = a_L \cdot t_L(x)^2 + b_L \cdot t_L(x) + c_L
-    \end{align}
-
-    \begin{align}
-        r(x) & = b_R \cdot t_R(x) + c_R
-    \end{align}
-
-    \begin{align}
-        s(x)   & = x \mod 1            \\
-        t_L(x) & = s(x) - \dfrac{1}{8} \\
-        t_R(x) & = s(x) - \dfrac{3}{8}
-    \end{align}
 \end{frame}
