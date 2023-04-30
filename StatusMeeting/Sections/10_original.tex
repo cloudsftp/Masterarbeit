@@ -22,22 +22,24 @@
 \end{frame}
 
 \begin{frame}{Original Model Definition (1/3)}
-    \vspace{-3.0em}
+    \vspace{-2.0em}
     \begin{align}
-        \theta \mapsto F(\theta) & = \begin{cases}
-                                         F_1(\theta) & \text{if } q \cdot \cos(\theta) > 0 \\
-                                         F_2(\theta) & \text{if } q \cdot \cos(\theta) < 0
-                                     \end{cases}
+        \theta      & \mapsto  F(\theta) \mod 2 \pi
         \\
-        F_1(\theta)              & = \begin{cases}
-                                         \theta + z_{L_+} + z_1 & \text{if } z_{L_+} < z_{L_0} \\
-                                         \theta + z_{L_0} + z_2 & \text{if } z_{L_+} > z_{L_0}
-                                     \end{cases}
+        F(\theta)   & = \begin{cases}
+                            F_1(\theta) & \text{if } q \cdot \cos(\theta) > 0 \\
+                            F_2(\theta) & \text{if } q \cdot \cos(\theta) < 0
+                        \end{cases}
         \\
-        F_1(\theta)              & = \begin{cases}
-                                         \theta + z_{R_+} + z_3 & \text{if } z_{R_+} < z_{R_0} \\
-                                         \theta + z_{R_0} + z_4 & \text{if } z_{R_+} > z_{R_0}
-                                     \end{cases}
+        F_1(\theta) & = \begin{cases}
+                            \theta + z_{L_+} + z_1 & \text{if } z_{L_+} < z_{L_0} \\
+                            \theta + z_{L_0} + z_2 & \text{if } z_{L_+} > z_{L_0}
+                        \end{cases}
+        \\
+        F_1(\theta) & = \begin{cases}
+                            \theta + z_{R_+} + z_3 & \text{if } z_{R_+} < z_{R_0} \\
+                            \theta + z_{R_0} + z_4 & \text{if } z_{R_+} > z_{R_0}
+                        \end{cases}
     \end{align}
 
     \pause
@@ -111,13 +113,13 @@
             \begin{center}
                 \begin{figure}
                     \centering
-                    \subfloat[$A$: Period 16, $\Cycle{\A^3\B^3\C^3\D^3}$]{
+                    \subfloat[$A$: Period 12, $\Cycle{\A^3\B^3\C^3\D^3}$]{
                         \includegraphics[width=0.5 \textheight]{99_Yunus/Period12/Cobweb_A_12/result.png}
                     }
-                    \subfloat[$B$: Period 16, $\Cycle{\A^3\B^3\C^2\D^4}$ and $\Cycle{\A^2\B^4\C^3\D^3}$]{
+                    \subfloat[$B$: Period 12, $\Cycle{\A^3\B^3\C^2\D^4}$ and $\Cycle{\A^2\B^4\C^3\D^3}$]{
                         \includegraphics[width=0.5 \textheight]{99_Yunus/Period12/Cobweb_B_12/result.png}
                     }
-                    \subfloat[$C$: Period 16, $\Cycle{\A^2\B^4\C^2\D^4}$]{
+                    \subfloat[$C$: Period 12, $\Cycle{\A^2\B^4\C^2\D^4}$]{
                         \includegraphics[width=0.5 \textheight]{99_Yunus/Period12/Cobweb_C_12/result.png}
                     }
                     \caption{Cobwebs at selected parameter values of the original model}
@@ -135,21 +137,34 @@
 \end{frame}
 
 \begin{frame}{Parameter Regions in Original Model}
-    \begin{itemize}
-        \item ``Type A'': At points $A$ and $B$ in 2D scan
-              \begin{itemize}
-                  \item One cycle
-                  \item Symmetrical
-                  \item Example at point $A$: $\Cycle{\A^3\B^3\C^3\D^3}$
-                  \item Example at point $C$: $\Cycle{\A^2\B^4\C^2\D^4}$ \vspace*{1em}
-              \end{itemize}
-        \item ``Type B'': At point $B$ in 2D scan
-              \begin{itemize}
-                  \item Two coexisting cycles
-                  \item Asymmetrical
-                  \item Example at point $B$: $\Cycle{\A^3\B^3\C^2\D^4}$ and $\Cycle{\A^2\B^4\C^3\D^3}$
-              \end{itemize}
-    \end{itemize}
+    \begin{columns}
+        \begin{column}{0.7 \textwidth}
+            \begin{itemize}
+                \item ``Type A'': At points $A$ and $B$ in 2D scan
+                      \begin{itemize}
+                          \item One cycle
+                          \item Symmetrical
+                          \item Example at point $A$: $\Cycle{\A^3\B^3\C^3\D^3}$
+                          \item Example at point $C$: $\Cycle{\A^2\B^4\C^2\D^4}$ \vspace*{1em}
+                      \end{itemize}
+                \item ``Type B'': At point $B$ in 2D scan
+                      \begin{itemize}
+                          \item Two coexisting cycles
+                          \item Asymmetrical
+                          \item Example at point $B$: $\Cycle{\A^3\B^3\C^2\D^4}$ and $\Cycle{\A^2\B^4\C^3\D^3}$
+                      \end{itemize}
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.3 \textwidth}
+            \begin{center}
+                \begin{figure}
+                    \centering
+                    \includegraphics[height=0.5 \textheight]{99_Yunus/2D_Period_Zoomed/Manual_Chain16/result.png}
+                    \caption{2D scan of chain with period 12 in the original model}
+                \end{figure}
+            \end{center}
+        \end{column}
+    \end{columns}
 \end{frame}
 
 
@@ -170,5 +185,6 @@
     \begin{itemize}
         \item Can this bifurcation scenario be described by a simpler, more general model?
         \item Was there something missing in the original analysis of this model?
+        \item What else can happen in models that are similar to the original model?
     \end{itemize}
 \end{frame}

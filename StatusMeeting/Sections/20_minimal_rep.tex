@@ -22,20 +22,53 @@
     \end{figure}
 \end{frame}
 
-\begin{frame}{Path to the Reproducing Model}
-    Different Models
+\begin{frame}{Approach for Reproducing the Behavior: Wishlist}
+    Characteristics we want to keep:
     \begin{itemize}
-        \item Linear branches
-        \item Quadratic branches
+        \item Branches $\A$ and $\C$ move up
+        \item The left borders of branches $\B$ and $\D$ move down
     \end{itemize}
 
     \vspace{2em}
-    With different
+    Characteristics we want to leave behind if possible:
     \begin{itemize}
-        \item sets of fixed parameters
-        \item sets of free parameters
-        \item values of the fixed parameters
+        \item Borders between branches move
+        \item Other minimal changes
+        \item Cubic shape of branches $\B$ and $\D$
     \end{itemize}
+\end{frame}
+
+\begin{frame}{Path to the Reproducing Model}
+    \begin{columns}
+        \begin{column}{.5 \textwidth}
+            Different Models
+            \begin{itemize}
+                \item Linear branches
+                \item Quadratic branches
+            \end{itemize}
+
+            \vspace{2em}
+            With different
+            \begin{itemize}
+                \item sets of fixed parameters
+                \item sets of variable parameters
+                \item values of the fixed parameters
+            \end{itemize}
+        \end{column}
+        \begin{column}{.5 \textwidth}
+            \vspace{-3.0em}
+            \begin{figure}
+                \centering
+                \subfloat{\includegraphics[height=.4 \textheight]{20_Quadratic_mod2pi/First_Find/2D_Period_Heureka/result.png}}
+                \qquad
+                \subfloat{\includegraphics[height=.4 \textheight]{21_011_Quadratic_2aR1bR_centered/2D_Period_Selected/result.png}}
+                \\
+                \subfloat{\includegraphics[height=.4 \textheight]{21_012_Quadratic_2aR1bR_mirror/2D_Period_Whole/result.png}}
+                \qquad
+                \subfloat{\includegraphics[height=.4 \textheight]{40_Quadratic_fittingR/2D_Period_Whole/result.png}}
+            \end{figure}
+        \end{column}
+    \end{columns}
 \end{frame}
 
 \begin{frame}{Definition of Minimal Reproducing Model (1/2)}
@@ -65,14 +98,14 @@
         a_L = 4, b_L = -\frac{1}{2}
     \end{align*}
 
-    Free parameters
+    Variable parameters
     \begin{align*}
-         & c_L, b_R, c_R                                                        \\
+         & c_L, b_R, c_R                                                    \\
         \text{where} \qquad
-         & c_L = p_y,                                                           \\
-         & b_R = 2A - B, c_R = 4 \cdot (B - A)                                  \\
+         & c_L = p_y,                                                       \\
+         & b_R = 2A - B, c_R = 4 \cdot (B - A)                              \\
         \text {and} \qquad
-         & A = p_x, \text{and } B = \frac{1}{2} + \frac{1}{40} \text{ is fixed}
+         & A = p_x, \text{and } B = \frac{1}{2} + \epsilon \text{ is fixed}
     \end{align*}
 
     $A$ and $B$ are intermediated parameters for modeling the values of the left ($A$) and right ($B$) borders of $r(x)$
