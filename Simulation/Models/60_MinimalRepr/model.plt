@@ -6,8 +6,8 @@ _aL = aL
 _bL = bL
 _cL = cL + py
 
-_bR = (2. * A) - B
-_cR = 4. * (B - A)
+_bR = 4. * (B - A)
+_cR = (2. * A) - B
 
 mod(a, b) = a - (floor(a/b) * b)
 

@@ -17,8 +17,8 @@
 #define B (0.525)
 
 // Internal parameters for computing branches B and D
-#define _bR ((2. * A) - B)
-#define _cR (4. * (B - A))
+#define _bR (4. * (B - A))
+#define _cR ((2. * A) - B)
 
 #define n       0.5     // Discontinuity in the middle
 #define border  0.25    // Discontinuity in the middle of the left half
@@ -45,8 +45,8 @@ bool f(
     }
 
     // Normalize
-    if (y >= 1 * n) {
-        y -= 1 * n;
+    if (y >= 2 * n) {
+        y -= 2 * n;
     }
 
     RHS[0] = y;
