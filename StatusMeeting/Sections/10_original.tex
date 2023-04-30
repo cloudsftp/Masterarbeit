@@ -97,35 +97,41 @@
 \end{frame}
 
 \begin{frame}{Original Model}
-    \vspace{-2.0em}
     \begin{figure}
         \centering
-        \subfloat[Full Model]{
-            \includegraphics[height=0.6 \textheight]{99_Yunus/2D_Period_Zoomed/result.png}
-        }
-        \subfloat[Halved Model]{
-            \includegraphics[height=0.6 \textheight]{98_Yunus_modpi/2D_Period_Zoomed/result.png}
-
-        }
-        \caption{2D Scan of Original Model}
+        \includegraphics[height=0.7 \textheight]{99_Yunus/2D_Period_Zoomed/result.png}
+        \caption{2D scan showing periods of cycles of the original model}
     \end{figure}
 \end{frame}
 
 \begin{frame}{Original Model}
-    \vspace{-3.0em}
-    \begin{figure}
-        \centering
-        \subfloat[At Point $A$]{
-            \includegraphics[width=0.6 \textheight]{99_Yunus/Period12/Cobweb_A_12/result.png}
-        }
-        \subfloat[At Point $B$]{
-            \includegraphics[width=0.6 \textheight]{99_Yunus/Period12/Cobweb_B_12/result.png}
-        }
-        \subfloat[At Point $D$]{
-            \includegraphics[width=0.6 \textheight]{99_Yunus/Period12/Cobweb_C_12/result.png}
-        }
-        \caption{Cobwebs of Original Model}
-    \end{figure}
+    \begin{columns}[t]
+        \begin{column}{.9 \textwidth}
+            \vspace{-2em}
+            \begin{center}
+                \begin{figure}
+                    \centering
+                    \subfloat[$A$: Period 16, $\Cycle{\A^3\B^3\C^3\D^3}$]{
+                        \includegraphics[width=0.5 \textheight]{99_Yunus/Period12/Cobweb_A_12/result.png}
+                    }
+                    \subfloat[$B$: Period 16, $\Cycle{\A^3\B^3\C^2\D^4}$ and $\Cycle{\A^2\B^4\C^3\D^3}$]{
+                        \includegraphics[width=0.5 \textheight]{99_Yunus/Period12/Cobweb_B_12/result.png}
+                    }
+                    \subfloat[$C$: Period 16, $\Cycle{\A^2\B^4\C^2\D^4}$]{
+                        \includegraphics[width=0.5 \textheight]{99_Yunus/Period12/Cobweb_C_12/result.png}
+                    }
+                    \caption{Cobwebs at selected parameter values of the original model}
+                \end{figure}
+            \end{center}
+        \end{column}
+        \begin{column}{.2 \textwidth}
+            \vspace{-4em}
+            \begin{center}
+                \hspace{-2em}
+                \includegraphics[height=0.3 \textheight]{99_Yunus/2D_Period_Zoomed/result.png}
+            \end{center}
+        \end{column}
+    \end{columns}
 \end{frame}
 
 \begin{frame}{Parameter Regions in Original Model}
@@ -145,6 +151,12 @@
               \end{itemize}
     \end{itemize}
 \end{frame}
+
+
+%\subfloat[Halved model]{
+%    \includegraphics[height=0.6 \textheight]{98_Yunus_modpi/2D_Period_Zoomed/result.png}
+
+%}
 
 \begin{frame}{Overlaping Parameter Regions in Original Model}
     \begin{figure}
