@@ -9,8 +9,8 @@ BoxStyle2="nohead front lt 1 lw 2 dt 2 lc rgb 'navy'"
 aL = 4
 bL = -0.5
 cL = 0
-px = -0.3797
-py = 0.168
+px = -0.4
+py = 0.165
 
 set loadpath '../../'
 
@@ -64,8 +64,8 @@ set arrow from X,D to X,U nohead lt 1 lw 2 dt 2 lc rgb "gray50" front
 
 #--------------- large blowup box
 
-LL=0.157
-RR=0.17
+LL=0.15
+RR=0.165
 DD=LL
 UU=RR
 
@@ -158,15 +158,10 @@ set label "d0" at X,Y offset 0.1,0.6
 
 set multiplot
 
-T1=2000
-T2=3000
-p "basins/1.tna" u 1:($3<T2          && $5<T2          ? 1.0 : 1/0) w filledcurves y2=0 lc rgb "#ffdddd",\
-  "basins/1.tna" u 1:($3>T2          && $5>T1 && $5<T2 ? 1.0 : 1/0) w filledcurves y2=0 lc rgb "#ddffdd",\
-  "basins/1.tna" u 1:($3>T1 && $3<T2 && $5>T2          ? 1.0 : 1/0) w filledcurves y2=0 lc rgb "#ffffdd",\
+T1=3000
+p "basins/1.tna" u 1:($3>T1 ? 1.0 : 1/0) w filledcurves y2=0 lc rgb "#ddddff",\
   x>0 && x<1 ? f(x):1/0 w points ps 0.1 pt 7 lc rgb 'black',\
-  'cyclic_cobwebA2.tna' w lines lw 2 lc rgb 'red', \
-  'cyclic_cobwebB1.tna' w lines lw 2 lc rgb 'forest-green', \
-  'cyclic_cobwebB2.tna' w lines lw 2 lc rgb 'dark-orange', \
+  'cyclic_cobwebA1.tna' w lines lw 2 lc rgb 'blue', \
   x w lines lt 1 lw 1.5 lc rgb 'gray20'
 
 unset arrow
@@ -201,19 +196,11 @@ set arrow from RR,UU to RR,DD @BoxStyle2
 set arrow from RR,DD to LL,DD @BoxStyle2
 
 
-p "basins/1.tna" u 1:($3<T2          && $5<T2          ? 1.0 : 1/0) w filledcurves y2=0 lc rgb "#ffdddd",\
-  "basins/1.tna" u 1:($3>T2          && $5>T1 && $5<T2 ? 1.0 : 1/0) w filledcurves y2=0 lc rgb "#ddffdd",\
-  "basins/1.tna" u 1:($3>T1 && $3<T2 && $5>T2          ? 1.0 : 1/0) w filledcurves y2=0 lc rgb "#ffffdd",\
+p "basins/1.tna" u 1:($3>T1 ? 1.0 : 1/0) w filledcurves y2=0 lc rgb "#ddddff",\
   x w lines lt 1 lw 1.5 lc rgb 'gray20', \
-  'cyclic_cobwebA2.tna' w l lw 2 lc rgb 'red', \
-  "" u 1:2:("s2") with labels point pt 7 ps 0.7 lc rgb 'red'  offset 0.5, -0.5,\
-  "" u 1:2:("s2") with labels point pt 7 ps 0.5 lc rgb 'pink' offset 0.5, -0.5,\
-  'cyclic_cobwebB1.tna' w l lw 2 lc rgb 'forest-green', \
-  "" u 1:2:("s3") with labels point pt 7 ps 0.7 lc rgb 'forest-green' offset 1.0, 0.0,\
-  "" u 1:2:("s3") with labels point pt 7 ps 0.5  lc rgb 'light-green' offset 1.0, 0.0,\
-  'cyclic_cobwebB2.tna' w l lw 2 lc rgb 'dark-orange', \
-  "" u 1:2:("s4") with labels point pt 7 ps 0.7 lc rgb 'dark-orange'  offset 0.5, -0.5,\
-  "" u 1:2:("s4") with labels point pt 7 ps 0.5 lc rgb 'khaki1'       offset 0.5, -0.5
+  'cyclic_cobwebA1.tna' w l lw 2 lc rgb 'blue', \
+  "" u 1:2:("s1") with labels point pt 7 ps 0.7 lc rgb 'blue' offset 0.5,-0.5,\
+  "" u 1:2:("s1") with labels point pt 7 ps 0.5  lc rgb 'light-cyan' offset 0.5,-0.5
 
 #------------------------------------
 #--------------- small blowup plot at d1
@@ -244,9 +231,7 @@ set label "" at X,Y point pt 7 ps 0.8 lc rgb "yellow" front
 set label "d1" at X,Y offset 0.1,-0.3 
 
 
-p "basins/1.tna" u 1:($3<T2          && $5<T2          ? 1.0 : 1/0) w filledcurves y2=0 lc rgb "#ffdddd",\
-  "basins/1.tna" u 1:($3>T2          && $5>T1 && $5<T2 ? 1.0 : 1/0) w filledcurves y2=0 lc rgb "#ddffdd",\
-  "basins/1.tna" u 1:($3>T1 && $3<T2 && $5>T2          ? 1.0 : 1/0) w filledcurves y2=0 lc rgb "#ffffdd",\
+p "basins/1.tna" u 1:($3>T1 ? 1.0 : 1/0) w filledcurves y2=0 lc rgb "#ddddff"
 
 
 unset label
@@ -282,9 +267,7 @@ set label "" at X,Y point pt 7 ps 0.8 lc rgb "yellow" front
 set label "d2" at X,Y offset 0.1,-0.3 
 
 
-p "basins/1.tna" u 1:($3<T2          && $5<T2          ? 1.0 : 1/0) w filledcurves y2=0 lc rgb "#ffdddd",\
-  "basins/1.tna" u 1:($3>T2          && $5>T1 && $5<T2 ? 1.0 : 1/0) w filledcurves y2=0 lc rgb "#ddffdd",\
-  "basins/1.tna" u 1:($3>T1 && $3<T2 && $5>T2          ? 1.0 : 1/0) w filledcurves y2=0 lc rgb "#ffffdd",\
+p "basins/1.tna" u 1:($3>T1 ? 1.0 : 1/0) w filledcurves y2=0 lc rgb "#ddddff"
 
 
 unset multiplot

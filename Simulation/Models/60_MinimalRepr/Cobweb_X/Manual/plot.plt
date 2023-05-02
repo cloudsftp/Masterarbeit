@@ -9,8 +9,8 @@ BoxStyle2="nohead front lt 1 lw 2 dt 2 lc rgb 'navy'"
 aL = 4
 bL = -0.5
 cL = 0
-px = -0.379
-py = 0.16865
+px = -0.3805
+py = 0.1672
 
 set loadpath '../../'
 
