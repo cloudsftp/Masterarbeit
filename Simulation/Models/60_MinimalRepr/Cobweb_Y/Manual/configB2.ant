@@ -32,14 +32,14 @@ parameter[4] = {
 },
 
 state_space_dimension = 1,
-initial_state = (0.1),
+initial_state = (0.749),
 reset_initial_states_from_orbit = false,
 number_of_iterations = 1000
 },
 
 scan = {
 type = nested_items,
-mode = 1,
+mode = 0,
 
 item[0] = {
     type = "real_linear",
@@ -64,7 +64,7 @@ investigation_methods = {
         acyclic_last_states = false,
         acyclic_bif_dia_file = "bif_acyclic.tna",
         cyclic_graphical_iteration = true,
-        cyclic_graph_iter_file = "cyclic_cobwebB.tna",
+        cyclic_graph_iter_file = "cyclic_cobwebB2.tna",
         acyclic_graphical_iteration = false,
         acyclic_graph_iter_file = "acyclic_cobweb.tna",
         using_last_points = 1528,
