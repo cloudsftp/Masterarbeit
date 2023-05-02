@@ -13,7 +13,7 @@ dynamical_system = {
     },
     parameter[1] = {
       name = "bL",
-      value = 0.5
+      value = -0.5
     },
     parameter[2] = {
       name = "cL",
