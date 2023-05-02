@@ -3,181 +3,200 @@
 \section{Minimal Reproducing Model}
 
 \begin{frame}{Approach for Reproducing the Behaviour}
-    Idea:
-    Try to mimic the evolution of the model function under parameter changes
+	Idea:
+	Try to mimic the evolution of the model function under parameter changes
 
-    \vspace{-2.0em}
-    \begin{figure}
-        \centering
-        \subfloat[Directions]{
-            \includegraphics[width=0.6 \textheight]{99_Yunus/2D_Period_Zoomed_EffectsSingle/result.png}
-        }
-        \subfloat[Evolution for Parameter $E_0$]{
-            \includegraphics[width=0.6 \textheight]{99_Yunus/ParameterEffects/E0/illustration.png}
-        }
-        \subfloat[Evolution for Parameter $\chi_0$]{
-            \includegraphics[width=0.6 \textheight]{99_Yunus/ParameterEffects/hi/illustration.png}
-        }
-        \caption{Effects of the Individual Parameters on the Function of the Original Model}
-    \end{figure}
+	\vspace{-2.0em}
+	\begin{figure}
+		\centering
+		\subfloat[Directions]{
+			\includegraphics[width=0.6 \textheight]{99_Yunus/2D_Period_Zoomed_EffectsSingle/result.png}
+		}
+		\subfloat[Evolution for Parameter $E_0$]{
+			\includegraphics[width=0.6 \textheight]{99_Yunus/ParameterEffects/E0/illustration.png}
+		}
+		\subfloat[Evolution for Parameter $\chi_0$]{
+			\includegraphics[width=0.6 \textheight]{99_Yunus/ParameterEffects/hi/illustration.png}
+		}
+		\caption{Effects of the Individual Parameters on the Function of the Original Model}
+	\end{figure}
 \end{frame}
 
 \begin{frame}{Approach for Reproducing the Behavior: Wishlist}
-    Characteristics we want to keep:
-    \begin{itemize}
-        \item Branches $\A$ and $\C$ move up
-        \item The left borders of branches $\B$ and $\D$ move down
-    \end{itemize}
+	Characteristics we want to keep:
+	\begin{itemize}
+		\item Branches $\A$ and $\C$ move up
+		\item The left borders of branches $\B$ and $\D$ move down
+	\end{itemize}
 
-    \vspace{2em}
-    Characteristics we want to leave behind if possible:
-    \begin{itemize}
-        \item Borders between branches move
-        \item Other minimal changes
-        \item Cubic shape of branches $\B$ and $\D$
-    \end{itemize}
+	\vspace{2em}
+	Characteristics we want to leave behind if possible:
+	\begin{itemize}
+		\item Borders between branches move
+		\item Other minimal changes
+		\item Cubic shape of branches $\B$ and $\D$
+	\end{itemize}
 \end{frame}
 
 \begin{frame}{Path to the Reproducing Model}
-    \begin{columns}
-        \begin{column}{.5 \textwidth}
-            Different Models
-            \begin{itemize}
-                \item Linear branches
-                \item Quadratic branches
-            \end{itemize}
+	\begin{columns}
+		\begin{column}{.5 \textwidth}
+			Different Models
+			\begin{itemize}
+				\item Linear branches
+				\item Quadratic branches
+			\end{itemize}
 
-            \vspace{2em}
-            With different
-            \begin{itemize}
-                \item sets of fixed parameters
-                \item sets of variable parameters
-                \item values of the fixed parameters
-            \end{itemize}
-        \end{column}
-        \begin{column}{.5 \textwidth}
-            \vspace{-3.0em}
-            \begin{figure}
-                \centering
-                \subfloat{\includegraphics[height=.4 \textheight]{20_Quadratic_mod2pi/First_Find/2D_Period_Heureka/result.png}}
-                \qquad
-                \subfloat{\includegraphics[height=.4 \textheight]{21_011_Quadratic_2aR1bR_centered/2D_Period_Selected/result.png}}
-                \\
-                \subfloat{\includegraphics[height=.4 \textheight]{21_012_Quadratic_2aR1bR_mirror/2D_Period_Whole/result.png}}
-                \qquad
-                \subfloat{\includegraphics[height=.4 \textheight]{40_Quadratic_fittingR/2D_Period_Whole/result.png}}
-            \end{figure}
-        \end{column}
-    \end{columns}
+			\vspace{2em}
+			With different
+			\begin{itemize}
+				\item sets of fixed parameters
+				\item sets of variable parameters
+				\item values of the fixed parameters
+			\end{itemize}
+		\end{column}
+		\begin{column}{.5 \textwidth}
+			\vspace{-3.0em}
+			\begin{figure}
+				\centering
+				\subfloat{\includegraphics[height=.4 \textheight]{20_Quadratic_mod2pi/First_Find/2D_Period_Heureka/result.png}}
+				\qquad
+				\subfloat{\includegraphics[height=.4 \textheight]{21_011_Quadratic_2aR1bR_centered/2D_Period_Selected/result.png}}
+				\\
+				\subfloat{\includegraphics[height=.4 \textheight]{21_012_Quadratic_2aR1bR_mirror/2D_Period_Whole/result.png}}
+				\qquad
+				\subfloat{\includegraphics[height=.4 \textheight]{40_Quadratic_fittingR/2D_Period_Whole/result.png}}
+			\end{figure}
+		\end{column}
+	\end{columns}
 \end{frame}
 
 \begin{frame}{Definition of Minimal Reproducing Model (1/2)}
-    \vspace{-3.0em}
-    \begin{align}
-        x \mapsto f(x) \mod 1
-    \end{align}
+	\vspace{-3.0em}
+	\begin{align}
+		x \mapsto f(x) \mod 1
+	\end{align}
 
-    \begin{align}
-        f(x) & = \begin{cases}
-                     g(x)                                        & \text{ if } x < \frac{1}{2} \\
-                     g\left(x - \frac{1}{2}\right) + \frac{1}{2} & \text{ else}
-                 \end{cases}
-    \end{align}
+	\begin{align}
+		f(x) & = \begin{cases}
+			         g(x)                                        & \text{ if } x < \frac{1}{2} \\
+			         g\left(x - \frac{1}{2}\right) + \frac{1}{2} & \text{ else}
+		         \end{cases}
+	\end{align}
 
-    \begin{align}
-        g(x) & = \begin{cases}
-                     l(x) = a_L \cdot x^2 + b_L \cdot x + c_L & \text{ if } x < \frac{1}{4} \\
-                     r(x) = b_R \cdot x + c_R                 & \text{ else}
-                 \end{cases}
-    \end{align}
+	\begin{align}
+		g(x) & = \begin{cases}
+			         l(x) = a_L \cdot x^2 + b_L \cdot x + c_L & \text{ if } x < \frac{1}{4} \\
+			         r(x) = b_R \cdot x + c_R                 & \text{ else}
+		         \end{cases}
+	\end{align}
 \end{frame}
 
 \begin{frame}{Definition of Minimal Reproducing Model (2/2)}
-    Fixed parameters:
-    \begin{align*}
-        a_L = 4, b_L = -\frac{1}{2}
-    \end{align*}
+	\begin{columns}
+		\begin{column}{.7 \textwidth}
+			Fixed parameters:
+			\begin{align*}
+				a_L = 4, b_L = -\frac{1}{2}
+			\end{align*}
 
-    Variable parameters
-    \begin{align*}
-         & c_L, b_R, c_R                                                    \\
-        \text{where} \qquad
-         & c_L = p_y,                                                       \\
-         & b_R = 2A - B, c_R = 4 \cdot (B - A)                              \\
-        \text {and} \qquad
-         & A = p_x, \text{and } B = \frac{1}{2} + \epsilon \text{ is fixed}
-    \end{align*}
+			Variable parameters
+			\begin{align*}
+				 & c_L, b_R, c_R                                                    \\
+				\text{where} \qquad
+				 & c_L = p_y,                                                       \\
+				 & b_R = 4 \cdot (B - A), c_R = 2A - B                              \\
+				\text {and} \qquad
+				 & A = p_x, \text{and } B = \frac{1}{2} + \epsilon \text{ is fixed}
+			\end{align*}
 
-    $A$ and $B$ are intermediated parameters for modeling the values of the left ($A$) and right ($B$) borders of $r(x)$
+			$A$ and $B$ are intermediated parameters for modeling the values of the left ($A$) and right ($B$) borders of $r(x)$
+		\end{column}
+		\begin{column}{.3 \textwidth}
+			\begin{figure}
+				\centering
+				\includegraphics[height=.5 \textheight]{60_MinimalRepr/ParameterEffects/AB/illustration.png}
+				\caption{Illustration of the parameters $A$ and $B$}
+			\end{figure}
+		\end{column}
+	\end{columns}
 \end{frame}
 
 \begin{frame}{Minimal Reproducing Model Parameter Effects}
-    \vspace{-1.0em}
-    \begin{figure}
-        \centering
-        \subfloat[Effect of $p_x$]{\includegraphics[height=0.6\textheight]{60_MinimalRepr/ParameterEffects/p_x/illustration.png}}
-        \subfloat[Effect of $p_y$]{\includegraphics[height=0.6\textheight]{60_MinimalRepr/ParameterEffects/p_y/illustration.png}}
-        \caption{Effects of the Individual Parameters on the Function of the Minimal Reproducing Model}
-    \end{figure}
+	\vspace{-1.0em}
+	\begin{figure}
+		\centering
+		\subfloat[Effect of $p_x$]{\includegraphics[height=0.6\textheight]{60_MinimalRepr/ParameterEffects/p_x/illustration.png}}
+		\subfloat[Effect of $p_y$]{\includegraphics[height=0.6\textheight]{60_MinimalRepr/ParameterEffects/p_y/illustration.png}}
+		\caption{Effects of the Individual Parameters on the Function of the Minimal Reproducing Model}
+	\end{figure}
 \end{frame}
 
 \begin{frame}{Minimal Reproducing Model Dynamics}
-    \vspace{-1.0em}
-    \begin{figure}
-        \centering
-        \subfloat[Full Model]{\includegraphics[height=0.6\textheight]{60_MinimalRepr/2D_Period_Whole_Lotta_Points/result.png}}
-        \subfloat[Halved Model]{\includegraphics[height=0.6\textheight]{60_MinimalRepr/2D_Period_Whole_Lotta_Points/result-halved.png}}
-        \caption{2D Scans of Periods of Minimal Reproducing Model}
-    \end{figure}
+	\vspace{-1.0em}
+	\begin{figure}
+		\centering
+		\subfloat[Full Model]{\includegraphics[height=0.6\textheight]{60_MinimalRepr/2D_Period_Whole_Lotta_Points/result.png}}
+		\subfloat[Halved Model]{\includegraphics[height=0.6\textheight]{60_MinimalRepr/2D_Period_Whole_Lotta_Points/result-halved.png}}
+		\caption{2D Scans of Periods of Minimal Reproducing Model}
+	\end{figure}
 \end{frame}
 
 \begin{frame}{Minimal Reproducing Model Dynamics}
-    \begin{figure}
-        \centering
-        \subfloat[At Point $C_{16}$]{\includegraphics[height=0.6\textheight]{60_MinimalRepr/Cobweb_C16/result.png}}
-        \subfloat[At Point $D_{16}$]{\includegraphics[height=0.6\textheight]{60_MinimalRepr/Cobweb_D16/result.png}}
-        \subfloat[At Point $E_{16}$]{\includegraphics[height=0.6\textheight]{60_MinimalRepr/Cobweb_E16/result.png}}
-        \caption{Cobwebs}
-    \end{figure}
+	\begin{figure}
+		\centering
+		\subfloat[At Point $C_{16}$]{\includegraphics[height=0.6\textheight]{60_MinimalRepr/Cobweb_C16/result.png}}
+		\subfloat[At Point $D_{16}$]{\includegraphics[height=0.6\textheight]{60_MinimalRepr/Cobweb_D16/result.png}}
+		\subfloat[At Point $E_{16}$]{\includegraphics[height=0.6\textheight]{60_MinimalRepr/Cobweb_E16/result.png}}
+		\caption{Cobwebs}
+	\end{figure}
 \end{frame}
 
 \begin{frame}{Parameter Regions in Minimal Reproducing Model}
-    \begin{itemize}
-        \item ``Type A'': At points $C_{16}$ and $E_{16}$ in 2D scan
-              \begin{itemize}
-                  \item One cycle
-                  \item Symmetrical
-                  \item Example at point $C_{16}$: $\Cycle{\A^6\B^2\C^6\D^2}$
-                  \item Example at point $E_{16}$: $\Cycle{\A^5\B^3\C^5\D^3}$ \vspace*{1em}
-              \end{itemize}
-        \item ``Type B'': At point $D_{16}$ in 2D scan
-              \begin{itemize}
-                  \item Two coexisting cycles
-                  \item Asymmetrical
-                  \item Example at point $D_{16}$: $\Cycle{\A^6\B^2\C^5\D^3}$ and $\Cycle{\A^5\B^3\C^6\D^2}$
-              \end{itemize}
-    \end{itemize}
+	\begin{itemize}
+		\item ``Type A'': At points $C_{16}$ and $E_{16}$ in 2D scan
+		      \begin{itemize}
+			      \item One cycle
+			      \item Symmetrical
+			      \item Example at point $C_{16}$: $\Cycle{\A^6\B^2\C^6\D^2}$
+			      \item Example at point $E_{16}$: $\Cycle{\A^5\B^3\C^5\D^3}$ \vspace*{1em}
+		      \end{itemize}
+		\item ``Type B'': At point $D_{16}$ in 2D scan
+		      \begin{itemize}
+			      \item Two coexisting cycles
+			      \item Asymmetrical
+			      \item Example at point $D_{16}$: $\Cycle{\A^6\B^2\C^5\D^3}$ and $\Cycle{\A^5\B^3\C^6\D^2}$
+		      \end{itemize}
+	\end{itemize}
 \end{frame}
 
 \begin{frame}{Overlapping Period Regions}
-    \vspace{-1.0em}
-    \begin{figure}
-        \centering
-        \subfloat[``Type A'']{
-            \includegraphics[height=0.7 \textheight]{60_MinimalRepr/2D_Regions_E/result.png}
-        }
-        \subfloat[``Type B'']{
-            \includegraphics[height=0.7 \textheight]{60_MinimalRepr/2D_Regions_F/result.png}
-        }
-        \caption{Overlapping Period Regions in Minimal Reproducing Model}
-    \end{figure}
+	\vspace{-1.0em}
+	\begin{figure}
+		\centering
+		\subfloat[``Type A'']{
+			\includegraphics[height=0.7 \textheight]{60_MinimalRepr/2D_Regions_E/result.png}
+		}
+		\subfloat[``Type B'']{
+			\includegraphics[height=0.7 \textheight]{60_MinimalRepr/2D_Regions_F/result.png}
+		}
+		\caption{Overlapping Period Regions in Minimal Reproducing Model}
+	\end{figure}
 \end{frame}
 
 \begin{frame}
-    New overlap found:
-    Two ``Type A'' parameter regions and one ``Type B'' parameter region overlapping \\
-    $\Rightarrow$ 4 coexisting cycles
+	New overlap found:
+	Two ``Type A'' parameter regions and one ``Type B'' parameter region overlapping \\
+	$\Rightarrow$ 4 coexisting cycles
 
 
-    \todo{pictures}
+	\todo{pictures}
 \end{frame}
+
+
+
+
+
+
+
+

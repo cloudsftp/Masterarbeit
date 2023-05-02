@@ -29,21 +29,12 @@ set xlabel 'x' offset 0, 1.3
 set ylabel 'y' offset 4.2, 0 rotate by 90
 
 
-
-px = -0.35
-py = 0.16
-load 'model.plt'
-
-p f(x) w points ps 0.2 pt 7 lc rgb 'blue' notitle
-
 py = 0.17
+px = -0.35
 load 'model.plt'
 
-p f(x) w points ps 0.2 pt 7 lc rgb 'purple' notitle
+set label 'A' at 0.25, r(0.25) point pointtype 7 lc rgb 'red' front
+set label 'B' at 0.5, r(0.5) point pointtype 7 lc rgb 'red' front
 
-py = 0.18
-load 'model.plt'
-
-plot f(x) w points ps 0.2 pt 7 lc rgb 'red' notitle, \
-    x w lines lt 1 lw 1.5 lc rgb 'gray20' notitle
+p f(x) w points ps 0.2 pt 7 lc rgb 'black' notitle
             

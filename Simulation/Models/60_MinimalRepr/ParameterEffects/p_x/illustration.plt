@@ -1,8 +1,8 @@
 reset
-set loadpath '/home/fabi/Projects/Uni/Masterarbeit/Simulation/Models/60_Final'
+set loadpath '../../'
 
 aL = 4
-bL = 0.5
+bL = -0.5
 cL = 0
 
 set terminal postscript landscape enhanced color blacktext \
@@ -32,17 +32,17 @@ set ylabel 'y' offset 4.2, 0 rotate by 90
 
 px = -0.4
 py = 0.17
-load '/home/fabi/Projects/Uni/Masterarbeit/Simulation/Models/60_Final/model.plt'
+load 'model.plt'
 
 p f(x) w points ps 0.2 pt 7 lc rgb 'blue' notitle
 
 px = -0.35
-load '/home/fabi/Projects/Uni/Masterarbeit/Simulation/Models/60_Final/model.plt'
+load 'model.plt'
 
 p f(x) w points ps 0.2 pt 7 lc rgb 'purple' notitle
 
 px = -0.3
-load '/home/fabi/Projects/Uni/Masterarbeit/Simulation/Models/60_Final/model.plt'
+load 'model.plt'
 
 plot f(x) w points ps 0.2 pt 7 lc rgb 'red' notitle, \
     x w lines lt 1 lw 1.5 lc rgb 'gray20' notitle
