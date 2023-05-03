@@ -1,0 +1,108 @@
+
+dynamical_system = {
+    type = map,
+    name = "map",
+    parameter_space_dimension = 5,
+parameters = {
+
+parameter[0] = {
+    name = "aL",
+    value = 4
+},
+
+parameter[1] = {
+    name = "bL",
+    value = -0.5
+},
+
+parameter[2] = {
+    name = "cL",
+    value = 0
+},
+
+parameter[3] = {
+    name = "px",
+    value = -0.3775
+},
+
+parameter[4] = {
+    name = "py",
+    value = 0
+}
+},
+
+state_space_dimension = 1,
+initial_state = (0.5),
+reset_initial_states_from_orbit = true,
+number_of_iterations = 1000
+},
+
+scan = {
+type = nested_items,
+mode = 1,
+
+item[0] = {
+    type = "real_linear",
+    object = "py",
+    points = 2000,
+    min = 0.1675,
+    max = 0.1665
+}
+},
+
+investigation_methods = {
+    general_trajectory_evaluations = {
+    },
+    period_analysis = {
+        is_active = true,
+        max_period = 128,
+        compare_precision = 1e-09,
+        period = true,
+        period_file = "period.tna",
+        cyclic_asymptotic_set = true,
+        cyclic_bif_dia_file = "bif_cyclic.tna",
+        acyclic_last_states = false,
+        acyclic_bif_dia_file = "bif_acyclic.tna",
+        cyclic_graphical_iteration = false,
+        cyclic_graph_iter_file = "cyclic_cobweb.tna",
+        acyclic_graphical_iteration = false,
+        acyclic_graph_iter_file = "acyclic_cobweb.tna",
+        using_last_points = 1528,
+        period_selections = false,
+        periods_to_select = (),
+        period_selection_file = "period_selection",
+        period_selection_file_extension = "tna"
+    },
+    regions_analysis = {
+        is_active = false,
+        period_regions_file = "regions_period.tna",
+        period_file = "periods_ij.tmp"
+    },
+    band_counter = {
+    },
+    symbolic_analysis = {
+        is_active = false,
+        symbolic_function = using_user_defined_symbolic_dynamics,
+        critical_points_for_<L/R>_symbolic_dynamics = (0,10000),
+        transient = 0,
+        symbolic_description_level = 1,
+        symbolic_entropy_approximate = false,
+        symb_entr_a_file = "symbolic_entropy_approximate.tna",
+        symbolic_entropy_exact = false,
+        symb_entr_e_file = "symbolic_entropy_exact.tna",
+        symbolic_sequence = false,
+        symbolic_sequence_file = "symbolic_sequence.tna",
+        periodic_symbolic_sequence = true,
+        periodic_symbolic_sequence_file = "periodic_symbolic_sequence.tna"
+    },
+    rim_analysis = {
+    },
+    symbolic_image_analysis = {
+    },
+    lyapunov_exponents_analysis = {
+    },
+    dimensions_analysis = {
+    },
+    check_for_conditions = {
+    }
+}
