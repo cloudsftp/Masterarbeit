@@ -148,17 +148,17 @@ unset label
 set origin 0.49,0.503
 set size 0.52,0.5
 
-UU=0.751
-DD=0.749
+UU=0.754
+DD=0.746
 set xrange [L:R]
 set yrange [DD:UU]
 
-X=0.167
-Y=0.7496
+X=0.1668
+Y=0.7485
 set label "O16Ab" at X,Y offset 0,0
 
-X=0.16655
-Y=0.7503
+X=0.1668
+Y=0.7512
 set label "O16Bb" at X,Y offset 0,0
 
 
@@ -178,11 +178,11 @@ p 1/0
 set origin 0.49,0.03
 set size 0.52,0.5
 
-UU= 0.251
-DD= 0.249
+UU= 0.254
+DD= 0.246
 set xrange [L:R]
 set yrange [DD:UU]
-H=0.25326
+H=UU + 0.00915
 set arrow from BCB1,DD to BCB1,H nohead lt 1 lw 2 dt 2 lc rgb "gray50" front
 set arrow from BCB2,DD to BCB2,H nohead lt 1 lw 2 dt 2 lc rgb "gray50" front
 
@@ -201,12 +201,12 @@ set label "BCB2a" at X,Y offset -6.5,-1.2
 set label "BCB2b" at X,Y offset -6.5, 1.0 
 
 
-X=0.167
-Y=0.2496
+X=0.1668
+Y=0.2485
 set label "O16Aa" at X,Y offset 0,0
 
-X=0.16655
-Y=0.2503
+X=0.1668
+Y=0.2512
 set label "O16Ba" at X,Y offset 0,0
 
 

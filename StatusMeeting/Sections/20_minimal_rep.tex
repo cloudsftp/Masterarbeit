@@ -215,3 +215,44 @@
         \end{column}
     \end{columns}
 \end{frame}
+
+\begin{frame}{Bifurcations}
+    \begin{columns}
+        \begin{column}{.5 \textwidth}
+            At the boundaries of the ``type B'' period region with the cycles $\Cycle{\A^5\B^3\C^4\D^4}$ and $\Cycle{\A^4\B^4\C^5\D^3}$
+            %\begin{itemize}
+            %    \item Upper boundary: $\Cycle{\A^5\B^3\C^4\D^4}$ collides with border $d_1$, $\Cycle{\A^4\B^4\C^5\D^3}$ with $d_3$
+            %\end{itemize}
+            \vspace{1em}
+            \begin{itemize}
+                \item Always border collision bifurcations
+                \item ``Type B'' coexisting cycles collide with two different borders at the same time
+                \item ``Type A'' cycles collide with two borders at the same time
+            \end{itemize}
+            \vspace{1em}
+            The borders, the cycles collide with at the same time are at $x$ and $x + 0.5 \mod 1$ (due to the symmetry)
+        \end{column}
+        \begin{column}{.5 \textwidth}
+            \vspace{-2em}
+            \begin{figure}
+                \centering
+                \subfloat[$F_{16}^\uparrow$]{\includegraphics[height=.3 \textheight]{60_MinimalRepr/1D_Bif_LFU16/Manual/result.png}}
+                \quad
+                \subfloat[$F_{16}^\downarrow$]{\includegraphics[height=.3 \textheight]{60_MinimalRepr/1D_Bif_LFD16/Manual/result.png}}
+                \\
+                \subfloat[$F_{16}^\leftarrow$]{\includegraphics[height=.3 \textheight]{60_MinimalRepr/1D_Bif_LFL16/Manual/result.png}}
+                \quad
+                \subfloat[$F_{16}^\rightarrow$]{\includegraphics[height=.3 \textheight]{60_MinimalRepr/1D_Bif_LFR16/Manual/result.png}}
+            \end{figure}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{Summary of Results}
+    \begin{itemize}
+        \item Constructed a function with similar properties as the original function
+        \item Reproduced the bifurcation behavior of the original model
+        \item Investigated coexisting cycles (found something new!)
+        \item Investigated bifurcations
+    \end{itemize}
+\end{frame}
