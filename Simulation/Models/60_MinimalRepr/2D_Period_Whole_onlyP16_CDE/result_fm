@@ -1,0 +1,18 @@
+% fmopt: width=8cm
+
+\psfrag{L}{\hspace*{0.3em}\raisebox{0.5ex}{$-0.45$}}
+\psfrag{R}{\hspace*{-2.7em}\raisebox{0.5ex}{$-0.275$}}
+
+\psfrag{D}{\hspace*{0.5em}\raisebox{0.5ex}{$0.15$}}
+\psfrag{U}{\hspace*{-2.5em}\raisebox{0.5ex}{$0.1875$}}
+
+\psfrag{x}{\hspace*{0.0em}\raisebox{0.5ex}{$p_x$}}
+\psfrag{y}{\hspace*{0.0em}\raisebox{0.5ex}{$p_y$}}
+
+\psfrag{A16}{\hspace*{0.0em}\raisebox{0.5ex}{\color[RGB]{255, 110, 0}{$A_{16}$}}}
+\psfrag{B16}{\hspace*{0.0em}\raisebox{0.5ex}{\color[RGB]{255, 110, 0}{$B_{16}$}}}
+\psfrag{C16}{\hspace*{0.0em}\raisebox{0.5ex}{\color[RGB]{255, 110, 0}{$C_{16}$}}}
+\psfrag{D16}{\hspace*{0.0em}\raisebox{0.5ex}{\color[RGB]{255, 110, 0}{$D_{16}$}}}
+\psfrag{E16}{\hspace*{0.0em}\raisebox{0.5ex}{\color[RGB]{255, 110, 0}{$E_{16}$}}}
+\psfrag{F16}{\hspace*{0.0em}\raisebox{0.5ex}{\color[RGB]{255, 110, 0}{$F_{16}$}}}
+\psfrag{G16}{\hspace*{0.0em}\raisebox{0.5ex}{\color[RGB]{255, 110, 0}{$G_{16}$}}}
