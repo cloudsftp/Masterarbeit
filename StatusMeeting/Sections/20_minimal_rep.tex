@@ -4,7 +4,7 @@
 
 \begin{frame}{Approach for Reproducing the Behaviour}
     Idea:
-    Try to mimic the evolution of the model function under parameter changes
+    Try to mimic the evolution of the model function under parameter variation
 
     \vspace{-2.0em}
     \begin{figure}
@@ -18,23 +18,24 @@
         \subfloat[Evolution for Parameter $\chi_0$]{
             \includegraphics[width=0.6 \textheight]{99_Yunus/ParameterEffects/hi/illustration.png}
         }
-        \caption{Effects of the Individual Parameters on the Function of the Original Model}
+        \caption{Effects of the individual parameters on the function of the original model}
     \end{figure}
 \end{frame}
 
 \begin{frame}{Approach for Reproducing the Behavior: Wishlist}
     Characteristics we want to keep:
     \begin{itemize}
-        \item Branches $\A$ and $\C$ move up
-        \item The left borders of branches $\B$ and $\D$ move down
+        \item Symmetry
+        \item Branches $f_{\A}$ and $f_{\C}$ move up
+        \item The values at the left border of branches $f_{\B}$ and $f_{\D}$ move down
     \end{itemize}
 
     \vspace{2em}
     Characteristics we want to leave behind if possible:
     \begin{itemize}
-        \item Borders between branches move
+        \item Borders between branch domains move
+        \item Cubic shape of branches $f_{\B}$ and $f_{\D}$
         \item Other minimal changes
-        \item Cubic shape of branches $\B$ and $\D$
     \end{itemize}
 \end{frame}
 
@@ -188,7 +189,7 @@
 
 \begin{frame}{Overlapping Period Regions (2/2)}
     \begin{columns}
-        \begin{column}{.6 \textwidth}
+        \begin{column}{.5 \textwidth}
             Coexistence scenarios:
             \begin{itemize}
                 \item 1: ``Type A'' ($L$)
@@ -198,21 +199,32 @@
                 \item 4: ``Type B'' pair and two different ``Type A'' ($V, W, X,$ and $Y$)
             \end{itemize}
 
-            \vspace{2em}
+            \vspace{1em}
             The coexistence of 4 cycles was not discovered in the original model!
         \end{column}
-        \begin{column}{.4 \textwidth}
-            \vspace{-4.0em}
+        \begin{column}{.5 \textwidth}
+            \vspace{-4em}
             \begin{figure}
                 \centering
-                \subfloat[$M$]{\includegraphics[height=.3 \textheight]{60_MinimalRepr/Cobweb_M/Manual/result.png}}
-                \quad
-                \subfloat[$Q$]{\includegraphics[height=.3 \textheight]{60_MinimalRepr/Cobweb_Q/Manual/result.png}}
+                \subfloat{ \includegraphics[height=0.2 \textheight]{60_MinimalRepr/2D_Regions_E/result.png} }
+                \subfloat{ \includegraphics[height=0.2 \textheight]{60_MinimalRepr/2D_Regions_F/result.png} }
                 \\
-                \subfloat[$U$]{\includegraphics[height=.3 \textheight]{60_MinimalRepr/Cobweb_U/Manual/result.png}}
-                \quad
-                \subfloat[$X$]{\includegraphics[height=.3 \textheight]{60_MinimalRepr/Cobweb_X/Manual/result.png}}
-                \caption{Cobwebs of coexisting cycles in the minimal reproducing model}
+                \only<1>{
+                    \subfloat{\includegraphics[height=.6 \textheight]{60_MinimalRepr/Cobweb_M/Manual/result.png}}
+                    \caption*{At Point $M$}
+                }
+                \only<2>{
+                    \subfloat{\includegraphics[height=.6 \textheight]{60_MinimalRepr/Cobweb_Q/Manual/result.png}}
+                    \caption*{At Point $Q$}
+                }
+                \only<3>{
+                    \subfloat{\includegraphics[height=.6 \textheight]{60_MinimalRepr/Cobweb_U/Manual/result.png}}
+                    \caption*{At Point $U$}
+                }
+                \only<4>{
+                    \subfloat{\includegraphics[height=.6 \textheight]{60_MinimalRepr/Cobweb_X/Manual/result.png}}
+                    \caption*{At Point $U$}
+                }
             \end{figure}
         \end{column}
     \end{columns}
