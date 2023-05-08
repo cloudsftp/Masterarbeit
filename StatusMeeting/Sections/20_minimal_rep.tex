@@ -18,7 +18,7 @@
         \subfloat[Evolution for Parameter $\chi_0$]{
             \includegraphics[width=0.6 \textheight]{99_Yunus/ParameterEffects/hi/illustration.png}
         }
-        \caption{Effects of the individual parameters on the function of the original model}
+        \caption*{Effects of the individual parameters on the function of the original model}
     \end{figure}
 \end{frame}
 
@@ -117,7 +117,7 @@
             \begin{figure}
                 \centering
                 \includegraphics[height=.5 \textheight]{60_MinimalRepr/ParameterEffects/AB/illustration.png}
-                \caption{Illustration of the parameters $A$ and $B$}
+                \caption*{Illustration of the parameters $A$ and $B$}
             \end{figure}
         \end{column}
     \end{columns}
@@ -129,7 +129,7 @@
         \centering
         \subfloat[Effect of $p_x$]{\includegraphics[height=0.6\textheight]{60_MinimalRepr/ParameterEffects/p_x/illustration.png}}
         \subfloat[Effect of $p_y$]{\includegraphics[height=0.6\textheight]{60_MinimalRepr/ParameterEffects/p_y/illustration.png}}
-        \caption{Effects of the Individual Parameters on the Function of the Minimal Reproducing Model}
+        \caption*{Effects of the Individual Parameters on the Function of the Minimal Reproducing Model}
     \end{figure}
 \end{frame}
 
@@ -140,8 +140,9 @@
         %    \subfloat[Full Model]{\includegraphics[height=0.6\textheight]{60_MinimalRepr/2D_Period_Whole_onlyP16_CDE/result.png}}
         %    \subfloat[Halved Model]{\includegraphics[height=0.6\textheight]{60_MinimalRepr/2D_Period_Whole_onlyP16_CDE/result-halved.png}}
         %    \caption{2D Scans of Periods of Minimal Reproducing Model}
-        \includegraphics[height=.7 \textheight]{60_MinimalRepr/2D_Period_Whole_onlyP16_CDE/result.png}
-        \caption{2D scan showing periods of cycles of the minimal reproducing model}
+        \subfloat[Periods]{ \includegraphics[height=.6 \textheight]{60_MinimalRepr/2D_Period_Whole_onlyP16_CDE/result.png} }
+        \subfloat[Period Regions]{ \includegraphics[height=.6 \textheight]{60_MinimalRepr/2D_Regions_Whole/Manual/Chain16/result.png} }
+        \caption*{2D scans of the minimal reproducing model}
     \end{figure}
 \end{frame}
 
@@ -151,7 +152,7 @@
         \subfloat[At Point $C_{16}$]{\includegraphics[height=0.6\textheight]{60_MinimalRepr/Cobweb_C16/result.png}}
         \subfloat[At Point $D_{16}$]{\includegraphics[height=0.6\textheight]{60_MinimalRepr/Cobweb_D16/result.png}}
         \subfloat[At Point $E_{16}$]{\includegraphics[height=0.6\textheight]{60_MinimalRepr/Cobweb_E16/result.png}}
-        \caption{Cobwebs}
+        \caption*{Cobwebs}
     \end{figure}
 \end{frame}
 
@@ -174,17 +175,27 @@
 \end{frame}
 
 \begin{frame}{Overlapping Period Regions (1/2)}
-    \vspace{-1.0em}
-    \begin{figure}
-        \centering
-        \subfloat[``Type A'']{
-            \includegraphics[height=0.7 \textheight]{60_MinimalRepr/2D_Regions_E/result.png}
-        }
-        \subfloat[``Type B'']{
-            \includegraphics[height=0.7 \textheight]{60_MinimalRepr/2D_Regions_F/result.png}
-        }
-        \caption{Overlapping period regions in the minimal reproducing model}
-    \end{figure}
+    \begin{columns}
+        \begin{column}{.8 \textwidth}
+            \vspace{-3em}
+            \begin{figure}
+                \centering
+                \subfloat[``Type A'']{
+                    \includegraphics[height=0.7 \textheight]{60_MinimalRepr/2D_Regions_E/result.png}
+                }
+                \subfloat[``Type B'']{
+                    \includegraphics[height=0.7 \textheight]{60_MinimalRepr/2D_Regions_F/result.png}
+                }
+                \caption*{Overlapping period regions}
+            \end{figure}
+        \end{column}
+        \begin{column}{.2 \textwidth}
+            \vspace{-13em}
+            \begin{figure}
+                \subfloat{ \includegraphics[height=.4 \textheight]{60_MinimalRepr/2D_Regions_Whole/Manual/EF/result.png} }
+            \end{figure}
+        \end{column}
+    \end{columns}
 \end{frame}
 
 \begin{frame}{Overlapping Period Regions (2/2)}
@@ -192,15 +203,17 @@
         \begin{column}{.5 \textwidth}
             Coexistence scenarios:
             \begin{itemize}
-                \item 1: ``Type A'' ($L$)
-                \item 2: Two different ``Type A'' ($M, N, O,$ and $P$)
-                \item 2: ``Type B'' pair ($Q$)
-                \item 3: ``Type B'' pair and ``Type A'' ($R, S, T,$ and $U$)
-                \item 4: ``Type B'' pair and two different ``Type A'' ($V, W, X,$ and $Y$)
+                \item<1-> 1: ``Type A'' ($L$)
+                \item<1-> 2: Two different ``Type A'' \\ ($M, N, O,$ and $P$)
+                \item<2-> 2: ``Type B'' pair ($Q$)
+                \item<3-> 3: ``Type B'' pair and ``Type A'' \\ ($R, S, T,$ and $U$)
+                \item<4-> 4: ``Type B'' pair \\ and two different ``Type A'' \\ ($V, W, X,$ and $Y$)
             \end{itemize}
 
             \vspace{1em}
-            The coexistence of 4 cycles was overlooked in the original model!
+            \onslide<4->{
+                The coexistence of 4 cycles was overlooked in the original model!
+            }
         \end{column}
         \begin{column}{.5 \textwidth}
             \vspace{-4em}
@@ -237,9 +250,9 @@
             \begin{itemize}
                 \item Always border collision bifurcations
                 \item Unusual \begin{itemize}
-                    \item ``Type B'' coexisting cycles collide with two different borders at the same bifurcation
-                    \item ``Type A'' cycles collide with two borders at the same bifurcation
-                \end{itemize}
+                          \item ``Type B'' coexisting cycles collide with two different borders at the same bifurcation
+                          \item ``Type A'' cycles collide with two borders at the same bifurcation
+                      \end{itemize}
             \end{itemize}
             \vspace{1em}
             The borders, the cycles collide with at the same bifurcation are at $x$ and $(x + \frac{1}{2}) \mod 1$ (due to the symmetry)
