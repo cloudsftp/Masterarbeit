@@ -3,22 +3,18 @@
 // External parameters
 #define aL parameters[0]
 #define bL parameters[1]
-#define cL parameters[2]
+#define bR parameters[2]
 #define px parameters[3] // Only the last two are varied
 #define py parameters[4]
 
 // Internal parameters for computing branches A and C
 #define _aL (aL)
 #define _bL (bL)
-#define _cL (cL + py)
-
-// Internal parameters for fitting branches B and D
-#define A (-px)
-#define B (0.525)
+#define _cL (py)
 
 // Internal parameters for computing branches B and D
-#define _bR (4. * (B - A))
-#define _cR ((2. * A) - B)
+#define _bR (bR)
+#define _cR (-px)
 
 #define n       0.5     // Discontinuity in the middle
 #define border  0.25    // Discontinuity in the middle of the left half

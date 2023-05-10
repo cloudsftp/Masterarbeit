@@ -7,8 +7,8 @@
 %\newcommand{\D}{\text{\tiny$\mathcal D$}}
 %\newcommand{\LC}{\text{$\mathcal O$}}
 
-\psfrag{L}{\footnotesize \hspace*{-0.2em}\raisebox{0.1ex}{$0.16844$}}
-\psfrag{R}{\footnotesize \hspace*{-3.0em}\raisebox{0.1ex}{$0.16862$}}
+\psfrag{L}{\footnotesize \hspace*{-0.2em}\raisebox{0.1ex}{$0.1665$}}
+\psfrag{R}{\footnotesize \hspace*{-2.5em}\raisebox{0.1ex}{$0.1675$}}
 
 
 \psfrag{D}{\footnotesize \hspace*{0.3em}\raisebox{0.5ex}{$0$}}

@@ -3,23 +3,28 @@
 \section{Minimal Reproducing Model}
 
 \begin{frame}{Approach for Reproducing the Behaviour}
-    Idea:
-    Try to mimic the evolution of the model function under parameter variation
+    \vspace{-1em}
+    \begin{columns}
+        \begin{column}{1 \textwidth}
+            Idea:
+            Try to mimic the evolution of the model function under parameter variation
 
-    \vspace{-2.0em}
-    \begin{figure}
-        \centering
-        \subfloat[Directions]{
-            \includegraphics[width=0.6 \textheight]{99_Yunus/2D_Period_Zoomed_EffectsSingle/result.png}
-        }
-        \subfloat[Evolution for Parameter $E_0$]{
-            \includegraphics[width=0.6 \textheight]{99_Yunus/ParameterEffects/E0/illustration.png}
-        }
-        \subfloat[Evolution for Parameter $\chi_0$]{
-            \includegraphics[width=0.6 \textheight]{99_Yunus/ParameterEffects/hi/illustration.png}
-        }
-        \caption*{Effects of the individual parameters on the function of the original model}
-    \end{figure}
+            \vspace{-2.0em}
+            \begin{figure}
+                \centering
+                \subfloat[Directions]{
+                    \includegraphics[width=0.6 \textheight]{99_Yunus/2D_Period_Zoomed_EffectsSingle/result.png}
+                }
+                \subfloat[Evolution for Parameter $E_0$]{
+                    \includegraphics[width=0.6 \textheight]{99_Yunus/ParameterEffects/E0/illustration.png}
+                }
+                \subfloat[Evolution for Parameter $\chi_0$]{
+                    \includegraphics[width=0.6 \textheight]{99_Yunus/ParameterEffects/hi/illustration.png}
+                }
+                \caption*{Effects of the individual parameters on the function of the original model}
+            \end{figure}
+        \end{column}
+    \end{columns}
 \end{frame}
 
 \begin{frame}{Approach for Reproducing the Behavior: Wishlist}
@@ -57,7 +62,7 @@
             \end{itemize}
         \end{column}
         \begin{column}{.5 \textwidth}
-            \vspace{-3.0em}
+            \vspace{-4em}
             \begin{figure}
                 \centering
                 \subfloat{\includegraphics[height=.4 \textheight]{20_Quadratic_mod2pi/First_Find/2D_Period_Heureka/result.png}}
@@ -94,6 +99,7 @@
 \end{frame}
 
 \begin{frame}{Definition of Minimal Reproducing Model (2/2)}
+    \vspace{-1em}
     \begin{columns}
         \begin{column}{.7 \textwidth}
             Fixed parameters:
@@ -147,13 +153,31 @@
 \end{frame}
 
 \begin{frame}{Minimal Reproducing Model Dynamics}
-    \begin{figure}
-        \centering
-        \subfloat[At Point $C_{16}$]{\includegraphics[height=0.6\textheight]{60_MinimalRepr/Cobweb_C16/result.png}}
-        \subfloat[At Point $D_{16}$]{\includegraphics[height=0.6\textheight]{60_MinimalRepr/Cobweb_D16/result.png}}
-        \subfloat[At Point $E_{16}$]{\includegraphics[height=0.6\textheight]{60_MinimalRepr/Cobweb_E16/result.png}}
-        \caption*{Cobwebs}
-    \end{figure}
+    \begin{columns}
+        \begin{column}{.9 \textwidth}
+            \vspace{-2em}
+            \begin{figure}
+                \centering
+                \subfloat[$C_{16}$: Period 16, $\Cycle{\A^6\B^2\C^6\D^2}$]{
+                    \includegraphics[height=0.5\textheight]{60_MinimalRepr/Cobweb_C16/result.png}
+                }
+                \subfloat[$D_{16}$: Period 16, $\Cycle{\A^6\B^2\C^7\D^3}$ and $\Cycle{\A^7\B^3\C^6\D^2}$]{
+                    \includegraphics[height=0.5\textheight]{60_MinimalRepr/Cobweb_D16/result.png}
+                }
+                \subfloat[$E_{16}$: Period 16, $\Cycle{\A^7\B^3\C^7\D^3}$]{
+                    \includegraphics[height=0.5\textheight]{60_MinimalRepr/Cobweb_E16/result.png}
+                }
+                \caption*{Cobwebs}
+            \end{figure}
+        \end{column}
+        \begin{column}{.2 \textwidth}
+            \vspace{-4em}
+            \begin{center}
+                \hspace{-2em}
+                \includegraphics[height=0.3 \textheight]{60_MinimalRepr/2D_Period_Whole_onlyP16_CDE/result.png}
+            \end{center}
+        \end{column}
+    \end{columns}
 \end{frame}
 
 \begin{frame}{Parameter Regions in Minimal Reproducing Model}
@@ -175,6 +199,7 @@
 \end{frame}
 
 \begin{frame}{Overlapping Period Regions (1/2)}
+    \vspace{-1em}
     \begin{columns}
         \begin{column}{.8 \textwidth}
             \vspace{-3em}
@@ -190,15 +215,16 @@
             \end{figure}
         \end{column}
         \begin{column}{.2 \textwidth}
-            \vspace{-13em}
+            \vspace{-4em}
             \begin{figure}
-                \subfloat{ \includegraphics[height=.4 \textheight]{60_MinimalRepr/2D_Regions_Whole/Manual/EF/result.png} }
+                \subfloat{ \includegraphics[height=.3 \textheight]{60_MinimalRepr/2D_Regions_Whole/Manual/EF/result.png} }
             \end{figure}
         \end{column}
     \end{columns}
 \end{frame}
 
 \begin{frame}{Overlapping Period Regions (2/2)}
+    \vspace{-1em}
     \begin{columns}
         \begin{column}{.5 \textwidth}
             Coexistence scenarios:
@@ -210,32 +236,31 @@
                 \item<4-> 4: ``Type B'' pair \\ and two different ``Type A'' \\ ($V, W, X,$ and $Y$)
             \end{itemize}
 
-            \vspace{1em}
+            \vspace{.5em}
             \onslide<4->{
                 The coexistence of 4 cycles was overlooked in the original model!
             }
         \end{column}
         \begin{column}{.5 \textwidth}
-            \vspace{-4em}
+            \vspace{-5em}
             \begin{figure}
                 \centering
                 \subfloat{ \includegraphics[height=0.2 \textheight]{60_MinimalRepr/2D_Regions_E/result.png} }
                 \subfloat{ \includegraphics[height=0.2 \textheight]{60_MinimalRepr/2D_Regions_F/result.png} }
-                \\
                 \only<1>{
-                    \subfloat{\includegraphics[height=.6 \textheight]{60_MinimalRepr/Cobweb_M/Manual/result.png}}
+                    \subfloat{\includegraphics[height=.7 \textheight]{60_MinimalRepr/Cobweb_M/Manual/result.png}}
                     \caption*{At point $M$}
                 }
                 \only<2>{
-                    \subfloat{\includegraphics[height=.6 \textheight]{60_MinimalRepr/Cobweb_Q/Manual/result.png}}
+                    \subfloat{\includegraphics[height=.7 \textheight]{60_MinimalRepr/Cobweb_Q/Manual/result.png}}
                     \caption*{At point $Q$}
                 }
                 \only<3>{
-                    \subfloat{\includegraphics[height=.6 \textheight]{60_MinimalRepr/Cobweb_U/Manual/result.png}}
+                    \subfloat{\includegraphics[height=.7 \textheight]{60_MinimalRepr/Cobweb_U/Manual/result.png}}
                     \caption*{At point $U$}
                 }
                 \only<4>{
-                    \subfloat{\includegraphics[height=.6 \textheight]{60_MinimalRepr/Cobweb_X/Manual/result.png}}
+                    \subfloat{\includegraphics[height=.7 \textheight]{60_MinimalRepr/Cobweb_X/Manual/result.png}}
                     \caption*{At point $U$}
                 }
             \end{figure}
@@ -244,6 +269,7 @@
 \end{frame}
 
 \begin{frame}{Bifurcation Analysis}
+    \vspace{-1em}
     \begin{columns}
         \begin{column}{.5 \textwidth}
             At the boundaries of the ``type B'' period region with the cycles $\Cycle{\A^5\B^3\C^4\D^4}$ and $\Cycle{\A^4\B^4\C^5\D^3}$
@@ -254,13 +280,14 @@
                           \item ``Type A'' cycles collide with two borders at the same bifurcation
                       \end{itemize}
             \end{itemize}
-            \vspace{1em}
+            \vspace{.5em}
             The borders, the cycles collide with at the same bifurcation are at $x$ and $(x + \frac{1}{2}) \mod 1$ (due to the symmetry)
         \end{column}
         \begin{column}{.5 \textwidth}
-            \vspace{-4em}
+            \vspace{-5em}
             \begin{figure}
                 \centering
+                \subfloat{ \includegraphics[height=.2 \textheight]{60_MinimalRepr/1D_Bif_LFU16/Manual/result.png} }
                 \only<1>{
                     \subfloat{\includegraphics[height=.7 \textheight]{60_MinimalRepr/1D_Bif_LFU16/Manual/result.png}}
                     \caption*{At boundary $F_{16}^\uparrow$}
