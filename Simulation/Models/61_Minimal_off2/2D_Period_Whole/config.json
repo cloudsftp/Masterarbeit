@@ -4,7 +4,7 @@
     "num_iterations": 1e4,
     "initial": 0.25,
     "parameters": {
-        "bR": 1.1,
+        "bR": 1.0,
         "px": 0,
         "py": 0
     },
