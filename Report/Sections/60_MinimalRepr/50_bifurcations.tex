@@ -159,17 +159,11 @@ The same thing happens to its rotated twin, the red cycle at the border $d_3$ be
 Here, the point $x_{12}^{A^4\B^4\C^5\D^3}$ collides with the border $d_3$ and the bifurcation is denoted as $\BCB_{d_3}^{A^4\B^4\C^5\D^3}$.
 In both cases, the cycles collide from the left side of the border, so for $\Cycle{\A^5\B^3\C^4\D^4}$, one point of the cycle on branch $f_{\A}$ collided with the border $d_1$.
 And analogous, for $\Cycle{\A^4\B^4\C^5\D^3}$, one point of the cycle on the branch $f_{\C}$ collided with the border $d_3$.
-%One can see that the blue cycle is near $d_1$ when it vanishes, while the red cycle is near $d_3$.
-%\Cref{fig:final.bifurcation.F.up.zoomed} shows the black region that is marked in the full bifurcation diagram.
-%So as before in \Cref{sec:final.bifurcation.typeA.up} there is a border collision bifurcation of a point of the stable cycle on branch $\Branch_\A$ with the border $d_1$.
-%But this time, the same cycle does not collide with the border $d_3$ at the same time, because the cycle $\Cycle{\A^5\B^3\C^4\D^4}$ is not symmetric.
-%Instead, its twin cycle $\Cycle{\A^4\B^4\C^5\D^3}$ collides with the border $d_3$.
-%This means there are two bifurcations, $\BCB_{d_1}^{\A^5\B^3\C^4\D^4, r}$ and $\BCB_{d_3}^{\A^4\B^4\C^5\D^3, r}$.
 
 The ``type A'' parameter region above is $\P_{\A^4\B^4\C^4\D^4}$.
 The cycle $\Cycle{\A^4\B^4\C^4\D^4}$ (blue), which is stable in that parameter region, also collides with the same borders, the cycles $\Cycle{\A^5\B^3\C^4\D^4}$ and $\Cycle{\A^4\B^4\C^5\D^3}$ from the ``type B'' parameter region collided with, $d_1$ and $d_3$.
 But here, two points of the same cycle collide with two different borders at the same parameter values.
-Point $x_{4}^{A^4\B^4\C^4\D^4}$ collides with the border $d_1$ while point $x_{12}^{A^4\B^4\C^4\D^4}$ collides with $d_3$, both from the right side.
+Point $x_{4}^{A^4\B^4\C^4\D^4}$ collides with the border $d_1$ while point $x_{12}^{A^4\B^4\C^4\D^4}$ collides with $d_3$, both from below.
 So one point of the cycle on the branch $f_{\B}$ collides with $d_1$ and one point on the branch $f_{\D}$ collides with $d_3$.
 This is unusual for border collision bifurcations but is explained by the symmetry of both the cycle and the function.
 The bifurcation is denoted as $\BCB_{d_1, d_3}^{\A^4\B^4\C^4\D^4}$.
@@ -178,10 +172,38 @@ The bifurcation is denoted as $\BCB_{d_1, d_3}^{\A^4\B^4\C^4\D^4}$.
     \centering
     \includegraphics[width=.7 \textwidth]{60_MinimalRepr/1D_Bif_LFU16/Manual/result.png}
     \label{fig:final.bifurcation.F.up}
-    \caption{1D Bifurcation Diagrams and Cobweb of $F_{16}^\uparrow$}
+    \caption{1D bifurcation diagram and cobweb at the boundary $F_{16}^\uparrow$}
+\end{figure}
+
+\subsubsection{The Boundary $F_{16}^\downarrow$}
+
+At the lower boundary $F_{16}^\downarrow$, the two cycles $\Cycle{\A^5\B^3\C^4\D^4}$ and $\Cycle{\A^4\B^4\C^5\D^3}$ also collide with the borders $d_1$ and $d_3$, this time from above rather than from below.
+But while the cycle $\Cycle{\A^5\B^5\C^4\D^4}$ collided with the border $d_1$ at the upper boundary, it now collides with the border $d_3$.
+To be more precise, the point $x_{12}^{\A^5\B^3\C^4\D^4}$ collides with the border $d_3$ meaning one point on the branch $f_{\D}$ collides with the border $d_3$.
+Analogous, the point $x_{4}^{\A^4\B^4\C^5\D^3}$ of the cycle $\Cycle{\A^4\B^4\C^5\D^3}$ now collides with the border $d_1$ from above.
+Meaning that one point of branch $f_{\B}$ collides with the border $d_1$. The bifurcations are denoted as $\BCB_{d_3}^{\A^5\B^3\C^4\D^4}$ and $\BCB_{d_1}^{\A^4\B^4\C^5\D^3}$.
+
+The ``type A'' parameter region below is $\P_{\A^5\B^3\C^5\D^3}$.
+The cycle $\P_{\A^5\B^3\C^5\D^3}$, pictured in blue, collides with the same borders, just like before at the upper boundary.
+Again, two points of this cycle collide with two different borders, $d_1$ and $d_2$ at the same parameter values, but this time from below.
+The point colliding with $d_1$ is $x_{4}^{A^5\B^3\C^5\D^3}$ and  the point colliding with $d_3$ is $x_{12}^{A^5\B^3\C^5\D^3}$.
+So one point on the branch $f_{\A}$ collides with the border $d_1$ and one point on the branch $f_{\C}$ collides with the border $d_3$.
+This bifurcation is denoted as $\BCB_{d_1, d_3}^{\A^5\B^3\C^5\D^3}$.
+
+\todo{is the following paragraph fitting?}
+It is as if the ``type A'' and ``type B'' cycles switched roles from the $F_{16}^\uparrow$ boundary to this $F_{16}^\downarrow$ boundary.
+The cycles collide with the same borders, but the side from which they collide are swapped.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=.7 \textwidth]{60_MinimalRepr/1D_Bif_LFD16/Manual/result.png}
+    \label{fig:final.bifurcation.F.down}
+    \caption{1D bifurcation diagram and cobweb at the boundary $F_{16}^\uparrow$}
 \end{figure}
 
 \subsubsection{The Boundary $F_{16}^\rightarrow$}
+
+\todo{rewrite the rest of this section}
 
 The bifurcation diagram for the right boundary is depicted in \Cref{fig:final.bifurcation.F.right}.
 Here, the blue stable cycle, $\Cycle{\A^5\B^3\C^4\D^4}$, is near the border $d_2$.
@@ -197,23 +219,6 @@ From these bifurcation diagrams, we can conclude that the bifurcations at this b
         \label{fig:final.bifurcation.F.right}
     \end{subfigure}
     \caption{1D Bifurcation Diagrams and Cobweb of $F_{16}^\rightarrow$}
-\end{figure}
-
-\subsubsection{The Boundary $F_{16}^\downarrow$}
-
-For the lower boundary, the stable cycles are again near the borders $d_1$ and $d_3$, as can be seen in \Cref{fig:final.bifurcation.F.down}.
-But this time, the blue cycle, $\Cycle{\A^5\B^3\C^4\D^4}$, is not near the border $d_1$ but rather $d_3$.
-We also see that in the zoomed-in version of the bifurcation diagram in \Cref{fig:final.bifurcation.F.down.zoomed} since here the red cycle collides with the border $d_1$, meaning its twin collides with the border $d_3$ at the same time.
-Therefore we know, that the bifurcations at this boundary are $\BCB_{d_3}^{\A^5\B^3\C^4\D^4, l}$ and $\BCB_{d_1}^{\A^4\B^4\C^5\D^3, l}$.
-
-\begin{figure}
-    \centering
-    \begin{subfigure}{0.4\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{60_MinimalRepr/1D_Bif_LFD16/result.png}
-        \caption{Complete}
-        \label{fig:final.bifurcation.F.down}
-    \end{subfigure}
 \end{figure}
 
 \subsubsection{The Boundary $F_{16}^\leftarrow$}
