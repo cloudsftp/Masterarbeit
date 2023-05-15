@@ -149,6 +149,34 @@ If we compare this cobweb diagram to the cobweb diagram of point $U$ in \Cref{fi
 The same is true for their basins of attraction.
 But there is a new cycle, $\Cycle{A^5\B^3\C^5\D^3}$ (blue), that emerged between the basins of attraction of the two cycles of the ``type B'' parameter region, $\Cycle{\A^5\B^3\C^4\D^4}$ and $\Cycle{\A^4\B^4\C^5\D^3}$.
 
-\todo{describe basins of attractions at borders, type B asymm, type A symm}
+In this cobweb diagram, as well as in the previous ones, we can see that at the borders of the function branches $d_0$, $d_1$, $d_2$, and $d_3$, basins of attraction are split.
+In each diagram, the borders $d_1$ and $d_2$ are enhanced.
+From these two borders, we can also reason about the two other borders $d_0$ and $d_3$ thanks to the symmetry of this model.
+The basins of attraction of the cycles of ``type A'' parameter regions, such as $\Cycle{\A^5\B^3\C^5\D^3}$ and $\Cycle{\A^4\B^3\C^4\D^3}$, stay the same on each half of the model.
+For the cycles of ``type B'' parameter regions, such as $\Cycle{\A^5\B^3\C^4\D^4}$ and $\Cycle{\A^4\B^4\C^5\D^3}$, the cycles and their basins of attraction swap places.
+So at border $d_3$, the basin of attraction to the left will be of the cycle $\A^5\B^3\C^5\D^3$ (blue) still, but the basin of attraction to the right will be of $\Cycle{\A^5\B^3\C^4\D^4}$ (green) instead of $\Cycle{\A^4\B^4\C^5\D^3}$ (yellow).
 
-\todo{new, not detected in original model}
+All other borders of basins of attraction are images or preimages of the borders of the function branches $d_0$, $d_1$, $d_2$, and $d_3$.
+This is always the case in discontinuous maps. \todo{citation}
+
+This coexistence of 4 cycles was overlooked in the analysis of the original model.
+We now have to validate that this scenario also exists in the original model.
+For this, we zoom in on a corner of a ``type B'' parameter region.
+We choose the lower left corner of the ``type B'' parameter region depicted in \Cref{fig:yunus.period.regions.zoomed}.
+This produces \Cref{fig:og.coex4.regions}, which is not as clean as the scans of parameter region boundaries of the new model.
+The cobweb diagram at point $X$ in the region, where the two ``type A'' parameter regions and the ``type B'' parameter region should overlap, is shown in \Cref{fig:og.coex4.cobweb}.
+It is hard to see, since the two cycles $\Cycle{\A^3\B^2\C^3\D^2}$ and $\Cycle{\A^2\B^3\C^3\D^2}$ are almost on top of each other, even in the zoomed-in blowup in the upper left corner, but there are actually 4 cycles coexisting.
+\todo{expand}
+
+\begin{figure}
+    \centering
+    \subfloat[2D scan of the borders of period regions]{
+        \includegraphics[width=.45 \textwidth]{98_Yunus_modpi/2D_Regions_Coex4/result.png}
+        \label{fig:og.coex4.regions}
+    }
+    \subfloat[Cobweb diagram at point $X$]{
+        \includegraphics[width=.45 \textwidth]{99_Yunus/Cobweb_Coex4_A/Manual/result.png}
+        \label{fig:og.coex4.cobweb}
+    }
+    \caption{Figures for validating the coexistence of 4 cycles in the original model}
+\end{figure}
