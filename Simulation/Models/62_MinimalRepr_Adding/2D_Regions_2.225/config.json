@@ -1,11 +1,11 @@
 {
-    "type": "period",
+    "type": "period regions",
     "max_period": 512,
     "num_iterations": 2e3,
     "initial": 0.25,
     "parameters": {
-        "aL": 2.2,
-        "bL": -0.05,
+        "aL": 2.225,
+        "bL": -0.05625,
         "px": 0,
         "py": 0
     },
@@ -16,8 +16,8 @@
             "parameters": [
                 {
                     "name": "px",
-                    "start": -0.343,
-                    "stop": -0.338
+                    "start": -0.3825,
+                    "stop": -0.375
                 }
             ]
         },
@@ -27,8 +27,8 @@
             "parameters": [
                 {
                     "name": "py",
-                    "start": 0.1508,
-                    "stop": 0.1512
+                    "start": 0.1406,
+                    "stop": 0.14072
                 }
             ]
         }
