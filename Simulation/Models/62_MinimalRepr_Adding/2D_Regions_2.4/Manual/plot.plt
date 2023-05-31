@@ -11,10 +11,10 @@ set border lw 1
 
 set output "result_fm.eps"
 
-L = -0.385
-R = -0.37
-D = 0.142
-U = 0.14235
+L = -0.3825
+R = -0.375
+D = 0.1421
+U = 0.14225
 
 set xrange [L to R]
 set yrange [D to U]

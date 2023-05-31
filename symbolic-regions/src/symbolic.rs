@@ -1,5 +1,3 @@
-use std::println;
-
 #[derive(Debug, Eq)]
 pub struct SymbolicSequence<'a> {
     symbols: &'a Vec<char>,

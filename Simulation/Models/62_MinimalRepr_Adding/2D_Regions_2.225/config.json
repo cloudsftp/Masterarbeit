@@ -12,18 +12,18 @@
     "scan": [
         {
             "type": "linear",
-            "resolution": 2000,
+            "resolution": 500,
             "parameters": [
                 {
                     "name": "px",
                     "start": -0.3825,
-                    "stop": -0.375
+                    "stop": -0.37
                 }
             ]
         },
         {
             "type": "linear",
-            "resolution": 2000,
+            "resolution": 500,
             "parameters": [
                 {
                     "name": "py",

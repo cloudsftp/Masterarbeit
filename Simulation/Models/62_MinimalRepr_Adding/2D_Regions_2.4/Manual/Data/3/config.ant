@@ -45,16 +45,16 @@ item[0] = {
     type = "real_linear",
     object = "py",
     points = 2000,
-    min = 0.14235,
-    max = 0.142
+    min = 0.14225,
+    max = 0.1421
 },
 
 item[1] = {
     type = "real_linear",
     object = "px",
     points = 2000,
-    min = -0.385,
-    max = -0.37
+    min = -0.3825,
+    max = -0.375
 }
 },
 
