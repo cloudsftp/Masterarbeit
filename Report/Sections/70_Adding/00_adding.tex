@@ -32,6 +32,7 @@ The meaning of these is explored in a later section, the next section will focus
 \end{figure}
 
 \subsection{Disappearance of ``Type B'' Parameter Regions}
+\label{sec:minrep.adding.disapp.typeB}
 
 \Cref{fig:minrep.path.to.disappearance} shows diagrams depicting the borders of parameter regions of specific stable cycles.
 The lower left corner of the diagrams is always in the period region with the stable cycle $\Cycle{\A^7\B^3\C^7\D^3}$, the cycles in the upper left ($\Cycle{\A^6\B^3\C^6\D^3}$), upper right ($\Cycle{\A^6\B^4\C^6\D^4}$), lower right ($\Cycle{\A^7\B^4\C^7\D^4}$), and middle ($\Cycle{\A^7\B^3\C^6\D^4}$ and $\Cycle{\A^6\B^4\C^7\D^3}$) follow.
@@ -78,4 +79,44 @@ The next section will explore this phenomenon.
     }
     \caption{Evolution of ``type B'' parameter regions when transitioning to a period adding scenario}
     \label{fig:minrep.path.to.disappearance}
+\end{figure}
+
+\subsubsection{``Type B'' Cycles Just Before Disappearing}
+
+Just before the ``type B'' period region disappears, at $a_L = 2.675, b_L = -0.58\overline{3}$, the cycles that exist there are extremely close to colliding with 3 different borders each.
+\Cref{fig:minrep.just.before.disappearance.cob} shows the cobweb diagram of the cycles.
+Both cycles are so close to each other on branches $f_\A$ and $f_\B$, that we can't tell them apart.
+Even in the vastly enhanced blowup plot in the upper left corner of the figure, both cycles are almost on top of each other.
+At the boundary $d_1$ the cycles split, because of the symmetry the same happens at $d_3$ again.
+At $d_1$, the cycle $\Cycle{\A^7\B^3\C^6\D^4}$ (green) is mapped onto $f_\A$ one last time, while its twin cycle $\Cycle{\A^6\B^4\C^7\D^3}$ (brown) is directly mapped to $f_\B$.
+At $d_3$, the same thing happens, but the two cycles are swapped.
+
+As for the cycles near $d_0$ and $d_2$, the cycle $\Cycle{\A^7\B^3\C^6\D^4}$ is next to $d_2$, while its twin cycle is near $d_0$.
+The collision of the cycles with the borders at the same time corresponds to the right boundary of the ``type B'' period region.
+This follows from \Cref{sec:minrep.bif}, where all bifurcations in this model are listed and explained.
+The two bifurcations are denoted as $\BCB_{d_0}^{\A^6\B^4\C^7\D^3, r}$ and $\BCB_{d_2}^{\A^7\B^3\C^6\D^4, r}$.
+As this boundary does not move as much as the other two still existing boundaries when transitioning to the period adding scenario, this bifurcation is not as important to us now.
+
+The cycles near $d_1$ and $d_3$ correspond to the upper and lower boundaries of the ``type B'' period region.
+Again, the correspondence follows from \Cref{sec:minrep.bif}.
+The upper and lower boundaries of ``type B'' period regions are border collision bifurcations where the two cycles collide with $d_1$ and $d_3$ at the same time, one cycle with one boundary each.
+For the upper boundary, the cycle with more points on the branch $f_\A$ collides with the border $d_3$ from the left, denoted as $\BCB_{d_3}^{\A^7\B^3\C^6\D^4, l}$.
+Its twin cycle collides with $d_1$, also from the left.
+This follows from the symmetry and is denoted as $\BCB_{d_1}^{\A^6\B^4\C^7\D^3, l}$.
+For the lower boundary, now the cycles collide from the right instead of the left, but the borders with which each cycle collides stay the same.
+So for this boundary we have the bifurcations $\BCB_{d_3}^{\A^7\B^3\C^6\D^4, l}$ and $\BCB_{d_1}^{\A^6\B^4\C^7\D^3, r}$.
+These two boundaries get closer to each other as we lower $a_L$ as we can see in \Cref{sec:minrep.adding.disapp.typeB}.
+
+\begin{figure}
+    \centering
+    \subfloat[Periods]{
+        \includegraphics[width=.5 \textwidth]{62_MinimalRepr_Adding/2D_Period_2.675/result.png}
+        \label{fig:minrep.just.before.disappearance.reg}
+    }
+    \subfloat[Cobweb]{
+        \includegraphics[width=.5 \textwidth]{62_MinimalRepr_Adding/Cob_2.675_B/Manual/result.png}
+        \label{fig:minrep.just.before.disappearance.cob}
+    }
+    \label{fig:minrep.just.before.disappearance}
+    \caption{bla}
 \end{figure}
