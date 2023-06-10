@@ -58,6 +58,11 @@ set arrow from X,Y rto dX, dY @ArrowStyleW
 set arrow from X,Y rto dX, dY @ArrowStyle
 set label "P.10.4u" at X+dX,Y+dY offset -5.7, -1.2 front
 
+set label 'A' at -0.366362, 0.128526 point pointtype 7 lc rgb 'red' front 
+set label 'B' at -0.363022, 0.128526 point pointtype 7 lc rgb 'red' front 
+
+set arrow from -0.366362, 0.1285277 to -0.366362, 0.128528 nohead front
+
 plot \
     'Data/0/symbolic_regions.tna' w dots lc rgb 'orange' notitle, \
     'Data/1/symbolic_regions.tna' w dots lc rgb 'purple' notitle, \
