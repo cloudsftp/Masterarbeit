@@ -155,7 +155,7 @@ set yrange [DD:UU]
 
 X=0.1285272
 Y=0.74997
-set label "O21B1b" at X,Y offset 0,0 front
+set label "O21B2b" at X,Y offset 0,0 front
 
 X=0.1285280
 Y=0.75003
@@ -182,9 +182,9 @@ UU= 0.2501
 DD= 0.2499
 set xrange [L:R]
 set yrange [DD:UU]
-H=0.25326
+H=0.25033
 set arrow from BCB1,DD to BCB1,H nohead lt 1 lw 2 dt 2 lc rgb "gray50" front
-set arrow from BCB2,DD to BCB2,H nohead lt 1 lw 2 dt 2 lc rgb "gray50" front
+#set arrow from BCB2,DD to BCB2,H nohead lt 1 lw 2 dt 2 lc rgb "gray50" front
 
 
 X=BCB1
@@ -203,7 +203,7 @@ set label "BCB2b" at X,Y offset -9, 1.0
 
 X=0.1285272
 Y=0.24997
-set label "O21B2a" at X,Y offset 0,0 front
+set label "O21B1a" at X,Y offset 0,0 front
 
 X=0.1285280
 Y=0.25003

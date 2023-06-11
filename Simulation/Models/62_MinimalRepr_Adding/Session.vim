@@ -62,7 +62,7 @@ badd +57 2D_Regions_2.8_add_hor/Manual/Data/0/config.ant
 badd +48 2D_Regions_2.8_add_hor/Manual/Data/1/config.ant
 badd +57 2D_Regions_2.8_add_hor/Manual/Data/2/config.ant
 badd +57 2D_Regions_2.8_add_hor/Manual/Data/3/config.ant
-badd +64 2D_Regions_2.8_add_hor/Manual/plot.plt
+badd +2 2D_Regions_2.8_add_hor/Manual/plot.plt
 badd +17 2D_Regions_2.8_add_hor/Manual/result_fm
 badd +8 Cob_2.8_add_hor_A/config.json
 badd +1 2D_Regions_2.8_add_hor/extras.plt
@@ -79,11 +79,11 @@ badd +26 1D_Bif_2.8_add_hor_AU/Manual/work.plt
 badd +51 1D_Bif_2.8_add_hor_AU/Manual/Data/2/config.ant
 badd +882 1D_Bif_2.8_add_hor_AU/Manual/Data/2/period.tna
 badd +37 1D_Bif_2.8_add_hor_AU/Manual/Data/1/config.ant
-badd +0 1D_Bif_2.8_add_hor_AU/Manual/result_fm
-badd +0 2D_Period_2.8_add_hor/config.json
+badd +1 1D_Bif_2.8_add_hor_AU/Manual/result_fm
+badd +2 2D_Period_2.8_add_hor/config.json
 argglobal
 %argdel
-edit 2D_Period_2.8_add_hor/config.json
+edit 1D_Bif_2.8_add_hor_AU/Manual/work.plt
 let s:save_splitbelow = &splitbelow
 let s:save_splitright = &splitright
 set splitbelow splitright
@@ -113,12 +113,12 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 1 - ((0 * winheight(0) + 32) / 64)
+let s:l = 200 - ((40 * winheight(0) + 32) / 64)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 1
-normal! 0
+keepjumps 200
+normal! 015|
 lcd ~/Projects/Uni/Masterarbeit/Simulation/Models/62_MinimalRepr_Adding
 wincmd w
 argglobal
@@ -126,6 +126,7 @@ if bufexists(fnamemodify("~/Projects/Uni/Masterarbeit/Simulation/Models/62_Minim
 if &buftype ==# 'terminal'
   silent file ~/Projects/Uni/Masterarbeit/Simulation/Models/62_MinimalRepr_Adding/1D_Bif_2.8_add_hor_AU/Manual/result_fm
 endif
+balt ~/Projects/Uni/Masterarbeit/Simulation/Models/62_MinimalRepr_Adding/2D_Period_2.8_add_hor/config.json
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -136,7 +137,7 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 11 - ((10 * winheight(0) + 32) / 64)
+let s:l = 11 - ((9 * winheight(0) + 32) / 64)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
@@ -144,6 +145,7 @@ keepjumps 11
 normal! 038|
 lcd ~/Projects/Uni/Masterarbeit/Simulation/Models/62_MinimalRepr_Adding
 wincmd w
+2wincmd w
 exe 'vert 1resize ' . ((&columns * 136 + 136) / 273)
 exe 'vert 2resize ' . ((&columns * 136 + 136) / 273)
 tabnext 1
