@@ -11,3 +11,8 @@
 
 \psfrag{A}{\hspace*{0.0em}\raisebox{0.5ex}{$A$}}
 \psfrag{B}{\hspace*{0.0em}\raisebox{0.5ex}{$B$}}
+
+\psfrag{P.10.3}{\hspace*{0.0em}\raisebox{0.5ex}{$P_{10}^3$}}
+\psfrag{Q.10.3}{\hspace*{0.0em}\raisebox{0.5ex}{$Q_{10}^3$}}
+\psfrag{P.10.3u}{\hspace*{0.0em}\raisebox{0.5ex}{$P_{10}^3 \bigcup P_{10}^4$}}
+\psfrag{P.10.4}{\hspace*{0.0em}\raisebox{0.5ex}{$P_{10}^4$}}

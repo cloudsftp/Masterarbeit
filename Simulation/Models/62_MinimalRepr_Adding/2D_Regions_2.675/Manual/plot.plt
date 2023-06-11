@@ -30,6 +30,39 @@ set ylabel 'y' offset 4.2, 0 rotate by 90
 set label 'A' at -0.374348, 0.125452 point pointtype 7 lc rgb 'red' front 
 set label 'B' at -0.373758, 0.125452 point pointtype 7 lc rgb 'red' front 
 
+ArrowStyle ="backhead size graph 0.018,15 lt 1 lw 1 lc rgb 'black' front"
+ArrowStyleW="backhead size graph 0.018,15 lt 1 lw 4 lc rgb 'white' front"
+
+# P_10^3
+X=-0.3743
+Y= 0.1254465
+set label "P.10.3" at X,Y front
+
+# P_10^4
+X=-0.3735
+Y= 0.125458
+set label "P.10.4" at X,Y front
+
+# Q_10^3
+X=-0.37377
+Y= 0.1254516
+h=1.0
+dX=-(R-L)*0.05*h
+dY=-(U-D)*0.05*h
+set arrow from X,Y rto dX, dY @ArrowStyleW
+set arrow from X,Y rto dX, dY @ArrowStyle
+set label "Q.10.3" at X+dX,Y+dY offset -4.0,-0.5 front
+
+# P_10^3 U P_10^4
+X=-0.3743
+Y= 0.1254528
+h=1.0
+dX=(R-L)*0.05*h
+dY=(U-D)*0.05*h
+set arrow from X,Y rto dX, dY @ArrowStyleW
+set arrow from X,Y rto dX, dY @ArrowStyle
+set label "P.10.3u" at X+dX,Y+dY offset 0.0,0.5 front
+
 plot \
     'Data/0/symbolic_regions.tna' w dots lc rgb 'orange' notitle, \
     'Data/1/symbolic_regions.tna' w dots lc rgb 'purple' notitle, \

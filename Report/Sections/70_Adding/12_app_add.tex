@@ -1,15 +1,20 @@
 \subsection{Appearance of Period Adding}
 
+\subsubsection{Horizontal}
+
 \begin{figure}
     \centering
     \subfloat[Regions]{
         \includegraphics[width=.3 \textwidth]{62_MinimalRepr_Adding/2D_Regions_2.8_add_hor/Manual/result.png}
     }
-    \subfloat[Point $A$]{
+    \subfloat[At point $A$]{
         \includegraphics[width=.3 \textwidth]{62_MinimalRepr_Adding/Cob_2.8_add_hor_A/Manual/result.png}
         \label{fig:minrep.add.app.hor.A}
     }
-    \subfloat[Point $B$]{B}
+    \subfloat[At point $B$ \todo{replace figure}]{
+        \includegraphics[width=.3 \textwidth]{62_MinimalRepr_Adding/Cob_2.8_add_hor_A/Manual/result.png}
+        \label{fig:minrep.add.app.hor.B}
+    }
     \caption{Appearance of the horizontal period-adding cascade}
 \end{figure}
 
@@ -27,6 +32,7 @@ In \Cref{sec:minrep.adding.disapp.typeB} we noted, that the asymmetry of the ``t
 Since this maps the cycle that starts further left to the right side of the other cycle.
 \todo{
     explain better: diff number of points on branches B and D each (type B) therefore reordering necessary for asymm.
+    type b also: split at $d_1, d_3$ as well as $d_2$ and $d_0$, here only $d_1, d_3$ (two boundaries).
     here same number of points so there may be no reordering for asymm
 }
 This is not the case for the cycles at this point, both cycles start at a point on the branch $f_\A$ with a positive slope and therefore keep the same order.
@@ -49,3 +55,27 @@ Both collide at the same time and from the left.
 Here, the cycle with more points on branch $f_\A$, $\Cycle{\A^7\B^4\C^6\D^4}$, also collides with the border $d_1$ and its twin, $\Cycle{\A^6\B^4\C^7\D^4}$, collides with the border $d_3$.
 Both collisions happen at the same time from the left.
 Therefore the bifurcations are $\BCB_{d_1}^{\A^7\B^4\C^6\D^4, l}$ and $\BCB_{d_1}^{\A^6\B^4\C^7\D^4, l}$.
+
+\subsubsection{Vertical}
+
+\begin{figure}
+    \centering
+    \subfloat[Regions before period-adding]{
+        \includegraphics[width=.4 \textwidth]{62_MinimalRepr_Adding/2D_Regions_2.8_add_vert/Manual/result.png}
+        \label{fig:minrep.add.app.vert.reg.before}
+    }
+    \subfloat[Regions with period-adding]{
+        \includegraphics[width=.4 \textwidth]{62_MinimalRepr_Adding/2D_Regions_2.65_add_vert/Manual/result.png}
+        \label{fig:minrep.add.app.vert.reg.with}
+    } \\
+    \subfloat[At point $A$ \todo{replace figure}]{
+        \includegraphics[width=.4 \textwidth]{62_MinimalRepr_Adding/Cob_2.8_add_vert_A/Manual/result.png}
+        \label{fig:minrep.add.app.vert.cob.A}
+    }
+    \subfloat[At point $B$]{
+        \includegraphics[width=.4 \textwidth]{62_MinimalRepr_Adding/Cob_2.65_add_vert_B/Manual/result.png}
+        \label{fig:minrep.add.app.vert.cob.B}
+    }
+    \caption{Appearance of the vertical period-adding cascade}
+    \label{fig:minrep.add.app.vert}
+\end{figure}

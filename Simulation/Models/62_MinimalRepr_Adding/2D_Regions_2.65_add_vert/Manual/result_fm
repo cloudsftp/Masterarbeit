@@ -9,8 +9,8 @@
 \psfrag{x}{\hspace*{0.0em}\raisebox{0.5ex}{$p_x$}}
 \psfrag{y}{\hspace*{0.0em}\raisebox{0.5ex}{$p_y$}}
 
-\psfrag{A}{\hspace*{0.0em}\raisebox{0.5ex}{$A$}}
+\psfrag{B}{\hspace*{0.0em}\raisebox{0.5ex}{$B$}}
 
 \psfrag{P.10.3}{\hspace*{0.0em}\raisebox{0.5ex}{$P_{10}^3$}}
 \psfrag{P.11.4}{\hspace*{0.0em}\raisebox{0.5ex}{$P_{11}^4$}}
-\psfrag{P.10.3u}{\hspace*{0.0em}\raisebox{0.5ex}{$P_{10}^3 \bigcup P_{11}^4$}}
+\psfrag{P.10.3+}{\hspace*{0.0em}\raisebox{0.5ex}{$P_{10}^3 \oplus P_{11}^4$}}
