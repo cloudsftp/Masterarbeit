@@ -60,11 +60,11 @@ Therefore the bifurcations are $\BCB_{d_1}^{\A^7\B^4\C^6\D^4, l}$ and $\BCB_{d_1
 
 \begin{figure}
     \centering
-    \subfloat[Regions before period-adding]{
+    \subfloat[Regions scan before period-adding\\at $a_L = 2.8, b_L = -0.1$]{
         \includegraphics[width=.4 \textwidth]{62_MinimalRepr_Adding/2D_Regions_2.8_add_vert/Manual/result.png}
         \label{fig:minrep.add.app.vert.reg.before}
     }
-    \subfloat[Regions with period-adding]{
+    \subfloat[Regions with period-adding\\at $a_L = 2.65, b_L = -0.05$]{
         \includegraphics[width=.4 \textwidth]{62_MinimalRepr_Adding/2D_Regions_2.65_add_vert/Manual/result.png}
         \label{fig:minrep.add.app.vert.reg.with}
     } \\
@@ -79,3 +79,19 @@ Therefore the bifurcations are $\BCB_{d_1}^{\A^7\B^4\C^6\D^4, l}$ and $\BCB_{d_1
     \caption{Appearance of the vertical period-adding cascade}
     \label{fig:minrep.add.app.vert}
 \end{figure}
+
+For the vertical period-adding cascade, it is similar.
+This time one parameter region scan is not enough because the boundaries of $P_{10}^3$ and $P_{11}^4$ are parallel and therefor $P_{10}^3 \bigcup P_{11}^4$ and $P_{10}^3 \oplus P_{11}^4$ can't exist at the same parameter values of $a_L$ and $b_L$.
+\Cref{fig:minrep.add.app.vert.reg.before} shows the situation before the vertical period-adding cascade appears.
+Here we can see the overlap of the two ``type A'' parameter regions $P_{10}^3$ and $P_{11}^4$.
+When changing the parameters a little, we get \Cref{fig:minrep.add.app.vert.reg.with}.
+Here the two ``type A'' parameter regions drifted apart and in between them, there is the parameter region $P_{10}^3 \oplus P_{11}^4$.
+The notation hints at the period-adding-like nature of this parameter region.
+
+As with the horizontal period-adding cascade, the cycles here are asymmetrical, but not of ``type B''.
+\Cref{fig:minrep.add.app.vert.cob.B} shows the cycles at point $B$, in the period adding cascade, $\Cycle{\A^7\B^3\C^7\D^4}$ and its twin $\Cycle{\A^7\B^4\C^7\D^3}$.
+Again, interpreted in the context of the halved model, these cycles are both $\Cycle{\L^7\R^3\L^7\R^4} \equiv \Cycle{\L^7\R^4\L^7\R^3}$.
+But this time, the splits are not at borders $d_1$ and $d_3$, but at $d_0$ and $d_2$.
+\todo{odd number of splits => no neg slope needed for asymmetry. odd number => needed (reorders cycles)}
+
+\todo{bifurcations at boundaries of first stage of period adding cascade. They involve $d_2$ and $d_0$}
