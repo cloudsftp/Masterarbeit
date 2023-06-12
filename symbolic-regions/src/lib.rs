@@ -9,7 +9,10 @@ pub fn process_file(filename: &str) {
     let symbols = vec!['A', 'B', 'C', 'D'];
 
     let mut current = SymbolicSequence::empty(&symbols);
-    for line in contents.lines() {
+    for line in contents
+        .lines()
+        .filter(|l| !l.starts_with("#") && !l.is_empty())
+    {
         let sequence = SymbolicSequence::from(line, &symbols);
         if sequence != current {
             current = sequence;

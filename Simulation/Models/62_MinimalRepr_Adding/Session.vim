@@ -20,7 +20,7 @@ badd +14 2D_Regions_2.725/Manual/result_fm
 badd +30 2D_Period_2.7/config.json
 badd +9 Cob_2.69_B/config.json
 badd +7 2D_Period_2.69/config.json
-badd +49 model.cpp
+badd +48 model.cpp
 badd +31 2D_Period_2.675/config.json
 badd +67 Cob_2.675_B/Manual/plot.plt
 badd +10 Cob_2.675_B/Manual/configB1.ant
@@ -35,7 +35,7 @@ badd +57 2D_Regions_2.675/Manual/Data/0/config.ant
 badd +10 2D_Regions_2.675/Manual/Data/1/config.ant
 badd +10 2D_Regions_2.675/Manual/Data/2/config.ant
 badd +10 2D_Regions_2.675/Manual/Data/3/config.ant
-badd +51 2D_Regions_2.675/Manual/plot.plt
+badd +43 2D_Regions_2.675/Manual/plot.plt
 badd +18 2D_Regions_2.675/Manual/result_fm
 badd +1 ~/Projects/Uni/Masterarbeit/Simulation/Models/60_MinimalRepr/2D_Period_Whole_Lotta_Points/extras.plt
 badd +10 Cob_2.675_A/config.json
@@ -85,12 +85,12 @@ badd +8 2D_Regions_2.65_add_hor/config.json
 badd +1 1D_Bif_2.8_add_hor_AU/result_fm
 badd +30 2D_Regions_2.65_add_vert/config.json
 badd +6 2D_Regions_2.65_add_vert/Manual/Data/0/config.ant
-badd +33 2D_Regions_2.65_add_vert/Manual/plot.plt
+badd +28 2D_Regions_2.65_add_vert/Manual/plot.plt
 badd +57 2D_Regions_2.65_add_vert/Manual/Data/1/config.ant
 badd +49 2D_Regions_2.65_add_vert/Manual/Data/2/config.ant
 badd +48 2D_Regions_2.65_add_vert/Manual/Data/3/config.ant
 badd +14 2D_Regions_2.65_add_vert/Manual/result_fm
-badd +0 ~/Projects/Uni/Masterarbeit/Simulation/Models/60_MinimalRepr/2D_Period_Whole_Lotta_Points/result_fm
+badd +1 ~/Projects/Uni/Masterarbeit/Simulation/Models/60_MinimalRepr/2D_Period_Whole_Lotta_Points/result_fm
 badd +10 Cob_2.65_add_vert_B/config.json
 badd +6 Cob_2.65_add_vert_B/Manual/configB1.ant
 badd +31 Cob_2.65_add_vert_B/Manual/configB2.ant
@@ -113,9 +113,28 @@ badd +1 2D_Regions_2.65/Manual/plot.plt
 badd +1 2D_Regions_2.675/Manual/Makefile
 badd +1 2D_Regions_2.8/Manual/plot.plt
 badd +1 2D_Regions_2.65_add_vert/Manual/result.eps
+badd +40 1D_Bif_2.65_add_vert_BR/config.json
+badd +39 1D_Bif_2.65_add_vert_BR/Manual/work.plt
+badd +46 1D_Bif_2.65_add_vert_BR/Manual/Data/0/config.ant
+badd +171 1D_Bif_2.65_add_vert_BR/Manual/Data/0/bif_cyclic.tna
+badd +795 1D_Bif_2.65_add_vert_BR/Manual/Data/0/period.tna
+badd +114 ~/Projects/Uni/Masterarbeit/Simulation/Models/60_MinimalRepr/1D_Bif_LFR16/Manual/work.plt
+badd +48 1D_Bif_2.65_add_vert_BR/Manual/Data/1/config.ant
+badd +48 1D_Bif_2.65_add_vert_BR/Manual/Data/2/config.ant
+badd +818 1D_Bif_2.65_add_vert_BR/Manual/Data/2/period.tna
+badd +1 1D_Bif_2.65_add_vert_BR/Manual/Data/2/bif_cyclic.tna
+badd +3 1D_Bif_2.65_add_vert_BR/Manual/Data/2/periodic_symbolic_sequence.tna
+badd +1 1D_Bif_2.65_add_vert_BR/Manual/Data/2/1.tna
+badd +67 ~/Projects/Uni/Masterarbeit/symbolic-regions/src/symbolic.rs
+badd +20 ~/Projects/Uni/Masterarbeit/symbolic-regions/src/main.rs
+badd +15 ~/Projects/Uni/Masterarbeit/symbolic-regions/src/lib.rs
+badd +2 1D_Bif_2.65_add_vert_BR/Manual/Data/2/symbolic_regions.tna
+badd +37 1D_Bif_2.65_add_vert_BR/Manual/Data/1/bif_cyclic.tna
+badd +31 1D_Bif_2.65_add_vert_BR/Manual/result_fm
+badd +0 1D_Bif_2.65_add_vert_BR/Manual/Data/3/config.ant
 argglobal
 %argdel
-edit 2D_Regions_2.675/Manual/plot.plt
+edit 1D_Bif_2.65_add_vert_BR/Manual/work.plt
 let s:save_splitbelow = &splitbelow
 let s:save_splitright = &splitright
 set splitbelow splitright
@@ -145,18 +164,18 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 1 - ((0 * winheight(0) + 32) / 64)
+let s:l = 243 - ((59 * winheight(0) + 32) / 64)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 1
-normal! 0
+keepjumps 243
+normal! 05|
 lcd ~/Projects/Uni/Masterarbeit/Simulation/Models/62_MinimalRepr_Adding
 wincmd w
 argglobal
-if bufexists(fnamemodify("~/Projects/Uni/Masterarbeit/Simulation/Models/62_MinimalRepr_Adding/2D_Regions_2.65_add_vert/Manual/plot.plt", ":p")) | buffer ~/Projects/Uni/Masterarbeit/Simulation/Models/62_MinimalRepr_Adding/2D_Regions_2.65_add_vert/Manual/plot.plt | else | edit ~/Projects/Uni/Masterarbeit/Simulation/Models/62_MinimalRepr_Adding/2D_Regions_2.65_add_vert/Manual/plot.plt | endif
+if bufexists(fnamemodify("~/Projects/Uni/Masterarbeit/Simulation/Models/62_MinimalRepr_Adding/1D_Bif_2.65_add_vert_BR/Manual/Data/3/config.ant", ":p")) | buffer ~/Projects/Uni/Masterarbeit/Simulation/Models/62_MinimalRepr_Adding/1D_Bif_2.65_add_vert_BR/Manual/Data/3/config.ant | else | edit ~/Projects/Uni/Masterarbeit/Simulation/Models/62_MinimalRepr_Adding/1D_Bif_2.65_add_vert_BR/Manual/Data/3/config.ant | endif
 if &buftype ==# 'terminal'
-  silent file ~/Projects/Uni/Masterarbeit/Simulation/Models/62_MinimalRepr_Adding/2D_Regions_2.65_add_vert/Manual/plot.plt
+  silent file ~/Projects/Uni/Masterarbeit/Simulation/Models/62_MinimalRepr_Adding/1D_Bif_2.65_add_vert_BR/Manual/Data/3/config.ant
 endif
 setlocal fdm=manual
 setlocal fde=0
@@ -168,14 +187,15 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 43 - ((42 * winheight(0) + 32) / 64)
+let s:l = 57 - ((55 * winheight(0) + 32) / 64)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 43
+keepjumps 57
 normal! 0
 lcd ~/Projects/Uni/Masterarbeit/Simulation/Models/62_MinimalRepr_Adding
 wincmd w
+2wincmd w
 exe 'vert 1resize ' . ((&columns * 136 + 136) / 273)
 exe 'vert 2resize ' . ((&columns * 136 + 136) / 273)
 tabnext 1

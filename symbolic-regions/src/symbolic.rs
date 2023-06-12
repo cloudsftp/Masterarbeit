@@ -1,3 +1,5 @@
+use std::println;
+
 #[derive(Debug, Eq)]
 pub struct SymbolicSequence<'a> {
     symbols: &'a Vec<char>,
@@ -52,7 +54,10 @@ impl<'a> SymbolicSequence<'a> {
             .iter()
             .filter(|e| e.0 == 0)
             .max_by_key(|e| e.1)
-            .unwrap()
+            .expect(&format!(
+                "could not find max of sequence {:?}",
+                self.sequence
+            ))
             .1;
         let rot = self.sequence.iter().position(|e| e.1 == max).unwrap();
 
