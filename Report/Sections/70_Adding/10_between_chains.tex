@@ -27,6 +27,32 @@ The meaning of these is explored in a later section, the next section will focus
     \label{fig:minrep.adding1.overview}
 \end{figure}
 
-\input{Sections/70_Adding/10_0_halved_motivation.tex}
+\subsubsection{What Happens on the Path to Period-adding?}
+
+\begin{enumerate}
+    \item \begin{itemize}
+              \item ``type A'' parameter regions stop overlapping with the ``type A'' period regions above them (lower period, same number of points on branches $f_\B$ and $f_\D$)
+              \item Point where boundaries cross. On the left: no overlap, period-adding. On the right: overlap
+              \item This point moves right, until no overlap exists anymore
+          \end{itemize}
+    \item \begin{itemize}
+              \item ``type A'' parameter regions start overlapping with the ``type A'' period regions above right them (same period)
+              \item Point where boundaries cross. On the left: overlap. On the right: no overlap, ``type B'' parameter region
+              \item This point moves right, until no ``type B'' parameter region exists anymore
+          \end{itemize}
+    \item \begin{itemize}
+              \item ``type A'' parameter regions stop overlapping with the ``type A'' parameter regions right to them (higher period, one more point on branches $f_\B$ and $f_\D$)
+              \item This seems to happen in an instant
+          \end{itemize}
+\end{enumerate}
+
+Timeline:
+On the parameter line outlined above, the processes happen as follows.
+First, the process (i) starts.
+While it is happening, the process (ii) starts and finishes, before (i) finishes.
+Lastly the process (iii) starts and finishes directly.
+After all that, process (i) is the last to complete.
+
 \input{Sections/70_Adding/11_disapp_b.tex}
 \input{Sections/70_Adding/12_app_add.tex}
+\input{Sections/70_Adding/15_0_halved_motivation.tex}

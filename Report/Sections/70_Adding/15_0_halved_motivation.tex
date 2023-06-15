@@ -9,7 +9,11 @@
     \subfloat[The halved model]{
         \includegraphics[width=.4 \textwidth]{63_MinimalRepr_Adding_Halved/2D_Period_1_Zoomed/result.png}
     }
-    \caption{2D period scans of the same model in two versions}
+    \caption{
+        2D period scans of a period adding regions of the same model in two different versions.
+        On the left, is the full version of the model and on the right, is the halved version of the model.
+        The red markers between the regions $P_{10}^4$ and $P_{10}^4 \oplus P_9^4$ in both pictures, is the parameter range used for the 1D scans in \Cref{fig:minrep.adding1.motivation.halved.1d.period}.
+    }
     \label{fig:minrep.adding1.corner.period}
 \end{figure}
 
@@ -22,7 +26,12 @@
     \subfloat[The halved model]{
         \includegraphics[width=.4 \textwidth]{63_MinimalRepr_Adding_Halved/1D_Period_1_add_hor_D1/result.png}
     }
-    \caption{1D period scans of the same model in two different versions. The parameter range is marked red in \Cref{fig:minrep.adding1.corner.period}}
+    \caption{
+        1D period scans of a period-adding cascade of the same model in two different versions.
+        On the left, is the full version of the model and on the right, is the halved version of the model.
+        The parameter range is the same in both models and is marked red in \Cref{fig:minrep.adding1.corner.period}.
+    }
+    \label{fig:minrep.adding1.motivation.halved.1d.period}
 \end{figure}
 
 Problems with \Cref{fig:minrep.adding1.motivation.halved.1d.period.full}:
@@ -45,20 +54,20 @@ This cycle manifests as $\sigma\rho = \A^5\B^4\C^6\D^4\A^6\B^4\C^5\D^4\A^6\B^4\C
 We can get the manifestation of a cycle from the halved system in the full system by ``unrolling'' the cycle.
 For this, we write down the cycle of the halved model three times in a row.
 For our cycle $\sigma\rho$ this would be $\L^6\R^4\L^6\R^4\L^5\R^4|\L^6\R^4\L^6\R^4\L^5\R^4|\L^6\R^4\L^6\R^4\L^5\R^4$.
-Then we make pairs on rotations until the next pair would start at the same point, the fisrt pair started in the original cycle.
+Then we make pairs on rotations until the next pair would start at the same point, the first pair started in the original cycle.
 This step has to be repeated with every rotation of the original cycle as the starting position once.
 For the first iteration, we start with the first rotation.
 In our example, we would get the pairs $\L^6\R^4\L^6\R^4$, $\L^5\R^4\L^6\R^5$, and $\L^6\R^4\L^5\R^4$.
 Here we stop, because the next pair would start at the beginning of the original cycle in the halved model.
 For each pair, we replace the first $\L$ by $\A$, the first $\R$ by $\B$, the second $\L$ by $\C$, and the second $\R$ by $\D$ and put them toghether again.
-In our example we get $\A^6\B^4\C^6\D^4\A^5\B^4\C^6\D^4\A^6\B^4\C^5\D^4$, which is exactly what we got in the simulation.
+In our example, we get $\A^6\B^4\C^6\D^4\A^5\B^4\C^6\D^4\A^6\B^4\C^5\D^4$, which is exactly what we got in the simulation.
 
 For the second iteration, we would get the pairs $\L^6\R^4\L^5\R^4$, $\L^6\R^4\L^6\R^4$, and $\L^5\R^4\L^6\R^4$.
 This results in $\A^6\B^4\C^5\D^4\A^6\B^4\C^6\D^4\A^5\B^4\C^6\D^4$, which is equivalent to the result of the last paragraph by rotating it one complete rotation in the full model.
 The third iteration also produces the same cycle rotated one time and is omitted here.
 
 The inverse, ``rolling'' is easier.
-We just write down the cycle in the full model, for example $\A^6\B^4\C^6\D^4$.
+We just write down the cycle in the full model, for example, $\A^6\B^4\C^6\D^4$.
 Then we replace $\A$ and $\C$ by $\L$, and $\B$ and $\D$ by $\R$.
 In our example, we get $\L^6\R^4\L^6\R^4$.
 Last, we need to remove redundancy.
@@ -68,7 +77,7 @@ In our example, the cycle repeats itself twice, so we remove one half and get th
 
 Now equipped with this tool, we can try to explain the cycle at $\sigma^2\rho$.
 \todo{
-1.        halved model adding
-2.        calculate manifestation
-3.        show it agrees with the observed reality
+    1. halved model adding
+    2. calculate manifestation
+    3. show it agrees with the observed reality
 }
