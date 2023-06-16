@@ -1,16 +1,24 @@
-use std::borrow::BorrowMut;
+use iter_tools::Itertools;
 
 use crate::cycles::{FullCycle, HalvedCycle, Sequence};
 
-impl From<HalvedCycle> for FullCycle {
+impl From<HalvedCycle> for Vec<FullCycle> {
     fn from(value: HalvedCycle) -> Self {
         let og_len = value.sequence.len();
         let mut seq = value.sequence.clone();
         seq.extend_from_within(..);
         seq.extend_from_within(..seq.len() / 2);
 
-        let new_seq = translate_to_full_from_index(&seq, 0, og_len);
-        FullCycle { sequence: new_seq }
+        let sequences = (0..og_len)
+            .filter(|i| i % 2 == 0)
+            .map(|i| translate_to_full_from_index(&seq, i, og_len))
+            .unique();
+
+        let mut cycles = Vec::with_capacity(og_len / 2 + 1);
+        for sequence in sequences {
+            cycles.push(FullCycle { sequence })
+        }
+        cycles
     }
 }
 
@@ -18,9 +26,9 @@ fn translate_to_full_from_index(seq: &Sequence, start: usize, og_len: usize) -> 
     let mut seq = seq[start..start + 2 * og_len].to_vec();
 
     for i in 0..seq.len() {
-        let c = (i - start) % 4;
+        let c = i % 4;
         if c < 2 {
-            assert_eq!(seq[i].0, c);
+            assert_eq!(seq[i].0, c); // TODO: replace with error
         } else {
             seq[i].0 = c;
         }
@@ -86,13 +94,26 @@ mod test {
         let halved = HalvedCycle {
             sequence: vec![(0, 1), (1, 2)],
         };
-        let full: FullCycle = halved.into();
-        assert_eq!(full.sequence, vec![(0, 1), (1, 2), (2, 1), (3, 2)]);
+        let full: Vec<FullCycle> = halved.into();
+        assert_eq!(full.len(), 1);
+        assert_eq!(full[0].sequence, vec![(0, 1), (1, 2), (2, 1), (3, 2)]);
 
         let halved = HalvedCycle {
-            sequence: vec![(0, 1), (1, 2), (0, 5), (1, 7)],
+            sequence: vec![(0, 1), (1, 2), (0, 1), (1, 2)],
         };
-        let full: FullCycle = halved.into();
-        assert_eq!(full.sequence, vec![(0, 1), (1, 2), (2, 5), (3, 7)]);
+        let full: Vec<FullCycle> = halved.into();
+        assert_eq!(full.len(), 1);
+        assert_eq!(full[0].sequence, vec![(0, 1), (1, 2), (2, 1), (3, 2)]);
+    }
+
+    #[test]
+    fn to_full_multi() {
+        let halved = HalvedCycle {
+            sequence: vec![(0, 1), (1, 2), (0, 2), (1, 2)],
+        };
+        let full: Vec<FullCycle> = halved.into();
+        assert_eq!(full.len(), 2);
+        assert_eq!(full[0].sequence, vec![(0, 1), (1, 2), (2, 2), (3, 2)]);
+        assert_eq!(full[1].sequence, vec![(0, 2), (1, 2), (2, 1), (3, 2)]);
     }
 }
