@@ -4,8 +4,8 @@ const SYMBOLS_FULL: [char; 4] = ['A', 'B', 'C', 'D'];
 const SYMBOLS_HALVED: [char; 2] = ['L', 'R'];
 
 #[derive(Debug, Eq)]
-struct FullCycle {
-    sequence: Sequence,
+pub struct FullCycle {
+    pub sequence: Sequence,
 }
 
 impl PartialEq for FullCycle {
@@ -33,8 +33,8 @@ impl Display for FullCycle {
 }
 
 #[derive(Debug, Eq)]
-struct HalvedCycle {
-    sequence: Sequence,
+pub struct HalvedCycle {
+    pub sequence: Sequence,
 }
 
 impl PartialEq for HalvedCycle {
@@ -61,7 +61,7 @@ impl Display for HalvedCycle {
     }
 }
 
-type Sequence = Vec<(usize, usize)>;
+pub type Sequence = Vec<(usize, usize)>;
 
 trait RotationEquivalence {
     fn rotation_equals(&self, other: &Self) -> bool;
