@@ -1,7 +1,7 @@
 use std::fmt::{Display, Write};
 
-const SYMBOLS_FULL: [char; 4] = ['A', 'B', 'C', 'D'];
-const SYMBOLS_HALVED: [char; 2] = ['L', 'R'];
+pub const SYMBOLS_FULL: [char; 4] = ['A', 'B', 'C', 'D'];
+pub const SYMBOLS_HALVED: [char; 2] = ['L', 'R'];
 
 #[derive(Debug, Eq)]
 pub struct FullCycle {
@@ -16,19 +16,7 @@ impl PartialEq for FullCycle {
 
 impl Display for FullCycle {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let symbols = SYMBOLS_FULL;
-        for (i, p) in self.sequence.iter().enumerate() {
-            let sym = symbols.get(p.0).ok_or(core::fmt::Error)?;
-            f.write_fmt(format_args!("{} {}", sym, p.1))?;
-
-            if i < self.sequence.len() - 1 {
-                f.write_str("  ")?;
-                if p.0 == symbols.len() - 1 {
-                    f.write_char(' ')?;
-                }
-            }
-        }
-        Ok(())
+        write_sequence(&self.sequence, &SYMBOLS_FULL, f)
     }
 }
 
@@ -45,19 +33,7 @@ impl PartialEq for HalvedCycle {
 
 impl Display for HalvedCycle {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let symbols = SYMBOLS_HALVED;
-        for (i, p) in self.sequence.iter().enumerate() {
-            let sym = symbols.get(p.0).ok_or(core::fmt::Error)?;
-            f.write_fmt(format_args!("{} {}", sym, p.1))?;
-
-            if i < self.sequence.len() - 1 {
-                f.write_str("  ")?;
-                if p.0 == symbols.len() - 1 {
-                    f.write_char(' ')?;
-                }
-            }
-        }
-        Ok(())
+        write_sequence(&self.sequence, &SYMBOLS_HALVED, f)
     }
 }
 
@@ -75,6 +51,25 @@ impl RotationEquivalence for Sequence {
             &s == other
         })
     }
+}
+
+fn write_sequence(
+    sequence: &Sequence,
+    symbols: &[char],
+    f: &mut std::fmt::Formatter,
+) -> std::fmt::Result {
+    for (i, p) in sequence.iter().enumerate() {
+        let sym = symbols.get(p.0).ok_or(core::fmt::Error)?;
+        f.write_fmt(format_args!("{} {}", sym, p.1))?;
+
+        if i < sequence.len() - 1 {
+            f.write_str("  ")?;
+            if p.0 == symbols.len() - 1 {
+                f.write_char(' ')?;
+            }
+        }
+    }
+    Ok(())
 }
 
 #[cfg(test)]
