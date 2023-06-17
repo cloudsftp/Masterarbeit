@@ -58,7 +58,6 @@ fn parse_number_stack(number_stack: &mut Vec<char>) -> usize {
 
 #[cfg(test)]
 mod test {
-
     use super::*;
 
     #[test]
@@ -67,13 +66,23 @@ mod test {
             HalvedCycle {
                 sequence: vec![(0, 1), (1, 2)]
             },
-            "L1R2".into()
+            "L1R2".to_string().into()
         );
         assert_eq!(
             HalvedCycle {
                 sequence: vec![(0, 1), (1, 2)]
             },
-            "L  . 1    A     R  2        t".into()
+            "L  . 1    A     R  2        t".to_string().into()
+        );
+    }
+
+    #[test]
+    fn parse_halved_double_digits() {
+        assert_eq!(
+            HalvedCycle {
+                sequence: vec![(0, 1), (1, 20)]
+            },
+            "L1R20".to_string().into()
         );
     }
 }

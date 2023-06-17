@@ -1,40 +1,54 @@
-use iter_tools::Itertools;
+use anyhow::{anyhow, Error};
 
 use crate::cycles::{FullCycle, HalvedCycle, Sequence};
 
-impl From<HalvedCycle> for Vec<FullCycle> {
-    fn from(value: HalvedCycle) -> Self {
+impl TryFrom<HalvedCycle> for Vec<FullCycle> {
+    type Error = Error;
+    fn try_from(value: HalvedCycle) -> Result<Self, Self::Error> {
         let og_len = value.sequence.len();
         let mut seq = value.sequence.clone();
         seq.extend_from_within(..);
         seq.extend_from_within(..seq.len() / 2);
 
-        let sequences = (0..og_len)
+        let sequences: Result<Vec<Sequence>, Error> = (0..og_len)
             .filter(|i| i % 2 == 0)
             .map(|i| translate_to_full_from_index(&seq, i, og_len))
-            .unique();
+            .collect();
 
-        let mut cycles = Vec::with_capacity(og_len / 2 + 1);
-        for sequence in sequences {
-            cycles.push(FullCycle { sequence })
+        let cycles = sequences?.into_iter().map(|s| FullCycle { sequence: s });
+        let mut unique_cycles = Vec::with_capacity(cycles.len());
+        for cycle in cycles {
+            let unique = &unique_cycles.iter().all(|u| u != &cycle);
+            if *unique {
+                unique_cycles.push(cycle);
+            }
         }
-        cycles
+
+        Ok(unique_cycles)
     }
 }
 
-fn translate_to_full_from_index(seq: &Sequence, start: usize, og_len: usize) -> Sequence {
+fn translate_to_full_from_index(
+    seq: &Sequence,
+    start: usize,
+    og_len: usize,
+) -> Result<Sequence, Error> {
     let mut seq = seq[start..start + 2 * og_len].to_vec();
 
     for i in 0..seq.len() {
         let c = i % 4;
-        if c < 2 {
-            assert_eq!(seq[i].0, c); // TODO: replace with error
-        } else {
+        if c < 2 && seq[i].0 != c {
+            return Err(anyhow!("expected symbol {}, got {}", c, seq[i].0));
+        }
+        if c >= 2 {
+            if seq[i].0 + 2 != c {
+                return Err(anyhow!("expected symbol {}, got {}", c - 2, seq[i].0));
+            }
             seq[i].0 = c;
         }
     }
 
-    smallest_cycle(seq)
+    Ok(smallest_cycle(seq))
 }
 
 impl From<FullCycle> for HalvedCycle {
@@ -94,14 +108,14 @@ mod test {
         let halved = HalvedCycle {
             sequence: vec![(0, 1), (1, 2)],
         };
-        let full: Vec<FullCycle> = halved.into();
+        let full: Vec<FullCycle> = halved.try_into().expect("failed");
         assert_eq!(full.len(), 1);
         assert_eq!(full[0].sequence, vec![(0, 1), (1, 2), (2, 1), (3, 2)]);
 
         let halved = HalvedCycle {
             sequence: vec![(0, 1), (1, 2), (0, 1), (1, 2)],
         };
-        let full: Vec<FullCycle> = halved.into();
+        let full: Vec<FullCycle> = halved.try_into().expect("failed");
         assert_eq!(full.len(), 1);
         assert_eq!(full[0].sequence, vec![(0, 1), (1, 2), (2, 1), (3, 2)]);
     }
@@ -111,7 +125,7 @@ mod test {
         let halved = HalvedCycle {
             sequence: vec![(0, 1), (1, 2), (0, 2), (1, 2)],
         };
-        let full: Vec<FullCycle> = halved.into();
+        let full: Vec<FullCycle> = halved.try_into().expect("failed");
         assert_eq!(full.len(), 2);
         assert_eq!(full[0].sequence, vec![(0, 1), (1, 2), (2, 2), (3, 2)]);
         assert_eq!(full[1].sequence, vec![(0, 2), (1, 2), (2, 1), (3, 2)]);
