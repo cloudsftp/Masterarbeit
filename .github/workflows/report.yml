@@ -21,7 +21,6 @@ jobs:
       - name: Compile LaTeX
         uses: xu-cheng/latex-action@v2
         with:
-          compiler: pdflatex
           work_in_root_file_dir: true
           root_file: "${{ env.DOCUMENT_NAME }}.tex"
           
