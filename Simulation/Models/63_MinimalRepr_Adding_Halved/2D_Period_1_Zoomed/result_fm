@@ -1,0 +1,17 @@
+% fmopt: width=8cm
+
+\psfrag{L}{\hspace*{0.3em}\raisebox{0.5ex}{$-0.376$}}
+\psfrag{R}{\hspace*{-3.2em}\raisebox{0.5ex}{$-0.3725$}}
+
+\psfrag{D}{\hspace*{0.5em}\raisebox{0.5ex}{$0.0902$}}
+\psfrag{U}{\hspace*{-2.5em}\raisebox{0.5ex}{$0.09065$}}
+
+\psfrag{x}{\hspace*{0.0em}\raisebox{0.5ex}{$p_x$}}
+\psfrag{y}{\hspace*{0.0em}\raisebox{0.5ex}{$p_y$}}
+
+\psfrag{P.9.3}{\hspace*{0.0em}\raisebox{0.5ex}{\color[RGB]{255, 110, 0}{$P_{9}^3$}}}
+\psfrag{P.10.4}{\hspace*{0.0em}\raisebox{0.5ex}{\color[RGB]{255, 110, 0}{$P_{10}^4$}}}
+\psfrag{P.9.3+}{\hspace*{0.0em}\raisebox{0.5ex}{\color[RGB]{255, 110, 0}{$P_{9}^3 \oplus P_{10}^4$}}}
+
+\psfrag{P.9.4}{\hspace*{0.0em}\raisebox{0.5ex}{\color[RGB]{255, 110, 0}{$P_{9}^4$}}}
+\psfrag{P.9.4+}{\hspace*{0.0em}\raisebox{0.5ex}{\color[RGB]{255, 110, 0}{$P_{10}^4 \oplus P_{9}^4$}}}

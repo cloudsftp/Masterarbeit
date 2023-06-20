@@ -114,11 +114,49 @@ bool invertor (const Array<real_t>& currentState,
   return true;
 }
 
+bool symbolic(
+    const Array<real_t>& currentState,
+    const Array<real_t>& parameters,
+    string& RHS
+) {
+  real_t xk, Kp = 1;
+  real_t et;
+  real_t tk, tk1, tk2;
+  real_t z, z_0, z_k;
+  int StepAlg;
+
+  xk = currentState[0];
+
+  if (xk < 3.0 / 2 * Pi and xk > Pi / 2) {
+    Kp = -1;
+  }
+
+  z_k = half(xk, Kp, 1, parameters);
+  z_0 = half(xk, Kp, 2, parameters);
+  
+  if (Kp == 1) {
+    if (z_k < z_0) {
+      RHS = "D";
+    } else {
+      RHS = "A";
+    }
+  } else {
+    if (z_k < z_0) {
+      RHS = "B";
+    } else {
+      RHS = "C";
+    }
+  }
+
+  return true;
+}
+
 extern "C"
 {
   void connectSystem ()
   {
     MapProxy::systemFunction = invertor;
+    MapProxy::symbolicFunction = symbolic;
   }
 
 }

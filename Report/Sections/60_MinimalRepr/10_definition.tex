@@ -1,0 +1,98 @@
+\section{Model Definition}
+
+The minimal model, which shows the same bifurcation phenomenon as the original model, is fairly simple.
+Now there are no implicit equations and the model can be defined by the following explicit equations.
+This section defines this model in two parts.
+First, it defines all the explicit equations of the model which has some internal parameters.
+Then it discusses the definitions of the external parameters to achieve the desired behavior.
+Furthermore, this section then will discuss the effects of the parameters on the model function and compare it to the parameter effects in the original model.
+
+\subsection{The Model Equations}
+
+The model maps $x \mapsto f(x) \mod 1$ where \Crefrange{equ:final.def.f}{equ:final.def.r} define $f$.
+\begin{align}
+    f(x) & = \begin{cases}
+                 g(x)                                        & \text{ if } x < \frac{1}{2} \\
+                 g\left(x - \frac{1}{2}\right) + \frac{1}{2} & \text{ else}
+             \end{cases}
+    \label{equ:final.def.f}
+    \\
+    g(x) & = \begin{cases}
+                 l(x) & \text{ if } x < \frac{1}{4} \\
+                 r(x) & \text{ else}
+             \end{cases}
+\end{align}
+
+For the definitions of $l$ and $r$, we center the variable to better understand the effects of the coefficients.
+Branches $\Branch_\A$ and $\Branch_\C$ exist on the intervals $\BranchInterval_\A = [0, \frac{1}{4})$ and $\BranchInterval_\C = [\frac{1}{2}, \frac{3}{4})$ respectively.
+Therefore, we center the variable for the polynomials of these branches by moving it $0.125$ to the left.
+\Cref{equ:final.def.tl} achieves this.
+Branches $\Branch_\B$ and $\Branch_\D$ exist on the intervals $\BranchInterval_\B = [\frac{1}{4}, \frac{1}{2})$ and $\BranchInterval_\D = [\frac{3}{4}, 1)$ respectively.
+The offset here is $\frac{3}{8}$ by the same logic and \Cref{equ:final.def.tr} achieves this.
+\begin{align}
+    s(x)   & = x \mod 1                                     \\
+    t_L(x) & = s(x) - \dfrac{1}{8} \label{equ:final.def.tl} \\
+    t_R(x) & = s(x) - \dfrac{3}{8} \label{equ:final.def.tr}
+\end{align}
+
+The actual polynomials defining $l$ and $r$ are then given by the following equations.
+\begin{align}
+    l(x) & = a_L \cdot t_L(x)^2 + b_L \cdot t_L(x) + c_L \\
+    r(x) & = b_R \cdot t_R(x) + c_R
+    \label{equ:final.def.r}
+\end{align}
+
+\subsection{The Model Parameters}
+
+To get this model to show the desired behavior, we only change the coefficient $c_L$ directly via the parameter $p_y$ ($c_L = p_y$).
+The coefficients $a_L = 4$ and $b_L = \frac{1}{2}$ are fixed.
+The coefficients $b_R$ and $c_R$ are changed indirectly by the two parameters $A$ and $B$, which define characteristics of the function $r$.
+$A$ is the value of the function $r$ at the left border of branch $\Branch_\B$, so $r(\frac{1}{4}) = A$.
+And $B$ is the value of the function $r$ at the right border of branch $\Branch_\B$, so $r(\frac{1}{2}) = B$.
+These constraints will yield the following set of equations.
+\begin{subequations}
+    \begin{align}
+        r\left(\frac{1}{4}\right) & = - b_R \cdot \frac{1}{8} + c_R = A
+        \label{equ:final.def.param.constr.A}
+        \\
+        r\left(\frac{1}{2}\right) & = b_R \cdot \frac{1}{8} + c_R = B
+        \label{equ:final.def.param.constr.B}
+    \end{align}
+\end{subequations}
+
+Solving for $b_R$ and $c_R$ will give us explicit definitions of these two internal parameters depending on both $A$ and $B$.
+Adding both \Cref{equ:final.def.param.constr.A} and \Cref{equ:final.def.param.constr.B} will yield the \Cref{equ:final.def.param.cR} for $c_R$.
+\begin{align}
+    2 \cdot c_R = A + B \implies c_R = \dfrac{A + B}{2}
+    \label{equ:final.def.param.cR}
+\end{align}
+
+Similarly, subtracting \Cref{equ:final.def.param.constr.A} from \Cref{equ:final.def.param.constr.B} will yield the \Cref{equ:final.def.param.bR} for $b_R$.
+\begin{align}
+    \dfrac{b_R}{4} = B - A \implies b_R = 4 \cdot (B - A)
+    \label{equ:final.def.param.bR}
+\end{align}
+
+For our purposes, we also fix the parameter $B = \frac{1}{2} + \frac{1}{40}$, so that the right border of the branches $\Branch_\B$ and $\Branch_\D$ are just above the bisector.
+We only change the parameter $A$ via the parameter $p_x$, where we negate the value of $p_x$ to get a similar 2D-scan to the original function.
+So $A = -p_x$.
+
+\Cref{tab:final.def.parameters.overview} lists the values of all parameters of the model.
+The first part focuses on the parameters of the function $l$, while the second part lists the parameters needed for the function $r$.
+
+\begin{table}
+    \centering
+    \begin{tabular}{|c|c|}
+        \hline
+        Model Parameter & Value                        \\ \hline \hline
+        $a_L$           & $4$                          \\ \hline
+        $b_L$           & $\frac{1}{2}$                \\ \hline
+        $c_L$           & $p_y$                        \\ \hline \hline
+        $b_R$           & $4 \cdot (B - A)$            \\ \hline
+        $c_R$           & $\frac{1}{2} \cdot (A + B)$  \\ \hline
+        $A$             & $-p_x$                       \\ \hline
+        $B$             & $\frac{1}{2} + \frac{1}{40}$ \\ \hline
+    \end{tabular}
+    \caption{Overview of Parameter Values of Final Model}
+    \label{tab:final.def.parameters.overview}
+\end{table}

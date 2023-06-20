@@ -93,6 +93,30 @@ def function(x: float, E0: float, hi: float, mu: float) -> float:
     
     return invert(x, E0, hi, q, chi, mu)
 
+def symbolic(xk: float, E0: float, hi: float, mu: float) -> str:
+    q = R * Vref / bt / E0
+    chi = R * hi / bt / E0
+
+    if cos(xk) > 0:
+        Kp = 1
+    else:
+        Kp = -1
+
+    z_k = half(xk, Kp, 1, E0, hi, q, chi, mu)
+    z_0 = half(xk, Kp, 2, E0, hi, q, chi, mu)
+
+    if Kp == 1:
+        if z_k < z_0:
+            return "D"
+        else:
+            return "A"
+
+    else:
+        if z_k < z_0:
+            return "B"
+        else:
+            return "C"
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
 
@@ -103,6 +127,8 @@ if __name__ == "__main__":
     parser.add_argument('--E0', type=float, required=True)
     parser.add_argument('--hi', type=float, required=True)
     parser.add_argument('--mu', type=float, required=True)
+
+    parser.add_argument('--branch', type=bool, required=False)
     
     args = parser.parse_args()
 
@@ -110,4 +136,7 @@ if __name__ == "__main__":
         x = args.start + ((args.end - args.start) / args.resolution) * i
         y = function(x, args.E0, args.hi, args.mu)
 
-        print(f'{x} {y}')
+        if not args.branch:
+            print(f'{x} {y}')
+        else:
+            print(f'{symbolic(x, args.E0, args.hi, args.mu)}, {x}, {y}')

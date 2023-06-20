@@ -1,0 +1,38 @@
+{
+    "type": "period",
+    "max_period": 128,
+    "num_iterations": 1e4,
+    "parameters": {
+        "hl": 0.52,
+        "dl": 1.0,
+        "hr": 1.02,
+        "dr": 1.0,
+        "px": 0,
+        "py": 0
+    },
+    "scan": [
+        {
+            "type": "linear",
+            "resolution": 500,
+            "parameters": [
+                {
+                    "name": "px",
+                    "start": -1,
+                    "stop": -0.5
+                }
+            ]
+        },
+        {
+            "type": "linear",
+            "resolution": 500,
+            "parameters": [
+                {
+                    "name": "py",
+                    "start": 0,
+                    "stop": 0.5
+                }
+            ]
+        }
+    ],
+    "animation": null
+}
