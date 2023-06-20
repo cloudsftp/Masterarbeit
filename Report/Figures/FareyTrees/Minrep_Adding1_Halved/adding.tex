@@ -64,29 +64,29 @@
 	% ===============  NODES  ================
 	% ========================================
 
-	\path[widthlevel=-1,setwidth=1.8em] node[name=s] at (0,\NodeHeight) {\tiny$\L^6\R^4$}
-	node[name=r] at (0,-\TreeDiameter-\NodeHeight) {\tiny$\L^5\R^4$};
+	\path[widthlevel=-1,setwidth=1.8em] node[name=r] at (0,\NodeHeight) {\tiny$\L^5\R^4$}
+	node[name=s] at (0,-\TreeDiameter-\NodeHeight) {\tiny$\L^6\R^4$};
 
 	\path[setwidth=3.6em] node[name=sr] at (\LevelDistance,-.5\TreeDiameter) {\tiny$\L^6\R^4\L^5\R^4$}
-	child{ node{\tiny$(\L^6\R^4)^2\L^5\R^4$}
-			child{ node{\tiny$(\L^6\R^4)^3\L^5\R^4$}
-					child{ node{\tiny$(\L^6\R^4)^4\L^5\R^4$} }
-					child{ node{\tiny$\L^6\R^4((\L^6\R^3)^2\L^5\R^4)^2$} }
+	child{ node{\tiny$\L^6\R^4(\L^5\R^4)^2$}
+			child{ node{\tiny$\L^6\R^4(\L^5\R^4)^3$}
+					child{ node{\tiny$\L^6\R^4(\L^5\R^4)^4$} }
+					child{ node{\tiny$(\L^6\R^4(\L^5\R^4)^2)^2\L^5\R^4$} }
 				}
-			child{ node{\tiny$\L^6\R^4(\L^6\R^4\L^5\R^4)^2$}
-					child{ node{\tiny$((\L^6\R^4)^2\L^5\R^4)^2\L^6\R^4\L^5\R^4$} }
-					child{ node{\tiny$\L^6\R^4(\L^6\R^4\L^5\R^4)^3$} }
+			child{ node{\tiny$(\L^6\R^4\L^5\R^4)^2\L^5\R^4$}
+					child{ node{\tiny$\L^6\R^4\L^5\R^4(\L^6\R^4(\L^5\R^4)^2)^2$} }
+					child{ node{\tiny$(\L^6\R^4\L^5\R^4)^3\L^5\R^4$} }
 				}
 		}
 	%---------%
-	child{ node{\tiny$\L^6\R^4(\L^5\R^4)^2$}
-			child{ node{\tiny$(\L^6\R^4\L^5\R^4)^2\L^5\R^4$}
-					child{ node{\tiny$(\L^6\R^4\L^5\R^4)^3\L^5\R^4$} }
-					child{ node{\tiny$\L^6\R^4\L^5\R^4(\L^6\R^4(\L^5\R^4)^2)^2$} }
+	child{ node{\tiny$(\L^6\R^4)^2\L^5\R^4$}
+			child{ node{\tiny$\L^6\R^4(\L^6\R^4\L^5\R^4)^2$}
+					child{ node{\tiny$\L^6\R^4(\L^6\R^4\L^5\R^4)^3$} }
+					child{ node{\tiny$((\L^6\R^4)^2\L^5\R^4)^2\L^6\R^4\L^5\R^4$} }
 				}
-			child{ node{\tiny$\L^6\R^4(\L^5\R^4)^3$}
-					child{ node{\tiny$(\L^6\R^4(\L^5\R^4)^2)^2\L^5\R^4$} }
-					child{ node{\tiny$\L^6\R^4(\L^5\R^4)^4$} }
+			child{ node{\tiny$(\L^6\R^4)^3\L^5\R^4$}
+					child{ node{\tiny$\L^6\R^4((\L^6\R^3)^2\L^5\R^4)^2$} }
+					child{ node{\tiny$(\L^6\R^4)^4\L^5\R^4$} }
 				}
 		};
 
@@ -95,14 +95,14 @@
 	% ========================================
 
 	\path[>=latex,->] % set arrowhead
-	(s) edge (sr.north west)
-	(s) edge (sr-1.north west)
-	(s) edge (sr-1-1.north west)
-	(s) edge (sr-1-1-1.north west)
-	(r) edge (sr.south west)
-	(r) edge (sr-2.south west)
-	(r) edge (sr-2-2.south west)
-	(r) edge (sr-2-2-2.south west)
+	(r) edge (sr.north west)
+	(r) edge (sr-1.north west)
+	(r) edge (sr-1-1.north west)
+	(r) edge (sr-1-1-1.north west)
+	(s) edge (sr.south west)
+	(s) edge (sr-2.south west)
+	(s) edge (sr-2-2.south west)
+	(s) edge (sr-2-2-2.south west)
 	;
 
 	\path[>=latex,->] % set arrowhead
