@@ -4,7 +4,7 @@
 
 We start with a naive algorithm for translating a cycle from the halved model to the full model.
 This process will be called ``unrolling'' since you fit two rotations in the halved model into one rotation in the full model.
-\todo{visualize unrolling}
+\todo{Visualize unrolling}
 
 The input is a cycle in the halved model, $h = \L^{l_1}\R^{r_1}\L^{l_2}\R^{r_2} \ldots \L^{l_n}\R^{r_n}$.
 First, we write down the input cycle twice.
@@ -16,7 +16,7 @@ We need to write the original cycle twice because we will translate two rotation
 If we were to write it down only once and the number of rotations $n$ happens to be odd, the rotation $\L^{l_n}\R^{r_n}$ would be left over.
 To make it work out, we need to continue pairing up the cycles, wrapping around, or equivalently writing down the original cycle twice.
 After we paired up the rotations, we translate the pairs of rotations with the function $t: \L^a\R^b\L^c\R^d \mapsto \A^a\B^b\C^c\D^d$.
-\todo{put in definition? then $r$ and $r'$ should get a definition block too}
+\todo{Put in definition? Then $r$ and $r'$ should get a definition block too}
 \begin{subequations}
 	\begin{align}
 		T(h) & = t(\L^{l_1}\R^{r_1}\L^{l_2}\R^{r_2}) \dots t(\L^{l_{n-1}}\R^{r_{n-1}}\L^{l_n}\R^{r_n}) \\
@@ -63,7 +63,7 @@ It is enough to check both $T(h)$ and the once rotated case $T(r(h))$.
 Therefore, each cycle in the halved model has at most 2 manifestations in the full model.
 
 \subsubsection{Connections}
-\todo{better title}
+\todo{Better title}
 
 \begin{theorem}
 	A cycle in the halved model manifests either as a single cycle or two coexisting cycles in the full model.
@@ -103,7 +103,7 @@ Therefore, each cycle in the halved model has at most 2 manifestations in the fu
 		      \end{enumerate}
 		      We can see that $a \nequiv b$, unless $\tau_1 = \tau_2 = \tau_3 = \dots = \tau_n$.
 		      For our adding structures, there must exist two integers $i, j$, for which $\tau_i \neq \tau_j$.
-		      Also we can see that the periods of the translated cycles are the same as the period of the original cycle.
+		      Also, we can see that the periods of the translated cycles are the same as the period of the original cycle.
 		      The function $t$ preserves the period of the cycle, so $|\L^a\R^b\L^c\R^d| = a + b + c + d = |t(\L^a\R^b\L^c\R^d)| = |\A^a\B^b\C^c\D^d|$.
 		      \begin{align*}
 			      |a| & = |t(\tau_1\tau_2) \dots t(\tau_{n-1}\tau_n)|                                                       \\
@@ -126,7 +126,7 @@ Therefore, each cycle in the halved model has at most 2 manifestations in the fu
 		      \end{enumerate}
 		      We can see that $a = r'^{\frac{n+1}{2}}(b)$ and therefore $a \equiv b$.
 		      This means, that the cycle $h$ manifests as a single cycle in the full model.
-		      Also we can see that the period of the translated cycle is double the period of the original cycle.
+		      Also, we can see that the period of the translated cycle is double the period of the original cycle.
 		      \begin{align*}
 			      |a| & = |t(\tau_1\tau_2) \dots t(\tau_n\tau_1) \dots t(\tau_{n-1}\tau_n)| \\
 			          & = |\tau_1\tau_2 \dots \tau_n\tau_1 \dots \tau_{n-1}\tau_n|          \\
@@ -155,10 +155,10 @@ These can be explained with \Cref{theorem:coex.even.odd}.
 		      Their simultaneous child is the manifestation of the two cycles in the halved model glued together.
 		      This glued-together cycle has an odd number of rotations and therefore manifests as a single cycle in the full model.
 		\item Analogously, two cycles with an odd number of rotations glued together have an even number of rotations.
-		      Therefore this glued-together cycle manifests as two coexisting cycles in the full model.
+		      Therefore, this glued-together cycle manifests as two coexisting cycles in the full model.
 		      %		\item Analogously, two cycles with an even number of rotations glued toghether have an even number of rotations.
 		      %		      Therefore this glued toghether cycle manifests as two coexisting cycles in the full model.
 	\end{enumerate}
 \end{proof}
 
-\todo{improved algorithm?}
+\todo{Improved algorithm?}
