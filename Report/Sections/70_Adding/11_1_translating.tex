@@ -36,53 +36,76 @@ The next section will explain, how to translate cycles between the halved and fu
 
 \subsubsection{Naive Algorithm}
 
-\todo{rewrite naive algo to use introduction as basis}
-\todo{start with f -> halved since it was teased at the end of the last section}
+Based on this concept of the infinite model, one can formulate a naive algorithm for translating symbolic sequences between the halved and full model.
+We will start with the easier direction from the full to the halved model.
+From this direction we can't learn much about the nature of the period-adding structure in the full model, the inverse will be more important for that.
 
-We start with a naive algorithm for translating a cycle from the halved model to the full model.
-This process will be called ``unrolling'' since you fit two rotations in the halved model into one rotation in the full model.
-\todo{Visualize unrolling}
+To translate a symbolic sequence of the full model we start by writing it down.
+For example $\A^4\B^3\C^4\D^3$.
+Then we replace the symbols $\A$ and $\C$ by $\L$ and the symbols $\B$ and $\D$ by $\R$.
+Now we have $\L^4\R^3\L^4\R^3$.
+Finally, we have to check for redundancy in the resulting cycle.
+In our example, the cycle $\L^4\R^3$ repeats twice in $\L^4\R^3\L^4\R^3$, so we just keep $\L^4\R^3$.
+\todo{explain using the illustration}
 
-The input is a cycle in the halved model, $h = \L^{l_1}\R^{r_1}\L^{l_2}\R^{r_2} \ldots \L^{l_n}\R^{r_n}$.
-First, we write down the input cycle twice.
-\begin{align}
-	h|h & = \L^{l_1}\R^{r_1}\L^{l_2}\R^{r_2} \ldots \L^{l_n}\R^{r_n} | \L^{l_1}\R^{r_1} \ldots \L^{l_n}\R^{r_n}
-\end{align}
-Then we pair up the rotations.
-We need to write the original cycle twice because we will translate two rotations in the halved model to one rotation in the full model.
-If we were to write it down only once and the number of rotations $n$ happens to be odd, the rotation $\L^{l_n}\R^{r_n}$ would be left over.
-To make it work out, we need to continue pairing up the cycles, wrapping around, or equivalently writing down the original cycle twice.
-After we paired up the rotations, we translate the pairs of rotations with the function $t: \L^a\R^b\L^c\R^d \mapsto \A^a\B^b\C^c\D^d$.
-\todo{Put in definition? Then $r$ and $r'$ should get a definition block too}
-\begin{subequations}
-	\begin{align}
-		T(h) & = t(\L^{l_1}\R^{r_1}\L^{l_2}\R^{r_2}) \dots t(\L^{l_{n-1}}\R^{r_{n-1}}\L^{l_n}\R^{r_n}) \\
-		     & = \A^{l_1}\B^{r_1}\C^{l_2}\D^{r_2} \dots \A^{l_{n-1}}\B^{r_{n-1}}\C^{l_n}\D^{r_n}
-	\end{align}
-\end{subequations}
+The inverse is trickier.
+We start by writing down the symbolic sequence in the halved model.
+For example $\L^4\R^3\L4\R^3\L^3\R^3$.
+Notice, this symbolic sequence has 3 rotations.
+This means in the infinite model 3 red blocks are repeating.
+To translate it to the full model, we have to fit the repeating blocks inside blue blocks.
+But this does not work, since each blue block fits exactly 2 red blocks.
+This means we have to write down the original sequence twice $\L^4\R^3\L4\R^3\L^3\R^3\L^4\R^3\L4\R^3\L^3\R^3$.
+This is only necessary for sequences with an odd number of rotations, otherwise writing it down one is enough.
 
-Now that we got one cycle in the full model, we need to repeat the pairing and translating with every rotation as the starting point.
-For this, we just rotate the cycle $h|h$ once with the function $r: \tau_1\tau_2 \dots \tau_n \mapsto \tau_2 \dots \tau_n\tau_1$, where $\tau$ is one rotation in the halved model.
-\begin{align}
-	r(h|h) & = \L^{l_2}\R^{r_2} \ldots \L^{l_n}\R^{r_n} | \L^{l_1}\R^{r_1} \ldots \L^{l_n}\R^{r_n} | \L^{l_1}\R^{r_1}
-\end{align}
-After pairing the rotations and translating the pairs with $t$, we get
-\begin{subequations}
-	\begin{align}
-		T(r(h)) & = t(\L^{l_2}\R^{r_2}\L^{l_3}\R^{r_3}) \dots t(\L^{l_{n}}\R^{r_{n}}\L^{l_1}\R^{r_1}) \\
-		        & = \A^{l_2}\B^{r_2}\C^{l_3}\D^{r_3} \dots \A^{l_{n}}\B^{r_{n}}\C^{l_1}\D^{r_1}
-	\end{align}
-\end{subequations}
-
-We repeat this with $r^2$, $r^3$, and so on until $r^{n-1}$.
-The resulting cycles may be equivalent by rotating in the full model.
-We are only interested in the inequivalent cycles, these are the manifestations of the input cycle in the full model.
+Then we pair up the rotations, this corresponds to drawing blue boxes around the red boxes in the infinite model.
+In our example, we get the pairs $(\L^4\R^3\L^4\R^3)(\L^3\R^3\L^4\R^3)(\L^4\R^3\L^3\R^3)$.
+The pairs then have to be translated using the function $t$ defined below.
+The resulting symbolic sequence is $\A^4\B^3\C^4\D^3\A^3\B^3\C^4\D^3\A^4\B^3\C^3\D^3$.
 
 \begin{definition}
-	Two cycles in the full model are equivalent $f_1 \equiv f_2$ if the cycles have the same number of rotations $n$ and there exists an integer $0 \leq i < n$ so that $r'^i(f_2) = f_1$.
-	Where $r': \tau'_1\tau'_2 \dots \tau'_n \mapsto \tau'_2 \dots \tau'_n\tau'_1$ is the act of rotating a cycle in the full model and $\tau'$ is one rotation in the full model.
-	Or there is an integer $j$, such that $f_1^j = f_2$ or $f_1 = f_2^j$.
+	The function $t$ maps two rotations of a symbolic sequence in the halved model to a single rotation in the full model.
+	It is defined in the following way.
+	\begin{align}
+		t: & \L^a\R^b\L^c\R^d \mapsto \A^a\B^b\C^c\D^d
+	\end{align}
 \end{definition}
+
+\begin{definition}
+	The function $s$ shifts a symbolic sequence in the halved model by a single rotation.
+	Let $\tau_1\tau_2 \dots \tau_n$ be a sequence in the halved model, where each $\tau_i$ is one rotation.
+	Then $s$ is defined in the following way.
+	\begin{align}
+		s: & \tau_1\tau_2 \dots \tau_n \mapsto \tau_2 \dots \tau_n\tau_1
+	\end{align}
+	In the full model, there is a similar function, $s'$, that shifts a symbolic sequence in the full model by a single rotation.
+	Let $\tau'_1\tau'_2 \dots \tau'_n$ be a sequence in the full model, where each $\tau'_i$ is one rotation.
+	The $s'$ is defined in the following way.
+	\begin{align}
+		s': & \tau'_1\tau'_2 \dots \tau'_n \mapsto \tau'_2 \dots \tau'_n\tau'_1
+	\end{align}
+\end{definition}
+
+\begin{definition}
+	The two symbolic sequences $\sigma$ and $\rho$ in the full model are shift-equivalent $\sigma \equiv \rho$,
+	if they both have the same number of rotations $n$
+	and there is a number $0 \leq i < n$, such that $\sigma = s'^i(\rho)$.
+	Where $s'^i$ is the same as applying $s'$ $i$ times.
+\end{definition}
+
+We need to repeat the whole process for each shift $s^i$ of the original symbolic sequence for $0 < i < n$ where $n$ is the number of rotations of the original symbolic sequence.
+And we only keep the results that are not shift-equivalent to any previous result.
+In our example, we would repeat the process for $\L^4\R^3\L3\R^3\L^4\R^3$ and get the result $\A^4\B^3\C^3\D^3\A^4\B^3\C^4\D^3\A^3\B^3\C^4\D^3$.
+This result is shift-equivalent to the first result by shifting it 2 times.
+Last we need to repeat it for $\L^3\R^3\L4\R^3\L^4\R^3$ and get the result $\A^3\B^3\C^4\D^3\A^4\B^3\C^3\D^3\A^4\B^3\C^4\D^3$.
+This result is shift-equivalent to the first result by rotating it once.
+
+Therefore the cycle $\L^4R^3\L^4\R^3\L^3\R^3$ in the halved model manifests as a single cycle $\A^4\B^3\C^4\D^3\A^3\B^3\C^4\D^3\A^4\B^3\C^3\D^3$ in the full model.
+
+\subsubsection{Insights}
+\todo{better heading}
+
+With this naive algorithm, we can start to investigate rules for the period-adding structure in the full model.
 
 \begin{lemma}
 	The translations of the two cycles $h_1$ and $h_2 = r^{2i}(h_1)$ in the halved model are equivalent $T(h_1) \equiv T(h_2)$ for all integers $i$.
