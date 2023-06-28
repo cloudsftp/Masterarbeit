@@ -138,6 +138,7 @@ With this naive algorithm, we can start to investigate rules for the period-addi
 \end{proof}
 
 \begin{theorem}
+	\label{theorem:coexistence.even}
 	The mainfestations of a cycle in the halfed model $h$ is either $F(h) = \{T(h), T(s(h))\}$ or $F(h) = \{T(h)\}$.
 	And \begin{enumerate}
 		\item $F(h) = \{T(h), T(s(h))\}$ if the number of rotations of the sequence $h$ is even.
@@ -171,66 +172,55 @@ With this naive algorithm, we can start to investigate rules for the period-addi
 	\end{enumerate}
 \end{proof}
 
-\todo{rethink formulation of theorem}
+Note that a result of $F(h) = \{T(h), T(s(h))\}$ means that the cycle in the halved model $h$ manifests as two coexisting cycles in the full model.
+With this knowledge, we now can explain, why some cycles in the full model have a much lower period than expected in period-adding structures.
+
+\begin{lemma}
+	\label{lemma:t.preserves.period}
+	The function $t$ preserves the period. $|\tau_1\tau_2| = |t(\tau_1\tau_2)|$.
+\end{lemma}
+
+\begin{proof}
+	Let $\tau_1\tau_2 = \L^a\R^b\L^c\R^d$.
+	\begin{align*}
+		|\tau_1\tau_2| =  |\L^a\R^b\L^c\R^d|
+		= a + b + c + d
+		= |\A^a\B^b\C^c\D^d|
+		= |t(\L^a\R^b\L^c\R^d)|
+		= |t(\tau_1\tau_2)|
+	\end{align*}
+\end{proof}
 
 \begin{theorem}
 	\begin{enumerate}
-		\item In the case of two coexisting cycles in the full model, the period of either cycle is half of the period of the cycle in the halved model: $|T(h)| = |T(r(h))| = \frac{1}{2} |h|$.
-		\item In the case of one cycle in the full model, the period of this cycle is the same as the period of the cycle in the halved model: $|T(h)| = |T(r(h))| = |h|$.
+		\item If a cycle in the halved model manifests as two coexisting cycles in the full model, the period of either cycle is the same as the period of the cycle in the halved model. $|T(h)| = |T(r(h))| = |h|$.
+		\item If a cycle in the halved model manifests as a single cycle in the full model, the period of this cycle is double the period of the cycle in the halved model. $|T(h)| = 2 |h|$.
 	\end{enumerate}
 \end{theorem}
 
-\todo{only proof periods}
-
 \begin{proof}
 	\begin{enumerate}
-		\item Let the number of rotations $n$ of $h$ be even
-		      \begin{enumerate}[label=\alph*)]
-			      \item Not rotated
-			            \begin{align*}
-				            T(h) & = t(\tau_1\tau_2) \dots t(\tau_{n-1}\tau_n) t(\tau_1\tau_2) \dots t(\tau_{n-1}\tau_n) \\
-				                 & = (t(\tau_1\tau_2) \dots t(\tau_{n-1}\tau_n))^2                                       \\
-				                 & \equiv t(\tau_1\tau_2) \dots t(\tau_{n-1}\tau_n) = a
-			            \end{align*}
-			      \item Rotated once
-			            \begin{align*}
-				            T(r(h)) & = t(\tau_2\tau_3) \dots t(\tau_{n}\tau_1) t(\tau_2\tau_3) \dots t(\tau_{n}\tau_1) \\
-				                    & = (t(\tau_2\tau_3) \dots t(\tau_{n}\tau_1))^2                                     \\
-				                    & \equiv t(\tau_2\tau_3) \dots t(\tau_{n}\tau_1) = b
-			            \end{align*}
-		      \end{enumerate}
-		      We can see that $a \nequiv b$, unless $\tau_1 = \tau_2 = \tau_3 = \dots = \tau_n$.
-		      For our adding structures, there must exist two integers $i, j$, for which $\tau_i \neq \tau_j$.
-		      Also, we can see that the periods of the translated cycles are the same as the period of the original cycle.
-		      The function $t$ preserves the period of the cycle, so $|\L^a\R^b\L^c\R^d| = a + b + c + d = |t(\L^a\R^b\L^c\R^d)| = |\A^a\B^b\C^c\D^d|$.
+		\item From \Cref{theorem:coexistence.even} we know that if the cycle $h$ in the halved model manifests as two coexisting cycles in the full model, $h$ has an even number of rotations $n$.
+		      And its translation is $T(h) = t(\tau_1\tau_2) t(\tau_3\tau_4) \dots t(\tau_{n-1}\tau_n)$.
+		      Combining this with the fact, that $t$ preserves the period of its input as described in \Cref{lemma:t.preserves.period}, we can calculate the period of $T(h)$ in the following way.
 		      \begin{align*}
-			      |a| & = |t(\tau_1\tau_2) \dots t(\tau_{n-1}\tau_n)|                                                       \\
-			          & = \frac{1}{2} |(t(\tau_1\tau_2) \dots t(\tau_{n-1}\tau_n))^2|                                       \\
-			          & = \frac{1}{2} |t(\tau_1\tau_2) \dots t(\tau_{n-1}\tau_n) t(\tau_1\tau_2) \dots t(\tau_{n-1}\tau_n)| \\
-			          & = \frac{1}{2} |\tau_1\tau_2 \dots \tau_n\tau_1 \dots \tau_n|                                        \\
-			          & = |\tau_1\tau_2 \dots \tau_n| = |h|
+			      |T(h)| & = |t(\tau_1\tau_2) t(\tau_3\tau_4) \dots t(\tau_{n-1}\tau_n)|           \\
+			             & = |t(\tau_1\tau_2)| + |t(\tau_3\tau_4)| + \dots + |t(\tau_{n-1}\tau_n)| \\
+			             & = |\tau_1\tau_2| + |\tau_3\tau_4| + \dots + |\tau_{n-1}\tau_n|          \\
+			             & = |\tau_1\tau_2 \dots \tau_n| = |h|
 		      \end{align*}
-		      Analogously for $|b| = |h|$.
-		\item Let the number of rotations $n$ of $h$ be odd
-		      \begin{enumerate}[label=\alph*)]
-			      \item Not rotated
-			            \begin{align*}
-				            T(h) & = t(\tau_1\tau_2) \dots t(\tau_{n}\tau_1) t(\tau_2\tau_3) \dots t(\tau_{n-1}\tau_n) = a
-			            \end{align*}
-			      \item Rotated once
-			            \begin{align*}
-				            T(r(h)) & = t(\tau_2\tau_3) \dots t(\tau_{n-1}\tau_n) t(\tau_1\tau_2) \dots t(\tau_{n-1}\tau_n) = b
-			            \end{align*}
-		      \end{enumerate}
-		      We can see that $a = r'^{\frac{n+1}{2}}(b)$ and therefore $a \equiv b$.
-		      This means, that the cycle $h$ manifests as a single cycle in the full model.
-		      Also, we can see that the period of the translated cycle is double the period of the original cycle.
+		      So the period of the cycle $T(h)$ in the full model is the same as the period of the cycle $h$ in the halved model.
+		      The same calculation can be done for $T(s(h))$ and is omitted here.
+		\item Similarly we know that if the cycle $h$ in the halved model manifests as a single cycle in the full model, $h$ has an odd number of rotations $n$.
+		      And its translation is $T(h) = t(\tau_1\tau_2) \dots t(\tau_n\tau_1) \dots t(\tau_{n-1}\tau_n)$.
+		      Its period can be calculated in the following way.
 		      \begin{align*}
-			      |a| & = |t(\tau_1\tau_2) \dots t(\tau_n\tau_1) \dots t(\tau_{n-1}\tau_n)| \\
-			          & = |\tau_1\tau_2 \dots \tau_n\tau_1 \dots \tau_{n-1}\tau_n|          \\
-			          & = 2 |\tau_1\tau_2 \dots \tau_n| = 2 |h|
+			      |T(h)| & = |t(\tau_1\tau_2) \dots t(\tau_n\tau_1) \dots t(\tau_{n-1}\tau_n)|             \\
+			             & = |t(\tau_1\tau_2)| + \dots + |t(\tau_n\tau_1)| + \dots + |t(\tau_{n-1}\tau_n)| \\
+			             & = |\tau_1\tau_2| + \dots + |\tau_n\tau_1| + \dots + |\tau_{n-1}\tau_n|          \\
+			             & = |\tau_1\tau_2 \dots \tau_n\tau_1 \dots \tau_{n-1}\tau_n| = |hh| = 2 |h|
 		      \end{align*}
-		      Analogously for $|b| = 2 |h|$.
+		      So the period of the cycle $T(h)$ in the full model is twice the period of the cycle $h$ in the halved model.
 	\end{enumerate}
 \end{proof}
 
