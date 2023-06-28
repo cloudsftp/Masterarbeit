@@ -50,18 +50,34 @@ In our example, the cycle $\L^4\R^3$ repeats twice in $\L^4\R^3\L^4\R^3$, so we 
 
 The inverse is trickier.
 We start by writing down the symbolic sequence in the halved model.
-For example $\L^4\R^3\L4\R^3\L^3\R^3$.
-Notice, this symbolic sequence has 3 rotations.
-This means in the infinite model 3 red blocks are repeating.
-To translate it to the full model, we have to fit the repeating blocks inside blue blocks.
-But this does not work, since each blue block fits exactly 2 red blocks.
-This means we have to write down the original sequence twice $\L^4\R^3\L4\R^3\L^3\R^3\L^4\R^3\L4\R^3\L^3\R^3$.
-This is only necessary for sequences with an odd number of rotations, otherwise writing it down one is enough.
+For example $h = \L^4\R^3\L4\R^3\L^3\R^3$.
+Now we need to build pairs of rotations since each blue block fits two red blocks.
+If there is one rotation left over at the end, we wrap around or equivalently write down the original sequence again.
+We repeat this until we fit all rotations that we have written down.
+
+\begin{lemma}
+	\label{lemma:writing.down}
+	For cycles in the halved model $h$ with an even number of rotations $n$, we only need to write the original cycle down once.
+	For cycles in the halved model $h$ with an odd number of rotations $n$, we need to write the original cycle down exactly twice.
+\end{lemma}
+
+\begin{proof}
+	\begin{enumerate}
+		\item Let $n = 2i$. Then, we can build $i$ pairs of rotations and fit all $2i$ rotations of the original model.
+		\item Let $n = 2i + 1$. We start by building $i$ pairs of rotations, fitting $2i$ rotations.
+		      This will leave the last rotation unpaired o we write down the sequence of $2i + 1$ rotations again.
+		      Now we can pair up the last rotation of the first sequence we wrote down with the first rotation of the sequence we just wrote down.
+		      $2i$ rotations remain, which we can fit into $i$ pairs.
+	\end{enumerate}
+\end{proof}
+
+Notice, our example symbolic sequence has 3 rotations.
+This means we have to write down the original sequence twice $h^2 = \L^4\R^3\L4\R^3\L^3\R^3\L^4\R^3\L4\R^3\L^3\R^3$.
 
 Then we pair up the rotations, this corresponds to drawing blue boxes around the red boxes in the infinite model.
 In our example, we get the pairs $(\L^4\R^3\L^4\R^3)(\L^3\R^3\L^4\R^3)(\L^4\R^3\L^3\R^3)$.
 The pairs then have to be translated using the function $t$ defined below.
-The resulting symbolic sequence is $\A^4\B^3\C^4\D^3\A^3\B^3\C^4\D^3\A^4\B^3\C^3\D^3$.
+The resulting symbolic sequence is $T(h) = \A^4\B^3\C^4\D^3\A^3\B^3\C^4\D^3\A^4\B^3\C^3\D^3$.
 
 \begin{definition}
 	The function $t$ maps two rotations of a symbolic sequence in the halved model to a single rotation in the full model.
@@ -95,12 +111,14 @@ The resulting symbolic sequence is $\A^4\B^3\C^4\D^3\A^3\B^3\C^4\D^3\A^4\B^3\C^3
 
 We need to repeat the whole process for each shift $s^i$ of the original symbolic sequence for $0 < i < n$ where $n$ is the number of rotations of the original symbolic sequence.
 And we only keep the results that are not shift-equivalent to any previous result.
-In our example, we would repeat the process for $\L^4\R^3\L3\R^3\L^4\R^3$ and get the result $\A^4\B^3\C^3\D^3\A^4\B^3\C^4\D^3\A^3\B^3\C^4\D^3$.
+In our example, we would repeat the process for $s(h) = \L^4\R^3\L3\R^3\L^4\R^3$ and get the result $T(s(h)) = \A^4\B^3\C^3\D^3\A^4\B^3\C^4\D^3\A^3\B^3\C^4\D^3$.
 This result is shift-equivalent to the first result by shifting it 2 times.
-Last we need to repeat it for $\L^3\R^3\L4\R^3\L^4\R^3$ and get the result $\A^3\B^3\C^4\D^3\A^4\B^3\C^3\D^3\A^4\B^3\C^4\D^3$.
+Last we need to repeat it for $s^2(h) = \L^3\R^3\L4\R^3\L^4\R^3$ and get the result $T(s^2(h)) = \A^3\B^3\C^4\D^3\A^4\B^3\C^3\D^3\A^4\B^3\C^4\D^3$.
 This result is shift-equivalent to the first result by rotating it once.
 
-Therefore the cycle $\L^4R^3\L^4\R^3\L^3\R^3$ in the halved model manifests as a single cycle $\A^4\B^3\C^4\D^3\A^3\B^3\C^4\D^3\A^4\B^3\C^3\D^3$ in the full model.
+Therefore the cycle $h$ in the halved model manifests as a single cycle $T(h)$ in the full model.
+We write it as $F(h) = \{T(h)\} = \{\A^4\B^3\C^4\D^3\A^3\B^3\C^4\D^3\A^4\B^3\C^3\D^3\}$.
+The result of $F$ is a set because the cycle $h$ in the halved model may manifest as multiple coexisting cycles in the full model.
 
 \subsubsection{Insights}
 \todo{better heading}
@@ -108,26 +126,52 @@ Therefore the cycle $\L^4R^3\L^4\R^3\L^3\R^3$ in the halved model manifests as a
 With this naive algorithm, we can start to investigate rules for the period-adding structure in the full model.
 
 \begin{lemma}
-	The translations of the two cycles $h_1$ and $h_2 = r^{2i}(h_1)$ in the halved model are equivalent $T(h_1) \equiv T(h_2)$ for all integers $i$.
+	\label{lemma:equivalence.translations}
+	The translations of the two cycles $h_1$ and $h_2 = r^{2i}(h_1)$ in the halved model are shift-equivalent $T(h_1) \equiv T(h_2)$ for all integers $i$.
 \end{lemma}
 
 \begin{proof}
 	Let $h_1 = \tau_1\tau_2 \dots \tau_n$, therefore $h_2 = \tau_{2i+1} \dots \tau_n\tau_1 \dots \tau_{2i}$.
 	The translations are $T(h_1) = t(\tau_1\tau_2)t(\tau_3\tau_4) \dots t(\tau_{n-1}\tau_n)$
 	and $T(h_2) = t(\tau_{2i+1}\tau_{2i+2}) \dots t(\tau_{n-1}\tau_n)t(\tau_1\tau_2) \dots t(\tau_{2i-i}\tau_{2i})$.
-	We can see that $T(h_2) = r'^i(T(h_1))$ and therefore $T(h_1) \equiv T(h_2)$.
+	We can see that $T(h_2) = s'^i(T(h_1))$ and therefore $T(h_1) \equiv T(h_2)$.
 \end{proof}
 
-Therefore, we don't have to look at all rotations as a starting point for pairing, as described above.
-It is enough to check both $T(h)$ and the once rotated case $T(r(h))$.
-Therefore, each cycle in the halved model has at most 2 manifestations in the full model.
-
-\subsubsection{Connections}
-\todo{Better title}
-
 \begin{theorem}
-	A cycle in the halved model manifests either as a single cycle or two coexisting cycles in the full model.
+	The mainfestations of a cycle in the halfed model $h$ is either $F(h) = \{T(h), T(s(h))\}$ or $F(h) = \{T(h)\}$.
+	And \begin{enumerate}
+		\item $F(h) = \{T(h), T(s(h))\}$ if the number of rotations of the sequence $h$ is even.
+		\item $F(h) = \{T(h)\}$ if the number of rotations of the sequence $h$ is odd.
+	\end{enumerate}
 \end{theorem}
+
+\begin{proof}
+	Let $h = \tau_1\tau_2 \dots \tau_n$ a symbolic sequence in the halved model with $n$ rotations.
+	We know from \Cref{lemma:equivalence.translations} that the only possible candidates for $F(h)$ are $T(h)$ and $T(s(h))$.
+	These are the first two possibilities we check in the algorithm and all other shifts $T(s^i(h))$ with $2 \leq i < n$ are shift-equivalent to $T(h)$ or $T(s(h))$.
+	So, in the following, we will only check for the shift-equivalence of these two candidates.
+	\begin{enumerate}
+		\item Let $n = 2i$.
+		      From \Cref{lemma:writing.down} we know that we only need to write down the original cycle $h$ once and thus we get the following translations.
+		      \begin{align*}
+			              & T(h) = t(\tau_1\tau_2) t(\tau_3\tau_4) \dots t(\tau_{n-1}\tau_n) \\
+			      \nequiv & T(h) = t(\tau_2\tau_3) t(\tau_4\tau_5) \dots t(\tau_n\tau_1)
+		      \end{align*}
+		      The two candidates are not shift-equivalent because the pair $t(\tau_1\tau_2)$ in $T(h)$ is not included in the other candidate $t(s(h))$.
+		      The same is true for any other pair, and therefore $F(h) = \{T(h), T(s(h))\}$.
+		\item Let $n = 2i + 1$.
+		      From \Cref{lemma:writing.down} we know that we need to write down the original cycle $h$ exactly twice and thus we get the following translations.
+		      \begin{align*}
+			             & T(h) = t(\tau_1\tau_2) t(\tau_3\tau_4) \dots t(\tau_n\tau_1) t(\tau_2\tau_3) \dots t(\tau_{n-1}\tau_n) \\
+			      \equiv & T(h) = t(\tau_2\tau_3) \dots t(\tau_{n-1}\tau_n) t(\tau_1\tau_2) t(\tau_3\tau_4) \dots t(\tau_n\tau_1)
+		      \end{align*}
+		      The two candidates are shift-equivalent.
+		      By shifting the second candidate $T(s(h))$ $2i$ times, we get the first candidate $T(h)$.
+		      Therefore, the second candidate is discarded and $F(h) = \{T(h)\}$.
+	\end{enumerate}
+\end{proof}
+
+\todo{rethink formulation of theorem}
 
 \begin{theorem}
 	\begin{enumerate}
@@ -136,13 +180,7 @@ Therefore, each cycle in the halved model has at most 2 manifestations in the fu
 	\end{enumerate}
 \end{theorem}
 
-\begin{theorem}
-	\label{theorem:coex.even.odd}
-	\begin{enumerate}
-		\item The cycle $h$ manifests as two coexisting cycles in the full model, if and only if its number of rotations $n$ is even.
-		\item The cycle $h$ manifests as one single cycle in the full model, if and only if its number of rotations $n$ is odd.
-	\end{enumerate}
-\end{theorem}
+\todo{only proof periods}
 
 \begin{proof}
 	\begin{enumerate}
