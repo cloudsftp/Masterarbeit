@@ -173,6 +173,52 @@ With this naive algorithm, we can start to investigate rules for the period-addi
 \end{proof}
 
 Note that a result of $F(h) = \{T(h), T(s(h))\}$ means that the cycle in the halved model $h$ manifests as two coexisting cycles in the full model.
+
+\subsubsection{Revised Algorithm}
+
+With all these properties and functions we now can formulate a more compact algorithm, \Cref{alg:halved.to.full}, for translating symbolic sequences from the halved model into the full model.
+This revised algorithm will be used in the following to explain the rules of the period-adding structure in the full model.
+
+\begin{algorithm}
+	\caption{Translating a Symbolic Sequence from the Halved Model to the Full Model}\label{alg:halved.to.full}
+	\begin{algorithmic}
+		\Require $h = \tau_1\tau_2 \dots \tau_n$ with $n > 0$
+		\If{$n$ is even}
+		\State \Return $\{t(\tau_1\tau_2) t(\tau_3\tau_4) \dots t(\tau_{n-1}\tau_n), t(\tau_2\tau_3) t(\tau_4\tau_5) \dots t(\tau_n\tau_1)\}$
+		\ElsIf{$n$ is odd}
+		\State \Return $\{t(\tau_1\tau_2) \dots t(\tau_{n}\tau_1) \dots t(\tau_{n-1}\tau_n)\}$
+		\EndIf
+	\end{algorithmic}
+\end{algorithm}
+
+\Cref{alg:full.to.halved} shows the inverse algorithm for translating symbolic sequences from the full model to the halved model for completeness.
+It uses the inverse $t^{-1}$ of the function $t$.
+
+\begin{definition}
+	The function $t^{-1}$ maps one rotation of a symbolic sequence in the full model to two rotations in the halved model.
+	It is defined in the following way.
+	\begin{align}
+		t^{-1}: & \A^a\B^b\C^c\D^d \mapsto \L^a\R^b\L^c\R^d
+	\end{align}
+\end{definition}
+
+\begin{algorithm}
+	\caption{Translating a Symbolic Sequence from the Full Model to the Halved Model}\label{alg:full.to.halved}
+	\begin{algorithmic}
+		\Require $f = \tau'_1\tau'_2 \dots \tau'_n$ with $n > 0$
+		\State $d \gets t^{-1}(\tau'_1)t^{-1}(\tau'_2) \dots t^{-1}(\tau'_n) = \tau_1\tau_2 \dots \tau_m$
+		\Comment $m = 2n$ is even
+		\State $h \gets \tau_1\tau_2 \dots \tau_{\frac{m}{2}}$
+		\If{$d = h^2$}
+		\State \Return $h$
+		\ElsIf{$d \neq h^2$}
+		\State \Return $d$
+		\EndIf
+	\end{algorithmic}
+\end{algorithm}
+
+\subsubsection{Properties of the Period-adding Structure in the Full Model}
+
 With this knowledge, we now can explain, why some cycles in the full model have a much lower period than expected in period-adding structures.
 
 \begin{lemma}
@@ -224,6 +270,8 @@ With this knowledge, we now can explain, why some cycles in the full model have 
 	\end{enumerate}
 \end{proof}
 
+\todo{rules for adding structure in full model}
+
 Looking at the farey tree in \Cref{fig:tree.adding1.hor.full}, we can see some regularities in the distribution of coexisting (yellow) and single (white) cycles in the full model.
 These can be explained with \Cref{theorem:coex.even.odd}.
 %The third case in the theorem can't be seen in the farey tree, because we did not go deep enough into the tree but follows from the logic.
@@ -248,5 +296,3 @@ These can be explained with \Cref{theorem:coex.even.odd}.
 		      %		      Therefore this glued toghether cycle manifests as two coexisting cycles in the full model.
 	\end{enumerate}
 \end{proof}
-
-\todo{Improved algorithm?}
