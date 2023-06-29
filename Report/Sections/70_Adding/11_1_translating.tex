@@ -61,7 +61,7 @@ We repeat this until we fit all rotations that we have written down.
 	For cycles in the halved model $h$ with an odd number of rotations $n$, we need to write the original cycle down exactly twice.
 \end{lemma}
 
-\begin{proof}
+\begin{proof} \phantom{x}
 	\begin{enumerate}
 		\item Let $n = 2i$. Then, we can build $i$ pairs of rotations and fit all $2i$ rotations of the original model.
 		\item Let $n = 2i + 1$. We start by building $i$ pairs of rotations, fitting $2i$ rotations.
@@ -244,7 +244,7 @@ With this knowledge, we now can explain, why some cycles in the full model have 
 	\end{enumerate}
 \end{theorem}
 
-\begin{proof}
+\begin{proof} \phantom{x}
 	\begin{enumerate}
 		\item From \Cref{theorem:coexistence.even} we know that if the cycle $h$ in the halved model manifests as two coexisting cycles in the full model, $h$ has an even number of rotations $n$.
 		      And its translation is $T(h) = t(\tau_1\tau_2) t(\tau_3\tau_4) \dots t(\tau_{n-1}\tau_n)$.
@@ -270,29 +270,168 @@ With this knowledge, we now can explain, why some cycles in the full model have 
 	\end{enumerate}
 \end{proof}
 
-\todo{rules for adding structure in full model}
-
 Looking at the farey tree in \Cref{fig:tree.adding1.hor.full}, we can see some regularities in the distribution of coexisting (yellow) and single (white) cycles in the full model.
-These can be explained with \Cref{theorem:coex.even.odd}.
-%The third case in the theorem can't be seen in the farey tree, because we did not go deep enough into the tree but follows from the logic.
+These can be explained with \Cref{theorem:coexistence.even}.
+The third case in \Cref{theorem:child.coexistence} can't be seen in the farey tree but it follows from the proof of the first two cases.
 
 \begin{theorem}
+	\label{theorem:child.coexistence}
 	\begin{enumerate}
-		\item The simultaneous child of a node with a single cycle and a node with two coexisting cycles has a single cycle.
-		\item The simultaneous child of two nodes with a single cycle has two coexisting cycles.
-		      %		\item The simultaneous child of two nodes with two coexisting cycles, has two coexisting cycles.
+		\item The child of a node with a single cycle and a node with two coexisting cycles has a single cycle.
+		\item The child of two nodes with a single cycle has two coexisting cycles.
+		\item The child of two nodes with two coexisting cycles, has two coexisting cycles.
 	\end{enumerate}
 \end{theorem}
 
-\begin{proof}
+\begin{proof} \phantom{x}
 	\begin{enumerate}
 		\item A node with a single cycle in the full model is the manifestation of a cycle with an odd number of rotations in the halved model.
 		      A node with two coexisting cycles in the full model is the manifestation of a cycle with an even number of rotations in the halved model.
-		      Their simultaneous child is the manifestation of the two cycles in the halved model glued together.
+		      Their child is the manifestation of the two cycles in the halved model glued together.
 		      This glued-together cycle has an odd number of rotations and therefore manifests as a single cycle in the full model.
 		\item Analogously, two cycles with an odd number of rotations glued together have an even number of rotations.
 		      Therefore, this glued-together cycle manifests as two coexisting cycles in the full model.
-		      %		\item Analogously, two cycles with an even number of rotations glued toghether have an even number of rotations.
-		      %		      Therefore this glued toghether cycle manifests as two coexisting cycles in the full model.
+		\item Analogously, two cycles with an even number of rotations glued together have an even number of rotations.
+		      Therefore this glued-together cycle manifests as two coexisting cycles in the full model.
 	\end{enumerate}
+\end{proof}
+
+\todo{rules for adding structure in full model}
+\todo{left and right parent sequences, daughter? sequences}
+
+Furthermore, we can formulate rules for the cycles in the child node of two nodes in the period-adding structure in the full model.
+
+\begin{definition}
+	The operation $\left(\tau'\right)_{\A\B}$ takes only the symbols $\A$ and $\B$ from the rotation $\tau'$.
+	It is defined in the following way.
+	\begin{align}
+		\left(\A^a\B^b\C^c\D^d\right)_{\A\B} = \A^a\B^b
+	\end{align}
+
+	Similarily, the operation $\left(\tau'\right)_{\C\D}$ is defined in the following way.
+	\begin{align}
+		\left(\A^a\B^b\C^c\D^d\right)_{\C\D} = \C^c\D^d
+	\end{align}
+\end{definition}
+
+\begin{theorem}
+	The child node of a node with a singular cycle $\sigma = \sigma_1\sigma_2 \dots \sigma_n$ and a node with two coexisting cycles $\rho^a = \rho^a_1\rho^a_2 \dots \rho^a_m$ and $\rho^b_1\rho^b_2 \dots \rho^b_m$ will have one of the following cycles.
+	\begin{enumerate}
+		\item If $\sigma$ is associated with the left parent.
+		      \begin{align*}
+			      \sigma_1 \dots \sigma_{\frac{n-1}{2}} \left(\sigma_{\frac{n+1}{2}}\right)_{\A\B}
+			      \left(\rho^b_m\right)_{\C\D} \rho^b_1 \dots \rho^b_{m-1} \left(\rho^b_m\right)_{\A\B}
+			      \left(\sigma_{\frac{n+3}{2}}\right)_{\C\D} \sigma_{\frac{n+5}{2}} \dots \sigma_n
+			      \rho^a
+		      \end{align*}
+		\item If $\sigma$ is associated with the right parent.
+		      \begin{align*}
+			      \rho^a
+			      \sigma_1 \dots \sigma_{\frac{n-1}{2}} \left(\sigma_{\frac{n+1}{2}}\right)_{\A\B}
+			      \left(\rho^b_m\right)_{\C\D} \rho^b_1 \dots \rho^b_{m-1} \left(\rho^b_m\right)_{\A\B}
+			      \left(\sigma_{\frac{n+3}{2}}\right)_{\C\D} \sigma_{\frac{n+5}{2}} \dots \sigma_n
+		      \end{align*}
+		      Which is shift-equivalent to the first case.
+		      But this distinction must be made to guarantee the correctness of cycles in subsequent child nodes.
+	\end{enumerate}
+\end{theorem}
+
+\begin{proof} \phantom{x}
+	\begin{enumerate}
+		\item Let $l = l_1l_2 \dots l_i$ with odd $i$ and $r = r_1r_2 \dots r_j$ with even $j$ and $T(l) = \sigma, T(r) = \rho^a$, and $T(s(r))\rho^b$.
+		      The child of both nodes in the halved model will have the cycle $lr = l_1l_2 \dots l_i r_1r_2 \dots r_j$.
+		      This will manifest as the following cycle in the full model.
+		      \begin{align*}
+			      T(lr) & = T(l_1 \dots l_i r_1 \dots r_j)                                                      \\
+			            & =
+			      t(l_1l_2) \dots t(l_i r_1) \dots t(r_j l_1) \dots t(l_{i-1}l_i) t(r_1r_2) \dots t(r_{j-1}r_j) \\
+			            & =
+			      \sigma_1 \dots \sigma_{\frac{n-1}{2}} t(l_i r_1)
+			      \rho^b_1 \dots \rho^b_{m-1} t(r_j l_1)
+			      \sigma_{\frac{n+3}{2}} \dots \sigma_n
+			      \rho^a_1 \dots \rho^a_m                                                                       \\
+			            & =
+			      \sigma_1 \dots \sigma_{\frac{n-1}{2}} \left(\sigma_{\frac{n+1}{2}}\right)_{\A\B} \left(\rho^b_m\right)_{\C\D}
+			      \rho^b_1 \dots \rho^b_{m-1} \left(\rho^b_m\right)_{\A\B} \left(\sigma_{\frac{n+3}{2}}\right)_{\C\D}
+			      \sigma_{\frac{n+3}{2}} \dots \sigma_n
+			      \rho^a                                                                                        \\
+		      \end{align*}
+		\item Let $l = l_1l_2 \dots l_i$ with even $i$ and $r = r_1r_2 \dots r_j$ with odd $j$ and $T(l) = \rho^a, T(s(l)) = \rho^b$, and $T(r) = \sigma$.
+		      The child of both nodes in the halved model will have the cycle $lr = l_1l_2 \dots l_i r_1r_2 \dots r_j$.
+		      This will manifest as the following cycle in the full model.
+		      \begin{align*}
+			      T(lr) & = T(l_1 \dots l_i r_1 \dots r_j)                                                              \\
+			            & =
+			      t(l_1l_2) \dots t(l_{i-1}l_i) t(r_1r_2) \dots t(r_j l_1) \dots t(l_ir_1) \dots t(r_jl_1) \dots t(l_i) \\
+			            & =
+			      \rho^a_1 \dots \rho^a_m
+			      \sigma_1 \dots \sigma_{\frac{n-1}{2}} t(l_i r_1)
+			      \rho^b_1 \dots \rho^b_{m-1} t(r_j l_1)
+			      \sigma_{\frac{n+3}{2}} \dots \sigma_n                                                                 \\
+			            & =
+			      \rho^a
+			      \sigma_1 \dots \sigma_{\frac{n-1}{2}} \left(\sigma_{\frac{n+1}{2}}\right)_{\A\B} \left(\rho^b_m\right)_{\C\D}
+			      \rho^b_1 \dots \rho^b_{m-1} \left(\rho^b_m\right)_{\A\B} \left(\sigma_{\frac{n+3}{2}}\right)_{\C\D}
+			      \sigma_{\frac{n+3}{2}} \dots \sigma_n                                                                 \\
+		      \end{align*}
+	\end{enumerate}
+\end{proof}
+
+\begin{theorem}
+	The child node of two nodes with a singular cycle, $\sigma = \sigma_1 \dots \sigma_n$ and $\rho = \rho_1 \dots \rho_m$ respectively, has the following two cycles.
+	\begin{align*}
+		\sigma_1 \dots \sigma_{\frac{n-1}{2}} \left(\sigma_{\frac{n+1}{2}}\right)_{\A\B}
+		\left(\rho_{\frac{m+1}{2}}\right) \rho_{\frac{m+3}{2}} \dots \rho_m
+	\end{align*}
+	and
+	\begin{align*}
+		\sigma{\frac{m+3}{2}} \dots \sigma_n \rho_1 \dots \rho_{\frac{m-1}{2}}
+		\left(\rho_{\frac{m+1}{2}}\right)_{\A\B} \left(\sigma_{\frac{n+1}{2}}\right)
+	\end{align*}
+\end{theorem}
+
+\begin{proof}
+	Let $l = l_1l_2 \dots l_i$ with odd $i$ and $r = r_1r_2 \dots r_j$ with odd $j$ and $T(l) = \sigma$ and $T(r) = \rho$.
+	The child of both nodes in the halved model will have the cycle $lr = \l_1 \dots l_i r_1 \dots r_j$.
+	This will manifest as the following two cycles in the full model.
+	\begin{align*}
+		T(lr) & = T(l_1 \dots l_i r_1 \dots r_j)                                                    \\
+		      & = t(l_1l_2) \dots t(l_ir_1) \dots t(r_{j-1}r_j)                                     \\
+		      & = \sigma_1 \dots \sigma_{\frac{n-1}{2}} t(l_ir_1) \rho_{\frac{m+3}{2}} \dots \rho_j \\
+		      & = \sigma_1 \dots \sigma_{\frac{n-1}{2}} \left(\sigma_{\frac{n+1}{2}}\right)_{\A\B}
+		\left(\rho_{\frac{m+1}{2}}\right) \rho_{\frac{m+3}{2}} \dots \rho_j
+	\end{align*}
+	and
+	\begin{align*}
+		T(s(lr)) & = T(l_2 \dots l_i r_1 \dots r_j l_1)                                               \\
+		         & = t(l_2l_3) \dots t(l_{i-1}l_i) t(r_1r_2) \dots t(r_jl_1)                          \\
+		         & = \sigma{\frac{m+3}{2}} \dots \sigma_n \rho_1 \dots \rho_{\frac{m-1}{2}} t(r_jl_1) \\
+		         & = \sigma{\frac{m+3}{2}} \dots \sigma_n \rho_1 \dots \rho_{\frac{m-1}{2}}
+		\left(\rho_{\frac{m+1}{2}}\right)_{\A\B} \left(\sigma_{\frac{n+1}{2}}\right)
+	\end{align*}
+\end{proof}
+
+\begin{theorem}
+	The child node of two nodes with two coexisting cycles each, $\{\sigma^a, \sigma^b\}$ and $\{\rho^a, \rho^b\}$ respectively, has the following two cycles.
+	\begin{align*}
+		\sigma^a\rho^a \qquad \text{and} \qquad
+		\sigma^b_1 \dots \sigma^b_{n-1} \left(\sigma^b_n\right)_{\A\B} \left(\rho^b_m\right)_{\C\D} \rho^b_1 \dots \rho^b_m
+	\end{align*}
+\end{theorem}
+
+\begin{proof}
+	Let $l = l_1 \dots l_i$ with even $i$ and $r = r_1 \dots r_j$ with even $j$ and $T(l) = \sigma^a, T(s(l)) = \sigma^b, T(r) = \rho^a$, and $T(s(r)) = \rho^b$.
+	The child of both nodes in the halved model will have the cycle $lr$.
+	This will manifest as the following two cycles in the full model.
+	\begin{align*}
+		T(lr) & = T(l_1 \dots l_i r_1 \dots r_j) = t(l_1l_2) \dots t(l_{i-i}l_i) t(r_1r_2) \dots t(r_{j-1}r_j) \\
+		      & = \sigma^a_1 \dots \sigma^a_n \rho^a_1 \dots \rho^a_m = \sigma^a\rho^a
+	\end{align*}
+	and
+	\begin{align*}
+		T(s(lr)) & = T(l_2 \dots l_i r_1 \dots r_j l_1) = t(l_2l_3) \dots t(l_ir_1) \dots t(r_jl_1)              \\
+		         & = \sigma^b_1 \dots \sigma^b_{n-1} t(l_ir_1) \rho^b_1 \dots \rho^b_{m-1} t(r_jl_1)             \\
+		         & = \sigma^b_1 \dots \sigma^b_{n-1} \left(\sigma^b_n\right)_{\A\B} \left(\rho^b_m\right)_{\C\D}
+		\rho^b_1 \dots \rho^b_{m-1} \left(\rho^b_m\right)_{\A\B} \left(\sigma^b_m\right)_{\C\D}
+	\end{align*}
 \end{proof}

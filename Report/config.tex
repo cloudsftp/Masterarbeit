@@ -28,7 +28,15 @@
 \renewcommand{\O}{\mathcal{O}}
 \newcommand{\Cycle}[1]{\O_{#1}}
 
-\renewtheorem{definition}{Definition}[chapter]
+% EN: For theorems, replacement for amsthm
+\usepackage[amsmath,hyperref]{ntheorem}
+
+\theorempreskipamount 2ex plus1ex minus0.5ex
+\theorempostskipamount 2ex plus1ex minus0.5ex
+\theoremstyle{break}
 \newtheorem{theorem}{Theorem}[chapter]
-\newtheorem{lemma}{Lemma}[chapter]
-\newtheorem{proof}{Proof}[chapter]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{definition}{Definition}[chapter]
+
+\theoremstyle{nonumberplain}
+\newtheorem{proof}{Proof}
