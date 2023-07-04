@@ -385,7 +385,7 @@ Furthermore, we can formulate rules for the cycles in the child node of two node
 	\end{align*}
 	and
 	\begin{align*}
-		\sigma{\frac{m+3}{2}} \dots \sigma_n \rho_1 \dots \rho_{\frac{m-1}{2}}
+		\sigma_{\frac{n+3}{2}} \dots \sigma_n \rho_1 \dots \rho_{\frac{m-1}{2}}
 		\left(\rho_{\frac{m+1}{2}}\right)_{\A\B} \left(\sigma_{\frac{n+1}{2}}\right)
 	\end{align*}
 \end{theorem}
@@ -403,19 +403,22 @@ Furthermore, we can formulate rules for the cycles in the child node of two node
 	\end{align*}
 	and
 	\begin{align*}
-		T(s(lr)) & = T(l_2 \dots l_i r_1 \dots r_j l_1)                                               \\
-		         & = t(l_2l_3) \dots t(l_{i-1}l_i) t(r_1r_2) \dots t(r_jl_1)                          \\
-		         & = \sigma{\frac{m+3}{2}} \dots \sigma_n \rho_1 \dots \rho_{\frac{m-1}{2}} t(r_jl_1) \\
-		         & = \sigma{\frac{m+3}{2}} \dots \sigma_n \rho_1 \dots \rho_{\frac{m-1}{2}}
+		T(s(lr)) & = T(l_2 \dots l_i r_1 \dots r_j l_1)                                                \\
+		         & = t(l_2l_3) \dots t(l_{i-1}l_i) t(r_1r_2) \dots t(r_jl_1)                           \\
+		         & = \sigma_{\frac{n+3}{2}} \dots \sigma_n \rho_1 \dots \rho_{\frac{m-1}{2}} t(r_jl_1) \\
+		         & = \sigma_{\frac{n+3}{2}} \dots \sigma_n \rho_1 \dots \rho_{\frac{m-1}{2}}
 		\left(\rho_{\frac{m+1}{2}}\right)_{\A\B} \left(\sigma_{\frac{n+1}{2}}\right)
 	\end{align*}
 \end{proof}
+
+As mentioned before, the next case does not appear in the fare tree in \Cref{fig:tree.adding1.hor.full}.
+But we will include it here for completeness.
 
 \begin{theorem}
 	The child node of two nodes with two coexisting cycles each, $\{\sigma^a, \sigma^b\}$ and $\{\rho^a, \rho^b\}$ respectively, has the following two cycles.
 	\begin{align*}
 		\sigma^a\rho^a \qquad \text{and} \qquad
-		\sigma^b_1 \dots \sigma^b_{n-1} \left(\sigma^b_n\right)_{\A\B} \left(\rho^b_m\right)_{\C\D} \rho^b_1 \dots \rho^b_m
+		\sigma^b_1 \dots \sigma^b_{n-1} \left(\sigma^b_n\right)_{\A\B} \left(\rho^b_m\right)_{\C\D} \rho^b_1 \dots \rho^b_m \left(\rho^b_m\right)_{\A\B} \left(\sigma^b_n\right)_{\C\D}
 	\end{align*}
 \end{theorem}
 
@@ -429,9 +432,9 @@ Furthermore, we can formulate rules for the cycles in the child node of two node
 	\end{align*}
 	and
 	\begin{align*}
-		T(s(lr)) & = T(l_2 \dots l_i r_1 \dots r_j l_1) = t(l_2l_3) \dots t(l_ir_1) \dots t(r_jl_1)              \\
-		         & = \sigma^b_1 \dots \sigma^b_{n-1} t(l_ir_1) \rho^b_1 \dots \rho^b_{m-1} t(r_jl_1)             \\
-		         & = \sigma^b_1 \dots \sigma^b_{n-1} \left(\sigma^b_n\right)_{\A\B} \left(\rho^b_m\right)_{\C\D}
-		\rho^b_1 \dots \rho^b_{m-1} \left(\rho^b_m\right)_{\A\B} \left(\sigma^b_m\right)_{\C\D}
+		T(s(lr)) & = T(l_2 \dots l_i r_1 \dots r_j l_1) = t(l_2l_3) \dots t(l_ir_1) \dots t(r_jl_1)  \\
+		         & = \sigma^b_1 \dots \sigma^b_{n-1} t(l_ir_1) \rho^b_1 \dots \rho^b_{m-1} t(r_jl_1) \\
+		         & = \sigma^b_1 \dots \sigma^b_{n-1} \left(\sigma^b_n \odot \rho^b_m\right)
+		\rho^b_1 \dots \rho^b_{m-1} \left(\rho^b_m \odot \sigma^b_n\right)
 	\end{align*}
 \end{proof}

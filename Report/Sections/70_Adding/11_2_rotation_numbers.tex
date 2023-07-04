@@ -1,0 +1,87 @@
+\begin{figure}
+    \centering
+    \includegraphics[width=.8 \textwidth]{FareyTrees/Minrep_Adding1_Full_RotNum/adding.png}
+    \caption{Farey tree with rotation numbers}
+\end{figure}
+
+\begin{definition}[Rotation-like Numbers]
+    Rotation-like numbers for symbolic sequences $\sigma$ in the full model.
+    \begin{align*}
+        \rho_\A(\sigma) = \dfrac{|\sigma|_\A}{|\sigma|}, \quad
+        \rho_\B(\sigma) = \dfrac{|\sigma|_\B}{|\sigma|}, \quad
+        \rho_\C(\sigma) = \dfrac{|\sigma|_\C}{|\sigma|}, \quad
+        \rho_\D(\sigma) = \dfrac{|\sigma|_\D}{|\sigma|}
+    \end{align*}
+    Where $|\sigma|_\A$ is the number of symbols $\A$ in the sequence.
+    Analogous for the symbols $\B$, $\C$, and $\D$.
+\end{definition}
+
+\begin{definition}[Farey Addition]
+    \todo{define}
+\end{definition}
+
+\begin{theorem}
+    The child node of a node with a singular cycle $\sigma$ and a node with two coexisting cycles $\varrho^a$ and $\varrho^b$ will have the following rotation-like numbers.
+    We will call the cycle associated with the child node $\pi$ in the following.
+    \begin{align*}
+        \rho_\A(\pi) & =
+        \rho_\A(\sigma) \oplus \rho_\A(\varrho^a) \oplus \rho_A(\varrho^b) =
+        \dfrac{|\sigma|_\A + |\varrho^a|_\A + |\varrho^b|_\A}{|\sigma| + |\varrho^a| + |\varrho^b|} \\
+        \rho_\B(\pi) & =
+        \rho_\B(\sigma) \oplus \rho_\B(\varrho^a) \oplus \rho_B(\varrho^b)                          \\
+        \rho_\C(\pi) & =
+        \rho_\C(\sigma) \oplus \rho_\C(\varrho^a) \oplus \rho_C(\varrho^b)                          \\
+        \rho_\D(\pi) & =
+        \rho_\D(\sigma) \oplus \rho_\D(\varrho^a) \oplus \rho_D(\varrho^b)
+    \end{align*}
+    \todo{volle schreibweise überall?}
+\end{theorem}
+
+\begin{proof}
+    \todo{prove}
+\end{proof}
+
+\begin{theorem}
+    The child node of two nodes with a singular cycle, $\sigma$ and $\varrho$ respectively, will have the following period.
+    We will call the two cycles associated with the child node $\pi^a$ and $\pi^b$ in the following.
+    \begin{align*}
+        |\pi^a| = |\pi^b| & = \dfrac{|\sigma| + |\varrho|}{2} = |\pi|
+    \end{align*}
+    And its rotation-like numbers will be the following.
+    \begin{align*}
+        \rho_\A(\pi^a) & = \dfrac{|\sigma_1 \dots \sigma_{\frac{n+1}{2}}|_\A + |\varrho_{\frac{m+3}{2}} \dots \varrho_m|_\A}{|\pi|} \\
+        \rho_\B(\pi^a) & = \dfrac{|\sigma_1 \dots \sigma_{\frac{n+1}{2}}|_\B + |\varrho_{\frac{m+3}{2}} \dots \varrho_m|_\B}{|\pi|} \\
+        \rho_\C(\pi^a) & = \dfrac{|\sigma_1 \dots \sigma_{\frac{n-1}{2}}|_\C + |\varrho_{\frac{m+1}{2}} \dots \varrho_m|_\C}{|\pi|} \\
+        \rho_\D(\pi^a) & = \dfrac{|\sigma_1 \dots \sigma_{\frac{n-1}{2}}|_\D + |\varrho_{\frac{m+1}{2}} \dots \varrho_m|_\D}{|\pi|} \\
+        \rho_\A(\pi^b) & = \dfrac{|\varrho_1 \dots \varrho_{\frac{m+1}{2}}|_\A + |\sigma_{\frac{n+3}{2}} \dots \sigma_n|_\A}{|\pi|} \\
+        \rho_\B(\pi^b) & = \dfrac{|\varrho_1 \dots \varrho_{\frac{m+1}{2}}|_\B + |\sigma_{\frac{n+3}{2}} \dots \sigma_n|_\B}{|\pi|} \\
+        \rho_\C(\pi^b) & = \dfrac{|\varrho_1 \dots \varrho_{\frac{m-1}{2}}|_\C + |\sigma_{\frac{n+1}{2}} \dots \sigma_n|_\C}{|\pi|} \\
+        \rho_\D(\pi^b) & = \dfrac{|\varrho_1 \dots \varrho_{\frac{m-1}{2}}|_\D + |\sigma_{\frac{n+1}{2}} \dots \sigma_n|_\D}{|\pi|}
+    \end{align*}
+\end{theorem}
+
+\begin{proof} \phantom{x}
+    \begin{enumerate}
+        \item \todo{prove period}
+        \item \todo{prove rotation-like numbers}
+    \end{enumerate}
+\end{proof}
+
+\begin{theorem}
+    The child node of two nodes with two coexisting cycles, $\{\sigma^a, \sigma^b\}$ and $\{\varrho^a, \varrho^b\}$ respectively, will have the following rotation-like numbers.
+    We will call the two cycles associated with the child node $\pi^a$ and $\pi^b$ in the following.
+    \begin{align*}
+        \rho_\A(\pi^a) & = \rho_\A(\sigma^a) \oplus \rho_\A(\varrho^a) \\
+        \rho_\B(\pi^a) & = \rho_\A(\sigma^a) \oplus \rho_\A(\varrho^a) \\
+        \rho_\C(\pi^a) & = \rho_\A(\sigma^a) \oplus \rho_\A(\varrho^a) \\
+        \rho_\D(\pi^a) & = \rho_\A(\sigma^a) \oplus \rho_\A(\varrho^a) \\
+        \rho_\A(\pi^b) & = \rho_\A(\sigma^b) \oplus \rho_\A(\varrho^b) \\
+        \rho_\B(\pi^b) & = \rho_\A(\sigma^b) \oplus \rho_\A(\varrho^b) \\
+        \rho_\C(\pi^b) & = \rho_\A(\sigma^b) \oplus \rho_\A(\varrho^b) \\
+        \rho_\D(\pi^b) & = \rho_\A(\sigma^b) \oplus \rho_\A(\varrho^b)
+    \end{align*}
+\end{theorem}
+
+\begin{proof}
+    \todo{prove}
+\end{proof}
