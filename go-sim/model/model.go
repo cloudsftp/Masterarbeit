@@ -7,12 +7,12 @@ import (
 )
 
 const (
-	BUFFER_SIZE = 1 << 6
-	PREC        = 1 << 9
-	NUM_ITER    = 1 << 12
+	BUFFER_SIZE = 1 << 10
+	PREC        = 53 // 1 << 9
+	NUM_ITER    = 1 << 21
 )
 
-var epsilon = big.NewFloat(1e-12)
+var epsilon = big.NewFloat(1e-9)
 
 type Model interface {
 	Step(in *big.Float) *big.Float
