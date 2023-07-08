@@ -1,3 +1,5 @@
+\subsubsection{Rules for Combining Rotation-like Numbers}
+
 \begin{figure}
     \centering
     \includegraphics[width=.8 \textwidth]{FareyTrees/Minrep_Adding1_Full_RotNum/adding.png}
@@ -25,12 +27,11 @@
     We will call the cycle associated with the child node $\pi$ in the following.
     \begin{align*}
         \rho_\A(\pi) & =
-        \rho_\A(\sigma) \oplus \rho_\A(\varrho^a) \oplus \rho_A(\varrho^b) =
-        \dfrac{|\sigma|_\A + |\varrho^a|_\A + |\varrho^b|_\A}{|\sigma| + |\varrho^a| + |\varrho^b|} \\
+        \rho_\A(\sigma) \oplus \rho_\A(\varrho^a) \oplus \rho_A(\varrho^b) \\
         \rho_\B(\pi) & =
-        \rho_\B(\sigma) \oplus \rho_\B(\varrho^a) \oplus \rho_B(\varrho^b)                          \\
+        \rho_\B(\sigma) \oplus \rho_\B(\varrho^a) \oplus \rho_B(\varrho^b) \\
         \rho_\C(\pi) & =
-        \rho_\C(\sigma) \oplus \rho_\C(\varrho^a) \oplus \rho_C(\varrho^b)                          \\
+        \rho_\C(\sigma) \oplus \rho_\C(\varrho^a) \oplus \rho_C(\varrho^b) \\
         \rho_\D(\pi) & =
         \rho_\D(\sigma) \oplus \rho_\D(\varrho^a) \oplus \rho_D(\varrho^b)
     \end{align*}
@@ -67,6 +68,8 @@
     \end{enumerate}
 \end{proof}
 
+\todo{last case not possible in our adding structures. proof!}
+
 \begin{theorem}
     The child node of two nodes with two coexisting cycles, $\{\sigma^a, \sigma^b\}$ and $\{\varrho^a, \varrho^b\}$ respectively, will have the following rotation-like numbers.
     We will call the two cycles associated with the child node $\pi^a$ and $\pi^b$ in the following.
@@ -80,6 +83,32 @@
         \rho_\C(\pi^b) & = \rho_\A(\sigma^b) \oplus \rho_\A(\varrho^b) \\
         \rho_\D(\pi^b) & = \rho_\A(\sigma^b) \oplus \rho_\A(\varrho^b)
     \end{align*}
+\end{theorem}
+
+\begin{proof}
+    \todo{prove}
+\end{proof}
+
+In the usual case with two symbols, the rotation numbers are monotone.
+In our case, this is not true when considering both rotation-like numbers of coexisting cycles.
+The first step is a counter example, $\dfrac{6}{19} > \dfrac{6}{20}$ and $\dfrac{6}{19} > \dfrac{5}{18}$.
+But when considering the farey sum of the rotation-like numbers of coexisting cycles, the monotony holds.
+
+\begin{theorem}{Monotony of Rotation-like Numbers in the Full Model}
+    The rotation-like numbers for one symbol are monotone in the farey tree of a period-adding structure in the full model, when considering the farey sum of the rotation-like numbers of coexisting cycles.
+    \todo{sentences too long and complicated in enumeration}
+    \begin{enumerate}
+        \item The rotation-like numbers that correspond to the cycle of a child node of a parent node with a singular cycle and a parent node of two coexisting cycles, is in between the corresponding rotation-like number of the parent node with a singular cycle and the corresponding sum of rotation-like numbers of the parent node with two coexisting cycles.
+              \begin{align*}
+                       & \rho_X(\sigma) < \rho_X(\pi) < \rho_X(\varrho^a) \oplus \rho_X(\varrho^b) \\
+                  \lor & \rho_X(\sigma) > \rho_X(\pi) > \rho_X(\varrho^a) \oplus \rho_X(\varrho^b)
+              \end{align*}
+        \item The farey sum of the rotation-like numbers that correspond to each coexisting cycle of a child node of two nodes with a singular cycle each, is in between the corresponding rotation-like numbers of the parent nodes.
+              \begin{align*}
+                       & \rho_X(\sigma) < \rho_X(\pi^a) \oplus \rho_X(\pi^b) < \rho_X(\varrho) \\
+                  \lor & \rho_X(\sigma) > \rho_X(\pi^a) \oplus \rho_X(\pi^b) > \rho_X(\varrho)
+              \end{align*}
+    \end{enumerate}
 \end{theorem}
 
 \begin{proof}
