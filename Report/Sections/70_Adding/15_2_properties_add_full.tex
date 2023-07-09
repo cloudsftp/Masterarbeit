@@ -2,52 +2,52 @@
 
 With this knowledge, we now can explain, why some cycles in the full model have a much lower period than expected in period-adding structures.
 
-\begin{lemma}
+\begin{lemma}[$t$ Preserves Period]
     \label{lemma:t.preserves.period}
-    The function $t$ preserves the period. $|\tau_1\tau_2| = |t(\tau_1\tau_2)|$.
+    The function $t$ preserves the period. $|\sigma_1\sigma_2| = |t(\sigma_1\sigma_2)|$.
 \end{lemma}
 
 \begin{proof}
-    Let $\tau_1\tau_2 = \L^a\R^b\L^c\R^d$.
+    Let $\sigma_1\sigma_2 = \L^a\R^b\L^c\R^d$.
     \begin{align*}
-        |\tau_1\tau_2| =  |\L^a\R^b\L^c\R^d|
+        |\sigma_1\sigma_2| =  |\L^a\R^b\L^c\R^d|
         = a + b + c + d
         = |\A^a\B^b\C^c\D^d|
         = |t(\L^a\R^b\L^c\R^d)|
-        = |t(\tau_1\tau_2)|
+        = |t(\sigma_1\sigma_2)|
     \end{align*}
 \end{proof}
 
-\begin{theorem}
+\begin{theorem}[Period of Cycles in the Full Model]
     \begin{enumerate}
-        \item If a cycle in the halved model manifests as two coexisting cycles in the full model, the period of either cycle is the same as the period of the cycle in the halved model. $|T(h)| = |T(r(h))| = |h|$.
-        \item If a cycle in the halved model manifests as a single cycle in the full model, the period of this cycle is double the period of the cycle in the halved model. $|T(h)| = 2 |h|$.
+        \item If a cycle in the halved model manifests as two coexisting cycles in the full model, the period of either cycle is the same as the period of the cycle in the halved model. $|T(\sigma)| = |T(s_2(\sigma))| = |\sigma|$.
+        \item If a cycle in the halved model manifests as a single cycle in the full model, the period of this cycle is double the period of the cycle in the halved model. $|T(\sigma)| = 2 |\sigma|$.
     \end{enumerate}
 \end{theorem}
 
 \begin{proof} \phantom{x}
     \begin{enumerate}
-        \item From \Cref{theorem:coexistence.even} we know that if the cycle $h$ in the halved model manifests as two coexisting cycles in the full model, $h$ has an even number of rotations $n$.
-              And its translation is $T(h) = t(\tau_1\tau_2) t(\tau_3\tau_4) \dots t(\tau_{n-1}\tau_n)$.
+        \item From \Cref{theorem:coexistence.even} we know that if the cycle $\sigma$ in the halved model manifests as two coexisting cycles in the full model, $\sigma$ has an even number of rotations $n$.
+              And its translation is $T(\sigma) = t(\sigma_1\sigma_2) t(\sigma_3\sigma_4) \dots t(\sigma_{n-1}\sigma_n)$.
               Combining this with the fact, that $t$ preserves the period of its input as described in \Cref{lemma:t.preserves.period}, we can calculate the period of $T(h)$ in the following way.
               \begin{align*}
-                  |T(h)| & = |t(\tau_1\tau_2) t(\tau_3\tau_4) \dots t(\tau_{n-1}\tau_n)|           \\
-                         & = |t(\tau_1\tau_2)| + |t(\tau_3\tau_4)| + \dots + |t(\tau_{n-1}\tau_n)| \\
-                         & = |\tau_1\tau_2| + |\tau_3\tau_4| + \dots + |\tau_{n-1}\tau_n|          \\
-                         & = |\tau_1\tau_2 \dots \tau_n| = |h|
+                  |T(h)| & = |t(\sigma_1\sigma_2) t(\sigma_3\sigma_4) \dots t(\sigma_{n-1}\sigma_n)|           \\
+                         & = |t(\sigma_1\sigma_2)| + |t(\sigma_3\sigma_4)| + \dots + |t(\sigma_{n-1}\sigma_n)| \\
+                         & = |\sigma_1\sigma_2| + |\sigma_3\sigma_4| + \dots + |\sigma_{n-1}\sigma_n|          \\
+                         & = |\sigma_1\sigma_2 \dots \sigma_n| = |h|
               \end{align*}
-              So the period of the cycle $T(h)$ in the full model is the same as the period of the cycle $h$ in the halved model.
-              The same calculation can be done for $T(s(h))$ and is omitted here.
-        \item Similarly we know that if the cycle $h$ in the halved model manifests as a single cycle in the full model, $h$ has an odd number of rotations $n$.
-              And its translation is $T(h) = t(\tau_1\tau_2) \dots t(\tau_n\tau_1) \dots t(\tau_{n-1}\tau_n)$.
+              So the period of the cycle $T(\sigma)$ in the full model is the same as the period of the cycle $\sigma$ in the halved model.
+              The same calculation can be done for $T(s(\sigma))$ and is omitted here.
+        \item Similarly we know that if the cycle $\sigma$ in the halved model manifests as a single cycle in the full model, $\sigma$ has an odd number of rotations $n$.
+              And its translation is $T(\sigma) = t(\sigma_1\sigma_2) \dots t(\sigma_n\sigma_1) \dots t(\sigma_{n-1}\sigma_n)$.
               Its period can be calculated in the following way.
               \begin{align*}
-                  |T(h)| & = |t(\tau_1\tau_2) \dots t(\tau_n\tau_1) \dots t(\tau_{n-1}\tau_n)|             \\
-                         & = |t(\tau_1\tau_2)| + \dots + |t(\tau_n\tau_1)| + \dots + |t(\tau_{n-1}\tau_n)| \\
-                         & = |\tau_1\tau_2| + \dots + |\tau_n\tau_1| + \dots + |\tau_{n-1}\tau_n|          \\
-                         & = |\tau_1\tau_2 \dots \tau_n\tau_1 \dots \tau_{n-1}\tau_n| = |hh| = 2 |h|
+                  |T(h)| & = |t(\sigma_1\sigma_2) \dots t(\sigma_n\sigma_1) \dots t(\sigma_{n-1}\sigma_n)|             \\
+                         & = |t(\sigma_1\sigma_2)| + \dots + |t(\sigma_n\sigma_1)| + \dots + |t(\sigma_{n-1}\sigma_n)| \\
+                         & = |\sigma_1\sigma_2| + \dots + |\sigma_n\sigma_1| + \dots + |\sigma_{n-1}\sigma_n|          \\
+                         & = |\sigma_1\sigma_2 \dots \sigma_n\sigma_1 \dots \sigma_{n-1}\sigma_n| = |\sigma\sigma| = 2 |\sigma|
               \end{align*}
-              So the period of the cycle $T(h)$ in the full model is twice the period of the cycle $h$ in the halved model.
+              So the period of the cycle $T(\sigma)$ in the full model is twice the period of the cycle $\sigma$ in the halved model.
     \end{enumerate}
 \end{proof}
 
@@ -58,7 +58,7 @@ These can be explained with \Cref{theorem:coexistence.even}.
 \todo{last case not possible in our adding structures. proof!}
 The third case in \Cref{theorem:child.coexistence} can't be seen in the farey tree but it follows from the proof of the first two cases.
 
-\begin{theorem}
+\begin{theorem}[Multiplicity of Cycles Associated With Child Nodes Based on the Multiplicity of Cycles Associated With its Parent Nodes]
     \label{theorem:child.coexistence}
     \begin{enumerate}
         \item The child of a node with a single cycle and a node with two coexisting cycles has a single cycle.
@@ -80,40 +80,29 @@ The third case in \Cref{theorem:child.coexistence} can't be seen in the farey tr
     \end{enumerate}
 \end{proof}
 
-\todo{rules for adding structure in full model}
-\todo{left and right parent sequences, daughter? sequences}
-
 Furthermore, we can formulate rules for the cycles in the child node of two nodes in the period-adding structure in the full model.
 
-\begin{definition}
-    The operation $\left(\tau'\right)_{\A\B}$ takes only the symbols $\A$ and $\B$ from the rotation $\tau'$.
-    It is defined in the following way.
-    \begin{align}
-        \left(\A^a\B^b\C^c\D^d\right)_{\A\B} = \A^a\B^b
-    \end{align}
-
-    Similarily, the operation $\left(\tau'\right)_{\C\D}$ is defined in the following way.
-    \begin{align}
-        \left(\A^a\B^b\C^c\D^d\right)_{\C\D} = \C^c\D^d
-    \end{align}
+\begin{definition}[Merging two 4-syllables]
+    The operation $\left[\phi_i \mid \psi_j\right]$ merges the two 4-symmables $\phi_i$ and $\psi_j$.
+    Let $\phi_i = \A^a\B^b\C^c\D^d$ and $\psi_j = \A^e\B^f\C^g\D^h$.
+    Then $\left[\phi_i \mid \psi_j\right] = \A^a\B^b\C^g\D^h$.
+    It concatenates the first 2-syllable of $\phi_i$ with the second 2-syllable of $\psi_j$.
 \end{definition}
 
-\begin{theorem}
+\begin{theorem}[The Cycles of a Child Node of a Node With a Singular Cycle and a Node With 2 Coexisting Cycles]
     The child node of a node with a singular cycle $\sigma = \sigma_1\sigma_2 \dots \sigma_n$ and a node with two coexisting cycles $\rho^a = \rho^a_1\rho^a_2 \dots \rho^a_m$ and $\rho^b_1\rho^b_2 \dots \rho^b_m$ will have one of the following cycles.
     \begin{enumerate}
         \item If $\sigma$ is associated with the left parent.
               \begin{align*}
-                  \sigma_1 \dots \sigma_{\frac{n-1}{2}} \left(\sigma_{\frac{n+1}{2}}\right)_{\A\B}
-                  \left(\rho^b_m\right)_{\C\D} \rho^b_1 \dots \rho^b_{m-1} \left(\rho^b_m\right)_{\A\B}
-                  \left(\sigma_{\frac{n+3}{2}}\right)_{\C\D} \sigma_{\frac{n+5}{2}} \dots \sigma_n
-                  \rho^a
+                  \sigma_1 \dots \sigma_{\frac{n-1}{2}} \left[\sigma_{\frac{n+1}{2}} \mid \rho^b_m\right]
+                  \rho^b_1 \dots \rho^b_{m-1} \left[\rho^b_m \mid \sigma_{\frac{n+1}{2}}\right]
+                  \sigma_{\frac{n+3}{2}} \dots \sigma_n \rho^a
               \end{align*}
         \item If $\sigma$ is associated with the right parent.
               \begin{align*}
-                  \rho^a
-                  \sigma_1 \dots \sigma_{\frac{n-1}{2}} \left(\sigma_{\frac{n+1}{2}}\right)_{\A\B}
-                  \left(\rho^b_m\right)_{\C\D} \rho^b_1 \dots \rho^b_{m-1} \left(\rho^b_m\right)_{\A\B}
-                  \left(\sigma_{\frac{n+3}{2}}\right)_{\C\D} \sigma_{\frac{n+5}{2}} \dots \sigma_n
+                  \rho^a \sigma_1 \dots \sigma_{\frac{n-1}{2}} \left[\sigma_{\frac{n+1}{2}} \mid \rho^b_m\right]
+                  \rho^b_1 \dots \rho^b_{m-1} \left[\rho^b_m \mid \sigma_{\frac{n+1}{2}}\right]
+                  \sigma_{\frac{n+3}{2}} \dots \sigma_n
               \end{align*}
               Which is shift-equivalent to the first case.
               But this distinction must be made to guarantee the correctness of cycles in subsequent child nodes.
