@@ -1,5 +1,9 @@
 \subsection{Translating Symbolic Sequences}
 
+\todo{intro paragraph}
+
+\todo{mention that $\sigma, \rho, \tau$ are symb seq in the halved model, $\phi, \psi, \pi$ in the full model}
+
 \subsubsection{Naive Algorithm}
 
 Based on this concept of the infinite model, one can formulate a naive algorithm for translating symbolic sequences between the halved and full model.
@@ -7,138 +11,162 @@ We will start with the easier direction from the full to the halved model.
 From this direction we can't learn much about the nature of the period-adding structure in the full model, the inverse will be more important for that.
 
 To translate a symbolic sequence of the full model we start by writing it down.
-For example $\A^4\B^3\C^4\D^3$.
+For example $\phi = \A^4\B^3\C^4\D^3$.
 Then we replace the symbols $\A$ and $\C$ by $\L$ and the symbols $\B$ and $\D$ by $\R$.
 Now we have $\L^4\R^3\L^4\R^3$.
 Finally, we have to check for redundancy in the resulting cycle.
 In our example, the cycle $\L^4\R^3$ repeats twice in $\L^4\R^3\L^4\R^3$, so we just keep $\L^4\R^3$.
-\todo{explain using the illustration}
 
 The inverse is trickier.
 We start by writing down the symbolic sequence in the halved model.
-For example $h = \L^4\R^3\L4\R^3\L^3\R^3$.
+For example $\sigma = \L^4\R^3\L4\R^3\L^3\R^3$.
 Now we need to build pairs of rotations since each blue block fits two red blocks.
 If there is one rotation left over at the end, we wrap around or equivalently write down the original sequence again.
 We repeat this until we fit all rotations that we have written down.
 
 \begin{lemma}
     \label{lemma:writing.down}
-    For cycles in the halved model $h$ with an even number of rotations $n$, we only need to write the original cycle down once.
-    For cycles in the halved model $h$ with an odd number of rotations $n$, we need to write the original cycle down exactly twice.
+    For cycles in the halved model $\sigma$ with an even number of rotations $n$, we only need to write the original cycle down once.
+    For cycles in the halved model $\sigma$ with an odd number of rotations $n$, we need to write the original cycle down exactly twice.
 \end{lemma}
 
 \begin{proof} \phantom{x}
     \begin{enumerate}
         \item Let $n = 2i$. Then, we can build $i$ pairs of rotations and fit all $2i$ rotations of the original model.
         \item Let $n = 2i + 1$. We start by building $i$ pairs of rotations, fitting $2i$ rotations.
-              This will leave the last rotation unpaired o we write down the sequence of $2i + 1$ rotations again.
+              This will leave the last rotation unpaired, so we write down the sequence of $2i + 1$ rotations again.
               Now we can pair up the last rotation of the first sequence we wrote down with the first rotation of the sequence we just wrote down.
               $2i$ rotations remain, which we can fit into $i$ pairs.
     \end{enumerate}
 \end{proof}
 
 Notice, our example symbolic sequence has 3 rotations.
-This means we have to write down the original sequence twice $h^2 = \L^4\R^3\L4\R^3\L^3\R^3\L^4\R^3\L4\R^3\L^3\R^3$.
+This means we have to write down the original sequence twice $\sigma^2 = \L^4\R^3\L4\R^3\L^3\R^3\L^4\R^3\L4\R^3\L^3\R^3$.
 
 Then we pair up the rotations, this corresponds to drawing blue boxes around the red boxes in the infinite model.
 In our example, we get the pairs $(\L^4\R^3\L^4\R^3)(\L^3\R^3\L^4\R^3)(\L^4\R^3\L^3\R^3)$.
-The pairs then have to be translated using the function $t$ defined below.
+The pairs then have to be translated using the function $t$ defined below in \Cref{def:t}.
 The resulting symbolic sequence is $T(h) = \A^4\B^3\C^4\D^3\A^3\B^3\C^4\D^3\A^4\B^3\C^3\D^3$.
+The formal definition of $T$ is below in \Cref{def:T}.
 
-\begin{definition}
-    The function $t$ maps two rotations of a symbolic sequence in the halved model to a single rotation in the full model.
+\begin{definition}[Syllables]
+    A syllable is a sequence of the same symbol if it can't be extended in the context of the symbolic sequence it is in.
+    So for example, $\L^3$ is a syllable in $\L^3\R^3$, but $\L^2$ and $\L$ are not.
+    A 2-syllable is a pair of syllables that are next to each other.
+    And a 4-syllable is a pair of 2-syllables that are next to each other.
+
+    In the halved model, a 2-syllable corresponds to one rotation.
+    In the full model, a 4-syllable corresponds to one rotation.
+    These terms are used interchangably in the rest of this chapter.
+\end{definition}
+
+\begin{definition}[Translation of 4-syllables from the Halved Model to the Full Model $t$]
+    \label{def:t}
+    The function $t$ maps two rotations, or a 4-syllable, of a symbolic sequence in the halved model to a single rotation in the full model.
     It is defined in the following way.
     \begin{align}
         t: & \L^a\R^b\L^c\R^d \mapsto \A^a\B^b\C^c\D^d
     \end{align}
 \end{definition}
 
-\begin{definition}
-    The function $s$ shifts a symbolic sequence in the halved model by a single rotation.
-    Let $\tau_1\tau_2 \dots \tau_n$ be a sequence in the halved model, where each $\tau_i$ is one rotation.
-    Then $s$ is defined in the following way.
+\begin{definition}[Translation of a Symbolic Sequence from the Halved Model to the Full Model $T$]
+    \label{def:T}
+    The function $T$ translates a symbolic sequence $\sigma = \sigma_1\sigma_2 \dots \sigma_n$ in the halved model to the full model.
+    Where $\sigma_i$ are the 2-syllables of $\sigma$.
+    From \Cref{lemma:writing.down} we know how often we need to write down $\sigma$, and therefore also which 4-syllables to translate with $t$.
     \begin{align}
-        s: & \tau_1\tau_2 \dots \tau_n \mapsto \tau_2 \dots \tau_n\tau_1
+        T(\sigma) & = \begin{cases}
+            t(\sigma_1\sigma_2) \dots t(\sigma_{n-1}\sigma_n) & \text{ if } n | 2 \\
+            t(\sigma_1\sigma_2) \dots t(\sigma_n\sigma_1) \dots t(\sigma_{n-1}\sigma_n) & \text{ else }
+        \end{cases}
     \end{align}
-    In the full model, there is a similar function, $s'$, that shifts a symbolic sequence in the full model by a single rotation.
-    Let $\tau'_1\tau'_2 \dots \tau'_n$ be a sequence in the full model, where each $\tau'_i$ is one rotation.
-    The $s'$ is defined in the following way.
+\end{definition}
+
+\begin{definition}[Shifting Symbolic Sequences]
+    The function $s_2$ shifts a symbolic sequence $\sigma$ in the halved model by a single rotation, or equivalently by a 2-syllable.
+    Let $\sigma = \sigma_1\sigma_2 \dots \sigma_n$, where $\sigma_i$ are 2-syllables.
+    Then $s_2$ is defined in the following way.
     \begin{align}
-        s': & \tau'_1\tau'_2 \dots \tau'_n \mapsto \tau'_2 \dots \tau'_n\tau'_1
+        s: & \sigma_1\sigma_2 \dots \sigma_n \mapsto \sigma_2 \dots \sigma_n\sigma_1
+    \end{align}
+    In the full model, there is a similar function, $s_4$, that shifts a symbolic sequence $\phi$ in the full model by a single rotation.
+    Let $\phi = \phi_1\phi_2 \dots \phi_n$, where $\phi_i$ are 4-syllables.
+    Then $s_4$ is defined in the following way.
+    \begin{align}
+        s_4: & \phi_1\phi_2 \dots \phi_n \mapsto \phi_2 \dots \phi_n\phi_1
     \end{align}
 \end{definition}
 
 \begin{definition}
-    The two symbolic sequences $\sigma$ and $\rho$ in the full model are shift-equivalent $\sigma \equiv \rho$,
+    The two symbolic sequences $\phi$ and $\psi$ in the full model are shift-equivalent $\phi \equiv \psi$,
     if they both have the same number of rotations $n$
-    and there is a number $0 \leq i < n$, such that $\sigma = s'^i(\rho)$.
-    Where $s'^i$ is the same as applying $s'$ $i$ times.
+    and there is a number $0 \leq i < n$, such that $\phi = s_4^i(\psi)$.
+    Where $s_4^i$ is the same as applying $s_4$ $i$ times.
+    \todo{better proof, inductive}
 \end{definition}
 
-We need to repeat the whole process for each shift $s^i$ of the original symbolic sequence for $0 < i < n$ where $n$ is the number of rotations of the original symbolic sequence.
+We need to repeat the whole process for each shift $s_2^i$ of the original symbolic sequence for $0 < i < n$ where $n$ is the number of rotations, or equivalently 2-syllables, of the original symbolic sequence.
 And we only keep the results that are not shift-equivalent to any previous result.
-In our example, we would repeat the process for $s(h) = \L^4\R^3\L3\R^3\L^4\R^3$ and get the result $T(s(h)) = \A^4\B^3\C^3\D^3\A^4\B^3\C^4\D^3\A^3\B^3\C^4\D^3$.
-This result is shift-equivalent to the first result by shifting it 2 times.
-Last we need to repeat it for $s^2(h) = \L^3\R^3\L4\R^3\L^4\R^3$ and get the result $T(s^2(h)) = \A^3\B^3\C^4\D^3\A^4\B^3\C^3\D^3\A^4\B^3\C^4\D^3$.
-This result is shift-equivalent to the first result by rotating it once.
+In our example, we would repeat the process for $s_2(\sigma) = \L^4\R^3\L3\R^3\L^4\R^3$ and get the result $T(s_2(\sigma)) = \A^4\B^3\C^3\D^3\A^4\B^3\C^4\D^3\A^3\B^3\C^4\D^3$.
+This result is shift-equivalent to the first result by shifting it 2 times ($s_4^2$).
+Last we need to repeat it for $s_2^2(\sigma) = \L^3\R^3\L4\R^3\L^4\R^3$ and get the result $T(s_2^2(\sigma)) = \A^3\B^3\C^4\D^3\A^4\B^3\C^3\D^3\A^4\B^3\C^4\D^3$.
+This result is shift-equivalent to the first result by shifting it once ($s_4$).
 
-Therefore the cycle $h$ in the halved model manifests as a single cycle $T(h)$ in the full model.
-We write it as $F(h) = \{T(h)\} = \{\A^4\B^3\C^4\D^3\A^3\B^3\C^4\D^3\A^4\B^3\C^3\D^3\}$.
-The result of $F$ is a set because the cycle $h$ in the halved model may manifest as multiple coexisting cycles in the full model.
+Therefore the cycle $\sigma$ in the halved model manifests as a single cycle $T(\sigma)$ in the full model.
+We write it as $F(\sigma) = \{T(\sigma)\} = \{\A^4\B^3\C^4\D^3\A^3\B^3\C^4\D^3\A^4\B^3\C^3\D^3\}$.
+The result of $F$ is a set because the cycle $\sigma$ in the halved model may manifest as multiple coexisting cycles in the full model.
 
-\subsubsection{Insights}
-\todo{better heading}
+\subsubsection{Properties of Translated Symbolic Sequences in the Full Model}
 
 With this naive algorithm, we can start to investigate rules for the period-adding structure in the full model.
 
 \begin{lemma}
     \label{lemma:equivalence.translations}
-    The translations of the two cycles $h_1$ and $h_2 = r^{2i}(h_1)$ in the halved model are shift-equivalent $T(h_1) \equiv T(h_2)$ for all integers $i$.
+    The translations of the two cycles $\sigma$ and $\rho = s_2^{2i}(\sigma)$ in the halved model are shift-equivalent $T(\sigma) \equiv T(\rho)$ in the full model for all integers $i$.
 \end{lemma}
 
 \begin{proof}
-    Let $h_1 = \tau_1\tau_2 \dots \tau_n$, therefore $h_2 = \tau_{2i+1} \dots \tau_n\tau_1 \dots \tau_{2i}$.
-    The translations are $T(h_1) = t(\tau_1\tau_2)t(\tau_3\tau_4) \dots t(\tau_{n-1}\tau_n)$
-    and $T(h_2) = t(\tau_{2i+1}\tau_{2i+2}) \dots t(\tau_{n-1}\tau_n)t(\tau_1\tau_2) \dots t(\tau_{2i-i}\tau_{2i})$.
-    We can see that $T(h_2) = s'^i(T(h_1))$ and therefore $T(h_1) \equiv T(h_2)$.
+    Let $\sigma = \sigma_1\sigma_2 \dots \sigma_n$, therefore $\rho = \sigma_{2i+1} \dots \sigma_n\sigma_1 \dots \sigma_{2i}$.
+    The translations are $T(\sigma) = t(\sigma_1\sigma_2)t(\sigma_3\sigma_4) \dots t(\sigma_{n-1}\sigma_n)$
+    and $T(\rho) = t(\sigma_{2i+1}\sigma_{2i+2}) \dots t(\sigma_{n-1}\sigma_n)t(\sigma_1\sigma_2) \dots t(\sigma_{2i-i}\sigma_{2i})$.
+    We can see that $T(\rho) = s_4^i(T(\sigma))$ and therefore $T(\sigma) \equiv T(\rho)$.
 \end{proof}
 
 \begin{theorem}
     \label{theorem:coexistence.even}
-    The mainfestations of a cycle in the halfed model $h$ is either $F(h) = \{T(h), T(s(h))\}$ or $F(h) = \{T(h)\}$.
+    The mainfestations of a cycle in the halfed model $\sigma$ is either $F(\sigma) = \{T(\sigma), T(s_2(\sigma))\}$ or $F(\sigma) = \{T(\sigma)\}$.
     And \begin{enumerate}
-        \item $F(h) = \{T(h), T(s(h))\}$ if the number of rotations of the sequence $h$ is even.
-        \item $F(h) = \{T(h)\}$ if the number of rotations of the sequence $h$ is odd.
+        \item $F(\sigma) = \{T(\sigma), T(s_2(\sigma))\}$ if the number of rotations of the sequence $\sigma$ is even.
+        \item $F(\sigma) = \{T(\sigma)\}$ if the number of rotations of the sequence $\sigma$ is odd.
     \end{enumerate}
 \end{theorem}
 
 \begin{proof}
-    Let $h = \tau_1\tau_2 \dots \tau_n$ a symbolic sequence in the halved model with $n$ rotations.
-    We know from \Cref{lemma:equivalence.translations} that the only possible candidates for $F(h)$ are $T(h)$ and $T(s(h))$.
-    These are the first two possibilities we check in the algorithm and all other shifts $T(s^i(h))$ with $2 \leq i < n$ are shift-equivalent to $T(h)$ or $T(s(h))$.
+    Let $\sigma = \sigma_1\sigma_2 \dots \sigma_n$ a symbolic sequence in the halved model with $n$ rotations.
+    We know from \Cref{lemma:equivalence.translations} that the only possible candidates for $F(\sigma)$ are $T(\sigma)$ and $T(s_2(\sigma))$.
+    These are the first two possibilities we check in the algorithm and all other shifts $T(s_2^i(\sigma))$ with $2 \leq i < n$ are shift-equivalent to $T(\sigma)$ or $T(s_2(\sigma))$.
+    This follows directly from \Cref{lemma:equivalence.translations}.
     So, in the following, we will only check for the shift-equivalence of these two candidates.
     \begin{enumerate}
         \item Let $n = 2i$.
-              From \Cref{lemma:writing.down} we know that we only need to write down the original cycle $h$ once and thus we get the following translations.
               \begin{align*}
-                          & T(h) = t(\tau_1\tau_2) t(\tau_3\tau_4) \dots t(\tau_{n-1}\tau_n) \\
-                  \nequiv & T(h) = t(\tau_2\tau_3) t(\tau_4\tau_5) \dots t(\tau_n\tau_1)
+                          & T(h) = t(\sigma_1\sigma_2) t(\sigma_3\sigma_4) \dots t(\sigma_{n-1}\sigma_n) \\
+                  \nequiv & T(s_2(h)) = t(\sigma_2\sigma_3) t(\sigma_4\sigma_5) \dots t(\sigma_n\sigma_1)
               \end{align*}
-              The two candidates are not shift-equivalent because the pair $t(\tau_1\tau_2)$ in $T(h)$ is not included in the other candidate $t(s(h))$.
-              The same is true for any other pair, and therefore $F(h) = \{T(h), T(s(h))\}$.
+              The two candidates are not shift-equivalent because the pair $t(\sigma_1\sigma_2)$ in $T(\sigma)$ is not included in the other candidate $T(s_2(\sigma))$.
+              The same is true for any other pair, and therefore $F(\sigma) = \{T(\sigma), T(s_2(\sigma))\}$.
         \item Let $n = 2i + 1$.
-              From \Cref{lemma:writing.down} we know that we need to write down the original cycle $h$ exactly twice and thus we get the following translations.
               \begin{align*}
-                         & T(h) = t(\tau_1\tau_2) t(\tau_3\tau_4) \dots t(\tau_n\tau_1) t(\tau_2\tau_3) \dots t(\tau_{n-1}\tau_n) \\
-                  \equiv & T(h) = t(\tau_2\tau_3) \dots t(\tau_{n-1}\tau_n) t(\tau_1\tau_2) t(\tau_3\tau_4) \dots t(\tau_n\tau_1)
+                         & T(h) = t(\sigma_1\sigma_2) t(\sigma_3\sigma_4) \dots t(\sigma_n\sigma_1) t(\sigma_2\sigma_3) \dots t(\sigma_{n-1}\sigma_n) \\
+                  \equiv & T(s_2(h)) = t(\sigma_2\sigma_3) \dots t(\sigma_{n-1}\sigma_n) t(\sigma_1\sigma_2) t(\sigma_3\sigma_4) \dots t(\sigma_n\sigma_1)
               \end{align*}
               The two candidates are shift-equivalent.
-              By shifting the second candidate $T(s(h))$ $2i$ times, we get the first candidate $T(h)$.
-              Therefore, the second candidate is discarded and $F(h) = \{T(h)\}$.
+              By shifting the second candidate $T(s_2(\sigma))$ $2i$ times, we get the first candidate $T(\sigma)$.
+              Therefore, the second candidate is discarded and $F(\sigma) = \{T(\sigma)\}$.
     \end{enumerate}
 \end{proof}
 
-Note that a result of $F(h) = \{T(h), T(s(h))\}$ means that the cycle in the halved model $h$ manifests as two coexisting cycles in the full model.
+Note that a result of $F(\sigma) = \{T(\sigma), T(s_2(\sigma))\}$ means that the cycle in the halved model $\sigma$ manifests as two coexisting cycles in the full model.
 
 \subsubsection{Revised Algorithm}
 
@@ -148,11 +176,11 @@ This revised algorithm will be used in the following to explain the rules of the
 \begin{algorithm}
     \caption{Translating a Symbolic Sequence from the Halved Model to the Full Model}\label{alg:halved.to.full}
     \begin{algorithmic}
-        \Require $h = \tau_1\tau_2 \dots \tau_n$ with $n > 0$
+        \Require $\sigma = \sigma_1\sigma_2 \dots \sigma_n$ with $n > 0$
         \If{$n$ is even}
-        \State \Return $\{t(\tau_1\tau_2) t(\tau_3\tau_4) \dots t(\tau_{n-1}\tau_n), t(\tau_2\tau_3) t(\tau_4\tau_5) \dots t(\tau_n\tau_1)\}$
+        \State \Return $\{t(\sigma_1\sigma_2) t(\sigma_3\sigma_4) \dots t(\sigma_{n-1}\sigma_n), t(\sigma_2\sigma_3) t(\sigma_4\sigma_5) \dots t(\sigma_n\sigma_1)\}$
         \ElsIf{$n$ is odd}
-        \State \Return $\{t(\tau_1\tau_2) \dots t(\tau_{n}\tau_1) \dots t(\tau_{n-1}\tau_n)\}$
+        \State \Return $\{t(\sigma_1\sigma_2) \dots t(\sigma_{n}\sigma_1) \dots t(\sigma_{n-1}\sigma_n)\}$
         \EndIf
     \end{algorithmic}
 \end{algorithm}
@@ -171,14 +199,14 @@ It uses the inverse $t^{-1}$ of the function $t$.
 \begin{algorithm}
     \caption{Translating a Symbolic Sequence from the Full Model to the Halved Model}\label{alg:full.to.halved}
     \begin{algorithmic}
-        \Require $f = \tau'_1\tau'_2 \dots \tau'_n$ with $n > 0$
-        \State $d \gets t^{-1}(\tau'_1)t^{-1}(\tau'_2) \dots t^{-1}(\tau'_n) = \tau_1\tau_2 \dots \tau_m$
+        \Require $\phi = \phi_1\phi_2 \dots \phi_n$ with $n > 0$
+        \State $d \gets t^{-1}(\phi_1)t^{-1}(\phi_2) \dots t^{-1}(\phi_n) = \sigma_1\sigma_2 \dots \sigma_m$
         \Comment $m = 2n$ is even
-        \State $h \gets \tau_1\tau_2 \dots \tau_{\frac{m}{2}}$
-        \If{$d = h^2$}
-        \State \Return $h$
-        \ElsIf{$d \neq h^2$}
-        \State \Return $d$
+        \State $\tau \gets \sigma_1\sigma_2 \dots \sigma_{\frac{m}{2}}$
+        \If{$\sigma = \tau^2$}
+        \State \Return $\tau$
+        \ElsIf{$\sigma \neq \tau^2$}
+        \State \Return $\sigma$
         \EndIf
     \end{algorithmic}
 \end{algorithm}
