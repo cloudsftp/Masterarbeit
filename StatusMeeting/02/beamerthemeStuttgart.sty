@@ -72,13 +72,13 @@
 \DeclareStringOption[1]{thanksPageBigGraphicsScale}
 
 % graphics on the title page
-\DeclareStringOption[gfx/logos/logo_university_stuttgart_white.pdf]{titlePageUniversityLogo}
+\DeclareStringOption[../gfx/logos/logo_university_stuttgart_white.pdf]{titlePageUniversityLogo}
 \DeclareStringOption{titlePageInstituteLogo}
 \DeclareStringOption{titlePageDepartmentLogo}
 \DeclareStringOption{titlePageBigLogo}
 
 % graphics on the thanks page
-\DeclareStringOption[gfx/tikz/gfx_title]{thanksPageBigGraphics}
+\DeclareStringOption[../gfx/tikz/gfx_title]{thanksPageBigGraphics}
 \DeclareStringOption{thanksPageInstituteLogo}
 \DeclareStringOption{thanksPageDepartmentLogo}
 \DeclareStringOption{thanksPageBigLogo}
@@ -171,8 +171,8 @@
 % https://tex.stackexchange.com/a/541869
 % Example: \@dimToNum[cm]{\textwidth}
 \NewExpandableDocumentCommand{\@dimToNum}{O{pt}m}{%
-    % #1 (optional, default pt), #2 = length
-    \fpeval{(#2)/(1#1)}%
+  % #1 (optional, default pt), #2 = length
+  \fpeval{(#2)/(1#1)}%
 }
 
 \setlength{\TPHorizModule}{1mm}
@@ -187,7 +187,7 @@
 
 \defbeamertemplate*{title page}{customized}[1][]{
     \begin{textblock}{128}(0,0)
-        \tikz\shade[shading=axis,bottom color=mittelblau,top color=hellblau,shading angle=-45]
+        \tikz\shade[shading=axis,bottom color=mittelblau,top color=hellblau,shading angle=-45] 
         (0,0) rectangle (\paperwidth,\paperheight);
     \end{textblock}
 
@@ -218,7 +218,7 @@
     }
 
     \ifdefempty{\stuttgart@titlePageInstituteLogo}{}{%
-        \begin{textblock}{128}(\fpeval{\@titleCircleX - 30},\fpeval{\@titleCircleY + 25})
+            \begin{textblock}{128}(\fpeval{\@titleCircleX - 30},\fpeval{\@titleCircleY + 25})
             \tikz\draw[white,fill=white] (0,0) circle (10mm);
         \end{textblock}
     }
@@ -234,9 +234,9 @@
     }
 
     \ifdefempty{\stuttgart@titlePageInstituteLogo}{}{%
-        \begin{textblock}{20}(\fpeval{\@titleCircleX - 32},\fpeval{\@titleCircleY + 25})
+        \begin{textblock}{20}(\fpeval{\@titleCircleX - 30},\fpeval{\@titleCircleY + 25})
             \parbox[c][20mm]{20mm}{%
-                \centering\includegraphics[width=25mm]{\stuttgart@titlePageInstituteLogo}%
+                \centering\includegraphics[width=10mm]{\stuttgart@titlePageInstituteLogo}%
             }
         \end{textblock}
     }
@@ -339,7 +339,7 @@
         \begin{frame}[noframenumbering]
             \begin{textblock}{128}(0,0)
                 \only<beamer>{\tikz\shade[shading=axis,bottom color=mittelblau,top color=hellblau,
-                        shading angle=-45] (0,0) rectangle (\paperwidth,\paperheight);}
+                    shading angle=-45] (0,0) rectangle (\paperwidth,\paperheight);}
             \end{textblock}
 
             \def\@circleRadius{\fpeval{0.35 * \@pageWidthMM}}
@@ -408,34 +408,34 @@
 \setframeofframes{/}
 \setbeamertemplate{footline}
 {%
-    \begin{beamercolorbox}[colsep=1.5pt]{upper separation line foot}
-    \end{beamercolorbox}
+  \begin{beamercolorbox}[colsep=1.5pt]{upper separation line foot}
+  \end{beamercolorbox}
 
-    \begin{beamercolorbox}[ht=2.5ex,dp=1.125ex,%
-            leftskip=.3cm,rightskip=.3cm plus1fil]{title in head/foot}%
-        \edef\@availableSpace{\fpeval{\@pageWidthMM - 6}}
-        \def\@shortTitle{\usebeamerfont{title in head/foot}\insertshorttitle}
-        \def\@shortAuthor{\usebeamerfont{author in head/foot}\insertshortauthor}
-        \settowidth{\@beamer@stuttgart@helperLengthA}{\@shortTitle}
-        \settowidth{\@beamer@stuttgart@helperLengthB}{\@shortAuthor}
-        \edef\@titleWidth{\@dimToNum[mm]{\@beamer@stuttgart@helperLengthA}}
-        \edef\@authorWidth{\@dimToNum[mm]{\@beamer@stuttgart@helperLengthB}}
-        % Calculate the spacing between title and author such that the author name will end
-        % up in the dead center of the footer (if possible)
-        \edef\@titleAuthorSpacing{\fpeval{max(4, \@availableSpace / 2 - \@titleWidth - \@authorWidth / 2)}}
+  \begin{beamercolorbox}[ht=2.5ex,dp=1.125ex,%
+    leftskip=.3cm,rightskip=.3cm plus1fil]{title in head/foot}%
+    \edef\@availableSpace{\fpeval{\@pageWidthMM - 6}}
+    \def\@shortTitle{\usebeamerfont{title in head/foot}\insertshorttitle}
+    \def\@shortAuthor{\usebeamerfont{author in head/foot}\insertshortauthor}
+    \settowidth{\@beamer@stuttgart@helperLengthA}{\@shortTitle}
+    \settowidth{\@beamer@stuttgart@helperLengthB}{\@shortAuthor}
+    \edef\@titleWidth{\@dimToNum[mm]{\@beamer@stuttgart@helperLengthA}}
+    \edef\@authorWidth{\@dimToNum[mm]{\@beamer@stuttgart@helperLengthB}}
+    % Calculate the spacing between title and author such that the author name will end
+    % up in the dead center of the footer (if possible)
+    \edef\@titleAuthorSpacing{\fpeval{max(4, \@availableSpace / 2 - \@titleWidth - \@authorWidth / 2)}}
 
-        \@shortTitle%
-        \hspace{\@titleAuthorSpacing mm}%
-        \leavevmode{\@shortAuthor}%
-        \hfill%
-        {%
-            \usebeamerfont{frame number}\usebeamercolor[fg]{frame number}%
-            \hphantom{\inserttotalframenumber}\llap{\insertframenumber}~%
-            \frameofframes~\inserttotalframenumber%
-        }
-    \end{beamercolorbox}%
-    \begin{beamercolorbox}[colsep=1.5pt]{lower separation line foot}
-    \end{beamercolorbox}
+    \@shortTitle%
+    \hspace{\@titleAuthorSpacing mm}%
+    \leavevmode{\@shortAuthor}%
+    \hfill%
+    {%
+      \usebeamerfont{frame number}\usebeamercolor[fg]{frame number}%
+      \hphantom{\inserttotalframenumber}\llap{\insertframenumber}~%
+      \frameofframes~\inserttotalframenumber%
+    }
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[colsep=1.5pt]{lower separation line foot}
+  \end{beamercolorbox}
 }
 
 % ------------------------------------------------------------------------------
@@ -451,12 +451,12 @@
         \vskip2pt\insertnavigation{0.984\paperwidth}\vskip2pt
     \end{beamercolorbox}%
     \ifbeamer@theme@subsection%
-        \begin{beamercolorbox}[colsep=1.5pt]{middle separation line head}
-        \end{beamercolorbox}
-        \begin{beamercolorbox}[ht=2.5ex,dp=1.125ex,%
-                leftskip=.3cm,rightskip=.3cm plus1fil]{subsection in head/foot}
-            \usebeamerfont{subsection in head/foot}\insertsubsectionhead
-        \end{beamercolorbox}%
+    \begin{beamercolorbox}[colsep=1.5pt]{middle separation line head}
+    \end{beamercolorbox}
+    \begin{beamercolorbox}[ht=2.5ex,dp=1.125ex,%
+        leftskip=.3cm,rightskip=.3cm plus1fil]{subsection in head/foot}
+        \usebeamerfont{subsection in head/foot}\insertsubsectionhead
+    \end{beamercolorbox}%
     \fi%
     \begin{beamercolorbox}[colsep=1.5pt]{lower separation line head}
     \end{beamercolorbox}
@@ -471,8 +471,6 @@
 \colorlet{pbgray}{mittelblau}
 
 \def\progressbar@progressbar{}  % the progress bar
-\newcount\progressbar@tmpcounta % auxiliary counter
-\newcount\progressbar@tmpcountb % auxiliary counter
 \newdimen\progressbar@pbht      % progressbar height
 \newdimen\progressbar@pbwd      % progressbar width
 \newdimen\progressbar@tmpdim    % auxiliary dimension
@@ -481,16 +479,14 @@
 \progressbar@pbht=0.4ex
 
 \def\progressbar@progressbar{%
-    \progressbar@tmpcounta=\insertframenumber
-    \progressbar@tmpcountb=\inserttotalframenumber
     \progressbar@tmpdim=\progressbar@pbwd
-    \multiply\progressbar@tmpdim by \progressbar@tmpcounta
-    \divide\progressbar@tmpdim by \progressbar@tmpcountb
-
+    \divide\progressbar@tmpdim by \inserttotalframenumber
+    \multiply\progressbar@tmpdim by \insertframenumber
+    
     \begin{tikzpicture}
         \shade[top color=pbgray,bottom color=pbgray,middle color=pbgray]
         (0pt, 0pt) rectangle ++ (\progressbar@pbwd, \progressbar@pbht);
-
+        
         \shade[draw=pbblue,top color=pbblue,bottom color=pbblue,middle color=pbblue] %
         (0.2pt, 0.2pt) rectangle ++ (\progressbar@tmpdim, \progressbar@pbht);
     \end{tikzpicture}%
@@ -530,10 +526,10 @@
     dot spacing/.store in=\dot@spacing,
     dot spacing=1.4mm,
     dots/.style={
-            line width=\dot@diameter,
-            line cap=round,
-            dash pattern=on 0pt off \dot@spacing
-        }
+        line width=\dot@diameter,
+        line cap=round,
+        dash pattern=on 0pt off \dot@spacing
+    }
 }
 
 % ------------------------------------------------------------------------------
@@ -586,7 +582,7 @@
 \defbeamertemplate*{thanks page}{customized}[1][]{
     \begin{textblock}{128}(0,0)
         \only<beamer>{\tikz\shade[shading=axis,bottom color=mittelblau,top color=hellblau,
-                shading angle=-45] (0,0) rectangle (\paperwidth,\paperheight);}
+        shading angle=-45] (0,0) rectangle (\paperwidth,\paperheight);}
     \end{textblock}
 
     \begin{textblock}{128}(5,10)
@@ -604,7 +600,7 @@
     \begin{textblock}{128}(\@mainCircleX,\@mainCircleY)
         \begin{tikzpicture}
             \draw[white,fill=white] (0,0) circle ({\@mainCircleRadius mm});
-            \clip (0,0) circle ({\fpeval{\@mainCircleRadius + 0.5}mm});
+            \clip (0,0) circle ({\fpeval{\@mainCircleRadius - 0.5}mm});
             \node[inner sep=0pt, outer sep=0pt] at (0,0) {\includegraphics[scale=\stuttgart@thanksPageBigGraphicsScale]{\stuttgart@thanksPageBigGraphics}};
         \end{tikzpicture}
     \end{textblock}
@@ -628,9 +624,9 @@
     }
 
     \ifdefempty{\stuttgart@thanksPageInstituteLogo}{}{%
-        \begin{textblock}{32}(\fpeval{\@mainCircleX - 42},\fpeval{\@mainCircleY + 10})
+        \begin{textblock}{32}(\fpeval{\@mainCircleX - 40},\fpeval{\@mainCircleY + 10})
             \parbox[c][32mm]{32mm}{%
-                \centering\includegraphics[width=35mm]{\stuttgart@thanksPageInstituteLogo}%
+                \centering\includegraphics[width=14mm]{\stuttgart@thanksPageInstituteLogo}%
             }
         \end{textblock}
     }
@@ -646,7 +642,7 @@
     \ifdefempty{\stuttgart@thanksPageBigLogo}{}{%
         \begin{textblock}{40}(\fpeval{\@mainCircleX -30},\fpeval{\@mainCircleY + 35})
             \parbox[c][40mm]{40mm}{%
-                \centering\includegraphics[width=100mm]{\stuttgart@thanksPageBigLogo}%
+                \centering\includegraphics[width=34mm]{\stuttgart@thanksPageBigLogo}%
             }
         \end{textblock}
     }
