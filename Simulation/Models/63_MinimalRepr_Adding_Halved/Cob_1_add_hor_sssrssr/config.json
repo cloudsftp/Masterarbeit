@@ -12,7 +12,7 @@
     "scan": [
         {
             "type": "linear",
-            "resolution": 200,
+            "resolution": 10000,
             "parameters": [
                 {
                     "name": "initial_state[0][0]",

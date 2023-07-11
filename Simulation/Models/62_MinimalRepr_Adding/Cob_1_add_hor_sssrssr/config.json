@@ -12,12 +12,12 @@
     "scan": [
         {
             "type": "linear",
-            "resolution": 200,
+            "resolution": 2000,
             "parameters": [
                 {
                     "name": "initial_state[0][0]",
                     "start": 0,
-                    "stop": 0.5
+                    "stop": 1
                 }
             ]
         }
