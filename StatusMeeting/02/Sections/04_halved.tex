@@ -107,25 +107,22 @@
 \end{frame}
 
 \begin{frame}{The First Consequences}
-	\todo{only rule for coexistence, write down ignore below talk about redundancy}
-	From this we can formulate rules for the period and coexistence of child nodes in the farey-tree in the full model.
-	\pause
-	\begin{itemize}
-		\item Consequences of the next theorem \pause
-		\item Redundant \pause
-		\item Omitted for brevity
-	\end{itemize}
 	\begin{theorem}{Coexistence in Child Nodes}
-		\todo{necessary? if we do this we also should add rules for periods?}
+		A node in the farey-tree will be associated with two coexisting cycles, if and only if
+		\begin{itemize}
+			\pause
+			\item both parent nodes are associated with single cycles, or \pause
+			\item both parent nodes are associated with two coexisting cycles each.
+		\end{itemize}
 	\end{theorem}
+	\begin{itemize}
+		\pause
+		\item The second case does not appear in our adding structures
+		\item We will omit this case in following rules
+	\end{itemize}
 \end{frame}
 
-\begin{frame}{Translating Symbolic Sequences}
-	\todo{algo for halved -> full}
-	\todo{maybe skip if not enough time}
-\end{frame}
-
-\begin{frame}{The Next Consequences}
+\begin{frame}{``Concatenation'' in the Full Model}
 	\begin{theorem}[Cycles in Child Nodes of two Nodes with Singular Cycles]
 		The cycles $\pi^a$ and $\pi^b$ of a node with two parents with a singular cycle each, $\phi$ and $\psi$ are
 		\begin{align*}
@@ -138,25 +135,68 @@
 	\end{theorem}
 \end{frame}
 
-\begin{frame}{The Next Consequences}
+\begin{frame}{``Concatenation'' in the Full Model}
 	\vspace{-1em}
 	\begin{theorem}[Cycles in Child Nodes of two Nodes with a Different Multiplicity of Cycles]
 		The cycle $\pi$ of a node with one parent with a single cycle $\phi$ and one parent with two coexisting cycles $\psi^a$ and $\psi^b$ is either
 		\begin{itemize}
 			\item If $\phi$ is associated with the left parent node
 			      \begin{align*}
-				      \pi = \phi_1 \dots \phi_{\frac{n-1}{2}} \left[\phi_{\frac{n+1}{2}} \mid \psi_m\right] \psi_1 \dots \psi_{m-1} \left[\psi_m \mid \phi_{\frac{n+1}{2}}\right] \phi_{\frac{n+3}{2}} \dots \phi_n \psi^a
+				      \pi = \phi_1 \dots \phi_{\frac{n-1}{2}} \left[\phi_{\frac{n+1}{2}} \mid \psi^b_m\right] \psi^b_1 \dots \psi^b_{m-1} \left[\psi^b_m \mid \phi_{\frac{n+1}{2}}\right] \phi_{\frac{n+3}{2}} \dots \phi_n \psi^a
 			      \end{align*}
 			\item If $\phi$ is associated with the right parent node
 			      \begin{align*}
-				      \pi = \psi^a \phi_1 \dots \phi_{\frac{n-1}{2}} \left[\phi_{\frac{n+1}{2}} \mid \psi_m\right] \psi_1 \dots \psi_{m-1} \left[\psi_m \mid \phi_{\frac{n+1}{2}}\right] \phi_{\frac{n+3}{2}} \dots \phi_n
+				      \pi = \psi^a \phi_1 \dots \phi_{\frac{n-1}{2}} \left[\phi_{\frac{n+1}{2}} \mid \psi^b_m\right] \psi^b_1 \dots \psi^b_{m-1} \left[\psi^b_m \mid \phi_{\frac{n+1}{2}}\right] \phi_{\frac{n+3}{2}} \dots \phi_n
 			      \end{align*}
 		\end{itemize}
 	\end{theorem}
 \end{frame}
 
 \begin{frame}{Rotation Tuples}
-	Actual content
-	%\todo{rotation tuple rules}
-	%\todo{for this we need to define rotation tuples... too much?}
+	\begin{itemize}
+		\item More than 2 symbols
+		\item Tuple of 4 rotation-like numbers
+	\end{itemize}
+	\pause
+	\begin{definition}[Rotation Tuples]
+		For our cycles with 4 symbols we define rotation tuples.
+		\begin{align*}
+			\rho(\phi)
+			= (\rho_\A(\phi), \rho_\B(\phi), \rho_\C(\phi), \rho_\D(\phi))
+			= \left(\frac{|\phi|_\A}{|\phi|}, \frac{|\phi|_\B}{|\phi|}, \frac{|\phi|_\C}{|\phi|}, \frac{|\phi|_\D}{|\phi|}\right)
+		\end{align*}
+	\end{definition}
+\end{frame}
+
+\begin{frame}{Rotation Tuples}
+	\vspace{-1em}
+	\begin{theorem}
+		The cycles $\pi^a$ and $\pi^b$ of a node with two parents with a singular cycle each, $\phi$ and $\psi$ have the rotation-like numbers
+		\begin{columns}
+			\begin{column}{.7 \textwidth}
+				\begin{align*}
+					\rho_\A(\pi^a) & = \frac{|\phi_1 \dots \phi_{\frac{n+1}{2}}|_\A + |\psi_{\frac{m+3}{2}} \dots \psi_m|_\A}{|\pi|} \\
+					\rho_\B(\pi^a) & = \frac{|\phi_1 \dots \phi_{\frac{n+1}{2}}|_\B + |\psi_{\frac{m+3}{2}} \dots \psi_m|_\B}{|\pi|} \\
+					\rho_\C(\pi^a) & = \frac{|\phi_1 \dots \phi_{\frac{n-1}{2}}|_\C + |\psi_{\frac{m+1}{2}} \dots \psi_m|_\C}{|\pi|} \\
+					               & \vdots
+				\end{align*}
+			\end{column}
+			\begin{column}{.3 \textwidth}
+				\begin{align*}
+					|\pi| & = |\pi^a| = |\pi^b|         \\
+					      & = \frac{|\phi| + |\psi|}{2}
+				\end{align*}
+			\end{column}
+		\end{columns}
+	\end{theorem}
+\end{frame}
+
+\begin{frame}{Rotation Tuples}
+	\begin{theorem}
+		The cycle $\pi$ of a node with one parent with a single cycle $\phi$ and one parent with two coexisting cycles $\psi^a$ and $\psi^b$ has the rotation tuple
+		\begin{align*}
+			\rho(\pi) = \rho(\phi) \oplus \rho(\psi^a) \oplus \rho(\psi^b)
+		\end{align*}
+		Where the farey-addition of tuples is element-wise.
+	\end{theorem}
 \end{frame}
