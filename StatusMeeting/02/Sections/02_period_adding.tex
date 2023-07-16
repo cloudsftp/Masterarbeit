@@ -1,5 +1,5 @@
 \sectionframe{What is Period-adding?}
-\section{What is Period-adding?}
+\section{Period-adding?}
 
 \begin{frame}{Period-adding}
 	\vspace{-1em}
@@ -14,13 +14,10 @@
 				\begin{figure}
 					\includegraphics[width=\textwidth]{Figs/PeriodAddingCobwebs_Slides.png}
 				\end{figure}
-				\pause
-				\pause
 				\begin{itemize}
-					\item In the middle of two cycles with periods $a$ and $b$:
-					\item A cycle with period $a + b$
+					\item In between two cycles with periods $a$ and $b$ there is a cycle with period $a + b$
+					      \pause
 					\item How are these cycles organized?
-					\item Are there rules for their symbolic sequences?
 				\end{itemize}
 			}
 		\end{column}
@@ -31,12 +28,14 @@
 	Farey-sequences
 	\begin{itemize}
 		\item First discovered by Charles Haros in 1802
-		\item Rediscovered by and named after John Farey in 1816 \pause
+		\item Rediscovered by and named after John Farey in 1816
+		      \pause
 		\item Also used by Louis-Achille Brocot, a french clock-maker
-		\item Dealing with gear ratios \pause
-		\item Possible connection: Gears have a descrete number of teeth and cycles have a discrete number of points
+		\item Dealing with gear ratios
+		      \pause
+		\item Possible connection: Gears have a discrete number of teeth \\
+		      and cycles have a discrete number of points
 	\end{itemize}
-	\todo{Expand on connection?}
 \end{frame}
 
 \begin{frame}{Farey-sequences}
@@ -64,13 +63,55 @@
 	\begin{columns}
 		\begin{column}{.5 \textwidth}
 			\begin{itemize}
-				\item Tool to visualize and construct farey-sequences
+				\item Tool to visualize and construct Farey-sequences
+				\item Child node holds mediant (Farey-sum) of values in parent nodes
 			\end{itemize}
 		\end{column}
-		\begin{column}{.25 \textwidth}
+		\begin{column}{.5 \textwidth}
 			\vspace{-5em}
 			\begin{figure}
-				\includegraphics[width=\textwidth]{../../Report/Figures/FareyTrees/LR_RotNum/adding.png}
+				\includegraphics[width=.47 \textwidth]{../../Report/Figures/FareyTrees/LR_RotNum/adding.png}
+			\end{figure}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+\begin{frame}{Rotation Numbers}
+	\vspace{-1em}
+	\begin{definition}[Rotaion Numbers --- Poincaré]
+		The rotation number of a cycle $\sigma$ with period $|\sigma|$ and $n$ rotations is defined as the fraction
+		\begin{align*}
+			\frac{n}{|\sigma|}
+		\end{align*}
+		This fraction is not to be reduced.
+	\end{definition}
+\end{frame}
+
+\begin{frame}[Rotation Numbers --- A Different Definition]
+	Another definition of the rotation numbers in models with two branches
+	\begin{definition}{Rotation Numbers (Avrutin)}
+		The rotation number of a cycle $\sigma$ with period $|\sigma|$ and $|\sigma|_\L$ symbols $\L$ is defined as
+		\begin{align*}
+			\frac{|\sigma|}{|\sigma|_\L}
+		\end{align*}
+	\end{definition}
+	\todo{Right name in parens?}
+\end{frame}
+
+\begin{frame}{Farey-trees with Rotation Numbers}
+	\begin{columns}
+		\begin{column}{.5 \textwidth}
+			\begin{itemize}
+				\item Keep the structure of the tree
+				\item Replace content of nodes with rotation numbers of cycles in a period-adding scenario
+				\item[$\Rightarrow$] The rotation numbers follow the same rules
+				\item Why?
+			\end{itemize}
+		\end{column}
+		\begin{column}{.5 \textwidth}
+			\vspace{-5em}
+			\begin{figure}
+				\includegraphics[width=.47 \textwidth]{../../Report/Figures/FareyTrees/LR_RotNum/adding.png}
 			\end{figure}
 		\end{column}
 	\end{columns}
@@ -82,48 +123,68 @@
 			\begin{itemize}
 				\item Keep the structure of the tree
 				\item Replace starting nodes with symbolic sequences
-				\item Use concatenation instead of farey-addition $\oplus$
+				\item Use concatenation instead of Farey-addition $\oplus$
+				\item This is the rule, the symbolic sequences follow in period-adding scenarios
 			\end{itemize}
 		\end{column}
-		\begin{column}{.3 \textwidth}
+		\begin{column}{.5 \textwidth}
 			\vspace{-3em}
 			\begin{figure}
-				\includegraphics[width=\textwidth]{../../Report/Figures/FareyTrees/LR/adding.png}
+				\includegraphics[width=.6 \textwidth]{../../Report/Figures/FareyTrees/LR/adding.png}
 			\end{figure}
 		\end{column}
 	\end{columns}
 \end{frame}
 
-\begin{frame}{Rotation Numbers}
-	\vspace{-1em}
-	\begin{definition}[Rotation Numbers]
-		For a cycle $\sigma$ in a model with two branches $\L$ and $\R$, its rotation number is defined as the number of symbols $\L$ in its symbolic sequence divided by its period.
-		This fraction is not to be reduced.
-		\begin{align*}
-			\dfrac{|\sigma|_\L}{|\sigma|}
-		\end{align*}
-	\end{definition}
-	\pause
-	\begin{definition}[Poincaré Rotaion Numbers]
-		The original definition of Poincaré was the number of rotations divided by the period.
-		For our purposes, the definition above works too and is easier to compute from symbolic sequences.
-	\end{definition}
-\end{frame}
-
-\begin{frame}{Rotation Numbers}
-	\begin{theorem}
-		In both cases will the rotation number of two concatenated cycles $\rho(\sigma\varrho)$ be the farey-sum of the rotation numbers of the individual cycles $\rho(\sigma)$ and $\rho(\varrho)$.
+\begin{frame}{Concatenation and Rotation Numbers}
+	\begin{theorem}[Rotation Numbers of Concatenated Cycles]
+		The rotation number of the concatenated cycle $\sigma\varrho$ is the Farey-sum of the rotation numbers of the cycles $\sigma$ and $\varrho$.
 		\begin{align*}
 			\rho(\sigma\varrho) = \rho(\sigma) \oplus \rho(\varrho)
 		\end{align*}
 	\end{theorem}
-	\pause
-	Note that the denominator is the period of the cycles.
-	They get added together in the farey-addition.
+\end{frame}
 
-	\vspace{1em}
-	\pause
-	This is exactly what happens in period-adding structures.
+\begin{frame}{Concatenation and Rotation Numbers}
+	\begin{figure}
+		\includegraphics[width=.8 \textwidth]{Figs/PeriodAddingCobwebs_Slides.png}
+	\end{figure}
+	\begin{columns}
+		\begin{column}{.3 \textwidth}
+			\begin{itemize}
+				\item Sequence: $\L^2\R$
+				\item Rotation Number: $\frac{2}{3}$
+			\end{itemize}
+		\end{column}
+		\begin{column}{.3 \textwidth}
+			\begin{itemize}
+				\item Sequence: $\L^2\R\L\R$
+				\item Rotation Number: $\frac{3}{5}$
+			\end{itemize}
+		\end{column}
+		\begin{column}{.3 \textwidth}
+			\begin{itemize}
+				\item Sequence: $\L\R$
+				\item Rotation Number: $\frac{1}{2}$
+			\end{itemize}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+\begin{frame}{Number of Branches}
+	\begin{itemize}
+		\item Simplified model has more than 2 branches
+		      \pause
+		\item[$\Rightarrow$] Tuple of 4 rotation-like numbers
+	\end{itemize}
+	\begin{definition}[Rotation Tuples]
+		For our cycles with 4 branches we define rotation tuples.
+		\begin{align*}
+			\rho(\phi)
+			= (\rho_\A(\phi), \rho_\B(\phi), \rho_\C(\phi), \rho_\D(\phi))
+			= \left(\frac{|\phi|_\A}{|\phi|}, \frac{|\phi|_\B}{|\phi|}, \frac{|\phi|_\C}{|\phi|}, \frac{|\phi|_\D}{|\phi|}\right)
+		\end{align*}
+	\end{definition}
 \end{frame}
 
 \begin{frame}{Period Adding in Between Chains}

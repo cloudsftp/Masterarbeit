@@ -4,8 +4,8 @@
 \begin{frame}{Complex Model}
 	\begin{itemize}
 		\item We started with a complex model describing the dynamics of a power converter
-		\item It exhibited interesting dynamics we want to understand
-		\item Chains of parameter regions with the same period
+		\item It exhibits interesting dynamics we want to understand
+		\item Chains of parameter regions with the same period, partially bistability-affected
 		      %\item Parameter regions with 2 coexisting cycles in between parameter regions with single cycles
 	\end{itemize}
 	\vspace{-1em}
@@ -52,6 +52,7 @@
 \end{frame}
 
 \begin{frame}{Original Model (2/3)}
+	\vspace{-1em}
 	The smallest non-negative solutions to the following implicit equations
 	\begin{subequations}
 		\begin{align}
@@ -78,43 +79,58 @@
 			 & = q \cdot  \cos(\theta + z_{R_0} + z_4) - \mu \cdot \chi
 		\end{align}
 	\end{subequations}
+	\begin{flushright}
+		Definition from \cite{akyuz2022}
+	\end{flushright}
 \end{frame}
 
-\begin{frame}{Original Model (3/3)}
-	\vspace{-3.0em}
-	\begin{align}
-		\chi    & = \dfrac{R \cdot \chi_0}{\beta \cdot E_0} \\
-		\lambda & = \dfrac{-R}{L \cdot 2 \cdot \pi \cdot f} \\
-		q       & = \dfrac{R \cdot V_m}{\beta \cdot E_0}
-	\end{align}
+\begin{frame}{Approach}
+	\vspace{-1em}
+	Construct a simplified model with similar characteristics
+	\pause
+	\begin{itemize}
+		\item Symmetry $F(\theta + \pi) = F(\theta) + \pi \mod 2\pi$ \hfill \cite{akyuz2022} \pause
+		\item Branches $f_{\A}$ and $f_{\C}$ move up \pause
+		\item The values at the left border of branches $f_{\B}$ and $f_{\D}$ move down \pause
+		\item Ignore other minimal changes and moving borders if possible
+	\end{itemize}
 
-	Normalized and varied Parameters:
-	\begin{align*}
-		E_0, \chi_0
-	\end{align*}
+	%\vspace{2em}
+	%Characteristics we want to leave behind if possible:
+	%\begin{itemize}
+	%	\item Borders between branch domains move
+	%	\item Cubic shape of branches $f_{\B}$ and $f_{\D}$
+	%	\item Other minimal changes
+	%\end{itemize}
 
-	Symmetry in this model:
-	\begin{align}
-		F(\theta + \pi) = F(\theta) + \pi \mod 2 \pi
-	\end{align}
-
-	\begin{flushright}
-		Definition and symmetry from \cite{akyuz2022}
-	\end{flushright}
+	\begin{figure}
+		\subfloat[Effect of $E_0$]{
+			\includegraphics[width=0.2 \textwidth]{99_Yunus/ParameterEffects/E0/illustration.png}
+		}
+		\subfloat[Effect of $\chi_0$]{
+			\includegraphics[width=0.2 \textwidth]{99_Yunus/ParameterEffects/hi/illustration.png}
+		}
+		\subfloat[Effect of $p_x$]{
+			\includegraphics[width=0.2 \textwidth]{60_MinimalRepr/ParameterEffects/p_x/illustration.png}
+		}
+		\subfloat[Effect of $p_y$]{
+			\includegraphics[width=0.2 \textwidth]{60_MinimalRepr/ParameterEffects/p_y/illustration.png}
+		}
+	\end{figure}
 \end{frame}
 
 \begin{frame}{Minimal Reproducing Model Dynamics}
 	\vspace{-1em}
 	\begin{figure}
-		\subfloat[Original]{
+		\subfloat[Original model]{
 			\includegraphics[width=0.3 \textwidth]{99_Yunus/2D_Period_Zoomed/result.png}
 		}
 		\qquad
-		\subfloat[Our new model]{
+		\subfloat[Simplified model]{
 			\includegraphics[width=0.3 \textwidth]{60_MinimalRepr/2D_Period_Whole_noPoints/result.png}
 		}
 	\end{figure}
-	With this simpler model, we explained the structures
+	With this simplified model, we explained the structures
 \end{frame}
 
 \begin{frame}{Definition of the Minimal Reproducing Model (1/2)}
@@ -170,19 +186,27 @@
 \end{frame}
 
 \begin{frame}{The Next Step}
-	Research question 3 remaining: What else can happen?
+	\vspace{-1em}
+	Research questions:
+	\begin{enumerate}
+		\item Is there a simple model exhibiting the same behavior? \hfill \checkmark
+		\item Was there something overlooked in the analysis of the original model? \hfill \checkmark
+		      \pause
+		\item What else can happen in the simplified model?
+	\end{enumerate}
 
 	\pause
-	\vspace{2em}
+	\vspace{1em}
 	Hypothesis: Period Adding
 	\begin{itemize}
 		\item This is typical for models of power converters
-		\item This is typical for discontinuous models
+		\item This is typical for piecewise increasing discontinuous models
 		\item This is typical in between such chains of the same period
 	\end{itemize}
 \end{frame}
 
 \begin{frame}{Symbolic Sequences}
+	\todo{Somewhere else?}
 	Cycles are described using symbolic sequences.
 	Sequence of symbols, indicating on which partition of the function the points of the cycle are.
 	\vspace{.5em}
