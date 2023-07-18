@@ -13,7 +13,7 @@
 			\pause
 			\begin{itemize}
 				\item Lift model from $[0, 1)$ to $\mathbb{R}$ \pause
-				\item The infinite model repeats every $1$ \pause
+				\item The lifted model repeats every $1$ \pause
 				\item But it even repeats every $\frac{1}{2}$ because of the built-in symmetry \pause
 				\item Drop the model to $[0, \frac{1}{2})$ \pause
 			\end{itemize}
@@ -28,39 +28,55 @@
 	\end{columns}
 \end{frame}
 
-\begin{frame}{Pic}
-	\todo{Picture of halved model function?}
-\end{frame}
-
 \begin{frame}{Period-adding in the Halved Model}
 	\begin{figure}
 		\includegraphics[width=.4 \textwidth]{63_MinimalRepr_Adding_Halved/1D_Period_1_add_hor_D1/result.png}
 		\quad
 		\includegraphics[width=.4 \textwidth]{../../Report/Figures/FareyTrees/Minrep_Adding1_Halved/adding.pdf}
 	\end{figure}
+	\todo{Replace with larger adding figure and tree}
 \end{frame}
 
 \begin{frame}{Period-adding in the Halved Model}
-	\begin{itemize}
-		\item Periods add up!
-		\item Symbolic sequences concatenate!
-	\end{itemize}
-	\pause
-	\vspace{3em}
-	\begin{itemize}
-		\item Allegory of the case (``Höhlengleichnis'') type of situation
-		\item Different rules needed in full model
-	\end{itemize}
+	\vspace{-1em}
+	\begin{columns}
+		\begin{column}{.7 \textwidth}
+			\begin{itemize}
+				\item Periods add up!
+				\item Symbolic sequences concatenate!
+			\end{itemize}
+			\vspace{2em}
+			\pause
+			\begin{itemize}
+				\item Allegory of the cave (``Höhlengleichnis'') type of situation
+				\item Needed: A way to translate cycles
+				      \begin{itemize}
+					      \item Full $\to$ Halved
+					      \item Halved $\to$ Full
+				      \end{itemize}
+			\end{itemize}
+		\end{column}
+		\begin{column}{.3 \textwidth}
+			\only<2->{
+				\begin{figure}
+					\includegraphics[width=\textwidth]{Figs/allegory.jpeg}
+				\end{figure}
+			}
+		\end{column}
+	\end{columns}
 \end{frame}
 
 \begin{frame}{Some Definitions}
 	\vspace{-1em}
 	\begin{definition}[Syllables]
-		A sequence of the same symbols is called a syllable, if there are no more of the same symbol before or after the syllable in the context of a symbolic sequence. \\
-		For example $\L^3$ is a syllable of $\L^3\R^2$, but $\L^2$ is not. \\[1em]
+		A syllable is a sequence of the same symbol in a symbolic sequence.
+		The symbols before and after the syllable have to be different from the symbol in the syllable. \\[1em]
 		A pair of syllables next to each other is called a 2-syllable.
 		A 4-syllable is a quadrupel of syllables next to each other.
 	\end{definition}
+	\pause
+	Example: $\L^4$ is a syllable of $\L^4\R^3$, $\L^3$ is not.
+	\vspace{1em}
 	\begin{itemize}
 		\pause
 		\item A rotation in the halved model corresponds to one 2-syllable \pause
@@ -69,9 +85,9 @@
 	\end{itemize}
 \end{frame}
 
-\begin{frame}{Translating Symbolic Sequences 1}
+\begin{frame}{Translating Symbolic Sequences}
 	\begin{definition}[Translating 4-syllables]
-		To translate a 4-syllable (2 rotations) from the halved model to one rotation in the full model, we define $t$.
+		The function $t$ translates 2 rotations in the halved model to one rotation in the full model.
 		\begin{align*}
 			t: \L^a\R^b\L^c\R^d \mapsto \A^a\B^b\C^c\D^d
 		\end{align*}
@@ -90,13 +106,25 @@
 
 \begin{frame}{The First Consequences}
 	\begin{theorem}[Periods in the Full Model]
-		A cycle in the halved model with period $n$ manifests as a cycle with period
+		A $n$-cycle in the halved model manifests as a
 		\begin{itemize}
-			\item $2n$ if it has an odd number of rotations (2-syllables)
-			\item $n$ if it has an even number of rotations (2-syllables)
+			\item $2n$-cycle in the full model if it has an odd number of rotations
+			\item $n$-cycle in the full model if it has an even number of rotations
 		\end{itemize}
 	\end{theorem}
 	\pause
+	Examples:
+	\begin{itemize}
+		\item $\L^4\R^3$ (Period 7) manifests as a single cycle $\A^4\B^3\C^4\D^3$ (Period 14)
+		\item $\L^4\R^3\L^3\R^3$ (Period 13) manifests as two cycles
+		      \begin{itemize}
+			      \item $\A^4\B^3\C^3\D^3$ (Period 13) and
+			      \item $\A^3\B^3\C^4\D^3$ (Period 13)
+		      \end{itemize}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{The First Consequences}
 	\begin{theorem}[Coexistence in the Full Model]
 		A cycle in the halved model manifests as
 		\begin{itemize}
@@ -104,25 +132,44 @@
 			\item 2 coexisting cycles if it has an even number of rotations
 		\end{itemize}
 	\end{theorem}
+	\pause
+	Examples:
+	\begin{itemize}
+		\item $\L^4\R^3$ manifests as a single cycle $\A^4\B^3\C^4\D^3$
+		\item $\L^4\R^3\L^3\R^3$ manifests as two cycles
+		      \begin{itemize}
+			      \item $\A^4\B^3\C^3\D^3$ and
+			      \item $\A^3\B^3\C^4\D^3$
+		      \end{itemize}
+	\end{itemize}
 \end{frame}
 
 \begin{frame}{The First Consequences}
-	\begin{theorem}{Coexistence in Child Nodes}
-		A node in the farey-tree will be associated with two coexisting cycles, if and only if
+	\vspace{-1em}
+	\begin{theorem}[Coexistence in Child Nodes]
+		A node in the Farey-tree is associated
 		\begin{itemize}
-			\pause
-			\item both parent nodes are associated with single cycles, or \pause
-			\item both parent nodes are associated with two coexisting cycles each.
+			\item with a single cycle if
+			      \begin{itemize}
+				      \item one parent node is associated with 2 coexisting cycles and the other parent node is associated with a single cycle.
+			      \end{itemize}
+			      \pause
+			\item with two coexisting cycles if
+			      \begin{itemize}
+				      \item both parent nodes are associated with single cycles, or
+				      \item both parent nodes are associated with two coexisting cycles each.
+			      \end{itemize}
 		\end{itemize}
 	\end{theorem}
+	\pause
 	\begin{itemize}
-		\pause
-		\item The second case does not appear in our adding structures
+		\item The third case does not appear in our adding structures
 		\item We will omit this case in following rules
 	\end{itemize}
 \end{frame}
 
 \begin{frame}{``Concatenation'' in the Full Model}
+	\vspace{-1em}
 	\begin{theorem}[Cycles in Child Nodes of two Nodes with Singular Cycles]
 		The cycles $\pi^a$ and $\pi^b$ of a node with two parents with a singular cycle each, $\phi$ and $\psi$ are
 		\begin{align*}
@@ -133,11 +180,16 @@
 			\pi^b =  \phi_{\frac{n+3}{2}} \dots \phi_n \psi_1 \dots \psi_{\frac{m-1}{2}} \left[\psi_{\frac{m+1}{2}} \mid \phi_{\frac{n+1}{2}}\right]
 		\end{align*}
 	\end{theorem}
+	\pause
+	Example: \vspace{-2em} \begin{align*}
+		\phi                    & = \A^4\B^3\C^4\D^3, \psi = \A^3\B^3\C^3\D^3  \\
+		\Rightarrow \quad \pi^a & = \A^4\B^3\C^3\D^3, \pi^b = \A^3\B^3\C^4\D^3
+	\end{align*}
 \end{frame}
 
 \begin{frame}{``Concatenation'' in the Full Model}
 	\vspace{-1em}
-	\begin{theorem}[Cycles in Child Nodes of two Nodes with a Different Multiplicity of Cycles]
+	\begin{theorem}[Cycles in Child Nodes of Parent Nodes with Different Multiplicity]
 		The cycle $\pi$ of a node with one parent with a single cycle $\phi$ and one parent with two coexisting cycles $\psi^a$ and $\psi^b$ is either
 		\begin{itemize}
 			\item If $\phi$ is associated with the left parent node
@@ -152,51 +204,35 @@
 	\end{theorem}
 \end{frame}
 
-\begin{frame}{Rotation Tuples}
-	\begin{itemize}
-		\item More than 2 symbols
-		\item Tuple of 4 rotation-like numbers
-	\end{itemize}
-	\pause
-	\begin{definition}[Rotation Tuples]
-		For our cycles with 4 symbols we define rotation tuples.
-		\begin{align*}
-			\rho(\phi)
-			= (\rho_\A(\phi), \rho_\B(\phi), \rho_\C(\phi), \rho_\D(\phi))
-			= \left(\frac{|\phi|_\A}{|\phi|}, \frac{|\phi|_\B}{|\phi|}, \frac{|\phi|_\C}{|\phi|}, \frac{|\phi|_\D}{|\phi|}\right)
-		\end{align*}
-	\end{definition}
-\end{frame}
+%\begin{frame}{Rotation Tuples}
+%	\vspace{-1em}
+%    \begin{theorem}[Rotation Tuples in Child Nodes of Two Nodes with Singular Cycles]
+%		The cycles $\pi^a$ and $\pi^b$ of a node with two parents with a singular cycle each, $\phi$ and $\psi$ have the rotation tuples
+%		\begin{columns}
+%			\begin{column}{.7 \textwidth}
+%				\begin{align*}
+%					\rho_\A(\pi^a) & = \frac{|\phi_1 \dots \phi_{\frac{n+1}{2}}|_\A + |\psi_{\frac{m+3}{2}} \dots \psi_m|_\A}{|\pi|} \\
+%					\rho_\B(\pi^a) & = \frac{|\phi_1 \dots \phi_{\frac{n+1}{2}}|_\B + |\psi_{\frac{m+3}{2}} \dots \psi_m|_\B}{|\pi|} \\
+%					\rho_\C(\pi^a) & = \frac{|\phi_1 \dots \phi_{\frac{n-1}{2}}|_\C + |\psi_{\frac{m+1}{2}} \dots \psi_m|_\C}{|\pi|} \\
+%					               & \vdots
+%				\end{align*}
+%			\end{column}
+%			\begin{column}{.3 \textwidth}
+%				\begin{align*}
+%					|\pi| & = |\pi^a| = |\pi^b|         \\
+%					      & = \frac{|\phi| + |\psi|}{2}
+%				\end{align*}
+%			\end{column}
+%		\end{columns}
+%	\end{theorem}
+%\end{frame}
 
-\begin{frame}{Rotation Tuples}
-	\vspace{-1em}
-	\begin{theorem}
-		The cycles $\pi^a$ and $\pi^b$ of a node with two parents with a singular cycle each, $\phi$ and $\psi$ have the rotation-like numbers
-		\begin{columns}
-			\begin{column}{.7 \textwidth}
-				\begin{align*}
-					\rho_\A(\pi^a) & = \frac{|\phi_1 \dots \phi_{\frac{n+1}{2}}|_\A + |\psi_{\frac{m+3}{2}} \dots \psi_m|_\A}{|\pi|} \\
-					\rho_\B(\pi^a) & = \frac{|\phi_1 \dots \phi_{\frac{n+1}{2}}|_\B + |\psi_{\frac{m+3}{2}} \dots \psi_m|_\B}{|\pi|} \\
-					\rho_\C(\pi^a) & = \frac{|\phi_1 \dots \phi_{\frac{n-1}{2}}|_\C + |\psi_{\frac{m+1}{2}} \dots \psi_m|_\C}{|\pi|} \\
-					               & \vdots
-				\end{align*}
-			\end{column}
-			\begin{column}{.3 \textwidth}
-				\begin{align*}
-					|\pi| & = |\pi^a| = |\pi^b|         \\
-					      & = \frac{|\phi| + |\psi|}{2}
-				\end{align*}
-			\end{column}
-		\end{columns}
-	\end{theorem}
-\end{frame}
-
-\begin{frame}{Rotation Tuples}
-	\begin{theorem}
-		The cycle $\pi$ of a node with one parent with a single cycle $\phi$ and one parent with two coexisting cycles $\psi^a$ and $\psi^b$ has the rotation tuple
-		\begin{align*}
-			\rho(\pi) = \rho(\phi) \oplus \rho(\psi^a) \oplus \rho(\psi^b)
-		\end{align*}
-		Where the farey-addition of tuples is element-wise.
-	\end{theorem}
-\end{frame}
+%\begin{frame}{Rotation Tuples}[Rotation Tuples in Child Nodes of Parent Nodes with Different Multiplicity]
+%	\begin{theorem}
+%		The cycle $\pi$ of a node with one parent with a single cycle $\phi$ and one parent with two coexisting cycles $\psi^a$ and $\psi^b$ has the rotation tuple
+%		\begin{align*}
+%			\rho(\pi) = \rho(\phi) \oplus \rho(\psi^a) \oplus \rho(\psi^b)
+%		\end{align*}
+%		Where the farey-addition of tuples is element-wise.
+%	\end{theorem}
+%\end{frame}
