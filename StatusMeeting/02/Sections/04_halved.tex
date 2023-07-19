@@ -12,9 +12,9 @@
 		\begin{column}{.5 \textwidth}
 			\pause
 			\begin{itemize}
-				\item Lift model from $[0, 1)$ to $\mathbb{R}$ \pause
-				\item The lifted model repeats every $1$ \pause
-				\item But it even repeats every $\frac{1}{2}$ because of the built-in symmetry \pause
+				\item Lift the model from $[0, 1)$ to $\mathbb{R}$ \pause
+				\item The lifted model repeats every $1$ step \pause
+				\item But it even repeats every $\frac{1}{2}$ step because of the built-in symmetry \pause
 				\item Drop the model to $[0, \frac{1}{2})$ \pause
 			\end{itemize}
 			\begin{align*}
@@ -24,6 +24,22 @@
 					         r(x) = b_R \cdot x + c_R                 & \text{ else}
 				         \end{cases}
 			\end{align*}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+\begin{frame}{Period-adding in Theory}
+	\begin{columns}
+		\begin{column}{.4 \textwidth}
+			\todo{Pic of halved model function}
+			\todo{Pic of two increasing branches of circle map}
+		\end{column}
+		\begin{column}{.6 \textwidth}
+			\begin{itemize}
+				\item Two increasing branches
+				\item Period-adding proven for non-smooth circle maps with two increasing branches
+			\end{itemize}
+			\todo{reference}
 		\end{column}
 	\end{columns}
 \end{frame}
@@ -69,25 +85,24 @@
 \begin{frame}{Some Definitions}
 	\vspace{-1em}
 	\begin{definition}[Syllables]
-		A syllable is a sequence of the same symbol in a symbolic sequence.
-		The symbols before and after the syllable have to be different from the symbol in the syllable. \\[1em]
+		A syllable is a maximal sequence of the same symbol. \\[1em]
 		A pair of syllables next to each other is called a 2-syllable.
 		A 4-syllable is a quadrupel of syllables next to each other.
 	\end{definition}
 	\pause
-	Example: $\L^4$ is a syllable of $\L^4\R^3$, $\L^3$ is not.
+	Example: $\L^4\R^3\L^3\R^3$ has the syllables $\L^4$, $\L^3$, and $\R^3$ twice.
 	\vspace{1em}
 	\begin{itemize}
 		\pause
-		\item A rotation in the halved model corresponds to one 2-syllable \pause
-		\item A rotation in the full model corresponds to one 4-syllable \pause
-		\item A rotation in the full model corresponds to 2 rotations in the halved model
+		\item One rotation in the halved model corresponds to one 2-syllable \pause
+		\item One rotation in the full model corresponds to one 4-syllable \pause
+		\item One rotation in the full model corresponds to 2 rotations in the halved model
 	\end{itemize}
 \end{frame}
 
 \begin{frame}{Translating Symbolic Sequences}
 	\begin{definition}[Translating 4-syllables]
-		The function $t$ translates 2 rotations in the halved model to one rotation in the full model.
+		The function $t$ translates one 4-syllable from the halved model to one 4-syllable in the full model.
 		\begin{align*}
 			t: \L^a\R^b\L^c\R^d \mapsto \A^a\B^b\C^c\D^d
 		\end{align*}
@@ -105,11 +120,11 @@
 \end{frame}
 
 \begin{frame}{The First Consequences}
-	\begin{theorem}[Periods in the Full Model]
-		A $n$-cycle in the halved model manifests as a
+	\begin{theorem}[Periods and Coexistence in the Full Model]
+		An $n$-cycle in the halved model manifests as
 		\begin{itemize}
-			\item $2n$-cycle in the full model if it has an odd number of rotations
-			\item $n$-cycle in the full model if it has an even number of rotations
+			\item a single $2n$-cycle in the full model if it has an odd number of rotations
+			\item 2 coexisting $n$-cycles in the full model if it has an even number of rotations
 		\end{itemize}
 	\end{theorem}
 	\pause
@@ -120,26 +135,6 @@
 		      \begin{itemize}
 			      \item $\A^4\B^3\C^3\D^3$ (Period 13) and
 			      \item $\A^3\B^3\C^4\D^3$ (Period 13)
-		      \end{itemize}
-	\end{itemize}
-\end{frame}
-
-\begin{frame}{The First Consequences}
-	\begin{theorem}[Coexistence in the Full Model]
-		A cycle in the halved model manifests as
-		\begin{itemize}
-			\item a single cycle if it has an odd number of rotations
-			\item 2 coexisting cycles if it has an even number of rotations
-		\end{itemize}
-	\end{theorem}
-	\pause
-	Examples:
-	\begin{itemize}
-		\item $\L^4\R^3$ manifests as a single cycle $\A^4\B^3\C^4\D^3$
-		\item $\L^4\R^3\L^3\R^3$ manifests as two cycles
-		      \begin{itemize}
-			      \item $\A^4\B^3\C^3\D^3$ and
-			      \item $\A^3\B^3\C^4\D^3$
 		      \end{itemize}
 	\end{itemize}
 \end{frame}
@@ -202,6 +197,24 @@
 			      \end{align*}
 		\end{itemize}
 	\end{theorem}
+\end{frame}
+
+\begin{frame}{Explained Bifurcation Structures}
+	\begin{figure}
+		\includegraphics[width=.3 \textwidth]{62_MinimalRepr_Adding/1D_Period_larger_adding/Manual/result.png}
+		\includegraphics[width=.15 \textwidth]{../../Report/Figures/FareyTrees/Minrep_Adding1_Lower_Full_Period/adding.pdf}
+		\qquad
+		\includegraphics[width=.3 \textwidth]{62_MinimalRepr_Adding/1D_Period_larger_adding/Manual/result.png}
+		\includegraphics[width=.15 \textwidth]{../../Report/Figures/FareyTrees/Minrep_Adding1_Lower_Full_Period/adding.pdf}
+	\end{figure}
+	\todo{Replace pics for halved model}
+\end{frame}
+
+\begin{frame}{Rotation Numbers}
+	\begin{itemize}
+		\item Also found rules for rotation numbers
+		\item Limited time in this presentation
+	\end{itemize}
 \end{frame}
 
 %\begin{frame}{Rotation Tuples}

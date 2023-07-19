@@ -15,7 +15,7 @@
 					\includegraphics[width=\textwidth]{Figs/PeriodAddingCobwebs_Slides.png}
 				\end{figure}
 				\begin{itemize}
-					\item In between two cycles with periods $a$ and $b$ there is a cycle with period $a + b$
+					\item Between two cycles with periods $a$ and $b$ there is a cycle with period $a + b$
 					      \pause
 					\item How are these cycles organized?
 				\end{itemize}
@@ -65,6 +65,10 @@
 			\begin{itemize}
 				\item Tool to visualize and construct Farey-sequences
 				\item Child node holds mediant (Farey-sum) of values in parent nodes
+				      \pause
+				      \vspace{2em}
+				\item Contains all rational numbers in $[0, 1]$
+				\item Numbers monotonously increasing
 			\end{itemize}
 		\end{column}
 		\begin{column}{.5 \textwidth}
@@ -83,28 +87,26 @@
 		\begin{align*}
 			\frac{n}{|\sigma|}
 		\end{align*}
-		This fraction is not to be reduced.
 	\end{definition}
-\end{frame}
-
-\begin{frame}{Rotation Numbers --- A Different Definition}
-	Another definition of the rotation numbers in models with two branches
-	\begin{definition}[Rotation Numbers (Avrutin)]
+	\pause
+	\begin{definition}[Rotation Numbers --- Keener]
 		The rotation number of a cycle $\sigma$ with period $|\sigma|$ and $|\sigma|_\L$ symbols $\L$ is defined as
 		\begin{align*}
-			\frac{|\sigma|}{|\sigma|_\L}
+			\frac{|\sigma|_\L}{|\sigma|}
 		\end{align*}
 	\end{definition}
-	\todo{Right name in parens?}
+	\vspace{-3em}
+	\begin{flushright}
+		\cite{Keener80}
+	\end{flushright}
 \end{frame}
 
 \begin{frame}{Farey-trees with Rotation Numbers}
 	\begin{columns}
 		\begin{column}{.5 \textwidth}
 			\begin{itemize}
-				\item Keep the structure of the tree
-				\item Replace content of nodes with rotation numbers of cycles in a period-adding scenario
-				\item[$\Rightarrow$] The rotation numbers follow the same rules
+				\item The rotation numbers of cycles in any period-adding structure of $\L$ and $\R$ are given by the same Farey-tree with starting nodes $\frac{1}{1}$ and $\frac{0}{1}$
+				      \pause
 				\item Why?
 			\end{itemize}
 		\end{column}
@@ -122,10 +124,12 @@
 		\begin{column}{.5 \textwidth}
 			\begin{itemize}
 				\item Keep the structure of the tree
-				\item Replace starting nodes with symbolic sequences
+				\item Replace starting nodes with symbolic sequences $\L$ and $\R$
 				\item Use concatenation instead of Farey-addition $\oplus$
-				\item This is the rule, the symbolic sequences follow in period-adding scenarios
 			\end{itemize}
+			\pause
+			\vspace{2em}
+			This is the rule, the symbolic sequences follow in period-adding scenarios
 		\end{column}
 		\begin{column}{.5 \textwidth}
 			\vspace{-3em}
