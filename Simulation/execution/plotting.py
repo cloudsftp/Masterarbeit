@@ -170,7 +170,7 @@ def plot_commands(frame: frame.Frame) -> str:
         y = x + len(frame.scan[0].parameter_specs)
         if len(frame.scan) == 1:
             return dedent(f'''
-                plot '{get_data_file_paths(frame)[0]}' using {x}:{y} w dots notitle lc rgb 'blue'
+                plot '{get_data_file_paths(frame)[0]}' using {x}:{y} w p pt 5 ps 0.5 lc rgb 'blue' notitle 
                 ''')
         elif len(frame.scan) == 2:
             z = y + len(frame.scan[1].parameter_specs)

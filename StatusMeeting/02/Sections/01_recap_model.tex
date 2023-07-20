@@ -10,15 +10,15 @@
 	\end{itemize}
 	\vspace{-1em}
 	\begin{figure}
-		\subfloat[2D period scan]{
+		\stackunder[5pt]{
 			\includegraphics[width=0.3 \textwidth]{99_Yunus/2D_Period_Zoomed/result.png}
-		}
-		\subfloat[Cobweb at point $A$]{
+		}{2D period scan}
+		\stackunder[5pt]{
 			\includegraphics[width=0.3 \textwidth]{99_Yunus/Period12/Cobweb_A_12/result.png}
-		}
-		\subfloat[Cobweb at point $B$]{
+		}{Cobweb at point $A$}
+		\stackunder[5pt]{
 			\includegraphics[width=0.3 \textwidth]{99_Yunus/Period12/Cobweb_B2/result.png}
-		}
+		}{Cobweb at point $B$}
 	\end{figure}
 \end{frame}
 
@@ -96,40 +96,32 @@
 		\item Model branches $f_\C$ and $f_\D$ simplified as linear
 	\end{itemize}
 
-	%\vspace{2em}
-	%Characteristics we want to leave behind if possible:
-	%\begin{itemize}
-	%	\item Borders between branch domains move
-	%	\item Cubic shape of branches $f_{\B}$ and $f_{\D}$
-	%	\item Other minimal changes
-	%\end{itemize}
-
 	\begin{figure}
-		\subfloat[Effect of $E_0$]{
+		\stackunder[5pt]{
 			\includegraphics[width=0.2 \textwidth]{99_Yunus/ParameterEffects/E0/illustration.png}
-		}
-		\subfloat[Effect of $\chi_0$]{
+		}{Effect of $E_0$}
+		\stackunder[5pt]{
 			\includegraphics[width=0.2 \textwidth]{99_Yunus/ParameterEffects/hi/illustration.png}
-		}
-		\subfloat[Effect of $p_x$]{
+		}{Effect of $\chi_0$}
+		\stackunder[5pt]{
 			\includegraphics[width=0.2 \textwidth]{60_MinimalRepr/ParameterEffects/p_x/illustration.png}
-		}
-		\subfloat[Effect of $p_y$]{
+		}{Effect of $p_x$}
+		\stackunder[5pt]{
 			\includegraphics[width=0.2 \textwidth]{60_MinimalRepr/ParameterEffects/p_y/illustration.png}
-		}
+		}{Effect of $p_y$}
 	\end{figure}
 \end{frame}
 
 \begin{frame}{Minimal Reproducing Model Dynamics}
 	\vspace{-1em}
 	\begin{figure}
-		\subfloat[Original model]{
+		\stackunder[5pt]{
 			\includegraphics[width=0.3 \textwidth]{99_Yunus/2D_Period_Zoomed/result.png}
-		}
+		}{Original model}
 		\qquad
-		\subfloat[Simplified model]{
+		\stackunder[5pt]{
 			\includegraphics[width=0.3 \textwidth]{60_MinimalRepr/2D_Period_Whole_noPoints/result.png}
-		}
+		}{Simplified model}
 	\end{figure}
 	With this simplified model, we explained the structures
 \end{frame}
@@ -208,7 +200,7 @@
 
 \begin{frame}{Symbolic Sequences}
 	Cycles are described using symbolic sequences.
-	Sequence of symbols indicating, on which partition of the function the points of the cycle are.
+	Symbols indicate which branches the points of the cycle are on.
 	\vspace{.5em}
 	\begin{columns}
 		\hspace{5em}
@@ -220,7 +212,6 @@
 		\hspace{3em}
 		\begin{column}{.6 \textwidth}
 			\begin{itemize}
-				\item Our minimal model
 				\item Cycle of period 16
 				\item Symbolic Sequence: $\A^5\B^3\C^5\D^3$
 			\end{itemize}

@@ -45,12 +45,17 @@
 \end{frame}
 
 \begin{frame}{Period-adding in the Halved Model}
+	\vspace{-1em}
 	\begin{figure}
-		\includegraphics[width=.4 \textwidth]{63_MinimalRepr_Adding_Halved/1D_Period_1_add_hor_D1/result.png}
-		\quad
-		\includegraphics[width=.4 \textwidth]{../../Report/Figures/FareyTrees/Minrep_Adding1_Halved/adding.pdf}
+		\only<1>{
+			\includegraphics[width=.4 \textwidth]{63_MinimalRepr_Adding_Halved/1D_Period_larger_adding/Manual/result.png}
+			\qquad
+			\includegraphics[width=.25 \textwidth]{../../Report/Figures/FareyTrees/Minrep_Adding_larger_Halved_Period_3/adding.pdf}
+		}
+		\only<2>{
+			\includegraphics[width=.6 \textwidth]{../../Report/Figures/FareyTrees/Minrep_Adding_larger_Halved_3/adding.pdf}
+		}
 	\end{figure}
-	\todo{Replace with larger adding figure and tree}
 \end{frame}
 
 \begin{frame}{Period-adding in the Halved Model}
@@ -61,19 +66,30 @@
 				\item Periods add up!
 				\item Symbolic sequences concatenate!
 			\end{itemize}
-			\vspace{2em}
 			\pause
-			\begin{itemize}
-				\item Allegory of the cave (``Höhlengleichnis'') type of situation
-				\item Needed: A way to translate cycles
-				      \begin{itemize}
-					      \item Full $\to$ Halved
-					      \item Halved $\to$ Full
-				      \end{itemize}
-			\end{itemize}
+			\begin{center}
+				\begin{tikzpicture}
+					\node (FM) at (0, 1) {Full model:};
+					\node (FC) at (2.5, 1) {Cycles};
+					\node (FB) at (7, 1) {Bifurcation Structure};
+
+					\node (HM) at (0, 0) {Halved model:};
+					\node (HC) at (2.5, 0) {Cycles};
+					\node (HA) at (7, 0) {Period-adding};
+
+					\draw[->] (FC) -- (HC);
+					\draw[->] (HC) -- (HA) node[midway,above] {\tiny explained};
+					\draw[->] (HA) -- (FB);
+					\draw[->] (FC) -- (FB) node[midway,above] {\tiny ???};
+				\end{tikzpicture}
+			\end{center}
+			\vspace{1em}
+			\pause
+			Allegory of the cave (``Höhlengleichnis'') type of situation
 		\end{column}
 		\begin{column}{.3 \textwidth}
-			\only<2->{
+			\vspace{2em}
+			\only<3->{
 				\begin{figure}
 					\includegraphics[width=\textwidth]{Figs/allegory.jpeg}
 				\end{figure}
@@ -141,26 +157,33 @@
 
 \begin{frame}{The First Consequences}
 	\vspace{-1em}
-	\begin{theorem}[Coexistence in Child Nodes]
-		A node in the Farey-tree is associated
+	\only<1-3>{
+		\begin{theorem}[Coexistence in Child Nodes]
+			A node in the Farey-tree is associated
+			\begin{itemize}
+				\item with a single cycle if
+				      \begin{itemize}
+					      \item one parent node is associated with 2 coexisting cycles and the other parent node is associated with a single cycle.
+				      \end{itemize}
+				      \pause
+				\item with two coexisting cycles if
+				      \begin{itemize}
+					      \item both parent nodes are associated with single cycles, or
+					      \item both parent nodes are associated with two coexisting cycles each.
+				      \end{itemize}
+			\end{itemize}
+		\end{theorem}
+		\pause
 		\begin{itemize}
-			\item with a single cycle if
-			      \begin{itemize}
-				      \item one parent node is associated with 2 coexisting cycles and the other parent node is associated with a single cycle.
-			      \end{itemize}
-			      \pause
-			\item with two coexisting cycles if
-			      \begin{itemize}
-				      \item both parent nodes are associated with single cycles, or
-				      \item both parent nodes are associated with two coexisting cycles each.
-			      \end{itemize}
+			\item The third case does not appear in our adding structures
+			\item We will omit this case in following rules
 		\end{itemize}
-	\end{theorem}
-	\pause
-	\begin{itemize}
-		\item The third case does not appear in our adding structures
-		\item We will omit this case in following rules
-	\end{itemize}
+	}
+	\only<4>{
+		\begin{figure}
+			\includegraphics[width=.7 \textwidth]{../../Report/Figures/FareyTrees/Minrep_Adding_larger_Full_3/adding.pdf}
+		\end{figure}
+	}
 \end{frame}
 
 \begin{frame}{``Concatenation'' in the Full Model}
@@ -201,13 +224,17 @@
 
 \begin{frame}{Explained Bifurcation Structures}
 	\begin{figure}
-		\includegraphics[width=.3 \textwidth]{62_MinimalRepr_Adding/1D_Period_larger_adding/Manual/result.png}
-		\includegraphics[width=.15 \textwidth]{../../Report/Figures/FareyTrees/Minrep_Adding1_Lower_Full_Period/adding.pdf}
-		\qquad
-		\includegraphics[width=.3 \textwidth]{62_MinimalRepr_Adding/1D_Period_larger_adding/Manual/result.png}
-		\includegraphics[width=.15 \textwidth]{../../Report/Figures/FareyTrees/Minrep_Adding1_Lower_Full_Period/adding.pdf}
+		\only<1>{
+			\includegraphics[width=.4 \textwidth]{62_MinimalRepr_Adding/1D_Period_larger_adding/Manual/result.png}
+			\qquad
+			\includegraphics[width=.4 \textwidth]{63_MinimalRepr_Adding_Halved/1D_Period_larger_adding/Manual/result.png}
+		}
+		\only<2>{
+			\includegraphics[width=.525 \textwidth]{../../Report/Figures/FareyTrees/Minrep_Adding_larger_Full_3/adding.pdf}
+			\qquad
+			\includegraphics[width=.4 \textwidth]{../../Report/Figures/FareyTrees/Minrep_Adding_larger_Halved_3/adding.pdf}
+		}
 	\end{figure}
-	\todo{Replace pics for halved model}
 \end{frame}
 
 \begin{frame}{Rotation Numbers}
