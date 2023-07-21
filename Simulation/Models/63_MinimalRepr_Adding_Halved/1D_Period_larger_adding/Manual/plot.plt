@@ -12,7 +12,7 @@ set border lw 1
 L = 0.082
 R = 0.0835
 D = 0
-U = 128
+U = 64
 
 set xrange [L to R]
 set yrange [D to U]

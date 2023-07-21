@@ -28,27 +28,28 @@ set ylabel 'y' offset 4.2, 0 rotate by 90
 ArrowStyle ="backhead size graph 0.018,15 lt 1 lw 1 lc rgb 'black' front"
 ArrowStyleW="backhead size graph 0.018,15 lt 1 lw 4 lc rgb 'white' front"
 
-# P_10^3
+# P_3^20
 X=-0.380
 Y= 0.12662
-set label "P.10.3" at X,Y front
+set label "P.3.20" at X,Y front
 
-# P_9^3
+# P_2^18
 X=-0.384
 Y= 0.12673
-set label "P.9.3" at X,Y front
+set label "P.2.18" at X,Y front
 
-# P_10^4
+# P_2^20
 X=-0.376
 Y= 0.12673
-set label "P.10.4" at X,Y front
+set label "P.2.20" at X,Y front
 
 # P_11^4
 X=-0.3725
 Y= 0.12662
-set label "P.11.4" at X,Y front
+set label "P.3.22" at X,Y front
 
-# Q_10^3
+
+# Q_3^20
 X=-0.376
 Y= 0.126665
 h=1.0
@@ -56,9 +57,9 @@ dX=-(R-L)*0.05*h
 dY=-(U-D)*0.05*h
 set arrow from X,Y rto dX, dY @ArrowStyleW
 set arrow from X,Y rto dX, dY @ArrowStyle
-set label "Q.10.3" at X+dX,Y+dY offset -1.5,-1.3 front
+set label "Q.3.20" at X+dX,Y+dY offset -1.5,-1.3 front
 
-# P_10^4 + P_11^4
+# P_2^20 + P_4^22
 X=-0.372
 Y= 0.12668
 h=1.0
@@ -66,20 +67,10 @@ dX=-(R-L)*0.05*h
 dY=(U-D)*0.05*h
 set arrow from X,Y rto dX, dY @ArrowStyleW
 set arrow from X,Y rto dX, dY @ArrowStyle
-set label "P.10.4+" at X+dX,Y+dY offset -3.2,0.7 front
+set label "P.4.20+" at X+dX,Y+dY offset -3.2,0.7 front
 
 
-# P_10^3 U P_10^4
-X=-0.3805
-Y= 0.126672
-h=1.0
-dX=(R-L)*0.05*h
-dY=(U-D)*0.05*h
-set arrow from X,Y rto dX, dY @ArrowStyleW
-set arrow from X,Y rto dX, dY @ArrowStyle
-set label "P.10.3uP.10.4" at X+dX,Y+dY offset 0.1,0.3 front
-
-# P_10^3 U P_9^3
+# P_3^20 U P_3^18
 X=-0.382
 Y= 0.126658
 h=1.0
@@ -87,7 +78,17 @@ dX=-(R-L)*0.05*h
 dY=-(U-D)*0.05*h
 set arrow from X,Y rto dX, dY @ArrowStyleW
 set arrow from X,Y rto dX, dY @ArrowStyle
-set label "P.10.3uP.9.3" at X+dX,Y+dY offset -4.5,-1.5 front
+set label "P.3.20uP.2.18" at X+dX,Y+dY offset -4.5,-1.5 front
+
+# P_3^20 U P_10^4
+X=-0.3805
+Y= 0.126672
+h=1.0
+dX=(R-L)*0.05*h
+dY=(U-D)*0.05*h
+set arrow from X,Y rto dX, dY @ArrowStyleW
+set arrow from X,Y rto dX, dY @ArrowStyle
+set label "P.3.20uP.2.20" at X+dX,Y+dY offset 0.1,0.3 front
 
 plot \
     'Data/0/symbolic_regions.tna' w dots lc rgb 'orange' notitle, \

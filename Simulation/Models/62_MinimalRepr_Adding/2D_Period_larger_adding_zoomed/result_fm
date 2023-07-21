@@ -9,5 +9,5 @@
 \psfrag{x}{\hspace*{0.0em}\raisebox{0.5ex}{$p_x$}}
 \psfrag{y}{\hspace*{0.0em}\raisebox{0.5ex}{$p_y$}}
 
-\psfrag{P.7.4}{\hspace*{0.0em}\raisebox{0.5ex}{\color[RGB]{255, 110, 0}{$P_{7}^4$}}}
-\psfrag{P.6.4}{\hspace*{0.0em}\raisebox{0.5ex}{\color[RGB]{255, 110, 0}{$P_{6}^4$}}}
+\psfrag{P.7.4}{\hspace*{0.0em}\raisebox{0.5ex}{\color[RGB]{255, 110, 0}{$P_{4}^{14}$}}}
+\psfrag{P.6.4}{\hspace*{0.0em}\raisebox{0.5ex}{\color[RGB]{255, 110, 0}{$P_{4}^{12}$}}}
