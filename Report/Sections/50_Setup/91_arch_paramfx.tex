@@ -1,4 +1,4 @@
-\section{Parameter Effects}
+\subsection{Parameter Effects}
 
 The effects of the parameters on the model function are straightforward and can be read directly from the previous section.
 In summary, the parameter $p_x$ changes the height of the branches $\Branch_\B$ and $\Branch_\D$ at their left border, where a lower $p_x$ means a higher value of the model function at these points.
@@ -17,20 +17,20 @@ You can see, how the left borders of branches $\Branch_\B$ and $\Branch_\D$ are 
 Here one can see, how the whole branches $\Branch_\A$ and $\Branch_\C$ move up for higher values of $p_y$.
 
 \begin{figure}
-    \centering
-    \begin{subfigure}{0.4\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{60_MinimalRepr/ParameterEffects/p_x/illustration.png}
-        \caption{$p_x$}
-        \label{fig:final.param.effects.px}
-    \end{subfigure}
-    \begin{subfigure}{0.4\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{60_MinimalRepr/ParameterEffects/p_y/illustration.png}
-        \caption{$p_y$}
-        \label{fig:final.param.effects.py}
-    \end{subfigure}
-    \caption{Illustration of Parameter Effects}
+	\centering
+	\begin{subfigure}{0.4\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{60_MinimalRepr/ParameterEffects/p_x/illustration.png}
+		\caption{$p_x$}
+		\label{fig:final.param.effects.px}
+	\end{subfigure}
+	\begin{subfigure}{0.4\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{60_MinimalRepr/ParameterEffects/p_y/illustration.png}
+		\caption{$p_y$}
+		\label{fig:final.param.effects.py}
+	\end{subfigure}
+	\caption{Illustration of Parameter Effects}
 \end{figure}
 
 \Cref{tab:final.def.parameters.effects} list the effects of parameters $p_x$ and $p_y$ in a table, like also done for the original model in \Cref{sec:yunus.param.effects}.
@@ -41,16 +41,16 @@ For example, the effect $\AMi_{\B}^{L-}$ cannot even be fabricated in this model
 Also the effect $\AB_{\B\C}^L$, which is the movement of the borders between branches $\Branch_\B$ and $\Branch_\C$ (and $\Branch_\D$ and $\Branch_\A$ respectively), is not necessary.
 
 \begin{table}
-    \centering
-    \begin{tabular}{|c||c|c||c|c|} \hline
-        Combined         & $E_0$            & $\chi_0$          & $p_x$        & $p_y$          \\ \hline \hline
-        $\AL_{\B}^{-}$   & $\AL_{\B}^{-}$   &                   & $\AL_{\B}^-$ &                \\ \hline
-        $\AMi_{\B}^{L-}$ & $\AMi_{\B}^{L-}$ & $-\AMi_{\B}^{+}$  &              &                \\ \hline
-        $\AW_{\A}^{+}$   &                  & $\AW_{\A}^{+}$    &              & $\AW_{\A}^{+}$ \\ \hline \hline
-        $\AB_{\B\C}^{L}$ &                  & $\AB_{\B\C}^{L}$  &              &                \\ \hline
-                         & $\AB_{\A\B}^{R}$ & $-\AB_{\A\B}^{L}$ &              &                \\ \hline
-    \end{tabular}
-    \caption{Comparison of Parameter Effects}
-    \label{tab:final.def.parameters.effects}
+	\centering
+	\begin{tabular}{|c||c|c||c|c|} \hline
+		Combined         & $E_0$            & $\chi_0$          & $p_x$        & $p_y$          \\ \hline \hline
+		$\AL_{\B}^{-}$   & $\AL_{\B}^{-}$   &                   & $\AL_{\B}^-$ &                \\ \hline
+		$\AMi_{\B}^{L-}$ & $\AMi_{\B}^{L-}$ & $-\AMi_{\B}^{+}$  &              &                \\ \hline
+		$\AW_{\A}^{+}$   &                  & $\AW_{\A}^{+}$    &              & $\AW_{\A}^{+}$ \\ \hline \hline
+		$\AB_{\B\C}^{L}$ &                  & $\AB_{\B\C}^{L}$  &              &                \\ \hline
+		                 & $\AB_{\A\B}^{R}$ & $-\AB_{\A\B}^{L}$ &              &                \\ \hline
+	\end{tabular}
+	\caption{Comparison of Parameter Effects}
+	\label{tab:final.def.parameters.effects}
 \end{table}
 
