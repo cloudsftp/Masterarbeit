@@ -50,13 +50,13 @@ $z_{L_+}, z_{L_0}, z_{R_+},$ and $z_{R_0}$ must satisfy the following equations.
 \begin{subequations}
 	\begin{align}
 		(q \cdot \cos(\theta) + \mu \cdot \chi) \cdot e^{\lambda \cdot z_{L_+}}
-		 & = q \cdot \cos(\theta + z_{L_+}) + \mu \cdot \chi \\
+		 & = q \cdot \cos(\theta + z_{L_+}) + \chi \\
 		(q \cdot \cos(\theta) + \mu \cdot \chi) \cdot e^{\lambda \cdot z_{L_0}}
-		 & = q \cdot \cos(\theta + z_{L_0}) - \mu \cdot \chi \\
-		(q \cdot \cos(\theta) + \mu \cdot \chi) \cdot e^{\lambda \cdot z_{R_+}}
-		 & = q \cdot \cos(\theta + z_{R_+}) + \mu \cdot \chi \\
-		(q \cdot \cos(\theta) + \mu \cdot \chi) \cdot e^{\lambda \cdot z_{R_0}}
-		 & = q \cdot \cos(\theta + z_{R_0}) - \mu \cdot \chi
+		 & = q \cdot \cos(\theta + z_{L_0}) - \chi \\
+		(q \cdot \cos(\theta) - \mu \cdot \chi) \cdot e^{\lambda \cdot z_{R_+}}
+		 & = q \cdot \cos(\theta + z_{R_+}) - \chi \\
+		(q \cdot \cos(\theta) - \mu \cdot \chi) \cdot e^{\lambda \cdot z_{R_0}}
+		 & = q \cdot \cos(\theta + z_{R_0}) + \chi
 	\end{align}
 \end{subequations}
 They also have to satisfy the following equations.
@@ -65,11 +65,11 @@ So do the parameters $z_1, z_2, z_3$, and $z_4$, which were not included in the 
 	\begin{align}
 		(q \cdot \cos(\theta + z_{L_+}) + \chi + 1) \cdot e^{\lambda \cdot z_1} - 1
 		 & = q \cdot  \cos(\theta + z_{L_+} + z_1) + \mu \cdot \chi \\
-		(q \cdot \cos(\theta + z_{L_0} + z_2) + \chi + 1) \cdot e^{\lambda \cdot z_2} + 1
+		(q \cdot \cos(\theta + z_{L_0} + z_2) - \chi - 1) \cdot e^{\lambda \cdot z_2} + 1
 		 & = q \cdot  \cos(\theta + z_{L_0} + z_2) - \mu \cdot \chi \\
 		(q \cdot \cos(\theta + z_{R_+}) + \chi + 1) \cdot e^{\lambda \cdot z_3} - 1
 		 & = q \cdot  \cos(\theta + z_{L_+} + z_1) + \mu \cdot \chi \\
-		(q \cdot \cos(\theta + z_{R_0} + z_4) + \chi + 1) \cdot e^{\lambda \cdot z_4} + 1
+		(q \cdot \cos(\theta + z_{R_0} + z_4) - \chi - 1) \cdot e^{\lambda \cdot z_4} + 1
 		 & = q \cdot  \cos(\theta + z_{R_0} + z_2) - \mu \cdot \chi
 	\end{align}
 \end{subequations}
