@@ -3,52 +3,52 @@
 With this knowledge, we now can explain, why some cycles in the full model have a much lower period than expected in period-adding structures.
 
 \begin{lemma}[$t$ Preserves Period]
-    \label{lemma:t.preserves.period}
-    The function $t$ preserves the period. $|\sigma_1\sigma_2| = |t(\sigma_1\sigma_2)|$.
+	\label{lemma:t.preserves.period}
+	The function $t$ preserves the period. $|\sigma_1\sigma_2| = |t(\sigma_1\sigma_2)|$.
 \end{lemma}
 
 \begin{proof}
-    Let $\sigma_1\sigma_2 = \L^a\R^b\L^c\R^d$.
-    \begin{align*}
-        |\sigma_1\sigma_2| =  |\L^a\R^b\L^c\R^d|
-        = a + b + c + d
-        = |\A^a\B^b\C^c\D^d|
-        = |t(\L^a\R^b\L^c\R^d)|
-        = |t(\sigma_1\sigma_2)|
-    \end{align*}
+	Let $\sigma_1\sigma_2 = \L^a\R^b\L^c\R^d$.
+	\begin{align*}
+		|\sigma_1\sigma_2| =  |\L^a\R^b\L^c\R^d|
+		= a + b + c + d
+		= |\A^a\B^b\C^c\D^d|
+		= |t(\L^a\R^b\L^c\R^d)|
+		= |t(\sigma_1\sigma_2)|
+	\end{align*}
 \end{proof}
 
 \begin{theorem}[Period of Cycles in the Full Model]
-    \begin{enumerate}
-        \item If a cycle in the halved model manifests as two coexisting cycles in the full model, the period of either cycle is the same as the period of the cycle in the halved model. $|T(\sigma)| = |T(s_2(\sigma))| = |\sigma|$.
-        \item If a cycle in the halved model manifests as a single cycle in the full model, the period of this cycle is double the period of the cycle in the halved model. $|T(\sigma)| = 2 |\sigma|$.
-    \end{enumerate}
+	\begin{enumerate}
+		\item If a cycle in the halved model manifests as two coexisting cycles in the full model, the period of either cycle is the same as the period of the cycle in the halved model. $|T(\sigma)| = |T(s_2(\sigma))| = |\sigma|$.
+		\item If a cycle in the halved model manifests as a single cycle in the full model, the period of this cycle is double the period of the cycle in the halved model. $|T(\sigma)| = 2 |\sigma|$.
+	\end{enumerate}
 \end{theorem}
 
 \begin{proof} \phantom{x}
-    \begin{enumerate}
-        \item From \Cref{theorem:coexistence.even} we know that if the cycle $\sigma$ in the halved model manifests as two coexisting cycles in the full model, $\sigma$ has an even number of rotations $n$.
-              And its translation is $T(\sigma) = t(\sigma_1\sigma_2) t(\sigma_3\sigma_4) \dots t(\sigma_{n-1}\sigma_n)$.
-              Combining this with the fact, that $t$ preserves the period of its input as described in \Cref{lemma:t.preserves.period}, we can calculate the period of $T(h)$ in the following way.
-              \begin{align*}
-                  |T(h)| & = |t(\sigma_1\sigma_2) t(\sigma_3\sigma_4) \dots t(\sigma_{n-1}\sigma_n)|           \\
-                         & = |t(\sigma_1\sigma_2)| + |t(\sigma_3\sigma_4)| + \dots + |t(\sigma_{n-1}\sigma_n)| \\
-                         & = |\sigma_1\sigma_2| + |\sigma_3\sigma_4| + \dots + |\sigma_{n-1}\sigma_n|          \\
-                         & = |\sigma_1\sigma_2 \dots \sigma_n| = |h|
-              \end{align*}
-              So the period of the cycle $T(\sigma)$ in the full model is the same as the period of the cycle $\sigma$ in the halved model.
-              The same calculation can be done for $T(s(\sigma))$ and is omitted here.
-        \item Similarly we know that if the cycle $\sigma$ in the halved model manifests as a single cycle in the full model, $\sigma$ has an odd number of rotations $n$.
-              And its translation is $T(\sigma) = t(\sigma_1\sigma_2) \dots t(\sigma_n\sigma_1) \dots t(\sigma_{n-1}\sigma_n)$.
-              Its period can be calculated in the following way.
-              \begin{align*}
-                  |T(h)| & = |t(\sigma_1\sigma_2) \dots t(\sigma_n\sigma_1) \dots t(\sigma_{n-1}\sigma_n)|                      \\
-                         & = |t(\sigma_1\sigma_2)| + \dots + |t(\sigma_n\sigma_1)| + \dots + |t(\sigma_{n-1}\sigma_n)|          \\
-                         & = |\sigma_1\sigma_2| + \dots + |\sigma_n\sigma_1| + \dots + |\sigma_{n-1}\sigma_n|                   \\
-                         & = |\sigma_1\sigma_2 \dots \sigma_n\sigma_1 \dots \sigma_{n-1}\sigma_n| = |\sigma\sigma| = 2 |\sigma|
-              \end{align*}
-              So the period of the cycle $T(\sigma)$ in the full model is twice the period of the cycle $\sigma$ in the halved model.
-    \end{enumerate}
+	\begin{enumerate}
+		\item From \Cref{theorem:coexistence.even} we know that if the cycle $\sigma$ in the halved model manifests as two coexisting cycles in the full model, $\sigma$ has an even number of rotations $n$.
+		      And its translation is $T(\sigma) = t(\sigma_1\sigma_2) t(\sigma_3\sigma_4) \dots t(\sigma_{n-1}\sigma_n)$.
+		      Combining this with the fact, that $t$ preserves the period of its input as described in \Cref{lemma:t.preserves.period}, we can calculate the period of $T(h)$ in the following way.
+		      \begin{align*}
+			      |T(h)| & = |t(\sigma_1\sigma_2) t(\sigma_3\sigma_4) \dots t(\sigma_{n-1}\sigma_n)|           \\
+			             & = |t(\sigma_1\sigma_2)| + |t(\sigma_3\sigma_4)| + \dots + |t(\sigma_{n-1}\sigma_n)| \\
+			             & = |\sigma_1\sigma_2| + |\sigma_3\sigma_4| + \dots + |\sigma_{n-1}\sigma_n|          \\
+			             & = |\sigma_1\sigma_2 \dots \sigma_n| = |h|
+		      \end{align*}
+		      So the period of the cycle $T(\sigma)$ in the full model is the same as the period of the cycle $\sigma$ in the halved model.
+		      The same calculation can be done for $T(s(\sigma))$ and is omitted here.
+		\item Similarly we know that if the cycle $\sigma$ in the halved model manifests as a single cycle in the full model, $\sigma$ has an odd number of rotations $n$.
+		      And its translation is $T(\sigma) = t(\sigma_1\sigma_2) \dots t(\sigma_n\sigma_1) \dots t(\sigma_{n-1}\sigma_n)$.
+		      Its period can be calculated in the following way.
+		      \begin{align*}
+			      |T(h)| & = |t(\sigma_1\sigma_2) \dots t(\sigma_n\sigma_1) \dots t(\sigma_{n-1}\sigma_n)|                      \\
+			             & = |t(\sigma_1\sigma_2)| + \dots + |t(\sigma_n\sigma_1)| + \dots + |t(\sigma_{n-1}\sigma_n)|          \\
+			             & = |\sigma_1\sigma_2| + \dots + |\sigma_n\sigma_1| + \dots + |\sigma_{n-1}\sigma_n|                   \\
+			             & = |\sigma_1\sigma_2 \dots \sigma_n\sigma_1 \dots \sigma_{n-1}\sigma_n| = |\sigma\sigma| = 2 |\sigma|
+		      \end{align*}
+		      So the period of the cycle $T(\sigma)$ in the full model is twice the period of the cycle $\sigma$ in the halved model.
+	\end{enumerate}
 \end{proof}
 
 \subsubsection{Rules for Combining Symbolic Sequences}
@@ -59,124 +59,124 @@ These can be explained with \Cref{theorem:coexistence.even}.
 The third case in \Cref{theorem:child.coexistence} can't be seen in the farey tree but it follows from the proof of the first two cases.
 
 \begin{theorem}[Multiplicity of Cycles Associated With Child Nodes Based on the Multiplicity of Cycles Associated With its Parent Nodes]
-    \label{theorem:child.coexistence}
-    \begin{enumerate}
-        \item The child of a node with a single cycle and a node with two coexisting cycles has a single cycle.
-        \item The child of two nodes with a single cycle has two coexisting cycles.
-        \item The child of two nodes with two coexisting cycles, has two coexisting cycles.
-    \end{enumerate}
+	\label{theorem:child.coexistence}
+	\begin{enumerate}
+		\item The child of a node with a single cycle and a node with two coexisting cycles has a single cycle.
+		\item The child of two nodes with a single cycle has two coexisting cycles.
+		\item The child of two nodes with two coexisting cycles, has two coexisting cycles.
+	\end{enumerate}
 \end{theorem}
 
 \begin{proof} \phantom{x}
-    \begin{enumerate}
-        \item A node with a single cycle in the full model is the manifestation of a cycle with an odd number of rotations in the halved model.
-              A node with two coexisting cycles in the full model is the manifestation of a cycle with an even number of rotations in the halved model.
-              Their child is the manifestation of the two cycles in the halved model glued together.
-              This glued-together cycle has an odd number of rotations and therefore manifests as a single cycle in the full model.
-        \item Analogously, two cycles with an odd number of rotations glued together have an even number of rotations.
-              Therefore, this glued-together cycle manifests as two coexisting cycles in the full model.
-        \item Analogously, two cycles with an even number of rotations glued together have an even number of rotations.
-              Therefore this glued-together cycle manifests as two coexisting cycles in the full model.
-    \end{enumerate}
+	\begin{enumerate}
+		\item A node with a single cycle in the full model is the manifestation of a cycle with an odd number of rotations in the halved model.
+		      A node with two coexisting cycles in the full model is the manifestation of a cycle with an even number of rotations in the halved model.
+		      Their child is the manifestation of the two cycles in the halved model glued together.
+		      This glued-together cycle has an odd number of rotations and therefore manifests as a single cycle in the full model.
+		\item Analogously, two cycles with an odd number of rotations glued together have an even number of rotations.
+		      Therefore, this glued-together cycle manifests as two coexisting cycles in the full model.
+		\item Analogously, two cycles with an even number of rotations glued together have an even number of rotations.
+		      Therefore this glued-together cycle manifests as two coexisting cycles in the full model.
+	\end{enumerate}
 \end{proof}
 
 Furthermore, we can formulate rules for the cycles in the child node of two nodes in the period-adding structure in the full model.
 
 \begin{definition}[Merging two 4-syllables]
-    The operation $\left[\phi_i \mid \psi_j\right]$ merges the two 4-symmables $\phi_i$ and $\psi_j$.
-    Let $\phi_i = \A^a\B^b\C^c\D^d$ and $\psi_j = \A^e\B^f\C^g\D^h$.
-    Then $\left[\phi_i \mid \psi_j\right] = \A^a\B^b\C^g\D^h$.
-    It concatenates the first 2-syllable of $\phi_i$ with the second 2-syllable of $\psi_j$.
+	The operation $\left[\phi_i \mid \psi_j\right]$ merges the two 4-symmables $\phi_i$ and $\psi_j$.
+	Let $\phi_i = \A^a\B^b\C^c\D^d$ and $\psi_j = \A^e\B^f\C^g\D^h$.
+	Then $\left[\phi_i \mid \psi_j\right] = \A^a\B^b\C^g\D^h$.
+	It concatenates the first 2-syllable of $\phi_i$ with the second 2-syllable of $\psi_j$.
 \end{definition}
 
 \begin{theorem}[The Cycles of a Child Node of a Node With a Singular Cycle and a Node With 2 Coexisting Cycles]
-    The child node of a node with a singular cycle $\phi = \phi_1\phi_2 \dots \phi_n$ and a node with two coexisting cycles $\phi^a = \phi^a_1\phi^a_2 \dots \phi^a_m$ and $\phi^b_1\phi^b_2 \dots \phi^b_m$ will have one of the following cycles.
-    \begin{enumerate}
-        \item If $\phi$ is associated with the left parent.
-              \begin{align*}
-                  \phi_1 \dots \phi_{\frac{n-1}{2}} \left[\phi_{\frac{n+1}{2}} \mid \phi^b_m\right]
-                  \phi^b_1 \dots \phi^b_{m-1} \left[\phi^b_m \mid \phi_{\frac{n+1}{2}}\right]
-                  \phi_{\frac{n+3}{2}} \dots \phi_n \phi^a
-              \end{align*}
-        \item If $\phi$ is associated with the right parent.
-              \begin{align*}
-                  \phi^a \phi_1 \dots \phi_{\frac{n-1}{2}} \left[\phi_{\frac{n+1}{2}} \mid \phi^b_m\right]
-                  \phi^b_1 \dots \phi^b_{m-1} \left[\phi^b_m \mid \phi_{\frac{n+1}{2}}\right]
-                  \phi_{\frac{n+3}{2}} \dots \phi_n
-              \end{align*}
-              Which is shift-equivalent to the first case.
-              But this distinction must be made to guarantee the correctness of cycles in subsequent child nodes.
-    \end{enumerate}
+	The child node of a node with a singular cycle $\phi = \phi_1\phi_2 \dots \phi_n$ and a node with two coexisting cycles $\phi^a = \phi^a_1\phi^a_2 \dots \phi^a_m$ and $\phi^b_1\phi^b_2 \dots \phi^b_m$ will have one of the following cycles.
+	\begin{enumerate}
+		\item If $\phi$ is associated with the left parent.
+		      \begin{align*}
+			      \phi_1 \dots \phi_{\frac{n-1}{2}} \left[\phi_{\frac{n+1}{2}} \mid \phi^b_m\right]
+			      \phi^b_1 \dots \phi^b_{m-1} \left[\phi^b_m \mid \phi_{\frac{n+1}{2}}\right]
+			      \phi_{\frac{n+3}{2}} \dots \phi_n \phi^a
+		      \end{align*}
+		\item If $\phi$ is associated with the right parent.
+		      \begin{align*}
+			      \phi^a \phi_1 \dots \phi_{\frac{n-1}{2}} \left[\phi_{\frac{n+1}{2}} \mid \phi^b_m\right]
+			      \phi^b_1 \dots \phi^b_{m-1} \left[\phi^b_m \mid \phi_{\frac{n+1}{2}}\right]
+			      \phi_{\frac{n+3}{2}} \dots \phi_n
+		      \end{align*}
+		      Which is shift-equivalent to the first case.
+		      But this distinction must be made to guarantee the correctness of cycles in subsequent child nodes.
+	\end{enumerate}
 \end{theorem}
 
 \begin{proof} \phantom{x}
-    \begin{enumerate}
-        \item Let $\sigma = \sigma_1\sigma_2 \dots \sigma_i$ with odd $i$ and $\rho = \rho_1\rho_2 \dots \rho_j$ with even $j$ and $T(\sigma) = \phi, T(\rho) = \psi^a$, and $T(s_2(\rho)) = \psi^b$.
-              The child of both nodes in the halved model will have the cycle $\sigma\rho = \sigma_1\sigma_2 \dots \sigma_i \rho_1\rho_2 \dots \rho_j$.
-              This will manifest as the following cycle in the full model.
-              \begin{align*}
-                  T(\sigma\rho) & = T(\sigma_1 \dots \sigma_i \rho_1 \dots \rho_j)                                                                              \\
-                                & =
-                  t(\sigma_1\sigma_2) \dots t(\sigma_i \rho_1) \dots t(\rho_j \sigma_1) \dots t(\sigma_{i-1}\sigma_i) t(\rho_1\rho_2) \dots t(\rho_{j-1}\rho_j) \\
-                                & = \phi_1 \dots \phi_{\frac{n-1}{2}} t(\sigma_i \rho_1)
-                  \psi^b_1 \dots \rho^b_{m-1} t(\rho_j \sigma_1)
-                  \phi_{\frac{n+3}{2}} \dots \phi_n
-                  \psi^a_1 \dots \psi^a_m                                                                                                                       \\
-                                & =
-                  \phi_1 \dots \sigma_{\frac{n-1}{2}} \left[\sigma_{\frac{n+1}{2}} \mid \rho^b_m\right]
-                  \psi^b_1 \dots \psi^b_{m-1} \left[\rho^b_m \mid \sigma_{\frac{n+1}{2}}\right]
-                  \phi_{\frac{n+3}{2}} \dots \phi_n
-                  \psi^a                                                                                                                                        \\
-              \end{align*}
-        \item Let $\sigma = \sigma_1\sigma_2 \dots \sigma_i$ with even $i$ and $\rho = \rho_1\rho_2 \dots \rho_j$ with odd $j$ and $T(\sigma) = \psi^a, T(s_2(\sigma)) = \psi^b$, and $T(\rho) = \phi$.
-              The child of both nodes in the halved model will have the cycle $\sigma\rho = \sigma_1l_2 \dots \sigma_i \rho_1\rho_2 \dots \rho_j$.
-              This will manifest as the following cycle in the full model.
-              \begin{align*}
-                  T(\sigma\rho) & = T(\sigma_1 \dots \sigma_i \rho_1 \dots \rho_j)                                                                                             \\
-                                & =
-                  t(\sigma_1\sigma_2) \dots t(\sigma_{i-1}\sigma_i) t(\rho_1\rho_2) \dots t(\rho_j \sigma_1) \dots t(\sigma_i\rho_1) \dots t(\rho_j\sigma_1) \dots t(\sigma_i) \\
-                                & =
-                  \psi^a_1 \dots \psi^a_m
-                  \phi_1 \dots \phi_{\frac{n-1}{2}} t(\sigma_i \rho_1)
-                  \psi^b_1 \dots \psi^b_{m-1} t(\rho_j \sigma_1)
-                  \phi_{\frac{n+3}{2}} \dots \phi_n                                                                                                                            \\
-                                & =
-                  \psi^a
-                  \phi_1 \dots \phi_{\frac{n-1}{2}} \left[\phi_{\frac{n+1}{2}} \mid \psi^b_m\right]
-                  \psi^b_1 \dots \psi^b_{m-1} \left[\psi^b_m \mid \phi_{\frac{n+1}{2}}\right]
-                  \phi_{\frac{n+3}{2}} \dots \phi_n                                                                                                                            \\
-              \end{align*}
-    \end{enumerate}
+	\begin{enumerate}
+		\item Let $\sigma = \sigma_1\sigma_2 \dots \sigma_i$ with odd $i$ and $\rho = \rho_1\rho_2 \dots \rho_j$ with even $j$ and $T(\sigma) = \phi, T(\rho) = \psi^a$, and $T(s_2(\rho)) = \psi^b$.
+		      The child of both nodes in the halved model will have the cycle $\sigma\rho = \sigma_1\sigma_2 \dots \sigma_i \rho_1\rho_2 \dots \rho_j$.
+		      This will manifest as the following cycle in the full model.
+		      \begin{align*}
+			      T(\sigma\rho) & = T(\sigma_1 \dots \sigma_i \rho_1 \dots \rho_j)                                                                              \\
+			                    & =
+			      t(\sigma_1\sigma_2) \dots t(\sigma_i \rho_1) \dots t(\rho_j \sigma_1) \dots t(\sigma_{i-1}\sigma_i) t(\rho_1\rho_2) \dots t(\rho_{j-1}\rho_j) \\
+			                    & = \phi_1 \dots \phi_{\frac{n-1}{2}} t(\sigma_i \rho_1)
+			      \psi^b_1 \dots \rho^b_{m-1} t(\rho_j \sigma_1)
+			      \phi_{\frac{n+3}{2}} \dots \phi_n
+			      \psi^a_1 \dots \psi^a_m                                                                                                                       \\
+			                    & =
+			      \phi_1 \dots \sigma_{\frac{n-1}{2}} \left[\sigma_{\frac{n+1}{2}} \mid \rho^b_m\right]
+			      \psi^b_1 \dots \psi^b_{m-1} \left[\rho^b_m \mid \sigma_{\frac{n+1}{2}}\right]
+			      \phi_{\frac{n+3}{2}} \dots \phi_n
+			      \psi^a                                                                                                                                        \\
+		      \end{align*}
+		\item Let $\sigma = \sigma_1\sigma_2 \dots \sigma_i$ with even $i$ and $\rho = \rho_1\rho_2 \dots \rho_j$ with odd $j$ and $T(\sigma) = \psi^a, T(s_2(\sigma)) = \psi^b$, and $T(\rho) = \phi$.
+		      The child of both nodes in the halved model will have the cycle $\sigma\rho = \sigma_1l_2 \dots \sigma_i \rho_1\rho_2 \dots \rho_j$.
+		      This will manifest as the following cycle in the full model.
+		      \begin{align*}
+			      T(\sigma\rho) & = T(\sigma_1 \dots \sigma_i \rho_1 \dots \rho_j)                                                                                             \\
+			                    & =
+			      t(\sigma_1\sigma_2) \dots t(\sigma_{i-1}\sigma_i) t(\rho_1\rho_2) \dots t(\rho_j \sigma_1) \dots t(\sigma_i\rho_1) \dots t(\rho_j\sigma_1) \dots t(\sigma_i) \\
+			                    & =
+			      \psi^a_1 \dots \psi^a_m
+			      \phi_1 \dots \phi_{\frac{n-1}{2}} t(\sigma_i \rho_1)
+			      \psi^b_1 \dots \psi^b_{m-1} t(\rho_j \sigma_1)
+			      \phi_{\frac{n+3}{2}} \dots \phi_n                                                                                                                            \\
+			                    & =
+			      \psi^a
+			      \phi_1 \dots \phi_{\frac{n-1}{2}} \left[\phi_{\frac{n+1}{2}} \mid \psi^b_m\right]
+			      \psi^b_1 \dots \psi^b_{m-1} \left[\psi^b_m \mid \phi_{\frac{n+1}{2}}\right]
+			      \phi_{\frac{n+3}{2}} \dots \phi_n                                                                                                                            \\
+		      \end{align*}
+	\end{enumerate}
 \end{proof}
 
 \begin{theorem}
-    The child node of two nodes with a singular cycle, $\phi = \phi_1 \dots \phi_n$ and $\psi = \psi_1 \dots \psi_m$ respectively, has the following two cycles.
-    \begin{align*}
-        \phi_1 \dots \phi_{\frac{n-1}{2}} \left[\phi_{\frac{n+1}{2}} \mid \psi_{\frac{m+1}{2}}\right] \psi_{\frac{m+3}{2}} \dots \psi_m
-    \end{align*}
-    and
-    \begin{align*}
-        \phi_{\frac{n+3}{2}} \dots \phi_n \psi_1 \dots \psi_{\frac{m-1}{2}} \left[\psi_{\frac{m+1}{2}} \mid \phi_{\frac{n+1}{2}}\right]
-    \end{align*}
+	The child node of two nodes with a singular cycle, $\phi = \phi_1 \dots \phi_n$ and $\psi = \psi_1 \dots \psi_m$ respectively, has the following two cycles.
+	\begin{align*}
+		\phi_1 \dots \phi_{\frac{n-1}{2}} \left[\phi_{\frac{n+1}{2}} \mid \psi_{\frac{m+1}{2}}\right] \psi_{\frac{m+3}{2}} \dots \psi_m
+	\end{align*}
+	and
+	\begin{align*}
+		\phi_{\frac{n+3}{2}} \dots \phi_n \psi_1 \dots \psi_{\frac{m-1}{2}} \left[\psi_{\frac{m+1}{2}} \mid \phi_{\frac{n+1}{2}}\right]
+	\end{align*}
 \end{theorem}
 
 \begin{proof}
-    Let $\sigma = \sigma_1\sigma_2 \dots \sigma_i$ with odd $i$ and $\rho = \rho_1\rho_2 \dots \rho_j$ with odd $j$ and $T(\sigma) = \phi$ and $T(\rho) = \psi$.
-    The child of both nodes in the halved model will have the cycle $\sigma\rho = \sigma_1 \dots \sigma_i \rho_1 \dots \rho_j$.
-    This will manifest as the following two cycles in the full model.
-    \begin{align*}
-        T(\sigma\rho) & = T(\sigma_1 \dots \sigma_i \rho_1 \dots \rho_j)                                                                                  \\
-                      & = t(\sigma_1\sigma_2) \dots t(\sigma_i\rho_1) \dots t(\rho_{j-1}\rho_j)                                                           \\
-                      & = \phi_1 \dots \phi_{\frac{n-1}{2}} t(\sigma_i\rho_1) \psi_{\frac{m+3}{2}} \dots \psi_j                                           \\
-                      & = \phi_1 \dots \phi_{\frac{n-1}{2}} \left[\phi_{\frac{n+1}{2}} \mid \psi_{\frac{m+1}{2}}\right] \psi_{\frac{m+3}{2}} \dots \psi_j
-    \end{align*}
-    and
-    \begin{align*}
-        T(s(\sigma\rho)) & = T(\sigma_2 \dots \sigma_i \rho_1 \dots \rho_j \sigma_1)                                                                         \\
-                         & = t(\sigma_2\sigma_3) \dots t(\sigma_{i-1}\sigma_i) t(\rho_1\rho_2) \dots t(\rho_j\sigma_1)                                       \\
-                         & = \phi_{\frac{n+3}{2}} \dots \phi_n \psi_1 \dots \psi_{\frac{m-1}{2}} t(\rho_j\sigma_1)                                           \\
-                         & = \phi_{\frac{n+3}{2}} \dots \phi_n \psi_1 \dots \psi_{\frac{m-1}{2}} \left[\psi_{\frac{m+1}{2}} \mid \phi_{\frac{n+1}{2}}\right]
-    \end{align*}
+	Let $\sigma = \sigma_1\sigma_2 \dots \sigma_i$ with odd $i$ and $\rho = \rho_1\rho_2 \dots \rho_j$ with odd $j$ and $T(\sigma) = \phi$ and $T(\rho) = \psi$.
+	The child of both nodes in the halved model will have the cycle $\sigma\rho = \sigma_1 \dots \sigma_i \rho_1 \dots \rho_j$.
+	This will manifest as the following two cycles in the full model.
+	\begin{align*}
+		T(\sigma\rho) & = T(\sigma_1 \dots \sigma_i \rho_1 \dots \rho_j)                                                                                  \\
+		              & = t(\sigma_1\sigma_2) \dots t(\sigma_i\rho_1) \dots t(\rho_{j-1}\rho_j)                                                           \\
+		              & = \phi_1 \dots \phi_{\frac{n-1}{2}} t(\sigma_i\rho_1) \psi_{\frac{m+3}{2}} \dots \psi_j                                           \\
+		              & = \phi_1 \dots \phi_{\frac{n-1}{2}} \left[\phi_{\frac{n+1}{2}} \mid \psi_{\frac{m+1}{2}}\right] \psi_{\frac{m+3}{2}} \dots \psi_j
+	\end{align*}
+	and
+	\begin{align*}
+		T(s(\sigma\rho)) & = T(\sigma_2 \dots \sigma_i \rho_1 \dots \rho_j \sigma_1)                                                                         \\
+		                 & = t(\sigma_2\sigma_3) \dots t(\sigma_{i-1}\sigma_i) t(\rho_1\rho_2) \dots t(\rho_j\sigma_1)                                       \\
+		                 & = \phi_{\frac{n+3}{2}} \dots \phi_n \psi_1 \dots \psi_{\frac{m-1}{2}} t(\rho_j\sigma_1)                                           \\
+		                 & = \phi_{\frac{n+3}{2}} \dots \phi_n \psi_1 \dots \psi_{\frac{m-1}{2}} \left[\psi_{\frac{m+1}{2}} \mid \phi_{\frac{n+1}{2}}\right]
+	\end{align*}
 \end{proof}
 
 \todo{last case not possible in our adding structures. proof!}
@@ -185,25 +185,25 @@ As mentioned before, the next case does not appear in the fare tree in \Cref{fig
 But we will include it here for completeness.
 
 \begin{theorem}
-    The child node of two nodes with two coexisting cycles each, $\{\phi^a, \phi^b\}$ and $\{\phi^a, \phi^b\}$ respectively, has the following two cycles.
-    \begin{align*}
-        \phi^a\phi^a \qquad \text{and} \qquad
-        \phi^b_1 \dots \phi^b_{n-1} \left[\phi^b_n \mid \phi^b_m\right] \phi^b_1 \dots \phi^b_{m-1} \left[\phi^b_m \mid \phi^b_n\right]
-    \end{align*}
+	The child node of two nodes with two coexisting cycles each, $\{\phi^a, \phi^b\}$ and $\{\phi^a, \phi^b\}$ respectively, has the following two cycles.
+	\begin{align*}
+		\phi^a\phi^a \qquad \text{and} \qquad
+		\phi^b_1 \dots \phi^b_{n-1} \left[\phi^b_n \mid \phi^b_m\right] \phi^b_1 \dots \phi^b_{m-1} \left[\phi^b_m \mid \phi^b_n\right]
+	\end{align*}
 \end{theorem}
 
 \begin{proof}
-    Let $\sigma = \sigma_1 \dots \sigma_i$ with even $i$ and $\rho = \rho_1 \dots \rho_j$ with even $j$ and $T(\sigma) = \phi^a, T(s_2(\sigma)) = \phi^b, T(\rho) = \phi^a$, and $T(s_2(\rho)) = \phi^b$.
-    The child of both nodes in the halved model will have the cycle $\sigma\rho$.
-    This will manifest as the following two cycles in the full model.
-    \begin{align*}
-        T(\sigma\rho) & = T(\sigma_1 \dots \sigma_i \rho_1 \dots \rho_j) = t(\sigma_1\sigma_2) \dots t(\sigma_{i-i}\sigma_i) t(\rho_1\rho_2) \dots t(\rho_{j-1}\rho_j) \\
-                      & = \phi^a_1 \dots \phi^a_n \phi^a_1 \dots \phi^a_m = \phi^a\phi^a
-    \end{align*}
-    and
-    \begin{align*}
-        T(s(\sigma\rho)) & = T(\sigma_2 \dots \sigma_i \rho_1 \dots \rho_j \sigma_1) = t(\sigma_2\sigma_3) \dots t(\sigma_i\rho_1) \dots t(\rho_j\sigma_1)   \\
-                         & = \phi^b_1 \dots \phi^b_{n-1} t(\sigma_i\rho_1) \phi^b_1 \dots \phi^b_{m-1} t(\rho_j\sigma_1)                                     \\
-                         & = \phi^b_1 \dots \phi^b_{n-1} \left[\phi^b_n \mid \phi^b_m\right] \phi^b_1 \dots \phi^b_{m-1} \left[\phi^b_m \mid \phi^b_n\right]
-    \end{align*}
+	Let $\sigma = \sigma_1 \dots \sigma_i$ with even $i$ and $\rho = \rho_1 \dots \rho_j$ with even $j$ and $T(\sigma) = \phi^a, T(s_2(\sigma)) = \phi^b, T(\rho) = \phi^a$, and $T(s_2(\rho)) = \phi^b$.
+	The child of both nodes in the halved model will have the cycle $\sigma\rho$.
+	This will manifest as the following two cycles in the full model.
+	\begin{align*}
+		T(\sigma\rho) & = T(\sigma_1 \dots \sigma_i \rho_1 \dots \rho_j) = t(\sigma_1\sigma_2) \dots t(\sigma_{i-i}\sigma_i) t(\rho_1\rho_2) \dots t(\rho_{j-1}\rho_j) \\
+		              & = \phi^a_1 \dots \phi^a_n \phi^a_1 \dots \phi^a_m = \phi^a\phi^a
+	\end{align*}
+	and
+	\begin{align*}
+		T(s(\sigma\rho)) & = T(\sigma_2 \dots \sigma_i \rho_1 \dots \rho_j \sigma_1) = t(\sigma_2\sigma_3) \dots t(\sigma_i\rho_1) \dots t(\rho_j\sigma_1)   \\
+		                 & = \phi^b_1 \dots \phi^b_{n-1} t(\sigma_i\rho_1) \phi^b_1 \dots \phi^b_{m-1} t(\rho_j\sigma_1)                                     \\
+		                 & = \phi^b_1 \dots \phi^b_{n-1} \left[\phi^b_n \mid \phi^b_m\right] \phi^b_1 \dots \phi^b_{m-1} \left[\phi^b_m \mid \phi^b_n\right]
+	\end{align*}
 \end{proof}
