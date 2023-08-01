@@ -44,6 +44,16 @@
 
 \makeindex
 
+\bibliography{bibliography.bib}
+
+\newif\ifdropfigures  % At the time of definition it is false!
+\dropfigurestrue % yes, we drop figures
+\dropfiguresfalse
+\ifdropfigures
+  \renewcommand{\includegraphics}[2][]{%
+  }% Ok, `\includegraphics does nothing any longer
+\fi
+
 \begin{document}
 
 %tex4ht-Konvertierung verschönern

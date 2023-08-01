@@ -1,26 +1,22 @@
 \chapter{Introduction}
+\label{chap:intro}
 
-In this thesis we will construct an archetypal model for a bifurcation scenario that was observed in a complex model.
-This archetypal model should be a much simpler model than the original model.
+Non-linear systems are everywhere in nature and their study has gained popularity in recent decades.
+It is very effective at explaining a wide range of physical phenomena such as fluid dynamics and weather predictions~\cite{bernardo2008piecewise}.
+Scientists in this field mostly focus on qualitative changes in the behavior of the systems under parameter changes, so-called bifurcations~\cite{simpson2010}.
 
-The original model is taken from the thesis of \Citeauthor{akyuz2022}~\cite{akyuz2022}.
-This model is itself a simplification of another model, which describes the behavior of a DC to AC power converter in continuous time.
-It defines the time-derivative of the present output current.
-The analyzed power converter switches when the output current hits defined limits, which causes the derivative to change sign.
-Therefore, the output current stays in a predefined range which has the form of a sine wave.
-We can see why this model cannot be smooth.
-In this case it has multiple discontinuities.
+However, most the developed theory of non-linear systems relies heavily on the smoothness of the model functions.
+Many real-world applications of dynamical systems are not only non-linear, but non-smooth or even discontinuous as well.
+These systems are often also called piecewise-smooth.
+Although the study of non-linear systems is itself not very old, the study of non-smooth systems is even younger.
+It is gaining popularity, since all electrical systems with switching behavior are inherently non-smooth, many even discontinuous~\cite{simpson2010}.
+Non-smoothness introduces many different phenomena that don't happen in smooth systems.
+One of the bifurcation classes that are new is the class of border collision bifurcations.
+This is the only class of bifurcations, this thesis touches on.
 
-The simplified model in discrete time ignores the actual value of the output current.
-Instead, it maps the phase, when the converter switched the last time, to the phase, when it will switch the next time.
-This model is also discontinuous with multiple discontinuities.
-It is a 1D map with input and output being phases, at which the power converter switches.
+This thesis concentrates on a dynamical system which models a DC to AC power converter.
+The power converter switches and therefore its model is discontinuous.
+Its model is not only discontinuous but very complicated too.
+The main goal of this thesis is to find a simpler model that exhibits the same behavior as the original one.
 
-\todo{Completely rewrite the following}
-The original, complex model is from a class of models that are non-continuous and piecewise smooth.
-It has multiple discontinuities.
-\todo{For such models the theory is not mature yet}
-\todo{this class of maps not not theoretically explored fully}
-
-The topic of this thesis is rather part of the field non-linear dynamics than computer science.
-The following chapter will therefore be a summary of fundamentals of non-linear dynamics used in this thesis.
+Since the topic of this thesis focuses on non-linear dynamics more than computer science, the next chapter will introduce fundamentals needed for the rest of the thesis.

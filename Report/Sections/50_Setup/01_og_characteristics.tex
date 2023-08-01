@@ -1,6 +1,27 @@
 \section{Parameter Effects}
 \label{sec:yunus.param.effects}
 
+\todo{
+	Automatische Übersetzung meiner e-mail. Leicht, aber nur leicht, nachbearbeitet :-)
+	Es ist noch kein Englisch, aber es ist bereits lesbar.
+
+	1) Mapping a circle onto itself.
+	Well it's just because we we are talking about a phase, there is no need to prove anything. It is probably trivial as well to show that the function has no fixed points, that is, F(x)>x mod 2 pi, right?
+
+	2a) The function is discontinuous. Disc. points are caused by tangencies...etc.
+	It is not particularly necessary to calculate these disc. points analytically as we do not use analytical expressions further.
+
+	2b) Which would be really cool, but I'm not sure how realistic it is - explain why, in a given range of parameters, the obtained function has exactly four disc. points.
+
+	3) Contractive function: here, theoretically, it is possible write the derivative dF/dx and show that it is less in absolute value units, but there are eight implicit functions, I really don’t want to. If there is a physical explanation why it should work this way - great, if not, and okay, it's enough to say what can be calculated and shown.
+
+	4) Symmetry F(x+pi)=F(x)+pi, where does it come from. I would say that the perfect explanation I can imagine is schematic picture. Why exactly trajectories for initial conditions lagging behind each other by half a period, after one step come to points that are half a period behind each other.
+
+	5a) Minimum points - where do they come from. In the last article this was discussed, the same thing here - draw a trajectory with a tangency from some initial condition and two neighboring trajectories, coming both to the same point a little later than the first one. And that's it, plus a couple of lines of text.
+
+	5b) But then everything becomes more complicated. Since we already talked about symmetry, it is enough to talk about the first two branches. We also said for the minimums where they come from. Question: is it possible show (again, schematically!) that these minimum points are within corresponding domains of the branches? This is less important for the first part of the article, but for the second one it is fundamental: what does it mean if the minimum point moves to the edge of the branch and goes beyond it. If it's at all possible, I don't know.
+}
+
 In this section, we examine the effects of the parameters on the function of the original model.
 Starting with the combined effects of the parameters along areas of the same period.
 And then also the individual effects of either parameter.
@@ -16,35 +37,35 @@ The second function is purple and it is the model at the point $E_0 = 17.07, \ch
 The last function is red and it is the model with parameters $E_0 = 18.5, \chi_0 = 0.27$, marked as point $C_{12}$.
 
 \begin{figure}
-    \centering
-    \begin{subfigure}{0.4\textwidth}
-        \includegraphics[width=\textwidth]{99_Yunus/2D_Period_Zoomed_Effects/result.png}
-        \caption{Measured Points}
-        \label{fig:yunus.function.evolution.map}
-    \end{subfigure}
-    \begin{subfigure}{0.4\textwidth}
-        \includegraphics[width=\textwidth]{99_Yunus/ParameterEffects/E0_hi_P12/illustration.png}
-        \caption{Evolution for Period 12}
-        \label{fig:yunus.function.evolution.12}
-    \end{subfigure}
-    \begin{subfigure}{0.4\textwidth}
-        \includegraphics[width=\textwidth]{99_Yunus/ParameterEffects/E0_hi_P10/illustration.png}
-        \caption{Evolution for Period 10}
-        \label{fig:yunus.function.evolution.10}
-    \end{subfigure}
-    \begin{subfigure}{0.4\textwidth}
-        \includegraphics[width=\textwidth]{99_Yunus/ParameterEffects/E0_hi_P08/illustration.png}
-        \caption{Evolution for Period 8}
-        \label{fig:yunus.function.evolution.08}
-    \end{subfigure}
-    \caption{Effects of the Parameters on the Original Funtion}
+	\centering
+	\begin{subfigure}{0.4\textwidth}
+		\includegraphics[width=\textwidth]{99_Yunus/2D_Period_Zoomed_Effects/result.png}
+		\caption{Measured Points}
+		\label{fig:yunus.function.evolution.map}
+	\end{subfigure}
+	\begin{subfigure}{0.4\textwidth}
+		\includegraphics[width=\textwidth]{99_Yunus/ParameterEffects/E0_hi_P12/illustration.png}
+		\caption{Evolution for Period 12}
+		\label{fig:yunus.function.evolution.12}
+	\end{subfigure}
+	\begin{subfigure}{0.4\textwidth}
+		\includegraphics[width=\textwidth]{99_Yunus/ParameterEffects/E0_hi_P10/illustration.png}
+		\caption{Evolution for Period 10}
+		\label{fig:yunus.function.evolution.10}
+	\end{subfigure}
+	\begin{subfigure}{0.4\textwidth}
+		\includegraphics[width=\textwidth]{99_Yunus/ParameterEffects/E0_hi_P08/illustration.png}
+		\caption{Evolution for Period 8}
+		\label{fig:yunus.function.evolution.08}
+	\end{subfigure}
+	\caption{Effects of the Parameters on the Original Funtion}
 \end{figure}
 
 The most notable changes are
 \begin{enumerate*}
-    \item Branches $\A$ and $\C$ move upwards while the left part moves upwards more
-    \item The left part of branches $\B$ and $\D$ move downwards
-    \item The local minima of these branches move to the left and downwards.
+	\item Branches $\A$ and $\C$ move upwards while the left part moves upwards more
+	\item The left part of branches $\B$ and $\D$ move downwards
+	\item The local minima of these branches move to the left and downwards.
 \end{enumerate*}
 One smaller change is that the border between branches $\B$ and $\C$ moves left.
 Note that the same change happens to the border between the branches $\D$ and $\A$.
@@ -61,10 +82,10 @@ The effects of the parameters described above, always include a change in both p
 To reproduce the bifurcation structures, it is important to know which effects on the function each parameter has individually.
 
 \begin{figure}
-    \centering
-    \includegraphics[width=0.4\textwidth]{99_Yunus/2D_Period_Zoomed_EffectsSingle/result.png}
-    \label{fig:yunus.function.evolution.single.map}
-    \caption{Parameter Ranges Scanned for Individual Effects of Parameters}
+	\centering
+	\includegraphics[width=0.4\textwidth]{99_Yunus/2D_Period_Zoomed_EffectsSingle/result.png}
+	\label{fig:yunus.function.evolution.single.map}
+	\caption{Parameter Ranges Scanned for Individual Effects of Parameters}
 \end{figure}
 
 For the parameter $E_0$, we fixed $\chi_0 = 0.2$ and varied $E_0$ in the parameter range $[15, 19]$, it is marked as the green arrow in \Cref{fig:yunus.function.evolution.single.map}.
@@ -76,10 +97,10 @@ And the red function is at the end at $E_0 = 19$.
 From the figure we can see three effects, the parameter has on the function of the original model in this parameter range.
 The observed changes are
 \begin{enumerate*}
-    \item The left part of branches $\B$ and $\D$ move downwards
-    \item The local minima of these branches move to the left and downwards
-    \item The border between branches $\A$ and $\B$ moves right (also border between branches $\C$ and $\D$)
-    \item The Right side of branches $\A$ and $C$ move up (This is a direct effect of the border between branches $\A$ and $\B$ moving right).
+	\item The left part of branches $\B$ and $\D$ move downwards
+	\item The local minima of these branches move to the left and downwards
+	\item The border between branches $\A$ and $\B$ moves right (also border between branches $\C$ and $\D$)
+	\item The Right side of branches $\A$ and $C$ move up (This is a direct effect of the border between branches $\A$ and $\B$ moving right).
 \end{enumerate*}
 
 For the parameter $\chi_0$, we fixed $E_0 = 17$ and varied $\chi_0$ in the parameter range $[0.125, 0.3]$.
@@ -89,28 +110,28 @@ As before, the blue function is the function of the original model at the start 
 The purple function is at $\chi_0 = 0.2125$, and the red one is at $\chi_0 = 0.3$.
 The observed changes are
 \begin{enumerate*}
-    \item The branches $\A$ and $\C$ move upwards
-    \item The border between $\A$ and $\B$ moves left (also the border between branches $\C$ and $\D$).
+	\item The branches $\A$ and $\C$ move upwards
+	\item The border between $\A$ and $\B$ moves left (also the border between branches $\C$ and $\D$).
 \end{enumerate*}
 Two more changes are smaller in comparison
 \begin{enumerate*}
-    \item The right part of branches $\B$ and $\D$ move upwards (including the minima)
-    \item The border between branches $\B$ and $\C$ moves left (also the border between branches $\D$ and $\A$).
+	\item The right part of branches $\B$ and $\D$ move upwards (including the minima)
+	\item The border between branches $\B$ and $\C$ moves left (also the border between branches $\D$ and $\A$).
 \end{enumerate*}
 
 \begin{figure}
-    \centering
-    \begin{subfigure}{0.4\textwidth}
-        \includegraphics[width=\textwidth]{99_Yunus/ParameterEffects/E0/illustration.png}
-        \caption{Evolution for Parameter $E_0$}
-        \label{fig:yunus.function.evolution.e0}
-    \end{subfigure}
-    \begin{subfigure}{0.4\textwidth}
-        \includegraphics[width=\textwidth]{99_Yunus/ParameterEffects/hi/illustration.png}
-        \caption{Evolution for Parameter $\chi_0$}
-        \label{fig:yunus.function.evolution.hi}
-    \end{subfigure}
-    \caption{Effects of the Individual Parameters on the Original Funtion}
+	\centering
+	\begin{subfigure}{0.4\textwidth}
+		\includegraphics[width=\textwidth]{99_Yunus/ParameterEffects/E0/illustration.png}
+		\caption{Evolution for Parameter $E_0$}
+		\label{fig:yunus.function.evolution.e0}
+	\end{subfigure}
+	\begin{subfigure}{0.4\textwidth}
+		\includegraphics[width=\textwidth]{99_Yunus/ParameterEffects/hi/illustration.png}
+		\caption{Evolution for Parameter $\chi_0$}
+		\label{fig:yunus.function.evolution.hi}
+	\end{subfigure}
+	\caption{Effects of the Individual Parameters on the Original Funtion}
 \end{figure}
 
 \subsection{Decomposition of Combined Effects}
@@ -134,17 +155,17 @@ From this table we can see, that $E_0$ causes the feects on the branches $\B$ an
 Note again, that the change to the border of branches $\B$ and $\C$ also applies for the border between branches $\D$ and $\A$.
 
 \begin{table}
-    \centering
-    \begin{tabular}{|c|c|c|l|} \hline
-        Combined         & $E_0$            & $\chi_0$          & Comment                   \\ \hline \hline
-        $\AL_{\B}^{-}$   & $\AL_{\B}^{-}$   & 0                 & Only $E_0$ causes this    \\ \hline
-        $\AMi_{\B}^{L-}$ & $\AMi_{\B}^{L-}$ & $-\AMi_{\B}^{+}$  &
-        $E_0$ and $\chi_0$ have opposing effects, the effect of $E_0$ is stronger           \\ \hline
-        $\AW_{\A}^{+}$   & 0                & $\AW_{\A}^{+}$    & Only $\chi_0$ causes this \\ \hline \hline
-        $\AB_{\B\C}^{L}$ & 0                & $\AB_{\B\C}^{L}$  & Only $\chi_0$ causes this \\ \hline
-        0                & $\AB_{\A\B}^{R}$ & $-\AB_{\A\B}^{L}$ &
-        $E_0$ and $\chi_0$ have opposing effects, they cancel out                           \\ \hline
-    \end{tabular}
-    \caption{Decomposition of Combined Effects of Parameters}
-    \label{tab:yunus.parameter.effects}
+	\centering
+	\begin{tabular}{|c|c|c|l|} \hline
+		Combined         & $E_0$            & $\chi_0$          & Comment                   \\ \hline \hline
+		$\AL_{\B}^{-}$   & $\AL_{\B}^{-}$   & 0                 & Only $E_0$ causes this    \\ \hline
+		$\AMi_{\B}^{L-}$ & $\AMi_{\B}^{L-}$ & $-\AMi_{\B}^{+}$  &
+		$E_0$ and $\chi_0$ have opposing effects, the effect of $E_0$ is stronger           \\ \hline
+		$\AW_{\A}^{+}$   & 0                & $\AW_{\A}^{+}$    & Only $\chi_0$ causes this \\ \hline \hline
+		$\AB_{\B\C}^{L}$ & 0                & $\AB_{\B\C}^{L}$  & Only $\chi_0$ causes this \\ \hline
+		0                & $\AB_{\A\B}^{R}$ & $-\AB_{\A\B}^{L}$ &
+		$E_0$ and $\chi_0$ have opposing effects, they cancel out                           \\ \hline
+	\end{tabular}
+	\caption{Decomposition of Combined Effects of Parameters}
+	\label{tab:yunus.parameter.effects}
 \end{table}
