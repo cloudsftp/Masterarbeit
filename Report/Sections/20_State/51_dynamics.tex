@@ -63,3 +63,12 @@ The type of the parameter regions alternates between ``type A'' and ``type B''.
 When the stable cycle in one ``type A'' parameter region is $\A^x\B^y\C^x\D^y$, the stable cycle in the next ``type A'' parameter region is $\A^{x-1}\B^{y+1}\C^{x-1}\D^{y+1}$.
 The ``type B'' parameter region in between two ``type A'' parameter regions of a chain with cycles $\A^x\B^y\C^x\D^y$ and $\A^{x-1}\B^{y+1}\C^{x-1}\D^{y+1}$, has the two cycles $\A^x\B^y\C^{x-1}\D^{y+1}$ and $\A^{x-1}\B^{y+1}\C^x\D^y$.
 Also, there is not only one chain, but many chains next to each other where the period increases by 2 from one chain to the next.
+
+\begin{align}
+	F(\theta + \pi) & \equiv F(\theta) + \pi \mod 2 \pi \label{equ:state.og.sym}
+\end{align}
+
+The model has some symmetry, it satisfies \Cref{equ:state.og.sym}.
+This means, that the model behaves the same on the left half as it does on the right half.
+In ``type A'' parameter regions, the stable cycles are symmetric.
+But in ``type B'' parameter regions, the stable cycles are asymmetric.
