@@ -1,0 +1,34 @@
+\subsection{Piecewise Quadratic Model}
+
+We start with a model that is piecewise quadratic.
+In the original model, the branches $f_\B$ and $f_\D$ are shaped more like cubic functions, but to keep the number of parameters low at the beginning, we model them as quadratic here.
+The model has 4 branches and the same symmetry as the original model function.
+We define the domain here as $[0, 6]$ instead of $[0, 2\pi]$.
+
+The model is defined as the map $x_{n+1} = f(x_n) \mod 6$.
+Where $f$ is given by the following collection of equations.
+\begin{align}
+	f(x) & = \begin{cases}
+		         g(x)     & \text{if } r(x) < 3 \\
+		         g(x) + 3 & \text{else}
+	         \end{cases} \label{equ:quad.full.f}                                         \\
+	g(x) & = \begin{cases}
+		         a_L \cdot s_L(x)^2 + b_L \cdot s_L(x) + c_L & \text{if } s(x) < \frac{3}{2} \\
+		         a_R \cdot s_R(x)^2 + b_R \cdot s_R(x) + c_R & \text{else}
+	         \end{cases} \label{equ:quad.full.g}
+\end{align}
+
+\Cref{equ:quad.full.f} explicitly states the discontinuity at $0$ and $3$.
+It also explicitly states the symmetry of the model.
+Each half of the model is then governed by \Cref{equ:quad.full.g}.
+Here all the 6 parameters $a_L, a_R, b_L, b_R, c_L,$ and $c_R$ act.
+
+\Crefrange{equ:quad.full.s}{equ:quad.full.sr} provide adjusted values of x for both branches such that $s_L(x) = 0$ in the middle of the branches $f_\A$ and $f_\C$.
+Analogous for $s_R$ and the branches $f_\B$ and $f_\D$.
+\begin{subequations}
+	\begin{align}
+		s(x)   & = x \mod 3 \label{equ:quad.full.s}            \\
+		s_L(x) & = s(x) - \frac{3}{4}                          \\
+		s_R(x) & = s(x) - \frac{9}{4} \label{equ:quad.full.sr}
+	\end{align}
+\end{subequations}

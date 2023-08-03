@@ -1,15 +1,18 @@
-\section{Piecewise Linear Model}
+\subsection{Piecewise Linear Model}
+
+We start with a very simple model.
+It has 4 linear branches, all increasing
 
 The first model, we examined, is a simple piecewise linear function with four discontinuities.
 Its discontinuities are at $0, \frac{\pi}{2}, \pi,$ and $\frac{3 \pi}{2}$.
 \Cref{equ:pcw.lin.sympi} causes the discontinuities at $0$ and $\pi$ and also the symmetry $f(x + \pi) \equiv f(x) + \pi \mod 2 \pi$.
 
 \begin{align}
-    f(x) & = g(x) \mod 2 \pi \label{equ:pcw.lin.f} \\
-    g(x) & = \begin{cases}
-                 h(x)       & \text{ if } r(x) < \pi \\
-                 h(x) + \pi & \text{ else}
-             \end{cases} \label{equ:pcw.lin.sympi}
+	f(x) & = g(x) \mod 2 \pi \label{equ:pcw.lin.f} \\
+	g(x) & = \begin{cases}
+		         h(x)       & \text{ if } r(x) < \pi \\
+		         h(x) + \pi & \text{ else}
+	         \end{cases} \label{equ:pcw.lin.sympi}
 \end{align}
 
 Each arm then is governed by \Cref{equ:pcw.lin.discpihalves}.
@@ -19,18 +22,18 @@ $\alpha$ is the slope of the arms and $\beta$ is the offset of the first and thi
 Examples of how the function looks at different parameter values can be seen in the cobweb diagrams in \Cref{fig:pcw.lin.CobwebA-C}.
 
 \begin{align}
-    h(x) & = \begin{cases}
-                 \alpha \cdot t(x) + \beta                      & \text{ if } s(x) < \frac{\pi}{2} \\
-                 \alpha \cdot t(x) - \alpha \cdot \frac{\pi}{2} & \text{ else}
-             \end{cases} \label{equ:pcw.lin.discpihalves}
+	h(x) & = \begin{cases}
+		         \alpha \cdot t(x) + \beta                      & \text{ if } s(x) < \frac{\pi}{2} \\
+		         \alpha \cdot t(x) - \alpha \cdot \frac{\pi}{2} & \text{ else}
+	         \end{cases} \label{equ:pcw.lin.discpihalves}
 \end{align}
 
 \Cref{equ:pcw.lin.r,equ:pcw.lin.s} are used to make the above more readable.
 They give the modulus of $x$ and some multiple of $\pi$.
 
 \begin{align}
-    r(x) & = x \mod 2 \pi \label{equ:pcw.lin.r} \\
-    s(x) & = x \mod \pi \label{equ:pcw.lin.s}
+	r(x) & = x \mod 2 \pi \label{equ:pcw.lin.r} \\
+	s(x) & = x \mod \pi \label{equ:pcw.lin.s}
 \end{align}
 
 
@@ -43,10 +46,10 @@ This is because the result of the function will be taken modulo $2 \pi$ in \Cref
 The parameter $\alpha$ is varied on the interval $[0, 1]$ because for $\alpha < 0$ nothing especially interesting happens and for $\alpha > 1$ the model shows no periodic behavior.
 
 \begin{figure}
-    \centering
-    \includegraphics[width=0.7\textwidth]{10_Linear_mod2pi/2D_Period/result.png}
-    \caption{2D Bifurcation Diagram of Piecewise Linear Model}
-    \label{fig:pcw.lin.2d}
+	\centering
+	\includegraphics[width=0.7\textwidth]{10_Linear_mod2pi/2D_Period/result.png}
+	\caption{2D Bifurcation Diagram of Piecewise Linear Model}
+	\label{fig:pcw.lin.2d}
 \end{figure}
 
 The two red lines mark the locations of the following one-dimensional scans keeping the parameter $\alpha$ fixed at $0.5$.
@@ -58,20 +61,20 @@ Both these structures don't look like period-adding structures normally do.
 The interval in the middle of each structure is not the biggest interval with a constant period, but rather some interval that's further to the middle of both structures.
 
 \begin{figure}
-    \centering
-    \begin{subfigure}{0.4\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{10_Linear_mod2pi/1D_Period/result.png}
-        \caption{$\beta \in [0.7, 1.7]$}
-        \label{fig:pcw.lin.1D}
-    \end{subfigure}
-    \begin{subfigure}{0.4\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{10_Linear_mod2pi/1D_Period_PlusPi/result.png}
-        \caption{$\beta \in [3.84, 4.84]$}
-        \label{fig:pcw.lin.1DPlusPi}
-    \end{subfigure}
-    \caption{1D Scans of Piecewise Linear Model showing Periods}
+	\centering
+	\begin{subfigure}{0.4\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{10_Linear_mod2pi/1D_Period/result.png}
+		\caption{$\beta \in [0.7, 1.7]$}
+		\label{fig:pcw.lin.1D}
+	\end{subfigure}
+	\begin{subfigure}{0.4\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{10_Linear_mod2pi/1D_Period_PlusPi/result.png}
+		\caption{$\beta \in [3.84, 4.84]$}
+		\label{fig:pcw.lin.1DPlusPi}
+	\end{subfigure}
+	\caption{1D Scans of Piecewise Linear Model showing Periods}
 \end{figure}
 
 \Cref{fig:pcw.lin.CobwebA-C} shows a collection of cobwebs diagrams of the three points $P_A$ to $P_C$ marked in \Cref{fig:pcw.lin.1D}.
@@ -89,27 +92,27 @@ At $P_B$, $\beta$ is bigger and the cycles are at the right edge of the arms.
 At $P_C$, the cycles are again at the left edge of the arms.
 
 \begin{figure}
-    \centering
-    \begin{subfigure}{0.3\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{10_Linear_mod2pi/Cobweb_A/result.png}
-        \caption{$P_A$}
-        \label{fig:pcw.lin.CobwebA}
-    \end{subfigure}
-    \begin{subfigure}{0.3\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{10_Linear_mod2pi/Cobweb_B/result.png}
-        \caption{$P_B$}
-        \label{fig:pcw.lin.CobwebB}
-    \end{subfigure}
-    \begin{subfigure}{0.3\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{10_Linear_mod2pi/Cobweb_C/result.png}
-        \caption{$P_C$}
-        \label{fig:pcw.lin.CobwebC}
-    \end{subfigure}
-    \caption{Cobwebs for first 1D Scan}
-    \label{fig:pcw.lin.CobwebA-C}
+	\centering
+	\begin{subfigure}{0.3\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{10_Linear_mod2pi/Cobweb_A/result.png}
+		\caption{$P_A$}
+		\label{fig:pcw.lin.CobwebA}
+	\end{subfigure}
+	\begin{subfigure}{0.3\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{10_Linear_mod2pi/Cobweb_B/result.png}
+		\caption{$P_B$}
+		\label{fig:pcw.lin.CobwebB}
+	\end{subfigure}
+	\begin{subfigure}{0.3\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{10_Linear_mod2pi/Cobweb_C/result.png}
+		\caption{$P_C$}
+		\label{fig:pcw.lin.CobwebC}
+	\end{subfigure}
+	\caption{Cobwebs for first 1D Scan}
+	\label{fig:pcw.lin.CobwebA-C}
 \end{figure}
 
 \Cref{fig:pcw.lin.CobwebD-F} shows three cobwebs for different points of the second 1D scan in \Cref{fig:pcw.lin.1DPlusPi}.
@@ -127,25 +130,25 @@ Lowering the parameter $\beta$ will cause the cycle to collide with the borders 
 This period-adding structure will also follow the Farey-like-adding of this cycle and the 3-cycles at point $P_E$, shown in \Cref{fig:pcw.lin.CobwebE}.
 
 \begin{figure}
-    \centering
-    \begin{subfigure}{0.3\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{10_Linear_mod2pi/Cobweb_D/result.png}
-        \caption{$P_D$}
-        \label{fig:pcw.lin.CobwebD}
-    \end{subfigure}
-    \begin{subfigure}{0.3\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{10_Linear_mod2pi/Cobweb_E/result.png}
-        \caption{$P_E$}
-        \label{fig:pcw.lin.CobwebE}
-    \end{subfigure}
-    \begin{subfigure}{0.3\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{10_Linear_mod2pi/Cobweb_F/result.png}
-        \caption{$P_F$}
-        \label{fig:pcw.lin.CobwebF}
-    \end{subfigure}
-    \caption{Cobwebs for second 1D Scan}
-    \label{fig:pcw.lin.CobwebD-F}
+	\centering
+	\begin{subfigure}{0.3\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{10_Linear_mod2pi/Cobweb_D/result.png}
+		\caption{$P_D$}
+		\label{fig:pcw.lin.CobwebD}
+	\end{subfigure}
+	\begin{subfigure}{0.3\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{10_Linear_mod2pi/Cobweb_E/result.png}
+		\caption{$P_E$}
+		\label{fig:pcw.lin.CobwebE}
+	\end{subfigure}
+	\begin{subfigure}{0.3\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{10_Linear_mod2pi/Cobweb_F/result.png}
+		\caption{$P_F$}
+		\label{fig:pcw.lin.CobwebF}
+	\end{subfigure}
+	\caption{Cobwebs for second 1D Scan}
+	\label{fig:pcw.lin.CobwebD-F}
 \end{figure}
