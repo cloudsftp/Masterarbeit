@@ -1,72 +1,70 @@
-\subsubsection{Varying $c_L$ and $c_R$ while fixing $a_L = a_R = b_L = b_R = 1$}
+\subsubsection{Varying $c_L$ and $c_R$ while fixing $a_L = a_R = 6$, $b_L = -\frac{1}{2}$, and $b_R = -\frac{7}{2}$}
 
 Choosing to make the parabolas centered was not ideal.
 When looking at the original model function, one can see that the parabolas are not centered.
 All branches are more skewed to the right.
-To imitate this shape better, we now set $b_L = b_R = 1$.
-All other fixed parameters and the varied parameters are the same as above.
+To imitate this shape better, we now set $b_L = -\frac{1}{2}$ and $b_R = -\frac{7}{2}$.
+All other fixed parameters are the same as above.
+The parameters $c_L$ and $c_R$ are varied in the intervals $[0.08, 0.525]$ and $[0.825, 1.275]$, respectively, to capture a full structure.
+\Cref{fig:setup.quad.even.period.full} shows a 2D scan of the periods of the stable cycles in this parameter range.
+The structure seen in this figure repeats in all directions.
 
-The 2D scan for the periods when varying $c_L$ and $c_R$ now looks different.
-\Cref{fig:quadratic.full.skew.2d.full} shows the full scan, while \Cref{fig:quadratic.full.skew.2d.z1} shows an enhanced version of it, depicting the artefact in the middle of the left half of the full scan.
-\Cref{fig:quadratic.full.skew.2d.c} shows an enhanced version of the 2D scans depicting an interesting area where some cobwebs were taken.
-The area is where a wing with stable cycles of period 12 connects with a wing of the same period.
-There is a red line in the figure, it marks where the cobwebs are taken.
-
-\Cref{fig:quad.full.skew.c.Cobwebs} shows all the cobwebs taken along the red line in \Cref{fig:quadratic.full.skew.2d.c}.
-The first one, \Cref{fig:quad.full.skew.c.CobwebA}, shows a cycle with period 12.
-Its symbolic sequence is $\A^4\B^2\C^4\D^2$.
-The last cobweb, \Cref{fig:quad.full.skew.c.CobwebC}, also shows a 12-cycle, this time with symbolic sequence $\A^3\B^3\C^3\D^3$.
-Here, one point from branches $\A$ and $\C$ moved to branches $\B$ and $\D$, the same thing that happened in the original model.
-And in the middle, there is also coexistence of two 12-cycles.
-This is depicted in \Cref{fig:quad.full.skew.c.CobwebB}.
-The difference is, that in this case, the symbolic sequences of the two coexisting 12-cycles are $\Cycle{\A^4\B^2\C^4\D^4}$ and $\Cycle{\A^3\B^3\C^3\D^3}$.
-This is different from the original model because there the symbolic sequences were $\A^3\B^3\C^2\D^4$ and $\A^2\B^4\C^3\D^3$, which were different from both 12-cycles existing outside the area of coexistence.
-Here, the 12-cycles existing outside the coexistence area continue to exist inside it.
+An interesting parameter area is marked with a red rectangle.
+In this parameter area, 2 wings with the same period connect.
+\Cref{fig:setup.quad.skew.period.zoomed} shows the 2D scan of the periods for this parameter range.
+The points indicate the parameter values for the cobweb analysis.
 
 \begin{figure}
 	\centering
 	\begin{subfigure}{0.4\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{21_Quadratic_mod6/Skew/2D_Period_SFull/result.png}
+		\includegraphics[width=\textwidth]{21_Quadratic_mod1/Skew/S_2D_Period_Zoomed1/result.png}
 		\caption{Full}
-		\label{fig:quadratic.full.skew.2d.full}
+		\label{fig:setup.quad.skew.period.full}
 	\end{subfigure}
 	\begin{subfigure}{0.4\textwidth}
-		\centering
-		\includegraphics[width=\textwidth]{21_Quadratic_mod6/Skew/2D_Period_SZoomed1/result.png}
+		\includegraphics[width=\textwidth]{21_Quadratic_mod1/Skew/S_2D_Period_Zoomed2/result.png}
 		\caption{Zoomed}
-		\label{fig:quadratic.full.skew.2d.z1}
+		\label{fig:setup.quad.skew.period.zoomed}
 	\end{subfigure}
 	\caption{2D Scan of Full Skewed Quadratic Model}
-\end{figure}
-
-\begin{figure}
-	\centering
-	\includegraphics[width=0.4\textwidth]{21_Quadratic_mod6/Skew/2D_Period_SC/result.png}
-	\caption{2D Scan of Interesting Area of Full Skeqed Quadratic Model}
-	\label{fig:quadratic.full.skew.2d.c}
+	\label{fig:setup.quad.skew.period}
 \end{figure}
 
 \begin{figure}
 	\centering
 	\begin{subfigure}{0.3\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{21_Quadratic_mod6/Skew/Cobweb_SC/result_A.png}
+		\includegraphics[width=\textwidth]{21_Quadratic_mod1/Skew/S_Cobweb_A/result.png}
 		\caption{Before border}
-		\label{fig:quad.full.skew.c.CobwebA}
+		\label{fig:setup.quad.skew.cobweb.A}
 	\end{subfigure}
 	\begin{subfigure}{0.3\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{21_Quadratic_mod6/Skew/Cobweb_SC/result_B.png}
+		\includegraphics[width=\textwidth]{21_Quadratic_mod1/Skew/S_Cobweb_B/result.png}
 		\caption{At border}
-		\label{fig:quad.full.skew.c.CobwebB}
+		\label{fig:setup.quad.skew.cobweb.B}
 	\end{subfigure}
 	\begin{subfigure}{0.3\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{21_Quadratic_mod6/Skew/Cobweb_SC/result_C.png}
+		\includegraphics[width=\textwidth]{21_Quadratic_mod1/Skew/S_Cobweb_C/result.png}
 		\caption{After border}
-		\label{fig:quad.full.skew.c.CobwebC}
+		\label{fig:setup.quad.skew.cobweb.C}
 	\end{subfigure}
 	\caption{Cobwebs along marked line}
-	\label{fig:quad.full.skew.c.Cobwebs}
+	\label{fig:setup.quad.skew.cobwebs}
 \end{figure}
+
+\Cref{fig:setup.quad.skew.cobwebs} shows all the cobwebs taken at the points marked in \Cref{fig:setup.quad.skew.period.zoomed}.
+The cobweb at point $A$ is shown in \Cref{fig:setup.quad.skew.cobweb.A}.
+We can see that it has period 12 and its symbolic sequence is $\A^4\B^2\C^4\D^2$.
+The cycle at point $C$ also has period 12.
+Its cobweb diagram is shown in \Cref{fig:setup.quad.skew.cobweb.C}, and we can see that its symbolic sequence is $\A^3\B^3\C^3\D^3$.
+
+From point $A$ to point $C$, one point of the cycle on the branch $f_\A$ moved to the branch $f_\B$.
+The same thing happened to a point of the cycle on the branch $f_\C$, it moved to the branch $f_\D$.
+This is similar to what happens in the original model along a chain of parameter regions with the same period.
+And in between both points, there is a parameter region where 2 cycles coexist.
+This is shown in \Cref{fig:setup.quad.skew.cobweb.B}, which depicts the cycles at point $C$.
+But unfortunately, the coexisting cycles are the same cycles that exist at point $A$ and point $C$, $\Cycle{\A^4\B^2\C^4\D^2}$ and $\Cycle{\A^3\B^3\C^3\D^3}$.
+Similarly to the previous attempt, we merely observe two parameter regions with stable cycles overlapping.

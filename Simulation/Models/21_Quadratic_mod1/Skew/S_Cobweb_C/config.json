@@ -1,0 +1,26 @@
+{
+    "type": "cobweb",
+    "parameters": {
+        "bL": -0.5,
+        "bR": -3.5,
+        "cL": 0.142,
+        "cR": 0.9095
+    },
+    "scan": [
+        {
+            "type": "linear",
+            "resolution": 200,
+            "parameters": [
+                {
+                    "name": "initial_state[0][0]",
+                    "start": 0,
+                    "stop": 0.5
+                }
+            ]
+        }
+    ],
+    "L": 0,
+    "R": 1,
+    "D": 0,
+    "U": 1
+}
