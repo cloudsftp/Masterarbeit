@@ -1,28 +1,28 @@
-\subsubsection{Varying $c_L$ and $c_R$ while fixing $a_L = a_R = 1, b_L = b_R = 0$}
+\subsubsection{Varying $c_L$ and $c_R$ while fixing $a_L = a_R = 6$, $b_L = - \frac{3}{2}$, and $b_R = -\frac{9}{2}$}
 
 We start by examining this piecewise quadratic model with centered parabolas.
-For this, we set $a_L = a_R = 1$ and $b_L = b_R = 0$ to keep the minimum in the center of the branches.
+For this, we set $a_L = a_R = 6$, $b_L = -\frac{3}{2}$, and $b_R = -\frac{9}{2}$ to keep the minimum in the center of the branches.
 The parameters not fixed are $c_L$ and $c_R$.
-They are both varied in the range $[0, 6]$, beyond that the behavior repeats, since $0 \equiv 6 \mod 6$.
+They are both varied in the range $[0, 1]$, beyond that the behavior repeats, since $0 \equiv 1 \mod 1$.
 
 This emulates the effect that $\chi_0$ has on branches $f_\A$ and $f_\C$.
 Increasing $c_L$ increases the values on branches $f_\A$ and $f_\C$.
 The effects of $E_0$ on branches $f_\B$ and $f_\D$ are lowering the value of the function at the left border of the branches and moving the minima on the branches to the left, as well as reducing the value of the function at the minima.
 Decreasing $c_R$ does not have the same effects but rather lowers the values of the whole branches.
-
-\Cref{fig:quadratic.full.2d.full} shows a 2D-scan of the periods of the stable cycles.
-The structure in the middle left is enhanced and depicted in \Cref{fig:quadratic.full.2d.z1}.
+Scanning the periods of the stable cycles of the model under variation of the two parameters $c_L$ and $c_R$ results in \Cref{fig:setup.quad.even.period.full}.
 
 A phenomenon like in the original model could not be found here.
 But something very similar happens on the border of these wings.
-\Cref{fig:quad.full.Cobwebs} shows the cobwebs along the line marked in \Cref{fig:quadratic.full.2d.z1}.
-Before the border, there is one stable cycle with period 8.
-This cycle is depicted in \Cref{fig:quad.full.CobwebA} and its symbolic sequence is $\A^3B\C^3\D$.
-At the border, there is an area where two cycles coexist.
+\Cref{fig:setup.quad.even.cobwebs} shows the cobwebs at the points marked in \Cref{fig:setup.quad.even.period.zoomed}.
+At point $A$, there is one stable cycle with period 8.
+This cycle is depicted in \Cref{fig:setup.quad.even.cobweb.A} and its symbolic sequence is $\A^3B\C^3\D$.
+Point $B$ is in a parameter region, where 2 stable cycles coexist.
 You cannot see this in the 2D scans above, since it only ever picks up on one cycle.
-\Cref{fig:quad.full.CobwebB} shows the coexisting cycles at this border.
-In contrast to the original model, the cycle that existed before in \Cref{fig:quad.full.CobwebA}, still exists alongside the new cycle with period 6.
+\Cref{fig:setup.quad.even.cobweb.B} shows the coexisting cycles at this border.
+In contrast to the original model, the cycle that existed before in \Cref{fig:setup.quad.even.cobweb.A}, still exists alongside the new cycle with period 6.
 The symbolic sequence of the new cycle is $\A^2\B\C^2\D$.
+
+\todo{At point C?}
 
 This is different from the dynamics in the original model in two ways.
 First, the cycles before and after the area of coexistence have different periods.
@@ -32,41 +32,48 @@ Here, we simply observe two overlapping parameter regions which is something dif
 
 \begin{figure}
 	\centering
-	\begin{subfigure}{0.4\textwidth}
+	\begin{subfigure}{0.3\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{21_Quadratic_mod6/2D_Period_Full/result.png}
+		\includegraphics[width=\textwidth]{21_Quadratic_mod1/2D_Period_Zoomed1/result.png}
 		\caption{Full}
-		\label{fig:quadratic.full.2d.full}
+		\label{fig:setup.quad.even.period.full}
 	\end{subfigure}
-	\begin{subfigure}{0.4\textwidth}
+	\begin{subfigure}{0.3\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{21_Quadratic_mod6/2D_Period_Zoomed1/result.png}
+		\includegraphics[width=\textwidth]{21_Quadratic_mod1/2D_Period_Zoomed1/result.png}
 		\caption{Zoomed}
-		\label{fig:quadratic.full.2d.z1}
+		\label{fig:setup.quad.even.period.zoomed}
 	\end{subfigure}
-	\caption{2D Scan of Full Quadratic Model}
+	\caption[2D scans showing periods of the even quadratic model]{
+		2D scans showing the periods of the piecewise quadratic model with fixed parameters $a_L = a_R = 6$, $b_L = -\frac{3}{2}$, and $b_R = -\frac{9}{2}$.
+		The parameter range of (b) is marked red in (a).
+		The marked points in (b) are parameter values for the cobwebs in \Cref{fig:setup.quad.even.cobwebs}
+	}
 \end{figure}
 
 \begin{figure}
 	\centering
 	\begin{subfigure}{0.3\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{21_Quadratic_mod6/Cobweb_A/result.png}
-		\caption{Before border}
-		\label{fig:quad.full.CobwebA}
+		\includegraphics[width=\textwidth]{21_Quadratic_mod1/Cobweb_A/result.png}
+		\caption{At point $A$}
+		\label{fig:setup.quad.even.cobweb.A}
 	\end{subfigure}
 	\begin{subfigure}{0.3\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{21_Quadratic_mod6/Cobweb_B/result.png}
-		\caption{At border}
-		\label{fig:quad.full.CobwebB}
+		\includegraphics[width=\textwidth]{21_Quadratic_mod1/Cobweb_B/result.png}
+		\caption{At point $B$}
+		\label{fig:setup.quad.even.cobweb.B}
 	\end{subfigure}
 	\begin{subfigure}{0.3\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{21_Quadratic_mod6/Cobweb_C/result.png}
-		\caption{After border}
-		\label{fig:quad.full.CobwebC}
+		\includegraphics[width=\textwidth]{21_Quadratic_mod1/Cobweb_C/result.png}
+		\caption{At point $C$}
+		\label{fig:setup.quad.even.cobweb.C}
 	\end{subfigure}
-	\caption{Cobwebs along marked line}
-	\label{fig:quad.full.Cobwebs}
+	\caption[Cobwebs of the even quadratic model]{
+		Cobweb diagrams at three parameter values of $c_L$ and $c_R$ in the piecewise quadratic model with fixed parameters $a_L = a_R = 6$, $b_L = -\frac{3}{2}$, and $b_R = -\frac{9}{2}$.
+		The parameter values are marked in \Cref{fig:setup.quad.even.period.zoomed}.
+	}
+	\label{fig:setup.quad.even.cobwebs}
 \end{figure}
