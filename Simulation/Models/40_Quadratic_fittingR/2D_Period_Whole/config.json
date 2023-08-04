@@ -13,8 +13,8 @@
             "parameters": [
                 {
                     "name": "px",
-                    "start": 1.0,
-                    "stop": 2.5
+                    "start": 0.25,
+                    "stop": 0.5
                 }
             ]
         },
@@ -24,8 +24,8 @@
             "parameters": [
                 {
                     "name": "py",
-                    "start": 0.5,
-                    "stop": 0.9
+                    "start": 0.12,
+                    "stop": 0.22
                 }
             ]
         }
