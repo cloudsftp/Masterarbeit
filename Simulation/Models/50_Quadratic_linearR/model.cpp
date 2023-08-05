@@ -13,15 +13,15 @@
 #define _cL (cL + py)
 
 // Internal parameters for fitting branches B and D
-#define A (px)
-#define B (2.1)
+#define A (-px)
+#define B (0.525)
 
 // Internal parameters for computing branches B and D
-#define _bR (B - A)
+#define _bR ((B - A) * 4.)
 #define _cR ((A + B) / 2.)
 
-#define n       2.0     // Discontinuity in the middle
-#define border  1.0     // Discontinuity in the middle of the left half
+#define n       0.5     // Discontinuity in the middle
+#define border  0.25    // Discontinuity in the middle of the left half
 
 bool f(
     const Array<real_t>& currentState,

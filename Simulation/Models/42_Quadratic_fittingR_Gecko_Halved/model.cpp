@@ -36,9 +36,6 @@ bool f(
     real_t x = currentState[0];
     if (x >= n) {
         x -= n;
-
-        // discont in middle
-        y += n;
     }
     
     if (x < border) {
@@ -48,10 +45,10 @@ bool f(
     }
 
     // normalize
-    y = remainder(y, 2 * n);
+    y = remainder(y, n);
     
     while (y < 0) {
-        y += 2 * n;
+        y += n;
     }
 
     RHS[0] = y;
