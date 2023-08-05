@@ -1,0 +1,15 @@
+% fmopt: width=8cm
+
+\psfrag{L}{\hspace*{0.3em}\raisebox{0.5ex}{$0.082$}}
+\psfrag{R}{\hspace*{-2.7em}\raisebox{0.5ex}{$0.0835$}}
+
+\psfrag{D}{\hspace*{0.5em}\raisebox{0.5ex}{$0$}}
+\psfrag{U}{\hspace*{-1.0em}\raisebox{0.5ex}{$64$}}
+
+\psfrag{x}{\hspace*{0.0em}\raisebox{0.5ex}{$p_y$}}
+\psfrag{y}{\hspace*{0.0em}\raisebox{0.5ex}{Period}}
+
+\psfrag{LL}{\hspace*{0.0em}\raisebox{0.5ex}{$7$}}
+\psfrag{RR}{\hspace*{0.0em}\raisebox{0.5ex}{$13$}}
+\psfrag{LR}{\hspace*{0.0em}\raisebox{0.5ex}{$20$}}
+\psfrag{LLR}{\hspace*{0.0em}\raisebox{0.5ex}{$27$}}

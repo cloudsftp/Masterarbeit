@@ -1,0 +1,12 @@
+% fmopt: width=8cm
+
+\psfrag{L}{\hspace*{0.3em}\raisebox{0.5ex}{$0.09032100845$}}
+\psfrag{R}{\hspace*{-6.2em}\raisebox{0.5ex}{$0.09032100855$}}
+
+\psfrag{D}{\hspace*{0.5em}\raisebox{0.5ex}{$0$}}
+\psfrag{U}{\hspace*{-1.0em}\raisebox{0.5ex}{$256$}}
+
+\psfrag{x}{\hspace*{0.0em}\raisebox{0.5ex}{$p_y$}}
+\psfrag{y}{\hspace*{0.0em}\raisebox{0.5ex}{Period}}
+
+\psfrag{AAABAAB}{\hspace*{0.0em}\raisebox{0.5ex}{$\sigma(\sigma^2\rho)^2$}}

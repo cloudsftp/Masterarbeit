@@ -1,5 +1,3 @@
-set label 1 "C" at 1.55, 0.8 point pointtype 7 lc rgb 'red' front
-#set label 10 "AL" at 1.40, 0.8 point pointtype 7 lc rgb 'red' front
-
-set label 2 "B" at 1.65, 0.67 point pointtype 7 lc rgb 'red' front
-set label 3 "A" at 1.9, 0.62 point pointtype 7 lc rgb 'red' front
+set label "A" at 0.42, 0.1525 point pointtype 7 lc rgb 'red' front
+set label "B" at 0.385, 0.1675 point pointtype 7 lc rgb 'red' front
+set label "C" at 0.355, 0.2 point pointtype 7 lc rgb 'red' front

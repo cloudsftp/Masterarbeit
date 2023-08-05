@@ -12,19 +12,19 @@
 #define px parameters[6]
 #define py parameters[7]
 
-#define A (2.1)
-#define B (1.2)
-#define C (px)
+#define A (px)
+#define B (0.525)
+#define C (1.2)
 
 #define _aL (aL)
-#define _aR (B + C - A)
+#define _aR (16. * A - 16. * B + 4. * C)
 #define _bL (bL)
-#define _bR (A - C)
+#define _bR (-16. * A + 16. * B - 3. * C)
 #define _cL (cL + py)
-#define _cR ((3. * A - B + C) / 4.)
+#define _cR (4. * A - 3. * B + C / 2.)
 
-#define n 2.0
-#define border 1
+#define n 0.5
+#define border 0.25
 
 bool f(
     const Array<real_t>& currentState,
@@ -33,19 +33,17 @@ bool f(
 ) {
     real_t y = 0;
 
-    real_t x_mod = currentState[0];
-    if (x_mod >= n) {
-        x_mod -= n;
+    real_t x = currentState[0];
+    if (x >= n) {
+        x -= n;
 
         // discont in middle
         y += n;
     }
     
-    if (x_mod < border) {
-        real_t x = x_mod - n / 4;
+    if (x < border) {
         y += _aL * x * x + _bL * x + _cL;
     } else {
-        real_t x = x_mod - 3 * n / 4;
         y += _aR * x * x + _bR * x + _cR;
     }
 
@@ -60,8 +58,25 @@ bool f(
     return true;
 }
 
+bool symbolic(
+    const Array<real_t>& currentState,
+    const Array<real_t>& parameters,
+    string& RHS
+) {
+    real_t x = currentState[0];
+
+    if (x < border) {
+        RHS = "A";
+    } else {
+        RHS = "B";
+    }
+
+    return true;
+}
+
 extern "C" {
     void connectSystem() {
         MapProxy::systemFunction = f;
+        MapProxy::symbolicFunction = symbolic;
     }
 }

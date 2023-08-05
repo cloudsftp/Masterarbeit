@@ -1,22 +1,19 @@
 
-A = px
-B = 2.1
+A = -px
+B = 0.525
 
 _aL = aL
 _bL = bL
-_bR = B - A
 _cL = cL + py
-_cR = (A + B) / 2.
+
+_bR = 4. * (B - A)
+_cR = (2. * A) - B
 
 mod(a, b) = a - (floor(a/b) * b)
 
-r(x)  = mod(x, 4)
-s(x)  = mod(r(x), 2)
-tL(x) = s(x) - 1. / 2.
-tR(x) = s(x) - 3. / 2.
+l(x) =  _aL * x * x + _bL * x + _cL 
+r(x) =  _bR * x + _cR
+h(x) =  (x < 0.25) ? l(x) : r(x)
 
-h(x) =  (s(x) < 1)  ? _aL * tL(x) * tL(x) + _bL * tL(x) + _cL \
-                    : _bR * tR(x) + _cR
-
-g(x) =  (r(x) < 2)  ? h(x) : h(x) + 2
-f(x) =  mod(g(x), 2 * 2)
+g(x) =  (x < 0.5) ? h(x) : h(x - 0.5) + 0.5
+f(x) =  mod(g(x), 1)

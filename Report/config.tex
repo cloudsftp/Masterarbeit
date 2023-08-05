@@ -2,7 +2,7 @@
 
 \setlist[enumerate]{label=(\roman*)}
 
-\graphicspath{{../Simulation/Models/}{Figures}}
+\graphicspath{{../Simulation/Models/}{Figures/}}
 
 \renewcommand{\P}{\mathcal{P}}
 
@@ -27,3 +27,16 @@
 
 \renewcommand{\O}{\mathcal{O}}
 \newcommand{\Cycle}[1]{\O_{#1}}
+
+% EN: For theorems, replacement for amsthm
+\usepackage[amsmath,hyperref]{ntheorem}
+
+\theorempreskipamount 2ex plus1ex minus0.5ex
+\theorempostskipamount 2ex plus1ex minus0.5ex
+\theoremstyle{break}
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{definition}{Definition}[chapter]
+
+\theoremstyle{nonumberplain}
+\newtheorem{proof}{Proof}

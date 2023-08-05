@@ -1,0 +1,64 @@
+\documentclass[compress,11pt,aspectratio=169,t]{beamer}
+
+% language and encodings
+\usepackage[ngerman]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+% TikZ
+\usepackage{tikz}
+
+% Beamer theme - options:
+% - navigationDotsLocation: specify location of the dots in the headline
+%   - near: display the dots near the section names (default)
+%   - below: display the dots below the section names
+% - titlePageSpacing: vertical spacing between items on title page (default: 1.5em)
+% - titlePageNumberOfAuthors: influence size and location of authors on title page
+%   - few (default): use larger font size, display authors on the left
+%   - many: use smaller font size, display authors on the right
+% - thanksPageBigGraphicsScale: scale for the big graphics on the thanks page (default: 1)
+% - titlePageUniversityLogo: location of university logo file on the title page
+%   (default: ../gfx/logos/logo_us_white)
+% - titlePageInstituteLogo: location of institute logo file on the title page - if empty, nothing is displayed
+%   (default: empty)
+% - titlePageDepartmentLogo: location of department logo file on the title page - if empty, nothing is displayed
+%   (default: empty)
+% - titlePageBigLogo: location of big logo file on the title page - if empty, nothing is displayed
+%   (default: empty)
+% - thanksPageBigGraphics: location of the big graphics on the thanks page
+%   (default: ../gfx/tikz/gfx_title)
+% - thanksPageInstituteLogo: location of institute logo file on the thanks page - if empty, nothing is displayed
+%   (default: empty)
+% - thanksPageDepartmentLogo: location of department logo file on the thanks page - if empty, nothing is displayed
+%   (default: empty)
+% - thanksPageBigLogo: location of big logo file on the thanks page - if empty, nothing is displayed
+%   (default: empty)
+\usetheme[
+    thanksPageBigGraphics=gfx/bif.png,
+    thanksPageBigGraphicsScale=0.5,
+    titlePageInstituteLogo=gfx/logos/logo_ipvs.png,
+    thanksPageInstituteLogo=gfx/logos/logo_ipvs.png,
+    %navigationDotsLocation=below,
+    %titlePageSpacing=0.6em,
+    %titlePageNumberOfAuthors=many,
+]{Stuttgart}
+
+% metadata
+\title{Investigation of Multistability-affected Period Adding Structure}
+\subtitle{Status Update 1}
+\author{Fabian Weik}
+\institute{Institute of Parallel and Distributed Systems}
+\date{April 2023}
+
+\usepackage{xkeyval}
+\usepackage{todonotes}
+\presetkeys{todonotes}{inline}{}
+
+\input{config.tex}
+
+\begin{document}
+\include{Sections/00_content.tex}
+
+\bibliographystyle{apalike}
+\bibliography{../../Report/bibliography.bib}
+\end{document}

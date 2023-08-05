@@ -1,0 +1,155 @@
+\documentclass{article}
+\usepackage{xcolor}
+\newcommand{\red}{\color{red}}
+\usepackage{tikz}
+\usetikzlibrary{arrows,calc}
+\usepackage[width=128mm]{geometry}
+\pagestyle{empty}
+
+\renewcommand{\L}{\scriptstyle\mathcal{L}}
+\newcommand{\R}{\scriptstyle\mathcal{R}}
+
+\newcommand{\A}{\scriptstyle\mathcal{A}}
+\newcommand{\B}{\scriptstyle\mathcal{B}}
+\newcommand{\C}{\scriptstyle\mathcal{C}}
+\newcommand{\D}{\scriptstyle\mathcal{D}}
+
+% key executed at each level to set the with of the nodes
+\pgfkeysdef{/tikz/widthlevel}%
+ {\setlength{\NodeWidth}{\BaseWidth}%
+  \addtolength{\NodeWidth}{#1\WidthIncrement}%
+  \addtolength{\NodeWidth}{\WidthIncrement}}
+
+% set node width manually per key
+\pgfkeysdef{/tikz/setwidth}%
+ {\setlength{\NodeWidth}{#1}}
+
+% ========================================
+% =============  PARAMETERS  =============
+% ========================================
+
+\newcommand{\Scale}{1.0}                                     % scaling factor (including text scaling)
+\newlength{\TreeDiameter}\setlength{\TreeDiameter}{100mm}    % the 'vertical' diameter of the tree
+\newlength{\LevelDistance}\setlength{\LevelDistance}{2.5em}    % the distance from level to level
+\newlength{\BaseWidth}\setlength{\BaseWidth}{1ex}            % the node width at level 0 (actually 'level -1')
+\newlength{\WidthIncrement}\setlength{\WidthIncrement}{1em}  % the node width increment from level to level
+\newlength{\NodeHeight}\setlength{\NodeHeight}{1.5em}        % the node height
+\newlength{\NodeWidth}                                       % the node width register
+
+\pgfkeysdef{/tikz/settextwidth}%
+ {\settowidth{\NodeWidth}{\tiny#1}}
+
+\settoheight{\NodeHeight}{\tiny$(\R\L^2)^3$}
+
+\begin{document}
+
+\begin{tikzpicture}
+	[transform shape,scale=\Scale,
+		grow'=right,
+		every node/.style={text width=\NodeWidth,
+				draw,rectangle,rounded corners=1pt,
+				minimum height=\NodeHeight+4pt,
+				inner sep=2pt},
+		lbl/.style={text width=,draw=none,inner sep=},
+		level/.style={widthlevel=#1, % automatically set node width
+				sibling distance=\TreeDiameter/(2^#1),
+				level distance=\LevelDistance+#1\WidthIncrement},
+		level 1/.style={settextwidth=$10$, level distance=2em},    %,level distance=1cm
+		level 2/.style={settextwidth=$10$, level distance=3em},    %,level distance=1cm
+		level 3/.style={settextwidth=$100$, level distance=4em},    %,level distance=1cm
+		edge from parent/.style={}] % don't draw tree edges
+
+
+	% ========================================
+	% ===============  NODES  ================
+	% ========================================
+
+	\path[widthlevel=-1,setwidth=0.7em] node[name=r] at (0,\NodeHeight) {\tiny$13$}
+	node[name=l] at (0,-\TreeDiameter-\NodeHeight) {\tiny$14$};
+
+	\path[setwidth=0.7em] node[name=lr] at (\LevelDistance,-.5\TreeDiameter) {\tiny$40$}
+	child{ node{\tiny$66$}
+			child{ node{\tiny$92$}
+					child{ node{\tiny$118$} }
+					child{ node{\tiny$79$} }
+				}
+			child{ node{\tiny$53$}
+					child{ node{\tiny$172$} }
+					child{ node{\tiny$146$} }
+				}
+		}
+	%---------%
+	child{ node{\tiny$27$}
+			child{ node{\tiny$94$}
+					child{ node{\tiny$87$} }
+					child{ node{\tiny$148$} }
+				}
+			child{ node{\tiny$68$}
+					child{ node{\tiny$122$} }
+					child{ node{\tiny$41$} }
+				}
+		};
+
+	% ========================================
+	% ===============  EDGES  ================
+	% ========================================
+
+	\path[>=latex,->] % set arrowhead
+	(r) edge (lr.north west)
+	(r) edge (lr-1.north west)
+	(r) edge (lr-1-1.north west)
+	(r) edge (lr-1-1-1.north west)
+	(l) edge (lr.south west)
+	(l) edge (lr-2.south west)
+	(l) edge (lr-2-2.south west)
+	(l) edge (lr-2-2-2.south west)
+	;
+
+	\path[>=latex,->] % set arrowhead
+	% level 1
+	(lr)         edge (lr-1.south west)
+	(lr)         edge (lr-1-2.south west)
+	(lr)         edge (lr-1-2-2.south west)
+	(lr)         edge (lr-2.north west)
+	(lr)         edge (lr-2-1.north west)
+	(lr)         edge (lr-2-1-1.north west)
+
+	% level 2
+	(lr-1)       edge (lr-1-1.south west)
+	(lr-1)       edge (lr-1-1-2.south west)
+	(lr-1)       edge (lr-1-2.north west)
+	(lr-1)       edge (lr-1-2-1.north west)
+
+	(lr-2)       edge (lr-2-2.north west)
+	(lr-2)       edge (lr-2-2-1.north west)
+	(lr-2)       edge (lr-2-1.south west)
+	(lr-2)       edge (lr-2-1-2.south west)
+
+	% level 3
+
+	(lr-1-1)       edge (lr-1-1-1.south west)
+	(lr-1-1)       edge (lr-1-1-2.north west)
+
+	(lr-1-2)       edge (lr-1-2-1.south west)
+	(lr-1-2)       edge (lr-1-2-2.north west)
+
+	(lr-2-2)       edge (lr-2-2-2.north west)
+	(lr-2-2)       edge (lr-2-2-1.south west)
+
+	(lr-2-1)       edge (lr-2-1-2.north west)
+	(lr-2-1)       edge (lr-2-1-1.south west)
+
+	;
+
+	\node[text width=1ex,draw=black!1,very thin] at (0,  3.2\NodeHeight) {\scriptsize 0};
+	\node[text width=1ex,draw=black!1,very thin] at (0.8,3.2\NodeHeight) {\scriptsize 1};
+	\node[text width=1ex,draw=black!1,very thin] at (1.6,3.2\NodeHeight) {\scriptsize 2};
+	\node[text width=1ex,draw=black!1,very thin] at (2.6,3.2\NodeHeight) {\scriptsize 3};
+	\node[text width=1ex,draw=black!1,very thin] at (4.0,3.2\NodeHeight) {\scriptsize 4};
+
+	% horizontal line beneath column labels
+	\draw[thick,->] (-0.5,2.3\NodeHeight) -- (4.5,2.3\NodeHeight);
+
+\end{tikzpicture}
+
+\end{document}

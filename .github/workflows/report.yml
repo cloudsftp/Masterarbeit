@@ -17,6 +17,8 @@ jobs:
     steps:
       - name: Check Out Source Code
         uses: actions/checkout@v3
+      
+      - run: ls Report/Figures/FareyTrees/Minrep_Adding1_Halved
 
       - name: Compile LaTeX
         uses: xu-cheng/latex-action@v2

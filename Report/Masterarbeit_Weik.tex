@@ -44,6 +44,16 @@
 
 \makeindex
 
+\bibliography{bibliography.bib}
+
+\newif\ifdropfigures  % At the time of definition it is false!
+\dropfigurestrue % yes, we drop figures
+\dropfiguresfalse
+\ifdropfigures
+  \renewcommand{\includegraphics}[2][]{%
+  }% Ok, `\includegraphics does nothing any longer
+\fi
+
 \begin{document}
 
 %tex4ht-Konvertierung verschönern
@@ -133,14 +143,7 @@
   \listof{Listing}{List of Listings}
 \fi
 
-%mittels \newfloat wurde die Algorithmus-Gleitumgebung definiert.
-%Mit folgendem Befehl werden alle floats dieses Typs ausgegeben
-\ifdeutsch
-  \listof{Algorithmus}{Verzeichnis der Algorithmen}
-\else
-  \listof{Algorithmus}{List of Algorithms}
-\fi
-%\listofalgorithms %Ist nur für Algorithmen, die mittels \begin{algorithm} umschlossen werden, nötig
+\listofalgorithms %Ist nur für Algorithmen, die mittels \begin{algorithm} umschlossen werden, nötig
 
 % Abkürzungsverzeichnis
 \printnoidxglossaries
@@ -212,6 +215,7 @@ All links were last followed on
 \todo{add date}
 
 \appendix
+\input{Sections/99_Appendix/00_content.tex}
 
 \pagestyle{empty}
 \renewcommand*{\chapterpagestyle}{empty}

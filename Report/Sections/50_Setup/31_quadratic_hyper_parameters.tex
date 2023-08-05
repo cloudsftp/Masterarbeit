@@ -1,0 +1,45 @@
+\subsection{Parameter Definitions}
+\label{sec:setup.quad.hyper.params}
+
+The new parameters are $g_R\left(\frac{1}{4}\right)$ for the value at the left border of branches $f_\B$ and $f_\D$, $g_R\left(\frac{1}{2}\right)$ for the value at the right border of the branches, and finally $\left. \frac{d}{dx} g_R(x) \right|_{x = \frac{1}{2}}$ for the slope of the branches at the right border.
+We fix the parameter $\left. \frac{d}{dx} g_R(x) \right|_{x = \frac{1}{2}} = 1.2$.
+This way, the steepest slope is 1.2 which is just above 1.
+Therefore, most of the function is still contractive.
+We also fix the parameter $g_R\left(\frac{1}{2}\right) = \frac{1}{2} + \epsilon$ with $\epsilon = 0.025$ to have the value at the right border of the branches just above the bisector $y = x$.
+The parameter left is $g_R\left(\frac{1}{4}\right)$, the value at the left border of the branches.
+This parameter is varied.
+
+\begin{subequations}
+	\begin{align}
+		g_R\left(\frac{1}{4}\right)                                     & = a_R \cdot \left(\frac{1}{4}\right)^2 + b_R \cdot \left(\frac{1}{4}\right) + c_R = \dfrac{a_R}{16} + \dfrac{b_R}{4} + c_R \label{equ:setup.quad.hyper.A} \\
+		g_R\left(\frac{1}{2}\right)                                     & = a_R \cdot \left(\frac{1}{2}\right)^2 + b_R \cdot \left(\frac{1}{2}\right) + c_R = \dfrac{a_R}{4} + \dfrac{b_R}{2} + c_R \label{equ:setup.quad.hyper.B}  \\
+		\left. \frac{d}{dx} g_R\left(x\right) \right|_{x = \frac{1}{2}} & = 2 \cdot a_R \cdot \left(\frac{1}{2}\right) + b_R \label{equ:setup.quad.hyper.C}
+	\end{align}
+\end{subequations}
+
+\Crefrange{equ:setup.quad.hyper.A}{equ:setup.quad.hyper.A} are the values of $g_R\left(\frac{1}{4}\right), g_R\left(\frac{1}{2}\right),$ and $\left. \frac{d}{dx} g_R\left(x\right) \right|_{x = \frac{1}{2}}$.
+This is a system of equations, we now need to solve for the parameters $a_R, b_R,$ and $c_R$.
+To compute the parameters, we write the system as a matrix and invert it.
+The matrix and its inverse are in \Cref{equ:setup.quad.hyper.matrix}.
+
+\begin{align}
+	\begin{pmatrix}
+		\frac{1}{16} & \frac{1}{4} & 1 \\
+		\frac{1}{4}  & \frac{1}{2} & 1 \\
+		1            & 1           & 0
+	\end{pmatrix}^{-1} & =
+	\begin{pmatrix}
+		16  & -16 & 4           \\
+		-16 & 16  & -3          \\
+		4   & -3  & \frac{1}{2}
+	\end{pmatrix}
+	\label{equ:setup.quad.hyper.matrix}
+\end{align}
+
+Hence, the equations for $a_R, b_R,$ and $c_R$ in dependence of $g_R\left(\frac{1}{4}\right), g_R\left(\frac{1}{2}\right),$ and $\left. \frac{d}{dx} g_R\left(x\right) \right|_{x = \frac{1}{2}}$ are \Crefrange{equ:setup.quad.hyper.aR}{equ:setup.quad.hyper.cR}.
+
+\begin{align}
+	a_R & = 16 \cdot g_R\left(\frac{1}{4}\right) - 16 \cdot g_R\left(\frac{1}{2}\right) + 4 \cdot \left. \frac{d}{dx} g_R\left(x\right) \right|_{x = \frac{1}{2}}     \label{equ:setup.quad.hyper.aR}     \\
+	b_R & = -16 \cdot g_R\left(\frac{1}{4}\right) + 16 \cdot g_R\left(\frac{1}{2}\right) - 3 \cdot \left. \frac{d}{dx} g_R\left(x\right) \right|_{x = \frac{1}{2}} \label{equ:setup.quad.hyper.bR}        \\
+	c_R & = 4 \cdot g_R\left(\frac{1}{4}\right) - 3 \cdot g_R\left(\frac{1}{2}\right) + \frac{1}{2} \cdot \left. \frac{d}{dx} g_R\left(x\right) \right|_{x = \frac{1}{2}} \label{equ:setup.quad.hyper.cR}
+\end{align}
