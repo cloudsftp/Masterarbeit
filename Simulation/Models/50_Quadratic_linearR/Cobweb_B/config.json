@@ -3,8 +3,8 @@
     "max_period": 32,
     "num_iterations": 1e3,
     "parameters": {
-        "px": 1.51,
-        "py": 0.6295
+        "px": -0.378,
+        "py": 0.1612
     },
     "scan": [
         {
@@ -14,14 +14,14 @@
                 {
                     "name": "initial_state[0][0]",
                     "start": 0,
-                    "stop": 3
+                    "stop": 0.5
                 }
             ]
         }
     ],
     "animation": null,
     "L": 0,
-    "R": 4,
+    "R": 1,
     "D": 0,
-    "U": 4
+    "U": 1
 }

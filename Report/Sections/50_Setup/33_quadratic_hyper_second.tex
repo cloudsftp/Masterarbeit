@@ -1,4 +1,5 @@
 \subsection{Second Attempt}
+\label{sec:setup.quad.hyper.2}
 
 Now, we try to close the gaps between the ``type A'' parameter regions of one sequence of parameter regions with the same period to form proper chains.
 For this, we change the parameters of the function $g_L$ and therefore the shape of the branches $f_\A$ and $f_\C$.
@@ -31,7 +32,13 @@ We can see clearly that ``type A'' and ``type B'' parameter regions alternate in
 		\caption{Halved Model}
 		\label{fig:setup.quad.hyper.2.period.halved}
 	\end{subfigure}
-	\caption{2D Scans of Periods of Adjusted Model...}
+	\caption[2D scan of the periods of the quadratic model with hyperparameters for different values of the fixed parameters]{
+	2D scan of the periods of the piecewise quadratic model with hyperparameters $g_R\left(\frac{1}{4}\right), g_R\left(\frac{1}{2}\right),$ and $\left. \frac{d}{dx} g_R\left(x\right) \right|_{x = \frac{1}{2}}$.
+	The parameters $a_L = 4, b_L = -\frac{1}{2}, g_R\left(\frac{1}{4}\right) = 0.525,$ and $\left. \frac{d}{dx} g_R\left(x\right) \right|_{x = \frac{1}{2}} = 1.2$ are fixed.
+	The parameters $\alpha = g_R\left(\frac{1}{4}\right)$ and $\beta = c_L$ are varied in the ranges $[0.275, 0.35]$ and $[0.15, 0.1875]$, respectively.
+	The points $A, B,$ and $C$ mark the parameter values used for the cobweb diagrams in \Cref{fig:setup.quad.hyper.2.cobwebs}.
+	(a) shows the scan for the normal model as defined above, while (b) shows the scan for the adjusted model where we can see ``type B'' parameter regions as they have higher periods in the adjusted model.
+	}
 	\label{fig:setup.quad.hyper.2.period}
 \end{figure}
 
@@ -40,22 +47,26 @@ We can see clearly that ``type A'' and ``type B'' parameter regions alternate in
 	\begin{subfigure}{0.3\textwidth}
 		\centering
 		\includegraphics[width=\textwidth]{41_Quadratic_fittingR_Gecko/Cobweb_A/result.png}
-		\caption{At Point A}
+		\caption{At Point $A$}
 		\label{fig:setup.quad.hyper.2.cobweb.A}
 	\end{subfigure}
 	\begin{subfigure}{0.3\textwidth}
 		\centering
 		\includegraphics[width=\textwidth]{41_Quadratic_fittingR_Gecko/Cobweb_B/result.png}
-		\caption{At Point B}
+		\caption{At Point $B$}
 		\label{fig:setup.quad.hyper.2.cobweb.B}
 	\end{subfigure}
 	\begin{subfigure}{0.3\textwidth}
 		\centering
 		\includegraphics[width=\textwidth]{41_Quadratic_fittingR_Gecko/Cobweb_C/result.png}
-		\caption{At Point C}
+		\caption{At Point $C$}
 		\label{fig:setup.quad.hyper.2.cobweb.C}
 	\end{subfigure}
-	\caption{Cobwebs at Different Points}
+	\caption[Cobwebs of the piecewise quadratic model with hyperparameters for different values of the fixed parameters]{
+	Cobweb diagrams at three parameter values of $\alpha = g_R\left(\frac{1}{4}\right)$ and $\beta = c_L$ in the piecewise quadratic model with hyperparameters.
+	The other parameters are fixed as $a_L = 4, b_L = -\frac{1}{2}, g_R\left(\frac{1}{2}\right) = \frac{1}{2} + \frac{1}{40}$, and $\left. \frac{d}{dx} g_R(x) \right|_{x = \frac{1}{2}} = 1 + \frac{1}{5}$.
+	The parameter values are marked in \Cref{fig:setup.quad.hyper.2.period}.
+	}
 	\label{fig:setup.quad.hyper.2.cobwebs}
 \end{figure}
 

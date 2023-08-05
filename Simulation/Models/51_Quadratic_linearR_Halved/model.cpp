@@ -13,12 +13,12 @@
 #define _cL (cL + py)
 
 // Internal parameters for fitting branches B and D
-#define A (px)
+#define A (-px)
 #define B (0.525)
 
 // Internal parameters for computing branches B and D
-#define _bR ((B - A) * 4.)
-#define _cR ((A + B) / 2.)
+#define _bR (4. * (B - A))
+#define _cR ((2. * A) - B)
 
 #define n       0.5     // Discontinuity in the middle
 #define border  0.25    // Discontinuity in the middle of the left half
@@ -30,33 +30,45 @@ bool f(
 ) {
     real_t y = 0;
 
-    real_t x_mod = currentState[0];
-
-    // Enforce symmetry f(x + n) = f(x) + n
-    if (x_mod >= n) {
-        x_mod -= n;
-        y += n;
+    real_t x = currentState[0];
+    if (x >= n) {
+        x -= n;
     }
 
-    if (x_mod < border) {   // "Left" branch (branches A and C)
-        real_t x = x_mod - n / 4;
+    if (x < border) {   // "Left" branch (branches A and C)
         y += _aL * x * x + _bL * x + _cL;
-    } else {                // "Right" branch (branches B and D)
-        real_t x = x_mod - 3 * n / 4;
+    } else {            // "Right" branch (branches B and D)
         y += _bR * x + _cR;
     }
 
     // Normalize
-    if (y > 2 * n) {
-        y -= 2 * n;
+    if (y >= n) {
+        y -= n;
     }
 
     RHS[0] = y;
     return true;
 }
 
+bool symbolic(
+    const Array<real_t>& currentState,
+    const Array<real_t>& parameters,
+    string& RHS
+) {
+    real_t x = currentState[0];
+
+    if (x < border) {
+        RHS = "A";
+    } else {
+        RHS = "B";
+    }
+
+    return true;
+}
+
 extern "C" {
     void connectSystem() {
         MapProxy::systemFunction = f;
+        MapProxy::symbolicFunction = symbolic;
     }
 }

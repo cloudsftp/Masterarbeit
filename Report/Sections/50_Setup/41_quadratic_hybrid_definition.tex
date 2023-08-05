@@ -1,0 +1,147 @@
+\subsection{Model Definition}
+\label{sec:setup.quad.hybrid.definition}
+
+The hybrid model is defined as the map $x_{n+1} = f(x_n) \mod 1$.
+Where $f$ is given by the following collection of equations.
+\begin{align}
+	f(x) & = \begin{cases}
+		         g(x)                             & \text{if } x < \frac{1}{2} \\
+		         g(x - \frac{1}{2}) + \frac{1}{2} & \text{else}
+	         \end{cases} \label{equ:quad.full.f}           \\
+	g(x) & = \begin{cases}
+		         g_L(x) = a_L \cdot x^2 + b_L \cdot x + c_L & \text{if } x < \frac{1}{4} \\
+		         g_R(x) = b_R \cdot x + c_R                 & \text{else}
+	         \end{cases} \label{equ:quad.full.g}
+\end{align}
+
+\subsection{Hyperparameters}
+\label{sec:setup.quad.hybrid.parameters}
+
+Since the function $g_R$ is now linear, we only need two hyperparameters to fit this branch.
+We choose the hyperparameters $g_R\left(\frac{1}{4}\right)$ and $g_R\left(\frac{1}{2}\right)$, we ignore the hyperparameter $\left. \frac{d}{dx} g_R(x) \right|_{x = \frac{1}{2}}$.
+As before, we fix the hyperparameter $g_R\left(\frac{1}{2}\right) = \frac{1}{2} + \frac{1}{40}$ to be just above the bisector $y = x$.
+And we vary the hyperparameter $g_R\left(\frac{1}{4}\right)$.
+
+\begin{subequations}
+	\begin{align}
+		g_R\left(\frac{1}{4}\right) & = \frac{b_R}{4} + c_R \label{equ:setup.quad.hybrid.A} \\
+		g_R\left(\frac{1}{2}\right) & = \frac{b_R}{2} + c_R \label{equ:setup.quad.hybrid.B}
+	\end{align}
+\end{subequations}
+
+\Cref{equ:setup.quad.hybrid.A,equ:setup.quad.hybrid.B} are the equations for the values of $g_R\left(\frac{1}{4}\right)$ and $g_R\left(\frac{1}{2}\right)$.
+This is a system of equations we now need to solve for the parameters $b_R$ and $c_R$.
+As before, we simply compute the inverse matrix of the system written as a matrix.
+This is shown in \Cref{equ:setup.quad.hybrid.matrix}.
+
+\begin{align}
+	\begin{pmatrix}
+		\frac{1}{4} & 1 \\
+		\frac{1}{2} & 1
+	\end{pmatrix}^{-1} & =
+	\begin{pmatrix}
+		-4 & 4  \\
+		2  & -1
+	\end{pmatrix}
+	\label{equ:setup.quad.hybrid.matrix}
+\end{align}
+
+Hence the equations for $b_R$ and $c_R$ in dependence of $g_R\left(\frac{1}{4}\right)$ and $g_R\left(\frac{1}{4}\right)$ are \Cref{equ:setup.quad.hybrid.bR,equ:setup.quad.hybrid.cR}.
+
+\begin{align}
+	b_R & = -4 \cdot g_R\left(\frac{1}{4}\right) + 4 \cdot g_R\left(\frac{1}{2}\right) \label{equ:setup.quad.hybrid.bR} \\
+	c_R & = 2 \cdot g_R\left(\frac{1}{4}\right) - 1 \cdot g_R\left(\frac{1}{2}\right) \label{equ:setup.quad.hybrid.cR}
+\end{align}
+
+We also change the sign of the varied hyperparameter $g_R\left(\frac{1}{4}\right)$, to better imitate the behavior of the original model.
+There, the parameter $E_0$ cause the values of the function at the left border of the branches $f_\B$ and $f_\D$ to get smaller.
+Therefore, we now set $\alpha = -g_R\left(\frac{1}{4}\right)$.
+All parameters are listed in \Cref{table:setup.quad.hybrid.parameters} for better overview.
+
+\begin{table}
+	\centering
+	\begin{tabular}{|c|c|}
+		\hline
+		Model Parameter               & Value                                                                       \\ \hline \hline
+		$a_L$                         & $4$                                                                         \\ \hline
+		$b_L$                         & $-\frac{1}{2}$                                                              \\ \hline
+		$c_L$                         & $\beta$                                                                     \\ \hline \hline
+		$b_R$                         & $4 \cdot g_R\left(\frac{1}{2}\right) - 4 \cdot g_R\left(\frac{1}{4}\right)$ \\ \hline
+		$c_R$                         & $2 \cdot g_R\left(\frac{1}{4}\right) - g_R\left(\frac{1}{2}\right)$         \\ \hline
+		$g_R\left(\frac{1}{4}\right)$ & $-\alpha$                                                                   \\ \hline
+		$g_R\left(\frac{1}{4}\right)$ & $\frac{1}{2} + \frac{1}{40}$                                                \\ \hline
+	\end{tabular}
+	\caption[Overview of parameters of the piecewise hybrid quadratic model with hyperparameters]{
+		Overview of the parameter values of all parameters of the piecewise hybrid quadratic model with hyperparameters $g_R\left(\frac{1}{4}\right)$ and $g_R\left(\frac{1}{2}\right)$.
+		In the top part, there are all parameters for the function $g_L$, and in the bottom part are the parameters for the function $g_R$.
+	}
+	\label{table:setup.quad.hybrid.parameters}
+\end{table}
+
+\subsection{Parameter Effects}
+\label{sec:setup.quad.hybrid.parameterfx}
+
+The effects of the defined parameters on the model function are straightforward and can be read directly from the previous section.
+In summary, the parameter $\alpha$ changes the values of the model function at the left border of the branches $f_\B$ and $f_\D$.
+Where a lower value of $\alpha$ means a higher value of the model function at those points, because the parameter is inverted.
+In the previously defined notation, this is written as $\AL_{\B}^-$.
+This notation is defined in \Cref{sec:yunus.param.effects}.
+The parameter $\beta$ changes the values of the whole branches $f_\A$ and $f_\C$.
+A higher $\beta$ means higher values, and it is written as $\AW_{\A}^+$.
+
+\Cref{fig:setup.quad.hybrid.paramfx} illustrates these parameter effects.
+Both figures show the model function for three parameter values, where either $\alpha$ or $\beta$ is fixed, and the other parameter is varied.
+The model function is colored according to the changed parameter, blue is for the lowest value and red is for the highest value.
+\Cref{fig:setup.quad.hybrid.paramfx.alpha} illustrates the effect of $\alpha$.
+One can see, how the values of the model function at the left borders of branches $f_\B$ and $f_\D$ are smaller for higher values of $\alpha$.
+\Cref{fig:setup.quad.hybrid.paramfx.beta} illustrates the effect of $\beta$.
+Here one can see, how the values of the model function for the whole branches $f_\A$ and $f_\C$ increase for larger values of $\beta$.
+
+\begin{figure}
+	\centering
+	\begin{subfigure}{0.4\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{60_MinimalRepr/ParameterEffects/p_x/illustration.png}
+		\caption{$\alpha$}
+		\label{fig:setup.quad.hybrid.paramfx.alpha}
+	\end{subfigure}
+	\begin{subfigure}{0.4\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{60_MinimalRepr/ParameterEffects/p_y/illustration.png}
+		\caption{$\beta$}
+		\label{fig:setup.quad.hybrid.paramfx.beta}
+	\end{subfigure}
+	\caption[The effects of single parameters on the piecewise hybrid quadratic model function]{
+		The effects of varying the parameters $\alpha$ and $\beta$ alone on the piecewise hybrid quadratic model function.
+		(a) shows the effects of $\alpha$ on the model function with fixed $\beta = 0.17$.
+		The red function is for $\alpha = -0.4$, purple is for $\alpha = -0.35$, and red is for $\alpha = -0.3$.
+		(b) shows the effects of $\beta$ on the model function with fixed $\alpha = -0.35$.
+		The red function is for $\beta = 0.16$, purple is for $\beta = 0.17$, and red is for $\beta = 0.18$.
+	}
+	\label{fig:setup.quad.hybrid.paramfx}
+\end{figure}
+
+\Cref{table:setup.quad.hybrid.paramfx} lists the effects of parameters $\alpha$ and $\beta$ in a table, like also done for the original model in \Cref{sec:setup.char.paramfx}.
+Additionally, the parameter effects of the parameters in the original model are listed for comparison.
+This gives a nice overview of which characteristics of the original model function are necessary for the observed bifurcation patterns.
+Especially it shows, which parameter effects are not necessary.
+For example, the effect $\AMi_{\B}^{L-}$ cannot even be fabricated in this model since branches $\Branch_\B$ and $\Branch_\D$ are linear and do not have a local minimum.
+Also, the effect $\AB_{\B\C}^L$, which is the movement of the borders between branches $\Branch_\B$ and $\Branch_\C$ (and $\Branch_\D$ and $\Branch_\A$ respectively), is not necessary.
+
+\begin{table}
+	\centering
+	\begin{tabular}{|c||c|c||c|c|} \hline
+		Combined         & $E_0$            & $\chi_0$          & $\alpha$     & $\beta$        \\ \hline \hline
+		$\AL_{\B}^{-}$   & $\AL_{\B}^{-}$   &                   & $\AL_{\B}^-$ &                \\ \hline
+		$\AMi_{\B}^{L-}$ & $\AMi_{\B}^{L-}$ & $-\AMi_{\B}^{+}$  &              &                \\ \hline
+		$\AW_{\A}^{+}$   &                  & $\AW_{\A}^{+}$    &              & $\AW_{\A}^{+}$ \\ \hline \hline
+		$\AB_{\B\C}^{L}$ &                  & $\AB_{\B\C}^{L}$  &              &                \\ \hline
+		                 & $\AB_{\A\B}^{R}$ & $-\AB_{\A\B}^{L}$ &              &                \\ \hline
+	\end{tabular}
+	\caption[Comparison table of parameter effects in the piecewise hybrid quadratic model and the original model]{
+		Comparison table of the parameter effects of $E_0$ and $\chi_0$ in the original model and the effects of $\alpha$ and $\beta$ in the piecewise hybrid quadratic model.
+		Each effect of the parameters $E_0$ and $\chi_0$ as listed in \Cref{table:setup.char.paramfx} is also listed here.
+		If $\alpha$ or $\beta$ cause the same effect, it is also listed in the respective column.
+	}
+	\label{table:setup.quad.hybrid.paramfx}
+\end{table}

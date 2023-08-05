@@ -31,49 +31,59 @@ After that we will look into what role the parameters play individually.
 \label{sec:yunus.param.effects.combined}
 
 To replicate the dynamics seen in the model, it is helpful to know, how the model changes along the areas of the same period.
-\Cref{fig:yunus.function.evolution.12} shows, how the model function changes along the area of period 12.
+\Cref{fig:setup.char.evolution.12} shows, how the model function changes along the area of period 12.
 In the figure, there are three functions in three different colors.
-The first function is blue and it is the model with parameters $E_0 = 15.9, \chi_0 = 0.11$, it is marked as point $A_12$ in \Cref{fig:yunus.function.evolution.map}.
-The second function is purple and it is the model at the point $E_0 = 17.07, \chi_0 = 0.182$, marked as point $B_{12}$.
-The last function is red and it is the model with parameters $E_0 = 18.5, \chi_0 = 0.27$, marked as point $C_{12}$.
+The first function is blue, and it is the model with parameters $E_0 = 15.9, \chi_0 = 0.11$, it is marked as point $A_12$ in \Cref{fig:setup.char.evolution.map}.
+The second function is purple, and it is the model at the point $E_0 = 17.07, \chi_0 = 0.182$, marked as point $B_{12}$.
+The last function is red, and it is the model with parameters $E_0 = 18.5, \chi_0 = 0.27$, marked as point $C_{12}$.
 
 \begin{figure}
 	\centering
 	\begin{subfigure}{0.4\textwidth}
 		\includegraphics[width=\textwidth]{99_Yunus/2D_Period_Zoomed_Effects/result.png}
-		\caption{Measured Points}
-		\label{fig:yunus.function.evolution.map}
+		\caption{Points}
+		\label{fig:setup.char.evolution.map}
 	\end{subfigure}
 	\begin{subfigure}{0.4\textwidth}
 		\includegraphics[width=\textwidth]{99_Yunus/ParameterEffects/E0_hi_P12/illustration.png}
-		\caption{Evolution for Period 12}
-		\label{fig:yunus.function.evolution.12}
+		\caption{Period 12}
+		\label{fig:setup.char.evolution.12}
 	\end{subfigure}
 	\begin{subfigure}{0.4\textwidth}
 		\includegraphics[width=\textwidth]{99_Yunus/ParameterEffects/E0_hi_P10/illustration.png}
-		\caption{Evolution for Period 10}
-		\label{fig:yunus.function.evolution.10}
+		\caption{Period 10}
+		\label{fig:setup.char.evolution.10}
 	\end{subfigure}
 	\begin{subfigure}{0.4\textwidth}
 		\includegraphics[width=\textwidth]{99_Yunus/ParameterEffects/E0_hi_P08/illustration.png}
-		\caption{Evolution for Period 8}
-		\label{fig:yunus.function.evolution.08}
+		\caption{Period 8}
+		\label{fig:setup.char.evolution.08}
 	\end{subfigure}
-	\caption{Effects of the Parameters on the Original Funtion}
+	\caption[Effects of parameters on the original model function]{
+		The shapes of the original model function for different parameter values.
+		(a) shows the points of the parameter values used for the other figures.
+		(b) shows the evolution of the shape of the original model function along the chain of parameter regions with period 12 cycles.
+		The blue function is the model function for the parameter values at point $A_{12}$, purple at point $B_{12}$, and red at point $C_{12}$.
+		Here, blue is at point $A_{10}$, purple at point $B_{10}$, and red at point $C_{10}$.
+		(c) shows the same thing for the chain of parameter regions with period 10.
+		And (d) is for the chain of parameter regions with period 8.
+		Here, blue is at point $B_8$ and red at point $C_8$.
+	}
+	\label{fig:setup.char.evolution.combined}
 \end{figure}
 
 The most notable changes are
 \begin{enumerate*}
 	\item The values of branches $f_\A$ and $f_\C$ get larger while the values at the left borders get larger more
 	\item The value at the left borders of branches $f_\B$ and $f_\D$ get smaller
-	\item The local minima of these branches move left and their values get smaller.
+	\item The local minima of these branches move left, and their values get smaller.
 \end{enumerate*}
 One smaller change is that the border between branches $\B$ and $\C$ moves left.
 Note that the same change happens to the border between the branches $\D$ and $\A$ due to the symmetry of the function.
 
 The same effects can be observed for the areas of period 8 and 10.
-The effects are visualized in \Cref{fig:yunus.function.evolution.10,fig:yunus.function.evolution.08}.
-The points used for measurement are visualized in \Cref{fig:yunus.function.evolution.map}.
+The effects are visualized in \Cref{fig:setup.char.evolution.10,fig:setup.char.evolution.08}.
+The points used for measurement are visualized in \Cref{fig:setup.char.evolution.map}.
 For the period 10, points $A_{10}, B_{10},$ and $C_{10}$ are used and for period 8, points $B_8$ and $C_8$.
 
 \subsection{Individual Effects of Parameters}
@@ -85,13 +95,16 @@ To reproduce the bifurcation structures, it is important to know which effects o
 \begin{figure}
 	\centering
 	\includegraphics[width=0.4\textwidth]{99_Yunus/2D_Period_Zoomed_EffectsSingle/result.png}
-	\caption{Parameter Ranges Scanned for Individual Effects of Parameters}
-	\label{fig:yunus.function.evolution.single.map}
+	\caption[The parameter ranges examined to analyze the effects of parameters on the original model function]{
+		The parameter ranges examined to analyze the effects of parameters $E_0$ and $\chi_0$ on the original model function
+		The green arrow indicates the parameter range used for analyzing the effects of the parameter $E_0$, while the orange arrow indicates the parameter range used for analyzing the effects of the parameter $\chi_0$ on the original model function.
+	}
+	\label{fig:setup.char.evolution.single.map}
 \end{figure}
 
-For the parameter $E_0$, we fixed $\chi_0 = 0.2$ and varied $E_0$ in the parameter range $[15, 19]$, it is marked as the green arrow in \Cref{fig:yunus.function.evolution.single.map}.
+For the parameter $E_0$, we fixed $\chi_0 = 0.2$ and varied $E_0$ in the parameter range $[15, 19]$, it is marked as the green arrow in \Cref{fig:setup.char.evolution.single.map}.
 Like before, we took the function at three points and put them in one figure with color codes.
-This is illustrated in \Cref{fig:yunus.function.evolution.e0}.
+This is illustrated in \Cref{fig:setup.char.evolution.e0}.
 The blue function is the function of the original model at the start of the parameter range, $E_0 = 15$ and $\chi_0 = 0.2$.
 The purple function is in the middle at $E_0 = 17$ and $\chi_0$ stays the same.
 And the red function is at the end at $E_0 = 19$.
@@ -105,8 +118,8 @@ The observed changes are
 \end{enumerate*}
 
 For the parameter $\chi_0$, we fixed $E_0 = 17$ and varied $\chi_0$ in the parameter range $[0.125, 0.3]$.
-This parameter range is marked orange in \Cref{fig:yunus.function.evolution.single.map}.
-The function is displayed at three points of the parameter range in \Cref{fig:yunus.function.evolution.hi}.
+This parameter range is marked orange in \Cref{fig:setup.char.evolution.single.map}.
+The function is displayed at three points of the parameter range in \Cref{fig:setup.char.evolution.hi}.
 As before, the blue function is the function of the original model at the start of the parameter range, $E_0 = 17$ and $\chi_0 = 0.125$.
 The purple function is at $\chi_0 = 0.2125$, and the red one is at $\chi_0 = 0.3$.
 The observed changes are
@@ -124,15 +137,22 @@ Two more changes are smaller in comparison
 	\centering
 	\begin{subfigure}{0.4\textwidth}
 		\includegraphics[width=\textwidth]{99_Yunus/ParameterEffects/E0/illustration.png}
-		\caption{Evolution for Parameter $E_0$}
-		\label{fig:yunus.function.evolution.e0}
+		\caption{Parameter $E_0$}
+		\label{fig:setup.char.evolution.e0}
 	\end{subfigure}
 	\begin{subfigure}{0.4\textwidth}
 		\includegraphics[width=\textwidth]{99_Yunus/ParameterEffects/hi/illustration.png}
-		\caption{Evolution for Parameter $\chi_0$}
-		\label{fig:yunus.function.evolution.hi}
+		\caption{Parameter $\chi_0$}
+		\label{fig:setup.char.evolution.hi}
 	\end{subfigure}
-	\caption{Effects of the Individual Parameters on the Original Funtion}
+	\caption[The effects of single parameters on the original model function]{
+		The effects of varying the parameters $E_0$ and $\chi_0$ alone on the original model function.
+		(a) shows the effects of $E_0$ on the original model function.
+		The red function is at the beginning of the parameter range depicted in \Cref{fig:setup.char.evolution.single.map}, purple is in the middle, and red is at the end.
+		(b) shows the effects of $\chi_0$ on the original model function.
+		Analogously to (a), the red function is at the beginning of the parameter range depicted in \Cref{fig:setup.char.evolution.single.map}, purple is in the middle, and red is at the end.
+	}
+	\label{fig:setup.char.evolution.single}
 \end{figure}
 
 \subsection{Decomposition of Combined Effects}
@@ -167,6 +187,9 @@ Note again, that the change to the border of branches $\B$ and $\C$ also applies
 		0                & $\AB_{\A\B}^{R}$ & $-\AB_{\A\B}^{L}$ &
 		$E_0$ and $\chi_0$ have opposing effects, they cancel out                           \\ \hline
 	\end{tabular}
-	\caption{Decomposition of Combined Effects of Parameters}
-	\label{tab:yunus.parameter.effects}
+	\caption[Decomposition table of combined parameter effects]{
+		Decomposition of the combined parameter effects along chains of parameter regions with the same period as displayed in \Cref{fig:setup.char.evolution.combined}.
+		Each effect is traced back to the effects of changing the parameters $E_0$ and $\chi_0$ alone as displayed in  \Cref{fig:setup.char.evolution.single}.
+	}
+	\label{table:setup.char.paramfx}
 \end{table}

@@ -1,4 +1,5 @@
 \subsection{First Attempt}
+\label{sec:setup.quad.hyper.1}
 
 We fix the hyperparameters as described and fix the left parameters of $g_L$ to $a_L = 8$ and $b_L = -1$.
 Scanning the periods for sensible values of $\alpha = g_R\left(\frac{1}{4}\right)$ and $\beta = c_L$ results in \Cref{fig:setup.quad.hyper.1.period}.
@@ -13,7 +14,7 @@ To keep the parabola above the bisector $y = x$, the values for $\beta$ should a
 	2D scan of the periods of the piecewise quadratic model with hyperparameters $g_R\left(\frac{1}{4}\right), g_R\left(\frac{1}{2}\right),$ and $\left. \frac{d}{dx} g_R\left(x\right) \right|_{x = \frac{1}{2}}$.
 	The parameters $a_L = 8, b_L = -1, g_R\left(\frac{1}{4}\right) = 0.525,$ and $\left. \frac{d}{dx} g_R\left(x\right) \right|_{x = \frac{1}{2}} = 1.2$ are fixed.
 	The parameters $\alpha = g_R\left(\frac{1}{4}\right)$ and $\beta = c_L$ are varied in the ranges $[0.25, 0.5]$ and $[0.12, 0.22]$, respectively.
-	The points $A, B,$ and $C$ mark the parameter values used for the cobweb diagrams in \Cref{fig:setup.quad.hyper.cobwebs}.
+	The points $A, B,$ and $C$ mark the parameter values used for the cobweb diagrams in \Cref{fig:setup.quad.hyper.1.cobwebs}.
 	}
 	\label{fig:setup.quad.hyper.1.period}
 \end{figure}
@@ -23,19 +24,19 @@ To keep the parabola above the bisector $y = x$, the values for $\beta$ should a
 	\begin{subfigure}{0.3\textwidth}
 		\centering
 		\includegraphics[width=\textwidth]{40_Quadratic_fittingR/Cobweb_A/result.png}
-		\caption{At Point A}
+		\caption{At Point $A$}
 		\label{fig:setup.quad.hyper.1.cobweb.A}
 	\end{subfigure}
 	\begin{subfigure}{0.3\textwidth}
 		\centering
 		\includegraphics[width=\textwidth]{40_Quadratic_fittingR/Cobweb_B/result.png}
-		\caption{At Point B}
+		\caption{At Point $B$}
 		\label{fig:setup.quad.hyper.1.cobweb.B}
 	\end{subfigure}
 	\begin{subfigure}{0.3\textwidth}
 		\centering
 		\includegraphics[width=\textwidth]{40_Quadratic_fittingR/Cobweb_C/result.png}
-		\caption{At Point C}
+		\caption{At Point $C$}
 		\label{fig:setup.quad.hyper.1.cobweb.C}
 	\end{subfigure}
 	\caption[Cobwebs of the first piecewise quadratic model with hyperparameters]{
@@ -43,7 +44,7 @@ To keep the parabola above the bisector $y = x$, the values for $\beta$ should a
 	The other parameters are fixed as $a_L = 8, b_L = -1, g_R\left(\frac{1}{2}\right) = \frac{1}{2} + \frac{1}{40}$, and $\left. \frac{d}{dx} g_R(x) \right|_{x = \frac{1}{2}} = 1 + \frac{1}{5}$.
 	The parameter values are marked in \Cref{fig:setup.quad.hyper.1.period}.
 	}
-	\label{fig:setup.quad.hyper.cobwebs}
+	\label{fig:setup.quad.hyper.1.cobwebs}
 \end{figure}
 
 \todo{Describe cycles like in previous subsections?}
