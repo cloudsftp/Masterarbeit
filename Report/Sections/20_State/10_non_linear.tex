@@ -1,0 +1,51 @@
+\section{Non-linear Dynamical Systems}
+
+\hl{(Heading changed)}
+
+\hl{
+	Dynamical systems can either be time-continuous or time-discrete.
+	In this thesis we only consider time-discrete dynamical systems, also called maps.
+	The time evolution of the state of such a system results from an iterative application of the model function governing the dynamics of the system, i.e. $x_{n+1} = f(x_n)$.
+	Depending on the properties of the model function $f$, one can distinguish between smooth, \gls{pws} continuous, and \gls{pws} discontinuous dynamical systems.
+}
+
+\hl{
+	We are most interested in invariant sets.
+	In the following, we define fixed points and cycles.
+}
+
+\begin{definition}[Fixed Point]
+	Let $x_{n+1} = f(x_n)$ be \hl{a time-discrete 1D non-linear dynamical system where the model function is $f: \mathbb{R} \to \mathbb{R}$.}
+	Then $x \in X$ is a fixed point, if $f(x) = x$.
+\end{definition}
+
+\begin{definition}[Iterate Function]
+	Let $f: \mathbb{R} \to \mathbb{R}$ be \hl{the model function of a 1D non-linear dynamical system again.}
+	Then $f^k$ is the $k$-th iterate of this function, \hl{defined recursively as $f^k(x) = f\left(f^{k-1}(x)\right)$ and $f^1(x) = f(x)$.}
+	\hl{This means we apply the function $k$ times.}
+\end{definition}
+
+\begin{definition}[Cycle]
+	Let $f: \mathbb{R} \to \mathbb{R}$ be \hl{the model function of a 1D non-linear dynamical system again.}
+	Then the sequence of $k$ points $\O_k = \{x_i | 0 \leq i < k\}$ is a $k$-cycle, if it satisfies the following conditions.
+	\begin{align*}
+		\forall 1 \leq i < k: \quad & f(x_i) = x_{i+1} \quad \land \quad f(x_{k-1}) = x_0
+	\end{align*}
+	If $x_0 \neq x_i$ for $1 \leq i < k$, then $k$ is the prime period of $\O_k$.
+\end{definition}
+
+For each point $x_i$ on a $k$-cylce $f^k(x_i) = x_i$.
+
+\begin{definition}[Stability]
+	Let $f: \mathbb{R} \to \mathbb{R}$ be \hl{the model function of a 1D non-linear dynamical system again.}
+	A fixed point $x^*$ is stable, if $|f'(x^*)| < 1$.
+	Similarly, a $k$-cycle $\O_k = \{x_i | 0 \leq i < k\}$ is stable, if $|(f^k)'(x_i)| < 1$ for $0 \leq i < k$.
+	Where $(f^k)'(x_i) = \prod_{j=0}^{k-1} f'(x_j)$.
+\end{definition}
+
+\begin{definition}[Bifurcation]
+	A bifurcation is a qualitative change of the state space topology of a model under an infinitesimal small parameter variation.
+\end{definition}
+Meaning for example that solutions to the model function or its iterate (fixed points and cycles) disappear or appear under a very small change to parameters.
+The only bifurcations that will be important in this thesis are introduced in the next section.
+That section will cover \hl{\gls{pws}} dynamical systems.

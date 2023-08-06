@@ -1,19 +1,25 @@
-\section{Discontinuous Dynamics}
+\section{\glsentryshort{pws} Dynamical Systems}
 \label{sec:state.discont}
 
-Initially, the theory of non-linear dynamics was developed for smooth models only.
-Hence, most results can't be applied to discontinuous systems.
-But smooth systems are not fit to model a majority of engineering applications, since the systems often undergo sudden changes.
-For example, a model for an electrical circuit can't be smooth as soon as the circuit has a single switching element, such as a transistor~\cite{ZhuMos03}.
-The model, we will investigate in this thesis, describes such an electrical circuit.
+\hl{(Heading changed)}
 
-In discontinuous models, bifurcations are possible, that were not possible in smooth systems.
-While the theory for 1D discontinuous systems in continuous time is quite complete, the theory for 1D discontinuous systems in discrete time is further behind~\cite{Simpson16}.
-We will focus only on the discrete time case in this thesis.
-Also, while in smooth systems, bifurcations can be generalized and described using normal forms, this is not possible for discontinuous maps.
+Initially, the theory of non-linear \hl{dynamical systems} was developed for smooth \hl{dynamical systems} only.
+Hence, \hl{several} results can't be applied to \hl{\gls{pws} dynamical} systems.
+But smooth systems are not fit to model \hl{several} engineering applications, since \hl{such} systems often undergo sudden changes.
+For example, a model for an electrical circuit can't be smooth as soon as the circuit has a single switching element, such as a transistor~\cite{ZhuMos03}.
+The model we will investigate in this thesis describes such an electrical circuit.
+
+In \hl{\gls{pws} dynamical systems}, bifurcations are possible, that were not possible in smooth \hl{dynamical} systems.
+\hl{Even more so in \gls{pws} discontinuous dynamical systems, which this thesis focuses on.}
+While the theory for \hl{continuous-time} 1D \hl{\gls{pws}} discontinuous \hl{dynamical} systems is quite complete, the theory for \hl{time-discrete} 1D \hl{\gls{pws}} discontinuous \hl{dynamical} systems in is further behind~\cite{Simpson16}.
+Also while in \hl{smooth dynamical systems and \gls{pws} continuous dynamical systems} bifurcations can be generalized and described using normal forms, this is not possible for \hl{\gls{pws} discontinuous dynamical systems}.
 The reason for this is, that many bifurcations, especially border collision bifurcations, are necessarily global and normal forms only work for local bifurcations.
 \todo{citation}
-Hence, we will construct no normal form in this thesis, but rather an archetypal model.
+Hence, we will \hl{not construct a normal form in this thesis}.
+\hl{
+	Rather we will construct a simpler model that shows the same bifurcation structures as the considered complex model.
+	We will call this an archetypal model.
+}
 
 The bifurcations covered in this thesis all belong to the previously mentioned class of border collision bifurcations.
 
@@ -24,7 +30,7 @@ The bifurcations covered in this thesis all belong to the previously mentioned c
 Since a discontinuous model function consists of multiple branches, or partitions, we can describe cycles using symbolic sequences.
 
 \begin{definition}[Symbolic Sequence]
-	Let $f: \mathbb{R} \to \mathbb{R}$ be a piecewise-smooth, 1D, discrete time model function that is divided into $n$ partitions $I_j$.
+	Let $f: \mathbb{R} \to \mathbb{R}$ be a \hl{time-discrete 1D \gls{pws} model} function that is divided into $n$ partitions $I_j$.
 	The symbolic sequence of a cycle $\O_k = \{x_i | 0 \leq i < k\}$ is a sequence of symbols, indicating on which partition the points of the cycle are.
 	Let $S_j$ be the symbols for each partition $I_j$, then the symbolic sequence of $\O_k$ is $S_{j_1} S_{j_2} \dots S_{j_{k-1}}$ where $j_i = j$ if $x_i \in I_j$.
 \end{definition}
