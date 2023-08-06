@@ -41,16 +41,23 @@ The bifurcations covered in this thesis all belong to the previously mentioned c
 	This allows us to differentiate between different cycles even if they have the same period.
 }
 
-\todo{Redo definition, \cite{granados14adding}}
-
 \begin{definition}[Symbolic Sequence]
-	Let $f: \mathbb{R} \to \mathbb{R}$ be a \hl{time-discrete 1D \gls{pws} model} function that is divided into $n$ partitions $I_j$.
-	The symbolic sequence of a cycle $\O_k = \{x_i | 0 \leq i < k\}$ is a sequence of symbols, indicating on which partition the points of the cycle are.
-	Let $S_j$ be the symbols for each partition $I_j$, then the symbolic sequence of $\O_k$ is $S_{j_1} S_{j_2} \dots S_{j_{k-1}}$ where $j_i = j$ if $x_i \in I_j$.
+	\hl{
+	Let $f: \mathbb{R} \to \mathbb{R}$ be \hl{the model function of a \gls{pws} dynamical system} that is divided into $n$ partitions $I_j$ where $0 \leq j < n$.
+	And let the set of symbols associated with each partition $I_j$ be $\left\{S_j\right\}_{0 \leq j < n}$.
+	The symbolic sequence $S_f(\O_k)$ of a cycle $\O_k = \left\{x_i \mid 0 \leq i < k\right\}$ is defined in the following way.
+	}
+	\begin{align}
+		S_f(\O_k) = \left(a(x_0), a(x_1), \dots, a(x_{k-1})\right)
+	\end{align}
+	\hl{
+		Where the function $a$ provides a symbol for every point of the cycle.
+		It is defined as $a(x) = S_j$ if $x \in S_j$ for all $0 \leq j < n$~\cite{granados14adding}.
+	}
 \end{definition}
 
 \hl{
-	We will now introduce a class of bifurcation structures that this thesis covers towards the end in .
+	We will now introduce a class of bifurcation structures that this thesis covers towards the end in \Cref{chap:add}.
 	Bifurcation structures belonging to this class can be found in many \gls{pws} dynamical systems, and they are called period-adding structures.
 }
 
@@ -59,9 +66,9 @@ Period-adding structures are named like this because in such structures, between
 \todo{Replace pic with $\L$ and $\R$ adding}
 \begin{figure}
 	\centering
-	\includegraphics[width=.5 \textwidth]{../StatusMeeting/02/Figs/PeriodAddingDiagrams_Slides.png}
-	\caption[Diagram of periods in a period-adding structure between $\L$ and $\R$]{
-		Diagram showing the periods of cycles in a period-adding structure with the starting cycles $\L$ and $\R$.
+	\includegraphics[width=.5 \textwidth]{80_Adding_LR/1D_Period/result.png}
+	\caption[1D scan of periods in a period-adding structure between $\L$ and $\R$]{
+		1D scan of the periods of cycles in a period-adding structure with the starting cycles $\L$ and $\R$.
 	}
 \end{figure}
 
@@ -106,6 +113,10 @@ Instead of Farey-addition, here the child node of two parent nodes is the concat
 		= \dfrac{|\sigma|_\L}{|\sigma|} \oplus \dfrac{|\varrho|_\L}{|\varrho|}
 		= \rho(\sigma) \oplus \rho(\varrho)
 	\end{align*}
+	\vspace{-4.8em}
+	\begin{flushright}
+		$\blacksquare$
+	\end{flushright}
 \end{proof}
 
 \begin{figure}
