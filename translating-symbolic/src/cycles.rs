@@ -8,6 +8,20 @@ pub struct FullCycle {
     pub sequence: Sequence,
 }
 
+impl FullCycle {
+    fn period(&self) -> usize {
+        self.sequence.iter().map(|p| p.1).sum()
+    }
+
+    fn rnum(&self, sym: usize) -> usize {
+        self.sequence
+            .iter()
+            .filter(|p| p.0 == sym)
+            .map(|p| p.1)
+            .sum()
+    }
+}
+
 impl PartialEq for FullCycle {
     fn eq(&self, other: &Self) -> bool {
         self.sequence.rotation_equals(&other.sequence)
@@ -16,7 +30,16 @@ impl PartialEq for FullCycle {
 
 impl Display for FullCycle {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write_sequence(&self.sequence, &SYMBOLS_FULL, f)
+        write_sequence(&self.sequence, &SYMBOLS_FULL, f)?;
+
+        f.write_fmt(format_args!(
+            "  (Period: {}, Symbol counts: A {}, B {}, C {}, D {})",
+            self.period(),
+            self.rnum(0),
+            self.rnum(1),
+            self.rnum(2),
+            self.rnum(3)
+        ))
     }
 }
 
@@ -82,7 +105,7 @@ mod test {
     #[test]
     fn test_display_full() {
         assert_eq!(
-            "A 1  B 2  C 3  D 4",
+            "A 1  B 2  C 3  D 4  (Period: 10, Symbol counts: A 1, B 2, C 3, D 4)",
             format!(
                 "{}",
                 FullCycle {
@@ -92,7 +115,7 @@ mod test {
         );
         assert_eq!(
             // TODO: auto D 0?
-            "A 1  B 2  C 3  D 4   A 5  B 6  C 70  D 0",
+            "A 1  B 2  C 3  D 4   A 5  B 6  C 70  D 0  (Period: 91, Symbol counts: A 6, B 8, C 73, D 4)",
             format!(
                 "{}",
                 FullCycle {

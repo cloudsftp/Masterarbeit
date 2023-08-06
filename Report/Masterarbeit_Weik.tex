@@ -40,8 +40,6 @@
   enddate={September 1, 2023}
 ]{scientific-thesis-cover}
 
-\input{acronyms}
-
 \makeindex
 
 \bibliography{bibliography.bib}
@@ -53,6 +51,8 @@
   \renewcommand{\includegraphics}[2][]{%
   }% Ok, `\includegraphics does nothing any longer
 \fi
+
+\input{acronyms.tex}
 
 \begin{document}
 
@@ -84,8 +84,6 @@
 %Doku zu deftriplepagestyle: scrguide.pdf
 \pagestyle{preamble}
 \renewcommand*{\chapterpagestyle}{preamble}
-
-
 
 %Kurzfassung / abstract
 %auch im Stil vom Inhaltsverzeichnis
