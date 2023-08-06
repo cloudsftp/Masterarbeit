@@ -13,7 +13,7 @@ In \hl{\gls{pws} dynamical systems}, bifurcations are possible, that were not po
 \hl{Even more so in \gls{pws} discontinuous dynamical systems, which this thesis focuses on.}
 While the theory for \hl{continuous-time} 1D \hl{\gls{pws}} discontinuous \hl{dynamical} systems is quite complete, the theory for \hl{time-discrete} 1D \hl{\gls{pws}} discontinuous \hl{dynamical} systems in is further behind~\cite{Simpson16}.
 Also while in \hl{smooth dynamical systems and \gls{pws} continuous dynamical systems} bifurcations can be generalized and described using normal forms, this is not possible for \hl{\gls{pws} discontinuous dynamical systems}.
-The reason for this is, that many bifurcations, especially border collision bifurcations, are necessarily global and normal forms only work for local bifurcations.
+The reason for this is, that many bifurcations, especially \glspl{bcb}, are necessarily global and normal forms only work for local bifurcations.
 \todo{citation}
 Hence, we will \hl{not construct a normal form in this thesis}.
 \hl{
@@ -21,13 +21,27 @@ Hence, we will \hl{not construct a normal form in this thesis}.
 	We will call this an archetypal model.
 }
 
-The bifurcations covered in this thesis all belong to the previously mentioned class of border collision bifurcations.
+The bifurcations covered in this thesis all belong to the previously mentioned class of \glspl{bcb}.
 
-\begin{definition}[Border Collision Bifurcation]
-	A border collision bifurcation occurs when a model solution collides with a discontinuity in the model function.
+\begin{definition}[Border Collision]
+	\hl{
+		A \glsentrylong{bc} is a point in the parameter space, where an invariant set (e.g. a fixed point or a cycle) collides with a border of the model function in the state space.
+		Borders of the model function being discontinuities of the model function.
+	}
 \end{definition}
 
-Since a discontinuous model function consists of multiple branches, or partitions, we can describe cycles using symbolic sequences.
+\begin{definition}[Border Collision Bifurcation]
+	\hl{
+		A \glsentrylong{bcb} is a \gls{bc} that also causes a qualitative change in the state space topology.
+	}
+\end{definition}
+
+\hl{
+	Since model functions of \gls{pws} dynamical systems consist of multiple branches, we can describe cycles in such systems using symbolic sequences.
+	This allows us to differentiate between different cycles even if they have the same period.
+}
+
+\todo{Redo definition, \cite{granados14adding}}
 
 \begin{definition}[Symbolic Sequence]
 	Let $f: \mathbb{R} \to \mathbb{R}$ be a \hl{time-discrete 1D \gls{pws} model} function that is divided into $n$ partitions $I_j$.
@@ -35,10 +49,14 @@ Since a discontinuous model function consists of multiple branches, or partition
 	Let $S_j$ be the symbols for each partition $I_j$, then the symbolic sequence of $\O_k$ is $S_{j_1} S_{j_2} \dots S_{j_{k-1}}$ where $j_i = j$ if $x_i \in I_j$.
 \end{definition}
 
-A class of bifurcation structures, that is common in discontinuous models in discrete time is period-adding structures.
+\hl{
+	We will now introduce a class of bifurcation structures that this thesis covers towards the end in .
+	Bifurcation structures belonging to this class can be found in many \gls{pws} dynamical systems, and they are called period-adding structures.
+}
+
 Period-adding structures are named like this because in such structures, between a parameter region with a cycle of period $a$ and another parameter region with a cycle of period $b$, there is a parameter region with a cycle of period $a + b$.
 
-\todo{replace pic with $\L$ and $\R$ adding}
+\todo{Replace pic with $\L$ and $\R$ adding}
 \begin{figure}
 	\centering
 	\includegraphics[width=.5 \textwidth]{../StatusMeeting/02/Figs/PeriodAddingDiagrams_Slides.png}
@@ -47,18 +65,17 @@ Period-adding structures are named like this because in such structures, between
 	}
 \end{figure}
 
-Next we need to look at a concept called rotation numbers.
+\hl{
+	An even more compact way to differentiate between multiple cycles that have the same period are rotation number.
+	Here, we will use them to describe the structure of period-adding structures.
+}
 
 \begin{definition}[Rotation Numbers --- Keener]
-	Let $\sigma$ be a cycle of a model $x_{n+1} = f(x_n)$ with two branches, $\L$ and $\R$.
-	Then the rotation number $\rho(\sigma)$ of this cycle is defined as the fraction of the symbols $\L$ in the symbolic sequence of the cycle $|\sigma|_\L$ divided by the period of the cycle $|\sigma|$.
+	Let $\sigma$ be a cycle of a \gls{pws} dynamical system $x_{n+1} = f(x_n)$ with two branches, $\L$ and $\R$.
+	Then the rotation number $\rho(\sigma)$ of this cycle is defined as the ratio of the symbols $\L$ in the symbolic sequence of the cycle $|\sigma|_\L$ divided by the period of the cycle $|\sigma|$~\cite{Keener80}.
 	\begin{align}
 		\rho(\sigma) = \dfrac{|\sigma|_\L}{|\sigma|}
 	\end{align}
-	\vspace{-4.5em}
-	\begin{flushright}
-		\cite{Keener80}
-	\end{flushright}
 \end{definition}
 
 The rotation numbers of the cycles in a period-adding structure are organized in a Farey-tree.
@@ -74,10 +91,11 @@ A Farey-tree has two ``root nodes'' and the child node of two nodes is the Farey
 \Cref{fig:state.discont.adding.farey.rot} shows such a Farey-tree of a period-adding structure between two fixed points, $\L$ and $\R$.
 If we replace the content of the nodes with the symbolic sequences of the cycles, we get the tree shown in \Cref{fig:state.discont.adding.farey.rot}.
 Instead of Farey-addition, here the child node of two parent nodes is the concatenation of the symbolic sequences in the parent nodes.
-This explains, why the rotation numbers in the tree in \Cref{fig:state.discont.adding.farey.rot} follows Farey-addition~\cite{granados14adding}.
+\hl{Together with \Cref{theorem:state.rot.num.concat}, this explains why} the  tree in \Cref{fig:state.discont.adding.farey.rot} is a Farey-tree~\cite{granados14adding}.
 
 \begin{theorem}[Rotation Numbers of Concatenated Cycles]
 	The rotation number of the concatenation of two cycles $\rho(\sigma\varrho)$ is the Farey-sum of the rotation numbers of both cycles, $\rho(\sigma) \oplus \rho(\varrho)$.
+	\label{theorem:state.rot.num.concat}
 \end{theorem}
 
 \begin{proof}
