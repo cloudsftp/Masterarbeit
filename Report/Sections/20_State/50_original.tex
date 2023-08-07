@@ -3,76 +3,72 @@
 
 \hl{(Title changed)}
 
-As mentioned before, we will take a closer look at a complex \hl{dynamical system} in this thesis.
+As mentioned before, we will take a closer look at a specific complex \hl{dynamical system} in this thesis.
 From now on we will refer to it as the original model.
 \hl{
 	This section gives a definition of the model and some properties.
-	Furthermore, it showcases the unusual bifurcation structures, this model exhibits.
-	Those are the core motivation for this thesis.
+	Furthermore, it showcases an unusual bifurcation structure this model exhibits.
+	This bifurcation structure is the core motivation for this thesis.
 }
-
-\todo{Here I switch from system to model. Is it ok?}
 
 \subsection{Model Origin}
 \label{sec:state.og.orig}
 
 The \hl{original} model describes the behavior of a DC to AC power converter with hysteresis control.
-This power converter switches and the model is therefore \hl{\gls{pws}}.
-In the time-continuous case, the converter is described using a differential equation.
+In \hl{continuous-time}, the converter is described by a differential equation.
 The differential equation indicates the rate of change of the output of the power converter based on the current output and the current time.
-Where the current time is given as a phase since the converter tries to output alternating current that follows a sine wave.
-Every time the output of the converter hits an upper or lower limit, it switches.
-This causes the discontinuities.
+Here, the current time is given as a phase since the converter tries to output alternating current that follows a sine wave.
+\hl{
+	The converter switches to achieve its goal.
+	This switching causes discontinuities in the model function.
+}
 
 From this time-continuous model, \hl{one} can derive a \hl{time-discrete model}.
 This model maps \hl{a} phase at which the converter \hl{switches} to the phase at which the converter will switch the next time.
+\hl{
+	It is also \gls{pws} and discontinuous like the time-continuous model from which it is derived.
+}
 The next subsection will give an in-depth definition of this map.
 
 \subsection{Model Definition}
 \label{sec:state.og.def}
 
-The model was defined by Zhusubaliyev and \Citeauthor{akyuz2022} did an analysis of that model in his thesis ``\Citetitle{akyuz2022}''.
-\hl{As mentioned before,} we ignore the \hl{time-continuous} case and only focus on the time-discrete model.
-It is defined as the map $\theta \mapsto F(\theta) \mod 2 \pi$ where $F$ is defined by the following equations~\cite{akyuz2022}.
+The model was defined by Zhusubaliyev and \hl{was preliminarily investigated by \Citeauthor{akyuz2022}} in his thesis ``\Citetitle{akyuz2022}''~\cite{akyuz2022}.
+\hl{As mentioned before,} we \hl{skip} the \hl{time-continuous model} and only focus on the time-discrete \hl{one}.
+It is defined as the map $\theta \mapsto F(\theta) \mod 2 \pi$ where $F$ is defined by the following equations.
 \begin{align}
 	F(\theta) = \begin{cases}
 		            F_1(\theta) & \text{if } q \cdot \cos(\theta) > 0 \\
 		            F_2(\theta) & \text{if } q \cdot \cos(\theta) < 0
 	            \end{cases}
 \end{align}
-Where $F_1$ is given by the following equation.
-\begin{align}
-	F_1(\theta) & = \begin{cases}
-		                \theta + z_{L_+} + z_1 & \text{if } z_{L_+} < z_{L_0} \\
-		                \theta + z_{L_0} + z_2 & \text{if } z_{L_+} > z_{L_0}
-	                \end{cases}
-\end{align}
-And $F_2$ is similarly given by the following equation.
-\begin{align}
-	F_2(\theta) & = \begin{cases}
-		                \theta + z_{R_+} + z_3 & \text{if } z_{R_+} < z_{R_0} \\
-		                \theta + z_{R_0} + z_4 & \text{if } z_{R_+} > z_{R_0}
-	                \end{cases}
-\end{align}
+\hl{where $F_1$ and $F_2$ are given by}
+\begin{subequations}
+	\begin{align}
+		F_1(\theta) & = \begin{cases}
+			                \theta + z_{L_+} + z_1 & \text{if } z_{L_+} < z_{L_0} \\
+			                \theta + z_{L_0} + z_2 & \text{if } z_{L_+} > z_{L_0}
+		                \end{cases} \\
+		F_2(\theta) & = \begin{cases}
+			                \theta + z_{R_+} + z_3 & \text{if } z_{R_+} < z_{R_0} \\
+			                \theta + z_{R_0} + z_4 & \text{if } z_{R_+} > z_{R_0}
+		                \end{cases}
+	\end{align}
+\end{subequations}
 \hl{
-	The values for the parameters $z_{L_+}, z_{L_0}, z_{R_+},$ and $z_{R_0}$ are the smallest positive solutions to the implicit equations \Crefrange{equ:setup.og.def.impl.1.A}{equ:setup.og.def.impl.2.D}.
-	Note, that these parameters are part of the following block of equations, as well as the block of equations after that.
+	The values for the parameters $z_{L_+}, z_{L_0}, z_{R_+}, z_{R_0}, z_1, z_2, z_3$, and $z_4$ are the smallest positive solutions to the implicit equations \Crefrange{equ:setup.og.def.impl.1.A}{equ:setup.og.def.impl.2.D}.
 }
 \begin{subequations}
 	\begin{align}
 		(q \cdot \cos(\theta) + \mu \cdot \chi) \cdot e^{\lambda \cdot z_{L_+}}
-		 & = q \cdot \cos(\theta + z_{L_+}) + \chi \label{equ:setup.og.def.impl.1.A} \\
+		 & = q \cdot \cos(\theta + z_{L_+}) + \chi \label{equ:setup.og.def.impl.1.A}                  \\
 		(q \cdot \cos(\theta) + \mu \cdot \chi) \cdot e^{\lambda \cdot z_{L_0}}
-		 & = q \cdot \cos(\theta + z_{L_0}) - \chi                                   \\
+		 & = q \cdot \cos(\theta + z_{L_0}) - \chi                                                    \\
 		(q \cdot \cos(\theta) - \mu \cdot \chi) \cdot e^{\lambda \cdot z_{R_+}}
-		 & = q \cdot \cos(\theta + z_{R_+}) - \chi                                   \\
+		 & = q \cdot \cos(\theta + z_{R_+}) - \chi                                                    \\
 		(q \cdot \cos(\theta) - \mu \cdot \chi) \cdot e^{\lambda \cdot z_{R_0}}
 		 & = q \cdot \cos(\theta + z_{R_0}) + \chi \label{equ:setup.og.def.impl.1.D}
-	\end{align}
-\end{subequations}
-\hl{The values for the parameters $z_1, z_2, z_3$, and $z_4$ are the smallest positive solutions to the \Crefrange{equ:setup.og.def.impl.2.A}{equ:setup.og.def.impl.2.D}}.
-\begin{subequations}
-	\begin{align}
+		\\
 		(q \cdot \cos(\theta + z_{L_+}) + \chi + 1) \cdot e^{\lambda \cdot z_1} - 1
 		 & = q \cdot  \cos(\theta + z_{L_+} + z_1) + \mu \cdot \chi \label{equ:setup.og.def.impl.2.A} \\
 		(q \cdot \cos(\theta + z_{L_0} + z_2) - \chi - 1) \cdot e^{\lambda \cdot z_2} + 1
@@ -83,6 +79,7 @@ And $F_2$ is similarly given by the following equation.
 		 & = q \cdot  \cos(\theta + z_{R_0} + z_2) - \mu \cdot \chi \label{equ:setup.og.def.impl.2.D}
 	\end{align}
 \end{subequations}
+\todo{Last two implicit equations: Why $z_1$ and $z_2$ again?}
 
 The values for $\chi, \lambda, \mu,$ and $q$ come from the parameters of the model.
 The parameters are $\chi_0, E_0, \beta, f, L, R, V_m,$ and $\mu$.
