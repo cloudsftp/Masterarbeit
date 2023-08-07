@@ -1,4 +1,5 @@
 \section{Coexistence Scenarios}
+\label{sec:dynarch.coex}
 \label{sec:minrep.coex}
 
 \todo{rewrite this section if necessary}
@@ -10,20 +11,20 @@ This means that there is a coexistence of the cycles in the overlapping paramete
 This section will take a look at all possible coexistence scenarios of cycles starting with the simplest case, a single ``Type A'' parameter region.
 
 \begin{figure}
-    \centering
-    \begin{subfigure}{0.4\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{60_MinimalRepr/2D_Regions_E/result.png}
-        \caption{Showing $E_{16}$}
-        \label{fig:final.regions.E.halved}
-    \end{subfigure}
-    \begin{subfigure}{0.4\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{60_MinimalRepr/2D_Regions_F/result.png}
-        \caption{Showing $F_{16}$}
-        \label{fig:final.regions.F.halved}
-    \end{subfigure}
-    \caption{2D Period Regions of Halved Final Model Showing a ``Type A'' and a ``Type B'' Region}
+	\centering
+	\begin{subfigure}{0.4\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{60_MinimalRepr/2D_Regions_E/result.png}
+		\caption{Showing $E_{16}$}
+		\label{fig:final.regions.E.halved}
+	\end{subfigure}
+	\begin{subfigure}{0.4\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{60_MinimalRepr/2D_Regions_F/result.png}
+		\caption{Showing $F_{16}$}
+		\label{fig:final.regions.F.halved}
+	\end{subfigure}
+	\caption{2D Period Regions of Halved Final Model Showing a ``Type A'' and a ``Type B'' Region}
 \end{figure}
 
 \subsection{Only One ``Type A'' Parameter Region}
@@ -41,17 +42,17 @@ Here there is only one stable cycle, $\Cycle{\A^5\B^3\C^5\D^3}$.
 This can happen in four different ways.
 Assuming the stable cycle of the parameter region in the middle is $\Cycle{\A^x\B^y\C^x\D^y}$, it can overlap with parameter regions, where either one of the following cycles is stable
 \begin{enumerate*}
-    \item $\Cycle{\A^{x-1}\B^y\C^{x-1}\D^y}$,
-    \item $\Cycle{\A^x\B^{y+1}\C^x\D^{y+1}}$,
-    \item $\Cycle{\A^{x+1}\B^y\C^{x+1}\D^y}$, and
-    \item $\Cycle{\A^x\B^{y-1}\C^x\D^{y-1}}$.
+	\item $\Cycle{\A^{x-1}\B^y\C^{x-1}\D^y}$,
+	\item $\Cycle{\A^x\B^{y+1}\C^x\D^{y+1}}$,
+	\item $\Cycle{\A^{x+1}\B^y\C^{x+1}\D^y}$, and
+	\item $\Cycle{\A^x\B^{y-1}\C^x\D^{y-1}}$.
 \end{enumerate*}
 For the concrete case pictured in \Cref{fig:final.regions.E.halved}, this results in the following parameter regions
 \begin{enumerate}
-    \item $\P_{\A^5\B^3\C^5\D^3, \A^4\B^3\C^4\D^3}$ marked with $M$,
-    \item $\P_{\A^5\B^3\C^5\D^3, \A^5\B^4\C^5\D^4}$ marked with $N$,
-    \item $\P_{\A^5\B^3\C^5\D^3, \A^6\B^3\C^6\D^3}$ marked with $O$, and
-    \item $\P_{\A^5\B^3\C^5\D^3, \A^5\B^2\C^5\D^2}$ marked with $P$.
+	\item $\P_{\A^5\B^3\C^5\D^3, \A^4\B^3\C^4\D^3}$ marked with $M$,
+	\item $\P_{\A^5\B^3\C^5\D^3, \A^5\B^4\C^5\D^4}$ marked with $N$,
+	\item $\P_{\A^5\B^3\C^5\D^3, \A^6\B^3\C^6\D^3}$ marked with $O$, and
+	\item $\P_{\A^5\B^3\C^5\D^3, \A^5\B^2\C^5\D^2}$ marked with $P$.
 \end{enumerate}
 \Cref{fig:minrep.cobweb.M} shows the cobweb diagram for the parameter values at point $M$.
 Here we can see the two cycles of the two different ``type A'' parameter regions.
@@ -59,16 +60,16 @@ The cycle $\Cycle{\A^5\B^3\C^5\D^3}$ is blue and the cycle $\Cycle{\A^4\B^3\C^4\
 The cobweb diagram also shows the basins of attraction of both cycles, blue for the cycle $\Cycle{\A^5\B^3\C^5\D^3}$ and red for the cycle $\Cycle{\A^4\B^3\C^4\D^3}$.
 
 \begin{figure}
-    \centering
-    \subfloat[Two ``type A'' parameter regions overlapping at point $M$]{
-        \includegraphics[width=.45 \textwidth]{60_MinimalRepr/Cobweb_M/Manual/result.png}
-        \label{fig:minrep.cobweb.M}
-    }
-    \subfloat[Only a ``type B'' parameter region at point $Q$]{
-        \includegraphics[width=.45 \textwidth]{60_MinimalRepr/Cobweb_Q/Manual/result.png}
-        \label{fig:minrep.cobweb.Q}
-    }
-    \caption{Cobwebs for scenarios of 2 coexisting cycles}
+	\centering
+	\subfloat[Two ``type A'' parameter regions overlapping at point $M$]{
+		\includegraphics[width=.45 \textwidth]{60_MinimalRepr/Cobweb_M/Manual/result.png}
+		\label{fig:minrep.cobweb.M}
+	}
+	\subfloat[Only a ``type B'' parameter region at point $Q$]{
+		\includegraphics[width=.45 \textwidth]{60_MinimalRepr/Cobweb_Q/Manual/result.png}
+		\label{fig:minrep.cobweb.Q}
+	}
+	\caption{Cobwebs for scenarios of 2 coexisting cycles}
 \end{figure}
 
 \subsection{Only one ``Type B'' Parameter Region}
@@ -90,18 +91,18 @@ We can see in \Cref{fig:final.regions.F.halved}, that this ``Type B'' parameter 
 This can also happen in four different ways, as was the case with ``Type A'' parameter regions overlapping with one another (described in \Cref{sec:minrep.coex.AA}).
 Assuming the stable cycles of the parameter region in the middle are $\Cycle{\A^x\B^y\C^{x-1}\D^{y+1}}$ and $\Cycle{\A^{x-1}\B^{y+1}\C^x\D^y}$, it can overlap with parameter regions, where either one of the following cycles is stable
 \begin{enumerate*}
-    \item $\Cycle{\A^{x-1}\B^{y+1}\C^{x-1}\D^{y+1}}$,
-    \item $\Cycle{\A^x\B^{y+1}\C^x\D^{y+1}}$,
-    \item $\Cycle{\A^x\B^y\C^x\D^y}$, and
-    \item $\Cycle{\A^{x-1}\B^y\C^{x-1}\D^y}$.
+	\item $\Cycle{\A^{x-1}\B^{y+1}\C^{x-1}\D^{y+1}}$,
+	\item $\Cycle{\A^x\B^{y+1}\C^x\D^{y+1}}$,
+	\item $\Cycle{\A^x\B^y\C^x\D^y}$, and
+	\item $\Cycle{\A^{x-1}\B^y\C^{x-1}\D^y}$.
 \end{enumerate*}
 So in these cases, there will be three coexisting stable cycles.
 For the concrete case pictured in \Cref{fig:final.regions.F.halved}, this results in the following parameter regions
 \begin{enumerate}
-    \item $\P_{\A^5\B^3\C^4\D^4, \A^4\B^4\C^5\D^3, \A^4\B^4\C^4\D^4}$ marked with $R$,
-    \item $\P_{\A^5\B^3\C^4\D^4, \A^4\B^4\C^5\D^3, \A^5\B^4\C^5\D^4}$ marked with $S$,
-    \item $\P_{\A^5\B^3\C^4\D^4, \A^4\B^4\C^5\D^3, \A^5\B^3\C^5\D^3}$ marked with $T$, and
-    \item $\P_{\A^5\B^3\C^4\D^4, \A^4\B^4\C^5\D^3, \A^4\B^3\C^4\D^3}$ marked with $U$.
+	\item $\P_{\A^5\B^3\C^4\D^4, \A^4\B^4\C^5\D^3, \A^4\B^4\C^4\D^4}$ marked with $R$,
+	\item $\P_{\A^5\B^3\C^4\D^4, \A^4\B^4\C^5\D^3, \A^5\B^4\C^5\D^4}$ marked with $S$,
+	\item $\P_{\A^5\B^3\C^4\D^4, \A^4\B^4\C^5\D^3, \A^5\B^3\C^5\D^3}$ marked with $T$, and
+	\item $\P_{\A^5\B^3\C^4\D^4, \A^4\B^4\C^5\D^3, \A^4\B^3\C^4\D^3}$ marked with $U$.
 \end{enumerate}
 
 \Cref{fig:minrep.cobweb.U} shows the cobweb diagram for the parameter values at point $U$.
@@ -110,16 +111,16 @@ The colors for each cycle, as well as their basins of attraction, are the same a
 
 \todo{replace pics}
 \begin{figure}
-    \centering
-    \subfloat[$U$]{
-        \includegraphics[width=.45 \textwidth]{60_MinimalRepr/Cobweb_U/Manual/result.png}
-        \label{fig:minrep.cobweb.U}
-    }
-    \subfloat[$X$]{
-        \includegraphics[width=.45 \textwidth]{60_MinimalRepr/Cobweb_X/Manual/result.png}
-        \label{fig:minrep.cobweb.X}
-    }
-    \caption{Cobwebs for scenarios of 3 and 4 coexisting cycles}
+	\centering
+	\subfloat[$U$]{
+		\includegraphics[width=.45 \textwidth]{60_MinimalRepr/Cobweb_U/Manual/result.png}
+		\label{fig:minrep.cobweb.U}
+	}
+	\subfloat[$X$]{
+		\includegraphics[width=.45 \textwidth]{60_MinimalRepr/Cobweb_X/Manual/result.png}
+		\label{fig:minrep.cobweb.X}
+	}
+	\caption{Cobwebs for scenarios of 3 and 4 coexisting cycles}
 \end{figure}
 
 \subsection{One ``Type B'' and Two ``Type A'' Parameter Regions Overlapping}
@@ -130,17 +131,17 @@ So there are four parameter regions for every ``type B'' parameter region, where
 For the stable cycles $\Cycle{\A^x\B^y\C^{x-1}\D^{y+1}}$ and $\Cycle{\A^{x-1}\B^{y+1}\C^x\D^y}$ in the ``type B'' parameter region, the cycles they will coexist with are pairs of the cycles discussed in \Cref{sec:minrep.coex.BA}.
 They are
 \begin{enumerate*}
-    \item $\Cycle{\A^{x-1}\B^{y+1}\C^{x-1}\D^{y+1}}$ and $\Cycle{\A^x\B^{y+1}\C^x\D^{y+1}}$,
-    \item $\Cycle{\A^x\B^{y+1}\C^x\D^{y+1}}$ and $\Cycle{\A^x\B^y\C^x\D^y}$,
-    \item $\Cycle{\A^x\B^y\C^x\D^y}$ and $\Cycle{\A^{x-1}\B^y\C^{x-1}\D^y}$, and
-    \item $\Cycle{\A^{x-1}\B^y\C^{x-1}\D^y}$ and $\Cycle{\A^{x-1}\B^{y+1}\C^{x-1}\D^{y+1}}$.
+	\item $\Cycle{\A^{x-1}\B^{y+1}\C^{x-1}\D^{y+1}}$ and $\Cycle{\A^x\B^{y+1}\C^x\D^{y+1}}$,
+	\item $\Cycle{\A^x\B^{y+1}\C^x\D^{y+1}}$ and $\Cycle{\A^x\B^y\C^x\D^y}$,
+	\item $\Cycle{\A^x\B^y\C^x\D^y}$ and $\Cycle{\A^{x-1}\B^y\C^{x-1}\D^y}$, and
+	\item $\Cycle{\A^{x-1}\B^y\C^{x-1}\D^y}$ and $\Cycle{\A^{x-1}\B^{y+1}\C^{x-1}\D^{y+1}}$.
 \end{enumerate*}
 For the concrete case pictured in \Cref{fig:final.regions.F.halved}, this results in the following parameter regions
 \begin{enumerate}
-    \item $\P_{\A^5\B^3\C^4\D^4, \A^4\B^4\C^5\D^3, \A^4\B^4\C^4\D^4, \A^5\B^4\C^5\D^4}$ marked with $V$,
-    \item $\P_{\A^5\B^3\C^4\D^4, \A^4\B^4\C^5\D^3, \A^5\B^4\C^5\D^4, \A^5\B^3\C^5\D^3}$ marked with $W$,
-    \item $\P_{\A^5\B^3\C^4\D^4, \A^4\B^4\C^5\D^3, \A^5\B^3\C^5\D^3, \A^4\B^3\C^4\D^3}$ marked with $X$, and
-    \item $\P_{\A^5\B^3\C^4\D^4, \A^4\B^4\C^5\D^3, \A^4\B^3\C^4\D^3, \A^4\B^4\C^4\D^4}$ marked with $Y$.
+	\item $\P_{\A^5\B^3\C^4\D^4, \A^4\B^4\C^5\D^3, \A^4\B^4\C^4\D^4, \A^5\B^4\C^5\D^4}$ marked with $V$,
+	\item $\P_{\A^5\B^3\C^4\D^4, \A^4\B^4\C^5\D^3, \A^5\B^4\C^5\D^4, \A^5\B^3\C^5\D^3}$ marked with $W$,
+	\item $\P_{\A^5\B^3\C^4\D^4, \A^4\B^4\C^5\D^3, \A^5\B^3\C^5\D^3, \A^4\B^3\C^4\D^3}$ marked with $X$, and
+	\item $\P_{\A^5\B^3\C^4\D^4, \A^4\B^4\C^5\D^3, \A^4\B^3\C^4\D^3, \A^4\B^4\C^4\D^4}$ marked with $Y$.
 \end{enumerate}
 
 \Cref{fig:minrep.cobweb.X} shows the cobweb diagram for the point $X$.
@@ -170,14 +171,14 @@ It is hard to see, since the two cycles $\Cycle{\A^3\B^2\C^3\D^2}$ and $\Cycle{\
 \todo{expand}
 
 \begin{figure}
-    \centering
-    \subfloat[2D scan of the borders of period regions]{
-        \includegraphics[width=.45 \textwidth]{98_Yunus_modpi/2D_Regions_Coex4/result.png}
-        \label{fig:og.coex4.regions}
-    }
-    \subfloat[Cobweb diagram at point $X$]{
-        \includegraphics[width=.45 \textwidth]{99_Yunus/Cobweb_Coex4_A/Manual/result.png}
-        \label{fig:og.coex4.cobweb}
-    }
-    \caption{Figures for validating the coexistence of 4 cycles in the original model}
+	\centering
+	\subfloat[2D scan of the borders of period regions]{
+		\includegraphics[width=.45 \textwidth]{98_Yunus_modpi/2D_Regions_Coex4/result.png}
+		\label{fig:og.coex4.regions}
+	}
+	\subfloat[Cobweb diagram at point $X$]{
+		\includegraphics[width=.45 \textwidth]{99_Yunus/Cobweb_Coex4_A/Manual/result.png}
+		\label{fig:og.coex4.cobweb}
+	}
+	\caption{Figures for validating the coexistence of 4 cycles in the original model}
 \end{figure}
