@@ -30,15 +30,6 @@ Besides the period of a cycle, there is another characteristic, the symbolic seq
 As mentioned before, it describes on which branches of the model function the points of the cycle exist.
 Some \hl{cobweb diagrams} illustrate the difference between the parameter regions.
 
-\todo{remove following paragraph}
-\hl{
-	The cycles at point $A$ and point $C$ are symmetrical.
-	This is due to an inherit symmetry in the model.
-	\Cref{equ:state.os.sym} describes this symmetry.
-	It means, that the model behaves the same on its left half $[0, \pi]$ as it does on its right half $[\pi, 2\pi]$.
-	This is important to understand the cycles at point $B$ better.
-}
-
 \begin{align}
 	F(\theta + \pi) \equiv F(\theta) + \pi \mod 2\pi \label{equ:state.og.sym}
 \end{align}
@@ -73,15 +64,14 @@ Some \hl{cobweb diagrams} illustrate the difference between the parameter region
 	\hl{
 		Let $\O_k = \left\{x_i \:\mid\: 0 \leq i < k\right\}$ be a $k$-cycle of the original model where $x_i + \pi \not\in O_k$ for some $0 \leq i < k$.
 		It follows that $x_i + \pi \not\in \O_k$ for any $x_i \in \O_k$.
-		%If for some $x_i \in \O_k$ the image of $x_i + \pi$ was in the cycle $F(x_i + \pi) \in \O_k$ then $x_i + \pi$ must also be in the cycle, since $F^{k-1}\left(F\left(x_i + \pi\right)\right) = F^k\left(x_i + \pi\right) = x_i + \pi$.
 	}
+	%If for some $x_i \in \O_k$ the image of $x_i + \pi$ was in the cycle $F(x_i + \pi) \in \O_k$ then $x_i + \pi$ must also be in the cycle, since $F^{k-1}\left(F\left(x_i + \pi\right)\right) = F^k\left(x_i + \pi\right) = x_i + \pi$.
 
 	\hl{
 		Then there is a second cycle $\O'_k = \left\{x_i + \pi \:\mid\: x_i \in \O_k\right\}$.
 		This cycle $\O'_k$ is completely disjunct from the first cycle $\O_k$ per definition.
-		Therefore, there are at least two coexisting cycles $\O_k \neq \O'_k$ with the same period.
+		Therefore, there are at least two coexisting cycles $\O_k \neq \O'_k$ with the same period. \hfill	$\blacksquare$
 	}
-	\label{proof:state.cycle.B.coex}
 \end{proof}
 
 \Cref{fig:state.og.dynamics.cobwebs} shows the \hl{cobweb diagrams} at points $A$ and $C$.
