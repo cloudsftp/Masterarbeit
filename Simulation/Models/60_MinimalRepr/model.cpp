@@ -31,7 +31,6 @@ bool f(
     real_t y = 0;
 
     real_t x = currentState[0];
-
     // Enforce symmetry f(x + n) = f(x) + n
     if (x >= n) {
         x -= n;
@@ -45,8 +44,8 @@ bool f(
     }
 
     // Normalize
-    if (y >= 1 * n) {
-        y -= 1 * n;
+    if (y >= 2 * n) {
+        y -= 2 * n;
     }
 
     RHS[0] = y;
