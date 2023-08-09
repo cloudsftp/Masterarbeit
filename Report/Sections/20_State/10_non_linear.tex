@@ -31,7 +31,7 @@ In the following, we define fixed points and cycles.
 Each point $x_i$ of a $k$-cycle satisfies $f^k(x_i) = x_i$.
 
 \begin{definition}[Stability]
-	Let $f: \mathbb{R} \to \mathbb{R}$ be the model function of a 1D non-linear dynamical system again.
+	Let $f: \mathbb{R} \to \mathbb{R}$ be the model function of a 1D non-linear dynamical system.
 	A fixed point $x^*$ is stable, if $|f'(x^*)| < 1$.
 	Similarly, a $k$-cycle $\O_k = \{x_i \:\mid\: 0 \leq i < k\}$ is stable, if the following condition is true for all $0 \leq i < k$.
 	\begin{align}
@@ -45,8 +45,22 @@ That value being the product of the derivative of the function $f$ evaluated at 
 	\left. \frac{d}{dx}f^k(x) \:\right|_{x = x_i} & = \prod_{j=0}^{k-1} \left( \left. \frac{d}{dx} f(x) \:\right|_{x = x_j} \right)
 \end{align}
 
-\todo{In this thesis we will only ever encounter stable cycles}
-\todo{Basins of attraction?}
+\hl{
+	In this thesis we will only encounter stable cycles.
+	Stable cycles have the property that different points of the state space that are not necessarily part of the cycle will eventually end up in the cycle.
+	We call the set of those points the basin of attraction of the cycle.
+}
+
+\begin{definition}[Basin of Attraction of a Cycle]
+	\hl{
+		Let $f: X \to X$ be the model function of a non-linear dynamical system.
+		Let $\O_k$ be a stable cycle in that system.
+		Then the basin of attraction of this cycle is
+	}
+	\begin{align}
+		\left\{x \in X \:\mid\: \exists n > 0: \:f^n(x) \in \O_k\right\}
+	\end{align}
+\end{definition}
 
 \begin{definition}[Bifurcation]
 	A bifurcation is a qualitative change of the state space topology of a model under an infinitesimal small parameter variation.
