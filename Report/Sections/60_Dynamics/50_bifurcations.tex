@@ -167,7 +167,8 @@ Thus, we will generalize and summarize the rules for the bifurcations at the bou
 
 \subsubsection{``Type A'' Parameter Regions}
 
-Let the stable cycle in the ``type A'' parameter region be $\Cycle{\A^a\B^b\C^a\D^b}$.
+Let the stable cycle in a ``type A'' parameter region be $\Cycle{\A^a\B^b\C^a\D^b}$.
+Then the \glspl{bcb} at the boundaries of this parameter region are given by the following rules.
 
 \begin{enumerate}
 	\item At the upper boundary there will be the bifurcation $\BCB_{d_1, d_3}^{\underline{\A}^a\B^b\underline{\C}^a\D^b}$.
@@ -178,19 +179,34 @@ Let the stable cycle in the ``type A'' parameter region be $\Cycle{\A^a\B^b\C^a\
 
 \subsubsection{``Type B'' Parameter Regions}
 
-Let the stable cycles in the ``type B'' parameter region be $\Cycle{\A^a\B^b\C^c\D^d}$ and $\Cycle{\A^c\B^d\C^a\D^b}$.
-Where $c = a - 1$ and $d = b + 1$.
+Let the stable cycles in the ``type B'' parameter region be $\Cycle{\A^a\B^b\C^c\D^d}$ and $\Cycle{\A^c\B^d\C^a\D^b}$, where $c = a - 1$ and $d = b + 1$.
+Then the \glspl{bcb} at the boundaries of this parameter region are given by the following rules.
 
 \begin{enumerate}
 	\item At the upper boundary there will be the bifurcations $\BCB_{d_1}^{\underline{\A}^a\B^b\C^c\D^d}$ and $\BCB_{d_3}^{\A^c\B^d\underline{\C}^a\D^b}$.
 	\item At the lower boundary there will be the bifurcations $\BCB_{d_3}^{\A^a\B^b\C^c\underline{\D}^d}$ and $\BCB_{d_1}^{\A^c\underline{\B}^d\C^a\D^b}$.
-	\item At the left boundary there will be the bifurcations $\BCB_{d_0}^{\A^a\underline{\B}^b\C^c\D^d}$ and $\BCB_{d_2}^{\A^c\B^d\C^a\underline{\D}^b}$.
+	\item At the left boundary there will be the bifurcations $\BCB_{d_0}^{\A^a\B^b\C^c\underline{\D}^d}$ and $\BCB_{d_2}^{\A^c\underline{\B}^d\C^a\D^b}$.
 	\item At the right boundary there will be the bifurcations $\BCB_{d_2}^{\A^a\B^b\underline{\C}^c\D^d}$ and $\BCB_{d_0}^{\underline{\A}^c\B^d\C^a\D^b}$.
 \end{enumerate}
 
-\subsubsection{Validation}
+These rules agree with the rules for \glspl{bcb}, laid  out by \Citeauthor{akyuz2022}~\cite{akyuz2022}.
 
-These rules agree with the rules for bifurcations, laid  out by \Citeauthor{akyuz2022}~\cite{akyuz2022}.
+\subsubsection{Regularities}
 
-\todo{Pattern of bifurcations: same symbols underlined, but in type B spread across 2 bifurcations}
-\todo{Plus depending on direction, model half of bifurcation swaps between twin cycles. There is an explanation using the halved model but we do not have it here}
+The \gls{bcb} rules show some regularities.
+All vertical boundaries involve the borders $d_1$ and $d_3$.
+And the cycles collide with the borders from the left at the upper boundaries while they collide with the borders from the right at the lower boundaries.
+Where the cycles swap which border they collide with in ``type B'' parameter regions.
+For example, at the upper boundary of a ``type B'' parameter region, the cycle $\O_{\A^a\B^b\C^c\D^d}$ collides with the border $d_1$ from the left side.
+While the same cycle collides with the border $d_3$ from the right side at the lower boundary.
+
+Similarly, all horizontal boundaries involve the borders $d_0$ and $d_2$.
+And the cycles collide with the borders from the left at the left boundaries while they collide with the borders from the right at the right boundaries.
+Where the cycles swap which border they collide with in ``type B'' parameter regions.
+For example, at the left boundary of a ``type B'' parameter region, the cycle $\O_{\A^a\B^b\C^c\D^d}$ collides with the border $d_0$ from the left.
+While the same cycle collides with the border $d_2$ from the right at the right boundary.
+
+This causes the same symbols being underlined for both types of parameter regions depending on the direction of the boundary.
+Note that while in the ``type A'' parameter region one cycle collides with both borders at the same time, in the ``type B'' parameter regions each of the coexisting cycles collides with the one of the border each.
+For example, at the upper boundary of a ``type A'' parameter region, the points on branches $f_\A$ and $f_\C$ of the cycle $\Cycle{\A^a\B^b\C^a\D^b}$ collide with both the borders $d_1$ and $d_3$, respectively.
+On the other hand, at the upper boundary of a ``type B'' parameter region, the point on the branch $f_\A$ of the cycle $\Cycle{\A^a\B^b\C^c\D^d}$ collides with the border $d_1$, while the point on the branch $f_\C$ of the cycle $\Cycle{\A^c\B^d\C^a\D^b}$ collides with the border $d_3$.
