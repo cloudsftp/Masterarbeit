@@ -3,18 +3,22 @@
 // External parameters
 #define aL parameters[0]
 #define bL parameters[1]
-#define bR parameters[2]
+#define cL parameters[2]
 #define px parameters[3] // Only the last two are varied
 #define py parameters[4]
 
 // Internal parameters for computing branches A and C
 #define _aL (aL)
 #define _bL (bL)
-#define _cL (py)
+#define _cL (cL + py)
+
+// Internal parameters for fitting branches B and D
+#define A (-px)
+#define B (0.525)
 
 // Internal parameters for computing branches B and D
-#define _bR (bR)
-#define _cR (-px)
+#define _bR (4. * (B - A))
+#define _cR ((2. * A) - B)
 
 #define n       0.5     // Discontinuity in the middle
 #define border  0.25    // Discontinuity in the middle of the left half
@@ -27,7 +31,6 @@ bool f(
     real_t y = 0;
 
     real_t x = currentState[0];
-
     // Enforce symmetry f(x + n) = f(x) + n
     if (x >= n) {
         x -= n;
@@ -41,8 +44,8 @@ bool f(
     }
 
     // Normalize
-    if (y >= 1 * n) {
-        y -= 1 * n;
+    if (y >= n) {
+        y -= n;
     }
 
     RHS[0] = y;
@@ -56,18 +59,10 @@ bool symbolic(
 ) {
     real_t x = currentState[0];
 
-    if (x < n) {
-        if (x < border) {
-            RHS = "A";
-        } else {
-            RHS = "B";
-        }
+    if (x < border) {
+        RHS = "A";
     } else {
-        if (x < n + border) {
-            RHS = "C";
-        } else {
-            RHS = "D";
-        }
+        RHS = "B";
     }
 
     return true;

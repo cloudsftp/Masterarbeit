@@ -1,9 +1,13 @@
+
+A = -px
+B = 0.525
+
 _aL = aL
 _bL = bL
-_cL = py
+_cL = cL + py
 
-_bR = bR
-_cR = -px
+_bR = 4. * (B - A)
+_cR = (2. * A) - B
 
 mod(a, b) = a - (floor(a/b) * b)
 
