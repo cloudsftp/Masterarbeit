@@ -4,7 +4,7 @@
 In the previous section, we investigated the bifurcations at the boundaries of ``type A'' and ``type B'' parameter regions.
 There, one can see that there is a space between the \glspl{bcb} of the ``type B'' cycles and the \gls{bcb} of the ``type A'' cycle where all three cycles coexist at each boundary of the ``type B'' parameter region.
 \Cref{fig:arch.coex.regions.F} illustrates this overlap again, the overlapping regions are marked with the points $J, R, S,$ and $T$.
-In \Cref{fig:arch.coex.E}, one can see that ``type A'' parameter regions can also overlap with each other.
+In \Cref{fig:arch.coex.regions.E}, one can see that ``type A'' parameter regions can also overlap with each other.
 Here, the overlapping regions are marked with $M, N, O,$ and $P$.
 One previously not considered case is that there can also be an overlap of two ``type A'' parameter regions and one ``type B'' parameter region.
 This can be seen in \Cref{fig:arch.coex.regions.F} and is marked with points $V, W, X,$ and $Y$.
@@ -21,9 +21,9 @@ This can be seen in \Cref{fig:arch.coex.regions.F} and is marked with points $V,
 	}
 	\caption[Enhanced 2D scans of the boundaries of parameter regions with different symbolic sequences in the archetypal model]{
 		Enhanced 2D scans of the boundaries of parameter regions with different symbolic sequences in the archetypal model.
-		(a) pictures the ``type A'' parameter region previously marked with $E_{16}$ in \Cref{fig:archdyn.dyn.period}.
+		(a) pictures the ``type A'' parameter region previously marked with $E_{16}$ in \Cref{fig:arch.dyn.period}.
 		At the point $L$ there is only one ``type A'' cycle, while the points $M, N, O,$ and $P$ mark locations with two coexisting ``type A'' cycles.
-		(b) pictures the ``type B'' parameter region previously marked with $F_{16}$ in \Cref{fig:archdyn.dyn.period}.
+		(b) pictures the ``type B'' parameter region previously marked with $F_{16}$ in \Cref{fig:arch.dyn.period}.
 		At the point $Q$ there are two coexisting ``type B'' twin cycles, while the points $R, S, T,$ and $U$ mark locations with two coexisting ``type B'' twin cycles and one ``type A'' cycle.
 		And the points $V, W, X,$ and $Y$ mark locations with two coexisting ``type B'' twin cycles and two ``type A'' cycles.
 	}
@@ -93,7 +93,7 @@ Another very simple case is when a ``type B'' parameter region does not overlap 
 This causes the coexistence of two ``type B'' twin cycles.
 In this case, there are two coexisting stable cycles as discussed before in \Cref{sec:state.og.dynamics} and \Cref{sec:arch.dynamics}.
 Here, the cycles are asymmetrical if one of the cycles is $\Cycle{\A^a\B^b\C^c\D^d}$ where $c = a - 1$ and $d = b + 1$, the other cycle is $\Cycle{\A^c\B^d\C^a\D^b}$.
-In the concrete case marked in \Cref{fig:final.regions.F} with the point $Q$, these cycles are $\Cycle{\A^5\B^3\C^4\D^4}$ and $\Cycle{\A^4\B^4\C^5\D^3}$.
+In the concrete case marked in \Cref{fig:arch.coex.regions.F} with the point $Q$, these cycles are $\Cycle{\A^5\B^3\C^4\D^4}$ and $\Cycle{\A^4\B^4\C^5\D^3}$.
 
 \Cref{fig:arch.coex.cobweb.Q} shows the cobweb diagram at this point.
 The cycle $\Cycle{\A^5\B^3\C^4\D^4}$ is green and its basin of attraction also.
@@ -146,11 +146,11 @@ The colors for each cycle, as well as the color of their basins of attraction, a
 
 \subsection{Two ``Type A'' Cycles And Two ``Type B'' Cycles}
 
-When looking closer at \Cref{fig:arch.coex.regions.F}, we can see that the parameter regions described in the previous \Cref{sec:minrep.coex.BA} can also overlap with one another.
+When looking closer at \Cref{fig:arch.coex.regions.F}, we can see that the parameter regions described in the previous \Cref{sec:arch.coex.AB} can also overlap with one another.
 There, one ``type B'' parameter region overlaps with two different ``type A'' parameter regions.
 This results in parameter regions where there coexist two ``type B'' cycles and two ``type A'' cycles.
 It can also happen in four cases, as with previous coexistence scenarios in \Cref{sec:arch.coex.AA,sec:arch.coex.AB}.
-Assuming the ``type B'' cycles are $\Cycle{\A^a\B^b\C^c\D^b}$ and $\Cycle{\A^c\B^d\C^a\D^b}$ with $c = a - 1$ and $d = b + 1$, the cycles they will coexist with are the following pairs of the cycles discussed in \Cref{sec:arch.coex.BA}
+Assuming the ``type B'' cycles are $\Cycle{\A^a\B^b\C^c\D^b}$ and $\Cycle{\A^c\B^d\C^a\D^b}$ with $c = a - 1$ and $d = b + 1$, the cycles they will coexist with are the following pairs of the cycles discussed in \Cref{sec:arch.coex.AB}
 \begin{enumerate*}
 	\item $\Cycle{\A^c\B^d\C^c\D^d}$ and $\Cycle{\A^a\B^d\C^a\D^d}$,
 	\item $\Cycle{\A^a\B^d\C^a\D^d}$ and $\Cycle{\A^a\B^b\C^a\D^b}$,
@@ -193,11 +193,11 @@ It is hard to see, since the two cycles $\Cycle{\A^3\B^2\C^3\D^2}$ (blue) and $\
 	\centering
 	\subfloat[2D scan of the boundaries]{
 		\includegraphics[width=.45 \textwidth]{98_Yunus_modpi/2D_Regions_Coex4/result.png}
-		\label{fig:og.coex4.regions}
+		\label{fig:arch.coex.og.regions}
 	}
 	\subfloat[Cobweb diagram at point $X$]{
 		\includegraphics[width=.45 \textwidth]{99_Yunus/Cobweb_Coex4_A/Manual/result.png}
-		\label{fig:og.coex4.cobweb}
+		\label{fig:arch.coex.og.cobweb}
 	}
 	\caption[2D boundary scan and cobweb diagram of the original model showing coexistence of four cycles]{
 		(a) shows a 2D scan of the boundaries of parameter regions with different symbolic sequences at a specific location where a ``type B'' parameter region overlaps with two ``type A'' parameter regions.
@@ -206,4 +206,4 @@ It is hard to see, since the two cycles $\Cycle{\A^3\B^2\C^3\D^2}$ (blue) and $\
 	}
 \end{figure}
 
-All other coexistence scenarios were covered in \Citeauthor{akyuz} thesis~\cite{akyuz2022}.
+All other coexistence scenarios were covered in \Citeauthor{akyuz2022}'s thesis~\cite{akyuz2022}.

@@ -7,20 +7,18 @@ But smooth systems are not fit to model several engineering applications, since 
 For example, a model of an electrical circuit can't be smooth as soon as the circuit has a single switching element, such as a transistor~\cite{ZhuMos03}.
 The model we will investigate in this thesis describes such an electrical circuit.
 
-In \gls{pws} dynamical systems, bifurcations are possible, that \hl{do not occur} in smooth dynamical systems.
+In \gls{pws} dynamical systems, bifurcations are possible, that do not occur in smooth dynamical systems.
 Even more so in \gls{pws} discontinuous dynamical systems, which this thesis focuses on.
 While the theory for continuous-time 1D \gls{pws} discontinuous dynamical systems is quite complete, the theory for time-discrete 1D \gls{pws} discontinuous dynamical systems in is further behind~\cite{Simpson16}.
 Also while in smooth dynamical systems and \gls{pws} continuous dynamical systems bifurcations can be generalized and described using normal forms, this is not possible for \gls{pws} discontinuous dynamical systems.
 The reason for this is that many bifurcations, especially \glspl{bcb}, are necessarily global and normal forms only work for local bifurcations.
 \todo{citation}
-\hl{
-	The advantage of normal forms is that these models neglect all non-essential parameter effects for the description of the bifurcation phenomenon at hand.
-	Furthermore, one can prove that the neglected parameter effects are indeed non-essential for the bifurcation phenomenon.
-	For the model considered in this thesis, such a proof can not be provided.
-	Nevertheless, we will follow a similar approach as we will neglect parameter effects, we identify as non-essential.
-	But rather than on rigorous proofs, we rely on numerical evidence.
-	We will call the resulting model an archetypal model.
-}
+The advantage of normal forms is that these models neglect all non-essential parameter effects for the description of the bifurcation phenomenon at hand.
+Furthermore, one can prove that the neglected parameter effects are indeed non-essential for the bifurcation phenomenon.
+For the model considered in this thesis, such a proof can not be provided.
+Nevertheless, we will follow a similar approach as we will neglect parameter effects, we identify as non-essential.
+But rather than on rigorous proofs, we rely on numerical evidence.
+We will call the resulting model an archetypal model.
 
 The bifurcations covered in this thesis all belong to the previously mentioned class of \glspl{bcb}.
 
@@ -28,9 +26,7 @@ The bifurcations covered in this thesis all belong to the previously mentioned c
 	A \glsentrylong{bc} is a point in the parameter space, where an invariant set (e.g a fixed point or a cycle) collides with a border of the model function in the state space.
 \end{definition}
 
-\hl{
-	Note, that the values of the state space, where the model function is not smooth are called borders.
-}
+Note that the \hl{points} of the state space, where the model function is not smooth are called borders.
 
 \begin{definition}[Border Collision Bifurcation]
 	A \glsentrylong{bcb} is a \gls{bc} that also causes a qualitative change in the state space topology.
@@ -50,9 +46,7 @@ This allows us to differentiate between different cycles even if they have the s
 	It is defined as $o(x) = S_j$ if $x \in S_j$ for all $0 \leq j < n$~\cite{granados14adding}.
 \end{definition}
 
-\hl{
-	For example, a $k$-cycle in a \gls{pws} dynamical system divided into two partitions $I_0 = \left\{x \:\mid\: x < 0\right\}$ and $I_1 = \left\{x \:\mid\: x > 0\right\}$ with symbols $S_0 = \L$ and $S_1 = \R$ that has one point $x_0 \in I_0$ and $k-1$ points $x_j \in I_1, \:1 \leq j < k$ is associated with the symbolic sequence $\L\R^{k-1}$.
-}
+For example, a $k$-cycle in a \gls{pws} dynamical system divided into two partitions $I_0 = \left\{x \:\mid\: x < 0\right\}$ and $I_1 = \left\{x \:\mid\: x > 0\right\}$ with symbols $S_0 = \L$ and $S_1 = \R$ that has one point $x_0 \in I_0$ and $k-1$ points $x_j \in I_1, \:1 \leq j < k$ is associated with the symbolic sequence $\L\R^{k-1}$.
 \todo{Picture of such a cycle}
 
 We will now introduce a class of bifurcation structures that this thesis covers towards the end in \Cref{chap:add}.
@@ -73,7 +67,7 @@ Here, we will use them to describe the structure of period-adding structures.
 
 \begin{definition}[Rotation Numbers --- Keener]
 	Let $\sigma$ be a cycle of a \gls{pws} dynamical system $x_{n+1} = f(x_n)$ with two branches, $\L$ and $\R$.
-	Then the rotation number $\rho(\sigma)$ of this cycle is defined as the ratio of \hl{number of letters $\L$ in the symbolic sequence of the cycle divided by the period of the cycle $\sigma$}~\cite{Keener80}.
+	Then the rotation number $\rho(\sigma)$ of this cycle is defined as the ratio of number of letters $\L$ in the symbolic sequence of the cycle divided by the period of the cycle $\sigma$~\cite{Keener80}.
 	\begin{align}
 		\rho(\sigma) = \dfrac{|\sigma|_\L}{|\sigma|}
 	\end{align}
