@@ -44,9 +44,14 @@
 
 \bibliography{bibliography.bib}
 
-\newif\ifdropfigures  % At the time of definition it is false!
-\dropfigurestrue % yes, we drop figures
-%\dropfiguresfalse
+\newif\ifshowfigures  % At the time of definition it is false!
+\showfigurestrue % yes, we show figures
+% Invert
+\newif\ifdropfigures
+\dropfigurestrue
+\ifshowfigures
+  \dropfiguresfalse
+\fi
 \ifdropfigures
   \renewcommand{\includegraphics}[2][]{%
   }% Ok, `\includegraphics does nothing any longer
