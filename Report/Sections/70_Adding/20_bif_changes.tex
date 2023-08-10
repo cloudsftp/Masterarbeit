@@ -25,5 +25,54 @@ While it is happening, the process (ii) starts and finishes, before (i) finishes
 Lastly the process (iii) starts and finishes directly.
 After all that, process (i) is the last to complete.
 
+\todo{Remove previous}
+
+\Cref{fig:add.change.regions} shows diagrams depicting the borders of parameter regions with different symbolic sequences.
+We will use these diagrams as basis for our exploration of the changes to the bifurcation structure.
+The lower left corner of the diagrams is always in the period region with the stable cycle $\Cycle{\A^7\B^3\C^7\D^3}$.
+The cycles in the upper left ($\Cycle{\A^6\B^3\C^6\D^3}$), upper right ($\Cycle{\A^6\B^4\C^6\D^4}$), lower right ($\Cycle{\A^7\B^4\C^7\D^4}$), and middle ($\Cycle{\A^7\B^3\C^6\D^4}$ and $\Cycle{\A^6\B^4\C^7\D^3}$) follow.
+We introduce a short notation for the symbolic sequences here.
+``Type A'' parameter regions where the cycle is associated with the symbolic sequence $\A^a\B^b\C^a\D^b$ are written as $P^{2 \cdot \left(a + b\right)}_b$
+``Type B'' parameter regions where the coexisting twin cycles are associated with the symbolic sequences $\A^a\B^b\C^c\D^d$ and $\A^c\B^d\C^a\D^b$ where $c = a - 1$ and $d = b + 1$ are written as $P^{a + b + c + d}_b$.
+So for example, the ``type A'' parameter region in the lower left corner of every diagram in \Cref{fig:add.change.regions} is written as $P^{20}_3$.
+\todo{
+	Special case $\left[P^{2 \cdot \left(a + b\right)}_b \mid P^{2 \cdot \left(c + d\right)}_d\right]$ where $c \neq a - 1$ or $d \neq b + 1$ (it's not a ``type B'' parameter regions as we described them earlier).
+	Where $c < a$ or $d > b$.
+	Operation defined later in \Cref{sec:add.add.halved}.
+}
+
+The four different diagrams in \Cref{fig:add.change.regions} show the evolution at different points during the transition from \Cref{fig:add.arch} to \Cref{fig:add.arch.new}.
+For this, the parameter values for $a_L$ and $b_L$ are chosen along a line given by \Cref{equ:add.change.paramline}
+\begin{align}
+	a_L = \frac{5}{2} - 3 \cdot b_L
+	\label{equ:add.change.paramline}
+\end{align}
+
+\todo{Labels and remember to check parameters in captions / move to large caption}
+\begin{figure}
+	\centering
+	\subfloat[$a_L = 2.8, b_L = -0.1$]{
+		\includegraphics[width=.5 \textwidth]{62_MinimalRepr_Adding/2D_Regions_3.5/result-simple.png}
+		\label{fig:add.change.regions.1}
+	}
+	\subfloat[$a_L = 2.8, b_L = -0.1$]{
+		\includegraphics[width=.5 \textwidth]{62_MinimalRepr_Adding/2D_Regions_2.8/Manual/result.png}
+		\label{fig:add.change.regions.2}
+	} \\
+	\subfloat[$a_L = 2.725, b_L = -0.075$]{
+		\includegraphics[width=.5 \textwidth]{62_MinimalRepr_Adding/2D_Regions_2.725/Manual/result.png}
+		\label{fig:add.change.regions.3}
+	}
+	\subfloat[$a_L = 2.65, b_L = -0.05$]{
+		\includegraphics[width=.5 \textwidth]{62_MinimalRepr_Adding/2D_Regions_2.5/Manual/result.png}
+		\label{fig:add.change.regions.4}
+	}
+	\caption{Evolution of ``type B'' parameter regions when transitioning to a period adding scenario}
+	\label{fig:add.change.regions}
+\end{figure}
+
+First, we will examine the disappearance of the ``type B'' parameter regions.
+After that, we will examine the appearance of period-adding structures between the chains of the same period.
+
 \input{Sections/70_Adding/21_disapp_b.tex}
 \input{Sections/70_Adding/22_app_add.tex}

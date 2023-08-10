@@ -1,85 +1,111 @@
-\subsection{Appearance of Period Adding}
+\subsection{Appearance of Period-adding structures}
 
-\todo{small intro before subsubsection}
+In this section we will explore the appearance of the period-adding structures in between the chains of the same period.
+This happens at the horizontal boundaries between ``type A'' parameter regions of different chains, as well as at the vertical boundaries.
+We will first take care of the horizontal period-adding structures and then move on to the vertical period-adding structures.
 
-\subsubsection{Horizontal}
+\subsubsection{Horizontal Period-adding Structures}
 
+In \Cref{fig:add.change.regions.1}, the ``type A'' parameter regions $P^{20}_3$ and $P^{18}_3$, as well as $P_{22}_4$ and $P^{20}_4$ overlap.
+This changes in \Cref{fig:add.change.regions.2}.
+Here only the ``type A'' parameter regions $P^{20}_3$ and $P^{18}_3$ overlap, the parameter regions $P_{22}_4$ and $P^{20}_4$ stopped overlapping.
+Instead, in the space between the two ``type A'' parameter region there are now two asymmetric coexisting twin cycles $\Cycle{\A^8\B^3\C^8\D^2}$ and $\Cycle{\A^8\B^2\C^8\D^3}$.
+Those cycles are \textbf{not} ``type B'' cycles, because they only differ in the number of points on the branches $f_\B$ and $f_\D$.
+Instead, we will call them hybrid cycles and ``type B'' cycles are a special case of hybrid cycles.
+The notation $\left[P^{22}_4 \mid P^{20}_4\right]$ used in the diagrams was introduced in \Cref{sec:add.change} and is formally defined later in \Cref{sec:add.add.halved}.
+Later in \Cref{fig:add.change.regions.4}, the ``type A'' parameter regions $P^{20}_3$ and $P^{18}_3$ also stop overlapping.
+In between, there are also hybrid cycles, $\Cycle{\A^7\B^3\C^6\D^3}$ and $\Cycle{\A^6\B^3\C^7\D^3}$.
+This parameter region is therefore labeled $\left[P^{20}_3 \mid P^{18}_3\right]$.
+
+In between \Cref{fig:add.change.regions.2,fig:add.change.regions.3}, the ``type A'' parameter regions $P_{22}_4$ and $P^{20}_4$ don't stop overlapping completely.
+Instead, they only stop overlapping on the left side of their shared boundaries and the rest is not pictured in these diagrams.
+\Cref{fig:add.change.appa.hor.regions} shows better what happens to this overlapping region between \Cref{fig:add.change.regions.1,fig:add.change.regions.4}.
+We also have a codimension-2 point that moves right as was the case in \Cref{sec:add.change.disb}.
+
+\todo{Regions: labels wrong}
+\todo{Cobwebs: enhance borders, replace (c), wrong pic}
 \begin{figure}
-    \centering
-    \subfloat[Regions]{
-        \includegraphics[width=.3 \textwidth]{62_MinimalRepr_Adding/2D_Regions_2.8_add_hor/Manual/result.png}
-    }
-    \subfloat[At point $A$]{
-        \includegraphics[width=.3 \textwidth]{62_MinimalRepr_Adding/Cob_2.8_add_hor_A/Manual/result.png}
-        \label{fig:minrep.add.app.hor.A}
-    }
-    \subfloat[At point $B$ \todo{replace figure}]{
-        \includegraphics[width=.3 \textwidth]{62_MinimalRepr_Adding/Cob_2.8_add_hor_A/Manual/result.png}
-        \label{fig:minrep.add.app.hor.B}
-    }
-    \caption{Appearance of the horizontal period-adding cascade}
+	\centering
+	\subfloat[Regions]{
+		\includegraphics[width=.3 \textwidth]{62_MinimalRepr_Adding/2D_Regions_2.8_add_hor/Manual/result.png}
+		\label{fig:add.change.appa.hor.regions}
+	}
+	\subfloat[At point $A$]{
+		\includegraphics[width=.3 \textwidth]{62_MinimalRepr_Adding/Cob_2.8_add_hor_A/Manual/result.png}
+		\label{fig:add.change.appa.hor.cob.A}
+	}
+	\subfloat[At point $B$]{
+		\includegraphics[width=.3 \textwidth]{62_MinimalRepr_Adding/Cob_2.8_add_hor_A/Manual/result.png}
+		\label{fig:add.change.appa.hor.cob.B}
+	}
+	\caption{Appearance of the horizontal period-adding cascade}
 \end{figure}
 
-At point $A$ there is space between the two ``type A'' parameter regions $P_{11}^{4}$ and $P_{10}^{4}$, which overlap at point $B$.
-This space opens up more as we change the parameters as described in \Cref{sec:minrep.adding.disapp.typeB}.
-Here will be the horizontal period adding region.
-\Cref{fig:minrep.add.app.hor.A} shows the cobweb diagram at this point.
-The two coexisting cycles $\Cycle{\A^7\B^4\C^6\D^4}$ and $\Cycle{\A^6\B^4\C^7\D^4}$ are asymmetrical like in ``type B'' parameter regions.
-But they are different from ``type B'' cycles because they are not of the form $\Cycle{\A^a\B^b\C^{a-1}\D^{b+1}}$ and $\Cycle{\A^{a-1}\B^{b+1}\C^a\D^b}$, but of the form $\Cycle{\A^a\B^b\C^{a-1}\D^b}$ and $\Cycle{\A^{a-1}\B^b\C^a\D^b}$.
+We know from \Cref{sec:arch.bif.sum} that the \gls{bcb} at the upper boundary of the ``type A'' parameter region $P^{22}_4$ is $\BCB_{d_1, d_3}^{\underline{\A}^7\B^4\underline{\C}^7\D^4}$.
+And the \gls{bcb} at the lower boundary of the ``type A'' parameter region $P^{20}_4$ is $\BCB_{d_1, d_3}^{\A^6\underline{\B}^4\C^6\underline{\D}^4}$.
+Both these \glspl{bcb} are at the upper and lower boundaries of the overlapping region $P^{22}_4 \Cup P^{20}_4$.
+At the codimension-2 point, both these \glspl{bcb} happen at the same time and both cycles vanish.
+We can see in \Cref{fig:add.change.appa.hor.cob.A} that the ``type A'' cycles are very close to the borders $d_1$ and $d_3$, respectively.
 
-If we interpret these cycles in the context of the halved model, this is the first stage of the period-adding cascade.
-The two ``type A'' cycles $P_{11}^4$ and $P_{10}^4$ are $\Cycle{\L^7\R^4}$ and $\Cycle{\L^6\R^4}$ in the context of the halved model and the cycles at point $A$ are both $\Cycle{\L^7\R^4\L^6\R^4} \equiv \Cycle{\L^6\R^4\L^7\R^4}$ in the context of the halved model.
+This codimension-2 point moves right with higher values for $b_L$ along our line.
+As soon as the codimension-2 point crosses the right boundary of either the ``type A'' parameter region $P^{22}_4$ or $P^{20}_4$, the overlapping parameter region $P^{22}_4 \Cup P^{20}_4$ ceases to exist.
+Instead, there is space between the two ``type A'' parameter regions where the are now two hybrid cycles and period-adding between the hybrid cycles and either ``type A'' parameter region.
 
-In \Cref{sec:minrep.adding.disapp.typeB} we noted, that the asymmetry of the ``type B'' cycles is caused by the negative slope of the function at the left border of branches $f_\A$ and $f_\C$.
+\todo{Labels for bifurcations missing underline}
+\begin{figure}
+	\centering
+	\includegraphics[width=.7 \textwidth]{62_MinimalRepr_Adding/1D_Bif_2.8_add_hor_AU/Manual/result.png}
+	\caption{Bifurcation diagram at the upper boundary of $\left[P^{22}_4 \mid P^{20}_4\right]$}
+	\label{fig:add.change.appa.hor.bif}
+\end{figure}
+
+We assume that the \glspl{bcb} bounding the parameter regions with hybrid cycles follow the same rules as the \glspl{bcb} bounding the ``type B'' parameter regions.
+\Cref{fig:add.change.appa.hor.bif} confirms this for the upper boundary.
+So it is bounded at the top by the \glspl{bcb} $\BCB_{d_1}^{\underline{\A}^7\B^4\C^6\D^4}$ and $\BCB_{d_3}^{\A^6\B^4\underline{\C}^7\D^4}$.
+And bounded at the bottom by the \glspl{bcb} $\BCB_{d_3}^{\A^7\B^4\C^6\underline{\D}^4}$ and $\BCB_{d_1}^{\underline{\A}^6\B^4\C^7\D^4}$.
+At the codimension-2 point, both \glspl{bcb} $\BCB_{d_1}^{\underline{\A}^7\B^4\C^6\D^4}$ and $\BCB_{d_3}^{\A^7\B^4\C^6\underline{\D}^4}$ happen to the cycle $\Cycle{\A^7\B^4\C^6\D^4}$ at the same time and it vanishes.
+Because of the symmetry, the \glspl{bcb} $\BCB_{d_3}^{\A^6\B^4\underline{\C}^7\D^4}$ and $\BCB_{d_1}^{\A^6\underline{\B}^4\C^7\D^4}$ happen to the cycle $\Cycle{\A^6\B^4\C^7\D^4}$ at the same time and it vanishes also.
+
+\todo{also confirmed by cobweb with enhanced cycles at borders}
+
+\todo{Parallels to disappearing type B}
+
+\todo{old:}
+
+In \Cref{sec:minrep.adding.disapp.typeB}, we noted that the asymmetry of the ``type B'' cycles is caused by the negative slope of the function at the left border of branches $f_\A$ and $f_\C$.
 Since this maps the cycle that starts further left to the right side of the other cycle.
 \todo{
-    explain better: diff number of points on branches B and D each (type B) therefore reordering necessary for asymm.
-    type b also: split at $d_1, d_3$ as well as $d_2$ and $d_0$, here only $d_1, d_3$ (two boundaries).
-    here same number of points so there must be no reordering for asymm
+	explain better: diff number of points on branches B and D each (type B) therefore reordering necessary for asymm.
+	type b also: split at $d_1, d_3$ as well as $d_2$ and $d_0$, here only $d_1, d_3$ (two boundaries).
+	here same number of points so there must be no reordering for asymm
 }
 This is not the case for the cycles at this point, both cycles start at a point on the branch $f_\A$ with a positive slope and therefore keep the same order.
 \todo{positive slope important for period adding!}
 
-\begin{figure}
-    \centering
-    \includegraphics[width=.7 \textwidth]{62_MinimalRepr_Adding/1D_Bif_2.8_add_hor_AU/Manual/result.png}
-    \caption{Bifurcation diagram at the upper boundary of $P_{10}^4 \oplus P_{11}^4$}
-    \label{fig:minrep.add.app.hor.bif.AU}
-\end{figure}
-
-
-\Cref{fig:minrep.add.app.hor.bif.AU} show the bifurcations at the top of the parameter region of the first period-adding stage.
-The bifurcation of the ``type A'' cycle $P_{10}^4 \equiv \A^6\B^4\C^6\D^4$ is as expected a collision with borders $d_1$ and $d_3$ at the same time from the right side, $\BCB_{d_1, d_3}^{\A^6\B^4\C^6\D^4, r}$.
-This was described in \Cref{sec:minrep.bif.U}.
-The bifurcations of the asymmetrical cycles are very similar to the bifurcations of the ``type B'' cycles in that section.
-The cycle with more points on branch $f_\A$, $\Cycle{\A^5\B^3\C^4\D^4}$, collided with the border $d_1$ and its twin, $\Cycle{\A^4\B^4\C^5\D^3}$, collided with the border $d_3$.
-Both collide at the same time and from the left.
-Here, the cycle with more points on branch $f_\A$, $\Cycle{\A^7\B^4\C^6\D^4}$, also collides with the border $d_1$ and its twin, $\Cycle{\A^6\B^4\C^7\D^4}$, collides with the border $d_3$.
-Both collisions happen at the same time from the left.
-Therefore the bifurcations are $\BCB_{d_1}^{\A^7\B^4\C^6\D^4, l}$ and $\BCB_{d_1}^{\A^6\B^4\C^7\D^4, l}$.
-
 \subsubsection{Vertical}
 
+\todo{Regions: labels wrong}
+\todo{Cobwebs: replace (c) and enhance cycles at borders}
 \begin{figure}
-    \centering
-    \subfloat[Regions scan before period-adding\\at $a_L = 2.8, b_L = -0.1$]{
-        \includegraphics[width=.4 \textwidth]{62_MinimalRepr_Adding/2D_Regions_2.8_add_vert/Manual/result.png}
-        \label{fig:minrep.add.app.vert.reg.before}
-    }
-    \subfloat[Regions with period-adding\\at $a_L = 2.65, b_L = -0.05$]{
-        \includegraphics[width=.4 \textwidth]{62_MinimalRepr_Adding/2D_Regions_2.65_add_vert/Manual/result.png}
-        \label{fig:minrep.add.app.vert.reg.with}
-    } \\
-    \subfloat[At point $A$ \todo{replace figure}]{
-        \includegraphics[width=.4 \textwidth]{62_MinimalRepr_Adding/Cob_2.8_add_vert_A/Manual/result.png}
-        \label{fig:minrep.add.app.vert.cob.A}
-    }
-    \subfloat[At point $B$]{
-        \includegraphics[width=.4 \textwidth]{62_MinimalRepr_Adding/Cob_2.65_add_vert_B/Manual/result.png}
-        \label{fig:minrep.add.app.vert.cob.B}
-    }
-    \caption{Appearance of the vertical period-adding cascade}
-    \label{fig:minrep.add.app.vert}
+	\centering
+	\subfloat[Regions scan before period-adding\\at $a_L = 2.8, b_L = -0.1$]{
+		\includegraphics[width=.4 \textwidth]{62_MinimalRepr_Adding/2D_Regions_2.8_add_vert/Manual/result.png}
+		\label{fig:minrep.add.app.vert.reg.before}
+	}
+	\subfloat[Regions with period-adding\\at $a_L = 2.65, b_L = -0.05$]{
+		\includegraphics[width=.4 \textwidth]{62_MinimalRepr_Adding/2D_Regions_2.65_add_vert/Manual/result.png}
+		\label{fig:minrep.add.app.vert.reg.with}
+	} \\
+	\subfloat[At point $A$]{
+		\includegraphics[width=.4 \textwidth]{62_MinimalRepr_Adding/Cob_2.8_add_vert_A/Manual/result.png}
+		\label{fig:minrep.add.app.vert.cob.A}
+	}
+	\subfloat[At point $B$]{
+		\includegraphics[width=.4 \textwidth]{62_MinimalRepr_Adding/Cob_2.65_add_vert_B/Manual/result.png}
+		\label{fig:minrep.add.app.vert.cob.B}
+	}
+	\caption{Appearance of the vertical period-adding cascade}
+	\label{fig:minrep.add.app.vert}
 \end{figure}
 
 For the vertical period-adding cascade, it is similar.
@@ -97,10 +123,10 @@ But this time, the splits are not at borders $d_1$ and $d_3$, but at $d_0$ and $
 \todo{odd number of splits => no neg slope needed for asymmetry. odd number => needed (reorders cycles)}
 
 \begin{figure}
-    \centering
-    \includegraphics[width=.7 \textwidth]{62_MinimalRepr_Adding/1D_Bif_2.65_add_vert_BR/Manual/result.png}
-    \caption{Bifurcation diagram of the right boundary of $P_{10}^3 \oplus P_{11}^4$}
-    \label{fig:minrep.add.app.vert.bif.BR}
+	\centering
+	\includegraphics[width=.7 \textwidth]{62_MinimalRepr_Adding/1D_Bif_2.65_add_vert_BR/Manual/result.png}
+	\caption{Bifurcation diagram of the right boundary of $P_{10}^3 \oplus P_{11}^4$}
+	\label{fig:minrep.add.app.vert.bif.BR}
 \end{figure}
 
 Here, the period-adding region opened up enough to see the next stage, colored in purple.
