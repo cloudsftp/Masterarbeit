@@ -9,18 +9,18 @@ We are most interested in invariant sets.
 In the following, we define fixed points and cycles.
 
 \begin{definition}[Fixed Point]
-	Let $x_{n+1} = f(x_n)$ be a time-discrete 1D non-linear dynamical system where the model function is $f: \mathbb{R} \to \mathbb{R}$.
+	Let $x_{n+1} = f(x_n)$ be a time-discrete non-linear dynamical system where the model function is \hl{$f: X \to X$}.
 	Then $x \in X$ is a fixed point, if $f(x) = x$.
 \end{definition}
 
 \begin{definition}[Iterate Function]
-	Let $f: \mathbb{R} \to \mathbb{R}$ be the model function of a 1D non-linear dynamical system.
+	Let \hl{$f: X \to X$} be the model function of a \hl{time-discrete} non-linear dynamical system.
 	Then $f^k$ is the $k$-th iterate of this function, defined recursively by $f^k(x) = f\left(f^{k-1}(x)\right)$ and $f^1(x) = f(x)$.
 	This means, we apply the function $k$ times.
 \end{definition}
 
 \begin{definition}[Cycle]
-	Let $f: \mathbb{R} \to \mathbb{R}$ be the model function of a 1D non-linear dynamical system.
+	Let \hl{$f: X \to X$} be the model function of a \hl{time-discrete} non-linear dynamical system.
 	Then the sequence of $k$ points $\O_k = \{x_i \:\mid\: 0 \leq i < k\}$ is a $k$-cycle if it satisfies the following conditions.
 	\begin{align}
 		\forall 1 \leq i < k: \quad & f(x_i) = x_{i+1} \quad \land \quad f(x_{k-1}) = x_0
@@ -31,7 +31,7 @@ In the following, we define fixed points and cycles.
 Each point $x_i$ of a $k$-cycle satisfies $f^k(x_i) = x_i$.
 
 \begin{definition}[Stability]
-	Let $f: \mathbb{R} \to \mathbb{R}$ be the model function of a 1D non-linear dynamical system.
+	Let \hl{$f: X \to X$} be the model function of a \hl{time-discrete} non-linear dynamical system \hl{where $X$ is one-dimensional}.
 	A fixed point $x^*$ is stable, if $|f'(x^*)| < 1$.
 	Similarly, a $k$-cycle $\O_k = \{x_i \:\mid\: 0 \leq i < k\}$ is stable, if the following condition is true for all $0 \leq i < k$.
 	\begin{align}

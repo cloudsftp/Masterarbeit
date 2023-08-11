@@ -7,12 +7,12 @@ parameters = {
 
 parameter[0] = {
     name = "aL",
-    value = 2.5
+    value = 3.5
 },
 
 parameter[1] = {
     name = "bL",
-    value = -0.0
+    value = -0.333
 },
 
 parameter[2] = {
@@ -45,8 +45,8 @@ item[0] = {
     type = "real_linear",
     object = "py",
     points = 2000,
-    min = 0.1214,
-    max = 0.121
+    min = 0.1465,
+    max = 0.1445
 },
 
 item[1] = {

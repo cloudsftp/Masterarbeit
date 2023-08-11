@@ -45,7 +45,7 @@ item[0] = {
     type = "real_linear",
     object = "px",
     points = 2000,
-    min = -0.3825,
+    min = -0.385,
     max = -0.37
 },
 

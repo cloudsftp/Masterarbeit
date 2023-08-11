@@ -12,3 +12,9 @@
 \psfrag{A}{\hspace*{0.0em}\raisebox{0.5ex}{$A$}}
 \psfrag{B}{\hspace*{0.0em}\raisebox{0.5ex}{$B$}}
 \psfrag{C}{\hspace*{0.0em}\raisebox{0.5ex}{$C$}}
+
+\psfrag{14}{\hspace*{-0.2em}\raisebox{0.5ex}{$14$}}
+\psfrag{16}{\hspace*{-0.2em}\raisebox{0.5ex}{$16$}}
+\psfrag{18}{\hspace*{-0.2em}\raisebox{0.5ex}{$18$}}
+\psfrag{20}{\hspace*{-0.2em}\raisebox{0.5ex}{$20$}}
+\psfrag{22}{\hspace*{-0.2em}\raisebox{0.5ex}{$22$}}

@@ -46,7 +46,7 @@ item[0] = {
     object = "px",
     points = 2000,
     min = -0.37,
-    max = -0.3825
+    max = -0.385
 },
 
 item[1] = {
