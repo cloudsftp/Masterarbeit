@@ -41,5 +41,5 @@ jobs:
         if: startsWith(github.ref, 'refs/tags/')
         uses: ncipollo/release-action@v1
         with:
-          artifacts: "${{ env.DOC }}.pdf"
+          artifacts: "${{ env.DOC_TARGET }}.pdf"
           token: ${{ secrets.GITHUB_TOKEN }}
