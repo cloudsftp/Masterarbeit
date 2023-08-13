@@ -37,7 +37,7 @@ jobs:
         run: qpdf --empty --pages "${DOC_TARGET}" 1-r2 "${DECLARATION}" -- "${TMP_SIGNED_DOC}"
 
       - name: Rename Result
-        run: mv "${TMP_SIGNED_DOC}" "${DOC_TAGET}"
+        run: mv "${TMP_SIGNED_DOC}" "${DOC_TARGET}"
 
       - name: Release
         if: startsWith(github.ref, 'refs/tags/')
