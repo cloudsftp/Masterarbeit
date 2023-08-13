@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - develop
-      - feature/autosign
     tags:
       - v*
 
@@ -34,10 +33,9 @@ jobs:
           root_file: "${{ env.DOC_SOURCE }}"
 
       - name: Add Assurance
-        run: qpdf --empty --pages "${DOC_TARGET}" 1-r2 "${DECLARATION}" -- "${TMP_SIGNED_DOC}"
-
-      - name: Rename Result
-        run: mv "${TMP_SIGNED_DOC}" "${DOC_TARGET}"
+        run: |
+          qpdf --empty --pages "${DOC_TARGET}" 1-r2 "${DECLARATION}" -- "${TMP_SIGNED_DOC}"
+          mv "${TMP_SIGNED_DOC}" "${DOC_TARGET}"
 
       - name: Release
         if: startsWith(github.ref, 'refs/tags/')
