@@ -1,54 +1,34 @@
 \section{Changes to the Bifurcation Structure}
 \label{sec:add.change}
 
-\begin{enumerate}
-	\item \begin{itemize}
-		      \item ``type A'' parameter regions stop overlapping with the ``type A'' period regions above them (lower period, same number of points on branches $f_\B$ and $f_\D$)
-		      \item Point where boundaries cross. On the left: no overlap, period-adding. On the right: overlap
-		      \item This point moves right until no overlap exists anymore
-	      \end{itemize}
-	\item \begin{itemize}
-		      \item ``type A'' parameter regions start overlapping with the ``type A'' period regions above right them (same period)
-		      \item Point where boundaries cross. On the left: overlap. On the right: no overlap, ``type B'' parameter region
-		      \item This point moves right, until no ``type B'' parameter region exists anymore
-	      \end{itemize}
-	\item \begin{itemize}
-		      \item ``type A'' parameter regions stop overlapping with the ``type A'' parameter regions right to them (higher period, one more point on branches $f_\B$ and $f_\D$)
-		      \item This seems to happen in an instant
-	      \end{itemize}
-\end{enumerate}
+In this section, we will take a look at how changing the parameters as described in \Cref{sec:add.parameters} changes the bifurcation structure of the archetypal model.
 
-Timeline:
-On the parameter line outlined above, the processes happen as follows.
-First, the process (i) starts.
-While it is happening, the process (ii) starts and finishes, before (i) finishes.
-Lastly the process (iii) starts and finishes directly.
-After all that, process (i) is the last to complete.
-
-\todo{Remove previous}
+\subsection{Numerical Overview of the Changes to the Bifurcation Structure}
+\label{sec:add.change.num}
 
 \Cref{fig:add.change.regions} shows diagrams depicting the borders of parameter regions with different symbolic sequences.
 We will use these diagrams as basis for our exploration of the changes to the bifurcation structure.
 The lower left corner of the diagrams is always in the period region with the stable cycle $\Cycle{\A^7\B^3\C^7\D^3}$.
 The cycles in the upper left ($\Cycle{\A^6\B^3\C^6\D^3}$), upper right ($\Cycle{\A^6\B^4\C^6\D^4}$), lower right ($\Cycle{\A^7\B^4\C^7\D^4}$), and middle ($\Cycle{\A^7\B^3\C^6\D^4}$ and $\Cycle{\A^6\B^4\C^7\D^3}$) follow.
+
 We introduce a short notation for the symbolic sequences here.
 ``Type A'' parameter regions where the cycle is associated with the symbolic sequence $\A^a\B^b\C^a\D^b$ are written as $P^{2 \cdot \left(a + b\right)}_b$
 ``Type B'' parameter regions where the coexisting twin cycles are associated with the symbolic sequences $\A^a\B^b\C^c\D^d$ and $\A^c\B^d\C^a\D^b$ where $c = a - 1$ and $d = b + 1$ are written as $P^{a + b + c + d}_b$.
 So for example, the ``type A'' parameter region in the lower left corner of every diagram in \Cref{fig:add.change.regions} is written as $P^{20}_3$.
-\todo{
-	Special case $\left[P^{2 \cdot \left(a + b\right)}_b \mid P^{2 \cdot \left(c + d\right)}_d\right]$ where $c \neq a - 1$ or $d \neq b + 1$ (it's not a ``type B'' parameter regions as we described them earlier).
-	Where $c < a$ or $d > b$.
-	Operation defined later in \Cref{sec:add.add.halved}.
-}
+
+There is also a new type of parameter region that we call hybrid parameter regions with hybrid cycles.
+Hybrid cycles are cycles that are asymmetrical like ``type B'' cycles and therefore also exist in pairs.
+The difference to ``type B'' cycles is that for two hybrid twin cycles with the symbolic sequences $\A^a\B^b\C^c\D^d$ and $\A^c\B^d\C^a\D^b$ either $c \neq a - 1$ or $d \neq b + 1$.
+The parameter region with such hybrid cycles is written as $\left[P^{2 \cdot \left(a + b\right)}_b \mid P^{2 \cdot \left(c + d\right)}_d\right]$ where $c \leq a$ and $d \geq b$.
+This notation is chosen because of an operation that is introduced in the later \Cref{sec:add.add.halved}.
 
 The four different diagrams in \Cref{fig:add.change.regions} show the evolution at different points during the transition from \Cref{fig:add.arch} to \Cref{fig:add.arch.new}.
-For this, the parameter values for $a_L$ and $b_L$ are chosen along a line given by \Cref{equ:add.change.paramline}
+For this, the parameter values for $a_L$ and $b_L$ are chosen along a line given by \Cref{equ:add.change.paramline}.
 \begin{align}
 	a_L = \frac{5}{2} - 3 \cdot b_L
 	\label{equ:add.change.paramline}
 \end{align}
 
-\todo{Labels and remember to check parameters in captions / move to large caption}
 \begin{figure}
 	\centering
 	\subfloat[$a_L = 3.5, b_L = -0.\overline{3}$]{
@@ -83,3 +63,4 @@ After that, we will examine the appearance of period-adding structures between t
 
 \input{Sections/70_Adding/21_disapp_b.tex}
 \input{Sections/70_Adding/22_app_add.tex}
+\input{Sections/70_Adding/23_bif_changes_theory.tex}

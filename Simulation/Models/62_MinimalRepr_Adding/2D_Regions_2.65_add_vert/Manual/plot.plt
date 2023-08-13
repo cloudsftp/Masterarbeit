@@ -30,17 +30,22 @@ set label 'B' at -0.373697, 0.124797 point pointtype 7 lc rgb 'red' front
 ArrowStyle ="backhead size graph 0.018,15 lt 1 lw 1 lc rgb 'black' front"
 ArrowStyleW="backhead size graph 0.018,15 lt 1 lw 4 lc rgb 'white' front"
 
-# P_10^3
+# P^20_3
 X=-0.3743
 Y= 0.12482
-set label "P.10.3" at X,Y front
+set label "P.20.3" at X,Y front
 
-# P_11^4
+# P^22_4
 X=-0.3733
 Y= 0.12478
-set label "P.11.4" at X,Y front
+set label "P.22.4" at X,Y front
 
-# P_10^3 + P_11^4
+# P^22_4 + P^20_4
+X=-0.3735
+Y= 0.124825
+set label "P.22.4+" at X,Y front
+
+# P^20_3 + P^22_4
 X=-0.37375
 Y= 0.12478
 h=1.0
@@ -48,7 +53,7 @@ dX=-(R-L)*0.05*h
 dY=(U-D)*0.05*h
 set arrow from X,Y rto dX, dY @ArrowStyleW
 set arrow from X,Y rto dX, dY @ArrowStyle
-set label "P.10.3+" at X+dX,Y+dY offset -10.0,0.5 front
+set label "P.20.3+" at X+dX,Y+dY offset -10.0,0.5 front
 
 plot \
     'Data/0/symbolic_regions.tna' w dots lc rgb 'orange' notitle, \
