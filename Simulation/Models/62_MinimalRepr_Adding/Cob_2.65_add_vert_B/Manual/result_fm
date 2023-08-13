@@ -21,8 +21,8 @@
 \psfrag{x}{\hspace*{0.0em}\raisebox{0.5ex}{$x$}}
 \psfrag{y}{\hspace*{0.0em}\raisebox{0.5ex}{$f(x)$}}
 
-\psfrag{s3}{\scriptsize $\color{forestGreen}{\O}_{\!\A^7\B^3\C^7\D^4}$}
-\psfrag{s4}{\scriptsize $\color{black}{\O}_{\!\A^7\B^4\C^7\D^3}$}
+\psfrag{s3}{\scriptsize $\color{forestGreen}{\O}_{\!\A^7\B^3\C^7\D^3}$}
+\psfrag{s4}{\scriptsize $\color{black}{\O}_{\!\A^7\B^4\C^7\D^4}$}
 
 \psfrag{d0}{\scriptsize $d_0$}
 \psfrag{d1}{\scriptsize $d_1$}

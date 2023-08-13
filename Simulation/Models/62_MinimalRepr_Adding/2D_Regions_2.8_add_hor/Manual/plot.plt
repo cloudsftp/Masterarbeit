@@ -28,17 +28,17 @@ set ylabel 'y' offset 4.2, 0 rotate by 90
 ArrowStyle ="backhead size graph 0.018,15 lt 1 lw 1 lc rgb 'black' front"
 ArrowStyleW="backhead size graph 0.018,15 lt 1 lw 4 lc rgb 'white' front"
 
-# P_10^4
+# P^20_4
 X=-0.365
 Y= 0.128535
-set label "P.10.4" at X,Y front
+set label "P.20.4" at X,Y front
 
-# P_11^4
+# P^22_4
 X=-0.365
-Y= 0.128515
-set label "P.11.4" at X,Y front
+Y= 0.128513
+set label "P.22.4" at X,Y front
 
-# P_10^4 + P_11^4
+# P^22_4 + P^20_4
 X=-0.368229
 Y= 0.128524
 h=1.0
@@ -46,9 +46,9 @@ dX=(R-L)*0.05*h
 dY=-(U-D)*0.05*h
 set arrow from X,Y rto dX, dY @ArrowStyleW
 set arrow from X,Y rto dX, dY @ArrowStyle
-set label "P.10.4+" at X+dX,Y+dY offset -3.2, -1.2 front
+set label "P.22.4+" at X+dX,Y+dY offset -2.2, -1.2 front
 
-# P_10^4 U P_11^4
+# P^22_4 u P^20_4
 X=-0.361447
 Y= 0.128524
 h=1.0
@@ -56,12 +56,11 @@ dX=-(R-L)*0.05*h
 dY=-(U-D)*0.05*h
 set arrow from X,Y rto dX, dY @ArrowStyleW
 set arrow from X,Y rto dX, dY @ArrowStyle
-set label "P.10.4u" at X+dX,Y+dY offset -5.7, -1.2 front
+set label "P.20.4u" at X+dX,Y+dY offset -7.0, -1.2 front
 
 set label 'A' at -0.366362, 0.128526 point pointtype 7 lc rgb 'red' front 
 set label 'B' at -0.363022, 0.128526 point pointtype 7 lc rgb 'red' front 
-
-set arrow from -0.366362, 0.1285277 to -0.366362, 0.128528 nohead front
+#set arrow from -0.366362, 0.1285277 to -0.366362, 0.128528 nohead front
 
 plot \
     'Data/0/symbolic_regions.tna' w dots lc rgb 'orange' notitle, \

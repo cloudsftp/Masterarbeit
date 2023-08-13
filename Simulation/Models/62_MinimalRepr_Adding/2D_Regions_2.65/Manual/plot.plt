@@ -25,6 +25,67 @@ set ytics ('D' D, 'U' U) rotate by 90
 set xlabel 'x' offset 0, 1.3
 set ylabel 'y' offset 4.2, 0 rotate by 90
 
+# P^20_3
+X=-0.380
+Y= 0.12662
+#set label "P.20.3" at X,Y front
+
+# P^18_3
+X=-0.384
+Y= 0.12673
+#set label "P.18.3" at X,Y front
+
+# P^20_4
+X=-0.376
+Y= 0.12673
+#set label "P.20.4" at X,Y front
+
+# P^22_4
+X=-0.3725
+Y= 0.12662
+#set label "P.22.4" at X,Y front
+
+
+# Q^20_3
+X=-0.376
+Y= 0.126665
+h=1.0
+dX=-(R-L)*0.05*h
+dY=-(U-D)*0.05*h
+#set arrow from X,Y rto dX, dY @ArrowStyleW
+#set arrow from X,Y rto dX, dY @ArrowStyle
+#set label "Q.20.3" at X+dX,Y+dY offset -1.5,-1.3 front
+
+# P^22_4 + P^20_4
+X=-0.372
+Y= 0.12668
+h=1.0
+dX=-(R-L)*0.05*h
+dY=(U-D)*0.05*h
+#set arrow from X,Y rto dX, dY @ArrowStyleW
+#set arrow from X,Y rto dX, dY @ArrowStyle
+#set label "P.22.4+" at X+dX,Y+dY offset -3.2,0.7 front
+
+
+# P^20_3 u P_18_3
+X=-0.382
+Y= 0.126658
+h=1.0
+dX=-(R-L)*0.05*h
+dY=-(U-D)*0.05*h
+#set arrow from X,Y rto dX, dY @ArrowStyleW
+#set arrow from X,Y rto dX, dY @ArrowStyle
+#set label "P.20.3uP.18.3" at X+dX,Y+dY offset -4.5,-1.5 front
+
+# P^20_3 u P^20_4
+X=-0.3805
+Y= 0.126672
+h=1.0
+dX=(R-L)*0.05*h
+dY=(U-D)*0.05*h
+#set arrow from X,Y rto dX, dY @ArrowStyleW
+#set arrow from X,Y rto dX, dY @ArrowStyle
+#set label "P.20.3uP.20.4" at X+dX,Y+dY offset 0.1,0.3 front
 
 plot \
     'Data/0/symbolic_regions.tna' w dots lc rgb 'orange' notitle, \

@@ -1,0 +1,69 @@
+\subsection{Summary of the Changes to the Bifurcation Structure}
+
+\begin{enumerate}
+	\item \begin{itemize}
+		      \item ``type A'' parameter regions stop overlapping with the ``type A'' period regions above them (lower period, same number of points on branches $f_\B$ and $f_\D$)
+		      \item Point where boundaries cross. On the left: no overlap, period-adding. On the right: overlap
+		      \item This point moves right until no overlap exists anymore
+	      \end{itemize}
+	\item \begin{itemize}
+		      \item ``type A'' parameter regions start overlapping with the ``type A'' period regions above right them (same period)
+		      \item Point where boundaries cross. On the left: overlap. On the right: no overlap, ``type B'' parameter region
+		      \item This point moves right, until no ``type B'' parameter region exists anymore
+	      \end{itemize}
+	\item \begin{itemize}
+		      \item ``type A'' parameter regions stop overlapping with the ``type A'' parameter regions right to them (higher period, one more point on branches $f_\B$ and $f_\D$)
+		      \item This seems to happen in an instant
+	      \end{itemize}
+\end{enumerate}
+
+Timeline:
+On the parameter line outlined above, the processes happen as follows.
+First, the process (i) starts.
+While it is happening, the process (ii) starts and finishes, before (i) finishes.
+Lastly the process (iii) starts and finishes directly.
+After all that, process (i) is the last to complete.
+
+\todo{what to do with timeline?}
+
+\todo{Sketches of period region shapes}
+
+In ``conclusion'', the local minima on branches $f_\A$ and $f_\C$ seem to be important for the ``type B'' parameter regions.
+That means, parameter regions with coexisting asymmetrical cycles with the \textbf{same} period.
+At the same time, these minima seem to prevent period-adding structures.
+
+\begin{theorem}[No ``Type B'' Parameter Regions with only Increasing Branches]
+	The ``type B'' parameter regions are not possible in the increasing archetypal model.
+	The minima on the branches $f_\A$ and $f_\C$ are essential for the bifurcation structure.
+\end{theorem}
+
+\begin{proof} \phantom{x} \\
+	Let's assume that all branches of the archetypal model $f_\A, f_\B, f_\C,$ and $f_\D$ are increasing.
+	And let $\sigma_1$ and $\sigma_2$ be ``type B'' twin cycles.
+	The following conditions are true for such cycles.
+	\begin{subequations}
+		\begin{align}
+			|\sigma_1|_\A - 1 & = |\sigma_2|_\A \label{equ:add.change.conseq.sigmaA} \\
+			|\sigma_1|_\B + 1 & = |\sigma_2|_\B \label{equ:add.change.conseq.sigmaB} \\
+			|\sigma_1|_\C + 1 & = |\sigma_2|_\C \label{equ:add.change.conseq.sigmaC} \\
+			|\sigma_1|_\D - 1 & = |\sigma_2|_\D \label{equ:add.change.conseq.sigmaD}
+		\end{align}
+	\end{subequations}
+
+	For \Cref{equ:add.change.conseq.sigmaA} to hold, the first point of $\sigma_1$ on the branch $f_\A$ needs to be left of first point of $\sigma_2$ on this branch, because the branch is increasing.
+	At the same time must its last point on this branch be right of the last point of $\sigma_2$ on this branch.
+	This way, $\sigma_1$ has exactly one more point on the branch $f_\A$ as required by \Cref{equ:add.change.conseq.sigmaA}.
+
+	The order of the first points on the next branch, $f_\B$, is the same as for the last points on the branch $f_\A$.
+	So the first point of $\sigma_2$ on this branch is left of the first point of $\sigma_1$ on this branch.
+	For \Cref{equ:add.change.conseq.sigmaB} to hold, its last point on this branch must be right of the last point of $\sigma_1$ on this branch per the same logic as before.
+
+	The order of the first points on the next branch, $f_\C$, is the same as for the last points on the branch $f_\B$.
+	So the first point of $\sigma_1$ on this branch is left of the first point of $\sigma_2$ on this branch.
+	This is a contradiction, since the first point of $\sigma_1$ on branch $f_\A$ is also left of the first point of $\sigma_2$ on that branch.
+	This violates the symmetry.
+	Also, \Cref{equ:add.change.conseq.sigmaC} can't be fulfilled if the first point of $\sigma_1$ is left of the first point of $\sigma_2$ on the branch $f_\C$.
+	\hfill $\blacksquare$
+\end{proof}
+
+\todo{Odd number of splits => no neg slope needed for asymmetry. odd number => needed (reorders cycles)}

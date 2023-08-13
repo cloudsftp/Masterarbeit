@@ -40,19 +40,24 @@
   enddate={September 1, 2023}
 ]{scientific-thesis-cover}
 
-\input{acronyms}
-
 \makeindex
 
 \bibliography{bibliography.bib}
 
-\newif\ifdropfigures  % At the time of definition it is false!
-\dropfigurestrue % yes, we drop figures
-\dropfiguresfalse
+\newif\ifshowfigures  % At the time of definition it is false!
+\showfigurestrue % yes, we show figures
+% Invert
+\newif\ifdropfigures
+\dropfigurestrue
+\ifshowfigures
+  \dropfiguresfalse
+\fi
 \ifdropfigures
   \renewcommand{\includegraphics}[2][]{%
   }% Ok, `\includegraphics does nothing any longer
 \fi
+
+\input{acronyms.tex}
 
 \begin{document}
 
@@ -84,8 +89,6 @@
 %Doku zu deftriplepagestyle: scrguide.pdf
 \pagestyle{preamble}
 \renewcommand*{\chapterpagestyle}{preamble}
-
-
 
 %Kurzfassung / abstract
 %auch im Stil vom Inhaltsverzeichnis
@@ -132,7 +135,7 @@
 % an der passenden Stelle im Fließtext erzwungen werden.
 
 \listoffigures
-\listoftables
+%\listoftables
 
 %Wird nur bei Verwendung von der lstlisting-Umgebung mit dem "caption"-Parameter benoetigt
 %\lstlistoflistings
@@ -140,10 +143,10 @@
 \ifdeutsch
   \listof{Listing}{Verzeichnis der Listings}
 \else
-  \listof{Listing}{List of Listings}
+  %  \listof{Listing}{List of Listings}
 \fi
 
-\listofalgorithms %Ist nur für Algorithmen, die mittels \begin{algorithm} umschlossen werden, nötig
+%\listofalgorithms %Ist nur für Algorithmen, die mittels \begin{algorithm} umschlossen werden, nötig
 
 % Abkürzungsverzeichnis
 \printnoidxglossaries

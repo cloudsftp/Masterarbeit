@@ -22,9 +22,9 @@
 \psfrag{d2}{{$d_2$}}
 \psfrag{d3}{{$d_3$}}
 
-\psfrag{BCB1}{$\xi^{\A^5\B^3\C^5\D^3}_{d_1,d_3}$}
-\psfrag{BCB2a}{$\xi^{\A^4\B^4\C^5\D^3}_{d_1}$}
-\psfrag{BCB2b}{$\xi^{\A^5\B^3\C^4\D^4}_{d_3}$}
+\psfrag{BCB1}{$\xi^{\underline{\A}^5\B^3\underline{\C}^5\D^3}_{d_1,d_3}$}
+\psfrag{BCB2a}{$\xi^{\A^4\underline{\B}^4\C^5\D^3}_{d_1}$}
+\psfrag{BCB2b}{$\xi^{\A^5\B^3\C^4\underline{\D}^4}_{d_3}$}
 
 \psfrag{O16Aa}{$x^{\A^5\B^3\C^5\D^3}_{4}$}
 \psfrag{O16Ab}{$x^{\A^5\B^3\C^5\D^3}_{12}$}

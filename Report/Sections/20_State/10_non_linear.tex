@@ -1,0 +1,70 @@
+\section{Non-linear Dynamical Systems}
+
+Dynamical systems can either be time-continuous or time-discrete.
+In this thesis we only consider time-discrete dynamical systems, also called maps.
+The time evolution of the state of such a system results from an iterative application of the model function governing the dynamics of the system, i.e. $x_{n+1} = f(x_n)$.
+Depending on the properties of the model function $f$, one can distinguish between smooth, \gls{pws} continuous, and \gls{pws} discontinuous dynamical systems.
+
+We are most interested in invariant sets.
+In the following, we define fixed points and cycles.
+
+\begin{definition}[Fixed Point]
+	Let $x_{n+1} = f(x_n)$ be a time-discrete non-linear dynamical system where the model function is \hl{$f: X \to X$}.
+	Then $x \in X$ is a fixed point, if $f(x) = x$.
+\end{definition}
+
+\begin{definition}[Iterate Function]
+	Let \hl{$f: X \to X$} be the model function of a \hl{time-discrete} non-linear dynamical system.
+	Then $f^k$ is the $k$-th iterate of this function, defined recursively by $f^k(x) = f\left(f^{k-1}(x)\right)$ and $f^1(x) = f(x)$.
+	This means, we apply the function $k$ times.
+\end{definition}
+
+\begin{definition}[Cycle]
+	Let \hl{$f: X \to X$} be the model function of a \hl{time-discrete} non-linear dynamical system.
+	Then the sequence of $k$ points $\O_k = \{x_i \:\mid\: 0 \leq i < k\}$ is a $k$-cycle if it satisfies the following conditions.
+	\begin{align}
+		\forall 1 \leq i < k: \quad & f(x_i) = x_{i+1} \quad \land \quad f(x_{k-1}) = x_0
+	\end{align}
+	If $x_0 \neq x_i$ for $1 \leq i < k$, then $k$ is the prime period of $\O_k$.
+\end{definition}
+
+Each point $x_i$ of a $k$-cycle satisfies $f^k(x_i) = x_i$.
+
+\begin{definition}[Stability]
+	Let \hl{$f: X \to X$} be the model function of a \hl{time-discrete} non-linear dynamical system \hl{where $X$ is one-dimensional}.
+	A fixed point $x^*$ is stable, if $|f'(x^*)| < 1$.
+	Similarly, a $k$-cycle $\O_k = \{x_i \:\mid\: 0 \leq i < k\}$ is stable, if the following condition is true for all $0 \leq i < k$.
+	\begin{align}
+		\left| \left. \frac{d}{dx}f^k(x) \:\right|_{x = x_i}\right| & < 1
+	\end{align}
+\end{definition}
+
+Note that the derivative of $f^k$ evaluated at any point $x_i$ of the $k$-cycle $\O_k$ takes the same value.
+That value being the product of the derivative of the function $f$ evaluated at all points $x_i$.
+\begin{align}
+	\left. \frac{d}{dx}f^k(x) \:\right|_{x = x_i} & = \prod_{j=0}^{k-1} \left( \left. \frac{d}{dx} f(x) \:\right|_{x = x_j} \right)
+\end{align}
+
+\hl{
+	In this thesis we will only encounter stable cycles.
+	Stable cycles have the property that different points of the state space that are not necessarily part of the cycle will eventually end up in the cycle.
+	We call the set of those points the basin of attraction of the cycle.
+}
+
+\begin{definition}[Basin of Attraction of a Cycle]
+	\hl{
+		Let $f: X \to X$ be the model function of a non-linear dynamical system.
+		Let $\O_k$ be a stable cycle in that system.
+		Then the basin of attraction of this cycle is
+	}
+	\begin{align}
+		\left\{x \in X \:\mid\: \exists n > 0: \:f^n(x) \in \O_k\right\}
+	\end{align}
+\end{definition}
+
+\begin{definition}[Bifurcation]
+	A bifurcation is a qualitative change of the state space topology of a model under an infinitesimal small parameter variation.
+\end{definition}
+Meaning for example that solutions to the model function or its iterate (fixed points and cycles) disappear or appear under a very small change to parameters.
+The only bifurcations that will be important in this thesis are introduced in the next section.
+That section will cover \gls{pws} dynamical systems.

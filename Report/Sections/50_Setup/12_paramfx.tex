@@ -1,34 +1,12 @@
 \subsection{Parameter Effects}
 \label{sec:setup.char.paramfx}
 
-%\todo{
-%	Automatische Übersetzung meiner e-mail. Leicht, aber nur leicht, nachbearbeitet :-)
-%	Es ist noch kein Englisch, aber es ist bereits lesbar.
-%
-%	1) Mapping a circle onto itself.
-%	Well it's just because we we are talking about a phase, there is no need to prove anything. It is probably trivial as well to show that the function has no fixed points, that is, F(x)>x mod 2 pi, right?
-%
-%	2a) The function is discontinuous. Disc. points are caused by tangencies...etc.
-%	It is not particularly necessary to calculate these disc. points analytically as we do not use analytical expressions further.
-%
-%	2b) Which would be really cool, but I'm not sure how realistic it is - explain why, in a given range of parameters, the obtained function has exactly four disc. points.
-%
-%	3) Contractive function: here, theoretically, it is possible write the derivative dF/dx and show that it is less in absolute value units, but there are eight implicit functions, I really don’t want to. If there is a physical explanation why it should work this way - great, if not, and okay, it's enough to say what can be calculated and shown.
-%
-%	4) Symmetry F(x+pi)=F(x)+pi, where does it come from. I would say that the perfect explanation I can imagine is schematic picture. Why exactly trajectories for initial conditions lagging behind each other by half a period, after one step come to points that are half a period behind each other.
-%
-%	5a) Minimum points - where do they come from. In the last article this was discussed, the same thing here - draw a trajectory with a tangency from some initial condition and two neighboring trajectories, coming both to the same point a little later than the first one. And that's it, plus a couple of lines of text.
-%
-%	5b) But then everything becomes more complicated. Since we already talked about symmetry, it is enough to talk about the first two branches. We also said for the minimums where they come from. Question: is it possible show (again, schematically!) that these minimum points are within corresponding domains of the branches? This is less important for the first part of the article, but for the second one it is fundamental: what does it mean if the minimum point moves to the edge of the branch and goes beyond it. If it's at all possible, I don't know.
-%}
-
 In this section, we examine the effects of the parameters on the original model function.
 We start with the combined parameter effects along a chain of parameter regions of the same period.
 After that we will look into what role the parameters play individually.
 
 \subsection{Combined Effects of Parameters}
 \label{sec:setup.char.paramfx.combined}
-\label{sec:yunus.param.effects.combined}
 
 To replicate the dynamics seen in the model, it is helpful to know, how the model changes along the areas of the same period.
 \Cref{fig:setup.char.evolution.12} shows, how the model function changes along the area of period 12.
@@ -62,6 +40,7 @@ The last function is red, and it is the model with parameters $E_0 = 18.5, \chi_
 	\caption[Effects of parameters on the original model function]{
 		The shapes of the original model function for different parameter values.
 		(a) shows the points of the parameter values used for the other figures.
+		Also, some chains are annotated with their period.
 		(b) shows the evolution of the shape of the original model function along the chain of parameter regions with period 12 cycles.
 		The blue function is the model function for the parameter values at point $A_{12}$, purple at point $B_{12}$, and red at point $C_{12}$.
 		Here, blue is at point $A_{10}$, purple at point $B_{10}$, and red at point $C_{10}$.
@@ -87,7 +66,7 @@ The points used for measurement are visualized in \Cref{fig:setup.char.evolution
 For the period 10, points $A_{10}, B_{10},$ and $C_{10}$ are used and for period 8, points $B_8$ and $C_8$.
 
 \subsection{Individual Effects of Parameters}
-\label{sec:yunus.param.effects.individual}
+\label{sec:setup.char.paramfx.individual}
 
 The effects of the parameters described above, always include a change in both parameters $E_0$ and $\chi_0$.
 To reproduce the bifurcation structures, it is important to know which effects on the function each parameter has individually.
@@ -169,9 +148,9 @@ The subscript now includes the two branches, to which the border belongs, and th
 For brevity, we do not write redundant branch names, so changes happening to branch $\A$ are also happening to branch $\C$.
 For borders, changes to the border between branches $\A$ and $\B$ are also happening to the border between branches $\C$ and $\D$ and so on.
 
-\Cref{tab:yunus.parameter.effects} lists all observed effects along the areas of the same period and their decomposition into effects of the single parameters.
-The first part of the table includes all major changes observed in \Cref{sec:yunus.param.effects.combined}, while the second part focuses on the minor change.
-The second part also includes the changes observed in \Cref{sec:yunus.param.effects.individual} that cancel out.
+\Cref{table:setup.char.paramfx} lists all observed effects along the areas of the same period and their decomposition into effects of the single parameters.
+The first part of the table includes all major changes observed in \Cref{sec:setup.char.paramfx.combined}, while the second part focuses on the minor change.
+The second part also includes the changes observed in \Cref{sec:setup.char.paramfx.individual} that cancel out.
 From this table we can see, that $E_0$ causes the effects on the branches $\B$ and $\D$, while $\chi_0$ causes the changes to the branches $\A$ and $\C$, as well as the minor movement of the borders between branches $\B$ and $\C$.
 Note again, that the change to the border of branches $\B$ and $\C$ also applies for the border between branches $\D$ and $\A$.
 

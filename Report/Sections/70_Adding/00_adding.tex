@@ -1,9 +1,33 @@
-\chapter{Adding}
+\chapter{Period-adding in the Archetypal Model}
+\label{chap:add}
 
-In this model, we found 2 flavors of period-adding structures.
-The first one is period adding in between the chains of the same period.
-The other is period adding near ``type B'' period regions.
+It was shown that there are period-adding structures in piecewise linear continuous increasing circle maps by \Citeauthor{simpson2018saw}.
+He calls these types of functions skew sawtooth maps~\cite{simpson2018saw}.
+The archetypal model function is not continuous, has four branches instead of two, and only linear on two of four branches.
+But it is also a circle map, \gls{pws}, and mostly increasing.
+\Cref{fig:add.saw.vs.arch} shows both maps for comparison.
+In this chapter, we modify the fixed parameters of the archetypal model to produce period-adding structures.
+The idea is to make the archetypal model function as similar as possible to a skew sawtooth map.
 
-\todo{different intro, only adding between chains}
+\begin{figure}
+	\centering
+	\subfloat[Skew sawtooth map]{
+		\includegraphics[width=.45 \textwidth]{81_Sawtooth/Sketch/result.png}
+		\label{fig:add.saw}
+	}
+	\subfloat[Archetypal model function]{
+		\includegraphics[width=.45 \textwidth]{60_MinimalRepr/Sketch/result.png}
+		\label{fig:add.arch}
+	}
+	\caption[Comparison of a skew sawtooth map and the archetypal model function]{
+		Comparison of a skew sawtooth map and the archetypal model function.
+		(a) shows the skew sawtooth map with the parameters $a_L = 0.5$ and $a_R = 1.5$.
+		The function is taken from \Citetitle{simpson2018saw}~\cite{simpson2018saw}.
+		(b) shows the archetypal model function with the parameters $a_L = 4, b_L = -\frac{1}{2}, c_L = 0.168, g_R\left(\frac{1}{4}\right) = -0.4 ,$ and $g_R\left(\frac{1}{2}\right) = \frac{1}{2} + \frac{1}{40}$.
+	}
+	\label{fig:add.saw.vs.arch}
+\end{figure}
 
-\input{Sections/70_Adding/10_between_chains.tex}
+\input{Sections/70_Adding/10_parameters.tex}
+\input{Sections/70_Adding/20_bif_changes.tex}
+%\input{Sections/70_Adding/30_0_halved_motivation.tex}

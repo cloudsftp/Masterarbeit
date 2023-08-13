@@ -14,7 +14,7 @@
 \psfrag{D}{\footnotesize \hspace*{0.3em}\raisebox{0.5ex}{$0$}}
 \psfrag{U}{\footnotesize \hspace*{0.3em}\raisebox{0.5ex}{$1$}}
 
-\psfrag{x}{\hspace*{0.0em}\raisebox{0.5ex}{$p_y$}}
+\psfrag{x}{\hspace*{0.0em}\raisebox{0.5ex}{$\beta$}}
 \psfrag{y}{\hspace*{0.0em}\raisebox{0.3ex}{$x$}}
 
 \psfrag{d0}{{$d_0$}}
@@ -22,9 +22,9 @@
 \psfrag{d2}{{$d_2$}}
 \psfrag{d3}{{$d_3$}}
 
-\psfrag{BCB1}{$\xi^{\A^6\B^4\C^6\D^4}_{d_1,d_3}$}
-\psfrag{BCB2a}{$\xi^{\A^7\B^4\C^6\D^4}_{d_1}$}
-\psfrag{BCB2b}{$\xi^{\A^6\B^4\C^7\D^4}_{d_3}$}
+\psfrag{BCB1}{$\xi^{\A^6\underline{\B}^4\C^6\underline{\D}^4}_{d_1,d_3}$}
+\psfrag{BCB2a}{$\xi^{\underline{\A}^7\B^4\C^6\D^4}_{d_1}$}
+\psfrag{BCB2b}{$\xi^{\A^6\B^4\underline{\C}^7\D^4}_{d_3}$}
 
 \psfrag{O20Ab}{$x^{\A^6\B^4\C^6\D^4}_{18}$}
 \psfrag{O21B1a}{$x^{\A^7\B^4\C^6\D^4}_{6}$}

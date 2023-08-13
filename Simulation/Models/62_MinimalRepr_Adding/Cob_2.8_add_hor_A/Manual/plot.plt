@@ -64,8 +64,8 @@ set arrow from X,D to X,U nohead lt 1 lw 2 dt 2 lc rgb "gray50" front
 
 #--------------- large blowup box
 
-LL=0.16125
-RR=0.16175
+LL=0.2499
+RR=0.2501
 DD=LL
 UU=RR
 
@@ -74,52 +74,12 @@ set arrow from LL,UU to RR,UU @BoxStyle
 set arrow from RR,UU to RR,DD @BoxStyle
 set arrow from RR,DD to LL,DD @BoxStyle
 
-dX=-0.19
-dY=0.475
+dX=-0.285
+dY=0.4
 set arrow from LL,UU rto dX,dY nohead lt 1 lw 1 dt 2 lc rgb "navy" front
-dX= 0.19
-dY=0.475
+dX= 0.11
+dY=0.4
 set arrow from RR,UU rto dX,dY nohead lt 1 lw 1 dt 2 lc rgb "navy" front
-
-
-#--------------- small blowup box at d1
-
-LL2=0.24
-RR2=0.26
-DD2=0
-UU2=0.02
-
-set arrow from LL2,DD2 to LL2,UU2 @BoxStyle
-set arrow from LL2,UU2 to RR2,UU2 @BoxStyle
-set arrow from RR2,UU2 to RR2,DD2 @BoxStyle
-set arrow from RR2,DD2 to LL2,DD2 @BoxStyle
-
-dX=0.057
-dY=0.225
-set arrow from LL2,UU2 rto dX,dY nohead lt 1 lw 1 dt 2 lc rgb "navy" front
-dX= 0.185
-dY=0.095
-set arrow from RR2,DD2 rto dX,dY nohead lt 1 lw 1 dt 2 lc rgb "navy" front
-
-
-#--------------- small blowup box at d2
-
-LL3=0.49
-RR3=0.51
-DD3=0
-UU3=0.02
-
-set arrow from LL3,DD3 to LL3,UU3 @BoxStyle
-set arrow from LL3,UU3 to RR3,UU3 @BoxStyle
-set arrow from RR3,UU3 to RR3,DD3 @BoxStyle
-set arrow from RR3,DD3 to LL3,DD3 @BoxStyle
-
-dX=0.057
-dY=0.225
-set arrow from LL3,UU3 rto dX,dY nohead lt 1 lw 1 dt 2 lc rgb "navy" front
-dX= 0.185
-dY=0.095
-set arrow from RR3,DD3 rto dX,dY nohead lt 1 lw 1 dt 2 lc rgb "navy" front
 
 #--------------- points and labels at d0, ..., d3
 
@@ -197,86 +157,23 @@ set arrow from LL,UU to RR,UU @BoxStyle2
 set arrow from RR,UU to RR,DD @BoxStyle2
 set arrow from RR,DD to LL,DD @BoxStyle2
 
+X=0.25
+set arrow from X,DD to X,UU nohead lt 1 lw 2 dt 2 lc rgb "gray50" front
+
+Y=DD+0.00003
+set label "" at X,Y point pt 7 ps 1.1 lc rgb "black"  front
+set label "" at X,Y point pt 7 ps 0.8 lc rgb "yellow" front
+set label "d1" at X,Y offset 0.1,-0.3 
 
 p "basins/1.tna" u 1:($3>T1 ? 1.0 : 1/0) w filledcurves y2=0 lc rgb "#ddffdd",\
   "basins/1.tna" u 1:($3<T1 ? 1.0 : 1/0) w filledcurves y2=0 lc rgb "#ffffdd",\
   x w lines lt 1 lw 1.5 lc rgb 'gray20', \
   'cyclic_cobwebB1.tna' w l lw 2 lc rgb 'forest-green', \
-  "" u 1:2:("s3") with labels point pt 7 ps 0.7 lc rgb 'forest-green' offset -0.5, -1.0,\
-  "" u 1:2:("s3") with labels point pt 7 ps 0.5  lc rgb 'light-green' offset -0.5, -1.0,\
+  "" u 1:2:("s3") with labels point pt 7 ps 0.7 lc rgb 'forest-green' offset -0.0, -1.0,\
+  "" u 1:2:("s3") with labels point pt 7 ps 0.5  lc rgb 'light-green' offset -0.0, -1.0,\
   'cyclic_cobwebB2.tna' w l lw 2 lc rgb 'dark-orange', \
   "" u 1:2:("s4") with labels point pt 7 ps 0.7 lc rgb 'dark-orange'  offset 1.0, -0.1,\
   "" u 1:2:("s4") with labels point pt 7 ps 0.5 lc rgb 'khaki1'       offset 1.0, -0.1
-
-
-#------------------------------------
-#--------------- small blowup plot at d1
-
-set origin 0.367,0.15
-set size 0.2,0.2
-set xrange [LL2:RR2]
-set yrange [DD2:UU2]
-
-
-set arrow from LL2,DD2 to LL2,UU2 @BoxStyleW
-set arrow from LL2,UU2 to RR2,UU2 @BoxStyleW
-set arrow from RR2,UU2 to RR2,DD2 @BoxStyleW
-set arrow from RR2,DD2 to LL2,DD2 @BoxStyleW
-
-LW=2
-set arrow from LL2,DD2 to LL2,UU2 @BoxStyle2
-set arrow from LL2,UU2 to RR2,UU2 @BoxStyle2
-set arrow from RR2,UU2 to RR2,DD2 @BoxStyle2
-set arrow from RR2,DD2 to LL2,DD2 @BoxStyle2
-
-X=0.25
-set arrow from X,DD2 to X,UU2 nohead lt 1 lw 2 dt 2 lc rgb "gray50" front
-
-Y=0.5*(DD2+UU2)
-set label "" at X,Y point pt 7 ps 1.1 lc rgb "black"  front
-set label "" at X,Y point pt 7 ps 0.8 lc rgb "yellow" front
-set label "d1" at X,Y offset 0.1,-0.3 
-
-
-p "basins/1.tna" u 1:($3>T1 ? 1.0 : 1/0) w filledcurves y2=0 lc rgb "#ddffdd",\
-  "basins/1.tna" u 1:($3<T1 ? 1.0 : 1/0) w filledcurves y2=0 lc rgb "#ffffdd",\
-
-
-unset label
-unset arrow
-
-#------------------------------------
-#--------------- small blowup plot at d2
-
-set origin 0.505,0.15
-set size 0.2,0.2
-set xrange [LL3:RR3]
-set yrange [DD3:UU3]
-
-
-set arrow from LL3,DD3 to LL3,UU3 @BoxStyleW
-set arrow from LL3,UU3 to RR3,UU3 @BoxStyleW
-set arrow from RR3,UU3 to RR3,DD3 @BoxStyleW
-set arrow from RR3,DD3 to LL3,DD3 @BoxStyleW
-
-LW=2
-set arrow from LL3,DD3 to LL3,UU3 @BoxStyle2
-set arrow from LL3,UU3 to RR3,UU3 @BoxStyle2
-set arrow from RR3,UU3 to RR3,DD3 @BoxStyle2
-set arrow from RR3,DD3 to LL3,DD3 @BoxStyle2
-
-
-X=0.5
-set arrow from X,DD3 to X,UU3 nohead lt 1 lw 2 dt 2 lc rgb "gray50" front
-
-Y=0.5*(DD3+UU3)
-set label "" at X,Y point pt 7 ps 1.1 lc rgb "black"  front
-set label "" at X,Y point pt 7 ps 0.8 lc rgb "yellow" front
-set label "d2" at X,Y offset 0.1,-0.3 
-
-
-p "basins/1.tna" u 1:($3>T1 ? 1.0 : 1/0) w filledcurves y2=0 lc rgb "#ddffdd",\
-  "basins/1.tna" u 1:($3<T1 ? 1.0 : 1/0) w filledcurves y2=0 lc rgb "#ffffdd",\
 
 
 unset multiplot

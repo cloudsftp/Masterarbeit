@@ -7,7 +7,7 @@ All branches are more shifted to the left.
 To imitate this shape better, we now set $b_L = -\frac{1}{2}$ and $b_R = -\frac{7}{2}$.
 All other fixed parameters are the same as above.
 The parameters $c_L$ and $c_R$ are varied in the intervals $[0.08, 0.525]$ and $[0.825, 1.275]$, respectively, to capture a full structure.
-\Cref{fig:setup.quad.even.period.full} shows a 2D scan of the periods of the stable cycles in this parameter range.
+\Cref{fig:setup.quad.skew.period.full} shows a 2D scan of the periods of the stable cycles in this parameter range.
 The structure seen in this figure repeats in all directions.
 
 An interesting parameter area is marked with a red rectangle.
@@ -19,12 +19,12 @@ The points indicate the parameter values for the cobweb analysis.
 	\centering
 	\begin{subfigure}{0.4\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{21_Quadratic_mod1/Skew/S_2D_Period_Zoomed1/result.png}
+		\includegraphics[width=\textwidth]{21_Quadratic_mod1/Skew/2D_Period_SZoomed1/result.png}
 		\caption{Full}
 		\label{fig:setup.quad.skew.period.full}
 	\end{subfigure}
 	\begin{subfigure}{0.4\textwidth}
-		\includegraphics[width=\textwidth]{21_Quadratic_mod1/Skew/S_2D_Period_Zoomed2/result.png}
+		\includegraphics[width=\textwidth]{21_Quadratic_mod1/Skew/2D_Period_SZoomed2/result.png}
 		\caption{Zoomed}
 		\label{fig:setup.quad.skew.period.zoomed}
 	\end{subfigure}
@@ -39,27 +39,22 @@ The points indicate the parameter values for the cobweb analysis.
 
 \begin{figure}
 	\centering
-	\begin{subfigure}{0.3\textwidth}
-		\centering
-		\includegraphics[width=\textwidth]{21_Quadratic_mod1/Skew/S_Cobweb_A/result.png}
-		\caption{At point $A$}
+	\subfloat[At point $A$]{
+		\includegraphics[width=.3 \textwidth]{21_Quadratic_mod1/Skew/Cobweb_SA/result.png}
 		\label{fig:setup.quad.skew.cobweb.A}
-	\end{subfigure}
-	\begin{subfigure}{0.3\textwidth}
-		\centering
-		\includegraphics[width=\textwidth]{21_Quadratic_mod1/Skew/S_Cobweb_B/result.png}
-		\caption{At point $B$}
+	}
+	\subfloat[At point $B$]{
+		\includegraphics[width=.3 \textwidth]{21_Quadratic_mod1/Skew/Cobweb_SB/Manual/result.png}
 		\label{fig:setup.quad.skew.cobweb.B}
-	\end{subfigure}
-	\begin{subfigure}{0.3\textwidth}
-		\centering
-		\includegraphics[width=\textwidth]{21_Quadratic_mod1/Skew/S_Cobweb_C/result.png}
-		\caption{At point $C$}
+	}
+	\subfloat[At point $C$]{
+		\includegraphics[width=.3 \textwidth]{21_Quadratic_mod1/Skew/Cobweb_SC/result.png}
 		\label{fig:setup.quad.skew.cobweb.C}
-	\end{subfigure}
+	}
 	\caption[Cobwebs of the skewed piecewise quadratic model]{
 		Cobweb diagrams at three parameter values of $c_L$ and $c_R$ in the piecewise quadratic model with fixed parameters $a_L = a_R = 6$, $b_L = -\frac{1}{2}$, and $b_R = -\frac{7}{2}$.
 		The parameter values are marked in \Cref{fig:setup.quad.even.period.zoomed}.
+		(a) shows the cycle $\Cycle{\A^3\B^3\C^3\D^3}$ at point $A$, (b) shows the two coexisting cycles $\Cycle{\A^3\B^3\C^3\D^3}$ (green) and $\Cycle{\A^4\B^2\C^4\D^2}$ (red) at point $C$, and (c) shows the cycle $\Cycle{\A^4\B^2\C^4\D^2}$.
 	}
 	\label{fig:setup.quad.skew.cobwebs}
 \end{figure}
