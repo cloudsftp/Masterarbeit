@@ -7,12 +7,12 @@ parameters = {
 
 parameter[0] = {
     name = "aL",
-    value = 1
+    value = 2.7025
 },
 
 parameter[1] = {
     name = "bL",
-    value = 0.5
+    value = -0.0675
 },
 
 parameter[2] = {
@@ -22,7 +22,7 @@ parameter[2] = {
 
 parameter[3] = {
     name = "px",
-    value = -0.373
+    value = 0
 },
 
 parameter[4] = {
@@ -33,27 +33,28 @@ parameter[4] = {
 
 state_space_dimension = 1,
 initial_state = (0.25),
-reset_initial_states_from_orbit = false,
-number_of_iterations = 10000
+reset_initial_states_from_orbit = true,
+number_of_iterations = 2000
 },
 
 scan = {
 type = nested_items,
 mode = 2,
+
 item[0] = {
     type = "real_linear",
-    object = "initial_state[0][0]",
-    points = 1000,
-    min = 0,
-    max = 0.5
+    object = "px",
+    points = 2000,
+    min = -0.38,
+    max = -0.377
 },
 
 item[1] = {
     type = "real_linear",
     object = "py",
-    points = 3000,
-    min = 0.09032100845,
-    max = 0.09032100855
+    points = 2000,
+    min = 0.12,
+    max = 0.123
 }
 },
 
@@ -62,9 +63,9 @@ investigation_methods = {
     },
     period_analysis = {
         is_active = true,
-        max_period = 256,
-        compare_precision = 1e-11,
-        period = true,
+        max_period = 512,
+        compare_precision = 1e-09,
+        period = false,
         period_file = "period.tna",
         cyclic_asymptotic_set = false,
         cyclic_bif_dia_file = "bif_cyclic.tna",
@@ -81,14 +82,14 @@ investigation_methods = {
         period_selection_file_extension = "tna"
     },
     regions_analysis = {
-        is_active = false,
+        is_active = true,
         period_regions_file = "regions_period.tna",
         period_file = "periods_ij.tmp"
     },
     band_counter = {
     },
     symbolic_analysis = {
-        is_active = false,
+        is_active = true,
         symbolic_function = using_user_defined_symbolic_dynamics,
         critical_points_for_<L/R>_symbolic_dynamics = (0,10000),
         transient = 0,
