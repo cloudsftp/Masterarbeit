@@ -1,0 +1,32 @@
+{
+    "type": "period",
+    "parameters": {
+        "aL": 1.1,
+        "aR": 1.1
+    },
+    "scan": [
+        {
+            "type": "linear",
+            "resolution": 500,
+            "parameters": [
+                {
+                    "name": "aL",
+                    "start": 0.5,
+                    "stop": 2
+                }
+            ]
+        },
+        {
+            "type": "linear",
+            "resolution": 500,
+            "parameters": [
+                {
+                    "name": "bR",
+                    "start": 0,
+                    "stop": 1
+                }
+            ]
+        }
+    ],
+    "animation": null
+}
