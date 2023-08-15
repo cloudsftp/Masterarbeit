@@ -1,30 +1,36 @@
 \subsection{Translating Symbolic Sequences}
+\label{sec:add.halved.tanslating}
 
-\todo{intro paragraph}
+First, we will define naive algorithms for translating symbolic sequences between the archetypal and the halved archetypal model based on the idea of the lifted model.
+Then, we will refine the algorithms with properties of the symbolic sequences, we can proof using the naive algorithms.
 
-\todo{mention that $\sigma, \rho, \tau$ are symb seq in the halved model, $\phi, \psi, \pi$ in the full model}
+In the following, cycles of the archetypal model will get the symbols $\phi, \psi,$ and $\pi$.
+Cycles of the halved archetypal model will get the symbols $\sigma, \rho,$ and $\tau$.
+If there are two coexisting twin cycles, they are written as $\phi^a$ and $\phi^b$.
+Also, the symbols for the symbolic sequences in the halved archetypal model are $\L$ and $\R$ instead of $\A, \B, \C,$ and $\D$ to avoid confusion.
 
 \subsubsection{Naive Algorithm}
 
-Based on this concept of the infinite model, one can formulate a naive algorithm for translating symbolic sequences between the halved and full model.
-We will start with the easier direction from the full to the halved model.
-From this direction we can't learn much about the nature of the period-adding structure in the full model, the inverse will be more important for that.
+We will start formulating a naive algorithm for translating symbolic sequences from the archetypal model to the halved archetypal model.
+This is the easier direction.
+From this algorithm we don't learn much about the nature of the \gls{pal} structures in the full model.
+The algorithm for translating symbolic sequences in the other direction, from the halved archetypal model to the archetypal model, will be more important for that.
 
-To translate a symbolic sequence of the full model we start by writing it down.
+To translate a symbolic sequence of the archetypal model we start by writing it down.
 For example $\phi = \A^4\B^3\C^4\D^3$.
 Then we replace the symbols $\A$ and $\C$ by $\L$ and the symbols $\B$ and $\D$ by $\R$.
 Now we have $\L^4\R^3\L^4\R^3$.
 Finally, we have to check for redundancy in the resulting cycle.
 In our example, the cycle $\L^4\R^3$ repeats twice in $\L^4\R^3\L^4\R^3$, so we just keep $\L^4\R^3$.
 
-The inverse is trickier.
+The opposite direction is trickier.
 We start by writing down the symbolic sequence in the halved model.
 For example $\sigma = \L^4\R^3\L4\R^3\L^3\R^3$.
-Now we need to build pairs of rotations since each blue block fits two red blocks.
+Now we need to build pairs of rotations since each blue block fits exactly two red blocks.
 If there is one rotation left over at the end, we wrap around or equivalently write down the original sequence again.
-We repeat this until we fit all rotations that we have written down.
+We repeat this until all rotations we have written down are paired up.
 
-\begin{lemma}[How Often Do We Have To Write Down the Symbolic Sequence]
+\begin{lemma}[How Often to Write Down the Symbolic Sequence]
 	\label{lemma:writing.down}
 	For cycles in the halved model $\sigma$ with an even number of rotations $n$, we only need to write the original cycle down once.
 	For cycles in the halved model $\sigma$ with an odd number of rotations $n$, we need to write the original cycle down exactly twice.
@@ -50,19 +56,23 @@ The resulting symbolic sequence is $T(h) = \A^4\B^3\C^4\D^3\A^3\B^3\C^4\D^3\A^4\
 The formal definition of $T$ is below in \Cref{def:T}.
 
 \begin{definition}[Syllables]
-	A syllable is a sequence of the same symbol if it can't be extended in the context of the symbolic sequence it is in.
-	So for example, $\L^3$ is a syllable in $\L^3\R^3$, but $\L^2$ and $\L$ are not.
+	A syllable is a maximal sequence of the same symbol of a symbolic sequence.
 	A 2-syllable is a pair of syllables that are next to each other.
 	And a 4-syllable is a pair of 2-syllables that are next to each other.
-
-	In the halved model, a 2-syllable corresponds to one rotation.
-	In the full model, a 4-syllable corresponds to one rotation.
-	These terms are used interchangably in the rest of this chapter.
 \end{definition}
+
+So for example, the symbolic sequence $\L^4\R^3\L^3\R^3$ has 4 syllables.
+Its syllables are $\L^4$, $\L^3$, and two times $\R^3$.
+And a 2-syllable of the cycle is $\L^4\R^3$.
+In the halved model, a 2-syllable corresponds to one rotation.
+The 2-syllables of a cycle $\sigma$ in the halved archetypal model are written as $\sigma_i$.
+In the full model, a 4-syllable corresponds to one rotation.
+The 4-syllables of a cycle $\phi$ in the archetypal model are written as $\phi_i$.
+These terms are used interchangeably in the rest of this chapter.
 
 \begin{definition}[Translation of 4-syllables from the Halved Model to the Full Model $t$]
 	\label{def:t}
-	The function $t$ maps two rotations, or a 4-syllable, of a symbolic sequence in the halved model to a single rotation in the full model.
+	The function $t$ maps two rotations, or a 4-syllable, that starts with the symbol $\L$ of a symbolic sequence in the halved archetypal model to a single rotation in the archetypal model.
 	It is defined in the following way.
 	\begin{align}
 		t: & \L^a\R^b\L^c\R^d \mapsto \A^a\B^b\C^c\D^d
@@ -84,13 +94,13 @@ The formal definition of $T$ is below in \Cref{def:T}.
 
 \begin{definition}[Shifting Symbolic Sequences]
 	The function $s_2$ shifts a symbolic sequence $\sigma$ in the halved model by a single rotation, or equivalently by a 2-syllable.
-	Let $\sigma = \sigma_1\sigma_2 \dots \sigma_n$, where $\sigma_i$ are 2-syllables.
+	Let $\sigma = \sigma_1\sigma_2 \dots \sigma_n$.
 	Then $s_2$ is defined in the following way.
 	\begin{align}
-		s: & \sigma_1\sigma_2 \dots \sigma_n \mapsto \sigma_2 \dots \sigma_n\sigma_1
+		s_2: & \sigma_1\sigma_2 \dots \sigma_n \mapsto \sigma_2 \dots \sigma_n\sigma_1
 	\end{align}
 	In the full model, there is a similar function, $s_4$, that shifts a symbolic sequence $\phi$ in the full model by a single rotation.
-	Let $\phi = \phi_1\phi_2 \dots \phi_n$, where $\phi_i$ are 4-syllables.
+	Let $\phi = \phi_1\phi_2 \dots \phi_n$.
 	Then $s_4$ is defined in the following way.
 	\begin{align}
 		s_4: & \phi_1\phi_2 \dots \phi_n \mapsto \phi_2 \dots \phi_n\phi_1
@@ -101,35 +111,35 @@ The formal definition of $T$ is below in \Cref{def:T}.
 	The two symbolic sequences $\phi$ and $\psi$ in the full model are shift-equivalent $\phi \equiv \psi$,
 	if they both have the same number of rotations $n$
 	and there is a number $0 \leq i < n$, such that $\phi = s_4^i(\psi)$.
-	Where $s_4^i$ is the same as applying $s_4$ $i$ times.
-	\todo{better proof, inductive}
+	Where $s_4^i(\psi)$ is defined as $s_4^{i-1}(s_4(\psi))$ and $s_4^1(\psi) = s_4(\psi)$.
 \end{definition}
 
-We need to repeat the whole process for each shift $s_2^i$ of the original symbolic sequence for $0 < i < n$ where $n$ is the number of rotations, or equivalently 2-syllables, of the original symbolic sequence.
-And we only keep the results that are not shift-equivalent to any previous result.
+We need to repeat the whole process for each shift $s_2^i$ of the original symbolic sequence for $0 < i < n$ where $n$ is the number of 2-syllables of the original symbolic sequence.
+And we only keep the results that are not shift-equivalent to any previous result, since shift-equivalent cycles are identical in the archetypal model.
 In our example, we would repeat the process for $s_2(\sigma) = \L^4\R^3\L3\R^3\L^4\R^3$ and get the result $T(s_2(\sigma)) = \A^4\B^3\C^3\D^3\A^4\B^3\C^4\D^3\A^3\B^3\C^4\D^3$.
 This result is shift-equivalent to the first result by shifting it 2 times ($s_4^2$).
 Last we need to repeat it for $s_2^2(\sigma) = \L^3\R^3\L4\R^3\L^4\R^3$ and get the result $T(s_2^2(\sigma)) = \A^3\B^3\C^4\D^3\A^4\B^3\C^3\D^3\A^4\B^3\C^4\D^3$.
 This result is shift-equivalent to the first result by shifting it once ($s_4$).
 
-Therefore the cycle $\sigma$ in the halved model manifests as a single cycle $T(\sigma)$ in the full model.
+Therefore, the cycle $\sigma$ in the halved model manifests as a single cycle $T(\sigma)$ in the full model.
 We write it as $F(\sigma) = \{T(\sigma)\} = \{\A^4\B^3\C^4\D^3\A^3\B^3\C^4\D^3\A^4\B^3\C^3\D^3\}$.
 The result of $F$ is a set because the cycle $\sigma$ in the halved model may manifest as multiple coexisting cycles in the full model.
 
 \subsubsection{Properties of Translated Symbolic Sequences in the Full Model}
 
-With this naive algorithm, we can start to investigate rules for the period-adding structure in the full model.
+With this naive algorithm, we can start to investigate rules for the \gls{pal} structures in the archetypal model.
 
 \begin{lemma}[Shif-equivalence of Translated Symbolic Sequences]
 	\label{lemma:equivalence.translations}
-	The translations of the two cycles $\sigma$ and $\rho = s_2^{2i}(\sigma)$ in the halved model are shift-equivalent $T(\sigma) \equiv T(\rho)$ in the full model for all integers $i$.
+	The translations of the two cycles $\sigma$ and $\rho = s_2^{2i}(\sigma)$ in the halved archetypal model are shift-equivalent $T(\sigma) \equiv T(\rho)$ in the archetypal model for all integers $i$.
 \end{lemma}
 
-\begin{proof}
+\begin{proof} \phantom{x} \\
 	Let $\sigma = \sigma_1\sigma_2 \dots \sigma_n$, therefore $\rho = \sigma_{2i+1} \dots \sigma_n\sigma_1 \dots \sigma_{2i}$.
 	The translations are $T(\sigma) = t(\sigma_1\sigma_2)t(\sigma_3\sigma_4) \dots t(\sigma_{n-1}\sigma_n)$
 	and $T(\rho) = t(\sigma_{2i+1}\sigma_{2i+2}) \dots t(\sigma_{n-1}\sigma_n)t(\sigma_1\sigma_2) \dots t(\sigma_{2i-i}\sigma_{2i})$.
 	We can see that $T(\rho) = s_4^i(T(\sigma))$ and therefore $T(\sigma) \equiv T(\rho)$.
+	\hfill $\blacksquare$
 \end{proof}
 
 \begin{theorem}[Coexistence of Translated Symbolic Sequences]
@@ -141,37 +151,38 @@ With this naive algorithm, we can start to investigate rules for the period-addi
 	\end{enumerate}
 \end{theorem}
 
-\begin{proof}
+\begin{proof} \phantom{x} \\
 	Let $\sigma = \sigma_1\sigma_2 \dots \sigma_n$ a symbolic sequence in the halved model with $n$ rotations.
 	We know from \Cref{lemma:equivalence.translations} that the only possible candidates for $F(\sigma)$ are $T(\sigma)$ and $T(s_2(\sigma))$.
-	These are the first two possibilities we check in the algorithm and all other shifts $T(s_2^i(\sigma))$ with $2 \leq i < n$ are shift-equivalent to $T(\sigma)$ or $T(s_2(\sigma))$.
+	These are the first two possibilities we check in the algorithm and all other shifts $T(s_2^i(\sigma))$ with $2 \leq i < n$ are shift-equivalent to either $T(\sigma)$ or $T(s_2(\sigma))$.
 	This follows directly from \Cref{lemma:equivalence.translations}.
 	So, in the following, we will only check for the shift-equivalence of these two candidates.
 	\begin{enumerate}
 		\item Let $n = 2i$.
 		      \begin{align*}
-			              & T(h) = t(\sigma_1\sigma_2) t(\sigma_3\sigma_4) \dots t(\sigma_{n-1}\sigma_n)  \\
-			      \nequiv & T(s_2(h)) = t(\sigma_2\sigma_3) t(\sigma_4\sigma_5) \dots t(\sigma_n\sigma_1)
+			      T(h)                 & = t(\sigma_1\sigma_2) t(\sigma_3\sigma_4) \dots t(\sigma_{n-1}\sigma_n) \\
+			      \nequiv \: T(s_2(h)) & = t(\sigma_2\sigma_3) t(\sigma_4\sigma_5) \dots t(\sigma_n\sigma_1)
 		      \end{align*}
 		      The two candidates are not shift-equivalent because the pair $t(\sigma_1\sigma_2)$ in $T(\sigma)$ is not included in the other candidate $T(s_2(\sigma))$.
 		      The same is true for any other pair, and therefore $F(\sigma) = \{T(\sigma), T(s_2(\sigma))\}$.
 		\item Let $n = 2i + 1$.
 		      \begin{align*}
-			             & T(h) = t(\sigma_1\sigma_2) t(\sigma_3\sigma_4) \dots t(\sigma_n\sigma_1) t(\sigma_2\sigma_3) \dots t(\sigma_{n-1}\sigma_n)      \\
-			      \equiv & T(s_2(h)) = t(\sigma_2\sigma_3) \dots t(\sigma_{n-1}\sigma_n) t(\sigma_1\sigma_2) t(\sigma_3\sigma_4) \dots t(\sigma_n\sigma_1)
+			      T(h)                & = t(\sigma_1\sigma_2) t(\sigma_3\sigma_4) \dots t(\sigma_n\sigma_1) t(\sigma_2\sigma_3) \dots t(\sigma_{n-1}\sigma_n) \\
+			      \equiv \: T(s_2(h)) & = t(\sigma_2\sigma_3) \dots t(\sigma_{n-1}\sigma_n) t(\sigma_1\sigma_2) t(\sigma_3\sigma_4) \dots t(\sigma_n\sigma_1)
 		      \end{align*}
 		      The two candidates are shift-equivalent.
 		      By shifting the second candidate $T(s_2(\sigma))$ $2i$ times, we get the first candidate $T(\sigma)$.
 		      Therefore, the second candidate is discarded and $F(\sigma) = \{T(\sigma)\}$.
 	\end{enumerate}
+	\hfill $\blacksquare$
 \end{proof}
 
-Note that a result of $F(\sigma) = \{T(\sigma), T(s_2(\sigma))\}$ means that the cycle in the halved model $\sigma$ manifests as two coexisting cycles in the full model.
+Note that a result of $F(\sigma) = \{T(\sigma), T(s_2(\sigma))\}$ means that the cycle $\sigma$ in the halved archetypal model manifests as two coexisting cycles in the archetypal model.
 
 \subsubsection{Revised Algorithm}
 
 With all these properties and functions we now can formulate a more compact algorithm, \Cref{alg:halved.to.full}, for translating symbolic sequences from the halved model into the full model.
-This revised algorithm will be used in the following to explain the rules of the period-adding structure in the full model.
+This revised algorithm will be used in the following to construct the rules for the \pls{pal} structures in the archetypal model.
 
 \begin{algorithm}
 	\caption{Translating a Symbolic Sequence from the Halved Model to the Full Model}\label{alg:halved.to.full}
@@ -192,7 +203,7 @@ It uses the inverse $t^{-1}$ of the function $t$.
 	The function $t^{-1}$ maps one rotation of a symbolic sequence in the full model to two rotations in the halved model.
 	It is defined in the following way.
 	\begin{align}
-		t^{-1}: & \A^a\B^b\C^c\D^d \mapsto \L^a\R^b\L^c\R^d
+		t^{-1}: \quad \A^a\B^b\C^c\D^d \mapsto \L^a\R^b\L^c\R^d
 	\end{align}
 \end{definition}
 
