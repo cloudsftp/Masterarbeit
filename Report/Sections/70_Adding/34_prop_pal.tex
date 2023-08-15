@@ -1,10 +1,22 @@
-\subsection{Properties of the Period-adding Structure in the Full Model}
+\subsection{Properties of the \Glsentrylong{pal} Structures in the Archetypal Model}
+\label{sec:add.rules.pal}
 
-With this knowledge, we now can explain, why some cycles in the full model have a much lower period than expected in period-adding structures.
+With the revised algorithms we can now explain the \gls{pal} structures in the archetypal model.
+We start by explaining why some cycles have a much higher period than expected in the \gls{pal} structures.
+After that, we construct rules for the symbolic sequences in the \gls{pal} structures in the archetypal model.
+And finally, we construct rules for the rotation-like numbers in the \gls{pal} structures in the archetypal model.
+
+\subsubsection{Periods in the \Glsentrylong{pal} Structures}
+
+First, we state that the function $t$ that translates 4-syllables from the halved archetypal model to the archetypal model preserves the period of the 4-syllable.
+The function was defined in \Cref{sec:add.halved.tanslating}.
 
 \begin{lemma}[$t$ Preserves Period]
 	\label{lemma:t.preserves.period}
-	The function $t$ preserves the period. $|\sigma_1\sigma_2| = |t(\sigma_1\sigma_2)|$.
+	The function $t$ preserves the period.
+	\begin{align}
+		|\sigma_1\sigma_2| = |t(\sigma_1\sigma_2)|
+	\end{align}
 \end{lemma}
 
 \begin{proof}
@@ -16,47 +28,58 @@ With this knowledge, we now can explain, why some cycles in the full model have 
 		= |t(\L^a\R^b\L^c\R^d)|
 		= |t(\sigma_1\sigma_2)|
 	\end{align*}
+	\hfill $\blacksquare$
 \end{proof}
 
 \begin{theorem}[Period of Cycles in the Full Model]
 	\begin{enumerate}
-		\item If a cycle in the halved model manifests as two coexisting cycles in the full model, the period of either cycle is the same as the period of the cycle in the halved model. $|T(\sigma)| = |T(s_2(\sigma))| = |\sigma|$.
-		\item If a cycle in the halved model manifests as a single cycle in the full model, the period of this cycle is double the period of the cycle in the halved model. $|T(\sigma)| = 2 |\sigma|$.
+		\item If a cycle in the halved model manifests as two coexisting cycles in the full model, the period of either cycle is the same as the period of the cycle in the halved model.
+		      \begin{align*}
+			      |T(\sigma)| = |T(s_2(\sigma))| = |\sigma|
+		      \end{align*}
+		\item If a cycle in the halved model manifests as a single cycle in the full model, the period of this cycle is double the period of the cycle in the halved model.
+		      \begin{align*}
+			      |T(\sigma)| = 2 |\sigma|
+		      \end{align*}
 	\end{enumerate}
 \end{theorem}
+
+\clearpage
 
 \begin{proof} \phantom{x}
 	\begin{enumerate}
 		\item From \Cref{theorem:coexistence.even} we know that if the cycle $\sigma$ in the halved model manifests as two coexisting cycles in the full model, $\sigma$ has an even number of rotations $n$.
 		      And its translation is $T(\sigma) = t(\sigma_1\sigma_2) t(\sigma_3\sigma_4) \dots t(\sigma_{n-1}\sigma_n)$.
-		      Combining this with the fact, that $t$ preserves the period of its input as described in \Cref{lemma:t.preserves.period}, we can calculate the period of $T(h)$ in the following way.
+		      Combining this with the fact, that $t$ preserves the period of its input as described in \Cref{lemma:t.preserves.period}, we can calculate the period of $T(\sigma)$ in the following way.
 		      \begin{align*}
-			      |T(h)| & = |t(\sigma_1\sigma_2) t(\sigma_3\sigma_4) \dots t(\sigma_{n-1}\sigma_n)|           \\
-			             & = |t(\sigma_1\sigma_2)| + |t(\sigma_3\sigma_4)| + \dots + |t(\sigma_{n-1}\sigma_n)| \\
-			             & = |\sigma_1\sigma_2| + |\sigma_3\sigma_4| + \dots + |\sigma_{n-1}\sigma_n|          \\
-			             & = |\sigma_1\sigma_2 \dots \sigma_n| = |h|
+			      |T(\sigma)| & = |t(\sigma_1\sigma_2) t(\sigma_3\sigma_4) \dots t(\sigma_{n-1}\sigma_n)|           \\
+			                  & = |t(\sigma_1\sigma_2)| + |t(\sigma_3\sigma_4)| + \dots + |t(\sigma_{n-1}\sigma_n)| \\
+			                  & = |\sigma_1\sigma_2| + |\sigma_3\sigma_4| + \dots + |\sigma_{n-1}\sigma_n|          \\
+			                  & = |\sigma_1\sigma_2 \dots \sigma_n| = |\sigma|
 		      \end{align*}
-		      So the period of the cycle $T(\sigma)$ in the full model is the same as the period of the cycle $\sigma$ in the halved model.
+		      So the period of the cycle $T(\sigma)$ in the archetypal model is the same as the period of the cycle $\sigma$ in the halved archetypal model.
 		      The same calculation can be done for $T(s(\sigma))$ and is omitted here.
-		\item Similarly we know that if the cycle $\sigma$ in the halved model manifests as a single cycle in the full model, $\sigma$ has an odd number of rotations $n$.
+		\item Similarly, we know that if the cycle $\sigma$ in the halved model manifests as a single cycle in the full model, $\sigma$ has an odd number of rotations $n$.
 		      And its translation is $T(\sigma) = t(\sigma_1\sigma_2) \dots t(\sigma_n\sigma_1) \dots t(\sigma_{n-1}\sigma_n)$.
 		      Its period can be calculated in the following way.
 		      \begin{align*}
-			      |T(h)| & = |t(\sigma_1\sigma_2) \dots t(\sigma_n\sigma_1) \dots t(\sigma_{n-1}\sigma_n)|                      \\
-			             & = |t(\sigma_1\sigma_2)| + \dots + |t(\sigma_n\sigma_1)| + \dots + |t(\sigma_{n-1}\sigma_n)|          \\
-			             & = |\sigma_1\sigma_2| + \dots + |\sigma_n\sigma_1| + \dots + |\sigma_{n-1}\sigma_n|                   \\
-			             & = |\sigma_1\sigma_2 \dots \sigma_n\sigma_1 \dots \sigma_{n-1}\sigma_n| = |\sigma\sigma| = 2 |\sigma|
+			      |T(\sigma)| & = |t(\sigma_1\sigma_2) \dots t(\sigma_n\sigma_1) \dots t(\sigma_{n-1}\sigma_n)|                      \\
+			                  & = |t(\sigma_1\sigma_2)| + \dots + |t(\sigma_n\sigma_1)| + \dots + |t(\sigma_{n-1}\sigma_n)|          \\
+			                  & = |\sigma_1\sigma_2| + \dots + |\sigma_n\sigma_1| + \dots + |\sigma_{n-1}\sigma_n|                   \\
+			                  & = |\sigma_1\sigma_2 \dots \sigma_n\sigma_1 \dots \sigma_{n-1}\sigma_n| = |\sigma\sigma| = 2 |\sigma|
 		      \end{align*}
 		      So the period of the cycle $T(\sigma)$ in the full model is twice the period of the cycle $\sigma$ in the halved model.
 	\end{enumerate}
+	\hfill $\blacksquare$
 \end{proof}
 
-\subsubsection{Rules for Combining Symbolic Sequences}
+\todo{\Cref{lemma:t.preserves.period} should be Lemma 7.5}
 
-Looking at the farey tree in \Cref{fig:tree.adding1.hor.full}, we can see some regularities in the distribution of coexisting (yellow) and single (white) cycles in the full model.
-These can be explained with \Cref{theorem:coexistence.even}.
-\todo{last case not possible in our adding structures. proof!}
+With this property we can also explain the regularities for coexistence of two cycles in the Farey-trees of \gls{pal} structures.
+\todo{Here Farey-tree of full horizontal pal structure}
+
 The third case in \Cref{theorem:child.coexistence} can't be seen in the farey tree but it follows from the proof of the first two cases.
+\todo{Last case not possible in our adding structures. proof!}
 
 \begin{theorem}[Multiplicity of Cycles Associated With Child Nodes Based on the Multiplicity of Cycles Associated With its Parent Nodes]
 	\label{theorem:child.coexistence}
@@ -79,6 +102,23 @@ The third case in \Cref{theorem:child.coexistence} can't be seen in the farey tr
 		      Therefore this glued-together cycle manifests as two coexisting cycles in the full model.
 	\end{enumerate}
 \end{proof}
+
+
+This explains the pattern we observed in the periods of the \gls{pal} structures in \Cref{sec:add.add.like}.
+We take another look at the 1D period scan of the horizontal \gls{pal} structure between the parameter regions $P^{14}_3$ and $\left[P^{14}_3  \mid P^{12}_3\right]$ in \Cref{fig:add.add.like.hor.1D}.
+We get the information, whether a parameter region in the structure was associated with two coexisting cycles from the Farey-tree in \Cref{fig:add.add.like.hor.tree}.
+The parameter region associated with the period $14$ is not associated with coexisting cycles, therefore the corresponding cycle in the halved archetypal model has an odd number of revolutions and its period is twice as high as the period associated with the same parameter region in the halved archetypal model, which is $7$.
+The parameter region associated with the period $13$ is associated with coexisting cycles, therefore the corresponding cycle in the halved archetypal model has an even number of revolutions its period is the same as the period associated with the same parameter region in the halved archetypal mode.
+The parameter region in between those two parameter regions is associated with the period $7 + 13 = 20$ in the halved archetypal model.
+Also, its cycle has an odd number of revolutions, since it is the concatenation of one cycle with an even and one cycle with an odd number of revolutions.
+We know from \Cref{theorem:period.pal} that this parameter region is associated with the period $40$ in the archetypal model.
+This is true as we can observer this in the 1D period scan in \Cref{fig:add.add.hor.1D}.
+Also, we know from \Cref{theorem:child.coexistence} that this parameter region is associated with two coexisting cycles.
+This is true as we can see in the Farey-tree \todo{reference tree}
+
+\todo{1D period scan again?}
+
+\subsubsection{Rules for Combining Symbolic Sequences}
 
 Furthermore, we can formulate rules for the cycles in the child node of two nodes in the period-adding structure in the full model.
 
