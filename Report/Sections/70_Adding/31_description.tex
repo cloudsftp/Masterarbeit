@@ -2,14 +2,14 @@
 \label{sec:add.add.like}
 
 We start by plotting a 2D period scan of the increasing archetypal model.
-Here we changed $b_L$ to $0.8$ and keep $a_L$ and $g_R\left(\frac{1}{2}\right)$, because the period-adding-like structures are more pronounced at these parameter values.
+Here we changed $b_L$ to $0.8$ and keep $a_L$ and $g_R\left(\frac{1}{2}\right)$, because the \gls{pal} structures are more pronounced at these parameter values.
 \Cref{fig:add.add.like} shows a 2D period scan with these parameters at a corner of the space between chains.
-Here, the parameter region $P^{12}_3$ is in the lower left corner and the parameter region $P^{12}_4$ of the same chain is in the upper right corner.
-In the lower right corner is the parameter region $P^{14}_4$.
+Here, the parameter region $P^{12}_2$ is in the lower left corner and the parameter region $P^{12}_3$ of the same chain is in the upper right corner.
+In the lower right corner is the parameter region $P^{14}_3$.
 
-We will take a closer look at the horizontally \gls{pal} structures between the period regions $P^{14}_4$ and $P^{12}_4$ first.
-Then we will examine the vertically oriented \gls{pal} structures between the regions $P^{12}_3$ and $P^{14}_4$.
-And lastly, we will examine the complex looking structure at the corner.
+We will take a closer look at the horizontally \gls{pal} structures between the parameter regions $P^{14}_3$ and $P^{12}_3$ first.
+Then we will examine the vertically oriented \gls{pal} structures between the parameter regions $P^{12}_2$ and $P^{14}_3$.
+And lastly, we will examine the complex looking structure in the corner between all three ``type A'' parameter regions.
 
 \begin{figure}
 	\centering
@@ -24,11 +24,11 @@ And lastly, we will examine the complex looking structure at the corner.
 
 \subsubsection{Horizontal Period-adding-like Structures}
 
-\Cref{fig:add.add.like.hor.2D} shows a 2D scan of the horizontally oriented \gls{pal} structures between the parameter regions $P^{14}_4$ and $P^{12}_4$.
-We can see two \gls{pal} structures, one between the ``type A'' parameter region $P^{14}_4$ and the hybrid parameter region $\left[P^{14}_4 \mid P^{12}_4\right]$ and one in between the hybrid parameter region $\left[P^{14}_4 \mid P^{12}_4\right]$ and the ``type A'' parameter region $P^{12}_4$.
+\Cref{fig:add.add.like.hor.2D} shows a 2D scan of the horizontally oriented \gls{pal} structures between the parameter regions $P^{14}_3$ and $P^{12}_3$.
+We can see two \gls{pal} structures, one between the ``type A'' parameter region $P^{14}_3$ and the hybrid parameter region $\left[P^{14}_3 \mid P^{12}_3\right]$ and one in between the hybrid parameter region $\left[P^{14}_3 \mid P^{12}_3\right]$ and the ``type A'' parameter region $P^{12}_3$.
 There is a red arrow in the 2D period scan that indicates the parameter range for the 1D period scan in \Cref{fig:add.add.like.hor.1D}.
 
-Looking at the 1D period scan, we can see why the section is called \glsentrylong{pal}.
+Looking at the 1D period scan, one can see why the section is called \glsentrylong{pal}.
 In the middle between the parameter regions associated with the periods $14$ and $13$, we would expect the most pronounced parameter region to be associated with the period $27$.
 Instead, the most pronounced parameter region in-between those parameter regions is associated with the period $40$.
 And the most pronounced parameter region between this parameter region and the parameter region associated with the period $14$, has period $27$ where we would expect period $54$.
@@ -59,11 +59,13 @@ The structure is not just a skewed \gls{pa} structure, as one might think since 
 And also $27 + 13 = 40$ which is associated with the parameter region between the parameter regions associated with the periods $27$ and $13$, respectively.
 We can see that when examining the symbolic sequences associated with the parameter regions in that structure.
 \Cref{fig:add.add.like.hor.tree} shows the Farey-tree with the symbolic sequences of this structure.
-The starting nodes are associated with the parameter regions $P^{14}_4$ and $\left[P^{14}_4 \mid P^{12}_4\right]$
+The starting nodes are associated with the symbolic sequences associated with the parameter regions $P^{14}_3$ and $\left[P^{14}_3 \mid P^{12}_3\right]$, respectively.
 The parameter region associated with the period $27$ is the lowest node in level $2$, which is associated with two coexisting cycles.
-These two cycles, $\A^3\B^4\C^3\D^4\A^3\B^4\C^2\D^4$ and $\A^3\B^4\C^3\D^4\A^2\B^4\C^2\D^4$ could be the result of concatenating the symbolic sequences $A^3\B^4\C^3\D^4$ and $\A^3\B^4\C^2\D^4$, as well as $\A^3\B^4\C^3\D^4$ and $\A^2\B^4\C^2\D^4$ of the parameter regions associated with the periods $14$ and $13$, respectively.
-But the cycle $\A^3\B^4\C^3\D^4\A^2\B^4\C^3\D^4\A^3\B^4\C^2\D^4$ of the parameter region associated with the period $40$ cannot be a result of concatenating any pair of symbolic sequences $\A^3\B^4\C^2\D^4$ and $\A^2\B^4\C^3\D^4$ of the parameter region associated with the period $13$ and $\A^3\B^4\C^3\D^4\A^3\B^4\C^2\D^4$ and $\A^3\B^4\C^3\D^4\A^2\B^4\C^3\D^4$ of the parameter region associated with the period $27$.
+These two cycles, $\A^4\B^3\C^4\D^3\A^4\B^3\C^3\D^3$ and $\A^4\B^3\C^4\D^3\A^3\B^3\C^4\D^3$ could be the result of concatenating the symbolic sequences $A^4\B^3\C^4\D^3$ and $\A^4\B^3\C^3\D^3$, as well as $\A^4\B^3\B^4\D^3$ and $\A^3\B^3\C^4\D^3$ of the parameter regions associated with the periods $14$ and $13$, respectively.
+But the cycle $\A^4\B^3\C^4\D^3\A^3\B^3\B^4\D^3\A^4\B^3\C^3\D^3$ of the parameter region associated with the period $40$ cannot be a result of concatenating any pair of symbolic sequences $\A^4\B^3\C^3\D^3$ and $\A^3\B^3\C^4\D^3$ of the parameter region associated with the period $13$ and $\A^4\B^3\C^4\D^3\A^4\B^3\C^3\D^3$ and $\A^4\B^3\C^4\D^3\A^3\B^3\C^4\D^3$ of the parameter region associated with the period $27$.
 One can see that this is truly no \gls{pa} structure.
+
+\todo{Correct symbolic sequences}
 
 \begin{figure}
 	\centering
@@ -79,8 +81,8 @@ One can see that this is truly no \gls{pa} structure.
 
 Next, we will take a look at the vertically oriented \gls{pal} structures.
 \Cref{fig:add.add.like.vert.2D} shows a 2D period scan of this structure.
-Here, we can also see two \gls{pal} structures, one in-between the parameter regions $P^{12}_3$ and $\left[P^{12}_3 \mid P^{14}_4\right]$ and one in-between the parameter regions $\left[P^{12}_3 \mid P^{14}_4\right]$ and $P^{14}_4$.
-We choose the \gls{pal} structure in-between the parameter regions $P^{12}_3$ and $\left[P^{12}_3 \mid P^{14}_4\right]$ for closer investigation.
+Here, we can also see two \gls{pal} structures, one in-between the parameter regions $P^{12}_2$ and $\left[P^{12}_2 \mid P^{14}_3\right]$ and one in-between the parameter regions $\left[P^{12}_2 \mid P^{14}_3\right]$ and $P^{14}_3$.
+We choose the \gls{pal} structure in-between the parameter regions $P^{12}_2$ and $\left[P^{12}_2 \mid P^{14}_3\right]$ for closer investigation.
 A red arrow marks again the parameter range for the 1D period scan of this \gls{pal} structure in \Cref{fig:add.add.like.vert.1D}.
 
 As before, the periods do not add as we would expect from a \gls{pa} structure.
@@ -128,16 +130,16 @@ One can see that this is again no \gls{pa} structure.
 Finally, we will look at the structure in the corner which \Cref{fig:add.add.like.corn.2D} shows a 2D period scan of.
 Here, we see many \gls{pal} structures.
 These are organized as follows.
-There is one horizontally oriented \gls{pal} structure between the parameter regions $\left[P^{12}_3 \mid P^{14}_4\right]$ and $P^{12}_4$.
-And one horizontally oriented \gls{pal} structure between the parameter region $P^{12}_4$ and every parameter region in the vertically oriented \gls{pal} structure between the parameter regions $P^{12}_3$ and $\left[P^{12}_3 \mid P^{14}_4\right]$.
-Analogously, there is one vertically oriented \gls{pal} structure between the parameter regions $P^{12}_3$ and $\left[P^{14}_4 \mid P^{12}_4\right]$.
-And one vertically oriented \gls{pal} structure between the parameter region $P^{12}_3$ and every parameter region in the horizontally oriented \gls{pal} structure between the parameter regions $P^{14}_4$ and $\left[P^{14}_4 \mid P^{12}_4\right]$.
-Similarly, there is also one horizontally oriented \gls{pal} structure between the parameter region $\left[P^{14}_4 \mid P^{12}_4\right]$ and every parameter region in the vertically oriented \gls{pal} structure between the parameter regions $\left[P^{12}_3 \mid P^{14}_4\right]$ and $P^{14}_4$.
-And one vertically oriented \gls{pal} structure between the parameter region $\left[P^{12}_3 \mid P^{14}_4\right]$ and every parameter region in the horizontally oriented \gls{pal} structure between the parameter regions $P^{14}_4$ and $\left[P^{14}_4 \mid P^{12}_4\right]$.
+There is one horizontally oriented \gls{pal} structure between the parameter regions $\left[P^{12}_2 \mid P^{14}_3\right]$ and $P^{12}_3$.
+And one horizontally oriented \gls{pal} structure between the parameter region $P^{12}_3$ and every parameter region in the vertically oriented \gls{pal} structure between the parameter regions $P^{12}_2$ and $\left[P^{12}_2 \mid P^{14}_3\right]$.
+Analogously, there is one vertically oriented \gls{pal} structure between the parameter regions $P^{12}_2$ and $\left[P^{14}_3 \mid P^{12}_3\right]$.
+And one vertically oriented \gls{pal} structure between the parameter region $P^{12}_2$ and every parameter region in the horizontally oriented \gls{pal} structure between the parameter regions $P^{14}_3$ and $\left[P^{14}_3 \mid P^{12}_3\right]$.
+Similarly, there is also one horizontally oriented \gls{pal} structure between the parameter region $\left[P^{14}_3 \mid P^{12}_3\right]$ and every parameter region in the vertically oriented \gls{pal} structure between the parameter regions $\left[P^{12}_2 \mid P^{14}_3\right]$ and $P^{14}_3$.
+And one vertically oriented \gls{pal} structure between the parameter region $\left[P^{12}_2 \mid P^{14}_3\right]$ and every parameter region in the horizontally oriented \gls{pal} structure between the parameter regions $P^{14}_3$ and $\left[P^{14}_3 \mid P^{12}_3\right]$.
 A very similar phenomenon was discovered by \Citeauthor{tramontana2012period} where there are many \gls{pa} structures between some parameter region and every parameter region of a \gls{pa} structure~\cite{tramontana2012period}.
 
 The 1D period scan in \Cref{fig:add.add.like.corn.1D} shows a 1D period scan of one of the simpler \gls{pal} structures.
-It is the \gls{pal} structure between the parameter regions $P^{12}_3$ and $\left[P^{14}_4 \mid P^{12}_4\right]$ marked with a red arrow in \Cref{fig:add.add.like.corn.2D}.
+It is the \gls{pal} structure between the parameter regions $P^{12}_2$ and $\left[P^{14}_3 \mid P^{12}_3\right]$ marked with a red arrow in \Cref{fig:add.add.like.corn.2D}.
 The diagram looks exactly like the 1D period scan for the vertical \gls{pal} structure in \Cref{fig:add.add.like.vert.1D}.
 Here, the periods also do not add up as we expect them to in \gls{pa} structures.
 

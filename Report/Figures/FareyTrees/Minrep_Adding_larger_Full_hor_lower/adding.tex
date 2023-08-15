@@ -53,7 +53,7 @@
 		lbl/.style={text width=,draw=none,inner sep=},
 		level/.style={sibling distance=\TreeDiameter/(2^#1),
 				level distance=\LevelDistance+#1\WidthIncrement},
-		level 1/.style={settextwidth=$\A^3\B^4\C^3\D^4\A^3\B^3\C^3\D^4\A^3\B^4\C^3\D^4\A^3\B^4\C^3\D^3\A^3\B^4\C^3\D^4$, level distance=10em},    %,level distance=1cm
+		level 1/.style={settextwidth=$\A^4\B^3\C^4\D^3\A^3\B^3\C^4\D^3\A^4\B^3\C^4\D^3\A^4\B^3\C^3\D^3\A^4\B^3\C^4\D^3$, level distance=10em},    %,level distance=1cm
 		level 2/.style={settextwidth=$(\A^6\B^4\C^5\D^4)^2(\A^5\B^4\C^6\D^4)^2\A^5\B^4\C^5\D^4$, level distance=10em},    %,level distance=1cm
 		edge from parent/.style={}] % don't draw tree edges
 
@@ -63,18 +63,17 @@
 	% ========================================
 
 	\path[widthlevel=-1,setwidth=3.5em] node[name=r,fill=yellow] at (0,.5\NodeHeight)
-	{\tiny$\A^3\B^4\C^2\D^4$\\[-.8em]$\A^2\B^4\C^3\D^4$}
-	node[name=s] at (0,-\TreeDiameter-\NodeHeight) {\tiny$\A^3\B^4\C^3\D^4$};
+	{\tiny$\A^4\B^3\C^3\D^3$\\[-.8em]$\A^3\B^3\C^4\D^3$}
+	node[name=s] at (0,-\TreeDiameter-\NodeHeight) {\tiny$\A^4\B^3\C^4\D^3$};
 
-	\path[settextwidth=$\A^3\B^4\C^3\D^4\A^2\B^4\C^3\D^4\A^3\B^4\C^2\D^4$] node[name=sr] at (1.5 \LevelDistance,-.5\TreeDiameter)
-	{\tiny$\A^3\B^4\C^3\D^4\A^2\B^4\C^3\D^4\A^3\B^4\C^2\D^4$}
-	child{ node{\tiny$\A^3\B^4\C^3\D^4\A^2\B^4\C^3\D^4\A^2\B^4\C^3\D^4\A^3\B^4\C^2\D^4\A^3\B^4\C^2\D^4$}
+	\path[settextwidth=$\A^4\B^3\C^4\D^3\A^3\B^3\C^4\D^3\A^4\B^3\C^3\D^3$] node[name=sr] at (1.5 \LevelDistance,-.5\TreeDiameter)
+	{\tiny$\A^4\B^3\C^4\D^3\A^3\B^3\C^4\D^3\A^4\B^3\C^3\D^3$}
+	child{ node{\tiny$\A^4\B^3\C^4\D^3\A^3\B^3\C^4\D^3\A^3\B^3\C^4\D^3\A^4\B^3\C^3\D^3\A^4\B^3\C^3\D^3$}
 			%child{ node[fill=yellow]{\tiny$\A^4\B^3\C^3\D^3\A^3\B^3\C^3\D^3$\\[-.8em]$\A^3\B^3\C^3\D^3\A^3\B^3\C^4\D^3$} }
 			%child{ node{\tiny$(\A^4\B^3\C^3\D^3)^2(\A^3\B^3\C^4\D^3)^2\A^3\B^3\C^3\D^3$} }
 		}
 	%---------%
-	child{ node[fill=yellow]{\tiny$\A^3\B^4\C^3\D^4\A^3\B^4\C^2\D^4$\\[-.8em]$\A^3\B^4\C^3\D^4\A^2\B^4\C^3\D^4$}
-			%child{ node{\tiny$\A^4\B^3\C^4\D^3(\A^3\B^3\C^4\D^3)^2(\A^4\B^3\C^3\D^3)^2$} }
+	child{ node[fill=yellow]{\tiny$\A^4\B^3\C^4\D^3\A^4\B^3\C^3\D^3$\\[-.8em]$\A^4\B^3\C^4\D^3\A^3\B^3\C^4\D^3$} %child{ node{\tiny$\A^4\B^3\C^4\D^3(\A^3\B^3\C^4\D^3)^2(\A^4\B^3\C^3\D^3)^2$} }
 			%child{ node[fill=yellow]{\tiny$\A^4\B^3\C^4\D^3\A^4\B^3\C^3\D^3$\\[-.8em]$\A^4\B^3\C^4\D^3\A^3\B^3\C^4\D^3$} }
 		};
 

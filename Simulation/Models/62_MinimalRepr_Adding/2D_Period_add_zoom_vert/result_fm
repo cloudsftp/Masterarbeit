@@ -9,7 +9,7 @@
 \psfrag{x}{\hspace*{0.0em}\raisebox{0.5ex}{$\alpha$}}
 \psfrag{y}{\hspace*{0.0em}\raisebox{0.5ex}{$\beta$}}
 
-\psfrag{P.12.3}{\hspace*{0.0em}\raisebox{0.5ex}{\color[RGB]{255, 110, 0}{$P_{3}^{12}$}}}
-\psfrag{P.14.4}{\hspace*{0.0em}\raisebox{0.5ex}{\color[RGB]{255, 110, 0}{$P_{4}^{14}$}}}
+\psfrag{P.12.2}{\hspace*{0.0em}\raisebox{0.5ex}{\color[RGB]{255, 110, 0}{$P_{2}^{12}$}}}
+\psfrag{P.14.3}{\hspace*{0.0em}\raisebox{0.5ex}{\color[RGB]{255, 110, 0}{$P_{3}^{14}$}}}
 
-\psfrag{P.12.3+P.14.4}{\hspace*{-2.0em}\raisebox{0.5ex}{\color[RGB]{255, 110, 0}{$\left[P_{3}^{12} \mid P_{4}^{14}\right]$}}}
+\psfrag{P.12.2+P.14.3}{\hspace*{-2.0em}\raisebox{0.5ex}{\color[RGB]{255, 110, 0}{$\left[P_{2}^{12} \mid P_{3}^{14}\right]$}}}
