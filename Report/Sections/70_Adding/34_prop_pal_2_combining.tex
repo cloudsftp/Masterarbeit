@@ -1,0 +1,131 @@
+\subsubsection{Symbolic Sequences in the \Glsfullentry{pal} Structures}
+
+Furthermore, we can formulate rules for combining the symbolic sequences that are associated with nodes in the Farey-trees of the \gls{pal} structures.
+
+\begin{definition}[Merging two 4-syllables]
+	The operation $\left[\phi_i \mid \psi_j\right]$ merges the two 4-symmables $\phi_i$ and $\psi_j$.
+	Let $\phi_i = \A^a\B^b\C^c\D^d$ and $\psi_j = \A^e\B^f\C^g\D^h$.
+	Then $\left[\phi_i \mid \psi_j\right] = \A^a\B^b\C^g\D^h$.
+	It concatenates the first 2-syllable of $\phi_i$ with the second 2-syllable of $\psi_j$.
+\end{definition}
+
+\begin{theorem}[Combining Symbolic Sequences in a Farey-tree of a \gls{pal} Structure I]
+	The child node of two nodes with a singular cycle each with the symbolic sequences $\phi = \phi_1 \dots \phi_n$ and $\psi = \psi_1 \dots \psi_m$ is associated with two coexisting cycles with the following symbolic sequences.
+	\begin{align}
+		\phi_1 \dots \phi_{\frac{n-1}{2}} \left[\phi_{\frac{n+1}{2}} \mid \psi_{\frac{m+1}{2}}\right] \psi_{\frac{m+3}{2}} \dots \psi_m
+	\end{align}
+	and
+	\begin{align}
+		\phi_{\frac{n+3}{2}} \dots \phi_n \psi_1 \dots \psi_{\frac{m-1}{2}} \left[\psi_{\frac{m+1}{2}} \mid \phi_{\frac{n+1}{2}}\right]
+	\end{align}
+\end{theorem}
+
+\begin{proof}
+	Let $\sigma = \sigma_1\sigma_2 \dots \sigma_i$ with odd $i$, $\rho = \rho_1\rho_2 \dots \rho_j$ with odd $j$, $T(\sigma) = \phi$, and $T(\rho) = \psi$.
+	The child of both nodes in the halved archetypal model is associated with the symbolic sequence $\sigma\rho = \sigma_1 \dots \sigma_i \rho_1 \dots \rho_j$.
+	This manifests as two coexisting cycles in the archetypal model with the following symbolic sequences.
+	\begin{align*}
+		T(\sigma\rho) & = T(\sigma_1 \dots \sigma_i \rho_1 \dots \rho_j)                                                                                  \\
+		              & = t(\sigma_1\sigma_2) \dots t(\sigma_i\rho_1) \dots t(\rho_{j-1}\rho_j)                                                           \\
+		              & = \phi_1 \dots \phi_{\frac{n-1}{2}} t(\sigma_i\rho_1) \psi_{\frac{m+3}{2}} \dots \psi_j                                           \\
+		              & = \phi_1 \dots \phi_{\frac{n-1}{2}} \left[\phi_{\frac{n+1}{2}} \mid \psi_{\frac{m+1}{2}}\right] \psi_{\frac{m+3}{2}} \dots \psi_j
+	\end{align*}
+	and
+	\begin{align*}
+		T(s(\sigma\rho)) & = T(\sigma_2 \dots \sigma_i \rho_1 \dots \rho_j \sigma_1)                                                                         \\
+		                 & = t(\sigma_2\sigma_3) \dots t(\sigma_{i-1}\sigma_i) t(\rho_1\rho_2) \dots t(\rho_j\sigma_1)                                       \\
+		                 & = \phi_{\frac{n+3}{2}} \dots \phi_n \psi_1 \dots \psi_{\frac{m-1}{2}} t(\rho_j\sigma_1)                                           \\
+		                 & = \phi_{\frac{n+3}{2}} \dots \phi_n \psi_1 \dots \psi_{\frac{m-1}{2}} \left[\psi_{\frac{m+1}{2}} \mid \phi_{\frac{n+1}{2}}\right]
+	\end{align*}
+\end{proof}
+
+\begin{theorem}[Combining Symbolic Sequences in a Farey-tree of a \gls{pal} Structure II]
+	The child node of a node with a singular cycle with the symbolic sequence $\phi = \phi_1\phi_2 \dots \phi_n$ and a node with two coexisting cycles with the symbolic sequences $\phi^a = \phi^a_1\phi^a_2 \dots \phi^a_m$ and $\phi^b_1\phi^b_2 \dots \phi^b_m$ is associated with one of the following symbolic sequences.
+	\begin{enumerate}
+		\item If $\phi$ is associated with the left parent.
+		      \begin{align}
+			      \phi_1 \dots \phi_{\frac{n-1}{2}} \left[\phi_{\frac{n+1}{2}} \mid \phi^b_m\right]
+			      \phi^b_1 \dots \phi^b_{m-1} \left[\phi^b_m \mid \phi_{\frac{n+1}{2}}\right]
+			      \phi_{\frac{n+3}{2}} \dots \phi_n \phi^a
+		      \end{align}
+		\item If $\phi$ is associated with the right parent.
+		      \begin{align}
+			      \phi^a \phi_1 \dots \phi_{\frac{n-1}{2}} \left[\phi_{\frac{n+1}{2}} \mid \phi^b_m\right]
+			      \phi^b_1 \dots \phi^b_{m-1} \left[\phi^b_m \mid \phi_{\frac{n+1}{2}}\right]
+			      \phi_{\frac{n+3}{2}} \dots \phi_n
+		      \end{align}
+		      Which is shift-equivalent to the first case.
+		      But this distinction must be made to guarantee the correctness of the symbolic sequences in subsequent child nodes.
+	\end{enumerate}
+\end{theorem}
+
+\begin{proof} \phantom{x}
+	\begin{enumerate}
+		\item Let $\sigma = \sigma_1\sigma_2 \dots \sigma_i$ with odd $i$, $\rho = \rho_1\rho_2 \dots \rho_j$ with even $j$, $T(\sigma) = \phi, T(\rho) = \psi^a$, and $T(s_2(\rho)) = \psi^b$.
+		      The child of both nodes in the halved archetypal model is associated with the symbolic sequence $\sigma\rho = \sigma_1\sigma_2 \dots \sigma_i \rho_1\rho_2 \dots \rho_j$.
+		      This will manifest as the following symbolic sequence in the archetypal model.
+		      \begin{align*}
+			      T(\sigma\rho) & = T(\sigma_1 \dots \sigma_i \rho_1 \dots \rho_j)                                                                              \\
+			                    & =
+			      t(\sigma_1\sigma_2) \dots t(\sigma_i \rho_1) \dots t(\rho_j \sigma_1) \dots t(\sigma_{i-1}\sigma_i) t(\rho_1\rho_2) \dots t(\rho_{j-1}\rho_j) \\
+			                    & = \phi_1 \dots \phi_{\frac{n-1}{2}} t(\sigma_i \rho_1)
+			      \psi^b_1 \dots \rho^b_{m-1} t(\rho_j \sigma_1)
+			      \phi_{\frac{n+3}{2}} \dots \phi_n
+			      \psi^a_1 \dots \psi^a_m                                                                                                                       \\
+			                    & =
+			      \phi_1 \dots \sigma_{\frac{n-1}{2}} \left[\sigma_{\frac{n+1}{2}} \mid \rho^b_m\right]
+			      \psi^b_1 \dots \psi^b_{m-1} \left[\rho^b_m \mid \sigma_{\frac{n+1}{2}}\right]
+			      \phi_{\frac{n+3}{2}} \dots \phi_n
+			      \psi^a                                                                                                                                        \\
+		      \end{align*}
+		\item Let $\sigma = \sigma_1\sigma_2 \dots \sigma_i$ with even $i$ and $\rho = \rho_1\rho_2 \dots \rho_j$ with odd $j$ and $T(\sigma) = \psi^a, T(s_2(\sigma)) = \psi^b$, and $T(\rho) = \phi$.
+		      The child of both nodes in the halved archetypal model is associated with the symbolic sequence $\sigma\rho = \sigma_1l_2 \dots \sigma_i \rho_1\rho_2 \dots \rho_j$.
+		      This will manifest as the following symbolic sequence in the archetypal model.
+		      \begin{align*}
+			      T(\sigma\rho) & = T(\sigma_1 \dots \sigma_i \rho_1 \dots \rho_j)                                                                                             \\
+			                    & =
+			      t(\sigma_1\sigma_2) \dots t(\sigma_{i-1}\sigma_i) t(\rho_1\rho_2) \dots t(\rho_j \sigma_1) \dots t(\sigma_i\rho_1) \dots t(\rho_j\sigma_1) \dots t(\sigma_i) \\
+			                    & =
+			      \psi^a_1 \dots \psi^a_m
+			      \phi_1 \dots \phi_{\frac{n-1}{2}} t(\sigma_i \rho_1)
+			      \psi^b_1 \dots \psi^b_{m-1} t(\rho_j \sigma_1)
+			      \phi_{\frac{n+3}{2}} \dots \phi_n                                                                                                                            \\
+			                    & =
+			      \psi^a
+			      \phi_1 \dots \phi_{\frac{n-1}{2}} \left[\phi_{\frac{n+1}{2}} \mid \psi^b_m\right]
+			      \psi^b_1 \dots \psi^b_{m-1} \left[\psi^b_m \mid \phi_{\frac{n+1}{2}}\right]
+			      \phi_{\frac{n+3}{2}} \dots \phi_n                                                                                                                            \\
+		      \end{align*}
+	\end{enumerate}
+	\hfill $\blacksquare$
+\end{proof}
+
+As mentioned before, the next case does not appear in the \gls{pal} structures we investigate.
+But we will include it here for completeness.
+
+\begin{theorem}[Combining Symbolic Sequences in a Farey-tree of a \gls{pal} Structure III]
+	The child node of two nodes that are both associated with two coexisting cycles each with the symbolic sequences $\phi^a = \phi^a_1\phi^a_2\dots\phi^a_n, \phi^b = \phi^b_1\phi^b_2\dots\phi^b_n, \psi^a = \psi^a_1\psi^a_2\dots\psi^a_m,$ and $\psi^b = \psi^b_1\psi^b_2\dots\psi^b_m$ is associated with two coexisting cycles with the following symbolic sequences.
+	\begin{align}
+		\phi^a\psi^a \qquad \text{and} \qquad
+		\phi^b_1 \dots \phi^b_{n-1} \left[\phi^b_n \mid \psi^b_m\right] \psi^b_1 \dots \psi^b_{m-1} \left[\psi^b_m \mid \phi^b_n\right]
+	\end{align}
+\end{theorem}
+
+\begin{proof} \phantom{x} \\
+	Let $\sigma = \sigma_1 \dots \sigma_i$ with even $i$, $\rho = \rho_1 \dots \rho_j$ with even $j$, $T(\sigma) = \phi^a, T(s_2(\sigma)) = \phi^b, T(\rho) = \phi^a$, and $T(s_2(\rho)) = \phi^b$.
+	The child of both nodes in the halved archetypal model is associated with the symbolic sequence $\sigma\rho$.
+	This manifests as two coexisting cycles with the following symbolic sequences in the archetypal model.
+	\begin{align*}
+		T(\sigma\rho) & = T(\sigma_1 \dots \sigma_i \rho_1 \dots \rho_j)                                              \\
+		              & = t(\sigma_1\sigma_2) \dots t(\sigma_{i-i}\sigma_i) t(\rho_1\rho_2) \dots t(\rho_{j-1}\rho_j) \\
+		              & = \phi^a_1 \dots \phi^a_n \psi^a_1 \dots \psi^a_m = \phi^a\psi^a
+	\end{align*}
+	and
+	\begin{align*}
+		T(s_2(\sigma\rho)) & = T(\sigma_2 \dots \sigma_i \rho_1 \dots \rho_j \sigma_1)                                                                         \\
+		                   & = t(\sigma_2\sigma_3) \dots t(\sigma_i\rho_1) \dots t(\rho_j\sigma_1)                                                             \\
+		                   & = \phi^b_1 \dots \phi^b_{n-1} t(\sigma_i\rho_1) \phi^b_1 \dots \phi^b_{m-1} t(\rho_j\sigma_1)                                     \\
+		                   & = \phi^b_1 \dots \phi^b_{n-1} \left[\phi^b_n \mid \phi^b_m\right] \phi^b_1 \dots \phi^b_{m-1} \left[\phi^b_m \mid \phi^b_n\right]
+	\end{align*}
+	\hfill $\blacksquare$
+\end{proof}
