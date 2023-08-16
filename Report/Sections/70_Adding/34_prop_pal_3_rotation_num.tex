@@ -114,48 +114,135 @@ Instead, we define rotation-tuples.
 \end{proof}
 
 \begin{theorem}[Rotation Tuples of Child Nodes II]
-	The child node of a node with a singular cycle $\sigma$ and a node with two coexisting cycles $\varrho^a$ and $\varrho^b$ will have the following rotation-like numbers.
+	The child node of a node with a singular cycle $\phi$ and a node with two coexisting cycles $\psi^a$ and $\psi^b$ will have the following rotation-like numbers.
 	We will call the cycle associated with the child node $\pi$ in the following.
 	\begin{align*}
 		\rho_\A(\pi) & =
-		\rho_\A(\sigma) \oplus \rho_\A(\varrho^a) \oplus \rho_A(\varrho^b) \\
+		\rho_\A(\phi) \oplus \rho_\A(\psi^a) \oplus \rho_A(\psi^b) \\
 		\rho_\B(\pi) & =
-		\rho_\B(\sigma) \oplus \rho_\B(\varrho^a) \oplus \rho_B(\varrho^b) \\
+		\rho_\B(\phi) \oplus \rho_\B(\psi^a) \oplus \rho_B(\psi^b) \\
 		\rho_\C(\pi) & =
-		\rho_\C(\sigma) \oplus \rho_\C(\varrho^a) \oplus \rho_C(\varrho^b) \\
+		\rho_\C(\phi) \oplus \rho_\C(\psi^a) \oplus \rho_C(\psi^b) \\
 		\rho_\D(\pi) & =
-		\rho_\D(\sigma) \oplus \rho_\D(\varrho^a) \oplus \rho_D(\varrho^b)
+		\rho_\D(\phi) \oplus \rho_\D(\psi^a) \oplus \rho_D(\psi^b)
 	\end{align*}
 \end{theorem}
 
-\begin{proof}
-	\todo{prove}
+\begin{proof} \phantom{x} \\
+	We prove this again in two parts.
+	First, we prove that the denominator of each element of the rotation tuples add up.
+	\begin{align*}
+		|\pi| & = \left|
+		\phi_1 \dots \phi_{\frac{n-1}{2}} \left[\phi_{\frac{n+1}{2}} \mid \psi^b_m\right]
+		\psi^b_1 \dots \psi^b_{m-1} \left[\psi^b_m \mid \phi_{\frac{n+1}{2}}\right]
+		\phi_{\frac{n+3}{2}} \dots \phi_n \psi^a
+		\right|                                                       \\
+		      & = \left|
+		\phi_1 \dots \phi_{\frac{n-1}{2}} \left[\phi_{\frac{n+1}{2}} \mid \phi_{\frac{n+1}{2}}\right]
+		\phi_{\frac{n+3}{2}} \dots \phi_n
+		\psi^b_1 \dots \psi^b_{m-1} \left[\psi^b_m \mid \psi^b_m\right]
+		\psi^a
+		\right|                                                       \\
+		      & = |\phi \psi^b \psi^a| = |\phi| + |\psi^a| + |\psi^b|
+	\end{align*}
+	Note that the first step is achieved by simply reordering some 4-syllables and two 2-syllables in the symbolic sequences.
+	This does not change the period.
+	It does also not change the number of symbols, since we only swapped the second 2-syllable of $\left[\phi_{\frac{n+1}{2}} \mid \psi^b_m\right]$ and $\left[\psi^b_m \mid \phi_{\frac{n+1}{2}}\right]$.
+	Therefore, the proof for works the same for the number of any symbol.
+	We will demonstrate this for the symbol $\A$.
+	\begin{align*}
+		|\pi|_\A & = \left|
+		\phi_1 \dots \phi_{\frac{n-1}{2}} \left[\phi_{\frac{n+1}{2}} \mid \psi^b_m\right]
+		\psi^b_1 \dots \psi^b_{m-1} \left[\psi^b_m \mid \phi_{\frac{n+1}{2}}\right]
+		\phi_{\frac{n+3}{2}} \dots \phi_n \psi^a
+		\right|_\A                                                                   \\
+		         & = \left|
+		\phi_1 \dots \phi_{\frac{n-1}{2}} \left[\phi_{\frac{n+1}{2}} \mid \phi_{\frac{n+1}{2}}\right]
+		\phi_{\frac{n+3}{2}} \dots \phi_n
+		\psi^b_1 \dots \psi^b_{m-1} \left[\psi^b_m \mid \psi^b_m\right]
+		\psi^a
+		\right|_\A                                                                   \\
+		         & = |\phi \psi^b \psi^a|_\A = |\phi|_\A + |\psi^a|_\A + |\psi^b|_\A
+	\end{align*}
+	Therefore the numerators of each element in the rotation tuples add up too.
+
+	One might criticize that we only proved it for the case where the left parent node is associated with a single cycle.
+	In that case
+	\begin{align*}
+		\pi = \phi_1 \dots \phi_{\frac{n-1}{2}} \left[\phi_{\frac{n+1}{2}} \mid \psi^b_m\right] \psi^b_1 \dots \psi^b_{m-1} \left[\psi^b_m \mid \phi_{\frac{n+1}{2}}\right] \phi_{\frac{n+3}{2}} \dots \phi_n \psi^a
+	\end{align*}
+	If the right parent node is associated with a single cycle, then
+	\begin{align*}
+		\pi = \psi^a \phi_1 \dots \phi_{\frac{n-1}{2}} \left[\phi_{\frac{n+1}{2}} \mid \psi^b_m\right] \psi^b_1 \dots \psi^b_{m-1} \left[\psi^b_m \mid \phi_{\frac{n+1}{2}}\right] \phi_{\frac{n+3}{2}} \dots \phi_n
+	\end{align*}
+	The only difference in both cases is that the symbols of $\psi^a$ are at the end in the first case and in the beginning in the second case.
+	Therefore, the proof works also in this case.
+	\hfill $\blacksquare$
 \end{proof}
 
-\todo{Reiterate not possible}
+As mentioned before, the next case does not appear in the \gls{pal} structures we investigate.
+But we will include it here again for completeness.
 
 \begin{theorem}
-	The child node of two nodes with two coexisting cycles, $\{\sigma^a, \sigma^b\}$ and $\{\varrho^a, \varrho^b\}$ respectively, will have the following rotation-like numbers.
+	The child node of two nodes that are associated with two coexisting cycles each with symbolic sequences $\phi^a, \phi^b, \psi^a,$ and $\psi^b$ is associated with two coexisting cycles.
 	We will call the two cycles associated with the child node $\pi^a$ and $\pi^b$ in the following.
-	\begin{align*}
-		\rho_\A(\pi^a) & = \rho_\A(\sigma^a) \oplus \rho_\A(\varrho^a) \\
-		\rho_\B(\pi^a) & = \rho_\A(\sigma^a) \oplus \rho_\A(\varrho^a) \\
-		\rho_\C(\pi^a) & = \rho_\A(\sigma^a) \oplus \rho_\A(\varrho^a) \\
-		\rho_\D(\pi^a) & = \rho_\A(\sigma^a) \oplus \rho_\A(\varrho^a) \\
-		\rho_\A(\pi^b) & = \rho_\A(\sigma^b) \oplus \rho_\A(\varrho^b) \\
-		\rho_\B(\pi^b) & = \rho_\A(\sigma^b) \oplus \rho_\A(\varrho^b) \\
-		\rho_\C(\pi^b) & = \rho_\A(\sigma^b) \oplus \rho_\A(\varrho^b) \\
-		\rho_\D(\pi^b) & = \rho_\A(\sigma^b) \oplus \rho_\A(\varrho^b)
-	\end{align*}
+	Their rotation tuples are $\rho(\pi^a) = (\rho_\A(\pi^a), \rho_\B(\pi^a), \rho_\C(\pi^a), \rho_\D(\pi^a))$ and $\rho(\pi^b) = (\rho_\A(\pi^b), \rho_\B(\pi^b), \rho_\C(\pi^b), \rho_\D(\pi^b))$ where the elements are defined as follows.
+	\begin{subequations}
+		\begin{align}
+			\rho_\A(\pi^a) & = \rho_\A(\phi^a) \oplus \rho_\A(\psi^a) \\
+			\rho_\B(\pi^a) & = \rho_\A(\phi^a) \oplus \rho_\A(\psi^a) \\
+			\rho_\C(\pi^a) & = \rho_\A(\phi^a) \oplus \rho_\A(\psi^a) \\
+			\rho_\D(\pi^a) & = \rho_\A(\phi^a) \oplus \rho_\A(\psi^a)
+		\end{align}
+	\end{subequations}
+	And for the cycle with the symbolic sequence $\pi^b$.
+	\begin{subequations}
+		\begin{align}
+			\rho_\A(\pi^b) & = \rho_\A(\phi^b) \oplus \rho_\A(\psi^b) \\
+			\rho_\B(\pi^b) & = \rho_\A(\phi^b) \oplus \rho_\A(\psi^b) \\
+			\rho_\C(\pi^b) & = \rho_\A(\phi^b) \oplus \rho_\A(\psi^b) \\
+			\rho_\D(\pi^b) & = \rho_\A(\phi^b) \oplus \rho_\A(\psi^b)
+		\end{align}
+	\end{subequations}
 \end{theorem}
 
-\begin{proof}
-	\todo{prove}
+\begin{proof} \phantom{x} \\
+	We start with the cycle with symbolic sequence $\pi^a$.
+	Again, we first prove that the denominators, i.e. the periods, add up.
+	\begin{align*}
+		|\pi^a| = |\phi^a\psi^a| = |\phi^a| + |\psi^a|
+	\end{align*}
+	This is straightforward and can be done for each symbol exactly like this.
+	We will demonstrate it for the symbol $\A$.
+	\begin{align*}
+		|\pi^a|_\A = |\phi^a\psi^a|_\A = |\phi^a|_\A + |\psi^a|_\A
+	\end{align*}
+	Therefore, the numerators also add up.
+
+	Now we prove the same thing for the cycle with symbolic sequence $\pi^b$.
+	\begin{align*}
+		|\pi^b| & = \left|\phi^b_1 \dots \phi^b_{n-1} \left[\phi^b_n \mid \psi^b_m\right] \psi^b_1 \dots \psi^b_{m-1} \left[\psi^b_m \mid \phi^b_n\right]\right| \\
+		        & = \left|\phi^b_1 \dots \phi^b_{n-1} \left[\phi^b_n \mid \phi^b_n\right] \psi^b_1 \dots \psi^b_{m-1} \left[\psi^b_m \mid \psi^b_m\right]\right| \\
+		        & = |\phi^b \psi^b| = |\phi^b| + |\psi^b|
+	\end{align*}
+	Here we simply swapped the second 2-syllables of $\left[\phi^b_n \mid \psi^b_m\right]$ and $\left[\psi^b_m \mid \phi^b_n\right]$.
+	This does not change the period.
+	It also does not change the number of any symbol.
+	Therefore, we can use the same proof for any symbol.
+	We demonstrate it for the symbol $\A$ in the following.
+	\begin{align*}
+		|\pi^b|_\A & = \left|\phi^b_1 \dots \phi^b_{n-1} \left[\phi^b_n \mid \psi^b_m\right] \psi^b_1 \dots \psi^b_{m-1} \left[\psi^b_m \mid \phi^b_n\right]\right|_\A \\
+		           & = \left|\phi^b_1 \dots \phi^b_{n-1} \left[\phi^b_n \mid \phi^b_n\right] \psi^b_1 \dots \psi^b_{m-1} \left[\psi^b_m \mid \psi^b_m\right]\right|_\A \\
+		           & = |\phi^b \psi^b|_\A = |\phi^b|_\A + |\psi^b|_\A
+	\end{align*}
+	Therefore, the numerators also add up here.
+	\hfill $\blacksquare$
 \end{proof}
 
 In the usual case with two symbols, the rotation numbers are monotone.
-In our case, this is not true when considering both rotation-like numbers of coexisting cycles.
-The first step is a counter example, $\dfrac{6}{19} > \dfrac{6}{20}$ and $\dfrac{6}{19} > \dfrac{5}{18}$.
+In our case, this is not true when considering the rotation tuples element-wise.
+We can see a counter example in \Cref{fig:add.prop.rot.num.tree}.
+$\dfrac{6}{19} > \dfrac{6}{20}$ and $\dfrac{6}{19} > \dfrac{5}{18}$.
 But when considering the farey sum of the rotation-like numbers of coexisting cycles, the monotony holds.
 
 \begin{theorem}{Monotony of Rotation-like Numbers in the Full Model}
