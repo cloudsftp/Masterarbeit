@@ -1,95 +1,156 @@
-\subsubsection{Rules for Combining Rotation-like Numbers}
+\subsubsection{Rotation-numbers in the \Glsentrylong{pal} Structures}
 
-\todo{rotation-like numbers = rotation tuples}
 \todo{replace cycles with correct notation for cycles in full model}
 
+Next, we will take a look at the rotation-numbers in the Farey-trees of the \gls{pal} structures.
+Note that we don't have two branches in the archetypal model, instead we have four.
+This means, that the definition \Cref{def:rotation.numbers} does not work for our case.
+Instead, we define rotation-tuples.
+\Cref{fig:add.prop.rot.num.tree} shows as Farey-tree with rotation-tuples.
+
+\begin{definition}[Rotation Tuples]
+	The rotation tuple of a cycle with the symbolic sequence $\phi$ in the archetypal model is defined as the following.
+	\begin{align}
+		\rho(\phi)
+		= \left(\rho_\A(\phi), \rho_\B(\phi), \rho_\C(\phi), \rho_\D(\phi)\right)
+		= \left(\dfrac{|\phi|_\A}{|\phi|}, \dfrac{|\phi|_\B}{|\phi|}, \dfrac{|\phi|_\C}{|\phi|}, \dfrac{|\phi|_\D}{|\phi|}\right)
+	\end{align}
+	Where $|\phi|_\A$ is the number of symbols $\A$ in the sequence.
+	Analogous for the symbols $\B$, $\C$, and $\D$.
+\end{definition}
+
 \begin{figure}
-    \centering
-    \includegraphics[width=.8 \textwidth]{FareyTrees/Minrep_Adding1_Full_RotNum/adding.png}
-    \caption{Farey tree with rotation numbers}
+	\centering
+	\includegraphics[width=.8 \textwidth]{FareyTrees/Minrep_Adding1_Full_RotNum/adding.png}
+	\caption{Farey tree with rotation numbers}
+	\label{fig:add.prop.rot.num.tree}
 \end{figure}
 
-\begin{definition}[Rotation-like Numbers]
-    Rotation-like numbers for symbolic sequences $\sigma$ in the full model.
-    \begin{align*}
-        \rho_\A(\sigma) = \dfrac{|\sigma|_\A}{|\sigma|}, \quad
-        \rho_\B(\sigma) = \dfrac{|\sigma|_\B}{|\sigma|}, \quad
-        \rho_\C(\sigma) = \dfrac{|\sigma|_\C}{|\sigma|}, \quad
-        \rho_\D(\sigma) = \dfrac{|\sigma|_\D}{|\sigma|}
-    \end{align*}
-    Where $|\sigma|_\A$ is the number of symbols $\A$ in the sequence.
-    Analogous for the symbols $\B$, $\C$, and $\D$.
-\end{definition}
 
-\begin{definition}[Farey Addition]
-    \todo{define}
-\end{definition}
+\begin{theorem}[Rotation Tuples of Child Nodes I]
+	The child node of two nodes that are both associated with a single cycle each with the symbolic sequences $\phi$ and $\psi$ is associated with the following period.
+	We will call the symbolic sequences of the two cycles associated with the child node $\pi^a$ and $\pi^b$ in the following.
+	\begin{align*}
+		|\pi^a| = |\pi^b| & = \dfrac{|\sigma| + |\varrho|}{2} = |\pi|
+	\end{align*}
+	And its rotation tuples are the following.
+	\begin{align*}
+		\rho_\A(\pi^a) & = \dfrac{\left|\phi_1 \dots \phi_{\frac{n+1}{2}}\right|_\A + \left|\psi_{\frac{m+3}{2}} \dots \psi_m\right|_\A}{|\pi|} \\
+		\rho_\B(\pi^a) & = \dfrac{\left|\phi_1 \dots \phi_{\frac{n+1}{2}}\right|_\B + \left|\psi_{\frac{m+3}{2}} \dots \psi_m\right|_\B}{|\pi|} \\
+		\rho_\C(\pi^a) & = \dfrac{\left|\phi_1 \dots \phi_{\frac{n-1}{2}}\right|_\C + \left|\psi_{\frac{m+1}{2}} \dots \psi_m\right|_\C}{|\pi|} \\
+		\rho_\D(\pi^a) & = \dfrac{\left|\phi_1 \dots \phi_{\frac{n-1}{2}}\right|_\D + \left|\psi_{\frac{m+1}{2}} \dots \psi_m\right|_\D}{|\pi|} \\
+		\rho_\A(\pi^b) & = \dfrac{\left|\psi_1 \dots \psi_{\frac{m+1}{2}}\right|_\A + \left|\phi_{\frac{n+3}{2}} \dots \phi_n\right|_\A}{|\pi|} \\
+		\rho_\B(\pi^b) & = \dfrac{\left|\psi_1 \dots \psi_{\frac{m+1}{2}}\right|_\B + \left|\phi_{\frac{n+3}{2}} \dots \phi_n\right|_\B}{|\pi|} \\
+		\rho_\C(\pi^b) & = \dfrac{\left|\psi_1 \dots \psi_{\frac{m-1}{2}}\right|_\C + \left|\phi_{\frac{n+1}{2}} \dots \phi_n\right|_\C}{|\pi|} \\
+		\rho_\D(\pi^b) & = \dfrac{\left|\psi_1 \dots \psi_{\frac{m-1}{2}}\right|_\D + \left|\phi_{\frac{n+1}{2}} \dots \phi_n\right|_\D}{|\pi|}
+	\end{align*}
+\end{theorem}
 
-\begin{theorem}
-    The child node of a node with a singular cycle $\sigma$ and a node with two coexisting cycles $\varrho^a$ and $\varrho^b$ will have the following rotation-like numbers.
-    We will call the cycle associated with the child node $\pi$ in the following.
-    \begin{align*}
-        \rho_\A(\pi) & =
-        \rho_\A(\sigma) \oplus \rho_\A(\varrho^a) \oplus \rho_A(\varrho^b) \\
-        \rho_\B(\pi) & =
-        \rho_\B(\sigma) \oplus \rho_\B(\varrho^a) \oplus \rho_B(\varrho^b) \\
-        \rho_\C(\pi) & =
-        \rho_\C(\sigma) \oplus \rho_\C(\varrho^a) \oplus \rho_C(\varrho^b) \\
-        \rho_\D(\pi) & =
-        \rho_\D(\sigma) \oplus \rho_\D(\varrho^a) \oplus \rho_D(\varrho^b)
-    \end{align*}
-    \todo{volle schreibweise überall?}
+\begin{proof} \phantom{x} \\
+	Let $\sigma = \sigma_1\sigma_2 \dots \sigma_i$ with odd $i$, $\varrho = \varrho_1\varrho_2 \dots \varrho_j$ with odd $j$, $T(\sigma) = \phi$, and $T(\varrho) = \psi$.
+	The child of both nodes in the halved archetypal model is associated with the symbolic sequence $\sigma\varrho = \sigma_1 \dots \sigma_i \varrho_1 \dots \varrho_j$.
+	This manifests as two coexisting cycles in the archetypal model with the symbolic sequences $\pi^a$ and $\pi^b$ following the rules in \Cref{theorem:child.symbolic.1}.
+
+
+	We start by proving the period of the cycles with symbolic sequences $\pi^a$ and $\pi^b$.
+	\begin{align*}
+		|\pi^a| & = |T(\sigma\varrho)|                                                               \\
+		        & = |T(\sigma_1 \dots \sigma_i \varrho_1 \dots \varrho_j)|                           \\
+		        & = |t(\sigma_1\sigma_2) \dots t(\sigma_i\varrho_1) \dots t(\varrho_{j-1}\varrho_j)| \\
+		        & = |\sigma_1\sigma_2 \dots \sigma_i \varrho_1 \dots \varrho_{j-1}\varrho_j|         \\
+		        & = |\sigma\varrho| = \frac{|\phi|}{2} + \frac{|\psi|}{2}
+	\end{align*}
+	Note that the last step takes advantage of the fact about the periods of cycles in the archetypal model described in \Cref{theorem:period.pal}.
+	The proof for $\pi^b$ is similar and has the same result.
+	\begin{align*}
+		|\pi^b| & = |T(s_2(\sigma\varrho))|                                                                              \\
+		        & = |T(\sigma_2 \dots \sigma_i \varrho_1 \dots \varrho_j \sigma_1)|                                      \\
+		        & = |t(\sigma_2\sigma_3) \dots t(\sigma_{i-1}\sigma_i) t(\varrho_1\varrho_2) \dots t(\varrho_j\sigma_1)| \\
+		        & = |\sigma_2\sigma_3 \dots \sigma_i \varrho_1 \dots \varrho_j \sigma_1|                                 \\
+		        & = |\sigma_1\sigma_2 \dots \sigma_i \varrho_1 \dots \varrho_j|                                          \\
+		        & = |\sigma\varrho| = \frac{|\phi|}{2} + \frac{|\psi|}{2}
+	\end{align*}
+
+	This gives us the denominators of all elements of both rotation tuples.
+	For the numerators, we have to count the symbols in the symbolic sequences of the cycles associated with each child node.
+	We start with $\pi^a$ and the symbol $\A$.
+	\begin{align*}
+		|\pi^a|_\A & = \left|\phi_1 \dots \phi_{\frac{n-1}{2}} \left[\phi_{\frac{n+1}{2}} \mid \psi_{\frac{m+1}{2}}\right] \psi_{\frac{m+3}{2}} \dots \psi_m\right|_\A                \\
+		           & = |\phi_1|_\A + \dots + \left|\left[\phi_{\frac{n+1}{2}} \mid \psi_{\frac{n+1}{2}}\right]\right|_\A + \left|\psi_{\frac{m+3}{2}}\right|_\A + \dots + |\psi_m|_\A \\
+		           & = |\phi_1|_\A + \dots + \left|\phi_{\frac{n+1}{2}}\right|_\A + \left|\psi_{\frac{m+3}{2}}\right|_\A + \dots + |\psi_m|_\A                                        \\
+		           & = \left|\phi_1 \dots \phi_{\frac{n+1}{2}}\right|_\A + \left|\psi_{\frac{m+3}{2}} \dots \psi_m\right|_\A
+	\end{align*}
+	We can do the second to last step, since the symbol $\A$ is in the first 2-syllable of $\phi_{\frac{n+1}{2}}$.
+	The same is true for the symbol $\B$ and the proof works exactly the same for $|\pi^a|\B$, so we will omit it here.
+	For the symbols $\C$ and $\D$ the last step does not work, instead we have to choose $\psi_{\frac{n+1}{2}}$.
+	We demonstrate it for $|\pi^a|_\C$, the proof for $|\pi^a|_\D$ works exactly the same.
+	\begin{align*}
+		|\pi^a|_\C & = \left|\phi_1 \dots \phi_{\frac{n-1}{2}} \left[\phi_{\frac{n+1}{2}} \mid \psi_{\frac{m+1}{2}}\right] \psi_{\frac{m+3}{2}} \dots \psi_m\right|_\C                \\
+		           & = |\phi_1|_\C + \dots + \left|\left[\phi_{\frac{n+1}{2}} \mid \psi_{\frac{n+1}{2}}\right]\right|_\C + \left|\psi_{\frac{m+3}{2}}\right|_\C + \dots + |\psi_m|_\C \\
+		           & = |\phi_1|_\C + \dots + \left|\psi_{\frac{n+1}{2}}\right|_\C + \left|\psi_{\frac{m+3}{2}}\right|_\C + \dots + |\psi_m|_\C                                        \\
+		           & = \left|\phi_1 \dots \psi_{\frac{n+1}{2}}\right|_\C + \left|\psi_{\frac{m+3}{2}} \dots \psi_m\right|_\C
+	\end{align*}
+
+	Now we will take a look at the numerators of the elements in the rotation tuple of $\pi^b$.
+	We start with the symbol $\A$.
+	\begin{align*}
+		|\pi^b|_\A & = \left|\phi_{\frac{n+3}{2}} \dots \phi_n \psi_1 \dots \psi_{\frac{m-1}{2}} \left[\psi_{\frac{m+1}{2}} \mid \phi_{\frac{n+1}{2}}\right]\right|_\A                                                       \\
+		           & = \left|\phi_{\frac{n+3}{2}}\right|_\A + \dots + |\phi_n|_\A + |\psi_1|_\A + \dots + \left|\psi_{\frac{m-1}{2}}\right|_\A + \left|\left[\psi_{\frac{m+1}{2}} \mid \phi_{\frac{n+1}{2}}\right]\right|_\A \\
+		           & = \left|\phi_{\frac{n+3}{2}}\right|_\A + \dots + |\phi_n|_\A + |\psi_1|_\A + \dots + \left|\psi_{\frac{m-1}{2}}\right|_\A + \left|\psi_{\frac{m+1}{2}}\right|_\A                                        \\
+		           & = \left|\phi_{\frac{n+3}{2}} \dots \phi_n\right|_\A + \left|\psi_1 \dots \psi_{\frac{m-1}{2}}\right|_\A + \left|\psi_{\frac{m+1}{2}}\right|_\A
+	\end{align*}
+	Again, we can do the second to last step, since the symbol $\A$ is in the first 2-syllable of $\psi_{\frac{n+1}{2}}$.
+	The same is true for the symbol $\B$ and the proof works exactly the same for $|\pi^b|\B$.
+	We will omit it here.
+	For the symbols $\C$ and $\D$ the last step does not work, instead we have to choose $\phi_{\frac{n+1}{2}}$.
+	We demonstrate it for $|\pi^b|_\C$, the proof for $|\pi^b|_\D$ works exactly the same.
+	\begin{align*}
+		|\pi^b|_\C & = \left|\phi_{\frac{n+3}{2}} \dots \phi_n \psi_1 \dots \psi_{\frac{m-1}{2}} \left[\psi_{\frac{m+1}{2}} \mid \phi_{\frac{n+1}{2}}\right]\right|_\C                                                       \\
+		           & = \left|\phi_{\frac{n+3}{2}}\right|_\C + \dots + |\phi_n|_\A + |\psi_1|_\C + \dots + \left|\psi_{\frac{m-1}{2}}\right|_\C + \left|\left[\psi_{\frac{m+1}{2}} \mid \phi_{\frac{n+1}{2}}\right]\right|_\C \\
+		           & = \left|\phi_{\frac{n+3}{2}}\right|_\C + \dots + |\phi_n|_\C + |\psi_1|_\C + \dots + \left|\psi_{\frac{m-1}{2}}\right|_\C + \left|\psi_{\frac{m+1}{2}}\right|_\C                                        \\
+		           & = \left|\phi_{\frac{n+3}{2}} \dots \phi_n\right|_\C + \left|\psi_1 \dots \psi_{\frac{m-1}{2}} \psi_{\frac{m+1}{2}}\right|_\C
+	\end{align*}
+	\hfill $\blacksquare$
+\end{proof}
+
+\begin{theorem}[Rotation Tuples of Child Nodes II]
+	The child node of a node with a singular cycle $\sigma$ and a node with two coexisting cycles $\varrho^a$ and $\varrho^b$ will have the following rotation-like numbers.
+	We will call the cycle associated with the child node $\pi$ in the following.
+	\begin{align*}
+		\rho_\A(\pi) & =
+		\rho_\A(\sigma) \oplus \rho_\A(\varrho^a) \oplus \rho_A(\varrho^b) \\
+		\rho_\B(\pi) & =
+		\rho_\B(\sigma) \oplus \rho_\B(\varrho^a) \oplus \rho_B(\varrho^b) \\
+		\rho_\C(\pi) & =
+		\rho_\C(\sigma) \oplus \rho_\C(\varrho^a) \oplus \rho_C(\varrho^b) \\
+		\rho_\D(\pi) & =
+		\rho_\D(\sigma) \oplus \rho_\D(\varrho^a) \oplus \rho_D(\varrho^b)
+	\end{align*}
 \end{theorem}
 
 \begin{proof}
-    \todo{prove}
+	\todo{prove}
 \end{proof}
 
-\begin{theorem}
-    The child node of two nodes with a singular cycle, $\sigma$ and $\varrho$ respectively, will have the following period.
-    We will call the two cycles associated with the child node $\pi^a$ and $\pi^b$ in the following.
-    \begin{align*}
-        |\pi^a| = |\pi^b| & = \dfrac{|\sigma| + |\varrho|}{2} = |\pi|
-    \end{align*}
-    And its rotation-like numbers will be the following.
-    \begin{align*}
-        \rho_\A(\pi^a) & = \dfrac{|\sigma_1 \dots \sigma_{\frac{n+1}{2}}|_\A + |\varrho_{\frac{m+3}{2}} \dots \varrho_m|_\A}{|\pi|} \\
-        \rho_\B(\pi^a) & = \dfrac{|\sigma_1 \dots \sigma_{\frac{n+1}{2}}|_\B + |\varrho_{\frac{m+3}{2}} \dots \varrho_m|_\B}{|\pi|} \\
-        \rho_\C(\pi^a) & = \dfrac{|\sigma_1 \dots \sigma_{\frac{n-1}{2}}|_\C + |\varrho_{\frac{m+1}{2}} \dots \varrho_m|_\C}{|\pi|} \\
-        \rho_\D(\pi^a) & = \dfrac{|\sigma_1 \dots \sigma_{\frac{n-1}{2}}|_\D + |\varrho_{\frac{m+1}{2}} \dots \varrho_m|_\D}{|\pi|} \\
-        \rho_\A(\pi^b) & = \dfrac{|\varrho_1 \dots \varrho_{\frac{m+1}{2}}|_\A + |\sigma_{\frac{n+3}{2}} \dots \sigma_n|_\A}{|\pi|} \\
-        \rho_\B(\pi^b) & = \dfrac{|\varrho_1 \dots \varrho_{\frac{m+1}{2}}|_\B + |\sigma_{\frac{n+3}{2}} \dots \sigma_n|_\B}{|\pi|} \\
-        \rho_\C(\pi^b) & = \dfrac{|\varrho_1 \dots \varrho_{\frac{m-1}{2}}|_\C + |\sigma_{\frac{n+1}{2}} \dots \sigma_n|_\C}{|\pi|} \\
-        \rho_\D(\pi^b) & = \dfrac{|\varrho_1 \dots \varrho_{\frac{m-1}{2}}|_\D + |\sigma_{\frac{n+1}{2}} \dots \sigma_n|_\D}{|\pi|}
-    \end{align*}
-\end{theorem}
-
-\begin{proof} \phantom{x}
-    \begin{enumerate}
-        \item \todo{prove period}
-        \item \todo{prove rotation-like numbers}
-    \end{enumerate}
-\end{proof}
-
-\todo{last case not possible in our adding structures. proof!}
+\todo{Reiterate not possible}
 
 \begin{theorem}
-    The child node of two nodes with two coexisting cycles, $\{\sigma^a, \sigma^b\}$ and $\{\varrho^a, \varrho^b\}$ respectively, will have the following rotation-like numbers.
-    We will call the two cycles associated with the child node $\pi^a$ and $\pi^b$ in the following.
-    \begin{align*}
-        \rho_\A(\pi^a) & = \rho_\A(\sigma^a) \oplus \rho_\A(\varrho^a) \\
-        \rho_\B(\pi^a) & = \rho_\A(\sigma^a) \oplus \rho_\A(\varrho^a) \\
-        \rho_\C(\pi^a) & = \rho_\A(\sigma^a) \oplus \rho_\A(\varrho^a) \\
-        \rho_\D(\pi^a) & = \rho_\A(\sigma^a) \oplus \rho_\A(\varrho^a) \\
-        \rho_\A(\pi^b) & = \rho_\A(\sigma^b) \oplus \rho_\A(\varrho^b) \\
-        \rho_\B(\pi^b) & = \rho_\A(\sigma^b) \oplus \rho_\A(\varrho^b) \\
-        \rho_\C(\pi^b) & = \rho_\A(\sigma^b) \oplus \rho_\A(\varrho^b) \\
-        \rho_\D(\pi^b) & = \rho_\A(\sigma^b) \oplus \rho_\A(\varrho^b)
-    \end{align*}
+	The child node of two nodes with two coexisting cycles, $\{\sigma^a, \sigma^b\}$ and $\{\varrho^a, \varrho^b\}$ respectively, will have the following rotation-like numbers.
+	We will call the two cycles associated with the child node $\pi^a$ and $\pi^b$ in the following.
+	\begin{align*}
+		\rho_\A(\pi^a) & = \rho_\A(\sigma^a) \oplus \rho_\A(\varrho^a) \\
+		\rho_\B(\pi^a) & = \rho_\A(\sigma^a) \oplus \rho_\A(\varrho^a) \\
+		\rho_\C(\pi^a) & = \rho_\A(\sigma^a) \oplus \rho_\A(\varrho^a) \\
+		\rho_\D(\pi^a) & = \rho_\A(\sigma^a) \oplus \rho_\A(\varrho^a) \\
+		\rho_\A(\pi^b) & = \rho_\A(\sigma^b) \oplus \rho_\A(\varrho^b) \\
+		\rho_\B(\pi^b) & = \rho_\A(\sigma^b) \oplus \rho_\A(\varrho^b) \\
+		\rho_\C(\pi^b) & = \rho_\A(\sigma^b) \oplus \rho_\A(\varrho^b) \\
+		\rho_\D(\pi^b) & = \rho_\A(\sigma^b) \oplus \rho_\A(\varrho^b)
+	\end{align*}
 \end{theorem}
 
 \begin{proof}
-    \todo{prove}
+	\todo{prove}
 \end{proof}
 
 In the usual case with two symbols, the rotation numbers are monotone.
@@ -98,24 +159,24 @@ The first step is a counter example, $\dfrac{6}{19} > \dfrac{6}{20}$ and $\dfrac
 But when considering the farey sum of the rotation-like numbers of coexisting cycles, the monotony holds.
 
 \begin{theorem}{Monotony of Rotation-like Numbers in the Full Model}
-    The rotation-like numbers for one symbol are monotone in the farey tree of a period-adding structure in the full model, when considering the farey sum of the rotation-like numbers of coexisting cycles.
-    \todo{sentences too long and complicated in enumeration}
-    \begin{enumerate}
-        \item The rotation-like numbers that correspond to the cycle of a child node of a parent node with a singular cycle and a parent node of two coexisting cycles, is in between the corresponding rotation-like number of the parent node with a singular cycle and the corresponding sum of rotation-like numbers of the parent node with two coexisting cycles.
-              \begin{align*}
-                       & \rho_X(\sigma) < \rho_X(\pi) < \rho_X(\varrho^a) \oplus \rho_X(\varrho^b) \\
-                  \lor & \rho_X(\sigma) > \rho_X(\pi) > \rho_X(\varrho^a) \oplus \rho_X(\varrho^b)
-              \end{align*}
-        \item The farey sum of the rotation-like numbers that correspond to each coexisting cycle of a child node of two nodes with a singular cycle each, is in between the corresponding rotation-like numbers of the parent nodes.
-              \begin{align*}
-                       & \rho_X(\sigma) < \rho_X(\pi^a) \oplus \rho_X(\pi^b) < \rho_X(\varrho) \\
-                  \lor & \rho_X(\sigma) > \rho_X(\pi^a) \oplus \rho_X(\pi^b) > \rho_X(\varrho)
-              \end{align*}
-    \end{enumerate}
+	The rotation-like numbers for one symbol are monotone in the farey tree of a period-adding structure in the full model, when considering the farey sum of the rotation-like numbers of coexisting cycles.
+	\todo{sentences too long and complicated in enumeration}
+	\begin{enumerate}
+		\item The rotation-like numbers that correspond to the cycle of a child node of a parent node with a singular cycle and a parent node of two coexisting cycles, is in between the corresponding rotation-like number of the parent node with a singular cycle and the corresponding sum of rotation-like numbers of the parent node with two coexisting cycles.
+		      \begin{align*}
+			           & \rho_X(\sigma) < \rho_X(\pi) < \rho_X(\varrho^a) \oplus \rho_X(\varrho^b) \\
+			      \lor & \rho_X(\sigma) > \rho_X(\pi) > \rho_X(\varrho^a) \oplus \rho_X(\varrho^b)
+		      \end{align*}
+		\item The farey sum of the rotation-like numbers that correspond to each coexisting cycle of a child node of two nodes with a singular cycle each, is in between the corresponding rotation-like numbers of the parent nodes.
+		      \begin{align*}
+			           & \rho_X(\sigma) < \rho_X(\pi^a) \oplus \rho_X(\pi^b) < \rho_X(\varrho) \\
+			      \lor & \rho_X(\sigma) > \rho_X(\pi^a) \oplus \rho_X(\pi^b) > \rho_X(\varrho)
+		      \end{align*}
+	\end{enumerate}
 \end{theorem}
 
 \begin{proof}
-    \todo{prove}
+	\todo{prove}
 \end{proof}
 
 \todo{rotation numbers in the sense of poincare follow monotony directly, but coexisting cycles have same rotation numbers}
