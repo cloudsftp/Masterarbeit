@@ -274,7 +274,7 @@ For the proof, we rely heavily on the following fact.
 	For each iteration we combine each pair of rotation tuples in the list and insert the result in the middle of each pair.
 	We again reformulate the statement of \Cref{theorem:rotation.monotony} to a concrete statement about the lists at each iteration.
 
-	In all lists, the node $\rho(\phi)$ will be element-wise smaller than the next node $\rhi(\psi)$.
+	In all lists, the node $\rho(\phi)$ will be element-wise smaller than the next node $\rho(\psi)$.
 	This implies global monotony at each iteration for the lists.
 	And therefore also global monotony in the Farey-tree across all levels.
 
@@ -357,7 +357,7 @@ For the proof, we rely heavily on the following fact.
 			Since $\rho(\phi) < \rho(\psi) \implies \rho(\phi) < \rho(\phi) \oplus \rho(\psi) < \rho(\psi)$, it also implies that $ \rho(\phi) < \rho(\pi) = \rho(\phi) \oplus \rho(\psi) < \rho(\psi)$.
 
 			The last case does not occur in the \gls{pal} structures, we are investigating but we will include a proof for this case also.
-			Both the left node that is associated with $\rhi(\phi) = \rho(\phi^a) \oplus \rho(\phi^b)$ and the right node that is associated with $\rho(\psi) = \rho(\psi^a) \oplus \rho(\psi^b)$ are associated with two coexisting cycles.
+			Both the left node that is associated with $\rho(\phi) = \rho(\phi^a) \oplus \rho(\phi^b)$ and the right node that is associated with $\rho(\psi) = \rho(\psi^a) \oplus \rho(\psi^b)$ are associated with two coexisting cycles.
 			Again we can use element-wise Farey-addition.
 			\begin{align*}
 				\rho(\pi) & = \rho(\pi^a) \oplus \rho(\pi^b)                                                                     \\
