@@ -8,3 +8,11 @@
 
 \psfrag{x}{\hspace*{0.0em}\raisebox{0.5ex}{$E_0$}}
 \psfrag{y}{\hspace*{0.0em}\raisebox{0.5ex}{$\chi_0$}}
+
+\psfrag{6}{\hspace*{-0.2em}\raisebox{0.5ex}{\color[RGB]{255, 110, 0}{$6$}}}
+\psfrag{8}{\hspace*{-0.2em}\raisebox{0.5ex}{\color[RGB]{255, 110, 0}{$8$}}}
+\psfrag{10}{\hspace*{-0.2em}\raisebox{0.5ex}{\color[RGB]{255, 110, 0}{$10$}}}
+\psfrag{12}{\hspace*{-0.2em}\raisebox{0.5ex}{\color[RGB]{255, 110, 0}{$12$}}}
+\psfrag{14}{\hspace*{-0.2em}\raisebox{0.5ex}{\color[RGB]{255, 110, 0}{$14$}}}
+\psfrag{16}{\hspace*{-0.2em}\raisebox{0.5ex}{\color[RGB]{255, 110, 0}{$16$}}}
+\psfrag{18}{\hspace*{-0.2em}\raisebox{0.5ex}{\color[RGB]{255, 110, 0}{$18$}}}

@@ -1,8 +1,32 @@
 \chapter{Conclusion}
 
-\todo{Found simplified model}
-\todo{Found something not identified in the first analysis of the original model}
+This chapter will summarize all findings of this thesis.
+It is divided into two bigger parts.
 
-\todo{Found period-adding in simplified model}
-\todo{Was not really adding, but something related to adding}
-\todo{Explained the weird bifurcation structures using the halved model}
+First, we analyzed the original model function and the parameter effects on the model function in the original model.
+We then identified the characteristics of the model function and parameter effects that are needed for the \gls{pi} structure of interest by constructing the archetypal model.
+This model has 4 branches $f_\A, f_\B, f_\C,$ and $f_\D$ like the original model.
+And it is symmetric like the original model.
+The branches $f_\A$ and $f_\C$ are quadratic and both governed by a function $g_L(x) = a_L \cdot x^2 + b_L \cdot x + c_L$, while the branches $f_\B$ and $f_\D$ are linear and governed by a function $g_R(x) = b_L \cdot x + c_L$.
+One parameter of the archetypal model is chosen to directly manipulate a specific characteristic of the model function, namely the value of $g_R$ at the left border of the branches $f_\B$ and $f_\D$.
+It is named $\alpha = g_R\left(\frac{1}{4}\right)$ and its value influences the parameters $b_R$ and $c_R$.
+Hence, it is called a compound parameter.
+The other parameter is just the offset of the branches $f_\A$ and $f_\D$, $\beta = c_L$.
+
+\todo{Too detailed? Previously I felt it was too shallow, so I added the archetypal model definition}
+
+We confirmed that this archetypal model in fact exhibits the same behavior as the original model.
+While doing so we even found the coexistence of four cycles which was not discovered previously in the original model and confirmed its existence in the original model.
+Using the characteristics of that we found to be essential for the \gls{pi} structure of interest, we were able to explain the structure.
+
+Secondly, we demonstrated that the archetypal model proposed in this thesis can also exhibit \gls{pa} behavior.
+We found that these structures defied our expectations for \gls{pa}, since the periods did not add up as they normally would and there were no obvious regularities in the symbolic sequences associated with the parameter regions in these structures.
+Hence, we called them \gls{pal} structures.
+Then we introduced the halved archetypal model where we took advantage of the symmetry in the archetypal model.
+The halved archetypal model exhibits the expected behavior of \gls{pa} structures.
+With this model we were able to formulate rules for the \gls{pal} structures.
+This includes rules for the periods, symbolic sequences, coexistence, and rotation tuples associated with the parameter regions of these \gls{pal} structures.
+
+\todo{Rules too complicated to describe in a few sentences. Should I write something about the periods? Sometimes double sometimes not}
+
+\todo{Coexistence similar to ``type B'' parameter regions}

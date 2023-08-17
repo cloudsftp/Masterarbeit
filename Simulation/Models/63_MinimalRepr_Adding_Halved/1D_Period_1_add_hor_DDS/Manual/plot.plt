@@ -12,7 +12,7 @@ set border lw 1
 L = 0.09032100845
 R = 0.09032100855
 D = 0
-U = 256
+U = 128
 
 set xrange [L to R]
 set yrange [D to U]
@@ -24,8 +24,13 @@ set xlabel 'x' offset 0, 1.3
 set ylabel 'y' offset 4.2, 0 rotate by 90
 
 AAABAAB = L + 0.00000000005
+lborder = 9.032100849418140e-02
+rborder = 9.032100850655218e-02
 
 set arrow from AAABAAB,D to AAABAAB,U nohead lt 1 lw 2 dt 2 lc rgb "gray50" front
 set label 'AAABAAB' at AAABAAB,U offset 0.5, -1.5
+
+set arrow from rborder,D to rborder,U nohead lt 1 lw 2 dt 2 lc rgb "gray50" front
+set arrow from lborder,D to lborder,U nohead lt 1 lw 2 dt 2 lc rgb "gray50" front
 
 plot 'Data/period.tna' using 2:3 w dots notitle lc rgb 'blue'
