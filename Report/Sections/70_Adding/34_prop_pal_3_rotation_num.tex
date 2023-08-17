@@ -1,7 +1,5 @@
 \subsubsection{Rotation-numbers in the \Glsentrylong{pal} Structures}
 
-\todo{replace cycles with correct notation for cycles in full model}
-
 Next, we will take a look at the rotation-numbers in the Farey-trees of the \gls{pal} structures.
 Note that we don't have two branches in the archetypal model, instead we have four.
 This means, that the definition \Cref{def:rotation.numbers} does not work for our case.
@@ -22,28 +20,44 @@ Instead, we define rotation-tuples.
 \begin{figure}
 	\centering
 	\includegraphics[width=.8 \textwidth]{FareyTrees/Minrep_Adding1_Full_RotNum/adding.png}
-	\caption{Farey tree with rotation numbers}
+	\caption[Farey-tree with rotation tuples of a horizontal \glsentrylong{pal} structure]{
+		Farey-tree with rotation tuples of a horizontal \glsentrylong{pal} structure in the archetypal model.
+	}
 	\label{fig:add.prop.rot.num.tree}
 \end{figure}
 
-
-\begin{theorem}[Rotation Tuples of Child Nodes I]
+\begin{theorem}[Rotation Tuples in Child Nodes I]
 	The child node of two nodes that are both associated with a single cycle each with the symbolic sequences $\phi$ and $\psi$ is associated with the following period.
 	We will call the symbolic sequences of the two cycles associated with the child node $\pi^a$ and $\pi^b$ in the following.
-	\begin{align*}
+	\begin{align}
 		|\pi^a| = |\pi^b| & = \dfrac{|\sigma| + |\varrho|}{2} = |\pi|
-	\end{align*}
-	And its rotation tuples are the following.
-	\begin{align*}
-		\rho_\A(\pi^a) & = \dfrac{\left|\phi_1 \dots \phi_{\frac{n+1}{2}}\right|_\A + \left|\psi_{\frac{m+3}{2}} \dots \psi_m\right|_\A}{|\pi|} \\
-		\rho_\B(\pi^a) & = \dfrac{\left|\phi_1 \dots \phi_{\frac{n+1}{2}}\right|_\B + \left|\psi_{\frac{m+3}{2}} \dots \psi_m\right|_\B}{|\pi|} \\
-		\rho_\C(\pi^a) & = \dfrac{\left|\phi_1 \dots \phi_{\frac{n-1}{2}}\right|_\C + \left|\psi_{\frac{m+1}{2}} \dots \psi_m\right|_\C}{|\pi|} \\
-		\rho_\D(\pi^a) & = \dfrac{\left|\phi_1 \dots \phi_{\frac{n-1}{2}}\right|_\D + \left|\psi_{\frac{m+1}{2}} \dots \psi_m\right|_\D}{|\pi|} \\
-		\rho_\A(\pi^b) & = \dfrac{\left|\psi_1 \dots \psi_{\frac{m+1}{2}}\right|_\A + \left|\phi_{\frac{n+3}{2}} \dots \phi_n\right|_\A}{|\pi|} \\
-		\rho_\B(\pi^b) & = \dfrac{\left|\psi_1 \dots \psi_{\frac{m+1}{2}}\right|_\B + \left|\phi_{\frac{n+3}{2}} \dots \phi_n\right|_\B}{|\pi|} \\
-		\rho_\C(\pi^b) & = \dfrac{\left|\psi_1 \dots \psi_{\frac{m-1}{2}}\right|_\C + \left|\phi_{\frac{n+1}{2}} \dots \phi_n\right|_\C}{|\pi|} \\
-		\rho_\D(\pi^b) & = \dfrac{\left|\psi_1 \dots \psi_{\frac{m-1}{2}}\right|_\D + \left|\phi_{\frac{n+1}{2}} \dots \phi_n\right|_\D}{|\pi|}
-	\end{align*}
+	\end{align}
+	And it associated rotation tuples are the following.
+	\begin{align}
+		\rho(\pi^a) = (\rho_\A(\pi^a), \rho_\B(\pi^a), \rho_\C(\pi^a), \rho_\D(\pi^a))
+	\end{align}
+	and
+	\begin{align}
+		\rho(\pi^b) = (\rho_\A(\pi^b), \rho_\B(\pi^b), \rho_\C(\pi^b), \rho_\D(\pi^b))
+	\end{align}
+	Where the elements of each tuple are defined by the following equations.
+	\begin{subequations}
+		\begin{align}
+			\rho_\A(\pi^a) & = \dfrac{\left|\phi_1 \dots \phi_{\frac{n+1}{2}}\right|_\A + \left|\psi_{\frac{m+3}{2}} \dots \psi_m\right|_\A}{|\pi|} \\
+			\rho_\B(\pi^a) & = \dfrac{\left|\phi_1 \dots \phi_{\frac{n+1}{2}}\right|_\B + \left|\psi_{\frac{m+3}{2}} \dots \psi_m\right|_\B}{|\pi|} \\
+			\rho_\C(\pi^a) & = \dfrac{\left|\phi_1 \dots \phi_{\frac{n-1}{2}}\right|_\C + \left|\psi_{\frac{m+1}{2}} \dots \psi_m\right|_\C}{|\pi|} \\
+			\rho_\D(\pi^a) & = \dfrac{\left|\phi_1 \dots \phi_{\frac{n-1}{2}}\right|_\D + \left|\psi_{\frac{m+1}{2}} \dots \psi_m\right|_\D}{|\pi|}
+		\end{align}
+	\end{subequations}
+	and
+	\begin{subequations}
+		\begin{align}
+			\rho_\A(\pi^b) & = \dfrac{\left|\psi_1 \dots \psi_{\frac{m+1}{2}}\right|_\A + \left|\phi_{\frac{n+3}{2}} \dots \phi_n\right|_\A}{|\pi|} \\
+			\rho_\B(\pi^b) & = \dfrac{\left|\psi_1 \dots \psi_{\frac{m+1}{2}}\right|_\B + \left|\phi_{\frac{n+3}{2}} \dots \phi_n\right|_\B}{|\pi|} \\
+			\rho_\C(\pi^b) & = \dfrac{\left|\psi_1 \dots \psi_{\frac{m-1}{2}}\right|_\C + \left|\phi_{\frac{n+1}{2}} \dots \phi_n\right|_\C}{|\pi|} \\
+			\rho_\D(\pi^b) & = \dfrac{\left|\psi_1 \dots \psi_{\frac{m-1}{2}}\right|_\D + \left|\phi_{\frac{n+1}{2}} \dots \phi_n\right|_\D}{|\pi|}
+		\end{align}
+	\end{subequations}
 \end{theorem}
 
 \begin{proof} \phantom{x} \\
@@ -54,11 +68,11 @@ Instead, we define rotation-tuples.
 
 	We start by proving the period of the cycles with symbolic sequences $\pi^a$ and $\pi^b$.
 	\begin{align*}
-		|\pi^a| & = |T(\sigma\varrho)|                                                               \\
-		        & = |T(\sigma_1 \dots \sigma_i \varrho_1 \dots \varrho_j)|                           \\
-		        & = |t(\sigma_1\sigma_2) \dots t(\sigma_i\varrho_1) \dots t(\varrho_{j-1}\varrho_j)| \\
-		        & = |\sigma_1\sigma_2 \dots \sigma_i \varrho_1 \dots \varrho_{j-1}\varrho_j|         \\
-		        & = |\sigma\varrho| = \frac{|\phi|}{2} + \frac{|\psi|}{2}
+		|\pi^a| & = |T(\sigma\varrho)|                                                                \\
+		        & = |T(\sigma_1 \dots \sigma_i \varrho_1 \dots \varrho_j)|                            \\
+		        & = |t(\sigma_1\sigma_2) \dots t(\sigma_i\varrho_1) \dots t(\varrho_{j-1}\varrho_j)|  \\
+		        & = |\sigma_1\sigma_2 \dots \sigma_i \varrho_1 \dots \varrho_{j-1}\varrho_j|          \\
+		        & = |\sigma\varrho| = \frac{|\phi|}{2} + \frac{|\psi|}{2} = \frac{|\phi| + |\psi|}{2}
 	\end{align*}
 	Note that the last step takes advantage of the fact about the periods of cycles in the archetypal model described in \Cref{theorem:period.pal}.
 	The proof for $\pi^b$ is similar and has the same result.
@@ -68,7 +82,7 @@ Instead, we define rotation-tuples.
 		        & = |t(\sigma_2\sigma_3) \dots t(\sigma_{i-1}\sigma_i) t(\varrho_1\varrho_2) \dots t(\varrho_j\sigma_1)| \\
 		        & = |\sigma_2\sigma_3 \dots \sigma_i \varrho_1 \dots \varrho_j \sigma_1|                                 \\
 		        & = |\sigma_1\sigma_2 \dots \sigma_i \varrho_1 \dots \varrho_j|                                          \\
-		        & = |\sigma\varrho| = \frac{|\phi|}{2} + \frac{|\psi|}{2}
+		        & = |\sigma\varrho| = \frac{|\phi|}{2} + \frac{|\psi|}{2} = \frac{|\phi| + |\psi|}{2}
 	\end{align*}
 
 	This gives us the denominators of all elements of both rotation tuples.
@@ -113,19 +127,12 @@ Instead, we define rotation-tuples.
 	\hfill $\blacksquare$
 \end{proof}
 
-\begin{theorem}[Rotation Tuples of Child Nodes II]
-	The child node of a node with a singular cycle $\phi$ and a node with two coexisting cycles $\psi^a$ and $\psi^b$ will have the following rotation-like numbers.
-	We will call the cycle associated with the child node $\pi$ in the following.
-	\begin{align*}
-		\rho_\A(\pi) & =
-		\rho_\A(\phi) \oplus \rho_\A(\psi^a) \oplus \rho_A(\psi^b) \\
-		\rho_\B(\pi) & =
-		\rho_\B(\phi) \oplus \rho_\B(\psi^a) \oplus \rho_B(\psi^b) \\
-		\rho_\C(\pi) & =
-		\rho_\C(\phi) \oplus \rho_\C(\psi^a) \oplus \rho_C(\psi^b) \\
-		\rho_\D(\pi) & =
-		\rho_\D(\phi) \oplus \rho_\D(\psi^a) \oplus \rho_D(\psi^b)
-	\end{align*}
+\begin{theorem}[Rotation Tuples in Child Nodes II]
+	The child node of a node that is associated with a single cycle $\phi$ and a node that is associated with two coexisting cycles with the symbolic sequences $\psi^a$ and $\psi^b$ is associated with the following rotation tuple.
+	We use element-wise Farey-addition here, since it is the same for each symbol.
+	\begin{align}
+		\rho(\pi) = \rho(\phi) \oplus \rho(\psi^a) \oplus \rho(\psi^b)
+	\end{align}
 \end{theorem}
 
 \begin{proof} \phantom{x} \\
@@ -149,7 +156,7 @@ Instead, we define rotation-tuples.
 	This does not change the period.
 	It does also not change the number of symbols, since we only swapped the second 2-syllable of $\left[\phi_{\frac{n+1}{2}} \mid \psi^b_m\right]$ and $\left[\psi^b_m \mid \phi_{\frac{n+1}{2}}\right]$.
 	Therefore, the proof for works the same for the number of any symbol.
-	We will demonstrate this for the symbol $\A$.
+	We will demonstrate this for symbol $\A$.
 	\begin{align*}
 		|\pi|_\A & = \left|
 		\phi_1 \dots \phi_{\frac{n-1}{2}} \left[\phi_{\frac{n+1}{2}} \mid \psi^b_m\right]
@@ -164,7 +171,7 @@ Instead, we define rotation-tuples.
 		\right|_\A                                                                   \\
 		         & = |\phi \psi^b \psi^a|_\A = |\phi|_\A + |\psi^a|_\A + |\psi^b|_\A
 	\end{align*}
-	Therefore the numerators of each element in the rotation tuples add up too.
+	Therefore, the numerators of each element in the rotation tuples add up too.
 
 	One might criticize that we only proved it for the case where the left parent node is associated with a single cycle.
 	In that case
@@ -175,35 +182,26 @@ Instead, we define rotation-tuples.
 	\begin{align*}
 		\pi = \psi^a \phi_1 \dots \phi_{\frac{n-1}{2}} \left[\phi_{\frac{n+1}{2}} \mid \psi^b_m\right] \psi^b_1 \dots \psi^b_{m-1} \left[\psi^b_m \mid \phi_{\frac{n+1}{2}}\right] \phi_{\frac{n+3}{2}} \dots \phi_n
 	\end{align*}
-	The only difference in both cases is that the symbols of $\psi^a$ are at the end in the first case and in the beginning in the second case.
-	Therefore, the proof works also in this case.
+	The only difference in both cases is that the symbols of $\psi^a$ are at the end of the symbolic sequence in the first case and at the beginning of the symbolic sequence in the second case.
+	Since reordering of 4-syllables does not change the period nor the number of individual symbols, this proof works for both cases.
+
 	\hfill $\blacksquare$
 \end{proof}
 
 As mentioned before, the next case does not appear in the \gls{pal} structures we investigate.
 But we will include it here again for completeness.
 
-\begin{theorem}
-	The child node of two nodes that are associated with two coexisting cycles each with symbolic sequences $\phi^a, \phi^b, \psi^a,$ and $\psi^b$ is associated with two coexisting cycles.
-	We will call the two cycles associated with the child node $\pi^a$ and $\pi^b$ in the following.
-	Their rotation tuples are $\rho(\pi^a) = (\rho_\A(\pi^a), \rho_\B(\pi^a), \rho_\C(\pi^a), \rho_\D(\pi^a))$ and $\rho(\pi^b) = (\rho_\A(\pi^b), \rho_\B(\pi^b), \rho_\C(\pi^b), \rho_\D(\pi^b))$ where the elements are defined as follows.
-	\begin{subequations}
-		\begin{align}
-			\rho_\A(\pi^a) & = \rho_\A(\phi^a) \oplus \rho_\A(\psi^a) \\
-			\rho_\B(\pi^a) & = \rho_\A(\phi^a) \oplus \rho_\A(\psi^a) \\
-			\rho_\C(\pi^a) & = \rho_\A(\phi^a) \oplus \rho_\A(\psi^a) \\
-			\rho_\D(\pi^a) & = \rho_\A(\phi^a) \oplus \rho_\A(\psi^a)
-		\end{align}
-	\end{subequations}
-	And for the cycle with the symbolic sequence $\pi^b$.
-	\begin{subequations}
-		\begin{align}
-			\rho_\A(\pi^b) & = \rho_\A(\phi^b) \oplus \rho_\A(\psi^b) \\
-			\rho_\B(\pi^b) & = \rho_\A(\phi^b) \oplus \rho_\A(\psi^b) \\
-			\rho_\C(\pi^b) & = \rho_\A(\phi^b) \oplus \rho_\A(\psi^b) \\
-			\rho_\D(\pi^b) & = \rho_\A(\phi^b) \oplus \rho_\A(\psi^b)
-		\end{align}
-	\end{subequations}
+\begin{theorem}[Rotation Tuples in Child Nodes III]
+	The child node of two nodes that are both associated with two coexisting cycles each with symbolic sequences $\phi^a, \phi^b, \psi^a,$ and $\psi^b$ is associated with two coexisting cycles.
+	Their rotation tuples are the defined by the following equations.
+	Note that we use element-wise Farey-addition here again.
+	\begin{align}
+		\rho(\pi^a) & = \rho(\phi^a) \oplus \rho(\psi^a)
+	\end{align}
+	and
+	\begin{align}
+		\rho(\pi^b) & = \rho(\phi^b) \oplus \rho(\psi^b)
+	\end{align}
 \end{theorem}
 
 \begin{proof} \phantom{x} \\
@@ -228,26 +226,28 @@ But we will include it here again for completeness.
 	Here we simply swapped the second 2-syllables of $\left[\phi^b_n \mid \psi^b_m\right]$ and $\left[\psi^b_m \mid \phi^b_n\right]$.
 	This does not change the period.
 	It also does not change the number of any symbol.
-	Therefore, we can use the same proof for any symbol.
+	Therefore, we can use the same proof for any symbol and show that the numerators also add up.
 	We demonstrate it for the symbol $\A$ in the following.
 	\begin{align*}
 		|\pi^b|_\A & = \left|\phi^b_1 \dots \phi^b_{n-1} \left[\phi^b_n \mid \psi^b_m\right] \psi^b_1 \dots \psi^b_{m-1} \left[\psi^b_m \mid \phi^b_n\right]\right|_\A \\
 		           & = \left|\phi^b_1 \dots \phi^b_{n-1} \left[\phi^b_n \mid \phi^b_n\right] \psi^b_1 \dots \psi^b_{m-1} \left[\psi^b_m \mid \psi^b_m\right]\right|_\A \\
 		           & = |\phi^b \psi^b|_\A = |\phi^b|_\A + |\psi^b|_\A
 	\end{align*}
-	Therefore, the numerators also add up here.
 	\hfill $\blacksquare$
 \end{proof}
 
 In the usual case with two symbols, the rotation numbers are monotone.
 In our case we have rotation tuples instead of numbers, and we will consider the monotony of the single elements.
-ALso we somteimes have coexistence of two cycles.
+Also, we sometimes have coexistence of two cycles.
 We will consider the rotation tuples of each of the coexisting twin cycles independently.
 The monotony does not hold up for our case, unfortunately.
 We can see a counter example in \Cref{fig:add.prop.rot.num.tree}.
-$\dfrac{6}{19} > \dfrac{6}{20}$ and $\dfrac{6}{19} > \dfrac{5}{18}$.
-\todo{Describe with figure}
-But if we consider the element-wise Farey-sum of both rotation tuples in the case of coexisting cycles, the monotony holds.
+Let's consider the rotation numbers for the symbol $\A$ which are the first element in each rotation tuple.
+The right starting node, the upper node of level 0, is associated with the rotation number $\frac{5}{18}$ for the symbol $\A$.
+And the left starting node is associated with the rotation number $\frac{6}{20}$ for the symbol $\A$.
+And $\frac{6}{20} > \frac{5}{18}$, so each rotation number for the symbol $\A$ of the coexisting cycles associated with the child node should be in-between those two numbers.
+But the rotation numbers for the symbol $\A$ in the child node are $\frac{6}{19} > \frac{6}{20}$ and $\frac{5}{19} < \frac{5}{18}$.
+If we instead consider the element-wise Farey-sum of both rotation tuples in the case of coexisting cycles, the monotony holds.
 
 \begin{theorem}[Monotony of Rotation Tuples in \gls{pal} Structures]
 	\label{theorem:rotation.monotony}
@@ -367,6 +367,8 @@ For the proof, we rely heavily on the following fact.
 				          & = \rho(\phi) \oplus \rho(\psi)                                                                       \\
 			\end{align*}
 			And $\rho(\phi) < \rho(\psi) \implies \rho(\phi) < \rho(\pi) = \rho(\phi) \oplus \rho(\psi) < \rho(\psi)$.
-			\hfill $\blacksquare$
 	\end{itemize}
+	\hfill $\blacksquare$
 \end{proof}
+
+This concludes our description of the \gls{pal} structures in the increasing archetypal model.

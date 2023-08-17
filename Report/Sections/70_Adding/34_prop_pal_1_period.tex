@@ -23,25 +23,23 @@ The function was defined in \Cref{sec:add.halved.tanslating}.
 	\hfill $\blacksquare$
 \end{proof}
 
-\begin{theorem}[Period of Cycles in the Full Model]
+\begin{theorem}[Periods Associated with Parameter Regions in the \gls{pal} Structures]
 	\label{theorem:period.pal}
 	\begin{enumerate}
-		\item If a cycle in the halved model manifests as two coexisting cycles in the full model, the period of either cycle is the same as the period of the cycle in the halved model.
-		      \begin{align*}
+		\item If a cycle in the halved archetypal model manifests as two coexisting cycles in the archetypal model, the period of either cycle is the same as the period of the cycle in the halved archetypal model.
+		      \begin{align}
 			      |T(\sigma)| = |T(s_2(\sigma))| = |\sigma|
-		      \end{align*}
-		\item If a cycle in the halved model manifests as a single cycle in the full model, the period of this cycle is double the period of the cycle in the halved model.
-		      \begin{align*}
+		      \end{align}
+		\item If a cycle in the halved archetypal model manifests as a single cycle in the archetypal model, the period of this cycle is double the period of the cycle in the halved archetypal model.
+		      \begin{align}
 			      |T(\sigma)| = 2 |\sigma|
-		      \end{align*}
+		      \end{align}
 	\end{enumerate}
 \end{theorem}
 
-\clearpage
-
 \begin{proof} \phantom{x}
 	\begin{enumerate}
-		\item From \Cref{theorem:coexistence.even} we know that if the cycle $\sigma$ in the halved model manifests as two coexisting cycles in the full model, $\sigma$ has an even number of rotations $n$.
+		\item We know from \Cref{theorem:coexistence.even} that if the cycle $\sigma$ in the halved archetypal model manifests as two coexisting cycles in the archetypal model, $\sigma$ has an even number of rotations $n$.
 		      And its translation is $T(\sigma) = t(\sigma_1\sigma_2) t(\sigma_3\sigma_4) \dots t(\sigma_{n-1}\sigma_n)$.
 		      Combining this with the fact, that $t$ preserves the period of its input as described in \Cref{lemma:t.preserves.period}, we can calculate the period of $T(\sigma)$ in the following way.
 		      \begin{align*}
@@ -52,7 +50,7 @@ The function was defined in \Cref{sec:add.halved.tanslating}.
 		      \end{align*}
 		      So the period of the cycle $T(\sigma)$ in the archetypal model is the same as the period of the cycle $\sigma$ in the halved archetypal model.
 		      The same calculation can be done for $T(s(\sigma))$ and is omitted here.
-		\item Similarly, we know that if the cycle $\sigma$ in the halved model manifests as a single cycle in the full model, $\sigma$ has an odd number of rotations $n$.
+		\item Similarly, we know that if the cycle $\sigma$ in the halved archetypal model manifests as a single cycle in the archetypal model, $\sigma$ has an odd number of rotations $n$.
 		      And its translation is $T(\sigma) = t(\sigma_1\sigma_2) \dots t(\sigma_n\sigma_1) \dots t(\sigma_{n-1}\sigma_n)$.
 		      Its period can be calculated in the following way.
 		      \begin{align*}
@@ -61,12 +59,10 @@ The function was defined in \Cref{sec:add.halved.tanslating}.
 			                  & = |\sigma_1\sigma_2| + \dots + |\sigma_n\sigma_1| + \dots + |\sigma_{n-1}\sigma_n|                   \\
 			                  & = |\sigma_1\sigma_2 \dots \sigma_n\sigma_1 \dots \sigma_{n-1}\sigma_n| = |\sigma\sigma| = 2 |\sigma|
 		      \end{align*}
-		      So the period of the cycle $T(\sigma)$ in the full model is twice the period of the cycle $\sigma$ in the halved model.
+		      So the period of the cycle $T(\sigma)$ in the archetypal model is twice the period of the cycle $\sigma$ in the halved archetypal model.
 	\end{enumerate}
 	\hfill $\blacksquare$
 \end{proof}
-
-\todo{\Cref{lemma:t.preserves.period} should be Lemma 7.5}
 
 With this property we can also explain the regularities for coexistence of two cycles in the Farey-trees of \gls{pal} structures.
 
@@ -80,29 +76,29 @@ With this property we can also explain the regularities for coexistence of two c
 	\label{fig:add.prop.hor.tree}
 \end{figure}
 
-\begin{theorem}[Coexistence of two Cycles in Child Nodes]
+\begin{theorem}[Coexistence in Child Nodes]
 	\label{theorem:child.coexistence}
 	\begin{enumerate}
-		\item The child of a node with a single cycle and a node with two coexisting cycles has a single cycle.
-		\item The child of two nodes with a single cycle has two coexisting cycles.
-		\item The child of two nodes with two coexisting cycles, has two coexisting cycles.
+		\item The child of two nodes that are both associated with a single cycle each is associated with two coexisting cycles.
+		\item The child of a node that is associated with a single cycle and a node that is associated with two coexisting cycles is associated with a single cycle.
+		\item The child of two nodes that are both associated with two coexisting cycles each is associated with two coexisting cycles.
 	\end{enumerate}
 \end{theorem}
 
 \begin{proof} \phantom{x}
 	\begin{enumerate}
-		\item A node with a single cycle in the full model is the manifestation of a cycle with an odd number of rotations in the halved model.
-		      A node with two coexisting cycles in the full model is the manifestation of a cycle with an even number of rotations in the halved model.
-		      Their child is the manifestation of the two cycles in the halved model glued together.
-		      This glued-together cycle has an odd number of rotations and therefore manifests as a single cycle in the full model.
-		\item Analogously, two cycles with an odd number of rotations glued together have an even number of rotations.
-		      Therefore, this glued-together cycle manifests as two coexisting cycles in the full model.
-		\item Analogously, two cycles with an even number of rotations glued together have an even number of rotations.
-		      Therefore this glued-together cycle manifests as two coexisting cycles in the full model.
+		\item A node that is associated with a single cycle in the archetypal model is the manifestation of a cycle with an odd number of rotations in the halved archetypal model.
+		      The child of two nodes that are associated with cycles with an odd number of rotations in the halved archetypal model is associated with a cycle with an even number of rotations.
+		      Therefore, this cycle then manifests as two coexisting cycles in the archetypal model.
+		\item Analogously, the child node of one node that is associated with a cycle with an odd number of rotations and one node that is associated with a cycle with an even number of rotations is associated with a cycle with an odd number of rotations.
+		      Therefore, this cycle then manifests as a single cycle in the archetypal model.
+		\item And the child node of two nodes that are both associated with a cycle with an even number of rotations is associated with a cycle with an odd number of rotations.
+		      Therefore, this cycle then manifests as two coexisting cycles in the archetypal model.
+		      \hfill $\blacksquare$ % todo: next line? only if it fits on the same page tho
 	\end{enumerate}
 \end{proof}
 
-This explains the pattern we observed in the periods of the \gls{pal} structures in \Cref{sec:add.add.like}.
+This explains the pattern we can observe in the periods of the \gls{pal} structures in \Cref{sec:add.add.like}.
 We take another look at the 1D period scan of the horizontal \gls{pal} structure between the parameter regions $P^{14}_3$ and $\left[P^{14}_3  \mid P^{12}_3\right]$ in \Cref{fig:add.add.like.hor.1D}.
 We get the information, whether a parameter region in the structure was associated with two coexisting cycles from the Farey-tree in \Cref{fig:add.prop.hor.tree}.
 The parameter region associated with the period $14$ is not associated with coexisting cycles, therefore the corresponding cycle in the halved archetypal model has an odd number of revolutions and its period is twice as high as the period associated with the same parameter region in the halved archetypal model, which is $7$.
@@ -114,10 +110,9 @@ This is true as we can observer this in the 1D period scan in \Cref{fig:add.add.
 Also, we know from \Cref{theorem:child.coexistence} that this parameter region is associated with two coexisting cycles.
 This is true as we can see in the Farey-tree in \Cref{fig:add.prop.hor.tree}.
 
-\todo{1D period scan again?}
-
 The third case of \Cref{theorem:child.coexistence} cannot be seen in the farey tree.
 It is actually not possible in the \gls{pal} structures we are investigating here.
+We will prove this next.
 
 \begin{theorem}[No Coexistence in both Parent Nodes]
 	\label{theorem:no.parent.coex}

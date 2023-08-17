@@ -9,49 +9,52 @@ Furthermore, we can formulate rules for combining the symbolic sequences that ar
 	It concatenates the first 2-syllable of $\phi_i$ with the second 2-syllable of $\psi_j$.
 \end{definition}
 
-\begin{theorem}[Combining Symbolic Sequences in a Farey-tree of a \gls{pal} Structure I]
+\begin{theorem}[Symbolic Sequences in Child Nodes I]
 	\label{theorem:child.symbolic.1}
-	The child node of two nodes with a singular cycle each with the symbolic sequences $\phi = \phi_1 \dots \phi_n$ and $\psi = \psi_1 \dots \psi_m$ is associated with two coexisting cycles with the following symbolic sequences.
+	The child node of two nodes that are both associated with a singular cycle each with the symbolic sequences $\phi = \phi_1 \dots \phi_n$ and $\psi = \psi_1 \dots \psi_m$ is associated with two coexisting cycles with the following symbolic sequences.
 	\begin{align}
-		\phi_1 \dots \phi_{\frac{n-1}{2}} \left[\phi_{\frac{n+1}{2}} \mid \psi_{\frac{m+1}{2}}\right] \psi_{\frac{m+3}{2}} \dots \psi_m
+		\pi^a = \phi_1 \dots \phi_{\frac{n-1}{2}} \left[\phi_{\frac{n+1}{2}} \mid \psi_{\frac{m+1}{2}}\right] \psi_{\frac{m+3}{2}} \dots \psi_m
 	\end{align}
 	and
 	\begin{align}
-		\phi_{\frac{n+3}{2}} \dots \phi_n \psi_1 \dots \psi_{\frac{m-1}{2}} \left[\psi_{\frac{m+1}{2}} \mid \phi_{\frac{n+1}{2}}\right]
+		\pi^b = \phi_{\frac{n+3}{2}} \dots \phi_n \psi_1 \dots \psi_{\frac{m-1}{2}} \left[\psi_{\frac{m+1}{2}} \mid \phi_{\frac{n+1}{2}}\right]
 	\end{align}
 \end{theorem}
 
-\begin{proof}
+\begin{proof} \phantom{x} \\
 	Let $\sigma = \sigma_1\sigma_2 \dots \sigma_i$ with odd $i$, $\varrho = \varrho_1\varrho_2 \dots \varrho_j$ with odd $j$, $T(\sigma) = \phi$, and $T(\varrho) = \psi$.
 	The child of both nodes in the halved archetypal model is associated with the symbolic sequence $\sigma\varrho = \sigma_1 \dots \sigma_i \varrho_1 \dots \varrho_j$.
 	This manifests as two coexisting cycles in the archetypal model with the following symbolic sequences.
 	\begin{align*}
-		T(\sigma\varrho) & = T(\sigma_1 \dots \sigma_i \varrho_1 \dots \varrho_j)                                                                            \\
-		                 & = t(\sigma_1\sigma_2) \dots t(\sigma_i\varrho_1) \dots t(\varrho_{j-1}\varrho_j)                                                  \\
-		                 & = \phi_1 \dots \phi_{\frac{n-1}{2}} t(\sigma_i\varrho_1) \psi_{\frac{m+3}{2}} \dots \psi_j                                        \\
-		                 & = \phi_1 \dots \phi_{\frac{n-1}{2}} \left[\phi_{\frac{n+1}{2}} \mid \psi_{\frac{m+1}{2}}\right] \psi_{\frac{m+3}{2}} \dots \psi_j
+		\pi^a & = T(\sigma\varrho) = T(\sigma_1 \dots \sigma_i \varrho_1 \dots \varrho_j)                                                         \\
+		      & = t(\sigma_1\sigma_2) \dots t(\sigma_i\varrho_1) \dots t(\varrho_{j-1}\varrho_j)                                                  \\
+		      & = \phi_1 \dots \phi_{\frac{n-1}{2}} t(\sigma_i\varrho_1) \psi_{\frac{m+3}{2}} \dots \psi_j                                        \\
+		      & = \phi_1 \dots \phi_{\frac{n-1}{2}} \left[\phi_{\frac{n+1}{2}} \mid \psi_{\frac{m+1}{2}}\right] \psi_{\frac{m+3}{2}} \dots \psi_j
 	\end{align*}
 	and
 	\begin{align*}
-		T(s(\sigma\varrho)) & = T(\sigma_2 \dots \sigma_i \varrho_1 \dots \varrho_j \sigma_1)                                                                   \\
-		                    & = t(\sigma_2\sigma_3) \dots t(\sigma_{i-1}\sigma_i) t(\varrho_1\varrho_2) \dots t(\varrho_j\sigma_1)                              \\
-		                    & = \phi_{\frac{n+3}{2}} \dots \phi_n \psi_1 \dots \psi_{\frac{m-1}{2}} t(\varrho_j\sigma_1)                                        \\
-		                    & = \phi_{\frac{n+3}{2}} \dots \phi_n \psi_1 \dots \psi_{\frac{m-1}{2}} \left[\psi_{\frac{m+1}{2}} \mid \phi_{\frac{n+1}{2}}\right]
+		\pi^b & = T(s_2(\sigma\varrho)) = T(\sigma_2 \dots \sigma_i \varrho_1 \dots \varrho_j \sigma_1)                                           \\
+		      & = t(\sigma_2\sigma_3) \dots t(\sigma_{i-1}\sigma_i) t(\varrho_1\varrho_2) \dots t(\varrho_j\sigma_1)                              \\
+		      & = \phi_{\frac{n+3}{2}} \dots \phi_n \psi_1 \dots \psi_{\frac{m-1}{2}} t(\varrho_j\sigma_1)                                        \\
+		      & = \phi_{\frac{n+3}{2}} \dots \phi_n \psi_1 \dots \psi_{\frac{m-1}{2}} \left[\psi_{\frac{m+1}{2}} \mid \phi_{\frac{n+1}{2}}\right]
 	\end{align*}
+	\hfill $\blacksquare$
 \end{proof}
 
-\begin{theorem}[Combining Symbolic Sequences in a Farey-tree of a \gls{pal} Structure II]
+\begin{theorem}[Symbolic Sequences in Child Nodes II]
 	\label{theorem:child.symbolic.2}
-	The child node of a node with a singular cycle with the symbolic sequence $\phi = \phi_1\phi_2 \dots \phi_n$ and a node with two coexisting cycles with the symbolic sequences $\phi^a = \phi^a_1\phi^a_2 \dots \phi^a_m$ and $\phi^b_1\phi^b_2 \dots \phi^b_m$ is associated with one of the following symbolic sequences.
+	The child node of a node that is associated with a singular cycle with the symbolic sequence $\phi = \phi_1\phi_2 \dots \phi_n$ and a node that is associated with two coexisting cycles with the symbolic sequences $\phi^a = \phi^a_1\phi^a_2 \dots \phi^a_m$ and $\phi^b_1\phi^b_2 \dots \phi^b_m$ is associated with one of the following symbolic sequences.
 	\begin{enumerate}
 		\item If $\phi$ is associated with the left parent.
 		      \begin{align}
+			      \pi =
 			      \phi_1 \dots \phi_{\frac{n-1}{2}} \left[\phi_{\frac{n+1}{2}} \mid \psi^b_m\right]
 			      \psi^b_1 \dots \psi^b_{m-1} \left[\psi^b_m \mid \phi_{\frac{n+1}{2}}\right]
 			      \phi_{\frac{n+3}{2}} \dots \phi_n \psi^a
 		      \end{align}
 		\item If $\phi$ is associated with the right parent.
 		      \begin{align}
+			      \pi =
 			      \psi^a \phi_1 \dots \phi_{\frac{n-1}{2}} \left[\phi_{\frac{n+1}{2}} \mid \psi^b_m\right]
 			      \psi^b_1 \dots \psi^b_{m-1} \left[\psi^b_m \mid \phi_{\frac{n+1}{2}}\right]
 			      \phi_{\frac{n+3}{2}} \dots \phi_n
@@ -67,14 +70,14 @@ Furthermore, we can formulate rules for combining the symbolic sequences that ar
 		      The child of both nodes in the halved archetypal model is associated with the symbolic sequence $\sigma\varrho = \sigma_1\sigma_2 \dots \sigma_i \varrho_1\varrho_2 \dots \varrho_j$.
 		      This will manifest as the following symbolic sequence in the archetypal model.
 		      \begin{align*}
-			      T(\sigma\varrho) & = T(\sigma_1 \dots \sigma_i \varrho_1 \dots \varrho_j)                                                                                       \\
-			                       & =
+			      \pi & = T(\sigma\varrho)  = T(\sigma_1 \dots \sigma_i \varrho_1 \dots \varrho_j)                                                                                \\
+			          & =
 			      t(\sigma_1\sigma_2) \dots t(\sigma_i \varrho_1) \dots t(\varrho_j \sigma_1) \dots t(\sigma_{i-1}\sigma_i) t(\varrho_1\varrho_2) \dots t(\varrho_{j-1}\varrho_j) \\
-			                       & = \phi_1 \dots \phi_{\frac{n-1}{2}} t(\sigma_i \varrho_1)
+			          & = \phi_1 \dots \phi_{\frac{n-1}{2}} t(\sigma_i \varrho_1)
 			      \psi^b_1 \dots \varrho^b_{m-1} t(\varrho_j \sigma_1)
 			      \phi_{\frac{n+3}{2}} \dots \phi_n
 			      \psi^a_1 \dots \psi^a_m                                                                                                                                         \\
-			                       & =
+			          & =
 			      \phi_1 \dots \sigma_{\frac{n-1}{2}} \left[\sigma_{\frac{n+1}{2}} \mid \varrho^b_m\right]
 			      \psi^b_1 \dots \psi^b_{m-1} \left[\varrho^b_m \mid \sigma_{\frac{n+1}{2}}\right]
 			      \phi_{\frac{n+3}{2}} \dots \phi_n
@@ -84,15 +87,15 @@ Furthermore, we can formulate rules for combining the symbolic sequences that ar
 		      The child of both nodes in the halved archetypal model is associated with the symbolic sequence $\sigma\varrho = \sigma_1l_2 \dots \sigma_i \varrho_1\varrho_2 \dots \varrho_j$.
 		      This will manifest as the following symbolic sequence in the archetypal model.
 		      \begin{align*}
-			      T(\sigma\varrho) & = T(\sigma_1 \dots \sigma_i \varrho_1 \dots \varrho_j)                                                                                                   \\
-			                       & =
+			      \pi & = T(\sigma\varrho) = T(\sigma_1 \dots \sigma_i \varrho_1 \dots \varrho_j)                                                                                             \\
+			          & =
 			      t(\sigma_1\sigma_2) \dots t(\sigma_{i-1}\sigma_i) t(\varrho_1\varrho_2) \dots t(\varrho_j \sigma_1) \dots t(\sigma_i\varrho_1) \dots t(\varrho_j\sigma_1) \dots t(\sigma_i) \\
-			                       & =
+			          & =
 			      \psi^a_1 \dots \psi^a_m
 			      \phi_1 \dots \phi_{\frac{n-1}{2}} t(\sigma_i \varrho_1)
 			      \psi^b_1 \dots \psi^b_{m-1} t(\varrho_j \sigma_1)
 			      \phi_{\frac{n+3}{2}} \dots \phi_n                                                                                                                                           \\
-			                       & =
+			          & =
 			      \psi^a
 			      \phi_1 \dots \phi_{\frac{n-1}{2}} \left[\phi_{\frac{n+1}{2}} \mid \psi^b_m\right]
 			      \psi^b_1 \dots \psi^b_{m-1} \left[\psi^b_m \mid \phi_{\frac{n+1}{2}}\right]
@@ -102,15 +105,20 @@ Furthermore, we can formulate rules for combining the symbolic sequences that ar
 	\hfill $\blacksquare$
 \end{proof}
 
+\clearpage
+
 As mentioned before, the next case does not appear in the \gls{pal} structures we investigate.
 But we will include it here for completeness.
 
-\begin{theorem}[Combining Symbolic Sequences in a Farey-tree of a \gls{pal} Structure III]
+\begin{theorem}[Symbolic Sequences in Child Nodes III]
 	\label{theorem:child.symbolic.3}
 	The child node of two nodes that are both associated with two coexisting cycles each with the symbolic sequences $\phi^a = \phi^a_1\phi^a_2\dots\phi^a_n, \phi^b = \phi^b_1\phi^b_2\dots\phi^b_n, \psi^a = \psi^a_1\psi^a_2\dots\psi^a_m,$ and $\psi^b = \psi^b_1\psi^b_2\dots\psi^b_m$ is associated with two coexisting cycles with the following symbolic sequences.
 	\begin{align}
-		\phi^a\psi^a \qquad \text{and} \qquad
-		\phi^b_1 \dots \phi^b_{n-1} \left[\phi^b_n \mid \psi^b_m\right] \psi^b_1 \dots \psi^b_{m-1} \left[\psi^b_m \mid \phi^b_n\right]
+		\pi^a = \phi^a\psi^a
+	\end{align}
+	and
+	\begin{align}
+		\pi^b = \phi^b_1 \dots \phi^b_{n-1} \left[\phi^b_n \mid \psi^b_m\right] \psi^b_1 \dots \psi^b_{m-1} \left[\psi^b_m \mid \phi^b_n\right]
 	\end{align}
 \end{theorem}
 
@@ -119,16 +127,16 @@ But we will include it here for completeness.
 	The child of both nodes in the halved archetypal model is associated with the symbolic sequence $\sigma\varrho$.
 	This manifests as two coexisting cycles with the following symbolic sequences in the archetypal model.
 	\begin{align*}
-		T(\sigma\varrho) & = T(\sigma_1 \dots \sigma_i \varrho_1 \dots \varrho_j)                                                    \\
-		                 & = t(\sigma_1\sigma_2) \dots t(\sigma_{i-i}\sigma_i) t(\varrho_1\varrho_2) \dots t(\varrho_{j-1}\varrho_j) \\
-		                 & = \phi^a_1 \dots \phi^a_n \psi^a_1 \dots \psi^a_m = \phi^a\psi^a
+		\pi^a & = T(\sigma\varrho) = T(\sigma_1 \dots \sigma_i \varrho_1 \dots \varrho_j)                                 \\
+		      & = t(\sigma_1\sigma_2) \dots t(\sigma_{i-i}\sigma_i) t(\varrho_1\varrho_2) \dots t(\varrho_{j-1}\varrho_j) \\
+		      & = \phi^a_1 \dots \phi^a_n \psi^a_1 \dots \psi^a_m = \phi^a\psi^a
 	\end{align*}
 	and
 	\begin{align*}
-		T(s_2(\sigma\varrho)) & = T(\sigma_2 \dots \sigma_i \varrho_1 \dots \varrho_j \sigma_1)                                                                   \\
-		                      & = t(\sigma_2\sigma_3) \dots t(\sigma_i\varrho_1) \dots t(\varrho_j\sigma_1)                                                       \\
-		                      & = \phi^b_1 \dots \phi^b_{n-1} t(\sigma_i\varrho_1) \phi^b_1 \dots \phi^b_{m-1} t(\varrho_j\sigma_1)                               \\
-		                      & = \phi^b_1 \dots \phi^b_{n-1} \left[\phi^b_n \mid \phi^b_m\right] \phi^b_1 \dots \phi^b_{m-1} \left[\phi^b_m \mid \phi^b_n\right]
+		\pi^b & = T(s_2(\sigma\varrho)) = T(\sigma_2 \dots \sigma_i \varrho_1 \dots \varrho_j \sigma_1)                                           \\
+		      & = t(\sigma_2\sigma_3) \dots t(\sigma_i\varrho_1) \dots t(\varrho_j\sigma_1)                                                       \\
+		      & = \phi^b_1 \dots \phi^b_{n-1} t(\sigma_i\varrho_1) \phi^b_1 \dots \phi^b_{m-1} t(\varrho_j\sigma_1)                               \\
+		      & = \phi^b_1 \dots \phi^b_{n-1} \left[\phi^b_n \mid \phi^b_m\right] \phi^b_1 \dots \phi^b_{m-1} \left[\phi^b_m \mid \phi^b_n\right]
 	\end{align*}
 	\hfill $\blacksquare$
 \end{proof}
