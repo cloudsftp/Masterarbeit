@@ -240,34 +240,133 @@ But we will include it here again for completeness.
 \end{proof}
 
 In the usual case with two symbols, the rotation numbers are monotone.
-In our case, this is not true when considering the rotation tuples element-wise.
+In our case we have rotation tuples instead of numbers, and we will consider the monotony of the single elements.
+ALso we somteimes have coexistence of two cycles.
+We will consider the rotation tuples of each of the coexisting twin cycles independently.
+The monotony does not hold up for our case, unfortunately.
 We can see a counter example in \Cref{fig:add.prop.rot.num.tree}.
 $\dfrac{6}{19} > \dfrac{6}{20}$ and $\dfrac{6}{19} > \dfrac{5}{18}$.
-But when considering the farey sum of the rotation-like numbers of coexisting cycles, the monotony holds.
+\todo{Describe with figure}
+But if we consider the element-wise Farey-sum of both rotation tuples in the case of coexisting cycles, the monotony holds.
 
-\begin{theorem}{Monotony of Rotation-like Numbers in the Full Model}
-	The rotation-like numbers for one symbol are monotone in the farey tree of a period-adding structure in the full model, when considering the farey sum of the rotation-like numbers of coexisting cycles.
-	\todo{sentences too long and complicated in enumeration}
-	\begin{enumerate}
-		\item The rotation-like numbers that correspond to the cycle of a child node of a parent node with a singular cycle and a parent node of two coexisting cycles, is in between the corresponding rotation-like number of the parent node with a singular cycle and the corresponding sum of rotation-like numbers of the parent node with two coexisting cycles.
-		      \begin{align*}
-			           & \rho_X(\sigma) < \rho_X(\pi) < \rho_X(\varrho^a) \oplus \rho_X(\varrho^b) \\
-			      \lor & \rho_X(\sigma) > \rho_X(\pi) > \rho_X(\varrho^a) \oplus \rho_X(\varrho^b)
-		      \end{align*}
-		\item The farey sum of the rotation-like numbers that correspond to each coexisting cycle of a child node of two nodes with a singular cycle each, is in between the corresponding rotation-like numbers of the parent nodes.
-		      \begin{align*}
-			           & \rho_X(\sigma) < \rho_X(\pi^a) \oplus \rho_X(\pi^b) < \rho_X(\varrho) \\
-			      \lor & \rho_X(\sigma) > \rho_X(\pi^a) \oplus \rho_X(\pi^b) > \rho_X(\varrho)
-		      \end{align*}
-	\end{enumerate}
+\begin{theorem}[Monotony of Rotation Tuples in \gls{pal} Structures]
+	\label{theorem:rotation.monotony}
+	Let the rotation tuple of the left starting node be element-wise smaller than the rotation tuple of the right starting node w.l.o.g.
+	Then the rotation tuple of a node that is associated with a cycle $\phi$ is element-wise smaller than the rotation tuple of a node that is associated with a cycle $\psi$,
+	if the node associated with $\phi$ is left of the node associated with $\psi$ in the Farey-tree.
 \end{theorem}
 
-\begin{proof}
-	\todo{prove}
+For the proof, we rely heavily on the following fact.
+
+\begin{theorem}
+	Let $\frac{a_1}{b_1} < \frac{a_2}{b_2}$. Then
+	\begin{align}
+		\frac{a_1}{b_1} < \frac{a_1}{b_1} \oplus \frac{a_2}{b_2} < \frac{a_2}{b_2}
+	\end{align}
+\end{theorem}
+
+\begin{proof} \phantom{x} \\
+	We will now prove \Cref{theorem:rotation.monotony} using induction.
+	We consider the structure of the Farey-tree like in the proof for \Cref{theorem:no.parent.coex}.
+	First, we write down the starting nodes.
+	Here, the only content is the rotation tuples and the left starting node is element-wise smaller than the right starting node w.l.o.g.
+	Note that for coexisting twin cycles $\pi^a$ and $\pi^b$, we consider the element-wise Farey-sum of their rotation tuples $\rho(\pi) = \rho(\pi^a) \oplus \rho(\pi^b)$.
+	For each iteration we combine each pair of rotation tuples in the list and insert the result in the middle of each pair.
+	We again reformulate the statement of \Cref{theorem:rotation.monotony} to a concrete statement about the lists at each iteration.
+
+	In all lists, the node $\rho(\phi)$ will be element-wise smaller than the next node $\rhi(\psi)$.
+	This implies global monotony at each iteration for the lists.
+	And therefore also global monotony in the Farey-tree across all levels.
+
+	\begin{itemize}
+		\item[n = 0] The left starting node is element-wise smaller than the right starting node per construction.
+		\item[n + 1] We assume that the above statement is true for the current list of $2^n$.
+			And we proof that for each neighboring nodes $\{\dots ,\rho(\phi), \rho(\psi), ...\}$ the values of their child node $\rho(\pi)$ is in-between the values of its two parent nodes.
+			\begin{align*}
+				\rho(\phi) < \rho(\pi) < \rho(\psi)
+			\end{align*}
+			We need to consider four cases.
+			First, let's assume that the node associated with $\rho(\phi)$ is associated with a single cycle when considering the Farey-tree with symbolic sequences and the node associated with $\rho(\psi)$ is also associated with a single cycle.
+			Then for symbol $\A$
+			\begin{align*}
+				\rho_\A(\pi) & = \rho_\A(\pi^a) \oplus \rho_\A(\pi^b)                                                                       \\
+				             & =
+				\dfrac{\left|\phi_1 \dots \phi_{\frac{n+1}{2}}\right|_\A + \left|\psi_{\frac{m+3}{2}} \dots \psi_m\right|_\A}{|\pi|}
+				\oplus \dfrac{\left|\psi_1 \dots \psi_{\frac{m+1}{2}}\right|_\A + \left|\phi_{\frac{n+3}{2}} \dots \phi_n\right|_\A}{|\pi|} \\
+				             & =
+				\dfrac
+				{\left|\phi_1 \dots \phi_{\frac{n+1}{2}}\right|_\A + \left|\psi_{\frac{m+3}{2}} \dots \psi_m\right|_\A + \left|\psi_1 \dots \psi_{\frac{m+1}{2}}\right|_\A + \left|\phi_{\frac{n+3}{2}} \dots \phi_n\right|_\A}
+				{2 \cdot |\pi|}                                                                                                             \\
+				             & =
+				\dfrac
+				{\left|\phi_1 \dots \phi_{\frac{n+1}{2}} \psi_{\frac{m+3}{2}} \dots \psi_m \psi_1 \dots \psi_{\frac{m+1}{2}} \phi_{\frac{n+3}{2}} \dots \phi_n\right|_\A}
+				{2 \cdot \frac{|\phi| + |\psi|}{2}}                                                                                         \\
+				             & =
+				\dfrac
+				{\left|\phi_1 \dots \phi_{\frac{n+1}{2}} \phi_{\frac{n+3}{2}} \dots \phi_n \psi_1 \dots \psi_{\frac{m+1}{2}} \psi_{\frac{m+3}{2}} \dots \psi_m\right|_\A}
+				{|\phi| + |\psi|}                                                                                                           \\
+				             &
+				= \dfrac{|\phi\psi|_\A}{|\phi| + |\psi|}
+				= \dfrac{|\phi|_\A + |\psi|_\A}{|\phi| + |\psi|}
+				= \rho_A(\phi) \oplus \rho_\A(\psi)
+			\end{align*}
+			And since $\rho_\A(\phi) < \rho_\A(\psi) \implies \rho_\A(\phi) < \rho_\A(\phi) \oplus \rho_\A(\psi) < \rho_\A(\psi)$,
+			it also implies that $\rho_\A(\phi) < \rho_\A(\pi) =  \rho_\A(\pi^a) \oplus \rho_\A(\pi^h) < \rho_\A(\psi)$.
+
+			This works exactly the same for the symbol $\B$, and we will omit it here.
+			For the symbols $\C$ and $\D$ it is slightly different.
+			We will demonstrate it for the symbol $\C$ in the following.
+			\begin{align*}
+				\rho_\C(\pi) & = \rho_\C(\pi^a) \oplus \rho_\C(\pi^b)                                                                       \\
+				             & =
+				\dfrac{\left|\phi_1 \dots \phi_{\frac{n-1}{2}}\right|_\C + \left|\psi_{\frac{m+1}{2}} \dots \psi_m\right|_\C}{|\pi|}
+				\oplus \dfrac{\left|\psi_1 \dots \psi_{\frac{m-1}{2}}\right|_\C + \left|\phi_{\frac{n+1}{2}} \dots \phi_n\right|_\C}{|\pi|} \\
+				             & =
+				\dfrac
+				{\left|\phi_1 \dots \phi_{\frac{n-1}{2}}\right|_\C + \left|\psi_{\frac{m+1}{2}} \dots \psi_m\right|_\C + \left|\psi_1 \dots \psi_{\frac{m-1}{2}}\right|_\C + \left|\phi_{\frac{n+1}{2}} \dots \phi_n\right|_\C}
+				{2 \cdot |\pi|}                                                                                                             \\
+				             & =
+				\dfrac
+				{\left|\phi_1 \dots \phi_{\frac{n-1}{2}} \psi_{\frac{m+1}{2}} \dots \psi_m \psi_1 \dots \psi_{\frac{m-1}{2}} \phi_{\frac{n+1}{2}} \dots \phi_n\right|_\C}
+				{2 \cdot \frac{|\phi| + |\psi|}{2}}                                                                                         \\
+				             & =
+				\dfrac
+				{\left|\phi_1 \dots \phi_{\frac{n-1}{2}} \phi_{\frac{n+1}{2}} \dots \phi_n \psi_1 \dots \psi_{\frac{m-1}{2}} \psi_{\frac{m+1}{2}} \dots \psi_m\right|_\C}
+				{|\phi| + |\psi|}                                                                                                           \\
+				             &
+				= \dfrac{|\phi\psi|_\C}{|\phi| + |\psi|}
+				= \dfrac{|\phi|_\C + |\psi|_\C}{|\phi| + |\psi|}
+				= \rho_A(\phi) \oplus \rho_\C(\psi)
+			\end{align*}
+			And since $\rho_\C(\phi) < \rho_\C(\psi) \implies \rho_\C(\phi) < \rho_\C(\phi) \oplus \rho_\C(\psi) < \rho_\C(\psi)$,
+			it also implies that $\rho_\C(\phi) < \rho_\C(\pi) =  \rho_\C(\pi^a) \oplus \rho_\C(\pi^h) < \rho_\C(\psi)$.
+
+			Next, let's consider the case where the node associated with $\rho(\phi)$ is associated with a single cycle when considering the Farey-tree with symbolic sequences and the node associated with $\rho(\psi) = \rho(\psi^a) \oplus \rho(\psi^b)$ is also associated with two coexisting cycles.
+			Here, we can use the element-wise Farey-sum and prove it simultaneously for all symbols.
+			\begin{align*}
+				\rho(\pi) & = \rho(\phi) \oplus \rho(\psi^a) \oplus \rho(\psi^b) \\
+				          & = \rho(\phi) \oplus \rho(\psi)
+			\end{align*}
+			Since $\rho(\phi) < \rho(\psi) \implies \rho(\phi) < \rho(\phi) \oplus \rho(\psi) < \rho(\psi)$, it also implies that $\rho(\phi) < \rho(\pi) = \rho(\phi) \oplus \rho(\psi) < \rho(\psi)$.
+
+			The proof works similar for the third case, where the node associated with $\rho(\phi) = \rho(\phi^a) \otimes \rho(\phi^b)$ is also associated with two coexisting cycles and the node associated with $\rho(\psi)$ is associated with a single cycle.
+			\begin{align*}
+				\rho(\pi) & = \rho(\phi^a) \oplus \rho(\phi^b) \oplus \rho(\psi) \\
+				          & = \rho(\phi) \oplus \rho(\psi)
+			\end{align*}
+			Since $\rho(\phi) < \rho(\psi) \implies \rho(\phi) < \rho(\phi) \oplus \rho(\psi) < \rho(\psi)$, it also implies that $ \rho(\phi) < \rho(\pi) = \rho(\phi) \oplus \rho(\psi) < \rho(\psi)$.
+
+			The last case does not occur in the \gls{pal} structures, we are investigating but we will include a proof for this case also.
+			Both the left node that is associated with $\rhi(\phi) = \rho(\phi^a) \oplus \rho(\phi^b)$ and the right node that is associated with $\rho(\psi) = \rho(\psi^a) \oplus \rho(\psi^b)$ are associated with two coexisting cycles.
+			Again we can use element-wise Farey-addition.
+			\begin{align*}
+				\rho(\pi) & = \rho(\pi^a) \oplus \rho(\pi^b)                                                                     \\
+				          & = \left(\rho(\phi^a) \oplus \rho(\psi^a)\right) \oplus \left(\rho(\phi^b) \oplus \rho(\psi^b)\right) \\
+				          & = \rho(\phi^a) \oplus \rho(\psi^a) \oplus \rho(\phi^b) \oplus \rho(\psi^b)                           \\
+				          & = \rho(\phi^a) \oplus \rho(\phi^a) \oplus \rho(\psi^a) \oplus \rho(\psi^b)                           \\
+				          & = \rho(\phi) \oplus \rho(\psi)                                                                       \\
+			\end{align*}
+			And $\rho(\phi) < \rho(\psi) \implies \rho(\phi) < \rho(\pi) = \rho(\phi) \oplus \rho(\psi) < \rho(\psi)$.
+			\hfill $\blacksquare$
+	\end{itemize}
 \end{proof}
-
-\todo{rotation numbers in the sense of poincare follow monotony directly, but coexisting cycles have same rotation numbers}
-
-rotation number of coexisting cycles = rotation number of cycle in halved model
-
-rotation number of single cycle = 2 $\otimes$ rotation number of cycle in halved model
