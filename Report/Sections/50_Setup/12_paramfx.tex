@@ -1,16 +1,18 @@
 \subsection{Parameter Effects}
 \label{sec:setup.char.paramfx}
 
-In this section, we examine the effects of the parameters on the original model function.
-We start with the combined parameter effects along a chain of parameter regions of the same period.
-After that we will look into what role the parameters play individually.
+\hl{
+	This section is concerned with the other types of characteristics, the effects of the parameters of the model on the shape of the model function.
+	First, it analyzes the combined parameter effects along a chain of parameter regions assocoated with cycles the same period.
+	After that, it analyzes the isolated effects of the single parameters and decomposes the combined effects into the isolated effects.
+}
 
 \subsection{Combined Effects of Parameters}
 \label{sec:setup.char.paramfx.combined}
 
 To replicate the dynamics seen in the model, it is helpful to know, how the model changes along the \hl{chains of parameter regions that are associated with cycles of the same period}.
 \hl{
-	We therefore analyze the model function at different points in different chains.
+	This section therefore analyzes the model function at different points in different chains.
 }
 \Cref{fig:setup.char.evolution.map} \hl{indicates the points used for this analysis}.
 \Cref{fig:setup.char.evolution.12} shows, how the model function changes along the \hl{chain of parameter regions associated with cycles of} period 12.
@@ -97,7 +99,7 @@ Note that the same change happens to the border between the branches $F_\D$ and 
 The effects of the parameters described above, always include a change in both parameters $E_0$ and $\chi_0$.
 To reproduce the bifurcation structures, it is important to know which effects on the function each parameter has individually.
 \hl{
-	We now fix one parameter and vary the other to observe the isolated effects of the varied parameter.
+	This section focuses on the isolated effects of each parameter by fixing one of the parameters and only varying the other one and observing the effects of this parameter on the shape of the model function.
 }
 
 \begin{figure}
@@ -110,9 +112,9 @@ To reproduce the bifurcation structures, it is important to know which effects o
 	\label{fig:setup.char.evolution.single.map}
 \end{figure}
 
-For the \hl{effects of the} parameter $E_0$, we fix $\chi_0 = 0.2$ and vary $E_0$ in the parameter range $[15, 19]$.
+For the \hl{effects of the} parameter $E_0$, $\chi_0 = 0.2$ \hl{is fixed} and $E_0$ \hl{is varied} in the parameter range $[15, 19]$.
 This is marked as the green arrow in \Cref{fig:setup.char.evolution.single.map}.
-As before, we plot the \hl{model} function at three \hl{parameter values} and put them in one figure.
+As before, \hl{the model function is plotted} at three \hl{parameter values} in one figure.
 \hl{The functions are visualized in} \Cref{fig:setup.char.evolution.e0}.
 \hl{
 	$F^L$ is the model function with $E_0 = 15$, $F^M$ is the model function with $E_0 = 17$, and $F^R$ is the model function with $E_0 = 17$.
@@ -135,10 +137,10 @@ As before, we plot the \hl{model} function at three \hl{parameter values} and pu
 	\item The values at the right borders of branches $F_\A$ and $F_\C$ get larger. This is caused by the border between branches $F_\A$ and $F_B$ moving to the right.
 \end{enumerate}
 
-For the \hl{effects of the} parameter $\chi_0$, we fixed $E_0 = 17$ and varied $\chi_0$ in the parameter range $[0.125, 0.3]$.
+For the \hl{effects of the} parameter $\chi_0$, $E_0 = 17$ \hl{is fixed} and $\chi_0$ \hl{is varied} in the parameter range $[0.125, 0.3]$.
 This parameter range is marked with an orange arrow in \Cref{fig:setup.char.evolution.single.map}.
 \hl{
-	Again, we plot the model function at three parameter values and put them in one figure.
+	Again, the model function is plotted at three parameter values in one figure.
 }
 \hl{The functions are visualized in} \Cref{fig:setup.char.evolution.hi}.
 \hl{
@@ -191,15 +193,18 @@ This parameter range is marked with an orange arrow in \Cref{fig:setup.char.evol
 \subsection{Decomposition of Combined Effects}
 \label{sec:yunus.param.effects.decomposition}
 
-\hl{In this section, we take} a closer look at the combined effects of the parameters along \hl{chains of parameter regions associated with cycles of} the same period and trace them back to the isolated effects of \hl{either} parameter.
-For this, we introduce a notation for the effects.
+\hl{This section considers the decomposition of the combined parameter effects listed in} \Cref{sec:setup.char.paramfx.combined} \hl{into the effects of the isolated parameter effects listed in} \Cref{sec:setup.char.paramfx.individual} \hl{and traces each effect back to its cause}.
+\hl{
+	This is important, because some of the isolated parameter effects cancel out when the parameters are both varied as we will see later in this section.
+}
+For this, \hl{this section introduces} a notation for the effects.
 The effect of the values \hl{on the left side} of a branch changing is denoted $\AL$, for the \hl{right side} it is $\AR$, and for the whole branch it is $\AW$
 The subscript indicates, which branch the change effects, and the superscript indicates, whether the values get larger $+$ or smaller $-$.
 The effect of changing a local minimum is denoted as $\AMi$.
 The meaning of the subscript stays the same as above, but the superscript also can include $L$ for \hl{movement to the left} and $R$ for \hl{movement to the right}.
 Finally, the effect of moving borders is denoted as $\AB$.
 The subscript now includes the two symbols of branches to which the border belongs and the superscript now has only $L$ or $R$.
-For brevity, we do not write redundant branch names, so changes happening to branch $F_\A$ are also happening to branch $F_\C$.
+For brevity, \hl{one does} not write redundant branch names, so changes happening to branch $F_\A$ are also happening to branch $F_\C$.
 For borders, changes to the border between branches $F_\A$ and $F_\B$ are also happening to the border between branches $F_\C$ and $F_\D$ and so on.
 
 \Cref{table:setup.char.paramfx} lists all observed effects along the \hl{chains of parameter regions associated with cycles} of the same period and their decomposition into effects of the single parameters.

@@ -1,19 +1,24 @@
 \subsection{Model Definition}
+\label{sec:setup.quad.def}
 
 The model is defined as the map $x_{n+1} = f(x_n) \mod 1$.
-Where $f$ is given by the following collection of equations.
+Where $f$ is given by the following set of equations.
 \begin{align}
 	f(x) & = \begin{cases}
 		         g(x)                             & \text{if } x < \frac{1}{2} \\
 		         g(x - \frac{1}{2}) + \frac{1}{2} & \text{else}
-	         \end{cases} \label{equ:quad.full.f}           \\
+	         \end{cases} \label{equ:quad.f}           \\
 	g(x) & = \begin{cases}
 		         g_L(x) = a_L \cdot x^2 + b_L \cdot x + c_L & \text{if } x < \frac{1}{4} \\
 		         g_R(x) = a_R \cdot x^2 + b_R \cdot x + c_R & \text{else}
-	         \end{cases} \label{equ:quad.full.g}
+	         \end{cases} \label{equ:quad.g}
 \end{align}
 
-\Cref{equ:quad.full.f} explicitly states the discontinuity at $0$ and $3$.
+\Cref{equ:quad.f} explicitly states the discontinuity at $0$ and $\frac{1}{2}$.
 It also explicitly states the symmetry of the model.
-Each half of the model is then governed by \Cref{equ:quad.full.g}.
+Each half of the model is then governed by \Cref{equ:quad.g}.
 Here all the 6 parameters $a_L, a_R, b_L, b_R, c_L,$ and $c_R$ act.
+\hl{
+	This equation also explicitly states the border at $\frac{1}{4}$.
+}
+\hl{And in combination with the explicit symmetry in} \Cref{equ:quad.f}, \hl{the border at $\frac{3}{4}$ follows}.
