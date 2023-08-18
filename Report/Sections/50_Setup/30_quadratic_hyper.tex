@@ -1,10 +1,13 @@
-\section{Piecewise Quadratic Model with Hyperparameters}
+\section{Piecewise-quadratic Model with Compound Parameters}
 \label{sec:setup.quad.hyper}
 
-Now we will attempt to imitate the effects of the parameter $E_0$ on the branches $f_\B$ and $f_\D$ better.
-Previously, we just varied $c_R$ which changes the values of the whole branches evenly.
-Now, we only want to affect the value at the left borders of these branches.
-For this, we introduce new parameters that are tied directly to characteristics of the model function.
+\hl{Previously in} \Cref{sec:setup.quad}, \hl{the only varied parameters were $c_L$ and $c_R$}.
+\hl{
+	Changing the parameter $c_L$ emulates the effects of $\chi_0$ on the branches $F_\A$ and $F_\C$ of the original model function well.
+	But changing $c_R$ does not emulate the effects of $E_0$ on the branches $F_\B$ and $F_\D$ very well.
+	This section introduces compound parameters that directly influence the characteristics of the branches $F_\B$ and $F_D$.
+	And the values of the parameters $a_R, b_R,$ and $c_R$ are not directly changed but calculated from those compound parameters.
+}
 
 \input{Sections/50_Setup/31_quadratic_hyper_parameters.tex}
 \input{Sections/50_Setup/32_quadratic_hyper_first.tex}

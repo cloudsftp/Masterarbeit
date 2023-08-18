@@ -3,7 +3,7 @@
 \psfrag{L}{\hspace*{0.0em}\raisebox{0.5ex}{$14$}}
 \psfrag{R}{\hspace*{-0.8em}\raisebox{0.5ex}{$20$}}
 
-\psfrag{D}{\hspace*{0.5em}\raisebox{0.5ex}{$0.1$}}
+\psfrag{D}{\hspace*{0.5em}\raisebox{0.5ex}{$0.08$}}
 \psfrag{U}{\hspace*{-1.3em}\raisebox{0.5ex}{$0.35$}}
 
 \psfrag{x}{\hspace*{0.0em}\raisebox{0.5ex}{$E_0$}}
@@ -16,3 +16,9 @@
 \psfrag{14}{\hspace*{-0.2em}\raisebox{0.5ex}{\color[RGB]{255, 110, 0}{$14$}}}
 \psfrag{16}{\hspace*{-0.2em}\raisebox{0.5ex}{\color[RGB]{255, 110, 0}{$16$}}}
 \psfrag{18}{\hspace*{-0.2em}\raisebox{0.5ex}{\color[RGB]{255, 110, 0}{$18$}}}
+
+\psfrag{M}{\hspace*{-0.2em}\raisebox{0.5ex}{\color[RGB]{255, 110, 0}{$M$}}}
+\psfrag{L}{\hspace*{-0.2em}\raisebox{0.5ex}{\color[RGB]{255, 110, 0}{$L$}}}
+\psfrag{R}{\hspace*{-0.2em}\raisebox{0.5ex}{\color[RGB]{255, 110, 0}{$R$}}}
+\psfrag{D}{\hspace*{-0.2em}\raisebox{0.5ex}{\color[RGB]{255, 110, 0}{$D$}}}
+\psfrag{U}{\hspace*{-0.2em}\raisebox{0.5ex}{\color[RGB]{255, 110, 0}{$U$}}}
