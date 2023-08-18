@@ -22,7 +22,7 @@
             "parameters": [
                 {
                     "name": "hi",
-                    "start": 0.1,
+                    "start": 0.08,
                     "stop": 0.35
                 }
             ]
