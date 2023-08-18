@@ -1,14 +1,21 @@
-\section{Piecewise Quadratic Model}
+\section{Piecewise-quadratic Model}
 \label{sec:setup.quad}
 
-Now that we have analyzed the original model function and know its characteristics, we start constructing different models with similar characteristics.
-In this chapter, we will only highlight the models on the ``good'' path.
-Other models that we also examined are listed in \Cref{chap:app.models}.
+\hl{
+	In this section, the first model with similar characteristics to the original model is constructed.
+	This chapter only includes the constructed models on the ``good'' path.
+	\Cref{chap:app.models} lists other models that are not included in this chapter.
+}
 
-We start with a model that is piecewise quadratic.
-In the original model, the branches $f_\B$ and $f_\D$ are shaped more like cubic functions, but to keep the number of parameters low at the beginning, we model them as quadratic here.
-The model has 4 branches and the same symmetry as the original model function.
-We define the domain here as $[0, 1]$ instead of $[0, 2\pi]$.
+\hl{
+	This first model has 4 branches that are all quadratic.
+	Hence, it is called the piecewise-quadratic model.
+}
+In the original model, the branches $F_\B$ and $F_\D$ are shaped more like cubic functions, but to keep the number of parameters \hl{reasonable, this model assumes only quadratic branches}.
+\hl{
+The model also has the same symmetry as the original model, and it is included explicitly in the model definition.
+The state space of all constructed models is $[0, 1)$ instead of $[0, 2\pi)$ as in the original model.
+}
 
 \input{Sections/50_Setup/21_quadratic_definition.tex}
 \input{Sections/50_Setup/22_quadratic_even.tex}
