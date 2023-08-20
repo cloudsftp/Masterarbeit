@@ -30,6 +30,8 @@ set label 'FB' at 2.0, 3.5
 set label 'FC' at 0.4 + pi, 1.4 + pi
 set label 'FD' at 2.0 + pi, 3.5 - pi
 
-plot 'model1.dat' w dots notitle lc rgb 'blue', \
-    'model2.dat' w dots notitle lc rgb 'purple', \
-    'model3.dat' w dots notitle lc rgb 'red'
+set key at 0.65*pi, 1.9*pi spacing 1.5
+
+plot    1/0 w line lw 2 lc rgb 'blue' t 'FA10', 'model1.dat' w dots notitle lc rgb 'blue', \
+        1/0 w line lw 2 lc rgb 'purple' t 'FB10', 'model2.dat' w dots notitle lc rgb 'purple', \
+        1/0 w line lw 2 lc rgb 'red' t 'FC10', 'model3.dat' w dots notitle lc rgb 'red'

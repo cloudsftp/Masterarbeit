@@ -1,0 +1,25 @@
+% fmopt: width=8cm
+%head:
+% \usepackage{amsmath}
+%\newcommand{\A}{\text{\tiny$\mathcal A$}}
+%\newcommand{\B}{\text{\tiny$\mathcal B$}}
+%\newcommand{\C}{\text{\tiny$\mathcal C$}}
+%\newcommand{\D}{\text{\tiny$\mathcal D$}}
+
+\psfrag{L}{\hspace*{0.2em}\raisebox{0.5ex}{$0$}}
+\psfrag{R}{\hspace*{-1.0em}\raisebox{0.5ex}{$2\pi$}}
+
+\psfrag{D}{\hspace*{0.6em}\raisebox{0.7ex}{$0$}}
+\psfrag{U}{\hspace*{-0.7em}\raisebox{0.5ex}{$2\pi$}}
+
+\psfrag{x}{\hspace*{0.0em}\raisebox{0.5ex}{$x$}}
+\psfrag{y}{\hspace*{0.0em}\raisebox{0.5ex}{$f(x)$}}
+
+\psfrag{FA}{\hspace*{0.0em}\raisebox{0.5ex}{$F_\A$}}
+\psfrag{FB}{\hspace*{0.0em}\raisebox{0.5ex}{$F_\B$}}
+\psfrag{FC}{\hspace*{0.0em}\raisebox{0.5ex}{$F_\C$}}
+\psfrag{FD}{\hspace*{0.0em}\raisebox{0.5ex}{$F_\D$}}
+
+\psfrag{FL}{\hspace*{0.0em}\raisebox{0.5ex}{$F^{L}$}}
+\psfrag{FM}{\hspace*{0.0em}\raisebox{0.5ex}{$F^{M}$}}
+\psfrag{FR}{\hspace*{0.0em}\raisebox{0.5ex}{$F^{R}$}}
