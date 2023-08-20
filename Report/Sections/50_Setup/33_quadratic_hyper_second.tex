@@ -23,8 +23,8 @@
 	It shows 2 different versions of scans in the same parameter range, $\alpha \in [0.275, 0.35]$ and $\beta \in [0.15, 0.1875]$.
 }
 \hl{The first scan in} \Cref{fig:setup.quad.hyper.2.period.full} \hl{shows the periods of the model as we have seen it also in the previous sections}.
-\hl{The second scan in} \Cref{fig:setup.quad.hyper.2.period.halved} \hl{shows the periods of an adjusted model}.
-\hl{This adjusted model reveals ``type B'' parameter regions as they are associated with higher periods than the ``type A'' parameter regions of the same chains in the adjusted model}.
+\hl{The second scan in} \Cref{fig:setup.quad.hyper.2.period.halved} \hl{shows the periods of the same model but halved}.
+\hl{This reveals ``type B'' parameter regions as they are associated with higher periods than the ``type A'' parameter regions of the same chains in the halved model}.
 \hl{The reason for this is covered in-depth in} \Cref{sec:add.add.halved}, \hl{but for now only the fact that it reveals ``type B'' parameter regions is important}.
 
 We can see in \Cref{fig:setup.quad.hyper.2.period.full}, that the gap between the ``type A'' parameter regions of a sequence \hl{of parameter regions associated} with the same period closed.
@@ -44,63 +44,53 @@ Also, there \hl{are sections of the chains where they} get narrower, \hl{for exa
 
 \hl{The period the chains are associated with also still increments in neighboring chains as was observed in the last section,} \Cref{sec:setup.quad.hyper.1}.
 \hl{
-	Therefore, this structure looks extremely smilar to the \gls{pi} structure one can observe in the original model when looking at the periods associated with parameter regions and their types.
+	Therefore, this structure is similar to the \gls{pi} structure one can observe in the original model when looking at the periods associated with parameter regions and their types.
 	But this is not the only characteristic of cycles.
 	Therefore, the symbolic sequences of the cycles associated with the parameter regions making up the chains are analyzed next.
 }
 
 \begin{figure}
 	\centering
-	\begin{subfigure}{0.4\textwidth}
-		\centering
-		\includegraphics[width=\textwidth]{41_Quadratic_fittingR_Gecko/2D_Period_Whole/result.png}
-		\caption{Normal model}
+	\subfloat[Normal model]{
+		\includegraphics[width=.48 \textwidth]{../Figures/5/5.11a/result.png}
 		\label{fig:setup.quad.hyper.2.period.full}
-	\end{subfigure}
-	\begin{subfigure}{0.4\textwidth}
-		\centering
-		\includegraphics[width=\textwidth]{42_Quadratic_fittingR_Gecko_Halved/2D_Period_Whole/result.png}
-		\caption{Adjusted model}
+	}
+	\subfloat[Halved model]{
+		\includegraphics[width=.48\textwidth]{../Figures/5/5.11b/result.png}
 		\label{fig:setup.quad.hyper.2.period.halved}
-	\end{subfigure}
+	}
 	\caption[2D scan of the periods of the quadratic model with hyperparameters for different values of the fixed parameters]{
 	2D scan of the periods of the piecewise quadratic model with hyperparameters $g_R\left(\frac{1}{4}\right), g_R\left(\frac{1}{2}\right),$ and $\left. \frac{d}{dx} g_R\left(x\right) \right|_{x = \frac{1}{2}}$.
 	The parameters $a_L = 4, b_L = -\frac{1}{2}, g_R\left(\frac{1}{4}\right) = 0.525,$ and $\left. \frac{d}{dx} g_R\left(x\right) \right|_{x = \frac{1}{2}} = 1.2$ are fixed.
 	The parameters $\alpha = g_R\left(\frac{1}{4}\right)$ and $\beta = c_L$ are varied in the ranges $[0.275, 0.35]$ and $[0.15, 0.1875]$, respectively.
 	The points $A, B,$ and $C$ mark the parameter values used for the cobweb diagrams in \Cref{fig:setup.quad.hyper.2.cobwebs}.
 	Also, the numbers at the top indicate the period of the parameter region chains.
-	(a) shows the scan for the normal model as defined above, while (b) shows the scan for the adjusted model where we can see ``type B'' parameter regions as they have higher periods in the adjusted model.
+	(a) shows the scan for the model as defined above, while (b) shows the scan for the halved model where we can see ``type B'' parameter regions as they have higher periods than the ``type A'' parameter regions of the same chain.
 	}
 	\label{fig:setup.quad.hyper.2.period}
 \end{figure}
 
 \begin{figure}
 	\centering
-	\begin{subfigure}{0.3\textwidth}
-		\centering
-		\includegraphics[width=\textwidth]{41_Quadratic_fittingR_Gecko/Cobweb_A/result.png}
-		\caption{At Point $A$}
+	\subfloat[$A$]{
+		\includegraphics[width=.3 \textwidth]{41_Quadratic_fittingR_Gecko/Cobweb_A/result.png}
 		\label{fig:setup.quad.hyper.2.cobweb.A}
-	\end{subfigure}
-	\begin{subfigure}{0.3\textwidth}
-		\centering
-		\includegraphics[width=\textwidth]{41_Quadratic_fittingR_Gecko/Cobweb_B/Manual/result.png}
-		\caption{At Point $B$}
+	}
+	\subfloat[$B$]{
+		\includegraphics[width=.3 \textwidth]{41_Quadratic_fittingR_Gecko/Cobweb_B/Manual/result.png}
 		\label{fig:setup.quad.hyper.2.cobweb.B}
-	\end{subfigure}
-	\begin{subfigure}{0.3\textwidth}
-		\centering
-		\includegraphics[width=\textwidth]{41_Quadratic_fittingR_Gecko/Cobweb_C/result.png}
-		\caption{At Point $C$}
+	}
+	\subfloat[$C$]{
+		\includegraphics[width=.3 \textwidth]{41_Quadratic_fittingR_Gecko/Cobweb_C/result.png}
 		\label{fig:setup.quad.hyper.2.cobweb.C}
-	\end{subfigure}
+	}
 	\caption[Cobwebs of the piecewise quadratic model with hyperparameters for different values of the fixed parameters]{
 	Cobweb diagrams at three parameter values of $\alpha = g_R\left(\frac{1}{4}\right)$ and $\beta = c_L$ in the piecewise quadratic model with hyperparameters.
 	The other parameters are fixed as $a_L = 4, b_L = -\frac{1}{2}, g_R\left(\frac{1}{2}\right) = \frac{1}{2} + \frac{1}{40}$, and $\left. \frac{d}{dx} g_R(x) \right|_{x = \frac{1}{2}} = 1 + \frac{1}{5}$.
 	The parameter values are marked in \Cref{fig:setup.quad.hyper.2.period}.
-	(a) shows the cycle $\Cycle{\A^7\B^8\C^7\D^8}$ at point $A$ \hl{where $\alpha = 0.338$ and $\beta = 0.15625$,}
-	(b) shows the two coexisting cycles $\Cycle{\A^7\B^8\C^7\D^8}$ (green) and $\Cycle{\A^6\B^9\C^6\D^9}$ (red) at point $B$ \hl{where $\alpha = 0.329$ and $\beta = 0.1571$,}
-	and (c) shows the cycle $\Cycle{\A^6\B^9\C^6\D^9}$ at point $C$ \hl{where $\alpha = 0.323$ and $\beta = 0.159$.}
+	(a) shows the cycle $\Cycle{\A^7\B^8\C^7\D^8}$ the at point $A$ \hl{where $\alpha = 0.338$ and $\beta = 0.15625$,}
+	(b) shows the two coexisting cycles $\Cycle{\A^7\B^8\C^7\D^8}$ (green) and $\Cycle{\A^6\B^9\C^6\D^9}$ (red) at the point $B$ \hl{where $\alpha = 0.329$ and $\beta = 0.1571$,}
+	and (c) shows the cycle $\Cycle{\A^6\B^9\C^6\D^9}$ at the point $C$ \hl{where $\alpha = 0.323$ and $\beta = 0.159$.}
 	}
 	\label{fig:setup.quad.hyper.2.cobwebs}
 \end{figure}
