@@ -1,10 +1,10 @@
 *.sts
 *.eps
 *.pdf
-*.png
 *.dat
 *.gif
 
+*.so
 *.tna
 
 fragmaster.*

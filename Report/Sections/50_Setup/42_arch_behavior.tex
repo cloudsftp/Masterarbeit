@@ -18,11 +18,11 @@ This was not the case in the \hl{previous model with four quadratic branches}.
 \begin{figure}
 	\centering
 	\subfloat[Model]{
-		\includegraphics[width=.45 \textwidth]{50_Quadratic_linearR/2D_Period_Whole/result.png}
+		\includegraphics[width=.48 \textwidth]{../Figures/5/5.14a/result.png}
 		\label{fig:setup.arch.period.full}
 	}
 	\subfloat[Halved Model]{
-		\includegraphics[width=.45 \textwidth]{51_Quadratic_linearR_Halved/2D_Period_Whole/result.png}
+		\includegraphics[width=.48 \textwidth]{../Figures/5/5.14b/result.png}
 		\label{fig:setup.arch.period.halved}
 	}
 	\caption[2D scans of the periods of the archetypal model]{
@@ -37,28 +37,27 @@ This was not the case in the \hl{previous model with four quadratic branches}.
 
 \begin{figure}
 	\centering
-	\begin{subfigure}{0.3\textwidth}
-		\centering
-		\includegraphics[width=\textwidth]{50_Quadratic_linearR/Cobweb_A/result.png}
-		\caption{At point $A$}
+	\subfloat[$A$]{
+		\includegraphics[width=.3 \textwidth]{../Figures/5/5.15a/result.png}
 		\label{fig:setup.arch.cobweb.A}
-	\end{subfigure}
-	\begin{subfigure}{0.3\textwidth}
-		\centering
-		\includegraphics[width=\textwidth]{50_Quadratic_linearR/Cobweb_B/result.png}
-		\caption{At point $B$}
+	}
+	\subfloat[$B$]{
+		\includegraphics[width=.3 \textwidth]{../Figures/5/5.15b/result.png}
 		\label{fig:setup.arch.cobweb.B}
-	\end{subfigure}
-	\begin{subfigure}{0.3\textwidth}
-		\centering
-		\includegraphics[width=\textwidth]{50_Quadratic_linearR/Cobweb_C/result.png}
-		\caption{At point $C$}
+	}
+	\subfloat[$C$]{
+		\includegraphics[width=.3 \textwidth]{../Figures/5/5.15c/result.png}
 		\label{fig:setup.arch.cobweb.C}
-	\end{subfigure}
-	\caption[Cobwebs of the piecewise hybrid quadratic model with hyperparameters]{
-		Cobweb diagrams at three parameter values of $\alpha = -g_R\left(\frac{1}{4}\right)$ and $\beta = c_L$ in the piecewise hybrid quadratic model with hyperparameters.
+	}
+	\caption[Cobwebs of the archetypal model]{
+		Cobweb diagrams at three parameter values of $\alpha = -g_R\left(\frac{1}{4}\right)$ and $\beta = c_L$ in the archetypal model.
 		The other parameters are fixed as $a_L = 4, b_L = -\frac{1}{2},$ and $g_R\left(\frac{1}{2}\right) = \frac{1}{2} + \frac{1}{40}$.
 		The parameter values are marked in \Cref{fig:setup.arch.period}.
+		\hl{
+			(a) shows the cycle $\Cycle{\A^6\B^3\C^6\D^3}$ the at point $A$ \hl{where $\alpha = -0.4$ and $\beta = 0.16$,}
+			(b) shows the two coexisting cycles $\Cycle{\A^6\B^3\C^5\D^4}$ (green) and $\Cycle{\A^5\B^4\C^6\D^3}$ (red) at the point $B$ \hl{where $\alpha = -0.378$ and $\beta = 0.1612$,}
+			and (c) shows the cycle $\Cycle{\A^5\B^4\C^5\D^4}$ at the point $C$ \hl{where $\alpha = -0.36$ and $\beta = 0.164$.}
+		}
 	}
 	\label{fig:setup.arch.cobwebs}
 \end{figure}
