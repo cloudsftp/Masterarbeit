@@ -1,0 +1,30 @@
+% fmopt: width=8cm
+%head:
+% \usepackage{amsmath}
+%\newcommand{\A}{\text{\tiny$\mathcal A$}}
+%\newcommand{\B}{\text{\tiny$\mathcal B$}}
+%\newcommand{\C}{\text{\tiny$\mathcal C$}}
+%\newcommand{\D}{\text{\tiny$\mathcal D$}}
+
+\psfrag{L}{\hspace*{0.2em}\raisebox{0.5ex}{$0$}}
+\psfrag{R}{\hspace*{-0.0em}\raisebox{0.5ex}{$1$}}
+
+\psfrag{D}{\hspace*{0.6em}\raisebox{0.7ex}{$0$}}
+\psfrag{U}{\hspace*{-0.2em}\raisebox{0.5ex}{$1$}}
+
+\psfrag{x}{\hspace*{-2.0em}\raisebox{0.5ex}{$x$}}
+\psfrag{y}{\hspace*{0.0em}\raisebox{0.5ex}{$f(x)$}}
+
+\psfrag{d0}{\hspace*{0.5em}\raisebox{0.5ex}{$d_0$}}
+\psfrag{d1}{\hspace*{0.0em}\raisebox{0.5ex}{$d_1$}}
+\psfrag{d2}{\hspace*{0.0em}\raisebox{0.5ex}{$d_2$}}
+\psfrag{d3}{\hspace*{0.0em}\raisebox{0.5ex}{$d_3$}}
+
+\psfrag{fA}{\hspace*{0.0em}\raisebox{0.5ex}{$f_\A$}}
+\psfrag{fB}{\hspace*{0.0em}\raisebox{0.5ex}{$f_\B$}}
+\psfrag{fC}{\hspace*{0.0em}\raisebox{0.5ex}{$f_\C$}}
+\psfrag{fD}{\hspace*{0.0em}\raisebox{0.5ex}{$f_\D$}}
+
+\psfrag{fL}{\hspace*{0.0em}\raisebox{0.5ex}{$f^{L_\beta}$}}
+\psfrag{fM}{\hspace*{0.0em}\raisebox{0.5ex}{$f^{M_\beta}$}}
+\psfrag{fH}{\hspace*{0.0em}\raisebox{0.5ex}{$f^{H_\beta}$}}
