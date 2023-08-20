@@ -22,8 +22,8 @@ To keep the parabola above the bisector $y = x$, the values for $\beta$ should a
 
 \begin{figure}
 	\centering
-	\includegraphics[width=0.6\textwidth]{40_Quadratic_fittingR/2D_Period_Whole/result.png}
-	\caption[2D scan of the periods of the quadratic model with hyperparameters]{
+	\includegraphics[width=0.6\textwidth]{../Figures/5/5.9/result.png}
+	\caption[2D scan of the periods of the quadratic model with compound parameters]{
 	2D scan of the periods of the piecewise quadratic model with compound parameters $g_R\left(\frac{1}{4}\right), g_R\left(\frac{1}{2}\right),$ and $\left. \frac{d}{dx} g_R\left(x\right) \right|_{x = \frac{1}{2}}$.
 	The parameters $a_L = 8, b_L = -1, g_R\left(\frac{1}{4}\right) = 0.525,$ and $\left. \frac{d}{dx} g_R\left(x\right) \right|_{x = \frac{1}{2}} = 1.2$ are fixed.
 	The parameters $\alpha = g_R\left(\frac{1}{4}\right)$ and $\beta = c_L$ are varied in the ranges $[0.25, 0.5]$ and $[0.12, 0.22]$, respectively.
@@ -35,36 +35,30 @@ To keep the parabola above the bisector $y = x$, the values for $\beta$ should a
 
 \begin{figure}
 	\centering
-	\begin{subfigure}{0.3\textwidth}
-		\centering
-		\includegraphics[width=\textwidth]{40_Quadratic_fittingR/Cobweb_A/result.png}
-		\caption{At Point $A$}
+	\subfloat[$A$]{
+		\includegraphics[width=.3 \textwidth]{../Figures/5/5.10a/result.png}
 		\label{fig:setup.quad.hyper.1.cobweb.A}
-	\end{subfigure}
-	\begin{subfigure}{0.3\textwidth}
-		\centering
-		\includegraphics[width=\textwidth]{40_Quadratic_fittingR/Cobweb_B/result.png}
-		\caption{At Point $B$}
+	}
+	\subfloat[$B$]{
+		\includegraphics[width=.3 \textwidth]{../Figures/5/5.10b/result.png}
 		\label{fig:setup.quad.hyper.1.cobweb.B}
-	\end{subfigure}
-	\begin{subfigure}{0.3\textwidth}
-		\centering
-		\includegraphics[width=\textwidth]{40_Quadratic_fittingR/Cobweb_C/result.png}
-		\caption{At Point $C$}
+	}
+	\subfloat[$C$]{
+		\includegraphics[width=.3 \textwidth]{../Figures/5/5.10c/result.png}
 		\label{fig:setup.quad.hyper.1.cobweb.C}
-	\end{subfigure}
-	\caption[Cobwebs of the first piecewise quadratic model with hyperparameters]{
+	}
+	\caption[Cobweb diagrams of the first piecewise quadratic model with compound parameters]{
 	Cobweb diagrams at three parameter values of $\alpha = g_R\left(\frac{1}{4}\right)$ and $\beta = c_L$ in the piecewise quadratic model with hyperparameters.
 	The other parameters are fixed as $a_L = 8, b_L = -1, g_R\left(\frac{1}{2}\right) = \frac{1}{2} + \frac{1}{40}$, and $\left. \frac{d}{dx} g_R(x) \right|_{x = \frac{1}{2}} = 1 + \frac{1}{5}$.
 	The parameter values are marked in \Cref{fig:setup.quad.hyper.1.period}.
-	(a) shows the cycle $\Cycle{\A^4\B^5\C^4\D^5}$ at point $A$ \hl{where $\alpha = 0.42$ and $\beta = 0.1525$},
-	(b) shows the cycle $\Cycle{\A^3\B^6\D^3\C^6}$ at point $B$ \hl{where $\alpha = 0.385$ and $\beta = 0.1675$},
-	and (c) shows the cycle $\Cycle{\A^2\B^7\C^2\D^7}$ at point $C$ \hl{where $\alpha = 0.385$ and $\beta = 0.1675$}.
+	(a) shows the cycle $\Cycle{\A^4\B^5\C^4\D^5}$ at the point $A$ \hl{where $\alpha = 0.42$ and $\beta = 0.1525$},
+	(b) shows the cycle $\Cycle{\A^3\B^6\D^3\C^6}$ at the point $B$ \hl{where $\alpha = 0.385$ and $\beta = 0.1675$},
+	and (c) shows the cycle $\Cycle{\A^2\B^7\C^2\D^7}$ at the point $C$ \hl{where $\alpha = 0.385$ and $\beta = 0.1675$}.
 	}
 	\label{fig:setup.quad.hyper.1.cobwebs}
 \end{figure}
 
-\Cref{fig:setup.quad.hyper.1.period} \hl{shows a 2D scan of the periods associated eith parameter regions in the specified parameter reange for $\alpha$ and $\beta$}.
+\Cref{fig:setup.quad.hyper.1.period} \hl{shows a 2D scan of the periods associated with parameter regions in the specified parameter range for $\alpha$ and $\beta$}.
 \hl{
 	At the top, some periods are annotated.
 	One can see that in the scan there are sequences of parameter regions that are associated with the same period.
