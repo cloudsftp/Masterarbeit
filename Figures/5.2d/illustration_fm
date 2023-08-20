@@ -23,3 +23,7 @@
 \psfrag{FB}{\hspace*{0.0em}\raisebox{0.5ex}{$F_\B$}}
 \psfrag{FC}{\hspace*{0.0em}\raisebox{0.5ex}{$F_\C$}}
 \psfrag{FD}{\hspace*{0.0em}\raisebox{0.5ex}{$F_\D$}}
+
+\psfrag{FA8}{\hspace*{0.0em}\raisebox{0.5ex}{$F^{A_{8}}$}}
+\psfrag{FB8}{\hspace*{0.0em}\raisebox{0.5ex}{$F^{B_{8}}$}}
+\psfrag{FC8}{\hspace*{0.0em}\raisebox{0.5ex}{$F^{C_{8}}$}}

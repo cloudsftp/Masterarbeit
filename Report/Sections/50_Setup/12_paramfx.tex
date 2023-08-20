@@ -36,7 +36,7 @@ In the figure, there are three functions \hl{$F^A, F^B,$ and $F^C$}.
 	\subfloat[Period $12$]{
 		\includegraphics[width=.4 \textwidth]{../Figures/5.2b/illustration.png}
 		\label{fig:setup.char.evolution.12}
-	}
+	} \\
 	\subfloat[Period $10$]{
 		\includegraphics[width=.4 \textwidth]{../Figures/5.2c/illustration.png}
 		\label{fig:setup.char.evolution.10}
@@ -49,13 +49,14 @@ In the figure, there are three functions \hl{$F^A, F^B,$ and $F^C$}.
 		The shapes of the original model function for different parameter values.
 		(a) shows the points of the parameter values used for the other figures.
 		Also, some chains are annotated with their period.
-		(b) shows the evolution of the shape of the original model function along the chain of parameter regions with period 12 cycles.
-		The blue function is the model function for the parameter values at point $A_{12}$, purple at point $B_{12}$, and red at point $C_{12}$.
-		Here, blue is at point $A_{10}$, purple at point $B_{10}$, and red at point $C_{10}$.
-		(c) shows the same thing for the chain of parameter regions with period 10.
-		And (d) is for the chain of parameter regions with period 8.
-		Here, blue is at point $B_8$ and red at point $C_8$.
-		\todo{Label functions, update caption}
+		\hl{
+			(b) shows the evolution of the shape of the original model function along the chain of parameter regions associated with period 12 cycles.
+			The function $F^{A_{12}}$ is the model function for the parameter values at the point $A_{12}$, $F^{B_{12}}$ at the point $B_{12}$, and $F^{C_{12}}$ at the point $C_{12}$.
+			(c) shows the same thing for the chain of parameter regions associated with period 10.
+			Here, $F^{A_{10}}$ is at the point $A_{10}$, $F^{B_{10}}$ at the point $B_{10}$, and $F^{C_{10}}$ at the point $C_{10}$.
+			And (d) is for the chain of parameter regions associated with period 8.
+			Here, $F^{B_8}$ is at the point $B_8$ and $F^{C_8}$ at the point $C_8$.
+		}
 	}
 	\label{fig:setup.char.evolution.combined}
 \end{figure}
@@ -100,10 +101,11 @@ To reproduce the bifurcation structures, it is important to know which effects o
 
 \begin{figure}
 	\centering
-	\includegraphics[width=0.4\textwidth]{99_Yunus/2D_Period_Zoomed_EffectsSingle/result.png}
+	\includegraphics[width=0.4\textwidth]{../Figures/5.3/result.png}
 	\caption[The parameter ranges examined to analyze the effects of parameters on the original model function]{
-		The parameter ranges examined to analyze the effects of parameters $E_0$ and $\chi_0$ on the original model function
+		The parameter ranges examined to analyze the effects of parameters $E_0$ and $\chi_0$ on the original model function.
 		The green arrow indicates the parameter range used for analyzing the effects of the parameter $E_0$, while the orange arrow indicates the parameter range used for analyzing the effects of the parameter $\chi_0$ on the original model function.
+		\hl{The points $L, M, R, D,$ and $U$ mark the parameter values used for the cobweb diagrams in} \Cref{fig:setup.char.evolution.single}.
 	}
 	\label{fig:setup.char.evolution.single.map}
 \end{figure}
@@ -165,23 +167,24 @@ This parameter range is marked with an orange arrow in \Cref{fig:setup.char.evol
 
 \begin{figure}
 	\centering
-	\begin{subfigure}{0.4\textwidth}
-		\includegraphics[width=\textwidth]{99_Yunus/ParameterEffects/E0/illustration.png}
-		\caption{Parameter $E_0$}
+	\subfloat[$E_0$]{
+		\includegraphics[width=.4 \textwidth]{../Figures/5.4a/illustration.png}
 		\label{fig:setup.char.evolution.e0}
-	\end{subfigure}
-	\begin{subfigure}{0.4\textwidth}
-		\includegraphics[width=\textwidth]{99_Yunus/ParameterEffects/hi/illustration.png}
-		\caption{Parameter $\chi_0$}
+	}
+	\subfloat[$\chi_0$]{
+		\includegraphics[width=.4 \textwidth]{../Figures/5.4b/illustration.png}
 		\label{fig:setup.char.evolution.hi}
-	\end{subfigure}
+	}
 	\caption[The effects of single parameters on the original model function]{
-		The effects of varying the parameters $E_0$ and $\chi_0$ alone on the original model function.
-		(a) shows the effects of $E_0$ on the original model function.
-		The red function is at the beginning of the parameter range depicted in \Cref{fig:setup.char.evolution.single.map}, purple is in the middle, and red is at the end.
-		(b) shows the effects of $\chi_0$ on the original model function.
-		Analogously to (a), the red function is at the beginning of the parameter range depicted in \Cref{fig:setup.char.evolution.single.map}, purple is in the middle, and red is at the end.
-		\todo{Update caption}
+		The isolated effects of varying the parameters $E_0$ and $\chi_0$ on the original model function.
+		\hl{
+			(a) shows the effects of $E_0$ on the original model function.
+		}
+		\hl{The function $F^L$ is at the beginning of the parameter range depicted in} \Cref{fig:setup.char.evolution.single.map} \hl{marked with the point $L$, $F^M$ is in the middle of the parameter range marked with the point $M$, and $F^R$ is at the end of the parameter range marked with the point $R$}.
+		\hl{
+			(b) shows the effects of $\chi_0$ on the original model function.
+		}
+		\hl{Analogously to (a), the function $F^U$ is at the beginning of the parameter range depicted in} \Cref{fig:setup.char.evolution.single.map} \hl{marked with the point $U$, $F^M$ is in the middle of the parameter range marked with the point $M$, and $F^U$ is at the end of the parameter range marked with the point $U$}.
 	}
 	\label{fig:setup.char.evolution.single}
 \end{figure}

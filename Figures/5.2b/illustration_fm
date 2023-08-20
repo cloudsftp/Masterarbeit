@@ -24,3 +24,7 @@
 \psfrag{FB}{\hspace*{0.0em}\raisebox{0.5ex}{$F_\B$}}
 \psfrag{FC}{\hspace*{0.0em}\raisebox{0.5ex}{$F_\C$}}
 \psfrag{FD}{\hspace*{0.0em}\raisebox{0.5ex}{$F_\D$}}
+
+\psfrag{FA12}{\hspace*{0.0em}\raisebox{0.5ex}{$F^{A_{12}}$}}
+\psfrag{FB12}{\hspace*{0.0em}\raisebox{0.5ex}{$F^{B_{12}}$}}
+\psfrag{FC12}{\hspace*{0.0em}\raisebox{0.5ex}{$F^{C_{12}}$}}
