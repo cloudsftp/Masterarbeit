@@ -1,7 +1,7 @@
 \section{Coexistence Scenarios}
 \label{sec:arch.coex}
 
-In the previous section, we investigated the bifurcations at the boundaries of ``type A'' and ``type B'' parameter regions.
+\hl{The previous section} investigated the bifurcations at the boundaries of ``type A'' and ``type B'' parameter regions.
 There, one can see that there is a space between the \glspl{bcb} of the ``type B'' cycles and the \gls{bcb} of the ``type A'' cycle where all three cycles coexist at each boundary of the ``type B'' parameter region.
 \Cref{fig:arch.coex.regions.F} illustrates this overlap again, the overlapping regions are marked with the points $J, R, S,$ and $T$.
 In \Cref{fig:arch.coex.regions.E}, one can see that ``type A'' parameter regions can also overlap with each other.
@@ -30,17 +30,23 @@ This can be seen in \Cref{fig:arch.coex.regions.F} and is marked with points $V,
 	\label{fig:arch.coex.regions}
 \end{figure}
 
-In the following, we will cover each scenario of coexistence.
-We will start with the most simple case, a single stable ``type A'' cycle existing on its own.
+\hl{
+	Each coexistence scenario is covered in the following.
+	The first considered scenario is the simplest one where only one ``type A'' cycle exists on its own.
+}
+
 
 \subsection{Only One ``Type A'' Cycle}
 \label{sec:arch.coex.A}
 
 As mentioned above, the most simple case of coexistence in this model is the existence of a stable ``type A'' cycle on its own.
 This is the case at the point $L$ in \Cref{fig:arch.coex.regions.E}.
-Here exists only one stable cycle, $\Cycle{\A^5\B^3\C^5\D^3}$.
+\hl{
+	Here, only the stable cycle $\Cycle{\A^5\B^3\C^5\D^3}$ exists.
+}
 
-For this case we don't show a cobweb diagram with the marked basins of attraction, since there are already many cobweb diagrams of ``type A'' cycles.
+\hl{For this case there is no extra cobweb diagram in this section, since there are already many cobweb diagrams of single ``type A'' cycles in the previous section,} \Cref{sec:arch.dynamics}.
+\hl{For example in} \Cref{fig:arch.dyn.cobweb.A,fig:arch.dyn.cobweb.C,fig:arch.dyn.cobweb.E,fig:arch.dyn.cobweb.G,fig:arch.dyn.cobweb.E14,fig:arch.dyn.cobweb.E18}.
 And the basin of attraction is the whole state space.
 
 \subsection{Two ``Type A'' Cycles}
@@ -56,25 +62,28 @@ Assuming the stable cycle of the parameter region in the middle is $\Cycle{\A^a\
 	\item $\Cycle{\A^{a+1}\B^b\C^{a+1}\D^b}$, and
 	\item $\Cycle{\A^a\B^{b-1}\C^a\D^{b-1}}$.
 \end{enumerate*}
-For the concrete case pictured in \Cref{fig:arch.coex.regions.E}, this results in the following coexistence scenarios.
+For the \hl{specific} case pictured in \Cref{fig:arch.coex.regions.E}, this results in the following coexistence scenarios.
 \begin{enumerate}
 	\item $\A^5\B^3\C^5\D^3$ and $\A^4\B^3\C^4\D^3$, marked with $M$,
 	\item $\A^5\B^3\C^5\D^3$ and $\A^5\B^4\C^5\D^4$, marked with $N$,
 	\item $\A^5\B^3\C^5\D^3$ and $\A^6\B^3\C^6\D^3$, marked with $O$, and
 	\item $\A^5\B^3\C^5\D^3$ and $\A^5\B^2\C^5\D^2$, marked with $P$.
 \end{enumerate}
-\Cref{fig:arch.coex.cobweb.M} shows the cobweb diagram for the point $M$.
+\Cref{fig:arch.coex.cobweb.M} shows the cobweb diagram for the point $M$ \hl{in} \Cref{fig:arch.coex.regions.E}.
 Here, we can see the two cycles of the two different ``type A'' parameter regions.
-The cycle $\Cycle{\A^5\B^3\C^5\D^3}$ is blue and the cycle $\Cycle{\A^4\B^3\C^4\D^3}$ is red, these colors will stay the same for other cobweb diagrams in this section.
-The cobweb diagram also shows the basins of attraction of both cycles, blue for the cycle $\Cycle{\A^5\B^3\C^5\D^3}$ and red for the cycle $\Cycle{\A^4\B^3\C^4\D^3}$.
+The cycle $\Cycle{\A^5\B^3\C^5\D^3}$ is \hl{shown in} blue and the cycle $\Cycle{\A^4\B^3\C^4\D^3}$ is \hl{shown in} red, these colors will stay the same for other cobweb diagrams in this section.
+The cobweb diagram also shows the basins of attraction of both cycles.
+\hl{
+	The basin of attraction of the cycle $\Cycle{\A^5\B^3\C^5\D^3}$ is shown in blue and the basin of attraction of the cycle $\Cycle{\A^4\B^3\C^4\D^3}$ is shown in red.
+}
 
 \begin{figure}
 	\centering
-	\subfloat[At point $M$]{
+	\subfloat[$M$]{
 		\includegraphics[width=.45 \textwidth]{60_MinimalRepr/Cobweb_M/Manual/result.png}
 		\label{fig:arch.coex.cobweb.M}
 	}
-	\subfloat[At point $Q$]{
+	\subfloat[$Q$]{
 		\includegraphics[width=.45 \textwidth]{60_MinimalRepr/Cobweb_Q/Manual/result.png}
 		\label{fig:arch.coex.cobweb.Q}
 	}
@@ -92,13 +101,14 @@ The cobweb diagram also shows the basins of attraction of both cycles, blue for 
 Another very simple case is when a ``type B'' parameter region does not overlap with any other region.
 This causes the coexistence of two ``type B'' twin cycles.
 In this case, there are two coexisting stable cycles as discussed before in \Cref{sec:state.og.dynamics} and \Cref{sec:arch.dynamics}.
-Here, the cycles are asymmetrical if one of the cycles is $\Cycle{\A^a\B^b\C^c\D^d}$ where $c = a - 1$ and $d = b + 1$, the other cycle is $\Cycle{\A^c\B^d\C^a\D^b}$.
-In the concrete case marked in \Cref{fig:arch.coex.regions.F} with the point $Q$, these cycles are $\Cycle{\A^5\B^3\C^4\D^4}$ and $\Cycle{\A^4\B^4\C^5\D^3}$.
+Here, the cycles are asymmetrical.
+If one of the cycles is $\Cycle{\A^a\B^b\C^c\D^d}$ where $c = a - 1$ and $d = b + 1$, the other cycle is $\Cycle{\A^c\B^d\C^a\D^b}$.
+In the concrete case marked with the point $Q$ \hl{in} \Cref{fig:arch.coex.regions.F}, these cycles are $\Cycle{\A^5\B^3\C^4\D^4}$ and $\Cycle{\A^4\B^4\C^5\D^3}$.
 
 \Cref{fig:arch.coex.cobweb.Q} shows the cobweb diagram at this point.
-The cycle $\Cycle{\A^5\B^3\C^4\D^4}$ is green and its basin of attraction also.
-Its twin cycle $\Cycle{\A^4\B^4\C^5\D^3}$ is brown and its basin of attraction is yellow for better visibility.
-Again, for the rest of this section, the colors will stay the same when we encounter these cycles in cobwebs.
+The cycle $\Cycle{\A^5\B^3\C^4\D^4}$ is \hl{shown in} green and its basin of attraction also.
+Its twin cycle $\Cycle{\A^4\B^4\C^5\D^3}$ is \hl{shown in} brown and its basin of attraction is \hl{shown in} yellow for better visibility.
+Again, for the rest of this section, the colors will stay the same when we encounter these cycles in cobweb diagrams.
 
 \subsection{Two ``Type B'' Cycles and One ``Type A'' Cycle}
 \label{sec:arch.coex.AB}
@@ -115,23 +125,23 @@ Assuming the stable cycles of the parameter region in the middle are $\Cycle{\A^
 \end{enumerate*}
 For the concrete case pictured in \Cref{fig:arch.coex.regions.F}, this results in the following parameter regions
 \begin{enumerate}
-	\item $\A^5\B^3\C^4\D^4, \A^4\B^4\C^5\D^3,$ and $\A^4\B^4\C^4\D^4$, marked with $R$,
-	\item $\A^5\B^3\C^4\D^4, \A^4\B^4\C^5\D^3,$ and $\A^5\B^4\C^5\D^4$, marked with $S$,
-	\item $\A^5\B^3\C^4\D^4, \A^4\B^4\C^5\D^3,$ and $\A^5\B^3\C^5\D^3$, marked with $T$, and
-	\item $\A^5\B^3\C^4\D^4, \A^4\B^4\C^5\D^3,$ and $\A^4\B^3\C^4\D^3$, marked with $U$.
+	\item $\A^5\B^3\C^4\D^4, \A^4\B^4\C^5\D^3,$ and $\A^4\B^4\C^4\D^4$, marked with $R$ \hl{in} \Cref{fig:arch.coex.regions.F},
+	\item $\A^5\B^3\C^4\D^4, \A^4\B^4\C^5\D^3,$ and $\A^5\B^4\C^5\D^4$, marked with $S$ \hl{in} \Cref{fig:arch.coex.regions.F},
+	\item $\A^5\B^3\C^4\D^4, \A^4\B^4\C^5\D^3,$ and $\A^5\B^3\C^5\D^3$, marked with $T$ \hl{in} \Cref{fig:arch.coex.regions.F}, and
+	\item $\A^5\B^3\C^4\D^4, \A^4\B^4\C^5\D^3,$ and $\A^4\B^3\C^4\D^3$, marked with $U$ \hl{in} \Cref{fig:arch.coex.regions.F}.
 \end{enumerate}
 
-\Cref{fig:arch.coex.cobweb.U} shows the cobweb diagram at the point $U$.
+\Cref{fig:arch.coex.cobweb.U} shows the cobweb diagram at the point $U$ \hl{in} \Cref{fig:arch.coex.regions.F}.
 This point is chosen for the cobweb diagram, since here the parameter regions $\P_{\A^4\B^3\C^4\D^3}$ and $\P_{\A^5\B^3\C^4\D^4, \A^4\B^4\C^5\D^3}$ overlap and the cycles that exist at this point were already in the previous cobweb diagrams.
 The colors for each cycle, as well as the color of their basins of attraction, are the same as in previous cobweb diagrams showing these cycles, \Cref{fig:arch.coex.cobweb.M,fig:arch.coex.cobweb.Q}.
 
 \begin{figure}
 	\centering
-	\subfloat[At point $U$]{
+	\subfloat[$U$]{
 		\includegraphics[width=.45 \textwidth]{60_MinimalRepr/Cobweb_U/Manual/result.png}
 		\label{fig:arch.coex.cobweb.U}
 	}
-	\subfloat[At point $X$]{
+	\subfloat[$X$]{
 		\includegraphics[width=.45 \textwidth]{60_MinimalRepr/Cobweb_X/Manual/result.png}
 		\label{fig:arch.coex.cobweb.X}
 	}
@@ -159,44 +169,55 @@ Assuming the ``type B'' cycles are $\Cycle{\A^a\B^b\C^c\D^b}$ and $\Cycle{\A^c\B
 \end{enumerate*}
 For the concrete case pictured in \Cref{fig:arch.coex.regions.F}, this results in the following coexistence scenarios.
 \begin{enumerate}
-	\item $\A^5\B^3\C^4\D^4, \A^4\B^4\C^5\D^3, \A^4\B^4\C^4\D^4,$ and $\A^5\B^4\C^5\D^4$, marked with $V$,
-	\item $\A^5\B^3\C^4\D^4, \A^4\B^4\C^5\D^3, \A^5\B^4\C^5\D^4,$ and $\A^5\B^3\C^5\D^3$, marked with $W$,
-	\item $\A^5\B^3\C^4\D^4, \A^4\B^4\C^5\D^3, \A^5\B^3\C^5\D^3,$ and $\A^4\B^3\C^4\D^3$, marked with $X$, and
-	\item $\A^5\B^3\C^4\D^4, \A^4\B^4\C^5\D^3, \A^4\B^3\C^4\D^3,$ and $\A^4\B^4\C^4\D^4$, marked with $Y$.
+	\item $\A^5\B^3\C^4\D^4, \A^4\B^4\C^5\D^3, \A^4\B^4\C^4\D^4,$ and $\A^5\B^4\C^5\D^4$, marked with $V$ \hl{in} \Cref{fig:arch.coex.regions.F},
+	\item $\A^5\B^3\C^4\D^4, \A^4\B^4\C^5\D^3, \A^5\B^4\C^5\D^4,$ and $\A^5\B^3\C^5\D^3$, marked with $W$ \hl{in} \Cref{fig:arch.coex.regions.F},
+	\item $\A^5\B^3\C^4\D^4, \A^4\B^4\C^5\D^3, \A^5\B^3\C^5\D^3,$ and $\A^4\B^3\C^4\D^3$, marked with $X$ \hl{in} \Cref{fig:arch.coex.regions.F}, and
+	\item $\A^5\B^3\C^4\D^4, \A^4\B^4\C^5\D^3, \A^4\B^3\C^4\D^3,$ and $\A^4\B^4\C^4\D^4$, marked with $Y$ \hl{in} \Cref{fig:arch.coex.regions.F}.
 \end{enumerate}
 
-\Cref{fig:arch.coex.cobweb.X} shows the cobweb diagram for the point $X$.
+\Cref{fig:arch.coex.cobweb.X} shows the cobweb diagram for the point $X$ \hl{in} \Cref{fig:arch.coex.regions.F}.
 Again, this point is chosen so that the coexisting cycles were already pictured in previous cobweb diagrams in this section.
 The colors for each cycle as well as the color of their basins of attraction are the same as in previous cobweb diagrams.
-If we compare this cobweb diagram to the cobweb diagram of point $U$ in \Cref{fig:arch.coex.cobweb.U}, we can see that the cycles $\Cycle{\A^4\B^3\C^4\D^3}$ (red), $\Cycle{\A^5\B^3\C^4\D^4}$ (green), and $\Cycle{\A^4\B^4\C^5\D^3}$ (brown) exist at almost the same point.
+If we compare this cobweb diagram to the cobweb diagram \hl{in} \Cref{fig:arch.coex.cobweb.U} of point $U$ \hl{in} \Cref{fig:arch.coex.regions.F}, we can see that the cycles $\Cycle{\A^4\B^3\C^4\D^3}$ \hl{shown in red}, $\Cycle{\A^5\B^3\C^4\D^4}$ \hl{shown in green}, and $\Cycle{\A^4\B^4\C^5\D^3}$ \hl{shown in brown} exist at almost the same point.
 The same is true for their basins of attraction.
-But there is a new cycle, $\Cycle{A^5\B^3\C^5\D^3}$ (blue), that emerged between the basins of attraction of the two ``type B'' cycles, $\Cycle{\A^5\B^3\C^4\D^4}$ (green) and $\Cycle{\A^4\B^4\C^5\D^3}$ (brown).
+But there is a new cycle, $\Cycle{A^5\B^3\C^5\D^3}$ \hl{shown in blue}, that emerged between the basins of attraction of the two ``type B'' cycles, $\Cycle{\A^5\B^3\C^4\D^4}$ \hl{shown in green} and $\Cycle{\A^4\B^4\C^5\D^3}$ \hl{shown in brown}.
 
 In this cobweb diagram, as well as in the previous ones, we can see that the borders of the function $d_0$, $d_1$, $d_2$, and $d_3$ split basins of attraction.
 In each diagram, the borders $d_1$ and $d_2$ are enhanced.
 From these two borders, we can also reason about the two other borders $d_0$ and $d_3$ thanks to the symmetry of the model.
-The basins of attraction of the cycles of ``type A'' parameter regions, such as $\Cycle{\A^5\B^3\C^5\D^3}$ (blue) and $\Cycle{\A^4\B^3\C^4\D^3}$ (red), are the same on each half of the model.
-For the cycles of ``type B'' parameter regions, such as $\Cycle{\A^5\B^3\C^4\D^4}$ (green) and $\Cycle{\A^4\B^4\C^5\D^3}$ (brown), the cycles and their basins of attraction swap places.
-So at border $d_3$, the basin of attraction to the left will be of the cycle $\A^5\B^3\C^5\D^3$ (blue) still, but the basin of attraction to the right will be of $\Cycle{\A^5\B^3\C^4\D^4}$ (green) instead of $\Cycle{\A^4\B^4\C^5\D^3}$ (brown).
+The basins of attraction of the cycles of ``type A'' parameter regions, such as $\Cycle{\A^5\B^3\C^5\D^3}$ \hl{shown in blue} and $\Cycle{\A^4\B^3\C^4\D^3}$ \hl{shown in red}, are the same on each half of the model.
+For the cycles of ``type B'' parameter regions, such as $\Cycle{\A^5\B^3\C^4\D^4}$ \hl{shown in green} and $\Cycle{\A^4\B^4\C^5\D^3}$ \hl{shown in brown}, the cycles and their basins of attraction swap places.
+So at border $d_3$, the basin of attraction to the left will be of the cycle $\A^5\B^3\C^5\D^3$ \hl{shown in blue} still, but the basin of attraction to the right will be of $\Cycle{\A^5\B^3\C^4\D^4}$ \hl{shown in green} instead of $\Cycle{\A^4\B^4\C^5\D^3}$ \hl{shown in brown}.
 
-This coexistence was not discovered in the investigation by \Citeauthor{akyuz2022}~\cite{akyuz2022}.
-We now have to validate that this scenario also exists in the original model.
-For this, we zoom in on a corner of a ``type B'' parameter region.
-We choose the lower left corner of the ``type B'' parameter region pictured in \Cref{fig:etup.og.overlapping.regions.zoomed}.
-This parameter region has the stable cycles $\Cycle{\A^3\B^2\C^2\D^3}$ and $\Cycle{\A^2\B^3\C^3\D^2}$.
-The scan of the boundaries is pictured in \Cref{fig:arch.coex.og.regions}.
-It is not as clean as the previous scans of parameter region boundaries in the archetypal model.
-The cobweb diagram at point $X$ in the region, where the two ``type A'' parameter regions and the ``type B'' parameter region should overlap, is shown in \Cref{fig:arch.coex.og.cobweb}.
-It is hard to see, since the two cycles $\Cycle{\A^3\B^2\C^3\D^2}$ (blue) and $\Cycle{\A^2\B^3\C^3\D^2}$ (brown) are almost on top of each other, but there are actually 4 cycles coexisting.
+\subsection{Possible Period Combinations in Ceoxistence Scenarios}
+
+\hl{
+	The previous sections cover all possible coexistence scenarios in the archetypal model.
+	We can see that only parameter regions of the same chain of parameter regions associated with the same period or parameter regions of neighboring chains can overlap.
+	Therefore, coexisting cycles differ in their periods by two at most.
+}
+
+\subsection{Coexistence Scenarios in the Original Model}
+
+\Citeauthor{akyuz2022} \hl{covered all these coexistence scenarios in} \cite{akyuz2022} \hl{with one exception}.
+\hl{
+	The coexistence of four cycles was not described in his preliminary investigation of the original model.
+	This section confirms that this scenario also exists in the original model.
+}
+\hl{For this,} \Cref{fig:arch.coex.og.regions} \hl{shows a 2D scan of the boundaries of parameter regions zoomed in at the lower left corner of the ``type B'' parameter region containing the point $F_{16}$ shown in} \Cref{fig:etup.og.overlapping.regions.zoomed}.
+\hl{The ``type B''} parameter region has the stable cycles $\Cycle{\A^3\B^2\C^2\D^3}$ and $\Cycle{\A^2\B^3\C^3\D^2}$.
+It is not as clean as the previous scans of \hl{the} parameter region boundaries in the archetypal model.
+The cobweb diagram at point $X$ \hl{shown in} \Cref{fig:arch.coex.og.regions}, \hl{which is in} the region where the two ``type A'' parameter regions and the ``type B'' parameter region should overlap, is shown in \Cref{fig:arch.coex.og.cobweb}.
+It is hard to see, since the two cycles $\Cycle{\A^3\B^2\C^3\D^2}$ \hl{shown in} and $\Cycle{\A^2\B^3\C^3\D^2}$ \hl{shown in brown} are almost on top of each other, but there are actually 4 cycles coexisting.
 
 \begin{figure}
 	\centering
 	\subfloat[2D scan of the boundaries]{
-		\includegraphics[width=.45 \textwidth]{98_Yunus_modpi/2D_Regions_Coex4/result.png}
+		\includegraphics[width=.48 \textwidth]{98_Yunus_modpi/2D_Regions_Coex4/result.png}
 		\label{fig:arch.coex.og.regions}
 	}
 	\subfloat[Cobweb diagram at point $X$]{
-		\includegraphics[width=.45 \textwidth]{99_Yunus/Cobweb_Coex4_A/Manual/result.png}
+		\includegraphics[width=.48 \textwidth]{99_Yunus/Cobweb_Coex4_A/Manual/result.png}
 		\label{fig:arch.coex.og.cobweb}
 	}
 	\caption[2D boundary scan and cobweb diagram of the original model showing coexistence of four cycles]{
@@ -205,5 +226,3 @@ It is hard to see, since the two cycles $\Cycle{\A^3\B^2\C^3\D^2}$ (blue) and $\
 		Here, two ``type B'' twin cycles coexist with two ``type A'' cycles.
 	}
 \end{figure}
-
-All other coexistence scenarios were covered in \Citeauthor{akyuz2022}'s thesis~\cite{akyuz2022}.

@@ -14,3 +14,8 @@
 \psfrag{C}{\hspace*{0.0em}\raisebox{0.5ex}{\color[RGB]{255, 110, 0}{$C$}}}
 \psfrag{DL}{\hspace*{0.0em}\raisebox{0.5ex}{\color[RGB]{255, 110, 0}{$D$}}}
 \psfrag{E}{\hspace*{0.0em}\raisebox{0.5ex}{\color[RGB]{255, 110, 0}{$E$}}}
+
+\psfrag{12}{\hspace*{-0.2em}\raisebox{0.5ex}{\color[RGB]{255, 110, 0}{$12$}}}
+\psfrag{14}{\hspace*{-0.2em}\raisebox{0.5ex}{\color[RGB]{255, 110, 0}{$14$}}}
+\psfrag{16}{\hspace*{-0.2em}\raisebox{0.5ex}{\color[RGB]{255, 110, 0}{$16$}}}
+\psfrag{18}{\hspace*{-0.2em}\raisebox{0.5ex}{\color[RGB]{255, 110, 0}{$18$}}}
