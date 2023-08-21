@@ -10,7 +10,7 @@
     "scan": [
         {
             "type": "linear",
-            "resolution": 500,
+            "resolution": 2000,
             "parameters": [
                 {
                     "name": "px",
@@ -21,7 +21,7 @@
         },
         {
             "type": "linear",
-            "resolution": 500,
+            "resolution": 2000,
             "parameters": [
                 {
                     "name": "py",

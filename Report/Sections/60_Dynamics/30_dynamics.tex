@@ -11,59 +11,57 @@ As before in \Cref{fig:setup.quad.hyper.2.period,fig:setup.arch.period}, \hl{the
 \begin{figure}
 	\centering
 	\subfloat[Model]{
-		\includegraphics[width=.48 \textwidth]{60_MinimalRepr/2D_Period_Whole_Lotta_Points/result.png}
+		\includegraphics[width=.48 \textwidth]{../Figures/6/6.1a/result.png}
 		\label{fig:arch.dyn.period.full}
 	}
 	\subfloat[Halved Model]{
-		\includegraphics[width=.48 \textwidth]{60_MinimalRepr/2D_Period_Whole_Lotta_Points/result-halved.png}
+		\includegraphics[width=.48 \textwidth]{../Figures/6/6.1b/result.png}
 		\label{fig:arch.dyn.period.halved}
 	}
 	\caption[2D scans of the periods of the archetypal model]{
 		2D scans of the periods of the archetypal model.
-		The parameters $a_L = 4, b_L = -\frac{1}{2},$ and $g_R\left(\frac{1}{4}\right) = 0.525$ are fixed.
+		The parameters $a_L = 4, b_L = -\frac{1}{2},$ and $g_R\left(\frac{1}{2}\right) = \frac{1}{2} + \frac{1}{40}$ are fixed.
 		The parameters $\alpha = -g_R\left(\frac{1}{4}\right)$ and $\beta = c_L$ are varied in the ranges $[-0.55, -0.275]$ and $[0.15, 0.1875]$, respectively.
 		The points $A_{16}, B_{16}, C_{16}, D_{16}, E_{16},$ and $F_{16}$ mark the parameter values used for the cobweb diagrams in \Cref{fig:arch.dyn.cobwebs.1,fig:arch.dyn.cobwebs.2}.
 		(a) shows the scan for the archetypal model as defined above, while (b) shows the scan of the halved archetypal model where we can see ``type B'' parameter regions.
-		\todo{Add periods is figures, remove $F_{14}$, $F_{18}$}
 	}
 	\label{fig:arch.dyn.period}
 \end{figure}
 
 \begin{figure}
 	\centering
-	\begin{subfigure}{0.3\textwidth}
-		\centering
-		\includegraphics[width=\textwidth]{60_MinimalRepr/Cobweb_A16/result.png}
-		\caption{At point $A_{16}$}
+	\subfloat[$A_{16}$]{
+		\includegraphics[width=.3 \textwidth]{../Figures/6/6.2a/result.png}
 		\label{fig:arch.dyn.cobweb.A}
-	\end{subfigure}
-	\begin{subfigure}{0.3\textwidth}
-		\centering
-		\includegraphics[width=\textwidth]{60_MinimalRepr/Cobweb_B16/result.png}
-		\caption{At point $B_{16}$}
+	}
+	\subfloat[$B_{16}$]{
+		\includegraphics[width=.3 \textwidth]{../Figures/6/6.2b/result.png}
 		\label{fig:arch.dyn.cobweb.B}
-	\end{subfigure}
-	\begin{subfigure}{0.3\textwidth}
-		\centering
-		\includegraphics[width=\textwidth]{60_MinimalRepr/Cobweb_C16/result.png}
-		\caption{At point $C_{16}$}
+	}
+	\subfloat[$C_{16}$]{
+		\includegraphics[width=.3 \textwidth]{../Figures/6/6.2c/result.png}
 		\label{fig:arch.dyn.cobweb.C}
-	\end{subfigure}
+	}
 	\caption[Cobweb diagrams of the archetypal model]{
 		Cobweb diagrams at three parameter values of $\alpha = -g_R\left(\frac{1}{4}\right)$ and $\beta = c_L$ in the archetypal model.
 		The other parameters are fixed as $a_L = 4, b_L = -\frac{1}{2},$ and $g_R\left(\frac{1}{2}\right) = \frac{1}{2} + \frac{1}{40}$.
-		The parameter values are marked as points $A_{16}, B_{16},$ and $C_{16}$ in \Cref{fig:arch.dyn.period}.
+		The parameter values are marked with the points $A_{16}, B_{16},$ and $C_{16}$ in \Cref{fig:arch.dyn.period}.
+		\hl{
+			(a) shows the cycle $\Cycle{\A^7\B^1\C^7\D^1}$ at the point $A_{16}$ where $\alpha = -0.52$ and $\beta = 0.156$,
+			(b) shows the two coexisting cycles $\Cycle{\A^7\B^1\C^6\D^2}$ (green) and $\Cycle{\A^6\B^2\C^7\D^1}$ (red) at the point $B_{16}$ where $\alpha = -0.498$ and $\beta = 0.1575$,
+			and (c) shows the cycle $\Cycle{\A^6\B^2\C^6\D^2}$ at the point $C_{16}$ where $\alpha = -0.47$ and $\beta = 0.159$.
+		}
 	}
 	\label{fig:arch.dyn.cobwebs.1}
 \end{figure}
 
-As in\hl{ }\cite{akyuz2022}\hl{,} we will take a look at the chain of parameter regions which have stable cycles of period $16$.
-The parameter regions are marked with the points $A_{16}$ to $F_{16}$ in \Cref{fig:arch.dyn.period}.
-\Cref{fig:arch.dyn.cobwebs.1} shows cobwebs for the points $A_{16}, B_{16},$ and $C_{16}$.
-The parameter region containing $A_{16}$ is denoted $\P_{\A^7\B\C^7\D}$ since its only stable cycle is $\Cycle{\A^7\B\C^7\D}$.
+As in\hl{ }\cite{akyuz2022}\hl{,} \hl{this section examines} the chain of parameter regions \hl{associated with} stable cycles of period $16$.
+The parameter regions are marked with the points $A_{16}$ to $G_{16}$ in \Cref{fig:arch.dyn.period}.
+\Cref{fig:arch.dyn.cobwebs.1} shows \hl{cobweb diagrams} for the points $A_{16}, B_{16},$ and $C_{16}$.
+The parameter region containing $A_{16}$ is denoted $\P_{\A^7\B\C^7\D}$ since it only \hl{associated with the} stable cycle $\Cycle{\A^7\B\C^7\D}$.
 \Cref{fig:state.og.dynamics.cobweb.A} shows the cobweb diagram of this cycle.
-The parameter region, therefore, is a ``type A'' parameter region with only one stable cycle of period 16.
-The next parameter region contains the point $B_{16}$ and has two stable cycles $\Cycle{\A^7\B\C^6\D^2}$ and $\Cycle{\A^6\B^2\C^7\D}$.
+The parameter region, therefore, is a ``type A'' parameter region \hl{associated} with only one stable cycle of period 16.
+The next parameter region contains the point $B_{16}$ and \hl{is associated with} two stable cycles $\Cycle{\A^7\B\C^6\D^2}$ and $\Cycle{\A^6\B^2\C^7\D}$.
 \Cref{fig:state.og.dynamics.cobweb.B} shows the cobweb diagram of these two cycles.
 The parameter region containing these cycles is denoted $\P_{\A^7\B\C^6\D^2, \A^6\B^2\C^7\D}$.
 \hl{By} the same logic, the parameter region marked with point $C_{16}$ is denoted $\P_{\A^6\B^2\C^6\D^2}$.
@@ -72,28 +70,31 @@ The parameter region containing these cycles is denoted $\P_{\A^7\B\C^6\D^2, \A^
 \begin{figure}
 	\centering
 	\subfloat[$D_{16}$]{
-		\includegraphics[width=.3 \textwidth]{60_MinimalRepr/Cobweb_D16/result.png}
+		\includegraphics[width=.3 \textwidth]{../Figures/6/6.3a/result.png}
 		\label{fig:arch.dyn.cobweb.D}
 	}
 	\subfloat[$E_{16}$]{
-		\includegraphics[width=.3 \textwidth]{60_MinimalRepr/Cobweb_E16/result.png}
+		\includegraphics[width=.3 \textwidth]{../Figures/6/6.3b/result.png}
 		\label{fig:arch.dyn.cobweb.E}
 	}
 	\subfloat[$F_{16}$]{
-		\includegraphics[width=.3 \textwidth]{60_MinimalRepr/Cobweb_F16/result.png}
+		\includegraphics[width=.3 \textwidth]{../Figures/6/6.3c/result.png}
 		\label{fig:arch.dyn.cobweb.F}
 	}
 	\caption[Cobweb diagrams of the archetypal model]{
 		Cobweb diagrams at three parameter values of $\alpha = -g_R\left(\frac{1}{4}\right)$ and $\beta = c_L$ in the archetypal model.
 		The other parameters are fixed as $a_L = 4, b_L = -\frac{1}{2},$ and $g_R\left(\frac{1}{2}\right) = \frac{1}{2} + \frac{1}{40}$.
-		The parameter values are marked as points $D_{16}, E_{16},$ and $F_{16}$ in \Cref{fig:arch.dyn.period}.
-		\todo{Replace cobweb diagrams, adjust caption}
+		The parameter values are marked with the points $D_{16}, E_{16},$ and $F_{16}$ in \Cref{fig:arch.dyn.period}.
+		\hl{
+			(a) shows the cycle $\Cycle{\A^6\B^2\C^6\D^2}$ at the point $D_{16}$ where $\alpha = -0.428$ and $\beta = 0.1615$,
+			(b) shows the two coexisting cycles $\Cycle{\A^6\B^2\C^5\D^3}$ (green) and $\Cycle{\A^5\B^3\C^6\D^2}$ (red) at the point $E_{16}$ where $\alpha = -0.4$ and $\beta = 0.165$,
+			and (c) shows the cycle $\Cycle{\A^5\B^3\C^5\D^3}$ at the point $C_{16}$ where $\alpha = -0.367$ and $\beta = 0.173$.
+		}
 	}
 	\label{fig:arch.dyn.cobwebs.2}
 \end{figure}
-\todo{Cobwebs of type B cycles: different color}
 
-Thus far these parameter regions follow the rules laid out in \Citeauthor{akyuz2022}'s thesis and listed again in \Cref{sec:state.og.dynamics}~\Cite{akyuz2022}.
+Thus far these parameter regions follow the rules laid out in\hl{ }\cite{akyuz2022}\hl{ }and listed again in \Cref{sec:state.og.dynamics}.
 The first parameter region has the stable cycle $\Cycle{\A^{\frac{P}{2} - 1}\B\C^{\frac{P}{2} - 1}\D}$ where $P = 16$ is the period.
 It is a ``type A'' parameter region and the next parameter region is of ``type B'', as the rules require.
 This parameter region has the stable cycles $\Cycle{\A^{\frac{P}{2} - 1}\B\C^{\frac{P}{2} - 2}\D^2}$ and $\Cycle{\A^{\frac{P}{2} - 2}\B^2\C^{\frac{P}{2} - 1}\D}$.
@@ -105,22 +106,26 @@ The corresponding parameter regions are $\P_{\A^6\B^2\C^5\D^3, \A^5\B^3\C^6\D^2}
 \begin{figure}
 	\centering
 	\subfloat[$G_{16}$]{
-		\includegraphics[width=.3 \textwidth]{60_MinimalRepr/Cobweb_D16/result.png}
+		\includegraphics[width=.3 \textwidth]{../Figures/6/6.4a/result.png}
 		\label{fig:arch.dyn.cobweb.G}
 	}
 	\subfloat[$E_{14}$]{
-		\includegraphics[width=.3 \textwidth]{60_MinimalRepr/Cobweb_E16/result.png}
+		\includegraphics[width=.3 \textwidth]{../Figures/6/6.4b/result.png}
 		\label{fig:arch.dyn.cobweb.E14}
 	}
 	\subfloat[$E_{18}$]{
-		\includegraphics[width=.3 \textwidth]{60_MinimalRepr/Cobweb_F16/result.png}
-		\label{fig:arch.dyn.cobweb.E16}
+		\includegraphics[width=.3 \textwidth]{../Figures/6/6.4c/result.png}
+		\label{fig:arch.dyn.cobweb.E18}
 	}
 	\caption[Cobweb diagrams of the archetypal model]{
 		Cobweb diagrams at three parameter values of $\alpha = -g_R\left(\frac{1}{4}\right)$ and $\beta = c_L$ in the archetypal model.
 		The other parameters are fixed as $a_L = 4, b_L = -\frac{1}{2},$ and $g_R\left(\frac{1}{2}\right) = \frac{1}{2} + \frac{1}{40}$.
-		The parameter values are marked as points $G_{16}, E_{14},$ and $E_{18}$ in \Cref{fig:arch.dyn.period}.
-		\todo{Replace cobweb diagrams, adjust caption}
+		The parameter values are marked with the points $G_{16}, E_{14},$ and $E_{18}$ in \Cref{fig:arch.dyn.period}.
+		\hl{
+			(a) shows the cycle $\Cycle{\A^5\B^3\C^5\D^3}$ at the point $G_{16}$ where $\alpha = -0.36$ and $\beta = 0.173$,
+			(b) shows the cycle $\Cycle{\A^4\B^3\C^4\D^3}$ at the point $E_{14}$ where $\alpha = -0.4$ and $\beta = 0.173$,
+			and (c) shows the cycle $\Cycle{\A^6\B^3\C^6\D^3}$ at the point $E_{18}$ where $\alpha = -0.4$ and $\beta = 0.16$.
+		}
 	}
 	\label{fig:arch.dyn.cobwebs.3}
 \end{figure}
