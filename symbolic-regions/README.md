@@ -1,5 +1,7 @@
 # Symbolic Regions
 
+A small program for detecting changes in the symbolic sequence in the output of AnT simulations.
+
 ## Installing Cargo
 
 Recommended: Via [rustup](https://rustup.rs/)
@@ -8,7 +10,7 @@ Recommended: Via [rustup](https://rustup.rs/)
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 ```
 
-Once you ran this installer, the command `cargo` should be available
+Once you run this installer, the command `cargo` should be available
 
 ## Executing
 
