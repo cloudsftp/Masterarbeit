@@ -15,10 +15,10 @@
 \psfrag{P.22.4}{\hspace*{0.0em}\raisebox{0.5ex}{$P^{22}_{4}$}}
 \psfrag{Q.20.3}{\hspace*{0.0em}\raisebox{0.5ex}{$Q^{20}_{3}$}}
 
-\psfrag{P.20.3uP.18.3}{\hspace*{0.0em}\raisebox{0.5ex}{$P^{20}_{3} \cup P^{18}_3$}}
-\psfrag{P.18.3uP.20.4}{\hspace*{0.0em}\raisebox{0.5ex}{$P^{18}_{3} \cup P^{20}_4$}}
+\psfrag{P.20.3uP.18.3}{\hspace*{0.0em}\raisebox{0.5ex}{$P^{20}_{3} \cap P^{18}_3$}}
+\psfrag{P.18.3uP.20.4}{\hspace*{0.0em}\raisebox{0.5ex}{$P^{18}_{3} \cap P^{20}_4$}}
 
-\psfrag{P.20.3uQ.20.3}{\hspace*{0.0em}\raisebox{0.5ex}{$P^{20}_{3} \cup Q^{20}_3$}}
-\psfrag{P.22.4uQ.20.3}{\hspace*{0.0em}\raisebox{0.5ex}{$P^{22}_{4} \cup Q^{20}_3$}}
+\psfrag{P.20.3uQ.20.3}{\hspace*{0.0em}\raisebox{0.5ex}{$P^{20}_{3} \cap Q^{20}_3$}}
+\psfrag{P.22.4uQ.20.3}{\hspace*{0.0em}\raisebox{0.5ex}{$P^{22}_{4} \cap Q^{20}_3$}}
 
 \psfrag{P.22.4+P.20.4}{\hspace*{0.0em}\raisebox{0.5ex}{$\left[P^{22}_{4} \mid P^{20}_4\right]$}}

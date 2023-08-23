@@ -15,6 +15,6 @@
 \psfrag{P.20.4}{\hspace*{0.0em}\raisebox{0.5ex}{$P^{20}_4$}}
 \psfrag{P.22.4}{\hspace*{0.0em}\raisebox{0.5ex}{$P^{22}_4$}}
 
-\psfrag{P.20.4u}{\hspace*{0.0em}\raisebox{0.5ex}{$P^{22}_4 \bigcup P^{20}_4$}}
+\psfrag{P.20.4u}{\hspace*{0.0em}\raisebox{0.5ex}{$P^{22}_4 \cap P^{20}_4$}}
 
 \psfrag{P.22.4+}{\hspace*{0.0em}\raisebox{0.5ex}{$\left[P^{22}_4 \mid P^{20}_4\right]$}}

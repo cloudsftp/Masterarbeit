@@ -17,5 +17,5 @@
 \psfrag{Q.20.3}{\hspace*{0.0em}\raisebox{0.5ex}{$Q_{3}^{20}$}}
 \psfrag{P.22.4+}{\hspace*{0.0em}\raisebox{0.5ex}{$\left[P_{4}^{22} \mid P_{4}^{20}\right]$}}
 
-\psfrag{P.20.3uP.18.3}{\hspace*{0.0em}\raisebox{0.5ex}{$P_{3}^{20} \bigcup P_{3}^{18}$}}
-\psfrag{P.20.3uP.20.4}{\hspace*{0.0em}\raisebox{0.5ex}{$P_{3}^{20} \bigcup P_{4}^{20}$}}
+\psfrag{P.20.3uP.18.3}{\hspace*{0.0em}\raisebox{0.5ex}{$P_{3}^{20} \cap P_{3}^{18}$}}
+\psfrag{P.20.3uP.20.4}{\hspace*{0.0em}\raisebox{0.5ex}{$P_{3}^{20} \cap P_{4}^{20}$}}
