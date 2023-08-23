@@ -16,9 +16,9 @@ The archetypal model is defined as the map $x_{n+1} = f(x_n) \mod 1$ where $f$ i
 \subsection{Parameters}
 \label{sec:setup.arch.parameters}
 
-Since the function $g_R$ is now linear, only two compound parameters are necessary to control the shape of the branches $f_\B$ and $f_\D$.
-The chosen compound parameters are $g_R\left(\frac{1}{4}\right)$ and $g_R\left(\frac{1}{2}\right)$ and the compound parameter $\left. \frac{d}{dx} g_R(x) \right|_{x = \frac{1}{2}}$ used in the previous sections is not used.
-As before, the value of the compound parameter $g_R\left(\frac{1}{2}\right) = \frac{1}{2} + \frac{1}{40}$ is fixed to be just above the bisector $y = x$, and the compound parameter $g_R\left(\frac{1}{4}\right)$ is varied.
+Since the function $g_R$ is now linear, only two \hl{composite} parameters are necessary to control the shape of the branches $f_\B$ and $f_\D$.
+The chosen \hl{composite} parameters are $g_R\left(\frac{1}{4}\right)$ and $g_R\left(\frac{1}{2}\right)$ and the \hl{composite} parameter $\left. \frac{d}{dx} g_R(x) \right|_{x = \frac{1}{2}}$ used in the previous sections is not used.
+As before, the value of the \hl{composite} parameter $g_R\left(\frac{1}{2}\right) = \frac{1}{2} + \frac{1}{40}$ is fixed to be just above the bisector $y = x$, and the \hl{composite} parameter $g_R\left(\frac{1}{4}\right)$ is varied.
 
 \begin{subequations}
 	\begin{align}
@@ -44,7 +44,7 @@ As before, this is achieved by writing the system of equations as a matrix and c
 	\label{equ:setup.arch.matrix}
 \end{align}
 
-Hence, the equations for $b_R$ and $c_R$ in dependence of the compound parameters $g_R\left(\frac{1}{4}\right)$ and $g_R\left(\frac{1}{4}\right)$ are \Cref{equ:setup.arch.bR,equ:setup.arch.cR}.
+Hence, the equations for $b_R$ and $c_R$ in dependence of the \hl{composite} parameters $g_R\left(\frac{1}{4}\right)$ and $g_R\left(\frac{1}{4}\right)$ are \Cref{equ:setup.arch.bR,equ:setup.arch.cR}.
 
 \begin{align}
 	b_R & = -4 \cdot g_R\left(\frac{1}{4}\right) + 4 \cdot g_R\left(\frac{1}{2}\right) \label{equ:setup.arch.bR} \\
@@ -53,7 +53,7 @@ Hence, the equations for $b_R$ and $c_R$ in dependence of the compound parameter
 
 
 
-As mentioned before, the parameter $\alpha$ is negated to mirror the \gls{pi} structure.
+As mentioned before, the parameter $\alpha$ is \hl{given a negative sign} to mirror the \gls{pi} structure.
 So $\alpha = -g_R\left(\frac{1}{4}\right)$ in the archetypal model.
 All parameters are listed in \Cref{table:setup.arch.parameters} a for better overview.
 
@@ -71,7 +71,7 @@ All parameters are listed in \Cref{table:setup.arch.parameters} a for better ove
 		$g_R\left(\frac{1}{2}\right)$ & $\frac{1}{2} + \frac{1}{40}$                                                \\ \hline
 	\end{tabular}
 	\caption[Overview of parameters of the archetypal model]{
-		Overview of the parameter values of all parameters of the archetypal model with the compound parameters $g_R\left(\frac{1}{4}\right)$ and $g_R\left(\frac{1}{2}\right)$.
+		Overview of the parameter values of all parameters of the archetypal model with the \hl{composite} parameters $g_R\left(\frac{1}{4}\right)$ and $g_R\left(\frac{1}{2}\right)$.
 		In the top part, there are all parameters of the function $g_L$, and in the bottom part are the parameters of the function $g_R$.
 	}
 	\label{table:setup.arch.parameters}
@@ -82,7 +82,7 @@ All parameters are listed in \Cref{table:setup.arch.parameters} a for better ove
 
 The effects of the defined parameters on the model function are straightforward and can be read directly from the previous section.
 In summary, the parameter $\alpha$ changes the values of the model function on the left sides of the branches $f_\B$ and $f_\D$.
-Where a lower value of $\alpha$ means a higher value of the model function in those regions, because the parameter is negated.
+Where a lower value of $\alpha$ means a higher value of the model function in those regions, because the parameter \hl{has negative sign}.
 In the previously defined notation, this is written as $\AL_{\B}^-$.
 This notation is defined in \Cref{sec:setup.char.paramfx}.
 The parameter $\beta$ changes the values of the model function on the whole branches $f_\A$ and $f_\C$.

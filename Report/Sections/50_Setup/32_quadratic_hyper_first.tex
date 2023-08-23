@@ -1,16 +1,16 @@
 \subsection{Steep Parabola-shaped Branches $f_\A$ and $f_\C$}
 \label{sec:setup.quad.hyper.1}
 
-The values of the compound parameters $g_R\left(\frac{1}{4}\right)$ and $\left. \frac{d}{dx} g_R\left(x\right) \right|_{x = \frac{1}{2}}$ are fixed as described previously in \Cref{sec:setup.quad.hyper.params}.
+The values of the \hl{composite} parameters $g_R\left(\frac{1}{4}\right)$ and $\left. \frac{d}{dx} g_R\left(x\right) \right|_{x = \frac{1}{2}}$ are fixed as described previously in \Cref{sec:setup.quad.hyper.params}.
 In this section, the values of the parameters of the function $g_L$ are set to $a_L = 8$ and $b_L = -1$ to get steep, shifted parabola-shaped branches $f_\A$ and $f_\D$, as one can see in the cobweb diagrams in \Cref{fig:setup.quad.hyper.1.cobwebs}.
 Scanning the periods for reasonable values of $\alpha = g_R\left(\frac{1}{4}\right)$ and the parameter $\beta = c_L$ results in \Cref{fig:setup.quad.hyper.1.period}.
 The reasonable values for $\alpha = g_R\left(\frac{1}{4}\right)$ are larger than $\frac{1}{4}$ to keep the parabola above the bisector $y = x$ and smaller than $\frac{1}{2}$ to keep the value of the model function at the left borders of the branches $f_\B$ and $f_\D$ below the value of the model function at the right borders.
 For the specified values of $a_L$ and $b_L$, the reasonable values for $\beta = c_L$ are smaller than $0.22$ to not map the points directly onto the branch $f_\C$ from the branch $f_\A$.
 To keep the parabola above the bisector $y = x$, the values for $\beta$ should also be larger than $0.12$.
 
-With the newly chosen fixed parameters and the new compound parameters, this model imitates the shape of the original model function well still.
+With the newly chosen fixed parameters and the new \hl{composite} parameters, this model imitates the shape of the original model function well still.
 The parameter $c_L$ is also still varied and this emulates the effects of $\chi_0$ on the branches $F_\A$ and $F_\C$ of the original model function well, as described in the previous section, \Cref{sec:setup.quad}.
-The other varied parameter is the compound parameter $g_R\left(\frac{1}{4}\right)$.
+The other varied parameter is the \hl{composite} parameter $g_R\left(\frac{1}{4}\right)$.
 For brevity the varied parameters are named $\alpha = g_R\left(\frac{1}{4}\right)$ and $\beta = c_L$.
 Varying the parameter $\alpha$ is a major improvement for emulating the effects of $E_0$ on the branches $F_\B$ and $F_\D$ of the original model function.
 Increasing $\alpha$ primarily increases the values of the model function on the left sides of the branches $f_\B$ and $f_\D$ and keeps the values on the right sides the same.
@@ -19,8 +19,8 @@ It also moves the local minima of those branches to the left and decreases the v
 \begin{figure}
 	\centering
 	\includegraphics[width=0.6\textwidth]{../Figures/5/5.9/result.png}
-	\caption[2D scan of the periods of the quadratic model with compound parameters]{
-	2D scan of the periods of the piecewise quadratic model with compound parameters $g_R\left(\frac{1}{4}\right), g_R\left(\frac{1}{2}\right),$ and $\left. \frac{d}{dx} g_R\left(x\right) \right|_{x = \frac{1}{2}}$.
+	\caption[2D scan of the periods of the quadratic model with composite parameters]{
+	2D scan of the periods of the piecewise quadratic model with \hl{composite} parameters $g_R\left(\frac{1}{4}\right), g_R\left(\frac{1}{2}\right),$ and $\left. \frac{d}{dx} g_R\left(x\right) \right|_{x = \frac{1}{2}}$.
 	The parameters $a_L = 8, b_L = -1, g_R\left(\frac{1}{2}\right) = \frac{1}{2} + \frac{1}{40},$ and $\left. \frac{d}{dx} g_R\left(x\right) \right|_{x = \frac{1}{2}} = 1.2$ are fixed.
 	The parameters $\alpha = g_R\left(\frac{1}{4}\right)$ and $\beta = c_L$ are varied in the ranges $[0.25, 0.5]$ and $[0.12, 0.22]$, respectively.
 	The points $A, B,$ and $C$ mark the parameter values used for the cobweb diagrams in \Cref{fig:setup.quad.hyper.1.cobwebs}.
@@ -43,7 +43,7 @@ It also moves the local minima of those branches to the left and decreases the v
 		\includegraphics[width=.3 \textwidth]{../Figures/5/5.10c/result.png}
 		\label{fig:setup.quad.hyper.1.cobweb.C}
 	}
-	\caption[Cobweb diagrams of the first piecewise quadratic model with compound parameters]{
+	\caption[Cobweb diagrams of the first piecewise quadratic model with composite parameters]{
 	Cobweb diagrams at three parameter values of $\alpha = g_R\left(\frac{1}{4}\right)$ and $\beta = c_L$ in the piecewise quadratic model with hyperparameters.
 	The other parameters are fixed as $a_L = 8, b_L = -1, g_R\left(\frac{1}{2}\right) = \frac{1}{2} + \frac{1}{40}$, and $\left. \frac{d}{dx} g_R(x) \right|_{x = \frac{1}{2}} = 1 + \frac{1}{5}$.
 	The parameter values are marked in \Cref{fig:setup.quad.hyper.1.period}.

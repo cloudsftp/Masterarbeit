@@ -63,7 +63,7 @@ investigation_methods = {
     },
     period_analysis = {
         is_active = true,
-        max_period = 512,
+        max_period = 128,
         compare_precision = 1e-09,
         period = true,
         period_file = "period.tna",

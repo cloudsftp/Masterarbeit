@@ -1,13 +1,13 @@
-\subsection{Compound Parameter Definitions}
+\subsection{Composite Parameter Definitions}
 \label{sec:setup.quad.hyper.params}
 
-The compound parameters are $g_R\left(\frac{1}{4}\right)$ for the value at the left border of branches $f_\B$ and $f_\D$, $g_R\left(\frac{1}{2}\right)$ for the value at the right border of the branches, and finally $\left. \frac{d}{dx} g_R(x) \right|_{x = \frac{1}{2}}$ for the slope of the branches at the right border.
-The compound parameter $\left. \frac{d}{dx} g_R(x) \right|_{x = \frac{1}{2}} = 1.2$ is fixed.
+The \hl{composite} parameters are $g_R\left(\frac{1}{4}\right)$ for the value at the left border of branches $f_\B$ and $f_\D$, $g_R\left(\frac{1}{2}\right)$ for the value at the right border of the branches, and finally $\left. \frac{d}{dx} g_R(x) \right|_{x = \frac{1}{2}}$ for the slope of the branches at the right border.
+The \hl{composite} parameter $\left. \frac{d}{dx} g_R(x) \right|_{x = \frac{1}{2}} = 1.2$ is fixed.
 This way, the steepest slope is 1.2 which is just above 1.
 Therefore, most of the function is still contractive.
-Also, the compound parameter $g_R\left(\frac{1}{2}\right) = \frac{1}{2} + \epsilon$ is fixed with $\epsilon = 0.025$ to have the value at the right border of the branches $f_\B$ and $f_\D$ just above the bisector $y = x$.
-The only compound parameter that is not fixed yet is $g_R\left(\frac{1}{4}\right)$, the value of the model function at the left border of the branches $f_\B$ and $f_\D$.
-This compound parameter is varied.
+Also, the \hl{composite} parameter $g_R\left(\frac{1}{2}\right) = \frac{1}{2} + \epsilon$ is fixed with $\epsilon = 0.025$ to have the value at the right border of the branches $f_\B$ and $f_\D$ just above the bisector $y = x$.
+The only \hl{composite} parameter that is not fixed yet is $g_R\left(\frac{1}{4}\right)$, the value of the model function at the left border of the branches $f_\B$ and $f_\D$.
+This \hl{composite} parameter is varied.
 
 \begin{subequations}
 	\begin{align}
@@ -17,7 +17,7 @@ This compound parameter is varied.
 	\end{align}
 \end{subequations}
 
-\Crefrange{equ:setup.quad.hyper.A}{equ:setup.quad.hyper.A} are the values of the compound parameters $g_R\left(\frac{1}{4}\right), g_R\left(\frac{1}{2}\right),$ and $\left. \frac{d}{dx} g_R\left(x\right) \right|_{x = \frac{1}{2}}$.
+\Crefrange{equ:setup.quad.hyper.A}{equ:setup.quad.hyper.A} are the values of the \hl{composite} parameters $g_R\left(\frac{1}{4}\right), g_R\left(\frac{1}{2}\right),$ and $\left. \frac{d}{dx} g_R\left(x\right) \right|_{x = \frac{1}{2}}$.
 This is a system of equations that need to be solved for the parameters $a_R, b_R,$ and $c_R$.
 To compute the parameters, one can write the system of equations as a matrix and invert it.
 The matrix and its inverse are in \Cref{equ:setup.quad.hyper.matrix}.
@@ -36,7 +36,7 @@ The matrix and its inverse are in \Cref{equ:setup.quad.hyper.matrix}.
 	\label{equ:setup.quad.hyper.matrix}
 \end{align}
 
-Hence, the equations for the parameters $a_R, b_R,$ and $c_R$ in dependence of the compound parameters $g_R\left(\frac{1}{4}\right), g_R\left(\frac{1}{2}\right),$ and $\left. \frac{d}{dx} g_R\left(x\right) \right|_{x = \frac{1}{2}}$ are \Crefrange{equ:setup.quad.hyper.aR}{equ:setup.quad.hyper.cR}.
+Hence, the equations for the parameters $a_R, b_R,$ and $c_R$ in dependence of the \hl{composite} parameters $g_R\left(\frac{1}{4}\right), g_R\left(\frac{1}{2}\right),$ and $\left. \frac{d}{dx} g_R\left(x\right) \right|_{x = \frac{1}{2}}$ are \Crefrange{equ:setup.quad.hyper.aR}{equ:setup.quad.hyper.cR}.
 
 \begin{align}
 	a_R & = 16 \cdot g_R\left(\frac{1}{4}\right) - 16 \cdot g_R\left(\frac{1}{2}\right) + 4 \cdot \left. \frac{d}{dx} g_R\left(x\right) \right|_{x = \frac{1}{2}}     \label{equ:setup.quad.hyper.aR}     \\

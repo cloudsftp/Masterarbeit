@@ -2,7 +2,7 @@
 \label{sec:arch.coex}
 
 The previous section investigated the bifurcations at the boundaries of ``type A'' and ``type B'' parameter regions.
-There, one can see that there is a space between the \glspl{bcb} of the ``type B'' cycles and the \gls{bcb} of the ``type A'' cycle where all three cycles coexist at each boundary of the ``type B'' parameter region.
+There, one can see that there is a space between the border collision bifurcations of the ``type B'' cycles and the border collision bifurcation of the ``type A'' cycle where all three cycles coexist at each boundary of the ``type B'' parameter region.
 \Cref{fig:arch.coex.regions.F} illustrates this overlap again, the overlapping regions are marked with the points $J, R, S,$ and $T$.
 In \Cref{fig:arch.coex.regions.E}, one can see that ``type A'' parameter regions can also overlap with each other.
 Here, the overlapping regions are marked with $M, N, O,$ and $P$.
@@ -48,7 +48,7 @@ And the basin of attraction is the whole state space.
 \subsection{Two ``Type A'' Cycles}
 \label{sec:arch.coex.AA}
 
-As mentioned in the intro of this section, \Cref{sec:arch.coex}, ``type A'' parameter regions can overlap with one another.
+\hl{As mentioned at the beginning of} \Cref{sec:arch.coex}, ``type A'' parameter regions can overlap.
 This causes the coexistence of two ``type A'' cycles.
 It can happen in four different ways.
 Assuming the stable cycle of the parameter region in the middle is $\Cycle{\A^a\B^b\C^a\D^b}$, it can overlap with parameter regions, where either one of the following cycles is stable
@@ -90,7 +90,7 @@ The basin of attraction of the cycle $\Cycle{\A^5\B^3\C^5\D^3}$ is shown in blue
 	}
 \end{figure}
 
-\subsection{Only one ``Type B'' Cycles}
+\subsection{Only one Pair of ``Type B'' Cycles}
 
 Another very simple case is when a ``type B'' parameter region does not overlap with any other region.
 This causes the coexistence of two ``type B'' twin cycles.
@@ -104,7 +104,7 @@ The cycle $\Cycle{\A^5\B^3\C^4\D^4}$ is shown in green and its basin of attracti
 Its twin cycle $\Cycle{\A^4\B^4\C^5\D^3}$ is shown in brown and its basin of attraction is shown in yellow for better visibility.
 Again, for the rest of this section, the colors will stay the same when we encounter these cycles in cobweb diagrams.
 
-\subsection{Two ``Type B'' Cycles and One ``Type A'' Cycle}
+\subsection{One Pair of ``Type B'' Cycles and One ``Type A'' Cycle}
 \label{sec:arch.coex.AB}
 
 We can see in \Cref{fig:arch.coex.regions.F}, that this ``type B'' parameter region can overlap with ``type A'' parameter regions.
@@ -148,7 +148,7 @@ The colors for each cycle, as well as the color of their basins of attraction, a
 	}
 \end{figure}
 
-\subsection{Two ``Type A'' Cycles And Two ``Type B'' Cycles}
+\subsection{One Pair of ``Type B'' Cycles And Two ``Type A'' Cycles}
 
 When looking closer at \Cref{fig:arch.coex.regions.F}, we can see that the parameter regions described in the previous \Cref{sec:arch.coex.AB} can also overlap with one another.
 There, one ``type B'' parameter region overlaps with two different ``type A'' parameter regions.
@@ -176,14 +176,14 @@ If we compare this cobweb diagram to the cobweb diagram in \Cref{fig:arch.coex.c
 The same is true for their basins of attraction.
 But there is a new cycle, $\Cycle{A^5\B^3\C^5\D^3}$ shown in blue, that emerged between the basins of attraction of the two ``type B'' cycles, $\Cycle{\A^5\B^3\C^4\D^4}$ shown in green and $\Cycle{\A^4\B^4\C^5\D^3}$ shown in brown.
 
-In this cobweb diagram, as well as in the previous ones, we can see that the borders of the function $d_0$, $d_1$, $d_2$, and $d_3$ split basins of attraction.
-In each diagram, the borders $d_1$ and $d_2$ are enhanced.
+In this cobweb diagram, as well as in the previous ones, we can see that the borders of the function $d_0$, $d_1$, $d_2$, and $d_3$ \hl{as well as their preimages seperate} basins of attraction \hl{from each other}.
+In each diagram, the \hl{neighborhoods of the} borders $d_1$ and $d_2$ are \hl{magnified}.
 From these two borders, we can also reason about the two other borders $d_0$ and $d_3$ thanks to the symmetry of the model.
 The basins of attraction of the cycles of ``type A'' parameter regions, such as $\Cycle{\A^5\B^3\C^5\D^3}$ shown in blue and $\Cycle{\A^4\B^3\C^4\D^3}$ shown in red, are the same on each half of the model.
 For the cycles of ``type B'' parameter regions, such as $\Cycle{\A^5\B^3\C^4\D^4}$ shown in green and $\Cycle{\A^4\B^4\C^5\D^3}$ shown in brown, the cycles and their basins of attraction swap places.
 So at border $d_3$, the basin of attraction to the left will be of the cycle $\A^5\B^3\C^5\D^3$ shown in blue still, but the basin of attraction to the right will be of $\Cycle{\A^5\B^3\C^4\D^4}$ shown in green instead of $\Cycle{\A^4\B^4\C^5\D^3}$ shown in brown.
 
-\subsection{Possible Period Combinations in Ceoxistence Scenarios}
+\subsection{Possible Period Combinations in Coexistence Scenarios}
 
 The previous sections cover all possible coexistence scenarios in the archetypal model.
 We can see that only parameter regions of the same chain of parameter regions associated with the same period or parameter regions of neighboring chains can overlap.
