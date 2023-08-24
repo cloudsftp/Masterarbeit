@@ -23,6 +23,9 @@ jobs:
       - name: Check out source code
         uses: actions/checkout@v3
 
+      - name: Package source code
+        run: ./archive_source_code.sh
+
       - name: Install qpdf
         run: |
           sudo apt-get update
@@ -38,9 +41,6 @@ jobs:
         run: |
           qpdf --empty --pages "${DOC_TARGET}" 1-r2 "${DECLARATION}" -- "${TMP_SIGNED_DOC}"
           mv "${TMP_SIGNED_DOC}" "${DOC_TARGET}"
-
-      - name: Package source code
-        run: ./archive_source_code.sh
 
       - name: Release
         if: startsWith(github.ref, 'refs/tags/')
