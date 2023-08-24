@@ -39,7 +39,7 @@ s = 0.4
 set label 'fX' at s, f(s) + 0.25
 
 # blue fct
-color = 'blue'
+color = 'red'
 CobStyle="lt 1 lw 2 dt 1 lc rgb color front nohead"
 
 s = 0.25
@@ -54,7 +54,7 @@ while (s < 1) {
 set arrow from s, s to s, U @CobStyle
 
 # red fct
-color = 'red'
+color = 'blue'
 
 s = 0.45
 set label 'Ob' at L+0.05, s+0.075

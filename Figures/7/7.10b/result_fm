@@ -4,7 +4,7 @@
 %\newcommand{\X}{\text{\tiny$\mathcal X$}}
 %\renewcommand{\O}{\text{$\mathcal O$}}
 
-\psfrag{Oa}{\footnotesize \hspace*{-0.2em}\raisebox{0.1ex}{$\color{blue}{\O^a}$}}
-\psfrag{Ob}{\footnotesize \hspace*{-0.2em}\raisebox{0.1ex}{$\color{red}{\O^b}$}}
+\psfrag{Oa}{\footnotesize \hspace*{-0.2em}\raisebox{0.1ex}{$\color{blue}{\sigma_2}$}}
+\psfrag{Ob}{\footnotesize \hspace*{-0.2em}\raisebox{0.1ex}{$\color{red}{\sigma_1}$}}
 
 \psfrag{fX}{\footnotesize \hspace*{-0.2em}\raisebox{0.1ex}{$f_\X$}}
