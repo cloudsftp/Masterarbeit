@@ -1,107 +1,165 @@
 \subsection{Summary of the Changes to the Bifurcation Structure}
 
-In this section, we will summarize the changes to the bifurcation structure.
-We will also establish a timeline of when the changes happen, as well as some theoretical results.
+\hl{
+	This section summarizes all the changes that happen to the \gls{pi} structure of the archetypal model when the parameters are changed in such a way that \gls{pal} structures emerge.
+	Furthermore, it provides an explanation for why the \gls{pi} structure of the archetypal model is impossible with only increasing branches.
+}
 
-\subsubsection{List of the Changes}
-
-The changes that happen to the bifurcation structure along the parameter line given by  \Cref{equ:add.change.paramline} are the following.
-\begin{enumerate}
-	\item The ``type A'' parameter regions of the same chain start overlapping.
-	      This overlapping regions replaces the ``type B'' parameter region that was between the two ``type A'' parameter regions.
-	      It happens via a codimension-2 point that moves right and drives out the ``type B'' parameter region.
-
-	\item The ``type A'' parameter regions of different chains that vertical neighbors stop overlapping.
-	      This overlapping region is replaced by a hybrid parameter region and period-adding-like structures..
-	      It also happens via a codimension-2 point that moves right and drives out the overlapping parameter region.
-
-	\item The ``type A'' parameter regions of different chains that are horizontal neighbors stop overlapping.
-	      This overlapping region is replaced by a hybrid parameter region and period-adding-like structures.
-	      Numerically, it seems to happen in an instant without a codimension-2 point.
-\end{enumerate}
-
-The timeline is as follows:
-First, the process (ii) starts.
-We can see this in \Cref{fig:add.change.regions.2}.
-The vertical neighbors $P^{22}_4$ and $P^{20}_4$ stop overlapping on the left side of their shared boundaries while the ``type B'' parameter region is still intact and the vertical neighboring ``type A'' parameter regions overlap.
-Then the process (i) starts.
-In \Cref{fig:add.change.regions.3}, we can see that the ``type A'' parameter regions of the same chain $P^{20}_3$ and $P^{20}_4$ start overlapping.
-At this point, the ``type A'' parameter regions $P^{20}_3$ and $P^{18}_3$ still overlap, so the process (ii) is still not complete.
-Lastly, the process (iii) starts and finishes seemingly immediately.
-\Cref{fig:add.change.regions.4} shows all processes completed.
-It is not pictured in the diagrams, but the order in which they complete is the following.
-First, the process (iii) completes, then the process (i) completes, and lastly the process (ii) completes.
-At least this is the case for the parameter regions pictured in the diagrams in \Cref{fig:add.change.regions}.
-
-\subsubsection{Schematics of the Changes}
+\subsubsection{Schematics and Summary of the Changes}
 
 \begin{figure}
 	\centering
-	\subfloat[Before]{
-		\includegraphics[width=.25 \textwidth]{../Figures/7/7.9a/schema.png}
-		\label{fig:add.change.schema.before}
+	\subfloat[]{
+		\includegraphics[width=.4 \textwidth]{../Figures/7/7.9a/result.png}
+		\label{fig:add.change.schema.a}
 	}
-	\subfloat[During]{
-		\includegraphics[width=.35 \textwidth]{../Figures/7/7.9b/schema.png}
-		\label{fig:add.change.schema.during}
+	\subfloat[]{
+		\includegraphics[width=.4 \textwidth]{../Figures/7/7.9b/result.png}
+		\label{fig:add.change.schema.b}
+	} \\
+	\subfloat[]{
+		\includegraphics[width=.4 \textwidth]{../Figures/7/7.9c/result.png}
+		\label{fig:add.change.schema.c}
 	}
-	\subfloat[After]{
-		\includegraphics[width=.25 \textwidth]{../Figures/7/7.9c/schema.png}
-		\label{fig:add.change.schema.after}
+	\subfloat[]{
+		\includegraphics[width=.4 \textwidth]{../Figures/7/7.9d/result.png}
+		\label{fig:add.change.schema.d}
+	} \\
+	\subfloat[]{
+		\includegraphics[width=.4 \textwidth]{../Figures/7/7.9e/result.png}
+		\label{fig:add.change.schema.e}
 	}
 	\caption[Schematics of parameter region boundaries during the transformation of the archetypal model]{
 		Schematics of parameter region boundaries during the transformation of the archetypal model.
-		(a) shows the parameter regions before the changes start occurring.
-		(b) shows the parameter regions with all changes in progress.
-		Here we assume that the vertical neighboring ``type A'' parameter regions stop overlapping with a codimension-2 point that moves up.
-		And (c) shows the parameter regions after all changes are complete.
+		\todo{Adjust caption}
 	}
 	\label{fig:add.change.schema}
 \end{figure}
 
-\Cref{fig:add.change.schema} shows schematics of how the boundaries of the ``type A'' and ``type B'' parameter regions change during the transformation into the increasing archetypal model.
-Where \Cref{fig:add.change.schema.before} shows the situation before the transformation.
-Here, the neighboring ``type A'' parameter regions of different chains overlap and the ``type B'' parameter regions overlap with all neighboring ``type A'' parameter regions.
-\Cref{fig:add.change.schema.after} shows the situation after the transformation.
-Here the ``type A'' parameter regions of different chains do not overlap, but the ``type A'' parameter regions inside the chains overlap with each other.
-And the ``type B'' parameter regions disappeared.
+\Cref{fig:add.change.schema} \hl{shows multiple schematics that are used in this section to summarize all changes.}
+\hl{
+All schematics show some boundaries of the ``type A'' parameter regions $P^m_k, P^{m-2}_{k-1}, P^m_{k+1},$ and $P^{m+2}_{k+1}$ and all boundaries of the ``type B'' parameter region $Q^m_k$.
+The ``type B'' parameter region is in-between all the ``type A'' parameter regions in the beginning.
+}
+\hl{This is shown in} \Cref{fig:add.change.schema.a}.
+\hl{
+	The corners of the parameter regions are marked as follows.
+	The upper right corner of the ``type B'' parameter region in the middle is marked with the point $C_Q^\nearrow$.
+	Similarly, the lower right corner is marked with the point $C_Q^\searrow$ and the remaining corners with the points $C_Q^\nwarrow$ and $C_Q^\nwarrow$.
+	The corners of the ``type A'' parameter regions are marked analogously with $C_P^\nearrow, C_P^\searrow, C_P^\nwarrow,$ and $C_P^\swarrow$.
+	But here, the corners belong to different parameter regions.
+}
 
-\begin{figure}
-	\centering
-	\subfloat[Straight]{
-		\includegraphics[width=.35 \textwidth]{../Figures/7/7.10a/schema.png}
-		\label{fig:add.change.schema.during.straight}
-	}
-	\subfloat[Inverted]{
-		\includegraphics[width=.35 \textwidth]{../Figures/7/7.10b/schema.png}
-		\label{fig:add.change.schema.during.inverted}
-	}
-	\caption[Alternative schematics of parameter region boundaries during the transformation of the archetypal model]{
-		Schematics of parameter region boundaries during the transformation of the archetypal model showing alternative cases for the borders between horizontal neighboring ``type A'' parameter regions.
-		(a) shows the scenario, if the overlapping period disappears at once with the boundaries aligning perfectly.
-		And (b) shows the scenario, if the overlapping period disappears with a codimension-2 point that moves down.
-	}
-	\label{fig:add.change.schema.during.alt}
-\end{figure}
+\hl{
+	The changes are summarized in the order they happen to the parameter regions that are considered in the previous sections.
+	This order might differ for different parameter regions.
+}
 
-Between those two situations, the boundaries might look like in \Cref{fig:add.change.schema.during}.
-Here, the ``type A'' parameter regions of the same chain start overlapping with each other on the left side of their shared boundaries.
-The ``type A'' parameter regions of different chains that neighbor vertically stop overlapping on the left side of their shared boundaries.
-And finally the ``type A'' parameter regions of different chains that neighbor horizontally stop overlapping on the lower side of their shared boundaries.
-We don't have any numerical observations supporting the last case.
-The ``type A'' parameter regions of different chains that neighbor horizontally might separate differently.
-\Cref{fig:add.change.schema.during.alt} shows alternative schematics for this stage of the transformation.
-In \Cref{fig:add.change.schema.during.straight}, the vertical boundaries of horizontally neighboring ``type A'' parameter regions are perfectly parallel.
-All the other boundaries stay the same.
-And in \Cref{fig:add.change.schema.during.inverted}, the horizontally neighboring ``type A'' parameter regions start separating at the upper side of their shared boundaries.
-In this case the codimension-2 point moves down during the transformation.
+\hl{
+First, the upper left corner $C_Q^\nwarrow$ of the lower right ``type A'' parameter region $P^{m+2}_{k+1}$ moves down and crosses the lower boundary of the upper right ``type A'' parameter region $P^m_{k+1}$.
+}
+\hl{This is visible in} \Cref{fig:add.change.schema.b}.
+\hl{
+	The point where the two boundaries of the horizontally neighboring ``type A'' parameter regions cross is marked as $C_{P \cap P}^\leftarrow$ because this point is now the only left corner point of the overlapping parameter region $P^{m+2}_{k+1} \cap P^{m}_{k+1}$.
+	For higher values of $b_L$, the point $C_Q^\nwarrow$ moves further down which causes the point where the boundaries cross to move right.
+}
+In \Cref{fig:add.change.schema.c}, \hl{this crossing point is not visible anymore, since it moved out of the domain of the picture.}
+In \Cref{fig:add.change.schema.d}, \hl{it is visible again, but on the left side of the schema}.
+\hl{
+	Strictly speaking, this is not the same point but the left boundary of the overlapping parameter region $P^m_k \cap P^{m-2}_{k}$.
+	This point then collides with the corner point $C_P^\nearrow$ which then causes the two ``type A'' parameter regions to not overlap anymore.
+}
+\hl{This final scenario can be seen in} \Cref{fig:add.change.schema.e}.
+\hl{
+	In the spaces that opened up between the vertically neighboring ``type A'' parameter regions, there are big hybrid parameter regions $\left[P^{m+2}_{k+1} \mid P^{m}_{k+1}\right]$ and $\left[P^m_k \mid P^{m-2}_k\right]$, respectively.
+	The hybrid parameter regions are not shown in the schematics but while the overlapping parameter regions have only three boundaries, they too only have three boundaries and are bounded to the right only by one codimension-2 point.
+	At this point, their upper and lower boundaries meet.
+}
+
+\hl{
+As we can see in the schematics, this change starts first and finishes last.
+While the described process occurs, another change starts happening.
+The points $C_P^\searrow$ and $C_Q^\nearrow$ move down while the points $C_Q\searrow$ and $C_P^\nearrow$ move up.
+As soon as the point $C_P^\swarrow$ crosses the upper boundary of $P^m_k$, the ``type A'' parameter regions $P^m_k$ and $P^m_{k+1}$ start to overlap.
+This overlapping region is bounded to the right only by the point where the horizontal boundaries of those two parameter regions cross.
+}
+\hl{This point is marked as $C_{P \cap P}^\rightarrow$ in} \Cref{fig:add.change.schema.c}.
+\hl{
+	Also at some parameter values the corner points $C_Q^\nwarrow$ and $C_Q^\searrow$ of the ``type B'' parameter region $Q^m_k$ in the middle collide.
+	This creates a codimension-2 point that bounds the parameter region $Q^m_k$ to the left, hence it is marked as $C_Q^\leftarrow$.
+}
+\hl{Both these newly created corner points move right, as can be seen in} \Cref{fig:add.change.schema.d}.
+\hl{
+	Finally, the corner point $C_{P \cap P}^\rightarrow$ collides with the corner point $C_P^\nearrow$ and the two horizontal boundaries of the ``type A'' parameter regions stop crossing.
+}
+\hl{The overlapping parameter region $P^m_k \cap P^m_{k+1}$ is now bounded by four boundaries, as can be seen in} \Cref{fig:add.change.schema.e}.
+\hl{
+	And the corner point $C_Q^\leftarrow$ crosses the right boundary of the ``type B'' parameter region, destroying the ``type B'' parameter region.
+}
+
+\hl{
+While that change is happening, the last change takes place.
+This change does not happen by two boundaries crossing at one point like the last two changes.
+Instead, the numeric evidence suggests that it happens at once.
+The corner point $C_P^\nwarrow$ crosses the right boundary of $P^m_k$ at the same time, the lower right corner point of $P^{m}_{k}$ which is not pictured here crosses the left boundary of $P^{m+2}_{k+1}$.
+This lower corner point is not pictured, but the lower right corner point of $P^{m-2}_k$ is pictured and marked as $C_P^\searrow$.
+Here, the equivalent happens for the horizontally neighboring ``type A'' parameter regions $P^{m-2}_k$ and $P^m_{k+1}$.
+}
+In \Cref{fig:add.change.schema.c}, \hl{the horizontally neighboring ``type A'' parameter regions overlap and in} \Cref{fig:add.change.schema.d}, \hl{the parameter regions do not overlap}.
+\hl{
+	Instead, there is now space in-between the horizontally neighboring ``type A'' parameter regions.
+	In this space there now is a big hybrid parameter region and \gls{pal} structures, similar to the vertically neighboring ``type A'' parameter regions.
+}
 
 \subsubsection{Observations}
 
 The local minima on branches $f_\A$ and $f_\C$ seem to be important for the ``type B'' parameter regions.
 That means, parameter regions with coexisting asymmetrical cycles with the \textbf{same} period.
 At the same time, these minima seem to prevent period-adding structures.
-In the following, we will provide a proof that ``type B'' parameter regions are impossible with only increasing branches.
+\hl{It will be proven next} that ``type B'' parameter regions are impossible with only increasing branches.
+
+\begin{lemma}[Number and Positions of Points of two Cycles on an Increasing Branch]
+	\hl{
+		Let $f_\X$ be an increasing branch of some model function $f$.
+		If two cycles $\O^a$ and $\O^b$ have points on this branch, there are two possibilities for the relative number of points and relative position of the points.
+	}
+	\begin{enumerate}
+		\item
+		      \hl{
+			      Both cycles have the same number of points on the branch $f_\X$.
+			      Let the first point of the cycle $\O^a$ be left of the first point of the cycle $\O^b$ on this branch w.l.o.g.
+			      Then the last point of the cycle $\O^a$ is also left of the last point of the cycle $\O^b$ on this branch.
+		      }
+		      \Cref{fig:add.change.increasing.a} illustrates this case.
+		\item
+		      \hl{
+			      One cycle has one more point on the branch $f_\X$.
+			      Let $\O^b$ be the cycle with more points on this branch w.l.o.g.
+			      Then the first point of the cycle $\O^b$ is left of the first point of the cycle $\O^a$ on this branch and the last point of the cycle $\O^b$ is right of the last point of the cycle $\O^a$ on this branch.
+		      }
+		      \Cref{fig:add.change.increasing.b} illustrates this case.
+	\end{enumerate}
+	\label{lemma:add.num.pos.points.increasing}
+\end{lemma}
+
+\begin{figure}
+	\centering
+	\subfloat[Same number]{
+		\includegraphics[width=.35 \textwidth]{../Figures/7/7.10a/result.png}
+		\label{fig:add.change.increasing.a}
+	} \quad
+	\subfloat[Number differing by one]{
+		\includegraphics[width=.35 \textwidth]{../Figures/7/7.10b/result.png}
+		\label{fig:add.change.increasing.b}
+	}
+	\caption[Illustration of relative number and positions of points of two cycles on an increasing branch]{
+		Illustration of relative number and positions of points of two cycles on an increasing branch.
+		Both figures show a function branch $f_\X$ and parts of two cycles.
+		(a) shows the case where both cycles have the same number of points on the branch $f_\X$ and the first point of the cycle $\O^a$ is left of the first point of the cycle $\O^b$ on this branch.
+		(a) shows the case where the cycle $\O_b$ has one point more on the branch $f_\X$ than the cycle $\O^a$ and the first point of the cycle $\O^b$ is left of the first point of the cycle $\O^a$ on this branch.
+	}
+	\label{fig:add.change.increasing}
+\end{figure}
 
 \begin{theorem}[No ``Type B'' Parameter Regions with only Increasing Branches]
 	The ``type B'' parameter regions are not possible in the increasing archetypal model.
@@ -121,18 +179,17 @@ In the following, we will provide a proof that ``type B'' parameter regions are 
 		\end{align}
 	\end{subequations}
 
-	For \Cref{equ:add.change.conseq.sigmaA} to hold, the first point of $\sigma_1$ on the branch $f_\A$ needs to be left of first point of $\sigma_2$ on this branch, because the branch is increasing.
-	At the same time must its last point on this branch be right of the last point of $\sigma_2$ on this branch.
-	This way, $\sigma_1$ has exactly one more point on the branch $f_\A$ as required by \Cref{equ:add.change.conseq.sigmaA}.
+	For \Cref{equ:add.change.conseq.sigmaA} to hold, the first point of \hl{the cycle} $\sigma_1$ needs to be left of first point of the cycle $\sigma_2$ on the branch $f_\A$, because \hl{the cycle $\sigma_1$ has one point more on this branch than the cycle $\sigma_2$ and} this branch is increasing.
+	At the same time must \hl{the last point of the cycle $\sigma_1$} be right of the last point of the cycle $\sigma_2$ on this branch.
 
 	The order of the first points on the next branch, $f_\B$, is the same as for the last points on the branch $f_\A$.
-	So the first point of $\sigma_2$ on this branch is left of the first point of $\sigma_1$ on this branch.
-	For \Cref{equ:add.change.conseq.sigmaB} to hold, its last point on this branch must be right of the last point of $\sigma_1$ on this branch per the same logic as before.
+	So the first point of \hl{the cycle} $\sigma_2$ is left of the first point of \hl{the cycle} $\sigma_1$ on this branch.
+	For \Cref{equ:add.change.conseq.sigmaB} to hold, \hl{the last point of the cycle $\sigma_2$ must be right of the last point of the cycle} $\sigma_1$ on this branch per the same logic as before.
 
 	The order of the first points on the next branch, $f_\C$, is the same as for the last points on the branch $f_\B$.
-	So the first point of $\sigma_1$ on this branch is left of the first point of $\sigma_2$ on this branch.
-	This is a contradiction, since the first point of $\sigma_1$ on branch $f_\A$ is also left of the first point of $\sigma_2$ on that branch.
+	So the first point of \hl{the cycle} $\sigma_1$ is left of the first point of \hl{the cycle} $\sigma_2$ on this branch.
+	This is a contradiction, since the first point of \hl{the cycle} $\sigma_1$ on the branch $f_\A$ is also left of the first point of the cycle $\sigma_2$ on that branch.
 	This violates the symmetry.
-	Also, \Cref{equ:add.change.conseq.sigmaC} can't be fulfilled if the first point of $\sigma_1$ is left of the first point of $\sigma_2$ on the branch $f_\C$, since this branch is increasing as well.
+	Also, \Cref{equ:add.change.conseq.sigmaC} \hl{cannot} be fulfilled if the first point of \hl{the cycle} $\sigma_1$ is left of the first point of \hl{the cycle} $\sigma_2$ on the branch $f_\C$, since \hl{the first point of the cycle with more points, $\sigma_2$ in this case, on the branch must be left of the first point of the other cycle on that branch if the branch is increasing}.
 	\hfill $\blacksquare$
 \end{proof}

@@ -25,8 +25,8 @@ BorderStyle="lw 1 dt 2 lc '#808080' front nohead"
 set arrow from 0, D to 0, U @BorderStyle
 set arrow from 1, D to 1, U @BorderStyle
 
-X = 0.55
-Y = 1.5
+X = 0.5
+Y = 1.4
 Z = 0.5
 
 a = Y - X - Z
@@ -42,7 +42,7 @@ set label 'fX' at s, f(s) + 0.25
 color = 'blue'
 CobStyle="lt 1 lw 2 dt 1 lc rgb color front nohead"
 
-s = 0.25
+s = 0.3
 set label 'Oa' at L+0.05, s+0.075
 set arrow from L, s to s, s @CobStyle
 while (s < 1) {
@@ -56,7 +56,7 @@ set arrow from s, s to s, U @CobStyle
 # red fct
 color = 'red'
 
-s = 0.45
+s = 0.1
 set label 'Ob' at L+0.05, s+0.075
 set arrow from L, s to s, s @CobStyle
 while (s < 1) {
