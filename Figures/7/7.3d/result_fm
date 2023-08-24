@@ -1,0 +1,22 @@
+% fmopt: width=8cm
+
+\psfrag{L}{\hspace*{0.3em}\raisebox{0.5ex}{$-0.385$}}
+\psfrag{R}{\hspace*{-2.2em}\raisebox{0.5ex}{$-0.37$}}
+
+\psfrag{D}{\hspace*{0.5em}\raisebox{0.5ex}{$0.121$}}
+\psfrag{U}{\hspace*{-2.5em}\raisebox{0.5ex}{$0.1214$}}
+
+\psfrag{x}{\hspace*{0.0em}\raisebox{0.5ex}{$\alpha$}}
+\psfrag{y}{\hspace*{0.0em}\raisebox{0.5ex}{$\beta$}}
+
+\psfrag{P.20.3}{\hspace*{0.0em}\raisebox{0.5ex}{$P_{3}^{20}$}}
+\psfrag{P.18.3}{\hspace*{0.0em}\raisebox{0.5ex}{$P_{3}^{18}$}}
+\psfrag{P.20.4}{\hspace*{0.0em}\raisebox{0.5ex}{$P_{4}^{20}$}}
+\psfrag{P.22.4}{\hspace*{0.0em}\raisebox{0.5ex}{$P_{4}^{22}$}}
+
+\psfrag{P.20.3uP.20.4}{\hspace*{0.0em}\raisebox{0.5ex}{$P_{3}^{20} \bigcup P_{4}^{20}$}}
+
+\psfrag{P.20.3+P.18.3}{\hspace*{0.0em}\raisebox{0.5ex}{$\left[P_{3}^{20} \mid P_{3}^{18}\right]$}}
+\psfrag{P.18.3+P.20.4}{\hspace*{0.0em}\raisebox{0.5ex}{$\left[P_{3}^{18} \mid P_{4}^{20}\right]$}}
+\psfrag{P.20.3+P.22.4}{\hspace*{0.0em}\raisebox{0.5ex}{$\left[P_{3}^{20} \mid P_{4}^{22}\right]$}}
+\psfrag{P.22.4+P.20.4}{\hspace*{0.0em}\raisebox{0.5ex}{$\left[P_{4}^{22} \mid P_{4}^{20}\right]$}}

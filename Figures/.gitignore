@@ -6,5 +6,10 @@
 
 *.so
 *.tna
+*.tmp
+*.log
 
 fragmaster.*
+
+Autogen
+Frame_*

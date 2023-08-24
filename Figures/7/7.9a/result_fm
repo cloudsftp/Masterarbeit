@@ -1,0 +1,24 @@
+% fmopt: width=8cm
+%head:
+% \usepackage{amsmath}
+%\newcommand{\X}{\text{\tiny$\mathcal X$}}
+%\renewcommand{\O}{\text{$\mathcal O$}}
+
+\psfrag{Oa}{\footnotesize \hspace*{-0.2em}\raisebox{0.1ex}{$\color{blue}{\O^a}$}}
+\psfrag{Ob}{\footnotesize \hspace*{-0.2em}\raisebox{0.1ex}{$\color{red}{\O^b}$}}
+
+\psfrag{CBLU}{\footnotesize \hspace*{-0.8em}\raisebox{1.0em}{$C_Q^\nwarrow$}}
+\psfrag{CBRU}{\footnotesize \hspace*{0.2em}\raisebox{0.0em}{$C_Q^\nearrow$}}
+\psfrag{CBRD}{\footnotesize \hspace*{-0.8em}\raisebox{-1.0em}{$C_Q^\searrow$}}
+\psfrag{CBLD}{\footnotesize \hspace*{-2.2em}\raisebox{0.0em}{$C_Q^\swarrow$}}
+
+\psfrag{CALU}{\footnotesize \hspace*{-0.8em}\raisebox{1.0em}{$C_P^\nwarrow$}}
+\psfrag{CARU}{\footnotesize \hspace*{0.2em}\raisebox{0.0em}{$C_P^\nearrow$}}
+\psfrag{CARD}{\footnotesize \hspace*{-0.8em}\raisebox{-1.0em}{$C_P^\searrow$}}
+\psfrag{CALD}{\footnotesize \hspace*{-2.2em}\raisebox{0.0em}{$C_P^\swarrow$}}
+
+\psfrag{Qmk}{\footnotesize \hspace*{-1.0em}\raisebox{0.0em}{$Q^m_k$}}
+\psfrag{Pmk}{\footnotesize \hspace*{-1.0em}\raisebox{0.0em}{$P^m_k$}}
+\psfrag{Pmk+1}{\footnotesize \hspace*{-1.0em}\raisebox{0.0em}{$P^m_{k+1}$}}
+\psfrag{Pm-2k}{\footnotesize \hspace*{-1.0em}\raisebox{0.0em}{$P^{m-2}_{k}$}}
+\psfrag{Pm+2k+1}{\footnotesize \hspace*{-1.0em}\raisebox{0.0em}{$P^{m+2}_{k+1}$}}

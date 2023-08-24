@@ -1,0 +1,10 @@
+% fmopt: width=8cm
+%head:
+% \usepackage{amsmath}
+%\newcommand{\X}{\text{\tiny$\mathcal X$}}
+%\renewcommand{\O}{\text{$\mathcal O$}}
+
+\psfrag{Oa}{\footnotesize \hspace*{-0.2em}\raisebox{0.1ex}{$\color{red}{\sigma_1}$}}
+\psfrag{Ob}{\footnotesize \hspace*{-0.2em}\raisebox{0.1ex}{$\color{blue}{\sigma_2}$}}
+
+\psfrag{fX}{\footnotesize \hspace*{-0.2em}\raisebox{0.1ex}{$f_\X$}}

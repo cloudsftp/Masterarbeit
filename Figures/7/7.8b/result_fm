@@ -1,0 +1,32 @@
+% fmopt: width=8cm
+%head:
+% \usepackage{amsmath}
+%\newcommand{\A}{\text{\tiny$\mathcal A$}}
+%\newcommand{\B}{\text{\tiny$\mathcal B$}}
+%\newcommand{\C}{\text{\tiny$\mathcal C$}}
+%\newcommand{\D}{\text{\tiny$\mathcal D$}}
+%\newcommand{\LC}{\text{$\mathcal O$}}
+
+\psfrag{L}{\footnotesize \hspace*{-0.2em}\raisebox{0.1ex}{$-0.37366$}}
+\psfrag{R}{\footnotesize \hspace*{-4.0em}\raisebox{0.1ex}{$-0.373657$}}
+
+
+\psfrag{D}{\footnotesize \hspace*{0.3em}\raisebox{0.5ex}{$0$}}
+\psfrag{U}{\footnotesize \hspace*{0.3em}\raisebox{0.5ex}{$1$}}
+
+\psfrag{x}{\hspace*{0.0em}\raisebox{0.5ex}{$\alpha$}}
+\psfrag{y}{\hspace*{0.0em}\raisebox{0.3ex}{$x$}}
+
+\psfrag{d0}{{$d_0$}}
+\psfrag{d1}{{$d_1$}}
+\psfrag{d2}{{$d_2$}}
+\psfrag{d3}{{$d_3$}}
+
+\psfrag{BCB1}{$\xi^{\A^7\B^4\C^7\D^4}_{d_0,d_2}$}
+\psfrag{BCB2a}{$\xi^{\A^7\B^4\C^7\D^3}_{d_0}$}
+\psfrag{BCB2b}{$\xi^{\A^7\B^3\C^7\D^4}_{d_2}$}
+
+\psfrag{O21B1a}{$x^{\A^7\B^4\C^7\D^3}_{0}$}
+\psfrag{O21B2b}{$x^{\A^7\B^3\C^7\D^4}_{10}$}
+\psfrag{O22Aa}{$x^{\A^7\B^4\C^7\D^4}_{10}$}
+\psfrag{O22Ab}{$x^{\A^7\B^4\C^7\D^4}_{21}$}

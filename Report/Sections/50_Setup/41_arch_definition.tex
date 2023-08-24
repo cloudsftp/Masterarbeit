@@ -1,7 +1,7 @@
 \subsection{Model Definition}
 \label{sec:setup.arch.definition}
 
-The \hl{archetypal} model is defined as the map $x_{n+1} = f(x_n) \mod 1$ where $f$ is given by the following \hl{set} of equations.
+The archetypal model is defined as the map $x_{n+1} = f(x_n) \mod 1$ where $f$ is given by the following set of equations.
 \begin{align}
 	f(x) & = \begin{cases}
 		         g(x)                             & \text{if } x < \frac{1}{2} \\
@@ -16,11 +16,9 @@ The \hl{archetypal} model is defined as the map $x_{n+1} = f(x_n) \mod 1$ where 
 \subsection{Parameters}
 \label{sec:setup.arch.parameters}
 
-Since the function $g_R$ is now linear, only two \hl{compound parameters are necessary to control the shape of the branches $f_\B$ and $f_\D$}.
-\hl{
-The chosen compound parameters are $g_R\left(\frac{1}{4}\right)$ and $g_R\left(\frac{1}{2}\right)$ and the compound parameter $\left. \frac{d}{dx} g_R(x) \right|_{x = \frac{1}{2}}$ used in the previous sections is not used.
-}
-As before, \hl{the value of the compound parameter} $g_R\left(\frac{1}{2}\right) = \frac{1}{2} + \frac{1}{40}$ \hl{is fixed} to be just above the bisector $y = x$\hl{, and the compound parameter} $g_R\left(\frac{1}{4}\right)$ \hl{is varied}.
+Since the function $g_R$ is now linear, only two \hl{composite} parameters are necessary to control the shape of the branches $f_\B$ and $f_\D$.
+The chosen \hl{composite} parameters are $g_R\left(\frac{1}{4}\right)$ and $g_R\left(\frac{1}{2}\right)$ and the \hl{composite} parameter $\left. \frac{d}{dx} g_R(x) \right|_{x = \frac{1}{2}}$ used in the previous sections is not used.
+As before, the value of the \hl{composite} parameter $g_R\left(\frac{1}{2}\right) = \frac{1}{2} + \frac{1}{40}$ is fixed to be just above the bisector $y = x$, and the \hl{composite} parameter $g_R\left(\frac{1}{4}\right)$ is varied.
 
 \begin{subequations}
 	\begin{align}
@@ -30,9 +28,9 @@ As before, \hl{the value of the compound parameter} $g_R\left(\frac{1}{2}\right)
 \end{subequations}
 
 \Cref{equ:setup.arch.A,equ:setup.arch.B} are the equations for the values of $g_R\left(\frac{1}{4}\right)$ and $g_R\left(\frac{1}{2}\right)$.
-This is a system of equations \hl{that needs to be solved} for the parameters $b_R$ and $c_R$.
-As before, \hl{this is achieved by writing the system of equations as a matrix and computing the inverse matrix}.
-\Cref{equ:setup.arch.matrix} \hl{demonstrates this}.
+This is a system of equations that needs to be solved for the parameters $b_R$ and $c_R$.
+As before, this is achieved by writing the system of equations as a matrix and computing the inverse matrix.
+\Cref{equ:setup.arch.matrix} demonstrates this.
 
 \begin{align}
 	\begin{pmatrix}
@@ -46,7 +44,7 @@ As before, \hl{this is achieved by writing the system of equations as a matrix a
 	\label{equ:setup.arch.matrix}
 \end{align}
 
-Hence, the equations for $b_R$ and $c_R$ in dependence of \hl{the compound parameters} $g_R\left(\frac{1}{4}\right)$ and $g_R\left(\frac{1}{4}\right)$ are \Cref{equ:setup.arch.bR,equ:setup.arch.cR}.
+Hence, the equations for $b_R$ and $c_R$ in dependence of the \hl{composite} parameters $g_R\left(\frac{1}{4}\right)$ and $g_R\left(\frac{1}{4}\right)$ are \Cref{equ:setup.arch.bR,equ:setup.arch.cR}.
 
 \begin{align}
 	b_R & = -4 \cdot g_R\left(\frac{1}{4}\right) + 4 \cdot g_R\left(\frac{1}{2}\right) \label{equ:setup.arch.bR} \\
@@ -55,11 +53,9 @@ Hence, the equations for $b_R$ and $c_R$ in dependence of \hl{the compound param
 
 
 
-\hl{
-	As mentioned before, the parameter $\alpha$ is negated to mirror the \gls{pi} structure.
-	So $\alpha = -g_R\left(\frac{1}{4}\right)$ in the archetypal model.
-}
-All parameters are listed in \Cref{table:setup.arch.parameters} \hl{a} for better overview.
+As mentioned before, the parameter $\alpha$ is \hl{given a negative sign} to mirror the \gls{pi} structure.
+So $\alpha = -g_R\left(\frac{1}{4}\right)$ in the archetypal model.
+All parameters are listed in \Cref{table:setup.arch.parameters} a for better overview.
 
 \begin{table}
 	\centering
@@ -75,7 +71,7 @@ All parameters are listed in \Cref{table:setup.arch.parameters} \hl{a} for bette
 		$g_R\left(\frac{1}{2}\right)$ & $\frac{1}{2} + \frac{1}{40}$                                                \\ \hline
 	\end{tabular}
 	\caption[Overview of parameters of the archetypal model]{
-		Overview of the parameter values of all parameters of the \hl{archetypal} model with the \hl{compound parameters} $g_R\left(\frac{1}{4}\right)$ and $g_R\left(\frac{1}{2}\right)$.
+		Overview of the parameter values of all parameters of the archetypal model with the \hl{composite} parameters $g_R\left(\frac{1}{4}\right)$ and $g_R\left(\frac{1}{2}\right)$.
 		In the top part, there are all parameters of the function $g_L$, and in the bottom part are the parameters of the function $g_R$.
 	}
 	\label{table:setup.arch.parameters}
@@ -85,16 +81,16 @@ All parameters are listed in \Cref{table:setup.arch.parameters} \hl{a} for bette
 \label{sec:setup.arch.parameterfx}
 
 The effects of the defined parameters on the model function are straightforward and can be read directly from the previous section.
-In summary, the parameter $\alpha$ changes the values of the model function \hl{on the left sides} of the branches $f_\B$ and $f_\D$.
-Where a lower value of $\alpha$ means a higher value of the model function \hl{in those regions}, because the parameter is \hl{negated}.
+In summary, the parameter $\alpha$ changes the values of the model function on the left sides of the branches $f_\B$ and $f_\D$.
+Where a lower value of $\alpha$ means a higher value of the model function in those regions, because the parameter \hl{has negative sign}.
 In the previously defined notation, this is written as $\AL_{\B}^-$.
 This notation is defined in \Cref{sec:setup.char.paramfx}.
-The parameter $\beta$ changes the values of \hl{the model function on} the whole branches $f_\A$ and $f_\C$.
+The parameter $\beta$ changes the values of the model function on the whole branches $f_\A$ and $f_\C$.
 A higher $\beta$ means higher values, and it is written as $\AW_{\A}^+$.
 
 \Cref{fig:setup.arch.paramfx} illustrates these parameter effects.
 Both figures show the model function for three parameter values, where either $\alpha$ or $\beta$ is fixed, and the other parameter is varied.
-\hl{The model functions are labeled according to the value of the variable parameter, $f^L$ for the lowest value, $f^M$ for the middle value, and $f^H$ for the highest value}.
+The model functions are labeled according to the value of the variable parameter, $f^L$ for the lowest value, $f^M$ for the middle value, and $f^H$ for the highest value.
 \Cref{fig:setup.arch.paramfx.alpha} illustrates the effect of $\alpha$.
 One can see, how the values of the model function at the left borders of branches $f_\B$ and $f_\D$ are smaller for higher values of $\alpha$.
 \Cref{fig:setup.arch.paramfx.beta} illustrates the effect of $\beta$.
@@ -113,16 +109,16 @@ Here one can see, how the values of the model function for the whole branches $f
 	\caption[The effects of single parameters on the piecewise hybrid quadratic model function]{
 		The effects of varying the parameters $\alpha$ and $\beta$ alone on the piecewise hybrid quadratic model function.
 		(a) shows the effects of $\alpha$ on the model function with fixed $\beta = 0.17$.
-		\hl{The function $f^{L\alpha}$ is for $\alpha = -0.4$, $f^{M_\alpha}$ is for $\alpha = -0.35$, and $f^{H_\alpha}$ is for $\alpha = -0.3$}.
+		The function $f^{L\alpha}$ is for $\alpha = -0.4$, $f^{M_\alpha}$ is for $\alpha = -0.35$, and $f^{H_\alpha}$ is for $\alpha = -0.3$.
 		(b) shows the effects of $\beta$ on the model function with fixed $\alpha = -0.35$.
-		\hl{The function $f^{L_\beta}$ is for $\beta = 0.16$, $f^{M_\beta}$ is for $\beta = 0.17$, and $f^{H_\beta}$ is for $\beta = 0.18$}.
+		The function $f^{L_\beta}$ is for $\beta = 0.16$, $f^{M_\beta}$ is for $\beta = 0.17$, and $f^{H_\beta}$ is for $\beta = 0.18$.
 	}
 	\label{fig:setup.arch.paramfx}
 \end{figure}
 
 \Cref{table:setup.arch.paramfx} lists the effects of parameters $\alpha$ and $\beta$ in a table, like also done for the original model in \Cref{sec:setup.char.paramfx}.
 Additionally, the parameter effects of the parameters in the original model are listed for comparison.
-This gives a nice overview of which characteristics of the original model function are necessary for the observed \hl{bifurcation structure}.
+This gives a nice overview of which characteristics of the original model function are necessary for the observed bifurcation structure.
 Especially it shows, which parameter effects are not necessary.
 For example, the effect $\AMi_{\B}^{L-}$ cannot even be fabricated in this model since branches $\Branch_\B$ and $\Branch_\D$ are linear and do not have a local minimum.
 Also, the effect $\AB_{\B\C}^L$, which is the movement of the borders between branches $\Branch_\B$ and $\Branch_\C$ (and $\Branch_\D$ and $\Branch_\A$ respectively), is not necessary.
