@@ -7,7 +7,7 @@ Scanning this parameter plane for the period of stable cycles results in \Cref{f
 
 \begin{figure}
 	\centering
-	\includegraphics[width=0.6\textwidth]{99_Yunus/2D_Period_Zoomed/result.png}
+	\includegraphics[width=0.6\textwidth]{../Figures/2/2.3/result.png}
 	\caption[2D scan of the periods in the original model]{
 		2D scan of the periods in the original model.
 		The parameters $\beta = 1, f = 150, L = 4.2 \cdot 10^{-3}, R = 2, V_m = 5,$ and $\mu = 0.5$ are fixed.
@@ -70,36 +70,33 @@ Both cycles are asymmetric.
 And they are similar to each other in the way that $\Cycle{\A^3\B^3\C^2\D^4}$ behaves on the branches $\A$ and $\B$ like $\Cycle{\A^2\B^2\C^3\D^3}$ on the branches $\C$ and $\D$ and vice versa.
 One can think of the cycles being equivalent by shifting them by $\pi$ in either direction.
 Due to the symmetry of the model, an asymmetric stable cycle necessarily must exist alongside another asymmetric stable cycle that is itself, but shifted by $\pi$.
-These cycles also behave similarly to both the cycles at points $A$ and $B$.
-The cycle $\Cycle{\A^3\B^3\C^2\D^4}$ behaves like the cycle $\Cycle{\A^3\B^3\C^3\D^3}$ at point $A$ on its left half, while it behaves like the cycle $\Cycle{\A^2\B^4\C^2\D^4}$ on its right half.
+These cycles also behave similarly to both the cycles at points $A$ and $C$.
+The cycle $\Cycle{\A^3\B^3\C^2\D^4}$ behaves like the cycle $\Cycle{\A^3\B^3\C^3\D^3}$ at point $A$ on its left half, while it behaves like the cycle $\Cycle{\A^2\B^4\C^2\D^4}$ at point $C$ on its right half.
 The same is true for the cycle $\Cycle{\A^2\B^4\C^3\D^3}$ but reversed since it is the other cycle shifted by $\pi$.
 \hl{T}he previously described parameter regions with only one symmetrical stable cycle \hl{are called} ``type A'' parameter regions \hl{in this thesis}.
 \hl{And t}he just described parameter regions with 2 asymmetrical coexisting cycles \hl{are} called ``type B'' parameter regions \hl{in this thesis}.
 
 \begin{figure}
 	\centering
-	\begin{subfigure}{0.3\textwidth}
-		\centering
-		\includegraphics[width=\textwidth]{99_Yunus/Period12/Cobweb_A_12/result.png}
-		\caption{At point $A$}
+	\subfloat[$A$]{
+		\includegraphics[width=.3 \textwidth]{../Figures/2/2.4a/result.png}
 		\label{fig:state.og.dynamics.cobweb.A}
-	\end{subfigure}
-	\begin{subfigure}{0.3\textwidth}
-		\centering
-		\includegraphics[width=\textwidth]{99_Yunus/Period12/Cobweb_B_12/Manual/result.png}
-		\caption{At point $B$}
+	}
+	\subfloat[$B$]{
+		\includegraphics[width=.3 \textwidth]{../Figures/2/2.4b/result.png}
 		\label{fig:state.og.dynamics.cobweb.B}
-	\end{subfigure}
-	\begin{subfigure}{0.3\textwidth}
-		\centering
-		\includegraphics[width=\textwidth]{99_Yunus/Period12/Cobweb_C_12/result.png}
-		\caption{At point $C$}
+	}
+	\subfloat[$C$]{
+		\includegraphics[width=.3 \textwidth]{../Figures/2/2.4b/result.png}
 		\label{fig:state.og.dynamics.cobweb.C}
-	\end{subfigure}
+	}
 	\caption[Cobweb diagrams of the original model]{
 		Cobweb diagrams at three values of the parameters $E_0$ and $\chi_0$ in the original model with fixed parameters $\beta = 1, f = 150, L = 4.2 \cdot 10^{-3}, R = 2, V_m = 5,$ and $\mu = 0.5$.
 		The parameter values of $E_0$ and $\chi_0$ are marked in \Cref{fig:state.og.dynamics.period}.
-		(a) shows the cycle $\Cycle{\A^3\B^3\C^3\D^3}$ at point $A$, (b) shows the two coexisting cycles $\Cycle{\A^3\B^3\C^2\D^4}$ (green) and $\Cycle{\A^2\B^4\C^3\D^3}$ (red) at point $B$, and (c) shows the cycle $\Cycle{\A^2\B^4\C^2\D^4}$ at point $C$.
+		(a) shows the cycle $\Cycle{\A^3\B^3\C^3\D^3}$ at point $A$,
+		(b) shows the two coexisting cycles $\Cycle{\A^3\B^3\C^2\D^4}$ (green) and $\Cycle{\A^2\B^4\C^3\D^3}$ (red) at point $B$,
+		and (c) shows the cycle $\Cycle{\A^2\B^4\C^2\D^4}$ at point $C$.
+		\todo{Adjust caption: precise parameter values}
 	}
 	\label{fig:state.og.dynamics.cobwebs}
 \end{figure}
