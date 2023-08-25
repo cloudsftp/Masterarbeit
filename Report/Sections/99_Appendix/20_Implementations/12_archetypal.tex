@@ -1,0 +1,24 @@
+\subsection{Archetypal Model}
+\label{app:impl.model.arch}
+
+\Cref{lst:app.impl.arch.cpp} shows the code used for the simulations of the archetypal model.
+As one can see, this code is a lot shorter than the implementation of the original model in \Cref{lst:app.model.orig.cpp}.
+To simulate the halved archetypal model, one simply changes the lines 47 and 48 to use \texttt{n} instead of \texttt{2 * n}.
+
+\lstinputlisting[
+	language=C++,
+	label=lst:app.impl.arch.cpp,
+	caption=Implementation of the Archetypal Model,
+]
+{Sections/99_Appendix/20_Implementations/12_0_archetypal.cpp}
+
+\clearpage
+And for completeness, \Cref{lst:app.impl.arch.plt} shows the gnuplot implementation of the archetypal model.
+It was used for the cobweb diagrams.
+
+\lstinputlisting[
+	language=Gnuplot,
+	label=lst:app.impl.arch.plt,
+	caption=Gnuplot Implementation of the Archetypal Model,
+]
+{Sections/99_Appendix/20_Implementations/12_1_archetypal.plt}

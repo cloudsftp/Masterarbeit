@@ -15,7 +15,7 @@ The modified function \texttt{invertor} was copied and modified again to impleme
 
 \Cref{lst:app.impl.orig.invertor.cpp} shows the original implementation of the function \texttt{invertor} for comparison.
 The \texttt{for}-loop in lines 33-38 is very inefficient and also duplicated in lines 57-62 in \Cref{lst:app.impl.orig.invertor.cpp}.
-It was pulled out of the \texttt{if}-statement and inlined into lines 88 and 89 in \Cref{lst:add.impl.orig.cpp}.
+It was pulled out of the \texttt{if}-statement and inlined into lines 88 and 89 in \Cref{lst:app.impl.orig.cpp}.
 
 \lstinputlisting[
 	language=C++,
@@ -24,7 +24,7 @@ It was pulled out of the \texttt{if}-statement and inlined into lines 88 and 89 
 ]
 {Sections/99_Appendix/20_Implementations/11_1_original_invertor.cpp}
 
-And for completeness, \Cref{lst:app.impl.orig.py} shows a python implementation of the original model.
+And for completeness, \Cref{lst:app.impl.orig.py} shows the python implementation of the original model.
 It was used to generate data for the cobweb diagrams of the original model to draw the model function.
 
 \lstinputlisting[

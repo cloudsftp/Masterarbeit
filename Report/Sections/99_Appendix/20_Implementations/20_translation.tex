@@ -1,0 +1,39 @@
+\section{Translating Symbolic Sequences}
+
+This section covers the implementation of the naive algorithm for translating symbolic sequences from the halved archetypal model into the archetypal model.
+It is implemented in the programming language Rust.
+\Cref{lst:app.impl.translating.cycle} shows the implementation of \texttt{HalvedCycle} and \texttt{FullCycle}.
+Both structs use the type \texttt{Sequence} for representing the symbolic sequence in memory with different symbols each, \texttt{SYMBOLS\_FULL} and \texttt{SYMBOLS\_HALVED}.
+From line 52, the trait \texttt{RotationEquivalence} is defined and implemented for the type \texttt{Sequence}.
+It is used to implement equivalence for both structs \texttt{HalvedCycle} and \texttt{FullCycle}.
+As far as the program is concerned, two cycles that are rotation invariant are thus equal.
+The implementations for displaying the cycles to the user are omitted.
+
+\lstinputlisting[
+	language=Rust,
+	label=lst:app.impl.translating.cycles,
+	caption=Implementation of Cycles for the Naive Translating Algorithm,
+]
+{Sections/99_Appendix/20_Implementations/20_0_cycles.rs}
+
+\clearpage
+\Cref{lst:app.impl.translating} shows the implementation of the naive algorithm for translating symbolic sequences.
+It uses the definitions of \texttt{HalvedCycle} and \texttt{FullCycle} from \Cref{lst:app.impl.translating}.
+The algorithm is implemented as the \texttt{TryFrom} trait.
+This implementation returns a \texttt{Vec} of \texttt{FullCycle}s, since the cycle in the halved archetypal model may manifest as multiple cycles in the archetypal model.
+It takes the symbolic sequence from the \texttt{HalvedCycle} and duplicates it such that the original symbolic sequence is now three times in the symbolic sequence in the variable \texttt{seq}.
+Then it translates the symbolic sequences starting at different 2-syllables.
+This translation step is wrapped in the function \texttt{translate\_to\_full\_from\_index}.
+That function is basically the implementation of the function $T$ defined in \Cref{sec:add.halved.tanslating}.
+Then the translated symbolic sequences are used to create \texttt{FullCycle}s.
+Finally, the implementation filters rotation equivalent \texttt{FullCycle}s.
+This is done with the \texttt{for}-loop that starts on line 20.
+The detection of rotation equivalent cycles is easy, since the program considers rotation equivalent \texttt{FullCycle}s as equal.
+
+
+\lstinputlisting[
+	language=Rust,
+	label=lst:app.impl.translating,
+	caption=Implementation of the Naive Translating Algorithm,
+]
+{Sections/99_Appendix/20_Implementations/20_1_translating.rs}
