@@ -5,19 +5,19 @@ Initially, the theory of non-linear dynamical systems was developed for smooth d
 Hence, several results can't be applied to \gls{pws} dynamical systems.
 But smooth systems are not fit to model several engineering applications, since such systems often undergo sudden changes.
 For example, a model of an electrical circuit can't be smooth as soon as the circuit has a single switching element, such as a transistor~\cite{ZhuMos03}.
-The model we will investigate in this thesis describes such an electrical circuit.
+The model \hl{that is investigated} in this thesis describes such an electrical circuit.
 
 In \gls{pws} dynamical systems, bifurcations are possible, that do not occur in smooth dynamical systems.
 Even more so in \gls{pws} discontinuous dynamical systems, which this thesis focuses on.
 While the theory for continuous-time 1D \gls{pws} discontinuous dynamical systems is quite complete, the theory for time-discrete 1D \gls{pws} discontinuous dynamical systems in is further behind~\cite{Simpson16}.
 Also while in smooth dynamical systems and \gls{pws} continuous dynamical systems bifurcations can be generalized and described using normal forms, this is not possible for \gls{pws} discontinuous dynamical systems.
-The reason for this is that many bifurcations, especially border collision bifurcations, are necessarily global in \gls{pws} discontinuous maps and normal forms only work for local bifurcations~\cite{avrutin2019continuous}.
+The reason for this is that many bifurcations, especially border collision bifurcations \hl{which are introduced shortly}, are necessarily global in \gls{pws} discontinuous maps and normal forms only work for local bifurcations~\cite{avrutin2019continuous}.
 The advantage of normal forms is that these models neglect all non-essential parameter effects for the description of the bifurcation phenomenon at hand.
 Furthermore, one can prove that the neglected parameter effects are indeed non-essential for the bifurcation phenomenon.
 For the model considered in this thesis, such a proof can not be provided.
-Nevertheless, we will follow a similar approach as we will neglect parameter effects, we identify as non-essential.
-But rather than on rigorous proofs, we rely on numerical evidence.
-We will call the resulting model an archetypal model.
+Nevertheless, \hl{this thesis follows} a similar approach as \hl{it neglects} parameter effects, \hl{identified} as non-essential.
+But rather than on rigorous proofs, \hl{it relies} on numerical evidence.
+\hl{The resulting model is called an archetypal model}.
 
 The bifurcations covered in this thesis all belong to the previously mentioned class of border collision bifurcations.
 
@@ -31,8 +31,8 @@ Note that the points of the state space, where the model function is not smooth 
 	A border collision bifurcation is a border collision that also causes a qualitative change in the state space topology.
 \end{definition}
 
-Since model functions of \gls{pws} dynamical systems consist of multiple branches, we can describe cycles in such systems using symbolic sequences.
-This allows us to differentiate between different cycles even if they have the same period.
+Since model functions of \gls{pws} dynamical systems consist of multiple branches, cycles in such systems \hl{can be described} using symbolic sequences.
+This allows \hl{the differentiation} between different cycles even if they have the same period.
 
 \begin{definition}[Symbolic Sequence]
 	Let $f: X \to X$ be the model function of a \gls{pws} dynamical system that is divided into $n$ partitions $I_j \subset X$ where $0 \leq j < n$.
@@ -46,23 +46,22 @@ This allows us to differentiate between different cycles even if they have the s
 \end{definition}
 
 For example, a $k$-cycle in a \gls{pws} dynamical system divided into two partitions $I_0 = \left\{x \:\mid\: x < 0\right\}$ and $I_1 = \left\{x \:\mid\: x > 0\right\}$ with symbols $S_0 = \L$ and $S_1 = \R$ that has one point $x_0 \in I_0$ and $k-1$ points $x_j \in I_1, \:1 \leq j < k$ is associated with the symbolic sequence $\L\R^{k-1}$.
-\todo{Picture of such a cycle?}
 
-We will now introduce a class of bifurcation structures that this thesis covers towards the end in \Cref{chap:add}.
-Bifurcation structures belonging to this class called period-adding structures can be found in many \gls{pws} dynamical systems.
+\hl{Now} a class of bifurcation structures that this thesis covers towards the end in \Cref{chap:add} \hl{is introduced}.
+Bifurcation structures belonging to this class called \gls{pa} structures can be found in many \gls{pws} dynamical systems.
 
 Period-adding structures are named like this because in such structures, between a parameter region with a cycle of period $a$ and another parameter region with a cycle of period $b$, there is a parameter region with a cycle of period $a + b$.
 
 \begin{figure}
 	\centering
-	\includegraphics[width=.5 \textwidth]{80_Adding_LR/1D_Period/result.png}
-	\caption[1D scan of periods in a period-adding structure between $\L$ and $\R$]{
-		1D scan of the periods of cycles in a period-adding structure with the starting cycles $\L$ and $\R$.
+	\includegraphics[width=.5 \textwidth]{../Figures/2/2.1/result.png}
+	\caption[1D scan of periods in a \glsentrylong{pa} structure between $\L$ and $\R$]{
+		1D scan of the periods of cycles in a \hl{\gls{pa}} structure with the starting cycles $\L$ and $\R$.
 	}
 \end{figure}
 
 An even more compact way to differentiate between multiple cycles that have the same period are rotation number.
-Here, we will use them to describe the structure of period-adding structures.
+Here, \hl{they are used} to describe the structure of \gls{pa} structures.
 
 \begin{definition}[Rotation Numbers --- Keener]
 	\label{def:rotation.numbers}
@@ -73,7 +72,7 @@ Here, we will use them to describe the structure of period-adding structures.
 	\end{align}
 \end{definition}
 
-The rotation numbers of the cycles in a period-adding structure are organized in a Farey-tree.
+The rotation numbers of the cycles in a \hl{gls{pa}} structure are organized in a Farey-tree.
 A Farey-tree has two ``root nodes'' and the child node of two nodes is the Farey-sum of the parent nodes~\cite{granados14adding}.
 
 \begin{definition}[Farey-sum]
@@ -83,7 +82,7 @@ A Farey-tree has two ``root nodes'' and the child node of two nodes is the Farey
 	\end{align}
 \end{definition}
 
-\Cref{fig:state.discont.adding.farey.rot} shows such a Farey-tree of a period-adding structure between two fixed points, $\L$ and $\R$.
+\Cref{fig:state.discont.adding.farey.rot} shows such a Farey-tree of a \hl{\gls{pa}} structure between two fixed points, $\L$ and $\R$.
 If we replace the content of the nodes with the symbolic sequences of the cycles, we get the tree shown in \Cref{fig:state.discont.adding.farey.rot}.
 Instead of Farey-addition, here the child node of two parent nodes is the concatenation of the symbolic sequences in the parent nodes.
 Together with \Cref{theorem:state.rot.num.concat}, this explains why the  tree in \Cref{fig:state.discont.adding.farey.rot} is a Farey-tree~\cite{granados14adding}.
@@ -110,16 +109,16 @@ Together with \Cref{theorem:state.rot.num.concat}, this explains why the  tree i
 \begin{figure}
 	\centering
 	\subfloat[Rotation Numbers]{
-		\includegraphics[height=.4 \textheight]{Figures/FareyTrees/LR_RotNum/adding.png}
+		\includegraphics[height=.4 \textheight]{../Figures/2/2.2a/adding.png}
 		\label{fig:state.discont.adding.farey.rot}
 	}
-	\quad
+	\qquad
 	\subfloat[Symbolic Sequences]{
-		\includegraphics[height=.4 \textheight]{Figures/FareyTrees/LR/adding.png}
+		\includegraphics[height=.4 \textheight]{../Figures/2/2.2b/adding.png}
 		\label{fig:state.discont.adding.farey.sym}
 	}
-	\caption[Farey-trees of a period-adding structure between $\L$ and $\R$]{
-		Farey-trees of a period-adding structure with the starting cycles $\L$ and $\R$.
+	\caption[Farey-trees of a \glsentrylong{pa} structure between $\L$ and $\R$]{
+		Farey-trees of a \hl{\gls{pa}} structure with the starting cycles $\L$ and $\R$.
 		(a) Shows the rotation numbers while (b) shows the symbolic sequences of the cycles in this structure.
 	}
 	\label{fig:state.discont.adding.farey}

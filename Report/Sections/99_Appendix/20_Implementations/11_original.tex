@@ -1,0 +1,35 @@
+\subsection{Original Model}
+
+\Cref{lst:app.impl.orig.cpp} shows the code used for the simulations of the original model.
+The majority of the code is copied from \Citeauthor{akyuz2022} thesis~\cite{akyuz2022}.
+But the function \texttt{invertor} is simplified drastically.
+This also improved the performance a little.
+The modified function \texttt{invertor} was copied and modified again to implement the function \texttt{symbolic} for the symbolic analysis of the original model.
+
+\lstinputlisting[
+	language=C++,
+	label=lst:app.impl.orig.cpp,
+	caption=Implementation of the Original Model,
+]
+{Sections/99_Appendix/20_Implementations/11_0_original.cpp}
+
+\Cref{lst:app.impl.orig.invertor.cpp} shows the original implementation of the function \texttt{invertor} for comparison.
+The \texttt{for}-loop in lines 33-38 is very inefficient and also duplicated in lines 57-62 in \Cref{lst:app.impl.orig.invertor.cpp}.
+It was pulled out of the \texttt{if}-statement and inlined into lines 88 and 89 in \Cref{lst:app.impl.orig.cpp}.
+
+\lstinputlisting[
+	language=C++,
+	label=lst:app.impl.orig.invertor.cpp,
+	caption=Original Implementation of the Function \textbf{invertor},
+]
+{Sections/99_Appendix/20_Implementations/11_1_original_invertor.cpp}
+
+And for completeness, \Cref{lst:app.impl.orig.py} shows the python implementation of the original model.
+It was used to generate data for the cobweb diagrams of the original model to draw the model function.
+
+\lstinputlisting[
+	language=Python,
+	label=lst:app.impl.orig.py,
+	caption=Python Implementation of the Original Model,
+]
+{Sections/99_Appendix/20_Implementations/11_2_original.py}

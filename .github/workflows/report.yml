@@ -14,6 +14,7 @@ env:
   TMP_SIGNED_DOC: Report/Masterarbeit_Weik_signed.pdf
   CODE_ARCHIVE: Masterarbeit_Weik_SourceCode.tar.gz
   CODE_ARCHIVE_PICS: Masterarbeit_Weik_SourceCode_WithPictures.tar.gz
+  SUBMISSION: Masterarbeit_Weik_Submission.tar.gz
 
 jobs:
   build:
@@ -22,6 +23,9 @@ jobs:
     steps:
       - name: Check out source code
         uses: actions/checkout@v3
+
+      - name: Package source code
+        run: ./archive_source_code.sh
 
       - name: Install qpdf
         run: |
@@ -38,9 +42,9 @@ jobs:
         run: |
           qpdf --empty --pages "${DOC_TARGET}" 1-r2 "${DECLARATION}" -- "${TMP_SIGNED_DOC}"
           mv "${TMP_SIGNED_DOC}" "${DOC_TARGET}"
-
-      - name: Package source code
-        run: ./archive_source_code.sh
+          
+      - name: Package submission
+        run: ./package_everything.sh
 
       - name: Release
         if: startsWith(github.ref, 'refs/tags/')
