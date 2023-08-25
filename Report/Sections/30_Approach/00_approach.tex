@@ -2,25 +2,29 @@
 \label{chap:approach}
 
 The model definition of the original model is very complicated.
-We have algorithms to simulate it, so it can be worked with.
-But since the model involves a lot of implicit equations, it is almost impossible to see, which effects the parameters have on the model function.
-And therefore, what characteristics of the model function lead to the observed bifurcation structure.
-Meaning the chains of alternating ``type A'' and ``type B'' parameter regions with the same period, laying next to each other with increasing periods.
-We want a simplified model showing the same bifurcation structure, to explain them better.
+There are algorithms to simulate it, so it is not impossible to investigate and explain the \gls{pi} structure.
+But since the model involves a lot of implicit equations, it is hard to see which effects the parameters have on the model function.
+And therefore, what characteristics of the model function lead to the observed \gls{pi} structure.
+Meaning the chains of alternating ``type A'' and ``type B'' parameter regions associated with the same period next to each other with increasing periods.
+A simplified model showing the same \gls{pi} structure would help in explaining the \gls{pi} structure in the original model.
+It is also helpful for explaining similar \gls{pi} structures that might turn up in other dynamical systems.
 
-In non-linear dynamics, there is the concept of normal forms.
-They are the simplest model that exhibits some bifurcation.
-As we mentioned in \Cref{sec:state.pws}, it is not possible to find a normal form for this bifurcation structure since the model is discontinuous.
-Therefore, we will not construct a normal form but rather an archetypal model.
-%That is a simplified model, but not necessarily the simplest, showing the same bifurcation structure as the original model.
+As mentioned before, this is usually achieved using normal forms.
+These are models that neglect all non-essential parameters for the bifurcation structure and one can proof that the neglected parameters are indeed non-essential for the bifurcation structure.
+But for bifurcation structures in \psl{pws} dynamical systems with border collision bifurcations, this is not possible.
+Instead, an archetypal model is constructed.
+This model is also constructed by identifying and neglecting parameters and parameter effects that are non-essential for the bifurcation structure.
+But instead of providing a proof, only numerical evidence is provided that the neglected parameters are not needed for the bifurcation structure.
 
-We will construct this model by imitating the model function of the original model.
-For this, we first need to analyze the original function and note the characteristics, such as number and shape of branches.
-Arguably more important characteristics are the effects, the parameters have on the original function.
+This model is constructed by analyzing and imitating the original model function.
+The original model is analyzed for its characteristics.
+Both the shape of the model function and the effects of its parameters on that shape are important.
+Then different models are constructed that each share some characteristics with the original model starting with the most prominent characteristics.
+The constructed models are analyzed with the goal of finding behavior that is similar or hints at similar behavior as the original model.
+If a model exhibits promising behavior it is used as a basis for adding more characteristics identified in the original model.
+This is a process of trial and error but also analysis and educated guesses.
+It continues until an archetypal model for the \gls{pi} structure in the original model is found.
 
-Then we will construct many different models that exhibit some of the characteristics of the original model function and analyze their behavior.
-This is a process of trial and error, but also analysis.
-When the constructed models exhibit behavior that is similar or hints at similar behavior as the original model function, we will use this model as the basis for further modifications.
-We will start with the most obvious characteristics, such as the strongest effects of parameters.
-This way, we can figure out, which of the characteristics are essential for the observed bifurcation structure in the original model.
-And since we only imitate the characteristics that are important for the desired behavior, the resulting model will be simple.
+The archetypal model is then thoroughly investigated to make sure the \gls{pi} structure is the same as in the original model.
+Using the results of the investigation, the \gls{pi} structure is explained.
+And finally, it is investigated whether this archetypal model exhibits other bifurcation structures under parameter variation.
