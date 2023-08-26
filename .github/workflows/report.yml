@@ -14,7 +14,8 @@ env:
   TMP_SIGNED_DOC: Report/Masterarbeit_Weik_signed.pdf
   CODE_ARCHIVE: Masterarbeit_Weik_SourceCode.tar.gz
   CODE_ARCHIVE_PICS: Masterarbeit_Weik_SourceCode_WithPictures.tar.gz
-  SUBMISSION: Masterarbeit_Weik_Submission.tar.gz
+  ABSTRACT: abstract.txt
+  ZUSAMMENFASSUNG: zusammenfassung.txt
 
 jobs:
   build:
@@ -42,13 +43,10 @@ jobs:
         run: |
           qpdf --empty --pages "${DOC_TARGET}" 1-r2 "${DECLARATION}" -- "${TMP_SIGNED_DOC}"
           mv "${TMP_SIGNED_DOC}" "${DOC_TARGET}"
-          
-      - name: Package submission
-        run: ./package_everything.sh
 
       - name: Release
         if: startsWith(github.ref, 'refs/tags/')
         uses: ncipollo/release-action@v1
         with:
-          artifacts: "${{ env.DOC_TARGET }},${{ env.CODE_ARCHIVE }},${{ env.CODE_ARCHIVE_PICS }}"
+          artifacts: "${{ env.ABSTRACT }},${{ env.ZUSAMMENFASSUNG }},${{ env.DOC_TARGET }},${{ env.CODE_ARCHIVE }},${{ env.CODE_ARCHIVE_PICS }}"
           token: ${{ secrets.GITHUB_TOKEN }}
