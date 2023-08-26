@@ -5,10 +5,8 @@ In this thesis, only time-discrete dynamical systems, also called maps, are cons
 The time evolution of the state of such a system results from an iterative application of the model function governing the dynamics of the system, i.e. $x_{n+1} = f(x_n)$.
 Depending on the properties of the model function $f$, one can distinguish between smooth, \gls{pws} continuous, and \gls{pws} discontinuous dynamical systems.
 
-\hl{
-	This thesis primarily investigates invariant sets.
-	Next, two types of invariant sets are defined, fixed points and cycles.
-}
+This thesis primarily investigates invariant sets.
+Next, two types of invariant sets are defined, fixed points and cycles.
 
 \begin{definition}[Fixed Point]
 	Let $x_{n+1} = f(x_n)$ be a time-discrete non-linear dynamical system where the model function is $f: X \to X$.
@@ -18,7 +16,7 @@ Depending on the properties of the model function $f$, one can distinguish betwe
 \begin{definition}[Iterate Function]
 	Let $f: X \to X$ be the model function of a time-discrete non-linear dynamical system.
 	Then $f^k$ is the $k$-th iterate of this function, defined recursively by $f^k(x) = f\left(f^{k-1}(x)\right)$ and $f^1(x) = f(x)$.
-	This means, the function \hl{is applied} $k$ times.
+	This means, the function is applied $k$ times.
 \end{definition}
 
 \begin{definition}[Cycle]
@@ -47,9 +45,9 @@ That value being the product of the derivative of the function $f$ evaluated at 
 	\left. \frac{d}{dx}f^k(x) \:\right|_{x = x_i} & = \prod_{j=0}^{k-1} \left( \left. \frac{d}{dx} f(x) \:\right|_{x = x_j} \right)
 \end{align}
 
-\hl{This thesis only covers stable cycles}.
+This thesis only covers stable cycles.
 Stable cycles have the property that different points of the state space that are not necessarily part of the cycle will eventually end up in the cycle.
-\hl{The set of those points are called the basin of attraction of the cycle}.
+The set of those points are called the basin of attraction of the cycle.
 
 \begin{definition}[Basin of Attraction of a Cycle]
 	Let $f: X \to X$ be the model function of a non-linear dynamical system.
@@ -64,5 +62,5 @@ Stable cycles have the property that different points of the state space that ar
 	A bifurcation is a qualitative change of the state space topology of a model under an infinitesimal small parameter variation.
 \end{definition}
 Meaning for example that solutions to the model function or its iterate (fixed points and cycles) disappear or appear under a very small change to parameters.
-The only bifurcations that \hl{are} important in this thesis are introduced in the next section.
-That section \hl{covers} \gls{pws} dynamical systems.
+The only bifurcations that are important in this thesis are introduced in the next section.
+That section covers \gls{pws} dynamical systems.

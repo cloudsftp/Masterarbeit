@@ -2,7 +2,7 @@
 
 Next, we will take a look at the rotation-numbers in the Farey-trees of the \gls{pal} structures.
 Note that we don't have two branches in the archetypal model, instead we have four.
-This means, that the definition \Cref{def:rotation.numbers} does not work for our case.
+This means that the definition \Cref{def:rotation.numbers} does not work for our case.
 Instead, we define rotation-tuples.
 \Cref{fig:add.prop.rot.num.tree} shows as Farey-tree with rotation-tuples.
 
@@ -280,6 +280,7 @@ For the proof, we rely heavily on the following fact.
 
 	\begin{itemize}
 		\item[n = 0] The left starting node is element-wise smaller than the right starting node per construction.
+			\checkmark
 		\item[n + 1] We assume that the above statement is true for the current list of $2^n$.
 			And we proof that for each neighboring nodes $\{\dots ,\rho(\phi), \rho(\psi), ...\}$ the values of their child node $\rho(\pi)$ is in-between the values of its two parent nodes.
 			\begin{align*}
@@ -349,14 +350,14 @@ For the proof, we rely heavily on the following fact.
 			\end{align*}
 			Since $\rho(\phi) < \rho(\psi) \implies \rho(\phi) < \rho(\phi) \oplus \rho(\psi) < \rho(\psi)$, it also implies that $\rho(\phi) < \rho(\pi) = \rho(\phi) \oplus \rho(\psi) < \rho(\psi)$.
 
-			The proof works similar for the third case, where the node associated with $\rho(\phi) = \rho(\phi^a) \otimes \rho(\phi^b)$ is also associated with two coexisting cycles and the node associated with $\rho(\psi)$ is associated with a single cycle.
+			The proof works similar for the third case, where the node associated with $\rho(\phi) = \rho(\phi^a) \oplus \rho(\phi^b)$ is also associated with two coexisting cycles and the node associated with $\rho(\psi)$ is associated with a single cycle.
 			\begin{align*}
 				\rho(\pi) & = \rho(\phi^a) \oplus \rho(\phi^b) \oplus \rho(\psi) \\
 				          & = \rho(\phi) \oplus \rho(\psi)
 			\end{align*}
 			Since $\rho(\phi) < \rho(\psi) \implies \rho(\phi) < \rho(\phi) \oplus \rho(\psi) < \rho(\psi)$, it also implies that $ \rho(\phi) < \rho(\pi) = \rho(\phi) \oplus \rho(\psi) < \rho(\psi)$.
 
-			The last case does not occur in the \gls{pal} structures, we are investigating but we will include a proof for this case also.
+			The last case does not occur in the \gls{pal} structures that we are investigating, but we will include a proof for this case also.
 			Both the left node that is associated with $\rho(\phi) = \rho(\phi^a) \oplus \rho(\phi^b)$ and the right node that is associated with $\rho(\psi) = \rho(\psi^a) \oplus \rho(\psi^b)$ are associated with two coexisting cycles.
 			Again we can use element-wise Farey-addition.
 			\begin{align*}
@@ -371,4 +372,6 @@ For the proof, we rely heavily on the following fact.
 	\hfill $\blacksquare$
 \end{proof}
 
-This concludes our description of the \gls{pal} structures in the increasing archetypal model.
+\hl{
+  This concludes the derived properties and rules for the \gls{pal} structures in the archetypal model.
+}

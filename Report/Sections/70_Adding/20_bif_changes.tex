@@ -1,39 +1,33 @@
 \section{Changes to the Bifurcation Structure}
 \label{sec:add.change}
 
-\hl{This section examines} how changing the parameters as described in \Cref{sec:add.parameters} changes the bifurcation structure of the archetypal model.
+This section examines how changing the parameters as described in \Cref{sec:add.parameters} changes the bifurcation structure of the archetypal model.
 
 \subsection{Numerical Overview of the Changes to the Bifurcation Structure}
 \label{sec:add.change.num}
 
 \Cref{fig:add.change.regions} shows diagrams depicting the borders of parameter regions with different symbolic sequences.
-\hl{
-	These diagrams are used as the basis for the exploration of changes to the bifurcation structure.
-}
+These diagrams are used as the basis for the exploration of changes to the bifurcation structure.
 The lower left corner of the diagrams is always in the period region with the stable cycle $\Cycle{\A^7\B^3\C^7\D^3}$.
 The cycles in the upper left ($\Cycle{\A^6\B^3\C^6\D^3}$), upper right ($\Cycle{\A^6\B^4\C^6\D^4}$), lower right ($\Cycle{\A^7\B^4\C^7\D^4}$), and middle ($\Cycle{\A^7\B^3\C^6\D^4}$ and $\Cycle{\A^6\B^4\C^7\D^3}$) follow.
 
-\hl{
-	Here, a short notation for the symbolic sequences is introduced.
-}
+Here, a short notation for the symbolic sequences is introduced.
 ``Type A'' parameter regions where the cycle is associated with the symbolic sequence $\A^a\B^b\C^a\D^b$ are written as $P^{2 \cdot \left(a + b\right)}_b$
 ``Type B'' parameter regions where the coexisting twin cycles are associated with the symbolic sequences $\A^a\B^b\C^c\D^d$ and $\A^c\B^d\C^a\D^b$ where $c = a - 1$ and $d = b + 1$ are written as $P^{a + b + c + d}_b$.
 So for example, the ``type A'' parameter region in the lower left corner of every diagram in \Cref{fig:add.change.regions} is written as $P^{20}_3$.
 
 There is also a new type of parameter region that we call hybrid parameter regions with hybrid cycles.
 Hybrid cycles are cycles that are asymmetrical like ``type B'' cycles and therefore also exist in pairs.
-The difference to ``type B'' cycles is that for two hybrid twin cycles with the symbolic sequences $\A^a\B^b\C^c\D^d$ and $\A^c\B^d\C^a\D^b$ either $c \neq a - 1$ or $d \neq b + 1$ \hl{but $c \leq a$ and $d \geq b$}.
-\hl{
-	For example, the two hybrid twin cycles $\Cycle{\A^7\B^4\C^6\D^4}$ and $\Cycle{\A^6\B^4\C^7\D^4}$.
-	Their corresponding parameter region is written  in the short notation.
-	The short notation for their corresponding parameter regions is $P^{22}_4$ and $P^{20}_4$, respectively.
-	The parameter region with such hybrid cycles is written as $\left[P^{22}_4 \mid P^{20}_4\right]$.
-}
+The difference to ``type B'' cycles is that for two hybrid twin cycles with the symbolic sequences $\A^a\B^b\C^c\D^d$ and $\A^c\B^d\C^a\D^b$ either $c \neq a - 1$ or $d \neq b + 1$ but $c \leq a$ and $d \geq b$.
+For example, the two hybrid twin cycles $\Cycle{\A^7\B^4\C^6\D^4}$ and $\Cycle{\A^6\B^4\C^7\D^4}$.
+Their corresponding parameter region is written  in the short notation.
+The short notation for their corresponding parameter regions is $P^{22}_4$ and $P^{20}_4$, respectively.
+The parameter region with such hybrid cycles is written as $\left[P^{22}_4 \mid P^{20}_4\right]$.
 This notation is chosen because of an operation that is introduced in the later \Cref{sec:add.add.halved}.
-\Cref{sec:add.change.appa} \hl{covers how these parameter regions are created}.
-\hl{These parameter regions are connected to the \gls{pal} structures next to them, as we will see later in} \Cref{sec:add.add.halved}.
+\Cref{sec:add.change.appa} covers how these parameter regions are created.
+These parameter regions are connected to the \gls{pal} structures next to them, as we will see later in \Cref{sec:add.add.halved}.
 
-The four different diagrams in \Cref{fig:add.change.regions} show the evolution at different points during the transition from \hl{the archetypal model to the piecewise-increasing archetypal model}
+The four different diagrams in \Cref{fig:add.change.regions} show the evolution at different points during the transition from the archetypal model to the piecewise-increasing archetypal model.
 For this, the parameter values for $a_L$ and $b_L$ are chosen along a line given by \Cref{equ:add.change.paramline}.
 \begin{align}
 	a_L = \frac{5}{2} - 3 \cdot b_L
@@ -70,10 +64,8 @@ For this, the parameter values for $a_L$ and $b_L$ are chosen along a line given
 \end{figure}
 
 
-\hl{
-	The disappearance of the ``type B'' parameter regions is examined first in the next section.
-	The section after that examines the appearance of the \gls{pal} structures between the chains of parameter regions associated with the same period.
-}
+The disappearance of the ``type B'' parameter regions is examined first in the next section.
+The section after that examines the appearance of the \gls{pal} structures between the chains of parameter regions associated with the same period.
 
 \input{Sections/70_Adding/21_disapp_b.tex}
 \input{Sections/70_Adding/22_app_add.tex}

@@ -1,23 +1,26 @@
 \subsection{Translating Symbolic Sequences}
 \label{sec:add.halved.tanslating}
 
-First, we will define naive algorithms for translating symbolic sequences between the archetypal and the halved archetypal model based on the idea of the lifted model.
-Then, we will refine the algorithms with properties of the symbolic sequences, we can proof using the naive algorithms.
+First, we define naive algorithms for translating symbolic sequences between the archetypal and the halved archetypal model based on the idea of the lifted model.
+\hl{
+	Then, we derive regularities for translated symbolic sequences in the archetypal model.
+}
+Finally, we refine the algorithms \hl{using the regularities of translated symbolic sequences}.
 
-In the following, cycles of the archetypal model will get the symbols $\phi, \psi,$ and $\pi$.
-Cycles of the halved archetypal model will get the symbols $\sigma, \rho,$ and $\tau$.
+In the following, cycles of the archetypal model get the symbols $\phi, \psi,$ and $\pi$.
+Cycles of the halved archetypal model get the symbols $\sigma, \rho,$ and $\tau$.
 If there are two coexisting twin cycles, they are written as $\phi^a$ and $\phi^b$.
 Also, the symbols for the symbolic sequences in the halved archetypal model are $\L$ and $\R$ instead of $\A, \B, \C,$ and $\D$ to avoid confusion.
 
-\subsubsection{Naive Algorithm}
+\subsubsection{Naive Algorithms}
 
-We will start formulating a naive algorithm for translating symbolic sequences from the archetypal model to the halved archetypal model.
+We start \hl{by} formulating a naive algorithm for translating symbolic sequences from the archetypal model to the halved archetypal model.
 This is the easier direction.
 From this algorithm we don't learn much about the nature of the \gls{pal} structures in the archetypal model.
 The algorithm for translating symbolic sequences in the other direction, from the halved archetypal model to the archetypal model, will be more important for that.
 
 To translate a symbolic sequence of the archetypal model we start by writing it down.
-For example $\phi = \A^4\B^3\C^4\D^3$.
+For example, \hl{let} $\phi = \A^4\B^3\C^4\D^3$.
 Then we replace the symbols $\A$ and $\C$ by $\L$ and the symbols $\B$ and $\D$ by $\R$.
 Now we have $\L^4\R^3\L^4\R^3$.
 Finally, we have to check for redundancy in the resulting cycle.
@@ -53,7 +56,7 @@ Notice that our example symbolic sequence has 3 rotations.
 This means we have to write down the original sequence twice $\sigma^2 = \L^4\R^3\L4\R^3\L^3\R^3\L^4\R^3\L4\R^3\L^3\R^3$.
 
 Then we pair up the rotations, this corresponds to drawing blue boxes around the red boxes in the infinite model.
-In our example, we get the pairs $(\L^4\R^3\L^4\R^3)(\L^3\R^3\L^4\R^3)(\L^4\R^3\L^3\R^3)$.
+In our example, we get the pairs $\left(\L^4\R^3\L^4\R^3\right)\left(\L^3\R^3\L^4\R^3\right)\left(\L^4\R^3\L^3\R^3\right)$.
 The pairs then have to be translated using the function $t$ defined below in \Cref{def:t}.
 The resulting symbolic sequence is $T(h) = \A^4\B^3\C^4\D^3\A^3\B^3\C^4\D^3\A^4\B^3\C^3\D^3$.
 The formal definition of $T$ is below in \Cref{def:T}.
@@ -75,7 +78,7 @@ These terms are used interchangeably in the rest of this chapter.
 
 \begin{definition}[Translating 4-syllables from Halved Archetypal to Archetypal]
 	\label{def:t}
-	The function $t$ maps two rotations, or a 4-syllable, that starts with the symbol $\L$ of a symbolic sequence in the halved archetypal model to a single rotation in the archetypal model.
+	The function $t$ maps two rotations, or a 4-syllable that starts with the symbol $\L$ of a symbolic sequence in the halved archetypal model to a single rotation in the archetypal model.
 	It is defined in the following way.
 	\begin{align}
 		t: & \L^a\R^b\L^c\R^d \mapsto \A^a\B^b\C^c\D^d
@@ -102,7 +105,7 @@ These terms are used interchangeably in the rest of this chapter.
 	\begin{align}
 		s_2: & \sigma_1\sigma_2 \dots \sigma_n \mapsto \sigma_2 \dots \sigma_n\sigma_1
 	\end{align}
-	In the archetypal model, there is a similar function, $s_4$, that shifts a symbolic sequence $\phi$ in the archetypal model by a single rotation.
+	In the archetypal model, there is a similar function, $s_4$ that shifts a symbolic sequence $\phi$ in the archetypal model by a single rotation.
 	Let $\phi = \phi_1\phi_2 \dots \phi_n$.
 	Then $s_4$ is defined in the following way.
 	\begin{align}
@@ -185,7 +188,7 @@ With this naive algorithm, we can start to investigate rules for the \gls{pal} s
 
 Note that a result of $F(\sigma) = \{T(\sigma), T(s_2(\sigma))\}$ means that the cycle $\sigma$ in the halved archetypal model manifests as two coexisting cycles in the archetypal model.
 
-\subsubsection{Revised Algorithm}
+\subsubsection{Revised Algorithms}
 
 With all these properties and functions we now can formulate a more compact algorithm, \Cref{alg:halved.to.full}, for translating symbolic sequences from the halved archetypal model into the archetypal model.
 This revised algorithm will be used in the following to construct the rules for the \gls{pal} structures in the archetypal model.

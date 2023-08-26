@@ -1,7 +1,9 @@
 {
     "type": "period",
     "max_period": 10,
-    "parameters": null,
+    "parameters": {
+        "a": 0.5
+    },
     "scan": [
         {
             "type": "linear",
@@ -9,8 +11,8 @@
             "parameters": [
                 {
                     "name": "b",
-                    "start": 0.7,
-                    "stop": 1.7
+                    "start": 0.1,
+                    "stop": 0.3
                 }
             ]
         }
