@@ -1,10 +1,8 @@
 \section{Investigated Dynamical System}
 \label{sec:state.og}
 
-\hl{
-	As mentioned before, this thesis considers a complex dynamical system.
-	It is referred to as the original model from now on.
-}
+As mentioned before, this thesis considers a complex dynamical system.
+It is referred to as the original model from now on.
 This section gives a definition of the model and some properties.
 Furthermore, it showcases an unusual bifurcation structure this model exhibits.
 This bifurcation structure is the core motivation for this thesis.
@@ -22,14 +20,14 @@ This switching causes discontinuities in the model function.
 From this time-continuous model, one can derive a time-discrete model.
 This model maps a phase at which the converter switches to the phase at which the converter will switch the next time.
 It is also \gls{pws} and discontinuous like the time-continuous model from which it is derived.
-The next subsection \hl{gives} an in-depth definition of this map.
+The next subsection gives an in-depth definition of this map.
 
 \subsection{Model Definition}
 \label{sec:state.og.def}
 
 The model was defined by Zhusubaliyev and was preliminarily investigated by \Citeauthor{akyuz2022} in his thesis ``\Citetitle{akyuz2022}''~\cite{akyuz2022}.
 As mentioned before, we skip the time-continuous model and only focus on the time-discrete one.
-It is defined as the map $\theta \mapsto F(\theta) \mod 2 \pi$ where $F$ is defined by the following equations.
+It is defined as the map \hl{$\theta_{n-1} = F(\theta_n) \mod 2 \pi$} where $F$ is defined by the following equations.
 \begin{align}
 	F(\theta) = \begin{cases}
 		            F_1(\theta) & \text{if } q \cdot \cos(\theta) > 0 \\

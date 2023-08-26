@@ -1,27 +1,24 @@
 {
     "type": "period",
-    "parameters": {
-        "aL": 1.1,
-        "aR": 1.1
-    },
+    "parameters": null,
     "scan": [
         {
             "type": "linear",
-            "resolution": 500,
+            "resolution": 2000,
             "parameters": [
                 {
-                    "name": "aL",
-                    "start": 0.5,
-                    "stop": 2
+                    "name": "a",
+                    "start": 0,
+                    "stop": 1
                 }
             ]
         },
         {
             "type": "linear",
-            "resolution": 500,
+            "resolution": 2000,
             "parameters": [
                 {
-                    "name": "bR",
+                    "name": "b",
                     "start": 0,
                     "stop": 1
                 }
