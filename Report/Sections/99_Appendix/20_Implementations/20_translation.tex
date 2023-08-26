@@ -2,6 +2,7 @@
 
 This section covers the implementation of the naive algorithm for translating symbolic sequences from the halved archetypal model into the archetypal model.
 It is implemented in the programming language Rust.
+The program can be obtained via \texttt{cargo} at the crate~\cite{TranslatingSymbolicCrate}.
 \Cref{lst:app.impl.translating.cycles} shows the implementation of \texttt{HalvedCycle} and \texttt{FullCycle}.
 Both structs use the type \texttt{Sequence} for representing the symbolic sequence in memory with different symbols each, \texttt{SYMBOLS\_FULL} and \texttt{SYMBOLS\_HALVED}.
 From line 52, the trait \texttt{RotationEquivalence} is defined and implemented for the type \texttt{Sequence}.
