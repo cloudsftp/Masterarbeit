@@ -1,6 +1,7 @@
 #!/bin/bash
 
 OBJECTS=(\
+    README.md \
     symbolic-regions \
     translating-symbolic \
     abstract.txt \
