@@ -6,5 +6,5 @@ This thesis identifies the characteristics of the model that lead to this unique
 It follows a description of the dynamics of the archetypal model and an explanation of the unique bifurcation structure using the description of the dynamics.
 Also, this thesis demonstrates that the proposed archetypal model can exhibit structures related to period-adding.
 These structures behave unexpectedly.
-And this behavior is explained by taking advantage of the symmetry in the archetypal model.
-In the same way, rules for these period-adding structures are constructed.
+And this behavior is explained by taking advantage of the symmetry in the archetypal and the original model.
+In the same way, rules for these period-adding structures are derived.
