@@ -1,6 +1,6 @@
 \subsubsection{Rotation-numbers in the \Glsentrylong{pal} Structures}
 
-Next, we will take a look at the rotation-numbers in the Farey-trees of the \gls{pal} structures.
+Next, we \hl{derive rules for} the rotation-numbers in the Farey-trees of the \gls{pal} structures.
 Note that we don't have two branches in the archetypal model, instead we have four.
 This means that the definition \Cref{def:rotation.numbers} does not work for our case.
 Instead, we define rotation-tuples.
@@ -20,19 +20,19 @@ Instead, we define rotation-tuples.
 \begin{figure}
 	\centering
 	\includegraphics[width=.8 \textwidth]{FareyTrees/Minrep_Adding1_Full_RotNum/adding.png}
-	\caption[Farey-tree with rotation tuples of a horizontal \glsentrylong{pal} structure]{
-		Farey-tree with rotation tuples of a horizontal \glsentrylong{pal} structure in the archetypal model.
+	\caption[Farey-tree with rotation tuples of the horizontal \glsentrylong{pal} structure in the archetypal model described in \Cref{sec:add.add.like}]{
+		Farey-tree with rotation tuples of \hl{the} horizontal \glsentrylong{pal} structure in the archetypal model \hl{described in} \Cref{sec:add.add.like}.
 	}
 	\label{fig:add.prop.rot.num.tree}
 \end{figure}
 
 \begin{theorem}[Rotation Tuples in Child Nodes I]
 	The child node of two nodes that are both associated with a single cycle each with the symbolic sequences $\phi$ and $\psi$ is associated with the following period.
-	We will call the symbolic sequences of the two cycles associated with the child node $\pi^a$ and $\pi^b$ in the following.
+	\hl{In the following,} we call the symbolic sequences of the two twin cycles associated with the child node $\pi^a$ and $\pi^b$.
 	\begin{align}
-		|\pi^a| = |\pi^b| & = \dfrac{|\sigma| + |\varrho|}{2} = |\pi|
+		|\pi^a| = |\pi^b| & = \dfrac{|\phi| + |\psi|}{2} = |\pi|
 	\end{align}
-	And it associated rotation tuples are the following.
+	And its associated rotation tuples are:
 	\begin{align}
 		\rho(\pi^a) = (\rho_\A(\pi^a), \rho_\B(\pi^a), \rho_\C(\pi^a), \rho_\D(\pi^a))
 	\end{align}
@@ -65,7 +65,6 @@ Instead, we define rotation-tuples.
 	The child of both nodes in the halved archetypal model is associated with the symbolic sequence $\sigma\varrho = \sigma_1 \dots \sigma_i \varrho_1 \dots \varrho_j$.
 	This manifests as two coexisting cycles in the archetypal model with the symbolic sequences $\pi^a$ and $\pi^b$ following the rules in \Cref{theorem:child.symbolic.1}.
 
-
 	We start by proving the period of the cycles with symbolic sequences $\pi^a$ and $\pi^b$.
 	\begin{align*}
 		|\pi^a| & = |T(\sigma\varrho)|                                                                \\
@@ -75,7 +74,7 @@ Instead, we define rotation-tuples.
 		        & = |\sigma\varrho| = \frac{|\phi|}{2} + \frac{|\psi|}{2} = \frac{|\phi| + |\psi|}{2}
 	\end{align*}
 	Note that the last step takes advantage of the fact about the periods of cycles in the archetypal model described in \Cref{theorem:period.pal}.
-	The proof for $\pi^b$ is similar and has the same result.
+	The proof for $\pi^b$ is similar and \hl{leads to} the same result.
 	\begin{align*}
 		|\pi^b| & = |T(s_2(\sigma\varrho))|                                                                              \\
 		        & = |T(\sigma_2 \dots \sigma_i \varrho_1 \dots \varrho_j \sigma_1)|                                      \\
@@ -95,7 +94,7 @@ Instead, we define rotation-tuples.
 		           & = \left|\phi_1 \dots \phi_{\frac{n+1}{2}}\right|_\A + \left|\psi_{\frac{m+3}{2}} \dots \psi_m\right|_\A
 	\end{align*}
 	We can do the second to last step, since the symbol $\A$ is in the first 2-syllable of $\phi_{\frac{n+1}{2}}$.
-	The same is true for the symbol $\B$ and the proof works exactly the same for $|\pi^a|\B$, so we will omit it here.
+	The same is true for the symbol $\B$ and the proof works exactly the same for $|\pi^a|_\B$, so we will omit it here.
 	For the symbols $\C$ and $\D$ the last step does not work, instead we have to choose $\psi_{\frac{n+1}{2}}$.
 	We demonstrate it for $|\pi^a|_\C$, the proof for $|\pi^a|_\D$ works exactly the same.
 	\begin{align*}
@@ -114,7 +113,7 @@ Instead, we define rotation-tuples.
 		           & = \left|\phi_{\frac{n+3}{2}} \dots \phi_n\right|_\A + \left|\psi_1 \dots \psi_{\frac{m-1}{2}}\right|_\A + \left|\psi_{\frac{m+1}{2}}\right|_\A
 	\end{align*}
 	Again, we can do the second to last step, since the symbol $\A$ is in the first 2-syllable of $\psi_{\frac{n+1}{2}}$.
-	The same is true for the symbol $\B$ and the proof works exactly the same for $|\pi^b|\B$.
+	The same is true for the symbol $\B$ and the proof works exactly the same for $|\pi^b|_\B$.
 	We will omit it here.
 	For the symbols $\C$ and $\D$ the last step does not work, instead we have to choose $\phi_{\frac{n+1}{2}}$.
 	We demonstrate it for $|\pi^b|_\C$, the proof for $|\pi^b|_\D$ works exactly the same.
@@ -237,50 +236,45 @@ But we will include it here again for completeness.
 \end{proof}
 
 In the usual case with two symbols, the rotation numbers are monotone.
-In our case we have rotation tuples instead of numbers, and we will consider the monotony of the single elements.
+In our case we have rotation tuples instead of numbers, and we will consider the monotonicity of the single elements.
 Also, we sometimes have coexistence of two cycles.
 We will consider the rotation tuples of each of the coexisting twin cycles independently.
-The monotony does not hold up for our case, unfortunately.
+The monotonicity does not hold up for our case, unfortunately.
 We can see a counter example in \Cref{fig:add.prop.rot.num.tree}.
 Let's consider the rotation numbers for the symbol $\A$ which are the first element in each rotation tuple.
 The right starting node, the upper node of level 0, is associated with the rotation number $\frac{5}{18}$ for the symbol $\A$.
 And the left starting node is associated with the rotation number $\frac{6}{20}$ for the symbol $\A$.
 And $\frac{6}{20} > \frac{5}{18}$, so each rotation number for the symbol $\A$ of the coexisting cycles associated with the child node should be in-between those two numbers.
 But the rotation numbers for the symbol $\A$ in the child node are $\frac{6}{19} > \frac{6}{20}$ and $\frac{5}{19} < \frac{5}{18}$.
-If we instead consider the element-wise Farey-sum of both rotation tuples in the case of coexisting cycles, the monotony holds.
+If we instead consider the element-wise Farey-sum of both rotation tuples in the case of coexisting cycles, the monotonicity holds.
 
-\begin{theorem}[Monotony of Rotation Tuples in \gls{pal} Structures]
-	\label{theorem:rotation.monotony}
+\begin{theorem}[\hl{Monotonicity} of Rotation Tuples in \gls{pal} Structures]
+	\label{theorem:rotation.monotonicity}
 	Let the rotation tuple of the left starting node be element-wise smaller than the rotation tuple of the right starting node w.l.o.g.
 	Then the rotation tuple of a node that is associated with a cycle $\phi$ is element-wise smaller than the rotation tuple of a node that is associated with a cycle $\psi$,
 	if the node associated with $\phi$ is left of the node associated with $\psi$ in the Farey-tree.
 \end{theorem}
 
-For the proof, we rely heavily on the following fact.
-
-\begin{theorem}
-	Let $\frac{a_1}{b_1} < \frac{a_2}{b_2}$. Then
+\begin{proof} \phantom{x} \\
+	This is a proof by induction, and it will rely heavily on the following fact.
+	If $\frac{a_1}{b_1} < \frac{a_2}{b_2}$, then
 	\begin{align}
 		\frac{a_1}{b_1} < \frac{a_1}{b_1} \oplus \frac{a_2}{b_2} < \frac{a_2}{b_2}
 	\end{align}
-\end{theorem}
 
-\begin{proof} \phantom{x} \\
-	We will now prove \Cref{theorem:rotation.monotony} using induction.
 	We consider the structure of the Farey-tree like in the proof for \Cref{theorem:no.parent.coex}.
 	First, we write down the starting nodes.
 	Here, the only content is the rotation tuples and the left starting node is element-wise smaller than the right starting node w.l.o.g.
 	Note that for coexisting twin cycles $\pi^a$ and $\pi^b$, we consider the element-wise Farey-sum of their rotation tuples $\rho(\pi) = \rho(\pi^a) \oplus \rho(\pi^b)$.
 	For each iteration we combine each pair of rotation tuples in the list and insert the result in the middle of each pair.
-	We again reformulate the statement of \Cref{theorem:rotation.monotony} to a concrete statement about the lists at each iteration.
+	We again reformulate the statement of \Cref{theorem:rotation.monotonicity} to a statement about the lists at each iteration.
 
 	In all lists, the node $\rho(\phi)$ will be element-wise smaller than the next node $\rho(\psi)$.
-	This implies global monotony at each iteration for the lists.
-	And therefore also global monotony in the Farey-tree across all levels.
+	This implies global monotonicity at each iteration for the lists.
+	And therefore also global monotonicity in the Farey-tree across all levels.
 
 	\begin{itemize}
-		\item[n = 0] The left starting node is element-wise smaller than the right starting node per construction.
-			\checkmark
+		\item[n = 0] The left starting node is element-wise smaller than the right starting node by construction.
 		\item[n + 1] We assume that the above statement is true for the current list of $2^n$.
 			And we proof that for each neighboring nodes $\{\dots ,\rho(\phi), \rho(\psi), ...\}$ the values of their child node $\rho(\pi)$ is in-between the values of its two parent nodes.
 			\begin{align*}
@@ -309,7 +303,7 @@ For the proof, we rely heavily on the following fact.
 				             &
 				= \dfrac{|\phi\psi|_\A}{|\phi| + |\psi|}
 				= \dfrac{|\phi|_\A + |\psi|_\A}{|\phi| + |\psi|}
-				= \rho_A(\phi) \oplus \rho_\A(\psi)
+				= \rho_\A(\phi) \oplus \rho_\A(\psi)
 			\end{align*}
 			And since $\rho_\A(\phi) < \rho_\A(\psi) \implies \rho_\A(\phi) < \rho_\A(\phi) \oplus \rho_\A(\psi) < \rho_\A(\psi)$,
 			it also implies that $\rho_\A(\phi) < \rho_\A(\pi) =  \rho_\A(\pi^a) \oplus \rho_\A(\pi^h) < \rho_\A(\psi)$.
@@ -337,7 +331,7 @@ For the proof, we rely heavily on the following fact.
 				             &
 				= \dfrac{|\phi\psi|_\C}{|\phi| + |\psi|}
 				= \dfrac{|\phi|_\C + |\psi|_\C}{|\phi| + |\psi|}
-				= \rho_A(\phi) \oplus \rho_\C(\psi)
+				= \rho_\A(\phi) \oplus \rho_\C(\psi)
 			\end{align*}
 			And since $\rho_\C(\phi) < \rho_\C(\psi) \implies \rho_\C(\phi) < \rho_\C(\phi) \oplus \rho_\C(\psi) < \rho_\C(\psi)$,
 			it also implies that $\rho_\C(\phi) < \rho_\C(\pi) =  \rho_\C(\pi^a) \oplus \rho_\C(\pi^h) < \rho_\C(\psi)$.
@@ -373,5 +367,5 @@ For the proof, we rely heavily on the following fact.
 \end{proof}
 
 \hl{
-  This concludes the derived properties and rules for the \gls{pal} structures in the archetypal model.
+	This concludes the derived properties and rules for the \gls{pal} structures in the archetypal model.
 }
