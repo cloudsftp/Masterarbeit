@@ -8,4 +8,4 @@ Darauf folgt eine Beschreibung des Verhaltens des archetypischen Modells und ein
 Zudem demonstriert die Arbeit, dass das archetypische Modell auch Verhalten aufzeigen kann, welches zu Bifurkationsstrukturen führt, die mit periode-addierenden Bifurkationsstrukturen verwand sind.
 Diese Bifurkationsstrukturen zeigen unerwartetes Verhalten.
 Dieses Verhalten wird erklärt, indem das archetypische Modell mithilfe der Symmetrie reduziert wird.
-Mithilfe des reduzierten archetypischen Modells lassen sich Regeln für die unerwarteten Bifurkationsstrukturen herleiten und die Verhaltensweisen dieser erklären.
+Mithilfe des reduzierten archetypischen Modells lassen sich Regeln für die unerwarteten Bifurkationsstrukturen herleiten.
