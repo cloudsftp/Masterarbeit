@@ -1,6 +1,25 @@
 \section{Piecewise-quadratic Model}
 \label{sec:setup.quad}
 
+\begin{table}
+	\centering
+	\begin{tabular}{|c|c|c|l|} \hline
+		Combined         & $E_0$            & $\chi_0$          & Comment                   \\ \hline \hline
+		$\AL_{\B}^{-}$   & $\AL_{\B}^{-}$   & 0                 & Only $E_0$ causes this    \\ \hline
+		$\AMi_{\B}^{L-}$ & $\AMi_{\B}^{L-}$ & $-\AMi_{\B}^{+}$  &
+		$E_0$ and $\chi_0$ have opposing effects, the effect of $E_0$ is stronger           \\ \hline
+		$\AW_{\A}^{+}$   & 0                & $\AW_{\A}^{+}$    & Only $\chi_0$ causes this \\ \hline \hline
+		$\AB_{\B\C}^{L}$ & 0                & $\AB_{\B\C}^{L}$  & Only $\chi_0$ causes this \\ \hline
+		0                & $\AB_{\A\B}^{R}$ & $-\AB_{\A\B}^{L}$ &
+		$E_0$ and $\chi_0$ have opposing effects, they cancel out                           \\ \hline
+	\end{tabular}
+	\caption[Decomposition table of combined parameter effects]{
+		Decomposition of the combined parameter effects along chains of parameter regions with the same period as displayed in \Cref{fig:setup.char.evolution.combined}.
+		Each effect is traced back to the effects of changing the parameters $E_0$ and $\chi_0$ alone as displayed in  \Cref{fig:setup.char.evolution.single}.
+	}
+	\label{table:setup.char.paramfx}
+\end{table}
+
 In this section, the first model with similar characteristics to the original model is constructed.
 This chapter only includes the constructed models on the ``good'' path.
 \Cref{chap:app.models} lists other models that are not included in this chapter.

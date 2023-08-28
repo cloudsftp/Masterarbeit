@@ -87,6 +87,8 @@ If we replace the content of the nodes with the symbolic sequences of the cycles
 Instead of Farey-addition, here the child node of two parent nodes is the concatenation of the symbolic sequences in the parent nodes.
 Together with \Cref{theorem:state.rot.num.concat}, this explains why the  tree in \Cref{fig:state.discont.adding.farey.rot} is a Farey-tree~\cite{granados14adding}.
 
+\clearpage
+
 \begin{theorem}[Rotation Numbers of Concatenated Cycles]
 	The rotation number of the concatenation of two cycles $\rho(\sigma\varrho)$ is the Farey-sum of the rotation numbers of both cycles, $\rho(\sigma) \oplus \rho(\varrho)$.
 	\label{theorem:state.rot.num.concat}
@@ -100,21 +102,18 @@ Together with \Cref{theorem:state.rot.num.concat}, this explains why the  tree i
 		= \dfrac{|\sigma|_\L}{|\sigma|} \oplus \dfrac{|\varrho|_\L}{|\varrho|}
 		= \rho(\sigma) \oplus \rho(\varrho)
 	\end{align*}
-	\vspace{-4.8em}
-	\begin{flushright}
-		$\blacksquare$
-	\end{flushright}
+	\hfill $\blacksquare$
 \end{proof}
 
 \begin{figure}
 	\centering
 	\subfloat[Rotation Numbers]{
-		\includegraphics[height=.4 \textheight]{../Figures/2/2.2a/adding.png}
+		\includegraphics[height=.55 \textheight]{../Figures/2/2.2a/adding.png}
 		\label{fig:state.discont.adding.farey.rot}
 	}
-	\qquad
+	\quad
 	\subfloat[Symbolic Sequences]{
-		\includegraphics[height=.4 \textheight]{../Figures/2/2.2b/adding.png}
+		\includegraphics[height=.55 \textheight]{../Figures/2/2.2b/adding.png}
 		\label{fig:state.discont.adding.farey.sym}
 	}
 	\caption[Farey-trees of a \glsentrylong{pa} structure between two parameter regions that are associated with the fixed points $\L$ and $\R$]{
