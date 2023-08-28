@@ -2,10 +2,8 @@
 \label{sec:add.halved.tanslating}
 
 First, we define naive algorithms for translating symbolic sequences between the archetypal and the halved archetypal model based on the idea of the lifted model.
-\hl{
-	Then, we derive regularities for translated symbolic sequences in the archetypal model.
-}
-Finally, we refine the algorithms \hl{using the regularities of translated symbolic sequences}.
+Then, we derive regularities for translated symbolic sequences in the archetypal model.
+Finally, we refine the algorithms using the regularities of translated symbolic sequences.
 
 In the following, cycles of the archetypal model get the symbols $\phi, \psi,$ and $\pi$.
 Cycles of the halved archetypal model get the symbols $\sigma, \rho,$ and $\tau$.
@@ -14,13 +12,13 @@ Also, the symbols for the symbolic sequences in the halved archetypal model are 
 
 \subsubsection{Naive Algorithms}
 
-We start \hl{by} formulating a naive algorithm for translating symbolic sequences from the archetypal model to the halved archetypal model.
+We start by formulating a naive algorithm for translating symbolic sequences from the archetypal model to the halved archetypal model.
 This is the easier direction.
 From this algorithm we don't learn much about the nature of the \gls{pal} structures in the archetypal model.
 The algorithm for translating symbolic sequences in the other direction, from the halved archetypal model to the archetypal model, will be more important for that.
 
 To translate a symbolic sequence of the archetypal model we start by writing it down.
-For example, \hl{let} $\phi = \A^4\B^3\C^4\D^3$.
+For example, let $\phi = \A^4\B^3\C^4\D^3$.
 Then we replace the symbols $\A$ and $\C$ by $\L$ and the symbols $\B$ and $\D$ by $\R$.
 Now we have $\L^4\R^3\L^4\R^3$.
 Finally, we have to check for redundancy in the resulting cycle.
@@ -35,8 +33,8 @@ We repeat this until all rotations we have written down are paired up.
 
 \begin{lemma}[How Often to Write Down the Symbolic Sequence]
 	\label{lemma:writing.down}
-	\hl{In order to translate a cycle from} the halved archetypal model $\sigma$ with an even number of rotations $n$, we only need to write the original cycle down once.
-	\hl{In order to translate a cycle from} the halved archetypal model $\sigma$ with an odd number of rotations $n$, we need to write the original cycle down exactly twice.
+	In order to translate a cycle from the halved archetypal model $\sigma$ with an even number of rotations $n$, we only need to write the original cycle down once.
+	In order to translate a cycle from the halved archetypal model $\sigma$ with an odd number of rotations $n$, we need to write the original cycle down exactly twice.
 \end{lemma}
 
 \begin{proof} \phantom{x}
@@ -52,17 +50,19 @@ We repeat this until all rotations we have written down are paired up.
 
 Notice that our example symbolic sequence has 3 rotations.
 This means we have to write down the original sequence twice
-\hl{$\sigma^2 = \left(\L^4\R^3\L^4\R^3\L^3\R^3\right)^2 = \L^4\R^3\L^4\R^3\L^3\R^3\L^4\R^3\L^4\R^3\L^3\R^3$}.
+$\sigma^2 = \left(\L^4\R^3\L^4\R^3\L^3\R^3\right)^2 = \L^4\R^3\L^4\R^3\L^3\R^3\L^4\R^3\L^4\R^3\L^3\R^3$.
 
 Then we pair up the rotations, this corresponds to drawing blue boxes around the red boxes in the lifted model.
 In our example, we get the pairs $\left(\L^4\R^3\L^4\R^3\right)\left(\L^3\R^3\L^4\R^3\right)\left(\L^4\R^3\L^3\R^3\right)$.
 The pairs then have to be translated using the function $t$ defined below in \Cref{def:t}.
 The resulting symbolic sequence is $T(h) = \A^4\B^3\C^4\D^3\A^3\B^3\C^4\D^3\A^4\B^3\C^3\D^3$.
 The formal definition of $T$ is below in \Cref{def:T}.
-\hl{But we first need to define the notion of syllables which is needed for the} \Cref{def:t,def:T}.
+But we first need to define the notion of syllables which is needed for the \Cref{def:t,def:T}.
 
 \begin{definition}[Syllables]
-	A syllable is a maximal \hl{sub}sequence of the same symbol of a symbolic sequence.
+	\hl{
+		A syllable of a symbolic sequence is a subsequence of maximal length consisting of only one symbol.
+	}
 	A 2-syllable is a pair of syllables that are next to each other.
 	And a 4-syllable is a pair of 2-syllables that are next to each other.
 \end{definition}
@@ -71,12 +71,12 @@ So for example, the symbolic sequence $\L^4\R^3\L^3\R^3$ has 4 syllables.
 Its syllables are $\L^4$, $\L^3$, and two times $\R^3$.
 And a 2-syllable of the cycle is $\L^4\R^3$.
 In the halved archetypal model, a 2-syllable corresponds to one rotation.
-The 2-syllables of a cycle $\sigma$ in the halved archetypal model are written as $\sigma_i$.
+The 2-syllables of a \hl{symbolic sequence $\sigma$ of a cycle} in the halved archetypal model are written as $\sigma_i$.
 In the archetypal model, a 4-syllable corresponds to one rotation.
-The 4-syllables of a cycle $\phi$ in the archetypal model are written as $\phi_i$.
+The 4-syllables of a \hl{symbolic sequence $\phi$ of a cycle} in the archetypal model are written as $\phi_i$.
 These terms are used interchangeably in the rest of this chapter.
 
-\begin{definition}[Translating 4-syllables from \hl{the Halved to the Archetypal Model}]
+\begin{definition}[Translating 4-syllables from \hl{the Halved to the Full Archetypal Model}]
 	\label{def:t}
 	The function $t$ maps two rotations, or a 4-syllable that starts with the symbol $\L$ of a symbolic sequence in the halved archetypal model to a single rotation in the archetypal model.
 	It is defined in the following way.
@@ -85,7 +85,7 @@ These terms are used interchangeably in the rest of this chapter.
 	\end{align}
 \end{definition}
 
-\begin{definition}[Translating Symbolic Sequences from \hl{the Halved to the Archetypal Model}]
+\begin{definition}[Translating Symbolic Sequences from \hl{the Halved to the Full Archetypal Model}]
 	\label{def:T}
 	The function $T$ translates a symbolic sequence $\sigma = \sigma_1\sigma_2 \dots \sigma_n$ in the halved archetypal model to the archetypal model.
 	Where $\sigma_i$ are the 2-syllables of $\sigma$.
@@ -98,17 +98,15 @@ These terms are used interchangeably in the rest of this chapter.
 	\end{align}
 \end{definition}
 
-\hl{
-	Now we have a way to translate full symbolic sequences.
-	But this is not enough, since a cycle in the halved archetypal model might manifest as multiple coexisting cycles in the archetypal model.
-	Let $\varrho = \L^4\R^3\L^3\R^3$ be another cycle in the halved archetypal model.
-	Since this cycle has an even number of rotations, the 2-syllables $\varrho_1 = \L^4\R^3$ and $\varrho_2 = \L^3\R^3$, we only need to write it down once.
-	And the translation of this cycle is $T(\varrho) = T(\varrho_1\varrho_2) = T\left(\L^4\R^3\L^3\R^3\right) = \A^4\B^3\C^3\D^3$.
-	But when we translate the cycle $\varrho' = \varrho_2\varrho_1$, which is indistinguishable from the cycle $\varrho$, we get $T(\varrho') = T(\varrho_2\varrho_1) = T\left(\L^3\R^3\L^4\R^3\right) = \A^3\B^3\C^4\D^3$.
-	This is a different cycle from $T(\varrho)$.
-	So we need to first obtain all indistinguishable cycles of the original cycle in the halved archetypal model, then translate each one, and finally check for indistinguishable results in order to not have any duplicate cycles in the archetypal model.
-}
-\hl{The concepts needed for this are defined below in} \Cref{def:shifting,def:shift.equiv}.
+Now we have a way to translate full symbolic sequences.
+But this is not enough, since a cycle in the halved archetypal model might manifest as multiple coexisting cycles in the archetypal model.
+Let $\varrho = \L^4\R^3\L^3\R^3$ be another cycle in the halved archetypal model.
+Since this cycle has an even number of rotations, the 2-syllables $\varrho_1 = \L^4\R^3$ and $\varrho_2 = \L^3\R^3$, we only need to write it down once.
+And the translation of this cycle is $T(\varrho) = T(\varrho_1\varrho_2) = T\left(\L^4\R^3\L^3\R^3\right) = \A^4\B^3\C^3\D^3$.
+But when we translate the cycle $\varrho' = \varrho_2\varrho_1$, which is indistinguishable from the cycle $\varrho$, we get $T(\varrho') = T(\varrho_2\varrho_1) = T\left(\L^3\R^3\L^4\R^3\right) = \A^3\B^3\C^4\D^3$.
+This is a different cycle from $T(\varrho)$.
+So we need to first obtain all indistinguishable cycles of the original cycle in the halved archetypal model, then translate each one, and finally check for indistinguishable results in order to not have any duplicate cycles in the archetypal model.
+The concepts needed for this are defined below in \Cref{def:shifting,def:shift.equiv}.
 
 \begin{definition}[Shifting Symbolic Sequences]
 	\label{def:shifting}
@@ -128,12 +126,10 @@ These terms are used interchangeably in the rest of this chapter.
 
 \begin{definition}[Shift-equivalence]
 	\label{def:shift.equiv}
-	\hl{
 	Two symbolic sequences $\sigma$ and $\varrho$ in the halved archetypal model are shift-equivalent $\sigma \equiv_2 \varrho$,
 	if they both have the same number of rotations $n$
 	and there is a number $0 \leq i < n$, such that $\sigma = s_2^i(\varrho)$,
 	where $s_2^i(\varrho)$ is defined as $s_2^{i-1}(s_2(\varrho))$ and $s_2^1(\varrho) = s_2(\varrho)$.
-	}
 
 	Two symbolic sequences $\phi$ and $\psi$ in the archetypal model are shift-equivalent $\phi \equiv_4 \psi$,
 	if they both have the same number of rotations $n$
@@ -142,32 +138,43 @@ These terms are used interchangeably in the rest of this chapter.
 \end{definition}
 
 \hl{
-	Cycles are indistinguishable if their symbolic sequences are shift-equivalent.
-	We obtain all indistinguishable cycles of the original cycle by shifting the original symbolic sequence with $s_2$.
-	If a cycle $\tau$ in the halved model has $n$ 2-syllables, it has $n$ indistinguishable cycles $\left\{s_2^i(\tau) \:|\: 0 \leq i < n\right\}$, since $s_2^n(\tau) = \tau$.
-	Returning to our initial example $\sigma = \L^4\R^3\L^4\R^3\L^3\R^3$, it has the three indistinguishable cycles $\sigma = \L^4\R^3\L^4\R^3\L^3\R^3$, $s_2(\sigma) = \L^4\R^3\L^3\R^3\L^4\R^3$, and $s_2^2(\sigma) = \L^3\R^3\L^4\R^3\L^4\R^3$.
+	Note that the symbols for shift-equivalence are different for the halved archetypal model and the archetypal model.
+	We use $\equiv_2$ for the shift-equivalence in the halved archetypal model to express that the symbolic sequences are equivalent by shifting them by a multiple of two syllables with $s_2^i$.
+	Similarly, we use $\equiv_4$ for the shift-equivalence in the archetypal model to express that the symbolic sequences are equivalent by shifting them by a multiple of four syllables with $s_4^i$.
 }
 
 \hl{
-	Now we translate each of the indistinguishable cycles.
-	We already know that the translation of $\sigma$ is $T(\sigma) = \A^4\B^3\C^4\D^3\S^3\B^3\C^4\D^3\A^4\B^3\C^3\D^3$ from before.
-	The translation of $s_2(\sigma)$ is $T\left(s_2(\sigma)\right) = T\left(\L^4\R^3\L^3\R^3\L^4\R^3\right) = \A^4\B^3\C^3\D^3\A^4\B^3\C^4\D^3\A^3\B^3\C^4\D^3$.
-	And finally, the translation of $s_2^2(\sigma)$ is $T\left(s_2(\sigma)\right) = T\left(\L^4\R^3\L^3\R^3\L^4\R^3\right) = \A^3\B^3\C^4\D^3\A^4\B^3\C^3\D^3\A^4\B^3\C^4\D^3$.
+	Since the halved archetypal model has two branches, any cycles that have shift-equivalent ($\equiv_2$) symbolic sequences are indistinguishable in the halved archetypal model.
+	Similarly, since the archetypal model has four branches, any cycles that have shift-equivalent ($\equiv_4$) symbolic sequences are indistinguishable in the archetypal model.
 }
+We obtain all \hl{symbolic sequences of cycles that are indistinguishable from} the original cycle by shifting the symbolic sequence \hl{of the original cycle} with $s_2$.
+If \hl{the symbolic sequence $\tau$ of a cycle} in the halved archetypal model has $n$ 2-syllables, \hl{the cycle} has $n$ indistinguishable cycles \hl{with the symbolic sequences} $\left\{s_2^i(\tau) \:|\: 0 \leq i < n\right\}$, since $s_2^n(\tau) = \tau$.
+Returning to our initial example \hl{with the symbolic sequence} $\sigma = \L^4\R^3\L^4\R^3\L^3\R^3$, there are three indistinguishable cycles \hl{with the symbolic sequences} $\sigma = \L^4\R^3\L^4\R^3\L^3\R^3$, $s_2(\sigma) = \L^4\R^3\L^3\R^3\L^4\R^3$, and $s_2^2(\sigma) = \L^3\R^3\L^4\R^3\L^4\R^3$.
 
-\hl{
-	Looking closely, we can see that $T(\sigma) = s_4^2\left(T\left(s_2(\sigma)\right)\right) = s_4\left(T\left(s_2^2(\sigma)\right)\right)$.
-	So the cycles are shift-equivalent $T(\sigma) \equiv_4 T\left(s_2(\sigma)\right) \equiv_4 T\left(s_2^2(\sigma)\right)$ and therefore indistinguishable.
-	This means that the cycle $\sigma$ manifests as a single cycle in the archetypal model.
-}
-\hl{The final result of the translation process is a set and, it is defined as the function $F$ which is formally defined in} \Cref{def:F}.
+Now we translate each \hl{symbolic sequence} of the indistinguishable cycles.
+We already know that the translation of $\sigma$ is $T(\sigma) = \A^4\B^3\C^4\D^3\A^3\B^3\C^4\D^3\A^4\B^3\C^3\D^3$ from before.
+The translation of $s_2(\sigma)$ is %$T\left(s_2(\sigma)\right) = T\left(\L^4\R^3\L^3\R^3\L^4\R^3\right) = \A^4\B^3\C^3\D^3\A^4\B^3\C^4\D^3\A^3\B^3\C^4\D^3$.
+\begin{align*}
+	T\left(s_2(\sigma)\right) & = T\left(\L^4\R^3\L^3\R^3\L^4\R^3\right)                                                       \\
+	                          & = t\left(\L^4\R^3\L^3\R^3\right) t\left(\L^4\R^3\L^4\R^3\right) t\left(\L^3\R^3\L^4\R^3\right) \\
+	                          & = \A^4\B^3\C^3\D^3\A^4\B^3\C^4\D^3\A^3\B^3\C^4\D^3
+\end{align*}
+And finally, the translation of $s_2^2(\sigma)$ is %$T\left(s_2(\sigma)\right) = T\left(\L^4\R^3\L^3\R^3\L^4\R^3\right) = \A^3\B^3\C^4\D^3\A^4\B^3\C^3\D^3\A^4\B^3\C^4\D^3$.
+\begin{align*}
+	T\left(s_2(\sigma)\right) & = T\left(\L^3\R^3\L^4\R^3\L^4\R^3\right)                                                       \\
+	                          & = t\left(\L^3\R^3\L^4\R^3\right) t\left(\L^4\R^3\L^3\R^3\right) t\left(\L^4\R^3\L^4\R^3\right) \\
+	                          & = \A^3\B^3\C^4\D^3\A^4\B^3\C^3\D^3\A^4\B^3\C^4\D^3
+\end{align*}
+
+Looking closely, we can see that $T(\sigma) = s_4^2\left(T\left(s_2(\sigma)\right)\right) = s_4\left(T\left(s_2^2(\sigma)\right)\right)$.
+So the \hl{symbolic sequences of the} cycles are shift-equivalent $T(\sigma) \equiv_4 T\left(s_2(\sigma)\right) \equiv_4 T\left(s_2^2(\sigma)\right)$ and therefore \hl{the cycles are} indistinguishable.
+This means that the cycle $\sigma$ manifests as a single cycle in the archetypal model.
+The final result of the translation process is a set and, it is defined as the function $F$ which is formally defined in \Cref{def:F}.
 
 \begin{definition}[Translating Cycles from the Halved to the Archetypal Model]
 	\label{def:F}
-	\hl{
-		The function $F$ translates a cycle from the halved archetypal model with the symbolic sequence $\sigma$ with $n$ 2-syllables to the archetypal model.
-		The result is a set of the symbolic sequences of all indistinguishable cycles in the archetypal model.
-	}
+	The function $F$ translates a cycle \hl{in} the halved archetypal model with the symbolic sequence $\sigma$ \hl{that has} $n$ 2-syllables to the archetypal model.
+	The result is a set of the symbolic sequences of all \hl{the} cycles \hl{that the original cycle manifests as} in the archetypal model.
 	\begin{align}
 		F:\: \sigma \mapsto \left\{
 		\prescript{}{i}{\phi} = T\left(s_2^i(\sigma)\right) \:|\:
@@ -177,9 +184,7 @@ These terms are used interchangeably in the rest of this chapter.
 	\end{align}
 \end{definition}
 
-\hl{
-	Note that here, the left index is used for $\prescript{}{i}{\phi}$, since the right index is reserved for the 2-syllables of symbolic sequences in the halved archetypal model and 4-syllables of symbolic sequences in the archetypal model.
-}
+Note that here, the left index is used for $\prescript{}{i}{\phi}$, since the right index is reserved for the 2-syllables of symbolic sequences in the halved archetypal model and 4-syllables of symbolic sequences in the archetypal model.
 
 \subsubsection{Properties of Translated Symbolic Sequences in the Full Model}
 
@@ -201,17 +206,17 @@ With this naive algorithm, we can start to investigate rules for the \gls{pal} s
 
 \begin{theorem}[Coexistence of Translated Symbolic Sequences in the Archetypal Model]
 	\label{theorem:coexistence.even}
-	The manifestations of a cycle \hl{$\sigma$} in the halved archetypal model is either $F(\sigma) = \{T(\sigma), T(s_2(\sigma))\}$ or $F(\sigma) = \{T(\sigma)\}$.
-	\hl{Specifically,} \begin{enumerate}
+	The manifestations of a cycle $\sigma$ in the halved archetypal model is either $F(\sigma) = \{T(\sigma), T(s_2(\sigma))\}$ or $F(\sigma) = \{T(\sigma)\}$.
+	Specifically, \begin{enumerate}
 		\item $F(\sigma) = \{T(\sigma), T(s_2(\sigma))\}$ if the number of rotations of the sequence $\sigma$ is even.
 		\item $F(\sigma) = \{T(\sigma)\}$ if the number of rotations of the sequence $\sigma$ is odd.
 	\end{enumerate}
 \end{theorem}
 
 \begin{proof} \phantom{x} \\
-	Let $\sigma = \sigma_1\sigma_2 \dots \sigma_n$ \hl{be} a symbolic sequence in the halved archetypal model with $n$ rotations.
+	Let $\sigma = \sigma_1\sigma_2 \dots \sigma_n$ be a symbolic sequence in the halved archetypal model with $n$ rotations.
 	We know from \Cref{lemma:equivalence.translations} that the only possible candidates for $F(\sigma)$ are $T(\sigma)$ and $T(s_2(\sigma))$.
-	These are the first two possibilities we check in the algorithm and \hl{the translations of all other shifts of the original cycle}, $T(s_2^i(\sigma))$ with $2 \leq i < n$, are shift-equivalent to either $T(\sigma)$ or $T(s_2(\sigma))$.
+	These are the first two possibilities we check in the algorithm and the translations of all other shifts of the original cycle, $T(s_2^i(\sigma))$ with $2 \leq i < n$, are shift-equivalent to either $T(\sigma)$ or $T(s_2(\sigma))$.
 	This follows directly from \Cref{lemma:equivalence.translations}.
 	So, in the following, we only check for the shift-equivalence of these two candidates.
 	\begin{enumerate}

@@ -1,6 +1,6 @@
 \subsubsection{Rotation-numbers in the \Glsentrylong{pal} Structures}
 
-Next, we \hl{derive rules for} the rotation-numbers in the Farey-trees of the \gls{pal} structures.
+Next, we derive rules for the rotation-numbers in the Farey-trees of the \gls{pal} structures.
 Note that we don't have two branches in the archetypal model, instead we have four.
 This means that the definition \Cref{def:rotation.numbers} does not work for our case.
 Instead, we define rotation-tuples.
@@ -21,14 +21,14 @@ Instead, we define rotation-tuples.
 	\centering
 	\includegraphics[width=.8 \textwidth]{FareyTrees/Minrep_Adding1_Full_RotNum/adding.png}
 	\caption[Farey-tree with rotation tuples of the horizontal \glsentrylong{pal} structure in the archetypal model described in \Cref{sec:add.add.like}]{
-		Farey-tree with rotation tuples of \hl{the} horizontal \glsentrylong{pal} structure in the archetypal model \hl{described in} \Cref{sec:add.add.like}.
+		Farey-tree with rotation tuples of the horizontal \glsentrylong{pal} structure in the archetypal model described in \Cref{sec:add.add.like}.
 	}
 	\label{fig:add.prop.rot.num.tree}
 \end{figure}
 
 \begin{theorem}[Rotation Tuples in Child Nodes I]
 	The child node of two nodes that are both associated with a single cycle each with the symbolic sequences $\phi$ and $\psi$ is associated with the following period.
-	\hl{In the following,} we call the symbolic sequences of the two twin cycles associated with the child node $\pi^a$ and $\pi^b$.
+	In the following, we call the symbolic sequences of the two twin cycles associated with the child node $\pi^a$ and $\pi^b$.
 	\begin{align}
 		|\pi^a| = |\pi^b| & = \dfrac{|\phi| + |\psi|}{2} = |\pi|
 	\end{align}
@@ -74,7 +74,7 @@ Instead, we define rotation-tuples.
 		        & = |\sigma\varrho| = \frac{|\phi|}{2} + \frac{|\psi|}{2} = \frac{|\phi| + |\psi|}{2}
 	\end{align*}
 	Note that the last step takes advantage of the fact about the periods of cycles in the archetypal model described in \Cref{theorem:period.pal}.
-	The proof for $\pi^b$ is similar and \hl{leads to} the same result.
+	The proof for $\pi^b$ is similar and leads to the same result.
 	\begin{align*}
 		|\pi^b| & = |T(s_2(\sigma\varrho))|                                                                              \\
 		        & = |T(\sigma_2 \dots \sigma_i \varrho_1 \dots \varrho_j \sigma_1)|                                      \\
@@ -248,11 +248,11 @@ And $\frac{6}{20} > \frac{5}{18}$, so each rotation number for the symbol $\A$ o
 But the rotation numbers for the symbol $\A$ in the child node are $\frac{6}{19} > \frac{6}{20}$ and $\frac{5}{19} < \frac{5}{18}$.
 If we instead consider the element-wise Farey-sum of both rotation tuples in the case of coexisting cycles, the monotonicity holds.
 
-\begin{theorem}[\hl{Monotonicity} of Rotation Tuples in \gls{pal} Structures]
+\begin{theorem}[Monotonicity of Rotation Tuples in \gls{pal} Structures]
 	\label{theorem:rotation.monotonicity}
 	Let the rotation tuple of the left starting node be element-wise smaller than the rotation tuple of the right starting node w.l.o.g.
 	Then the rotation tuple of a node that is associated with a cycle $\phi$ is element-wise smaller than the rotation tuple of a node that is associated with a cycle $\psi$,
-	if the node associated with $\phi$ is left of the node associated with $\psi$ in the Farey-tree.
+	if the node associated with $\phi$ is \hl{to} left of the node associated with $\psi$ in the Farey-tree.
 \end{theorem}
 
 \begin{proof} \phantom{x} \\
@@ -366,6 +366,4 @@ If we instead consider the element-wise Farey-sum of both rotation tuples in the
 	\hfill $\blacksquare$
 \end{proof}
 
-\hl{
-	This concludes the derived properties and rules for the \gls{pal} structures in the archetypal model.
-}
+This concludes the derived properties and rules for the \gls{pal} structures in the archetypal model.
