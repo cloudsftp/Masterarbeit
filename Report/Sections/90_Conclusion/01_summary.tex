@@ -5,7 +5,7 @@ This section summarizes all findings, it is divided into two logical parts.
 
 First, the original model function and the parameter effects on the model function in the original model were analyzed.
 Then, the characteristics of the model function and parameter effects that are needed for the \gls{pi} structure of interest were identified.
-This is achieved by constructing the archetypal model, a model that is simpler than the original model and exhibits the same behavior.
+This is achieved by developing the archetypal model, a model that is simpler than the original model and exhibits the same behavior.
 This model has 4 branches $f_\A, f_\B, f_\C,$ and $f_\D$ like the original model.
 And it is symmetric like the original model.
 The branches $f_\A$ and $f_\C$ are quadratic and both governed by a function $g_L(x) = a_L \cdot x^2 + b_L \cdot x + c_L$, while the branches $f_\B$ and $f_\D$ are linear and governed by a function $g_R(x) = b_L \cdot x + c_L$.
@@ -15,18 +15,40 @@ Hence, it is called a composite parameter.
 It has negative sign, to orient the \gls{pi} structure in the archetypal model like in the original model.
 The other parameter is just the offset of the branches $f_\A$ and $f_\D$, $\beta = c_L$.
 
-Then it was confirmed that this archetypal model exhibits the same behavior as the original model.
+\hl{
+	Then the \gls{pi} structure in the archetypal model was described.
+	All possible bifurcations and coexistence scenarios were listed.
+	This lead to a deeper understanding of the role of the symmetry in the archetypal model.
+	It causes the coexistence of two asymmetric cycles in the ``type B'' parameter regions.
+	Also, it causes the border collision bifurcations bounding ``type A'' parameter regions to always involve two borders
+	and the border collision bifurcations bounding ``type B'' parameter regions to always occur in pairs.
+}
+
+\hl{After that,} it was confirmed numerically that this archetypal model exhibits the same behavior as the original model.
 \hl{
 	While doing so, the previously undiscovered coexistence of four cycles was found, and its existence in the original model was confirmed.
+	The numerical evidence that the archetypal model exhibits the same behavior as the original model confirms that the approach of constructing an archetypal model is feasible in \gls{pws} discontinuous models where normal forms are not applicable.
 }
-Also, the \gls{pi} structure of interest was explained using the characteristics that were found to be essential for the \gls{pi} structure.
 
-Second, it was demonstrated that the archetypal model proposed in this thesis can also exhibit \gls{pa} behavior.
-It was found that these structures defy the expectations for \gls{pa} structures, since the periods did not add up as they normally would and there were no obvious regularities in the symbolic sequences associated with the parameter regions in these structures.
+\clearpage
+
+Second, it was demonstrated that the archetypal model proposed in this thesis can exhibit \hl{behavior leading to bifurcation structures that are related to \gls{pa} structures}.
+\hl{
+	For this, the shape of the branches $f_\A$ and $f_\C$ was altered, making them increasing.
+	This leads to a piecewise-increasing model, since $f_\B$ and $f_\D$ are already increasing.
+	The appearance of these structures were found to be tied to the disappearance of the local minima on the branches $f_\A$ and $f_\C$ and the disappearance of the ``type B'' prameter regions in the chains.
+	It was also proven that the local minima are necessary for the ``type B'' parameter regions in the chains.
+}
+
+It was found that these structures defy the expectations for \gls{pa} structures, since the periods \hl{associated with the parameter regions in those structures do} not add up as they normally would in \gls{pa} structures.
+\hl{Also,} there \hl{are} no obvious regularities in the symbolic sequences associated with the parameter regions in these structures.
 Hence, they are called \gls{pal} structures.
-Some parameter regions in these \gls{pal} structures are also affected by multistability like the ``type B'' parameter regions in the original and the archetypal model.
+Some parameter regions in these \gls{pal} structures are also affected by multistability similar to the ``type B'' parameter regions in the original and the archetypal model.
 Then the halved archetypal model was introduced.
 It was created by taking advantage of the symmetry in the archetypal model.
 The same structures in the halved archetypal model exhibit the expected behavior of \gls{pa} structures and no parameter regions of these structures are affected by multistability.
-With the help of this model, rules for the \gls{pal} structures in the archetypal model were formulated.
-This includes rules for the periods, symbolic sequences, multistability, and rotation tuples associated with the parameter regions of these \gls{pal} structures.
+
+\hl{
+	Algorithms for translating cycles in-between the halved archetypal model and the archetypal model were developed.
+	With their help, rules for the periods, symbolic sequences, multistability, and rotation tuples associated with the parameter regions of the \gls{pal} structures in the archetypal model were derived.
+}
