@@ -55,8 +55,8 @@ Period-adding structures are named like this because in such structures, between
 \begin{figure}
 	\centering
 	\includegraphics[width=.5 \textwidth]{../Figures/2/2.1/result.png}
-	\caption[1D scan of periods in a \glsentrylong{pa} structure between $\L$ and $\R$]{
-		1D scan of the periods of cycles in a \gls{pa} structure with the starting cycles $\L$ and $\R$.
+	\caption[1D scan of periods associated with parameter regions of a \glsentrylong{pa} structure between two parameter regions that are associated with the fixed points $\L$ and $\R$]{
+		1D scan of periods associated with parameter regions of a \gls{pa} structure between two parameter regions that are associated with the fixed points $\L$ and $\R$.
 	}
 \end{figure}
 
@@ -87,6 +87,8 @@ If we replace the content of the nodes with the symbolic sequences of the cycles
 Instead of Farey-addition, here the child node of two parent nodes is the concatenation of the symbolic sequences in the parent nodes.
 Together with \Cref{theorem:state.rot.num.concat}, this explains why the  tree in \Cref{fig:state.discont.adding.farey.rot} is a Farey-tree~\cite{granados14adding}.
 
+\clearpage
+
 \begin{theorem}[Rotation Numbers of Concatenated Cycles]
 	The rotation number of the concatenation of two cycles $\rho(\sigma\varrho)$ is the Farey-sum of the rotation numbers of both cycles, $\rho(\sigma) \oplus \rho(\varrho)$.
 	\label{theorem:state.rot.num.concat}
@@ -100,26 +102,23 @@ Together with \Cref{theorem:state.rot.num.concat}, this explains why the  tree i
 		= \dfrac{|\sigma|_\L}{|\sigma|} \oplus \dfrac{|\varrho|_\L}{|\varrho|}
 		= \rho(\sigma) \oplus \rho(\varrho)
 	\end{align*}
-	\vspace{-4.8em}
-	\begin{flushright}
-		$\blacksquare$
-	\end{flushright}
+	\hfill $\blacksquare$
 \end{proof}
 
 \begin{figure}
 	\centering
 	\subfloat[Rotation Numbers]{
-		\includegraphics[height=.4 \textheight]{../Figures/2/2.2a/adding.png}
+		\includegraphics[height=.55 \textheight]{../Figures/2/2.2a/adding.png}
 		\label{fig:state.discont.adding.farey.rot}
 	}
-	\qquad
+	\quad
 	\subfloat[Symbolic Sequences]{
-		\includegraphics[height=.4 \textheight]{../Figures/2/2.2b/adding.png}
+		\includegraphics[height=.55 \textheight]{../Figures/2/2.2b/adding.png}
 		\label{fig:state.discont.adding.farey.sym}
 	}
-	\caption[Farey-trees of a \glsentrylong{pa} structure between $\L$ and $\R$]{
-		Farey-trees of a \gls{pa} structure with the starting cycles $\L$ and $\R$.
-		(a) Shows the rotation numbers while (b) shows the symbolic sequences of the cycles in this structure.
+	\caption[Farey-trees of a \glsentrylong{pa} structure between two parameter regions that are associated with the fixed points $\L$ and $\R$]{
+		Farey-trees of a \gls{pa} structure between two parameter regions that are associated with the fixed points $\L$ and $\R$
+		(a) Shows the rotation numbers while (b) shows the symbolic sequences of the cycles that are associated with the parameter regions in this structure.
 	}
 	\label{fig:state.discont.adding.farey}
 \end{figure}

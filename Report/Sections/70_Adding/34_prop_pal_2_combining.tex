@@ -1,9 +1,13 @@
 \subsubsection{Symbolic Sequences in the \Glsentrylong{pal} Structures}
 
-Furthermore, we can formulate rules for combining the symbolic sequences that are associated with nodes in the Farey-trees of the \gls{pal} structures.
+So far, we have derived rules for the periods and multistability of cycles that are associated with parameter regions of \gls{pal} structures in the archetypal model based on the corresponding \gls{pa} structure in the halved archetypal model.
+Let us now derive rules for the symbolic sequences that child nodes are associated with based on the symbolic sequences their parent nodes are associated with.
+For this, we first need to introduce a new operator.
+It is defined in \Cref{def:merge}.
 
 \begin{definition}[Merging two 4-syllables]
-	The operation $\left[\phi_i \mid \psi_j\right]$ merges the two 4-symmables $\phi_i$ and $\psi_j$.
+	\label{def:merge}
+	The operation $\left[\phi_i \mid \psi_j\right]$ merges two 4-syllables $\phi_i$ and $\psi_j$.
 	Let $\phi_i = \A^a\B^b\C^c\D^d$ and $\psi_j = \A^e\B^f\C^g\D^h$.
 	Then $\left[\phi_i \mid \psi_j\right] = \A^a\B^b\C^g\D^h$.
 	It concatenates the first 2-syllable of $\phi_i$ with the second 2-syllable of $\psi_j$.
@@ -59,9 +63,8 @@ Furthermore, we can formulate rules for combining the symbolic sequences that ar
 			      \psi^b_1 \dots \psi^b_{m-1} \left[\psi^b_m \mid \phi_{\frac{n+1}{2}}\right]
 			      \phi_{\frac{n+3}{2}} \dots \phi_n
 		      \end{align}
-		      Which is shift-equivalent to the first case.
-		      But this distinction must be made to guarantee the correctness of the symbolic sequences in subsequent child nodes.
 	\end{enumerate}
+	Both cases are shift-equivalent to each other, but we must distinguish them in order to guarantee the correctness of the symbolic sequences in subsequent child nodes.
 \end{theorem}
 
 \begin{proof} \phantom{x}
@@ -104,8 +107,6 @@ Furthermore, we can formulate rules for combining the symbolic sequences that ar
 	\end{enumerate}
 	\hfill $\blacksquare$
 \end{proof}
-
-\clearpage
 
 As mentioned before, the next case does not appear in the \gls{pal} structures we investigate.
 But we will include it here for completeness.

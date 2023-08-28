@@ -57,6 +57,10 @@ As mentioned before, the parameter $\alpha$ is given a negative sign to mirror t
 So $\alpha = -g_R\left(\frac{1}{4}\right)$ in the archetypal model.
 All parameters are listed in \Cref{table:setup.arch.parameters} a for better overview.
 
+\clearpage
+\subsection{Parameter Effects}
+\label{sec:setup.arch.parameterfx}
+
 \begin{table}
 	\centering
 	\begin{tabular}{|c|c|}
@@ -76,9 +80,6 @@ All parameters are listed in \Cref{table:setup.arch.parameters} a for better ove
 	}
 	\label{table:setup.arch.parameters}
 \end{table}
-
-\subsection{Parameter Effects}
-\label{sec:setup.arch.parameterfx}
 
 The effects of the defined parameters on the model function are straightforward and can be read directly from the previous section.
 In summary, the parameter $\alpha$ changes the values of the model function on the left sides of the branches $f_\B$ and $f_\D$.
@@ -106,12 +107,12 @@ Here one can see, how the values of the model function for the whole branches $f
 		\includegraphics[width=.4 \textwidth]{../Figures/5/5.13b/illustration.png}
 		\label{fig:setup.arch.paramfx.beta}
 	}
-	\caption[The effects of single parameters on the piecewise hybrid quadratic model function]{
-		The effects of varying the parameters $\alpha$ and $\beta$ alone on the piecewise hybrid quadratic model function.
-		(a) shows the effects of $\alpha$ on the model function with fixed $\beta = 0.17$.
-		The function $f^{L\alpha}$ is for $\alpha = -0.4$, $f^{M_\alpha}$ is for $\alpha = -0.35$, and $f^{H_\alpha}$ is for $\alpha = -0.3$.
-		(b) shows the effects of $\beta$ on the model function with fixed $\alpha = -0.35$.
-		The function $f^{L_\beta}$ is for $\beta = 0.16$, $f^{M_\beta}$ is for $\beta = 0.17$, and $f^{H_\beta}$ is for $\beta = 0.18$.
+	\caption[The isolated effects of the parameters on the archetypal model function]{
+		The isolated effects of the parameters $\alpha = g_R\left(\frac{1}{4}\right)$ and $\beta = c_L$ on the archetypal model function.
+		(a) shows the evolution of the shape of the model function for different values of $\alpha$ while $\beta = 0.17$ is fixed.
+		The function $f^{L\alpha}$ is the model function with $\alpha = -0.4$, $f^{M_\alpha}$ with $\alpha = -0.35$, and $f^{H_\alpha}$ with $\alpha = -0.3$.
+		(b) shows the evolution of the shape of the model function for different values of $\beta$ while $\alpha = -0.35$ is fixed.
+		The function $f^{L_\beta}$ is the model function with $\beta = 0.16$, $f^{M_\beta}$ with $\beta = 0.17$, and $f^{H_\beta}$ with $\beta = 0.18$.
 	}
 	\label{fig:setup.arch.paramfx}
 \end{figure}
@@ -134,7 +135,7 @@ Also, the effect $\AB_{\B\C}^L$, which is the movement of the borders between br
 		                 & $\AB_{\A\B}^{R}$ & $-\AB_{\A\B}^{L}$ &              &                \\ \hline
 	\end{tabular}
 	\caption[Comparison table of parameter effects in the piecewise hybrid quadratic model and the original model]{
-		Comparison table of the parameter effects of $E_0$ and $\chi_0$ in the original model and the effects of $\alpha$ and $\beta$ in the piecewise hybrid quadratic model.
+		Table comparing the effects of the parameters $E_0$ and $\chi_0$ on the original model function and the effects of $\alpha$ and $\beta$ on the archetypal model function.
 		Each effect of the parameters $E_0$ and $\chi_0$ as listed in \Cref{table:setup.char.paramfx} is also listed here.
 		If $\alpha$ or $\beta$ cause the same effect, it is also listed in the respective column.
 	}
