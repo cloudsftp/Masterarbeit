@@ -1,10 +1,14 @@
-The theory of non-linear dynamical systems is very effective at explaining physical systems and phenomena.
-Unfortunately, the theory is developed mainly for smooth systems, and the models of some systems, such as power converters, are inherently piecewise-smooth.
-This thesis is concerned with such a model that is piecewise-smooth, discontinuous, and symmetric.
-The definition of this model is very complex, and it exhibits a unique period-incrementing structure that is affected by multistability.
-This thesis identifies the characteristics of the model that lead to this unique bifurcation structure by constructing a simplified model that exhibits the same bifurcation structure, the archetypal model.
+\hl{
+    Although the established theory of non-linear dynamical systems is effective at describing physical systems and phenomena;
+    the theory has been developed with a focus on smooth systems, limiting its use in certain applications.
+    This limitation becomes apparent when attempting to model piecewise-smooth systems, such as electriconical systems that contain at least one switching element or mechanical systems with impacts.
+    % Last sentence: just modeling?
+    This thesis concerns itself with a model of a system that is piecewise-smooth, discontinuous and symmetric.
+    The definition of this model is exceptionally complex, and exhibits a unique period-incrementing structure that is affected by multistability.
+}
+This thesis identifies the characteristics of the model that lead to this unique bifurcation structure by constructing \hl{an archetypal} model that exhibits the same bifurcation behavior.
 It follows a description of the dynamics of the archetypal model and an explanation of the unique bifurcation structure using the description of the dynamics.
-Also, this thesis demonstrates that the proposed archetypal model can exhibit structures related to period-adding.
+\hl{Additionally,} this thesis demonstrates that the proposed archetypal model can exhibit \hl{behavior leading to bifurcation structures that are} related to period-adding.
 These structures behave unexpectedly.
 And this behavior is explained by taking advantage of the symmetry in the archetypal and the original model.
-In the same way, rules for these period-adding structures are derived.
+In the same way, rules for these period-adding-related structures are derived.

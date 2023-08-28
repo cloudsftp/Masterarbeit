@@ -1,1 +1,11 @@
-Zusammenfassung
+Obwohl die Theorie nicht-linearer dynamischer Systeme viele physikalische Systeme sehr gut Beschreiben kann, wurde sie hauptsächlich für glatte Systeme entwickelt, was ihre Nützlichkeit in einigen Anwendungen einschränkt.
+Insbesondere können viele Ergebnisse der Theorie in stückweise glatten Modellen von dynamischen Systemen nicht verwendet werden.
+Beispiele solcher Systeme sind elektronische Systeme mit mindestens einem schaltenden Element oder mechanische Systeme mit Zusammenstößen.
+Diese Arbeit beschäftigt sich mit einem Modell, welches einen Stromrichter modelliert und daher stückweise glatt und sogar unstetig.
+Das Modell ist außerdem symmetrisch, sehr komplex und führt zu einer unüblichen perioden inkrementierenden Bifurkationsstruktur, welche von Multistabilität betroffen ist.
+Diese Arbeit identifiziert die Charakteristiken des Modells, die diese unübliche Bifurkationsstruktur verursachen, indem ein sie ein archetypisches Modell konstruiert, welches dasselbe Bifurkationsverhalten aufzeigt.
+Darauf folgt eine Beschreibung des Verhaltens des archetypischen Modells und eine Erklärung der unüblichen Bifurkationsstruktur mithilfe des zuvor beschriebenen Verhaltens des archetypischen Modells.
+Zudem demonstriert die Arbeit, dass das archetypische Modell auch Verhalten aufzeigen kann, welches zu Bifurkationsstrukturen führt, die mit periode-addierenden Bifurkationsstrukturen verwand sind.
+Diese Bifurkationsstrukturen zeigen unerwartetes Verhalten.
+Dieses Verhalten wird erklärt, indem das archetypische Modell mithilfe der Symmetrie reduziert wird.
+Mithilfe des reduzierten archetypischen Modells lassen sich Regeln für die unerwarteten Bifurkationsstrukturen herleiten und die Verhaltensweisen dieser erklären.
