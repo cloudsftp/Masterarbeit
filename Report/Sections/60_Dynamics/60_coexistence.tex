@@ -202,28 +202,20 @@ Therefore, coexisting cycles differ in their periods by two at most.
 \Citeauthor{akyuz2022} covered all these coexistence scenarios in \cite{akyuz2022} with one exception.
 The coexistence of four cycles was not described in his preliminary investigation of the original model.
 This section confirms that this scenario also exists in the original model.
-For this, \Cref{fig:arch.coex.og.regions} shows a 2D scan of the boundaries of parameter regions zoomed in at the lower left corner of the ``type B'' parameter region containing the point $F_{16}$ shown in \Cref{fig:etup.og.overlapping.regions.zoomed}.
-The ``type B'' parameter region has the stable cycles $\Cycle{\A^3\B^2\C^2\D^3}$ and $\Cycle{\A^2\B^3\C^3\D^2}$.
-It is not as clean as the previous scans of the parameter region boundaries in the archetypal model.
-The cobweb diagram at point $X$ shown in \Cref{fig:arch.coex.og.regions}, which is in the region where the two ``type A'' parameter regions and the ``type B'' parameter region should overlap, is shown in \Cref{fig:arch.coex.og.cobweb}.
-It is hard to see, since the two cycles $\Cycle{\A^3\B^2\C^3\D^2}$ shown in and $\Cycle{\A^2\B^3\C^3\D^2}$ shown in brown are almost on top of each other, but there are actually 4 cycles coexisting.
+For this, \Cref{fig:arch.coex.og.regions} shows a 2D scan of the boundaries of parameter regions zoomed in the lower left corner of the ``type B'' parameter region that is associated with the twin cycles $\Cycle{\A^3\B^2\C^2\D^3}$ and $\Cycle{\A^2\B^3\C^3\D^2}$.
+Since it is magnified a lot, it has more artifacts that are not actual boundaries of parameter regions than previous scans of boundaries.
+Therefore, the important boundaries are marked with arrows.
+The lower boundary of the ``type B'' parameter regions is marked with $\BCB^{\A^3\B^2\C^2\underline{\D}^3}_{d_3}, \BCB^{\A^3\underline{\B}^2\C^2\D^3}_{d_1}$ and its left boundary is marked with $\BCB^{\A^3\B^2\C^2\underline{\D}^3}_{d_0}, \BCB^{\A^3\underline{\B}^2\C^2\D^3}_{d_2}$.
+The parameter region below the ``type B'' parameter region is the ``type A'' parameter region that is associated with the cycle $\Cycle{\A^3\B^2\C^3\D^2}$.
+Its upper boundary is marked with $\BCB^{\underline{\A}^3\B^2\underline{\C}^3\D^2}_{d_1, d_3}$.
+And finally, the parameter region to the left of the ``type B'' parameter region is the ``type A'' parameter that is region associated with the cycle $\A^2\B^2\C^2\D^2$.
+Its right boundary is marked with $\BCB^{\underline{\A}^2\B^2\underline{\C}^2\D^2}_{d_0, d_2}$.
+All other lines in the diagram are numerical artifacts that do not correspond to boundaries of parameter regions.
 
-\begin{figure}
-	\centering
-	\subfloat[2D scan of the boundaries]{
-		\includegraphics[width=.48 \textwidth]{../Figures/6/6.11a/result.png}
-		\label{fig:arch.coex.og.regions}
-	}
-	\subfloat[Cobweb diagram at point $X$]{
-		\includegraphics[width=.48 \textwidth]{../Figures/6/6.11b/result.png}
-		\label{fig:arch.coex.og.cobweb}
-	}
-	\caption[2D scan of the boundaries of parameter regions with different symbolic sequences and cobweb diagram in the original model showing the coexistence of four cycles]{
-		2D scan of the boundaries of parameter regions with different symbolic sequences and cobweb diagram in the original model showing the coexistence of four cycles
-		The parameters $\beta = 1, f = 150, L = 4.2 \cdot 10^{-3}, R = 2, V_m = 5,$ and $\mu = 0.5$ are fixed.
-		(a) shows the 2D scan of the boundaries of parameter regions with different symbolic sequences at a specific location where a ``type B'' parameter region overlaps with two ``type A'' parameter regions.
-		The parameters $E_0$ and $\chi_0$ are varied in the ranges $[16.725, 16.735]$ and $[0.1821, 0.1828]$.
-		(b) shows the cobweb diagram at the parameter values marked with the point $X$ in (a) where $E_0 = 16.7302$ and $\chi_0 = 0.1823$.
-		Here, two ``type B'' twin cycles coexist with two ``type A'' cycles.
-	}
-\end{figure}
+The point $X$ marks parameter values that are in the overlapping area of all three parameter regions mentioned above.
+\Cref{fig:arch.coex.og.regions} shows the cobweb diagram at these parameter values.
+Here all four cycles coexist, two cycles from each ``type A'' parameter region and two cycles from the ``type B'' parameter region.
+This is hard to see, since the two cycles $\Cycle{\A^3\B^2\C^3\D^2}$ shown in blue and $\Cycle{\A^2\B^3\C^3\D^2}$ shown in brown are almost on top of each other in the blowup plot.
+But one can see that they are different cycles, as they are visibly separated right of the border $d_3$.
+
+%in next document for better layout
