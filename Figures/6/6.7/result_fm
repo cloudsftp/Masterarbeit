@@ -13,7 +13,7 @@
 \psfrag{D}{\footnotesize \hspace*{0.3em}\raisebox{0.5ex}{$0$}}
 \psfrag{U}{\footnotesize \hspace*{0.3em}\raisebox{0.5ex}{$1$}}
 
-\psfrag{x}{\hspace*{0.0em}\raisebox{0.5ex}{$p_x$}}
+\psfrag{x}{\hspace*{0.0em}\raisebox{0.5ex}{$\alpha$}}
 \psfrag{y}{\hspace*{0.0em}\raisebox{0.3ex}{$x$}}
 
 \psfrag{d0}{{$d_0$}}
