@@ -60,9 +60,7 @@ The formal definition of $T$ is below in \Cref{def:T}.
 But we first need to define the notion of syllables which is needed for the \Cref{def:t,def:T}.
 
 \begin{definition}[Syllables]
-	\hl{
-		A syllable of a symbolic sequence is a subsequence of maximal length consisting of only one symbol.
-	}
+	A syllable of a symbolic sequence is a subsequence of maximal length consisting of only one symbol.
 	A 2-syllable is a pair of syllables that are next to each other.
 	And a 4-syllable is a pair of 2-syllables that are next to each other.
 \end{definition}
@@ -71,12 +69,12 @@ So for example, the symbolic sequence $\L^4\R^3\L^3\R^3$ has 4 syllables.
 Its syllables are $\L^4$, $\L^3$, and two times $\R^3$.
 And a 2-syllable of the cycle is $\L^4\R^3$.
 In the halved archetypal model, a 2-syllable corresponds to one rotation.
-The 2-syllables of a \hl{symbolic sequence $\sigma$ of a cycle} in the halved archetypal model are written as $\sigma_i$.
+The 2-syllables of a symbolic sequence $\sigma$ of a cycle in the halved archetypal model are written as $\sigma_i$.
 In the archetypal model, a 4-syllable corresponds to one rotation.
-The 4-syllables of a \hl{symbolic sequence $\phi$ of a cycle} in the archetypal model are written as $\phi_i$.
+The 4-syllables of a symbolic sequence $\phi$ of a cycle in the archetypal model are written as $\phi_i$.
 These terms are used interchangeably in the rest of this chapter.
 
-\begin{definition}[Translating 4-syllables from \hl{the Halved to the Full Archetypal Model}]
+\begin{definition}[Translating 4-syllables from the Halved to the Full Archetypal Model]
 	\label{def:t}
 	The function $t$ maps two rotations, or a 4-syllable that starts with the symbol $\L$ of a symbolic sequence in the halved archetypal model to a single rotation in the archetypal model.
 	It is defined in the following way.
@@ -85,7 +83,7 @@ These terms are used interchangeably in the rest of this chapter.
 	\end{align}
 \end{definition}
 
-\begin{definition}[Translating Symbolic Sequences from \hl{the Halved to the Full Archetypal Model}]
+\begin{definition}[Translating Symbolic Sequences from the Halved to the Full Archetypal Model]
 	\label{def:T}
 	The function $T$ translates a symbolic sequence $\sigma = \sigma_1\sigma_2 \dots \sigma_n$ in the halved archetypal model to the archetypal model.
 	Where $\sigma_i$ are the 2-syllables of $\sigma$.
@@ -137,21 +135,17 @@ The concepts needed for this are defined below in \Cref{def:shifting,def:shift.e
 	where $s_4^i(\psi)$ is defined as $s_4^{i-1}(s_4(\psi))$ and $s_4^1(\psi) = s_4(\psi)$.
 \end{definition}
 
-\hl{
-	Note that the symbols for shift-equivalence are different for the halved archetypal model and the archetypal model.
-	We use $\equiv_2$ for the shift-equivalence in the halved archetypal model to express that the symbolic sequences are equivalent by shifting them by a multiple of two syllables with $s_2^i$.
-	Similarly, we use $\equiv_4$ for the shift-equivalence in the archetypal model to express that the symbolic sequences are equivalent by shifting them by a multiple of four syllables with $s_4^i$.
-}
+Note that the symbols for shift-equivalence are different for the halved archetypal model and the archetypal model.
+We use $\equiv_2$ for the shift-equivalence in the halved archetypal model to express that the symbolic sequences are equivalent by shifting them by a multiple of two syllables with $s_2^i$.
+Similarly, we use $\equiv_4$ for the shift-equivalence in the archetypal model to express that the symbolic sequences are equivalent by shifting them by a multiple of four syllables with $s_4^i$.
 
-\hl{
-	Since the halved archetypal model has two branches, any cycles that have shift-equivalent ($\equiv_2$) symbolic sequences are indistinguishable in the halved archetypal model.
-	Similarly, since the archetypal model has four branches, any cycles that have shift-equivalent ($\equiv_4$) symbolic sequences are indistinguishable in the archetypal model.
-}
-We obtain all \hl{symbolic sequences of cycles that are indistinguishable from} the original cycle by shifting the symbolic sequence \hl{of the original cycle} with $s_2$.
-If \hl{the symbolic sequence $\tau$ of a cycle} in the halved archetypal model has $n$ 2-syllables, \hl{the cycle} has $n$ indistinguishable cycles \hl{with the symbolic sequences} $\left\{s_2^i(\tau) \:|\: 0 \leq i < n\right\}$, since $s_2^n(\tau) = \tau$.
-Returning to our initial example \hl{with the symbolic sequence} $\sigma = \L^4\R^3\L^4\R^3\L^3\R^3$, there are three indistinguishable cycles \hl{with the symbolic sequences} $\sigma = \L^4\R^3\L^4\R^3\L^3\R^3$, $s_2(\sigma) = \L^4\R^3\L^3\R^3\L^4\R^3$, and $s_2^2(\sigma) = \L^3\R^3\L^4\R^3\L^4\R^3$.
+Since the halved archetypal model has two branches, any cycles that have shift-equivalent ($\equiv_2$) symbolic sequences are indistinguishable in the halved archetypal model.
+Similarly, since the archetypal model has four branches, any cycles that have shift-equivalent ($\equiv_4$) symbolic sequences are indistinguishable in the archetypal model.
+We obtain all symbolic sequences of cycles that are indistinguishable from the original cycle by shifting the symbolic sequence of the original cycle with $s_2$.
+If the symbolic sequence $\tau$ of a cycle in the halved archetypal model has $n$ 2-syllables, the cycle has $n$ indistinguishable cycles with the symbolic sequences $\left\{s_2^i(\tau) \:|\: 0 \leq i < n\right\}$, since $s_2^n(\tau) = \tau$.
+Returning to our initial example with the symbolic sequence $\sigma = \L^4\R^3\L^4\R^3\L^3\R^3$, there are three indistinguishable cycles with the symbolic sequences $\sigma = \L^4\R^3\L^4\R^3\L^3\R^3$, $s_2(\sigma) = \L^4\R^3\L^3\R^3\L^4\R^3$, and $s_2^2(\sigma) = \L^3\R^3\L^4\R^3\L^4\R^3$.
 
-Now we translate each \hl{symbolic sequence} of the indistinguishable cycles.
+Now we translate each symbolic sequence of the indistinguishable cycles.
 We already know that the translation of $\sigma$ is $T(\sigma) = \A^4\B^3\C^4\D^3\A^3\B^3\C^4\D^3\A^4\B^3\C^3\D^3$ from before.
 The translation of $s_2(\sigma)$ is %$T\left(s_2(\sigma)\right) = T\left(\L^4\R^3\L^3\R^3\L^4\R^3\right) = \A^4\B^3\C^3\D^3\A^4\B^3\C^4\D^3\A^3\B^3\C^4\D^3$.
 \begin{align*}
@@ -167,14 +161,14 @@ And finally, the translation of $s_2^2(\sigma)$ is %$T\left(s_2(\sigma)\right) =
 \end{align*}
 
 Looking closely, we can see that $T(\sigma) = s_4^2\left(T\left(s_2(\sigma)\right)\right) = s_4\left(T\left(s_2^2(\sigma)\right)\right)$.
-So the \hl{symbolic sequences of the} cycles are shift-equivalent $T(\sigma) \equiv_4 T\left(s_2(\sigma)\right) \equiv_4 T\left(s_2^2(\sigma)\right)$ and therefore \hl{the cycles are} indistinguishable.
+So the symbolic sequences of the cycles are shift-equivalent $T(\sigma) \equiv_4 T\left(s_2(\sigma)\right) \equiv_4 T\left(s_2^2(\sigma)\right)$ and therefore the cycles are indistinguishable.
 This means that the cycle $\sigma$ manifests as a single cycle in the archetypal model.
 The final result of the translation process is a set and, it is defined as the function $F$ which is formally defined in \Cref{def:F}.
 
 \begin{definition}[Translating Cycles from the Halved to the Archetypal Model]
 	\label{def:F}
-	The function $F$ translates a cycle \hl{in} the halved archetypal model with the symbolic sequence $\sigma$ \hl{that has} $n$ 2-syllables to the archetypal model.
-	The result is a set of the symbolic sequences of all \hl{the} cycles \hl{that the original cycle manifests as} in the archetypal model.
+	The function $F$ translates a cycle in the halved archetypal model with the symbolic sequence $\sigma$ that has $n$ 2-syllables to the archetypal model.
+	The result is a set of the symbolic sequences of all the cycles that the original cycle manifests as in the archetypal model.
 	\begin{align}
 		F:\: \sigma \mapsto \left\{
 		\prescript{}{i}{\phi} = T\left(s_2^i(\sigma)\right) \:|\:
@@ -256,6 +250,8 @@ This revised algorithm is used in the following to construct the rules for the \
 		\EndIf
 	\end{algorithmic}
 \end{algorithm}
+
+\clearpage
 
 \Cref{alg:full.to.halved} shows the inverse algorithm for translating symbolic sequences from the archetypal model to the halved archetypal model for completeness.
 It uses the inverse $t^{-1}$ of the function $t$.

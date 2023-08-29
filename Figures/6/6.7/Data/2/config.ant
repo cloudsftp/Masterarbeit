@@ -22,17 +22,17 @@ parameter[2] = {
 
 parameter[3] = {
     name = "px",
-    value = -0.3775
+    value = 0
 },
 
 parameter[4] = {
     name = "py",
-    value = 0
+    value = 0.1675
 }
 },
 
 state_space_dimension = 1,
-initial_state = (0.5),
+initial_state = (0.0),
 reset_initial_states_from_orbit = true,
 number_of_iterations = 1000
 },
@@ -43,10 +43,10 @@ mode = 1,
 
 item[0] = {
     type = "real_linear",
-    object = "py",
+    object = "px",
     points = 2000,
-    min = 0.1675,
-    max = 0.1665
+    min = -0.3725,
+    max = -0.37
 }
 },
 
@@ -57,7 +57,7 @@ investigation_methods = {
         is_active = true,
         max_period = 128,
         compare_precision = 1e-09,
-        period = true,
+        period = false,
         period_file = "period.tna",
         cyclic_asymptotic_set = true,
         cyclic_bif_dia_file = "bif_cyclic.tna",

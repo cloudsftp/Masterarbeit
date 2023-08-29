@@ -44,8 +44,8 @@ bool f(
     }
 
     // Normalize
-    if (y >= 2 * n) {
-        y -= 2 * n;
+    if (y >= n) {
+        y -= n;
     }
 
     RHS[0] = y;
@@ -59,18 +59,10 @@ bool symbolic(
 ) {
     real_t x = currentState[0];
 
-    if (x < n) {
-        if (x < border) {
-            RHS = "A";
-        } else {
-            RHS = "B";
-        }
+    if (x < border) {
+        RHS = "A";
     } else {
-        if (x < n + border) {
-            RHS = "C";
-        } else {
-            RHS = "D";
-        }
+        RHS = "B";
     }
 
     return true;

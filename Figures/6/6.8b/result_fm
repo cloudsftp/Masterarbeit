@@ -1,0 +1,22 @@
+% fmopt: width=8cm
+
+\psfrag{L}{\hspace*{0.3em}\raisebox{0.5ex}{$-0.385$}}
+\psfrag{R}{\hspace*{-2.7em}\raisebox{0.5ex}{$-0.365$}}
+
+\psfrag{D}{\hspace*{0.5em}\raisebox{0.5ex}{$0.166$}}
+\psfrag{U}{\hspace*{-2.0em}\raisebox{0.5ex}{$0.169$}}
+
+\psfrag{x}{\hspace*{0.0em}\raisebox{0.5ex}{$\alpha$}}
+\psfrag{y}{\hspace*{0.0em}\raisebox{0.5ex}{$\beta$}}
+
+\psfrag{Q}{\hspace*{0.0em}\raisebox{0.5ex}{$Q$}}
+
+\psfrag{Rp}{\hspace*{0.0em}\raisebox{0.5ex}{$R$}}
+\psfrag{S}{\hspace*{0.0em}\raisebox{0.5ex}{$S$}}
+\psfrag{T}{\hspace*{0.0em}\raisebox{0.5ex}{$T$}}
+\psfrag{Up}{\hspace*{0.0em}\raisebox{0.5ex}{$U$}}
+
+\psfrag{V}{\hspace*{0.0em}\raisebox{0.5ex}{$V$}}
+\psfrag{W}{\hspace*{-1.0em}\raisebox{0.5ex}{$W$}}
+\psfrag{X}{\hspace*{0.0em}\raisebox{0.5ex}{$X$}}
+\psfrag{Y}{\hspace*{0.0em}\raisebox{0.5ex}{$Y$}}

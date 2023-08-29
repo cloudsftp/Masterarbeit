@@ -1,22 +1,32 @@
 % fmopt: width=8cm
+% head:
+% \usepackage{amsmath}
+% \usepackage{xcolor}
+%\renewcommand{\l}{\ell}
+%\renewcommand{\r}{r}
+%\renewcommand{\L}{\mathcal L}
+%\renewcommand{\O}{\mathcal O}
+%\newcommand{\A}{\mathcal A}
+%\newcommand{\B}{\mathcal B}
+%\newcommand{\C}{\mathcal C}
+%\newcommand{\D}{\mathcal D}
+%\definecolor{forestGreen}{HTML}{228B22}
 
-\psfrag{L}{\hspace*{0.3em}\raisebox{0.5ex}{$-0.385$}}
-\psfrag{R}{\hspace*{-2.7em}\raisebox{0.5ex}{$-0.365$}}
+\psfrag{L}{\hspace*{-0.1em}\raisebox{0.25ex}{$0$}}
+\psfrag{R}{\hspace*{0.0em}\raisebox{0.25ex}{$1$}}
 
-\psfrag{D}{\hspace*{0.5em}\raisebox{0.5ex}{$0.166$}}
-\psfrag{U}{\hspace*{-2.0em}\raisebox{0.5ex}{$0.169$}}
+\psfrag{D}{\hspace*{0.3em}\raisebox{0.5ex}{$0$}}
+\psfrag{U}{\hspace*{0.2em}\raisebox{0.5ex}{$1$}}
 
-\psfrag{x}{\hspace*{0.0em}\raisebox{0.5ex}{$p_x$}}
-\psfrag{y}{\hspace*{0.0em}\raisebox{0.5ex}{$p_y$}}
+\psfrag{x}{\hspace*{0.0em}\raisebox{0.5ex}{$x$}}
+\psfrag{y}{\hspace*{0.0em}\raisebox{0.5ex}{$f(x)$}}
 
-\psfrag{Q}{\hspace*{0.0em}\raisebox{0.5ex}{$Q$}}
+\psfrag{s1}{\scriptsize $\color{blue}{\O}_{\!\A^5\B^3\C^5\D^3}$}
+\psfrag{s2}{\scriptsize $\color{red}{\O}_{\!\A^4\B^3\C^4\D^3}$}
+\psfrag{s3}{\scriptsize $\color{forestGreen}{\O}_{\!\A^5\B^3\C^4\D^4}$}
+\psfrag{s4}{\scriptsize $\color{black}{\O}_{\!\A^4\B^4\C^5\D^3}$}
 
-\psfrag{Rp}{\hspace*{0.0em}\raisebox{0.5ex}{$R$}}
-\psfrag{S}{\hspace*{0.0em}\raisebox{0.5ex}{$S$}}
-\psfrag{T}{\hspace*{0.0em}\raisebox{0.5ex}{$T$}}
-\psfrag{Up}{\hspace*{0.0em}\raisebox{0.5ex}{$U$}}
-
-\psfrag{V}{\hspace*{0.0em}\raisebox{0.5ex}{$V$}}
-\psfrag{W}{\hspace*{-1.0em}\raisebox{0.5ex}{$W$}}
-\psfrag{X}{\hspace*{0.0em}\raisebox{0.5ex}{$X$}}
-\psfrag{Y}{\hspace*{0.0em}\raisebox{0.5ex}{$Y$}}
+\psfrag{d0}{\scriptsize $d_0$}
+\psfrag{d1}{\scriptsize $d_1$}
+\psfrag{d2}{\scriptsize $d_2$}
+\psfrag{d3}{\scriptsize $d_3$}

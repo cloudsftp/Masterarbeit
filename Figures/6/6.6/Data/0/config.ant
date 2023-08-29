@@ -22,12 +22,12 @@ parameter[2] = {
 
 parameter[3] = {
     name = "px",
-    value = -0.375
+    value = 0
 },
 
 parameter[4] = {
     name = "py",
-    value = 0
+    value = 0.1675
 }
 },
 
@@ -43,10 +43,10 @@ mode = 1,
 
 item[0] = {
     type = "real_linear",
-    object = "py",
+    object = "px",
     points = 2000,
-    min = 0.16825,
-    max = 0.16875
+    min = -0.379,
+    max = -0.3815
 }
 },
 
