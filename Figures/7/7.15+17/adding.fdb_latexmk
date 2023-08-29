@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1692085328 "adding.tex" "adding.pdf" "adding" 1692085329 0
+["pdflatex"] 1693314712 "adding.tex" "adding.pdf" "adding" 1693314712 0
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb" 1248133631 31809 8670ca339bf94e56da1fc21c80635e2a ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb" 1248133631 32762 224316ccc9ad3ca0423a14971cfa7fc1 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb" 1248133631 32915 7bf7720c61a5b3a7ff25b0964421c9b6 ""
@@ -90,8 +90,8 @@
   "/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1687083928 4643411 5ced174c6d521e21dd58a10751c00482 ""
   "/usr/local/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt" 1687083951 7903592 5c948f83a6485e887a386673a9126c6a ""
   "/usr/local/texlive/2023/texmf.cnf" 1687083924 455 5b996dcaa0eb4ef14a83b026bc0a008c ""
-  "adding.aux" 1692085329 32 3985256e7290058c681f74d7a3565a19 "pdflatex"
-  "adding.tex" 1692085327 4779 78349750204327079e684e6f08db04b4 ""
+  "adding.aux" 1693314712 32 3985256e7290058c681f74d7a3565a19 "pdflatex"
+  "adding.tex" 1693314710 4852 65eb4523ad8ed10c153b8e35a2d27f24 ""
   (generated)
   "adding.aux"
   "adding.log"

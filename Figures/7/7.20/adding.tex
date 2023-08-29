@@ -54,8 +54,8 @@
 		level/.style={widthlevel=#1, % automatically set node width
 				sibling distance=\TreeDiameter/(2^#1),
 				level distance=\LevelDistance+#1\WidthIncrement},
-		level 1/.style={settextwidth=$\L^6\R^4(\L^5\R^4)^2$, level distance=5em},    %,level distance=1cm
-		level 2/.style={settextwidth=$(\L^6\R^4\L^5\R^4)^2\L^5\R^4$, level distance=6em},    %,level distance=1cm
+		level 1/.style={settextwidth=$\L^6\R^4(\L^5\R^4)^2\:\:(00)$, level distance=5em},    %,level distance=1cm
+		level 2/.style={settextwidth=$(\L^6\R^4\L^5\R^4)^2\L^5\R^4\:\:(00)$, level distance=6em},    %,level distance=1cm
 		edge from parent/.style={}] % don't draw tree edges
 
 
@@ -63,18 +63,18 @@
 	% ===============  NODES  ================
 	% ========================================
 
-	\path[widthlevel=-1,setwidth=1.8em] node[name=r] at (0,\NodeHeight) {\tiny$\L^3\R^3$}
-	node[name=s] at (0,-\TreeDiameter-\NodeHeight) {\tiny$\L^4\R^3$};
+	\path[widthlevel=-1,setwidth=3.0em] node[name=r] at (0,\NodeHeight) {\tiny$\L^3\R^3\:\:(6)$}
+	node[name=s] at (0,-\TreeDiameter-\NodeHeight) {\tiny$\L^4\R^3\:\:(7)$};
 
-	\path[setwidth=3.6em] node[name=sr] at (\LevelDistance,-.5\TreeDiameter) {\tiny$\L^4\R^3\L^3\R^3$}
-	child{ node{\tiny$\L^4\R^3(\L^3\R^3)^2$}
-			child{ node{\tiny$\L^4\R^3(\L^3\R^3)^3$} }
-			child{ node{\tiny$(\L^4\R^3\L^3\R^3)^2\L^3\R^3$} }
+	\path[setwidth=5.2em] node[name=sr] at (\LevelDistance,-.5\TreeDiameter) {\tiny$\L^4\R^3\L^3\R^3\:\:(13)$}
+	child{ node{\tiny$\L^4\R^3(\L^3\R^3)^2\:\:(19)$}
+			child{ node{\tiny$\L^4\R^3(\L^3\R^3)^3\:\:(25)$} }
+			child{ node{\tiny$(\L^4\R^3\L^3\R^3)^2\L^3\R^3\:\:(32)$} }
 		}
 	%---------%
-	child{ node{\tiny$(\L^4\R^3)^2\L^3\R^3$}
-			child{ node{\tiny$\L^4\R^3(\L^4\R^3\L^3\R^3)^2$} }
-			child{ node{\tiny$(\L^4\R^3)^3\L^3\R^3$} }
+	child{ node{\tiny$(\L^4\R^3)^2\L^3\R^3\:\:(20)$}
+			child{ node{\tiny$\L^4\R^3(\L^4\R^3\L^3\R^3)^2\:\:(33)$} }
+			child{ node{\tiny$(\L^4\R^3)^3\L^3\R^3\:\:(27)$} }
 		};
 
 	% ========================================
@@ -112,7 +112,7 @@
 	\node[text width=1ex,draw=black!1,very thin] at (5.4,3.2\NodeHeight) {\scriptsize 3};
 
 	% horizontal line beneath column labels
-	\draw[thick,->] (-0.5,2.3\NodeHeight) -- (7.0,2.3\NodeHeight);
+	\draw[thick,->] (-0.7,2.3\NodeHeight) -- (7.2,2.3\NodeHeight);
 
 \end{tikzpicture}
 
