@@ -3,6 +3,7 @@
 
 # Period 8
 #set object 1 rect from 0.8, 0.235 to 1, 0.245 front fs empty border lc rgb 'red'
+set label 1 "A" at 0.7, 0.1595 point pointtype 7 lc rgb 'red' front
 
 # Period 10
 set object 2 rect from 0.5, 0.155 to 0.9, 0.165 lw 2 front fs empty border lc rgb 'red'

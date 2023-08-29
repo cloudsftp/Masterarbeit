@@ -8,3 +8,5 @@
 
 \psfrag{x}{\hspace*{0.0em}\raisebox{0.5ex}{$\alpha$}}
 \psfrag{y}{\hspace*{0.0em}\raisebox{0.5ex}{$\beta$}}
+
+\psfrag{A}{\hspace*{0.0em}\raisebox{1.5ex}{\color[RGB]{255, 110, 0}{$A$}}}
