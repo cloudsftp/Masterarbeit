@@ -9,6 +9,5 @@ $(picture).png: work.plt Makefile $(picture)_fm
 
 clean:
 	\rm -f *.eps *.pdf *~
-	gzip *.tna
 
 

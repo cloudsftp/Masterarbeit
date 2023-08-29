@@ -2,52 +2,34 @@
 dynamical_system = {
     type = map,
     name = "map",
-    parameter_space_dimension = 5,
+    parameter_space_dimension = 3,
 parameters = {
 
 parameter[0] = {
-    name = "aL",
-    value = 4
+    name = "E0",
+    value = 16.7302
 },
 
 parameter[1] = {
-    name = "bL",
-    value = -0.5
+    name = "hi0",
+    value = 0.18235
 },
 
 parameter[2] = {
-    name = "cL",
-    value = 0
-},
-
-parameter[3] = {
-    name = "px",
-    value = -0.375
-},
-
-parameter[4] = {
-    name = "py",
-    value = 0.1678
+    name = "mu",
+    value = 0.5
 }
 },
 
 state_space_dimension = 1,
-initial_state = (0.0175),
+initial_state = (0),
 reset_initial_states_from_orbit = false,
 number_of_iterations = 1000
 },
 
 scan = {
 type = nested_items,
-mode = 0,
-
-item[0] = {
-    type = "real_linear",
-    object = "initial_state[0][0]",
-    points = 2,
-    min = 0.249,
-    max = 0.749
-}
+mode = 0
 },
 
 investigation_methods = {

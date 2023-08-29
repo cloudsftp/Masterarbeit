@@ -21,10 +21,10 @@
 \psfrag{x}{\hspace*{0.0em}\raisebox{0.5ex}{$x$}}
 \psfrag{y}{\hspace*{0.0em}\raisebox{0.5ex}{$f(x)$}}
 
-\psfrag{s1}{\scriptsize $\color{blue}{\O}_{\!\A^5\B^3\C^5\D^3}$}
-\psfrag{s2}{\scriptsize $\color{red}{\O}_{\!\A^4\B^3\C^4\D^3}$}
-\psfrag{s3}{\scriptsize $\color{forestGreen}{\O}_{\!\A^5\B^3\C^4\D^4}$}
-\psfrag{s4}{\scriptsize $\color{black}{\O}_{\!\A^4\B^4\C^5\D^3}$}
+\psfrag{s1}{\scriptsize $\color{blue}{\O}_{\!\A^3\B^2\C^3\D^2}$}
+\psfrag{s2}{\scriptsize $\color{red}{\O}_{\!\A^2\B^2\C^2\D^2}$}
+\psfrag{s3}{\scriptsize $\color{forestGreen}{\O}_{\!\A^3\B^2\C^2\D^3}$}
+\psfrag{s4}{\scriptsize $\color{black}{\O}_{\!\A^2\B^3\C^3\D^2}$}
 
 \psfrag{d0}{\scriptsize $d_0$}
 \psfrag{d1}{\scriptsize $d_1$}
