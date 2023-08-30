@@ -10,7 +10,6 @@ on:
 env:
   DOC_SOURCE: Report/Masterarbeit_Weik.tex
   DOC_TARGET: Report/Masterarbeit_Weik.pdf
-  DECLARATION: Report/declaration.pdf
   TMP_SIGNED_DOC: Report/Masterarbeit_Weik_signed.pdf
   CODE_ARCHIVE: Masterarbeit_Weik_SourceCode.tar.gz
   CODE_ARCHIVE_PICS: Masterarbeit_Weik_SourceCode_WithPictures.tar.gz
@@ -28,21 +27,11 @@ jobs:
       - name: Package source code
         run: ./archive_source_code.sh
 
-      - name: Install qpdf
-        run: |
-          sudo apt-get update
-          sudo apt-get install qpdf
-
       - name: Compile LaTeX
         uses: xu-cheng/latex-action@v2
         with:
           work_in_root_file_dir: true
           root_file: "${{ env.DOC_SOURCE }}"
-
-      - name: Add assurance
-        run: |
-          qpdf --empty --pages "${DOC_TARGET}" 1-r2 "${DECLARATION}" -- "${TMP_SIGNED_DOC}"
-          mv "${TMP_SIGNED_DOC}" "${DOC_TARGET}"
 
       - name: Release
         if: startsWith(github.ref, 'refs/tags/')
