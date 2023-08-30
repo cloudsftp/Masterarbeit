@@ -7,18 +7,18 @@
 - Figures
     - Sources for all figures in the report
     - AnT configurations
-    - model implementations (C++, python, and gnuplot)
+    - Model implementations (C++, Python, and Gnuplot)
     - Makefiles
-    - bash scripts
-    - gnuplot scripts
+    - `bash` scripts
+    - Gnuplot scripts
     - etc.
 - Simulation
     - Convenience script `simulAnT.py` for fast iteration on different models
-    - conda environment for `simulant.py`
+    - conda environment for `simulAnT.py` (`environment.yml`)
     - Different model implementations (C++, python, and gnuplot)
-    - Configuration files for `simulant.py`
+    - Configuration files for `simulAnT.py`
     - etc.
 - symbolic-regions
-    - Small program used for data processing in some figures
+    - A small program used for data processing in some figures
 - translating-symbolic
-    - Small program that automates the translation of symbolic sequences from the halved model into the full model
+    - A small program that automates the translation of symbolic sequences from the halved model into the full model
