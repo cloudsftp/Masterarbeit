@@ -20,6 +20,29 @@ R = 16.735
 D = 0.1821
 U = 0.1828
 
+ArrowStyle ="lw 1 lc rgb 'black' front"
+ArrowStyleW="lw 4 lc rgb 'white' front"
+
+set label "BCBBL" at 16.7305, 0.182599 front
+set arrow from 16.7302, 0.182613 to 16.7287, 0.182668 @ArrowStyleW
+set arrow from 16.7302, 0.182613 to 16.7287, 0.182668 @ArrowStyle
+set arrow from 16.7302, 0.182592 to 16.7276, 0.182537 @ArrowStyleW
+set arrow from 16.7302, 0.182592 to 16.7276, 0.182537 @ArrowStyle
+
+set label "BCBBD" at 16.7305, 0.18254 front
+set arrow from 16.7325, 0.182515 to 16.7332, 0.182282 @ArrowStyleW
+set arrow from 16.7325, 0.182515 to 16.7332, 0.182282 @ArrowStyle
+
+set label "BCBAU" at 16.7312, 0.182168 front
+set arrow from 16.7318, 0.18221 to 16.7312, 0.182393 @ArrowStyleW
+set arrow from 16.7318, 0.18221 to 16.7312, 0.182393 @ArrowStyle
+
+set label "BCBAR" at 16.7254, 0.182458 front
+set arrow from 16.7262, 0.182433 to 16.7290, 0.182186 @ArrowStyleW
+set arrow from 16.7262, 0.182433 to 16.7290, 0.182186 @ArrowStyle
+set arrow from 16.7275, 0.182461 to 16.7314, 0.182457 @ArrowStyleW
+set arrow from 16.7275, 0.182461 to 16.7314, 0.182457 @ArrowStyle
+
 set xrange [L to R]
 set yrange [D to U]
 

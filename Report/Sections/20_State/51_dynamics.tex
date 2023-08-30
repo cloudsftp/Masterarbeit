@@ -5,9 +5,11 @@ The aforementioned interesting dynamics of the original model occur for the fixe
 The parameters $E_0$ and $\chi_0$ are varied in the ranges $[14, 28]$ and $[0.1, 0.65]$, respectively.
 Scanning this parameter plane for the period of stable cycles results in \Cref{fig:state.og.dynamics.period}.
 
-The colors in the 2D scan \Cref{fig:state.og.dynamics.period} indicate the period of the stable cycle in those regions.
+The colors in the 2D scan in \Cref{fig:state.og.dynamics.period} indicate the period of the stable cycle in those regions.
 Brighter colors correspond to higher periods and some periods are annotated with numbers in the top right area of the picture.
-One can see that the period of a chain is two higher than the period of the chain to the left of it.
+There are long parameter regions that are associated with the same period that get narrower at some points.
+As we will see shortly, those are actually chains of different parameter regions associated with the same period.
+One can see that the period of the chain to the right of another chain is two higher than the period associated with the previous chain.
 This makes the structure a \gls{pi} structure.
 Points $A, B$ and $C$ are in the parameter region, which has stable cycles with the period 12.
 The parameter regions differ in another way, the cycles in these regions are associated with different symbolic sequences.
@@ -90,22 +92,23 @@ Therefore, only the two following cases are possible:
 
 \Cref{fig:state.og.dynamics.cobwebs} shows the cobweb diagrams at points $A$ and $C$.
 Both parameter regions have only one stable cycle of period 12.
-The stable cycle at point $A$ has the symbolic sequence $\A^3\B^3\C^3\D^3$ and the cycle at point $C$ has the symbolic sequence $\A^2\B^4\C^2\D^4$.
 This thesis follows the convention that the branch with the smallest positive boundaries is called branch $\A$.
 And the next branch is called branch $\B$ and so on.
+The stable cycle at point $A$ has the symbolic sequence $\A^3\B^3\C^3\D^3$ and the cycle at point $C$ has the symbolic sequence $\A^2\B^4\C^2\D^4$.
+So both cycles are symmetric and therefore ``type A'' cycles.
+We call the parameter regions associated with ``type A'' cycles ``type A'' parameter regions.
 
 \Cref{fig:state.og.dynamics.cobweb.B} shows the cobweb diagram at point $B$.
 By looking closely, one can see that there are 2 coexisting cycles in this cobweb diagram.
-One cycle has the symbolic sequence $\A^3\B^3\C^2\D^4$, while the other one has the symbolic sequence $\A^2\B^2\C^3\D^3$.
-Both cycles are asymmetric.
-And they are similar to each other in the way that $\Cycle{\A^3\B^3\C^2\D^4}$ behaves on the branches $\A$ and $\B$ like $\Cycle{\A^2\B^2\C^3\D^3}$ on the branches $\C$ and $\D$ and vice versa.
+One cycle has the symbolic sequence $\A^3\B^3\C^2\D^4$ shown in green, while the other one has the symbolic sequence $\A^2\B^4\C^3\D^3$ shown in green.
+Both cycles are asymmetric and therefore ``type B'' cycles.
+And they are similar to each other in the way that $\Cycle{\A^3\B^3\C^2\D^4}$ behaves on the branches $\A$ and $\B$ like $\Cycle{\A^2\B^4\C^3\D^3}$ on the branches $\C$ and $\D$ and vice versa.
 One can think of the cycles being equivalent by shifting them by $\pi$ in either direction.
-Due to the symmetry of the model, an asymmetric stable cycle necessarily must exist alongside another asymmetric stable cycle that is itself, but shifted by $\pi$.
+This agrees with the rules for ``type B'' cycles outlined above.
 These cycles also behave similarly to both the cycles at points $A$ and $C$.
 The cycle $\Cycle{\A^3\B^3\C^2\D^4}$ behaves like the cycle $\Cycle{\A^3\B^3\C^3\D^3}$ at point $A$ on its left half, while it behaves like the cycle $\Cycle{\A^2\B^4\C^2\D^4}$ at point $C$ on its right half.
 The same is true for the cycle $\Cycle{\A^2\B^4\C^3\D^3}$ but reversed since it is the other cycle shifted by $\pi$.
-The previously described parameter regions with only one symmetrical stable cycle are called ``type A'' parameter regions in this thesis.
-And the just described parameter regions with 2 asymmetrical coexisting cycles are called ``type B'' parameter regions in this thesis.
+Similarly to ``type A'' parameter regions, we call this parameter region a ``type B'' parameter region.
 
 This behavior is peculiar.
 To summarize, we have chains of parameter regions associated with the same period.

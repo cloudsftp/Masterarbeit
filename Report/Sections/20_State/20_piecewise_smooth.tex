@@ -5,7 +5,7 @@ Initially, the theory of non-linear dynamical systems was developed for smooth d
 Hence, several results can't be applied to \gls{pws} dynamical systems.
 But smooth systems are not fit to model several engineering applications, since such systems often undergo sudden changes.
 For example, a model of an electrical circuit can't be smooth as soon as the circuit has a single switching element, such as a transistor~\cite{ZhuMos03}.
-The model that is investigated in this thesis describes such an electrical circuit.
+The model investigated in this thesis describes such a switching electrical circuit that converts power from AC to DC.
 
 In \gls{pws} dynamical systems, bifurcations are possible that do not occur in smooth dynamical systems.
 Even more so in \gls{pws} discontinuous dynamical systems, which this thesis focuses on.
@@ -15,7 +15,7 @@ The reason for this is that many bifurcations, especially border collision bifur
 The advantage of normal forms is that these models neglect all non-essential parameter effects for the description of the bifurcation phenomenon at hand.
 Furthermore, one can prove that the neglected parameter effects are indeed non-essential for the bifurcation phenomenon.
 For the model considered in this thesis, such a proof can not be provided.
-Nevertheless, this thesis follows a similar approach as it neglects parameter effects, identified as non-essential.
+Nevertheless, this thesis follows a similar approach as it identifies essential and neglects non-essential parameters and parameter effects for the bifurcation structure.
 But rather than on rigorous proofs, it relies on numerical evidence.
 The resulting model is called an archetypal model.
 
@@ -72,7 +72,7 @@ Here, they are used to describe the structure of \gls{pa} structures.
 	\end{align}
 \end{definition}
 
-The rotation numbers of the cycles in a gls{pa} structure are organized in a Farey-tree.
+The rotation numbers of cycles associated with the parameter regions in a \gls{pa} structure are organized in a Farey-tree.
 A Farey-tree has two ``root nodes'' and the child node of two nodes is the Farey-sum of the parent nodes~\cite{granados14adding}.
 
 \begin{definition}[Farey-sum]
@@ -82,8 +82,8 @@ A Farey-tree has two ``root nodes'' and the child node of two nodes is the Farey
 	\end{align}
 \end{definition}
 
-\Cref{fig:state.discont.adding.farey.rot} shows such a Farey-tree of a \gls{pa} structure between two fixed points, $\L$ and $\R$.
-If we replace the content of the nodes with the symbolic sequences of the cycles, we get the tree shown in \Cref{fig:state.discont.adding.farey.rot}.
+\Cref{fig:state.discont.adding.farey.rot} shows such a Farey-tree showing the rotation numbers of a \gls{pa} structure between two parameter regions associated with the fixed points $\L$ and $\R$.
+If we replace the content of the nodes with the symbolic sequences of the cycles associated with the parameter regions in the \gls{pa} structure, we get the tree shown in \Cref{fig:state.discont.adding.farey.sym}.
 Instead of Farey-addition, here the child node of two parent nodes is the concatenation of the symbolic sequences in the parent nodes.
 Together with \Cref{theorem:state.rot.num.concat}, this explains why the  tree in \Cref{fig:state.discont.adding.farey.rot} is a Farey-tree~\cite{granados14adding}.
 
@@ -122,3 +122,7 @@ Together with \Cref{theorem:state.rot.num.concat}, this explains why the  tree i
 	}
 	\label{fig:state.discont.adding.farey}
 \end{figure}
+
+Another class of bifurcation structures that also occurs in \gls{PWS} discontinuous maps is the class of \gls{pi} structure.
+As the name suggests, here the periods increment from one parameter regions to the next~\cite{granados2017incrementing}.
+Here, no example scan of the periods associated with the parameter regions in such a \gls{pi} structure is provided, as we will see an example shortly in the investigated system.

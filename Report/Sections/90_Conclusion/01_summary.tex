@@ -1,7 +1,8 @@
 \section{Summary}
 \label{sec:concl.sum}
 
-This section summarizes all findings, it is divided into two logical parts.
+This section contains the summary of all findings.
+It is divided into two logical parts
 
 First, the original model function and the parameter effects on the model function in the original model were analyzed.
 Then, the characteristics of the model function and parameter effects that are needed for the \gls{pi} structure of interest were identified.
@@ -9,11 +10,10 @@ This is achieved by developing the archetypal model, a model that is simpler tha
 This model is defined by four branches $f_\A, f_\B, f_\C,$ and $f_\D$ like the original model.
 And it is symmetric like the original model.
 The branches $f_\A$ and $f_\C$ are quadratic and both governed by a function $g_L(x) = a_L \cdot x^2 + b_L \cdot x + c_L$, while the branches $f_\B$ and $f_\D$ are linear and governed by a function $g_R(x) = b_L \cdot x + c_L$.
-One parameter of the archetypal model is chosen to directly manipulate a specific characteristic of the model function, namely the value of $g_R$ at the left border of the branches $f_\B$ and $f_\D$.
-It is named $\alpha = -g_R\left(\frac{1}{4}\right)$ and its value influences the parameters $b_R$ and $c_R$.
-Hence, it is called a composite parameter.
-It has negative sign, to orient the \gls{pi} structure in the archetypal model like in the original model.
-The other parameter is just the offset of the branches $f_\A$ and $f_\D$, $\beta = c_L$.
+The parameters of the function $g_L$ are altered directly, while the parameters of the function $g_R$ are altered indirectly via two composite parameters $g_R\left(\frac{1}{4}\right)$ and $g_R\left(\frac{1}{2}\right)$ influencing the value of the branches $f_\B$ and $f_\D$ at their borders.
+Two parameters are varied in the archetypal model.
+The first one is $\alpha = -g_R\left(\frac{1}{4}\right)$, and it has negative sign to orient the \gls{pi} structure in the archetypal model like in the original model.
+The other parameter is $\beta = c_L$, it influences the offset of the branches $f_\A$ and $f_\D$.
 
 Then the \gls{pi} structure in the archetypal model was described.
 All possible bifurcations and coexistence scenarios were identified.
@@ -30,7 +30,7 @@ The numerical evidence that the archetypal model exhibits the same behavior as t
 
 Second, it was demonstrated that the archetypal model proposed in this thesis can exhibit behavior leading to bifurcation structures that are related to \gls{pa} structures.
 For this, the shape of the branches $f_\A$ and $f_\C$ was altered, making them increasing.
-This leads to a piecewise-increasing model, since $f_\B$ and $f_\D$ are already increasing.
+This leads to a piecewise-increasing model, since the branches $f_\B$ and $f_\D$ are already increasing.
 The appearance of these structures were found to be tied to the disappearance of the local minima on the branches $f_\A$ and $f_\C$ and the disappearance of the ``type B'' prameter regions in the chains.
 It was also proven that the local minima are necessary for the ``type B'' parameter regions in the chains.
 

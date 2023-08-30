@@ -50,3 +50,15 @@
 \newtheorem{proof}{Proof}
 
 \usepackage{listing-rust}
+
+
+\makeatletter
+\def\ext@algorithm{lol}% algorithm captions will be written to the .lol file
+% share the list making commands and redefine the heading
+\AtBeginDocument{%
+  \let\l@algorithm\l@lstlisting
+  \let\c@algorithm\c@lstlisting
+  \let\thealgorithm\thelstlisting
+  \renewcommand{\lstlistlistingname}{Algorithms and program code}%
+}
+\makeatother

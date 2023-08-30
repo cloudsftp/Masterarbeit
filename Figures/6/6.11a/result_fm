@@ -1,4 +1,11 @@
 % fmopt: width=8cm
+%head:
+% \usepackage{amsmath}
+%\newcommand{\A}{\text{\tiny$\mathcal A$}}
+%\newcommand{\B}{\text{\tiny$\mathcal B$}}
+%\newcommand{\C}{\text{\tiny$\mathcal C$}}
+%\newcommand{\D}{\text{\tiny$\mathcal D$}}
+%\newcommand{\LC}{\text{$\mathcal O$}}
 
 \psfrag{L}{\hspace*{0.0em}\raisebox{0.5ex}{$16.725$}}
 \psfrag{R}{\hspace*{-2.8em}\raisebox{0.5ex}{$16.735$}}
@@ -10,3 +17,9 @@
 \psfrag{y}{\hspace*{0.0em}\raisebox{0.5ex}{$\chi_0$}}
 
 \psfrag{A}{\hspace*{0.0em}\raisebox{0.5ex}{$X$}}
+
+\psfrag{BCBBL}{\hspace*{0.0em}\raisebox{0.5ex}{\tiny$\xi^{\A^3\B^2\C^2\underline{\D}^3}_{d_0}, \xi^{\A^3\underline{\B}^2\C^2\D^3}_{d_2}$}}
+\psfrag{BCBBD}{\hspace*{0.0em}\raisebox{0.5ex}{\tiny$\xi^{\A^3\B^2\C^2\underline{\D}^3}_{d_3}, \xi^{\A^3\underline{\B}^2\C^2\D^3}_{d_1}$}}
+
+\psfrag{BCBAR}{\hspace*{0.0em}\raisebox{0.5ex}{\tiny$\xi^{\underline{\A}^2\B^2\underline{\C}^2\D^2}_{d_0, d_2}$}}
+\psfrag{BCBAU}{\hspace*{0.0em}\raisebox{0.5ex}{\tiny$\xi^{\underline{\A}^3\B^2\underline{\C}^3\D^2}_{d_1, d_3}$}}

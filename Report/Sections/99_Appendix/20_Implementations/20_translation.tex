@@ -1,6 +1,6 @@
 \section{Translating Symbolic Sequences}
 
-This section covers the implementation of the naive algorithm for translating symbolic sequences from the halved archetypal model into the archetypal model.
+This section covers the implementation of the na"ive algorithm for translating symbolic sequences from the halved archetypal model into the archetypal model.
 It is implemented in the programming language Rust.
 The program can be obtained via \texttt{cargo} at the crate~\cite{TranslatingSymbolicCrate}.
 \Cref{lst:app.impl.translating.cycles} shows the implementation of \texttt{HalvedCycle} and \texttt{FullCycle}.
@@ -13,12 +13,12 @@ The implementations for displaying the cycles to the user are omitted.
 \lstinputlisting[
 	language=Rust,
 	label=lst:app.impl.translating.cycles,
-	caption=Implementation of Cycles for the Naive Translating Algorithm,
+	caption=Implementation of Cycles for the Na"ive Translating Algorithm,
 ]
 {Sections/99_Appendix/20_Implementations/20_0_cycles.rs}
 
 \clearpage
-\Cref{lst:app.impl.translating} shows the implementation of the naive algorithm for translating symbolic sequences.
+\Cref{lst:app.impl.translating} shows the implementation of the na"ive algorithm for translating symbolic sequences.
 It uses the definitions of \texttt{HalvedCycle} and \texttt{FullCycle} from \Cref{lst:app.impl.translating}.
 The algorithm is implemented as the \texttt{TryFrom} trait.
 This implementation returns a \texttt{Vec} of \texttt{FullCycle}s, since the cycle in the halved archetypal model may manifest as multiple cycles in the archetypal model.
@@ -35,6 +35,6 @@ The detection of rotation equivalent cycles is easy, since the program considers
 \lstinputlisting[
 	language=Rust,
 	label=lst:app.impl.translating,
-	caption=Implementation of the Naive Translating Algorithm,
+	caption=Implementation of the Na"ive Translating Algorithm,
 ]
 {Sections/99_Appendix/20_Implementations/20_1_translating.rs}
