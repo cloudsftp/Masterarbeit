@@ -3,7 +3,7 @@
 
 The values of the composite parameters $g_R\left(\frac{1}{4}\right)$ and $\left. \frac{d}{dx} g_R\left(x\right) \right|_{x = \frac{1}{2}}$ are fixed as described previously in \Cref{sec:setup.quad.hyper.params}.
 In this section, the values of the parameters of the function $g_L$ are set to $a_L = 8$ and $b_L = -1$ to get steep, shifted parabola-shaped branches $f_\A$ and $f_\D$, as one can see in the cobweb diagrams in \Cref{fig:setup.quad.hyper.1.cobwebs}.
-Scanning the periods for reasonable values of $\alpha = g_R\left(\frac{1}{4}\right)$ and the parameter $\beta = c_L$ results in \Cref{fig:setup.quad.hyper.1.period}.
+Scanning the periods for reasonable values of the parameters $\alpha$ and $\beta$ results in \Cref{fig:setup.quad.hyper.1.period}.
 The reasonable values for $\alpha = g_R\left(\frac{1}{4}\right)$ are larger than $\frac{1}{4}$ to keep the parabola above the bisector $y = x$ and smaller than $\frac{1}{2}$ to keep the value of the model function at the left borders of the branches $f_\B$ and $f_\D$ below the value of the model function at the right borders.
 For the specified values of $a_L$ and $b_L$, the reasonable values for $\beta = c_L$ are smaller than $0.22$ to not map the points directly onto the branch $f_\C$ from the branch $f_\A$.
 To keep the parabola above the bisector $y = x$, the values for $\beta$ should also be larger than $0.12$.
@@ -11,7 +11,6 @@ To keep the parabola above the bisector $y = x$, the values for $\beta$ should a
 With the newly chosen fixed parameters and the new composite parameters, this model imitates the shape of the original model function well still.
 The parameter $c_L$ is also still varied and this emulates the effects of $\chi_0$ on the branches $F_\A$ and $F_\C$ of the original model function well, as described in the previous section, \Cref{sec:setup.quad}.
 The other varied parameter is the composite parameter $g_R\left(\frac{1}{4}\right)$.
-For brevity the varied parameters are named $\alpha = g_R\left(\frac{1}{4}\right)$ and $\beta = c_L$.
 Varying the parameter $\alpha$ is a major improvement for emulating the effects of $E_0$ on the branches $F_\B$ and $F_\D$ of the original model function.
 Increasing $\alpha$ primarily increases the values of the model function on the left sides of the branches $f_\B$ and $f_\D$ and keeps the values on the right sides the same.
 It also moves the local minima of those branches to the left and decreases the value of the model function at those points, just as the parameter $E_0$ did to the original model function.
@@ -57,7 +56,7 @@ It also moves the local minima of those branches to the left and decreases the v
 \Cref{fig:setup.quad.hyper.1.period} shows a 2D scan of the periods associated with parameter regions in the specified parameter range for $\alpha$ and $\beta$.
 At the top, some periods are annotated.
 One can see that in the scan there are sequences of parameter regions that are associated with the same period.
-These sequences are next to each other, where each sequence is associated with a period that is two numbers higher than the period associated with the parameter region sequence right of it.
+These sequences are next to each other, where each sequence is associated with a period that is two higher than the period associated with the parameter region sequence to the right of it.
 This is similar to the \gls{pi} that can be observed in the original model, as described in \Cref{sec:state.og.dynamics}.
 One difference is that the sequences in the original model were connected and formed chains.
 
@@ -74,5 +73,5 @@ Besides that the sequences of parameter region associated with the same period a
 In the original model there are ``type B'' parameter regions between the ``type A'' parameter regions of a chain of parameter regions with the same period.
 To reiterate, ``type A'' parameter regions are associated with a single symmetric cycle.
 These are the parameter regions, one can observe in this case also.
-Between two ``type A'' parameter regions there is a parameter region that is associated with two coexisting asymmetrical twin cycles, called ``type B'' parameter regions.
+Between two ``type A'' parameter regions there is a parameter region that is associated with two coexisting asymmetrical twin cycles, called ``type B'' parameter region.
 These ``type B'' parameter regions are missing in this case.
