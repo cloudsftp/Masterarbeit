@@ -4,14 +4,20 @@
 
 You need to install [`conda`](https://docs.conda.io/en/latest/) and also [`AnT`](https://github.com/cloudsftp/AnT).
 
+### Conda
+
+Install `conda` and initialize the environment via `conda env create --name simulAnT --file=environment.yml`.
+And activate it with `conda activate simulAnT`.
+
 ### AnT
 
-To install `AnT`, download the source code and put it in the folder `AnT-src`.
-Then you can use the script `build.sh` to build it.
+The `AnT` source code comes packaged with this source code, it is in the directory `AnT-src`.
+You can use the script `build.sh` to build it.
 The result will be the binaries and necessary libraries in the directory `AnT`.
 Alternatively you can compile it manually, but the resulting binaries need to be at the same location.
 
 ## Usage
+
 ```
 usage: simulAnT.py [-h] -m MODEL -d DIAGRAM [-n NUM_CORES]
                    [--simple-figure | --no-simple-figure]
