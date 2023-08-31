@@ -64,3 +64,42 @@ Just run `make` if a `Makefile` is present or the present `bash`-script.
 - 5.13a+b [Gnuplot](###latex-or-gnuplot)
 - 5.14a+b [simple `AnT`](###simple-ant-simulation)
 - 5.15a-c [simple `AnT`](###simple-ant-simulation)
+
+### 6
+
+- * [simple `AnT`](###simple-ant-simulation)
+
+### 7
+
+- 7.1 [simple `AnT`](###simple-ant-simulation)
+- 7.2a+b [Gnuplot](###latex-or-gnuplot)
+- 7.3a-d [`AnT` w/ post-processing](###ant-simulation-with-post-processing)
+- 7.4a [`AnT` w/ post-processing](###ant-simulation-with-post-processing)
+- 7.4b+c [simple `AnT`](###simple-ant-simulation)
+- 7.5a [`AnT` w/ post-processing](###ant-simulation-with-post-processing)
+- 7.5b+c [simple `AnT`](###simple-ant-simulation)
+- 7.6 [simple `AnT`](###simple-ant-simulation)
+- 7.7a+b [`AnT` w/ post-processing](###ant-simulation-with-post-processing)
+- 7.7c+d [simple `AnT`](###simple-ant-simulation)
+- 7.8 [simple `AnT`](###simple-ant-simulation)
+- 7.9a-e [Gnuplot](###latex-or-gnuplot)
+- 7.10a+b [Gnuplot](###latex-or-gnuplot)
+- 7.11 [simple `AnT`](###simple-ant-simulation)
+- 7.12a+b [simple `AnT`](###simple-ant-simulation)
+- 7.13 [LaTeX](###latex-or-gnuplot)
+- 7.14a+b [simple `AnT`](###simple-ant-simulation)
+- 7.15+17 [LaTeX](###latex-or-gnuplot)
+- 7.16a+b [simple `AnT`](###simple-ant-simulation)
+- 7.18 [Gnuplot](###latex-or-gnuplot)
+- 7.19a+b [simple `AnT`](###simple-ant-simulation)
+- 7.20 [LaTeX](###latex-or-gnuplot)
+- 7.21 [LaTeX](###latex-or-gnuplot)
+- 7.22 [LaTeX](###latex-or-gnuplot)
+
+### 8
+
+- 8.1 [simple `AnT`](###simple-ant-simulation)
+
+### A
+
+- *  [simple `AnT`](###simple-ant-simulation)
