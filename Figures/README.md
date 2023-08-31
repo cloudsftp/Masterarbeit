@@ -40,3 +40,27 @@ Just run `make` if a `Makefile` is present or the present `bash`-script.
 ### 2
 
 - 2.1 [simple `AnT`](###simple-ant-simulation)
+- 2.2a+b [LaTeX](###latex-or-gnuplot)
+- 2.3 [simple `AnT`](###simple-ant-simulation)
+- 2.4a-d [simple `AnT`](###simple-ant-simulation)
+- 2.5a+b [simple `AnT`](###simple-ant-simulation)
+- 2.6 [simple `AnT`](###simple-ant-simulation)
+
+### 5
+
+- 5.1 [Gnuplot](###latex-or-gnuplot)
+- 5.2a [simple `AnT`](###simple-ant-simulation)
+- 5.2b-d [Gnuplot](###latex-or-gnuplot)
+- 5.3 [simple `AnT`](###simple-ant-simulation)
+- 5.4a+b [Gnuplot](###latex-or-gnuplot)
+- 5.5a+b [simple `AnT`](###simple-ant-simulation)
+- 5.6a-c [simple `AnT`](###simple-ant-simulation)
+- 5.7a+b [simple `AnT`](###simple-ant-simulation)
+- 5.8a-c [simple `AnT`](###simple-ant-simulation)
+- 5.9 [simple `AnT`](###simple-ant-simulation)
+- 5.10a-c [simple `AnT`](###simple-ant-simulation)
+- 5.11a+b [simple `AnT`](###simple-ant-simulation)
+- 5.12a-c [simple `AnT`](###simple-ant-simulation)
+- 5.13a+b [Gnuplot](###latex-or-gnuplot)
+- 5.14a+b [simple `AnT`](###simple-ant-simulation)
+- 5.15a-c [simple `AnT`](###simple-ant-simulation)
