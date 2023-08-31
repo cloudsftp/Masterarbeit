@@ -67,7 +67,7 @@ Just run `make` if a `Makefile` is present or the present `bash`-script.
 
 ### 6
 
-- * [simple `AnT`](###simple-ant-simulation)
+- \* [simple `AnT`](###simple-ant-simulation)
 
 ### 7
 
@@ -102,4 +102,4 @@ Just run `make` if a `Makefile` is present or the present `bash`-script.
 
 ### A
 
-- *  [simple `AnT`](###simple-ant-simulation)
+- \* [simple `AnT`](###simple-ant-simulation)
