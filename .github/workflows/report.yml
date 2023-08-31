@@ -23,6 +23,8 @@ jobs:
     steps:
       - name: Check out source code
         uses: actions/checkout@v3
+        with:
+          submodules: recursive
 
       - name: Package source code
         run: ./archive_source_code.sh
