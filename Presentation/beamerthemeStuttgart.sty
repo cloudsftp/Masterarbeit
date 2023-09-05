@@ -51,7 +51,7 @@
 \RequirePackage{etoolbox}
 
 \SetupKeyvalOptions{
-    prefix=stuttgart@
+	prefix=stuttgart@
 }
 
 % navigationDotsLocation=near displays the dots in the headline near the section names
@@ -131,7 +131,7 @@
 \setbeamercolor{author}{fg=anthrazit}
 \setbeamerfont{author}{series=\bfseries}
 \expandafter\ifstrequal\expandafter{\stuttgart@titlePageNumberOfAuthors}{many}{%
-    \setbeamerfont{author}{size=\small}
+	\setbeamerfont{author}{size=\small}
 }{}
 % date on title page
 \setbeamercolor{date}{fg=white}
@@ -171,8 +171,8 @@
 % https://tex.stackexchange.com/a/541869
 % Example: \@dimToNum[cm]{\textwidth}
 \NewExpandableDocumentCommand{\@dimToNum}{O{pt}m}{%
-  % #1 (optional, default pt), #2 = length
-  \fpeval{(#2)/(1#1)}%
+	% #1 (optional, default pt), #2 = length
+	\fpeval{(#2)/(1#1)}%
 }
 
 \setlength{\TPHorizModule}{1mm}
@@ -186,119 +186,119 @@
 \newcommand{\@pageHeightMM}{\@dimToNum[mm]{\paperheight}}
 
 \defbeamertemplate*{title page}{customized}[1][]{
-    \begin{textblock}{128}(0,0)
-        \tikz\shade[shading=axis,bottom color=mittelblau,top color=hellblau,shading angle=-45] 
-        (0,0) rectangle (\paperwidth,\paperheight);
-    \end{textblock}
+	\begin{textblock}{128}(0,0)
+		\tikz\shade[shading=axis,bottom color=mittelblau,top color=hellblau,shading angle=-45]
+		(0,0) rectangle (\paperwidth,\paperheight);
+	\end{textblock}
 
-    \begin{textblock}{128}(5,5)
-        % Adjust the size of the logo based on the general frame size (within reasonable bounds)
-        \edef\@pageWidthCM{\@dimToNum[cm]{\paperwidth}}
-        \edef\@logoWidth{\fpeval{min(0.5 * \@pageWidthCM, max(4, 0.4 * \@pageWidthCM))}cm}
-        \includegraphics[width=\@logoWidth]{\stuttgart@titlePageUniversityLogo}
-    \end{textblock}
+	\begin{textblock}{128}(5,5)
+		% Adjust the size of the logo based on the general frame size (within reasonable bounds)
+		\edef\@pageWidthCM{\@dimToNum[cm]{\paperwidth}}
+		\edef\@logoWidth{\fpeval{min(0.5 * \@pageWidthCM, max(4, 0.4 * \@pageWidthCM))}cm}
+		\includegraphics[width=\@logoWidth]{\stuttgart@titlePageUniversityLogo}
+	\end{textblock}
 
-    \edef\@titleCircleRadius{50}
-    \edef\@titleCircleX{\fpeval{\@pageWidthMM - 1.7*\@titleCircleRadius}}
-    \edef\@titleCircleY{\fpeval{\@pageHeightMM - 1.5*\@titleCircleRadius}}
+	\edef\@titleCircleRadius{55}
+	\edef\@titleCircleX{\fpeval{\@pageWidthMM - 1.7*\@titleCircleRadius}}
+	\edef\@titleCircleY{\fpeval{\@pageHeightMM - 1.5*\@titleCircleRadius}}
 
-    \begin{textblock}{128}(\@titleCircleX,\@titleCircleY)
-        \tikz\draw[anthrazit,fill=anthrazit] (0,0) circle ({\@titleCircleRadius mm});
-    \end{textblock}
+	\begin{textblock}{128}(\@titleCircleX,\@titleCircleY)
+		\tikz\draw[anthrazit,fill=anthrazit] (0,0) circle ({\@titleCircleRadius mm});
+	\end{textblock}
 
-    % Draw the circle the author(s) is/are placed onto
-    \expandafter\ifstrequal\expandafter{\stuttgart@titlePageNumberOfAuthors}{few}{%
-        \begin{textblock}{128}(\@titleCircleX,\fpeval{\@titleCircleY - 3})
-            \tikz\draw[white,fill=white] (0,0) circle (12mm);
-        \end{textblock}%
-    }{%
-        \begin{textblock}{128}(\fpeval{\@titleCircleX + 40},\fpeval{\@titleCircleY - 14})
-            \tikz\draw[white,fill=white] (0,0) circle (16mm);
-        \end{textblock}%
-    }
+	% Draw the circle the author(s) is/are placed onto
+	\expandafter\ifstrequal\expandafter{\stuttgart@titlePageNumberOfAuthors}{few}{%
+		\begin{textblock}{128}(\fpeval{\@titleCircleX + 60},\fpeval{\@titleCircleY - 10})
+			\tikz\draw[white,fill=white] (0,0) circle (12mm);
+		\end{textblock}%
+	}{%
+		\begin{textblock}{128}(\fpeval{\@titleCircleX + 40},\fpeval{\@titleCircleY - 14})
+			\tikz\draw[white,fill=white] (0,0) circle (16mm);
+		\end{textblock}%
+	}
 
-    \ifdefempty{\stuttgart@titlePageInstituteLogo}{}{%
-            \begin{textblock}{128}(\fpeval{\@titleCircleX - 30},\fpeval{\@titleCircleY + 25})
-            \tikz\draw[white,fill=white] (0,0) circle (10mm);
-        \end{textblock}
-    }
-    \ifdefempty{\stuttgart@titlePageDepartmentLogo}{}{%
-        \begin{textblock}{128}(\fpeval{\@titleCircleX - 15},\fpeval{\@titleCircleY + 30})
-            \tikz\draw[white,fill=white] (0,0) circle (10mm);
-        \end{textblock}
-    }
-    \ifdefempty{\stuttgart@titlePageBigLogo}{}{%
-        \begin{textblock}{128}(\fpeval{\@titleCircleX - 25},\fpeval{\@titleCircleY + 40})
-            \tikz\draw[white,fill=white] (0,0) circle (15mm);
-        \end{textblock}
-    }
+	\ifdefempty{\stuttgart@titlePageInstituteLogo}{}{%
+		\begin{textblock}{128}(\fpeval{\@titleCircleX - 30},\fpeval{\@titleCircleY + 25})
+			\tikz\draw[white,fill=white] (0,0) circle (10mm);
+		\end{textblock}
+	}
+	\ifdefempty{\stuttgart@titlePageDepartmentLogo}{}{%
+		\begin{textblock}{128}(\fpeval{\@titleCircleX - 15},\fpeval{\@titleCircleY + 30})
+			\tikz\draw[white,fill=white] (0,0) circle (10mm);
+		\end{textblock}
+	}
+	\ifdefempty{\stuttgart@titlePageBigLogo}{}{%
+		\begin{textblock}{128}(\fpeval{\@titleCircleX - 25},\fpeval{\@titleCircleY + 40})
+			\tikz\draw[white,fill=white] (0,0) circle (15mm);
+		\end{textblock}
+	}
 
-    \ifdefempty{\stuttgart@titlePageInstituteLogo}{}{%
-        \begin{textblock}{20}(\fpeval{\@titleCircleX - 30},\fpeval{\@titleCircleY + 25})
-            \parbox[c][20mm]{20mm}{%
-                \centering\includegraphics[width=10mm]{\stuttgart@titlePageInstituteLogo}%
-            }
-        \end{textblock}
-    }
-    \ifdefempty{\stuttgart@titlePageDepartmentLogo}{}{%
-        \begin{textblock}{20}(\fpeval{\@titleCircleX - 15},\fpeval{\@titleCircleY + 30})
-            \parbox[c][20mm]{20mm}{%
-                \centering\includegraphics[width=10mm]{\stuttgart@titlePageDepartmentLogo}%
-            }
-        \end{textblock}
-    }
-    \ifdefempty{\stuttgart@titlePageBigLogo}{}{%
-        \begin{textblock}{30}(\fpeval{\@titleCircleX - 25},\fpeval{\@titleCircleY + 40})
-            \parbox[c][30mm]{30mm}{%
-                \centering\includegraphics[width=26mm]{\stuttgart@titlePageBigLogo}%
-            }
-        \end{textblock}
-    }
+	\ifdefempty{\stuttgart@titlePageInstituteLogo}{}{%
+		\begin{textblock}{20}(\fpeval{\@titleCircleX - 30},\fpeval{\@titleCircleY + 25})
+			\parbox[c][20mm]{20mm}{%
+				\centering\includegraphics[width=10mm]{\stuttgart@titlePageInstituteLogo}%
+			}
+		\end{textblock}
+	}
+	\ifdefempty{\stuttgart@titlePageDepartmentLogo}{}{%
+		\begin{textblock}{20}(\fpeval{\@titleCircleX - 15},\fpeval{\@titleCircleY + 30})
+			\parbox[c][20mm]{20mm}{%
+				\centering\includegraphics[width=10mm]{\stuttgart@titlePageDepartmentLogo}%
+			}
+		\end{textblock}
+	}
+	\ifdefempty{\stuttgart@titlePageBigLogo}{}{%
+		\begin{textblock}{30}(\fpeval{\@titleCircleX - 25},\fpeval{\@titleCircleY + 40})
+			\parbox[c][30mm]{30mm}{%
+				\centering\includegraphics[width=26mm]{\stuttgart@titlePageBigLogo}%
+			}
+		\end{textblock}
+	}
 
-    \begin{textblock}{70}(\fpeval{\@titleCircleX + 15},\fpeval{\@titleCircleY + 25})
-        %\vspace{\stuttgart@titlePageMarginAboveTitle}
-        \parbox[c][45mm]{70mm}{%
-            \raggedright%
-            {\usebeamerfont{title}\usebeamercolor[fg]{title}\inserttitle\par}%
-            \expandafter\ifstrequal\expandafter{\insertsubtitle}{}{}{%
-                \vspace{\stuttgart@titlePageSpacing}%
-            }%
-            {\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par}%
-            \expandafter\ifstrequal\expandafter{\insertdate}{}{}{%
-                \vspace{\stuttgart@titlePageSpacing}%
-            }%
-            {\usebeamerfont{date}\usebeamercolor[fg]{date}\insertdate\par}%
-            \expandafter\ifstrequal\expandafter{\insertinstitute}{}{}{%
-                \vspace{\stuttgart@titlePageSpacing}%
-            }%
-            {\usebeamerfont{institute}\usebeamercolor[fg]{date}\insertinstitute\par}%
-        }
-    \end{textblock}
+	\begin{textblock}{70}(\fpeval{\@titleCircleX + 15},\fpeval{\@titleCircleY + 25})
+		%\vspace{\stuttgart@titlePageMarginAboveTitle}
+		\parbox[c][45mm]{70mm}{%
+			\raggedright%
+			{\usebeamerfont{title}\usebeamercolor[fg]{title}\inserttitle\par}%
+			\expandafter\ifstrequal\expandafter{\insertsubtitle}{}{}{%
+				\vspace{\stuttgart@titlePageSpacing}%
+			}%
+			{\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par}%
+			\expandafter\ifstrequal\expandafter{\insertdate}{}{}{%
+				\vspace{\stuttgart@titlePageSpacing}%
+			}%
+			{\usebeamerfont{date}\usebeamercolor[fg]{date}\insertdate\par}%
+			\expandafter\ifstrequal\expandafter{\insertinstitute}{}{}{%
+				\vspace{\stuttgart@titlePageSpacing}%
+			}%
+			{\usebeamerfont{institute}\usebeamercolor[fg]{date}\insertinstitute\par}%
+		}
+	\end{textblock}
 
-    % Print the author(s) such that the name(s) is/are centered in the respective circle drawn before
-    \expandafter\ifstrequal\expandafter{\stuttgart@titlePageNumberOfAuthors}{few}{%
-        \begin{textblock}{24}(\@titleCircleX,\fpeval{\@titleCircleY - 3})
-            \parbox[c][24mm]{24mm}{%
-                \centering%
-                \begin{varwidth}{24mm}%
-                    \leavevmode%
-                    {\raggedright\usebeamerfont{author}\usebeamercolor[fg]{author}\insertauthor}%
-                \end{varwidth}%
-            }
-        \end{textblock}%
-    }{%
-        \begin{textblock}{25}(\fpeval{\@titleCircleX + 42},\fpeval{\@titleCircleY - 14})
-            % Since we expect to have to write multiple author names below each other, use a little
-            % offset to the left as to not start directly at the circle's border
-            \parbox[c][32mm]{30mm}{%
-                \centering%
-                \begin{varwidth}{30mm}%
-                    \leavevmode%
-                    {\raggedright\usebeamerfont{author}\usebeamercolor[fg]{author}\insertauthor}%
-                \end{varwidth}%
-            }
-        \end{textblock}%
-    }
+	% Print the author(s) such that the name(s) is/are centered in the respective circle drawn before
+	\expandafter\ifstrequal\expandafter{\stuttgart@titlePageNumberOfAuthors}{few}{%
+		\begin{textblock}{24}(\fpeval{\@titleCircleX + 60},\fpeval{\@titleCircleY - 10})
+			\parbox[c][24mm]{24mm}{%
+				\centering%
+				\begin{varwidth}{24mm}%
+					\leavevmode%
+					{\raggedright\usebeamerfont{author}\usebeamercolor[fg]{author}\insertauthor}%
+				\end{varwidth}%
+			}
+		\end{textblock}%
+	}{%
+		\begin{textblock}{25}(\fpeval{\@titleCircleX + 42},\fpeval{\@titleCircleY - 14})
+			% Since we expect to have to write multiple author names below each other, use a little
+			% offset to the left as to not start directly at the circle's border
+			\parbox[c][32mm]{30mm}{%
+				\centering%
+				\begin{varwidth}{30mm}%
+					\leavevmode%
+					{\raggedright\usebeamerfont{author}\usebeamercolor[fg]{author}\insertauthor}%
+				\end{varwidth}%
+			}
+		\end{textblock}%
+	}
 }
 
 % ------------------------------------------------------------------------------
@@ -308,57 +308,57 @@
 % licensed under CC BY-SA: https://creativecommons.org/licenses/by-sa/3.0/)
 \let\beamer@writeslidentry@miniframeson=\beamer@writeslidentry
 \def\beamer@writeslidentry@miniframesoff{%
-    \expandafter\beamer@ifempty\expandafter{\beamer@framestartpage}{}% does not happen normally
-    {%else
-        % removed \addtocontents commands
-        \clearpage\beamer@notesactions%
-    }
+	\expandafter\beamer@ifempty\expandafter{\beamer@framestartpage}{}% does not happen normally
+	{%else
+		% removed \addtocontents commands
+		\clearpage\beamer@notesactions%
+	}
 }
 \newcommand*{\miniframeson}{\let\beamer@writeslidentry=\beamer@writeslidentry@miniframeson}
 \newcommand*{\miniframesoff}{\let\beamer@writeslidentry=\beamer@writeslidentry@miniframesoff}
 
 \newcommand*{\titleframe}{%
-    \miniframesoff
-    {%
-        \setbeamertemplate{headline}{}
-        \setbeamertemplate{footline}{}
-        \begin{frame}[noframenumbering]
-            \titlepage
-        \end{frame}
-    }%
-    \miniframeson
+	\miniframesoff
+	{%
+		\setbeamertemplate{headline}{}
+		\setbeamertemplate{footline}{}
+		\begin{frame}[noframenumbering]
+			\titlepage
+		\end{frame}
+	}%
+	\miniframeson
 }
 
 % ------------------------------------------------------------------------------
 % section page
 \newcommand*{\sectionframe}[1]{
-    \miniframesoff
-    {%
-        \setbeamertemplate{headline}{}
-        \setbeamertemplate{footline}{}
-        \begin{frame}[noframenumbering]
-            \begin{textblock}{128}(0,0)
-                \only<beamer>{\tikz\shade[shading=axis,bottom color=mittelblau,top color=hellblau,
-                    shading angle=-45] (0,0) rectangle (\paperwidth,\paperheight);}
-            \end{textblock}
+	\miniframesoff
+	{%
+		\setbeamertemplate{headline}{}
+		\setbeamertemplate{footline}{}
+		\begin{frame}[noframenumbering]
+			\begin{textblock}{128}(0,0)
+				\only<beamer>{\tikz\shade[shading=axis,bottom color=mittelblau,top color=hellblau,
+						shading angle=-45] (0,0) rectangle (\paperwidth,\paperheight);}
+			\end{textblock}
 
-            \def\@circleRadius{\fpeval{0.35 * \@pageWidthMM}}
-            \edef\@circleX{\fpeval{\@pageWidthMM / 2 - \@circleRadius}}
-            \edef\@circleY{\fpeval{-0.7 * \@circleRadius}}
-            \edef\@textWidth{\fpeval{0.85 * 2 * \@circleRadius}}
-            \edef\@textOffsetX{\fpeval{(2 * \@circleRadius - \@textWidth) / 2}}
-            \edef\@textOffsetY{\fpeval{1.1 * \@circleRadius}}
+			\def\@circleRadius{\fpeval{0.35 * \@pageWidthMM}}
+			\edef\@circleX{\fpeval{\@pageWidthMM / 2 - \@circleRadius}}
+			\edef\@circleY{\fpeval{-0.7 * \@circleRadius}}
+			\edef\@textWidth{\fpeval{0.85 * 2 * \@circleRadius}}
+			\edef\@textOffsetX{\fpeval{(2 * \@circleRadius - \@textWidth) / 2}}
+			\edef\@textOffsetY{\fpeval{1.1 * \@circleRadius}}
 
-            \begin{textblock}{128}(\@circleX,\@circleY)
-                \tikz\draw[white,fill=white] (0,0) circle ({\@circleRadius mm});
-            \end{textblock}
-            \begin{textblock}{\@textWidth}(\fpeval{\@circleX + \@textOffsetX},\fpeval{\@circleY + \@textOffsetY})
-                \centering
-                {\usebeamerfont{title}\LARGE\color{anthrazit}#1\par}
-            \end{textblock}
-        \end{frame}
-    }%
-    \miniframeson
+			\begin{textblock}{128}(\@circleX,\@circleY)
+				\tikz\draw[white,fill=white] (0,0) circle ({\@circleRadius mm});
+			\end{textblock}
+			\begin{textblock}{\@textWidth}(\fpeval{\@circleX + \@textOffsetX},\fpeval{\@circleY + \@textOffsetY})
+				\centering
+				{\usebeamerfont{title}\LARGE\color{anthrazit}#1\par}
+			\end{textblock}
+		\end{frame}
+	}%
+	\miniframeson
 }
 
 % ------------------------------------------------------------------------------
@@ -367,8 +367,8 @@
 % by diabonas: https://tex.stackexchange.com/users/3323/diabonas,
 % licensed under CC BY-SA: https://creativecommons.org/licenses/by-sa/3.0/)
 \expandafter\ifstrequal\expandafter{\stuttgart@navigationDotsLocation}{near}{
-    \patchcmd{\slideentry}{\advance\beamer@tempdim by -.05cm}{\advance\beamer@tempdim by\beamer@vboxoffset\advance\beamer@tempdim by\beamer@boxsize\advance\beamer@tempdim by 1.2\pgflinewidth}{}{}
-    \patchcmd{\slideentry}{\kern\beamer@tempdim}{\advance\beamer@tempdim by 2pt\advance\beamer@tempdim by\wd\beamer@sectionbox\kern\beamer@tempdim}{}{}
+	\patchcmd{\slideentry}{\advance\beamer@tempdim by -.05cm}{\advance\beamer@tempdim by\beamer@vboxoffset\advance\beamer@tempdim by\beamer@boxsize\advance\beamer@tempdim by 1.2\pgflinewidth}{}{}
+	\patchcmd{\slideentry}{\kern\beamer@tempdim}{\advance\beamer@tempdim by 2pt\advance\beamer@tempdim by\wd\beamer@sectionbox\kern\beamer@tempdim}{}{}
 }{}
 
 % ------------------------------------------------------------------------------
@@ -381,17 +381,17 @@
 \define@key{beamer@margin}{mini frame radius}{\beamer@miniframeradius=#1\relax}
 \setbeamertemplate{mini frame}
 {%
-    \begin{pgfpicture}{0pt}{0pt}{2\beamer@miniframeradius}{2\beamer@miniframeradius}
-        \pgfpathcircle{\pgfpoint{\beamer@miniframeradius}{\beamer@miniframeradius}}{\beamer@miniframeradius}
-        \pgfusepath{fill,stroke}
-    \end{pgfpicture}%
+	\begin{pgfpicture}{0pt}{0pt}{2\beamer@miniframeradius}{2\beamer@miniframeradius}
+		\pgfpathcircle{\pgfpoint{\beamer@miniframeradius}{\beamer@miniframeradius}}{\beamer@miniframeradius}
+		\pgfusepath{fill,stroke}
+	\end{pgfpicture}%
 }
 \setbeamertemplate{mini frame in current subsection}
 {%
-    \begin{pgfpicture}{0pt}{0pt}{2\beamer@miniframeradius}{2\beamer@miniframeradius}
-        \pgfpathcircle{\pgfpoint{\beamer@miniframeradius}{\beamer@miniframeradius}}{\beamer@miniframeradius}
-        \pgfusepath{stroke}
-    \end{pgfpicture}%
+	\begin{pgfpicture}{0pt}{0pt}{2\beamer@miniframeradius}{2\beamer@miniframeradius}
+		\pgfpathcircle{\pgfpoint{\beamer@miniframeradius}{\beamer@miniframeradius}}{\beamer@miniframeradius}
+		\pgfusepath{stroke}
+	\end{pgfpicture}%
 }
 
 % navigation dots: "radius" (= size) and "size" (= space between)
@@ -408,34 +408,34 @@
 \setframeofframes{/}
 \setbeamertemplate{footline}
 {%
-  \begin{beamercolorbox}[colsep=1.5pt]{upper separation line foot}
-  \end{beamercolorbox}
+	\begin{beamercolorbox}[colsep=1.5pt]{upper separation line foot}
+	\end{beamercolorbox}
 
-  \begin{beamercolorbox}[ht=2.5ex,dp=1.125ex,%
-    leftskip=.3cm,rightskip=.3cm plus1fil]{title in head/foot}%
-    \edef\@availableSpace{\fpeval{\@pageWidthMM - 6}}
-    \def\@shortTitle{\usebeamerfont{title in head/foot}\insertshorttitle}
-    \def\@shortAuthor{\usebeamerfont{author in head/foot}\insertshortauthor}
-    \settowidth{\@beamer@stuttgart@helperLengthA}{\@shortTitle}
-    \settowidth{\@beamer@stuttgart@helperLengthB}{\@shortAuthor}
-    \edef\@titleWidth{\@dimToNum[mm]{\@beamer@stuttgart@helperLengthA}}
-    \edef\@authorWidth{\@dimToNum[mm]{\@beamer@stuttgart@helperLengthB}}
-    % Calculate the spacing between title and author such that the author name will end
-    % up in the dead center of the footer (if possible)
-    \edef\@titleAuthorSpacing{\fpeval{max(4, \@availableSpace / 2 - \@titleWidth - \@authorWidth / 2)}}
+	\begin{beamercolorbox}[ht=2.5ex,dp=1.125ex,%
+			leftskip=.3cm,rightskip=.3cm plus1fil]{title in head/foot}%
+		\edef\@availableSpace{\fpeval{\@pageWidthMM - 6}}
+		\def\@shortTitle{\usebeamerfont{title in head/foot}\insertshorttitle}
+		\def\@shortAuthor{\usebeamerfont{author in head/foot}\insertshortauthor}
+		\settowidth{\@beamer@stuttgart@helperLengthA}{\@shortTitle}
+		\settowidth{\@beamer@stuttgart@helperLengthB}{\@shortAuthor}
+		\edef\@titleWidth{\@dimToNum[mm]{\@beamer@stuttgart@helperLengthA}}
+		\edef\@authorWidth{\@dimToNum[mm]{\@beamer@stuttgart@helperLengthB}}
+		% Calculate the spacing between title and author such that the author name will end
+		% up in the dead center of the footer (if possible)
+		\edef\@titleAuthorSpacing{\fpeval{max(4, \@availableSpace / 2 - \@titleWidth - \@authorWidth / 2)}}
 
-    \@shortTitle%
-    \hspace{\@titleAuthorSpacing mm}%
-    \leavevmode{\@shortAuthor}%
-    \hfill%
-    {%
-      \usebeamerfont{frame number}\usebeamercolor[fg]{frame number}%
-      \hphantom{\inserttotalframenumber}\llap{\insertframenumber}~%
-      \frameofframes~\inserttotalframenumber%
-    }
-  \end{beamercolorbox}%
-  \begin{beamercolorbox}[colsep=1.5pt]{lower separation line foot}
-  \end{beamercolorbox}
+		\@shortTitle%
+		\hspace{\@titleAuthorSpacing mm}%
+		\leavevmode{\@shortAuthor}%
+		\hfill%
+		{%
+			\usebeamerfont{frame number}\usebeamercolor[fg]{frame number}%
+			\hphantom{\inserttotalframenumber}\llap{\insertframenumber}~%
+			\frameofframes~\inserttotalframenumber%
+		}
+	\end{beamercolorbox}%
+	\begin{beamercolorbox}[colsep=1.5pt]{lower separation line foot}
+	\end{beamercolorbox}
 }
 
 % ------------------------------------------------------------------------------
@@ -445,21 +445,21 @@
 % see doc/licenses/LICENSE in the Beamer package)
 \defbeamertemplate*{headline}{myminiframes theme}
 {%
-    \begin{beamercolorbox}[colsep=1.5pt]{upper separation line head}
-    \end{beamercolorbox}
-    \begin{beamercolorbox}{section in head/foot}
-        \vskip2pt\insertnavigation{0.984\paperwidth}\vskip2pt
-    \end{beamercolorbox}%
-    \ifbeamer@theme@subsection%
-    \begin{beamercolorbox}[colsep=1.5pt]{middle separation line head}
-    \end{beamercolorbox}
-    \begin{beamercolorbox}[ht=2.5ex,dp=1.125ex,%
-        leftskip=.3cm,rightskip=.3cm plus1fil]{subsection in head/foot}
-        \usebeamerfont{subsection in head/foot}\insertsubsectionhead
-    \end{beamercolorbox}%
-    \fi%
-    \begin{beamercolorbox}[colsep=1.5pt]{lower separation line head}
-    \end{beamercolorbox}
+	\begin{beamercolorbox}[colsep=1.5pt]{upper separation line head}
+	\end{beamercolorbox}
+	\begin{beamercolorbox}{section in head/foot}
+		\vskip2pt\insertnavigation{0.984\paperwidth}\vskip2pt
+	\end{beamercolorbox}%
+	\ifbeamer@theme@subsection%
+		\begin{beamercolorbox}[colsep=1.5pt]{middle separation line head}
+		\end{beamercolorbox}
+		\begin{beamercolorbox}[ht=2.5ex,dp=1.125ex,%
+				leftskip=.3cm,rightskip=.3cm plus1fil]{subsection in head/foot}
+			\usebeamerfont{subsection in head/foot}\insertsubsectionhead
+		\end{beamercolorbox}%
+	\fi%
+	\begin{beamercolorbox}[colsep=1.5pt]{lower separation line head}
+	\end{beamercolorbox}
 }
 
 % ------------------------------------------------------------------------------
@@ -479,24 +479,24 @@
 \progressbar@pbht=0.4ex
 
 \def\progressbar@progressbar{%
-    \progressbar@tmpdim=\progressbar@pbwd
-    \divide\progressbar@tmpdim by \inserttotalframenumber
-    \multiply\progressbar@tmpdim by \insertframenumber
-    
-    \begin{tikzpicture}
-        \shade[top color=pbgray,bottom color=pbgray,middle color=pbgray]
-        (0pt, 0pt) rectangle ++ (\progressbar@pbwd, \progressbar@pbht);
-        
-        \shade[draw=pbblue,top color=pbblue,bottom color=pbblue,middle color=pbblue] %
-        (0.2pt, 0.2pt) rectangle ++ (\progressbar@tmpdim, \progressbar@pbht);
-    \end{tikzpicture}%
+	\progressbar@tmpdim=\progressbar@pbwd
+	\divide\progressbar@tmpdim by \inserttotalframenumber
+	\multiply\progressbar@tmpdim by \insertframenumber
+
+	\begin{tikzpicture}
+		\shade[top color=pbgray,bottom color=pbgray,middle color=pbgray]
+		(0pt, 0pt) rectangle ++ (\progressbar@pbwd, \progressbar@pbht);
+
+		\shade[draw=pbblue,top color=pbblue,bottom color=pbblue,middle color=pbblue] %
+		(0.2pt, 0.2pt) rectangle ++ (\progressbar@tmpdim, \progressbar@pbht);
+	\end{tikzpicture}%
 }
 
 \addtobeamertemplate{headline}{}
 {%
-    \begin{beamercolorbox}[wd=\paperwidth,ht=0.6ex]{white}%
-        \progressbar@progressbar%
-    \end{beamercolorbox}%
+	\begin{beamercolorbox}[wd=\paperwidth,ht=0.6ex]{white}%
+		\progressbar@progressbar%
+	\end{beamercolorbox}%
 }
 
 % ------------------------------------------------------------------------------
@@ -521,15 +521,15 @@
 % by Jake: https://tex.stackexchange.com/users/2552/jake,
 % licensed under CC BY-SA: https://creativecommons.org/licenses/by-sa/3.0/)
 \tikzset{
-    dot diameter/.store in=\dot@diameter,
-    dot diameter=0.8mm,
-    dot spacing/.store in=\dot@spacing,
-    dot spacing=1.4mm,
-    dots/.style={
-        line width=\dot@diameter,
-        line cap=round,
-        dash pattern=on 0pt off \dot@spacing
-    }
+	dot diameter/.store in=\dot@diameter,
+	dot diameter=0.8mm,
+	dot spacing/.store in=\dot@spacing,
+	dot spacing=1.4mm,
+	dots/.style={
+			line width=\dot@diameter,
+			line cap=round,
+			dash pattern=on 0pt off \dot@spacing
+		}
 }
 
 % ------------------------------------------------------------------------------
@@ -544,119 +544,119 @@
 % see doc/licenses/LICENSE in the Beamer package)
 \defbeamertemplate*{enumerate item}{mycircle}
 {
-    \usebeamerfont*{item projected}%
-    \usebeamercolor[bg]{item projected}%
-    \begin{pgfpicture}{-1ex}{-0.3ex}{1ex}{2ex}
-        \pgfpathcircle{\pgfpoint{0pt}{.7ex}}{1.2ex}
-        \pgfusepath{fill}
-        \pgftext[base]{\color{fg}\insertenumlabel}
-    \end{pgfpicture}%
+	\usebeamerfont*{item projected}%
+	\usebeamercolor[bg]{item projected}%
+	\begin{pgfpicture}{-1ex}{-0.3ex}{1ex}{2ex}
+		\pgfpathcircle{\pgfpoint{0pt}{.7ex}}{1.2ex}
+		\pgfusepath{fill}
+		\pgftext[base]{\color{fg}\insertenumlabel}
+	\end{pgfpicture}%
 }
 [action]
 {\setbeamerfont{item projected}{size=\scriptsize}}
 
 \defbeamertemplate*{enumerate subitem}{mycircle}
 {
-    \usebeamerfont*{subitem projected}%
-    \usebeamercolor[bg]{subitem projected}%
-    \begin{pgfpicture}{-1ex}{-0.1ex}{1ex}{2ex}
-        \pgfpathcircle{\pgfpoint{0pt}{.7ex}}{1.2ex}
-        \pgfusepath{fill}
-        \pgftext[base]{\color{fg}\insertsubenumlabel}
-    \end{pgfpicture}%
+	\usebeamerfont*{subitem projected}%
+	\usebeamercolor[bg]{subitem projected}%
+	\begin{pgfpicture}{-1ex}{-0.1ex}{1ex}{2ex}
+		\pgfpathcircle{\pgfpoint{0pt}{.7ex}}{1.2ex}
+		\pgfusepath{fill}
+		\pgftext[base]{\color{fg}\insertsubenumlabel}
+	\end{pgfpicture}%
 }
 
 \defbeamertemplate*{enumerate subsubitem}{mycircle}
 {
-    \usebeamerfont*{subsubitem projected}%
-    \usebeamercolor[bg]{subsubitem projected}%
-    \begin{pgfpicture}{-1ex}{-0.1ex}{1ex}{2ex}
-        \pgfpathcircle{\pgfpoint{0pt}{.7ex}}{1.2ex}
-        \pgfusepath{fill}
-        \pgftext[base]{\color{fg}\insertsubsubenumlabel}
-    \end{pgfpicture}%
+	\usebeamerfont*{subsubitem projected}%
+	\usebeamercolor[bg]{subsubitem projected}%
+	\begin{pgfpicture}{-1ex}{-0.1ex}{1ex}{2ex}
+		\pgfpathcircle{\pgfpoint{0pt}{.7ex}}{1.2ex}
+		\pgfusepath{fill}
+		\pgftext[base]{\color{fg}\insertsubsubenumlabel}
+	\end{pgfpicture}%
 }
 
 % ------------------------------------------------------------------------------
 % "Thank You" page
 \defbeamertemplate*{thanks page}{customized}[1][]{
-    \begin{textblock}{128}(0,0)
-        \only<beamer>{\tikz\shade[shading=axis,bottom color=mittelblau,top color=hellblau,
-        shading angle=-45] (0,0) rectangle (\paperwidth,\paperheight);}
-    \end{textblock}
+	\begin{textblock}{128}(0,0)
+		\only<beamer>{\tikz\shade[shading=axis,bottom color=mittelblau,top color=hellblau,
+				shading angle=-45] (0,0) rectangle (\paperwidth,\paperheight);}
+	\end{textblock}
 
-    \begin{textblock}{128}(5,10)
-        \usebeamerfont{title}%
-        \color{white}%
-        \only<beamer>{\color{white}}%
-        \only<handout>{\color{anthrazit}}%
-        Thank you for your attention!\usebeamercolor[fg]{normal text}
-    \end{textblock}
+	\begin{textblock}{128}(5,10)
+		\usebeamerfont{title}%
+		\color{white}%
+		\only<beamer>{\color{white}}%
+		\only<handout>{\color{anthrazit}}%
+		Thank you for your attention!\usebeamercolor[fg]{normal text}
+	\end{textblock}
 
-    \edef\@mainCircleRadius{38}
-    \edef\@mainCircleX{\fpeval{\@pageWidthMM - 2.2 * \@mainCircleRadius}}
-    \edef\@mainCircleY{\fpeval{\@pageHeightMM - 2 * \@mainCircleRadius - 0.02 * \@pageHeightMM}}
+	\edef\@mainCircleRadius{38}
+	\edef\@mainCircleX{\fpeval{\@pageWidthMM - 2.2 * \@mainCircleRadius}}
+	\edef\@mainCircleY{\fpeval{\@pageHeightMM - 2 * \@mainCircleRadius - 0.02 * \@pageHeightMM}}
 
-    \begin{textblock}{128}(\@mainCircleX,\@mainCircleY)
-        \begin{tikzpicture}
-            \draw[white,fill=white] (0,0) circle ({\@mainCircleRadius mm});
-            \clip (0,0) circle ({\fpeval{\@mainCircleRadius - 0.5}mm});
-            \node[inner sep=0pt, outer sep=0pt] at (0,0) {\includegraphics[scale=\stuttgart@thanksPageBigGraphicsScale]{\stuttgart@thanksPageBigGraphics}};
-        \end{tikzpicture}
-    \end{textblock}
+	\begin{textblock}{128}(\@mainCircleX,\@mainCircleY)
+		\begin{tikzpicture}
+			\draw[white,fill=white] (0,0) circle ({\@mainCircleRadius mm});
+			\clip (0,0) circle ({\fpeval{\@mainCircleRadius - 0.5}mm});
+			\node[inner sep=0pt, outer sep=0pt] at (0,0) {\includegraphics[scale=\stuttgart@thanksPageBigGraphicsScale]{\stuttgart@thanksPageBigGraphics}};
+		\end{tikzpicture}
+	\end{textblock}
 
-    \ifdefempty{\stuttgart@thanksPageInstituteLogo}{}{%
-        \begin{textblock}{128}(\fpeval{\@mainCircleX - 40},\fpeval{\@mainCircleY + 10})
-            \tikz\draw[white,fill=white] (0,0) circle (16mm);
-        \end{textblock}
-    }
+	\ifdefempty{\stuttgart@thanksPageInstituteLogo}{}{%
+		\begin{textblock}{128}(\fpeval{\@mainCircleX - 40},\fpeval{\@mainCircleY + 10})
+			\tikz\draw[white,fill=white] (0,0) circle (16mm);
+		\end{textblock}
+	}
 
-    \ifdefempty{\stuttgart@thanksPageDepartmentLogo}{}{%
-        \begin{textblock}{128}(\fpeval{\@mainCircleX - 20},\fpeval{\@mainCircleY + 20})
-            \tikz\draw[white,fill=white] (0,0) circle (16mm);
-        \end{textblock}
-    }
+	\ifdefempty{\stuttgart@thanksPageDepartmentLogo}{}{%
+		\begin{textblock}{128}(\fpeval{\@mainCircleX - 20},\fpeval{\@mainCircleY + 20})
+			\tikz\draw[white,fill=white] (0,0) circle (16mm);
+		\end{textblock}
+	}
 
-    \ifdefempty{\stuttgart@thanksPageBigLogo}{}{%
-        \begin{textblock}{128}(\fpeval{\@mainCircleX - 30},\fpeval{\@mainCircleY + 35})
-            \tikz\draw[white,fill=white] (0,0) circle (20mm);
-        \end{textblock}
-    }
+	\ifdefempty{\stuttgart@thanksPageBigLogo}{}{%
+		\begin{textblock}{128}(\fpeval{\@mainCircleX - 30},\fpeval{\@mainCircleY + 35})
+			\tikz\draw[white,fill=white] (0,0) circle (20mm);
+		\end{textblock}
+	}
 
-    \ifdefempty{\stuttgart@thanksPageInstituteLogo}{}{%
-        \begin{textblock}{32}(\fpeval{\@mainCircleX - 40},\fpeval{\@mainCircleY + 10})
-            \parbox[c][32mm]{32mm}{%
-                \centering\includegraphics[width=14mm]{\stuttgart@thanksPageInstituteLogo}%
-            }
-        \end{textblock}
-    }
+	\ifdefempty{\stuttgart@thanksPageInstituteLogo}{}{%
+		\begin{textblock}{32}(\fpeval{\@mainCircleX - 40},\fpeval{\@mainCircleY + 10})
+			\parbox[c][32mm]{32mm}{%
+				\centering\includegraphics[width=14mm]{\stuttgart@thanksPageInstituteLogo}%
+			}
+		\end{textblock}
+	}
 
-    \ifdefempty{\stuttgart@thanksPageDepartmentLogo}{}{%
-        \begin{textblock}{32}(\fpeval{\@mainCircleX - 20},\fpeval{\@mainCircleY + 20})
-            \parbox[c][32mm]{32mm}{%
-                \centering\includegraphics[width=14mm]{\stuttgart@thanksPageDepartmentLogo}%
-            }
-        \end{textblock}
-    }
+	\ifdefempty{\stuttgart@thanksPageDepartmentLogo}{}{%
+		\begin{textblock}{32}(\fpeval{\@mainCircleX - 20},\fpeval{\@mainCircleY + 20})
+			\parbox[c][32mm]{32mm}{%
+				\centering\includegraphics[width=14mm]{\stuttgart@thanksPageDepartmentLogo}%
+			}
+		\end{textblock}
+	}
 
-    \ifdefempty{\stuttgart@thanksPageBigLogo}{}{%
-        \begin{textblock}{40}(\fpeval{\@mainCircleX -30},\fpeval{\@mainCircleY + 35})
-            \parbox[c][40mm]{40mm}{%
-                \centering\includegraphics[width=34mm]{\stuttgart@thanksPageBigLogo}%
-            }
-        \end{textblock}
-    }
+	\ifdefempty{\stuttgart@thanksPageBigLogo}{}{%
+		\begin{textblock}{40}(\fpeval{\@mainCircleX -30},\fpeval{\@mainCircleY + 35})
+			\parbox[c][40mm]{40mm}{%
+				\centering\includegraphics[width=34mm]{\stuttgart@thanksPageBigLogo}%
+			}
+		\end{textblock}
+	}
 }
 \newcommand*{\thanksframe}{%
-    \miniframesoff
-    {%
-        \setbeamertemplate{headline}{}
-        \setbeamertemplate{footline}{}
-        \begin{frame}[noframenumbering]
-            \usebeamertemplate*{thanks page}
-        \end{frame}
-    }%
-    \miniframeson
+	\miniframesoff
+	{%
+		\setbeamertemplate{headline}{}
+		\setbeamertemplate{footline}{}
+		\begin{frame}[noframenumbering]
+			\usebeamertemplate*{thanks page}
+		\end{frame}
+	}%
+	\miniframeson
 }
 
 % ------------------------------------------------------------------------------
