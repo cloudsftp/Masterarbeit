@@ -1,5 +1,5 @@
-\sectionframe{The Halved Model}
-\section{Halved Model}
+\sectionframe{The Halved Archetypal Model}
+\section{Halved}
 
 \begin{frame}{Lifting the Model}
 	\vspace{-1em}
@@ -28,74 +28,55 @@
 	\end{columns}
 \end{frame}
 
-%\begin{frame}{Period-adding in Theory}
-%	\begin{columns}
-%		\begin{column}{.4 \textwidth}
-%			\todo{Pic of halved model function}
-%			\todo{Pic of two increasing branches of circle map}
-%		\end{column}
-%		\begin{column}{.6 \textwidth}
-%			\begin{itemize}
-%				\item Two increasing branches
-%				\item Period-adding proven for non-smooth circle maps with two increasing branches
-%			\end{itemize}
-%			\todo{reference}
-%		\end{column}
-%	\end{columns}
-%\end{frame}
-
-\begin{frame}{Period-adding in the Halved Model}
+\begin{frame}{Period-adding in the Halved Archetypal Model}
 	\vspace{-1em}
-	\begin{figure}
-		\only<1>{
-			\includegraphics[width=.4 \textwidth]{63_MinimalRepr_Adding_Halved/1D_Period_larger_adding/Manual/result.png}
-			\qquad
-			\includegraphics[width=.25 \textwidth]{../../Report/Figures/FareyTrees/Minrep_Adding_larger_Halved_Period_3/adding.png}
-		}
-		\only<2>{
-			\includegraphics[width=.6 \textwidth]{../../Report/Figures/FareyTrees/Minrep_Adding_larger_Halved_3/adding.png}
-		}
-	\end{figure}
-\end{frame}
+	\only<1>{
+		\includegraphics[width=.4 \textwidth]{63_MinimalRepr_Adding_Halved/1D_Period_larger_adding/Manual/result.png}
+		\qquad
+		\includegraphics[width=.25 \textwidth]{../../Report/Figures/FareyTrees/Minrep_Adding_larger_Halved_Period_3/adding.png}
+	}
+	\only<2>{
+		\includegraphics[width=.6 \textwidth]{../../Report/Figures/FareyTrees/Minrep_Adding_larger_Halved_3/adding.png}
+	}
+	\only<3>{
+		\begin{columns}
+			\begin{column}{.7 \textwidth}
+				\begin{itemize}
+					\item Periods add up!
+					\item Symbolic sequences concatenate!
+				\end{itemize}
+				\pause
+				\begin{center}
+					\begin{tikzpicture}
+						\node (FM) at (0, 1) {Full model:};
+						\node (FC) at (2.5, 1) {Cycles};
+						\node (FB) at (7, 1) {Bifurcation Structure};
 
-\begin{frame}{Period-adding in the Halved Model}
-	\vspace{-1em}
-	\begin{columns}
-		\begin{column}{.7 \textwidth}
-			\begin{itemize}
-				\item Periods add up!
-				\item Symbolic sequences concatenate!
-			\end{itemize}
-			\pause
-			\begin{center}
-				\begin{tikzpicture}
-					\node (FM) at (0, 1) {Full model:};
-					\node (FC) at (2.5, 1) {Cycles};
-					\node (FB) at (7, 1) {Bifurcation Structure};
+						\node (HM) at (0, 0) {Halved model:};
+						\node (HC) at (2.5, 0) {Cycles};
+						\node (HA) at (7, 0) {Period-adding};
 
-					\node (HM) at (0, 0) {Halved model:};
-					\node (HC) at (2.5, 0) {Cycles};
-					\node (HA) at (7, 0) {Period-adding};
+						\draw[->] (FC) -- (HC);
+						\draw[->] (HC) -- (HA) node[midway,above] {\tiny explained};
+						\draw[->] (HA) -- (FB);
+						\draw[->] (FC) -- (FB) node[midway,above] {\tiny ???};
+					\end{tikzpicture}
+				\end{center}
+				\vspace{1em}
+				\pause
+				Allegory of the cave (``Höhlengleichnis'') type of situation
+			\end{column}
+			\begin{column}{.3 \textwidth}
+				\vspace{2em}
+				\only<3->{
+					\begin{figure}
+						\includegraphics[width=\textwidth]{Figs/allegory.jpeg}
+					\end{figure}
+				}
+			\end{column}
+		\end{columns}
 
-					\draw[->] (FC) -- (HC);
-					\draw[->] (HC) -- (HA) node[midway,above] {\tiny explained};
-					\draw[->] (HA) -- (FB);
-					\draw[->] (FC) -- (FB) node[midway,above] {\tiny ???};
-				\end{tikzpicture}
-			\end{center}
-			\vspace{1em}
-			\pause
-			Allegory of the cave (``Höhlengleichnis'') type of situation
-		\end{column}
-		\begin{column}{.3 \textwidth}
-			\vspace{2em}
-			\only<3->{
-				\begin{figure}
-					\includegraphics[width=\textwidth]{Figs/allegory.jpeg}
-				\end{figure}
-			}
-		\end{column}
-	\end{columns}
+	}
 \end{frame}
 
 \begin{frame}{Some Definitions}
@@ -186,41 +167,41 @@
 	}
 \end{frame}
 
-\begin{frame}{``Concatenation'' in the Full Model}
-	\vspace{-1em}
-	\begin{theorem}[Cycles in Child Nodes of two Nodes with Singular Cycles]
-		The cycles $\pi^a$ and $\pi^b$ of a node with two parents with a singular cycle each, $\phi$ and $\psi$ are
-		\begin{align*}
-			\pi^a = \phi_1 \dots \phi_{\frac{n-1}{2}} \left[\phi_{\frac{n+1}{2}} \mid \psi_{\frac{m+1}{2}}\right] \psi_{\frac{m+3}{2}} \dots \psi_m
-		\end{align*}
-		and
-		\begin{align*}
-			\pi^b =  \phi_{\frac{n+3}{2}} \dots \phi_n \psi_1 \dots \psi_{\frac{m-1}{2}} \left[\psi_{\frac{m+1}{2}} \mid \phi_{\frac{n+1}{2}}\right]
-		\end{align*}
-	\end{theorem}
-	\pause
-	Example: \vspace{-2em} \begin{align*}
-		\phi                    & = \A^4\B^3\C^4\D^3, \psi = \A^3\B^3\C^3\D^3  \\
-		\Rightarrow \quad \pi^a & = \A^4\B^3\C^3\D^3, \pi^b = \A^3\B^3\C^4\D^3
-	\end{align*}
-\end{frame}
+%\begin{frame}{``Concatenation'' in the Full Model}
+%	\vspace{-1em}
+%	\begin{theorem}[Cycles in Child Nodes of two Nodes with Singular Cycles]
+%		The cycles $\pi^a$ and $\pi^b$ of a node with two parents with a singular cycle each, $\phi$ and $\psi$ are
+%		\begin{align*}
+%			\pi^a = \phi_1 \dots \phi_{\frac{n-1}{2}} \left[\phi_{\frac{n+1}{2}} \mid \psi_{\frac{m+1}{2}}\right] \psi_{\frac{m+3}{2}} \dots \psi_m
+%		\end{align*}
+%		and
+%		\begin{align*}
+%			\pi^b =  \phi_{\frac{n+3}{2}} \dots \phi_n \psi_1 \dots \psi_{\frac{m-1}{2}} \left[\psi_{\frac{m+1}{2}} \mid \phi_{\frac{n+1}{2}}\right]
+%		\end{align*}
+%	\end{theorem}
+%	\pause
+%	Example: \vspace{-2em} \begin{align*}
+%		\phi                    & = \A^4\B^3\C^4\D^3, \psi = \A^3\B^3\C^3\D^3  \\
+%		\Rightarrow \quad \pi^a & = \A^4\B^3\C^3\D^3, \pi^b = \A^3\B^3\C^4\D^3
+%	\end{align*}
+%\end{frame}
 
-\begin{frame}{``Concatenation'' in the Full Model}
-	\vspace{-1em}
-	\begin{theorem}[Cycles in Child Nodes of Parent Nodes with Different Multiplicity]
-		The cycle $\pi$ of a node with one parent with a single cycle $\phi$ and one parent with two coexisting cycles $\psi^a$ and $\psi^b$ is either
-		\begin{itemize}
-			\item If $\phi$ is associated with the left parent node
-			      \begin{align*}
-				      \pi = \phi_1 \dots \phi_{\frac{n-1}{2}} \left[\phi_{\frac{n+1}{2}} \mid \psi^b_m\right] \psi^b_1 \dots \psi^b_{m-1} \left[\psi^b_m \mid \phi_{\frac{n+1}{2}}\right] \phi_{\frac{n+3}{2}} \dots \phi_n \psi^a
-			      \end{align*}
-			\item If $\phi$ is associated with the right parent node
-			      \begin{align*}
-				      \pi = \psi^a \phi_1 \dots \phi_{\frac{n-1}{2}} \left[\phi_{\frac{n+1}{2}} \mid \psi^b_m\right] \psi^b_1 \dots \psi^b_{m-1} \left[\psi^b_m \mid \phi_{\frac{n+1}{2}}\right] \phi_{\frac{n+3}{2}} \dots \phi_n
-			      \end{align*}
-		\end{itemize}
-	\end{theorem}
-\end{frame}
+%\begin{frame}{``Concatenation'' in the Full Model}
+%	\vspace{-1em}
+%	\begin{theorem}[Cycles in Child Nodes of Parent Nodes with Different Multiplicity]
+%		The cycle $\pi$ of a node with one parent with a single cycle $\phi$ and one parent with two coexisting cycles $\psi^a$ and $\psi^b$ is either
+%		\begin{itemize}
+%			\item If $\phi$ is associated with the left parent node
+%			      \begin{align*}
+%				      \pi = \phi_1 \dots \phi_{\frac{n-1}{2}} \left[\phi_{\frac{n+1}{2}} \mid \psi^b_m\right] \psi^b_1 \dots \psi^b_{m-1} \left[\psi^b_m \mid \phi_{\frac{n+1}{2}}\right] \phi_{\frac{n+3}{2}} \dots \phi_n \psi^a
+%			      \end{align*}
+%			\item If $\phi$ is associated with the right parent node
+%			      \begin{align*}
+%				      \pi = \psi^a \phi_1 \dots \phi_{\frac{n-1}{2}} \left[\phi_{\frac{n+1}{2}} \mid \psi^b_m\right] \psi^b_1 \dots \psi^b_{m-1} \left[\psi^b_m \mid \phi_{\frac{n+1}{2}}\right] \phi_{\frac{n+3}{2}} \dots \phi_n
+%			      \end{align*}
+%		\end{itemize}
+%	\end{theorem}
+%\end{frame}
 
 \begin{frame}{Explained Bifurcation Structures}
 	\begin{figure}
@@ -237,42 +218,12 @@
 	\end{figure}
 \end{frame}
 
-\begin{frame}{Rotation Numbers}
+\begin{frame}{More Rules for the Period-adding-like Structures}
+	Found different rules for
 	\begin{itemize}
-		\item Also found rules for rotation numbers
-		\item Limited time in this presentation
+		\item Non-existence of two parent nodes that both are associated with coexistence \pause
+		\item Symbolic sequences in child nodes \pause
+		\item Rotation tuples in child nodes \pause
+		\item Monotonicity of the elements of rotation tuples
 	\end{itemize}
 \end{frame}
-
-%\begin{frame}{Rotation Tuples}
-%	\vspace{-1em}
-%    \begin{theorem}[Rotation Tuples in Child Nodes of Two Nodes with Singular Cycles]
-%		The cycles $\pi^a$ and $\pi^b$ of a node with two parents with a singular cycle each, $\phi$ and $\psi$ have the rotation tuples
-%		\begin{columns}
-%			\begin{column}{.7 \textwidth}
-%				\begin{align*}
-%					\rho_\A(\pi^a) & = \frac{|\phi_1 \dots \phi_{\frac{n+1}{2}}|_\A + |\psi_{\frac{m+3}{2}} \dots \psi_m|_\A}{|\pi|} \\
-%					\rho_\B(\pi^a) & = \frac{|\phi_1 \dots \phi_{\frac{n+1}{2}}|_\B + |\psi_{\frac{m+3}{2}} \dots \psi_m|_\B}{|\pi|} \\
-%					\rho_\C(\pi^a) & = \frac{|\phi_1 \dots \phi_{\frac{n-1}{2}}|_\C + |\psi_{\frac{m+1}{2}} \dots \psi_m|_\C}{|\pi|} \\
-%					               & \vdots
-%				\end{align*}
-%			\end{column}
-%			\begin{column}{.3 \textwidth}
-%				\begin{align*}
-%					|\pi| & = |\pi^a| = |\pi^b|         \\
-%					      & = \frac{|\phi| + |\psi|}{2}
-%				\end{align*}
-%			\end{column}
-%		\end{columns}
-%	\end{theorem}
-%\end{frame}
-
-%\begin{frame}{Rotation Tuples}[Rotation Tuples in Child Nodes of Parent Nodes with Different Multiplicity]
-%	\begin{theorem}
-%		The cycle $\pi$ of a node with one parent with a single cycle $\phi$ and one parent with two coexisting cycles $\psi^a$ and $\psi^b$ has the rotation tuple
-%		\begin{align*}
-%			\rho(\pi) = \rho(\phi) \oplus \rho(\psi^a) \oplus \rho(\psi^b)
-%		\end{align*}
-%		Where the farey-addition of tuples is element-wise.
-%	\end{theorem}
-%\end{frame}
