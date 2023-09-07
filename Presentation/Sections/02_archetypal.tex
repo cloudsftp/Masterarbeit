@@ -38,7 +38,7 @@
 			}{Original model}
 			\qquad
 			\stackunder[5pt]{
-				\includegraphics[width=0.3 \textwidth]{60_MinimalRepr/2D_Period_Whole_noPoints/result.png}
+				\includegraphics[width=0.3 \textwidth]{../Figures/6/6.1a/result.png}
 			}{Archetypal model}
 		\end{figure}
 	}
@@ -52,17 +52,17 @@
 					}{$C_{16}:\:\Cycle{\A^6\B^2\C^6\D^2}$}
 					\stackunder[5pt]{
 						\includegraphics[height=0.45\textheight]{../Figures/6/6.2d/result.png}
-					}{$D_{16}:\:\Cycle{\A^6\B^2\C^7\D^3},\Cycle{\A^7\B^3\C^6\D^2}$}
+					}{$D_{16}:\:\Cycle{\A^6\B^2\C^5\D^3},\Cycle{\A^5\B^3\C^6\D^2}$}
 					\stackunder[5pt]{
 						\includegraphics[height=0.45\textheight]{../Figures/6/6.2e/result.png}
-					}{$E_{16}:\:\Cycle{\A^7\B^3\C^7\D^3}$}
+					}{$E_{16}:\:\Cycle{\A^5\B^3\C^5\D^3}$}
 				\end{figure}
 			\end{column}
 			\begin{column}{.2 \textwidth}
 				\vspace{-4em}
 				\begin{center}
 					\hspace{-2em}
-					\includegraphics[height=0.3 \textheight]{60_MinimalRepr/2D_Period_Whole_onlyP16_CDE/result.png}
+					\includegraphics[height=0.3 \textheight]{../Figures/6/6.1a/result.png}
 				\end{center}
 			\end{column}
 		\end{columns}
@@ -119,27 +119,6 @@
 	\end{columns}
 \end{frame}
 
-%\begin{frame}{Symbolic Sequences}
-%	Cycles are described using symbolic sequences.
-%	Symbols indicate which branches the points of the cycle are on.
-%	\vspace{.5em}
-%	\begin{columns}
-%		\hspace{5em}
-%		\begin{column}{.3 \textwidth}
-%			\begin{figure}
-%				\includegraphics[width=\textwidth]{60_MinimalRepr/Cobweb_E16/result.png}
-%			\end{figure}
-%		\end{column}
-%		\hspace{3em}
-%		\begin{column}{.6 \textwidth}
-%			\begin{itemize}
-%				\item Cycle of period 16
-%				\item Symbolic Sequence: $\A^5\B^3\C^5\D^3$
-%			\end{itemize}
-%		\end{column}
-%	\end{columns}
-%\end{frame}
-
 %\begin{frame}{Parameter Regions in Minimal Reproducing Model}
 %	\begin{itemize}
 %		\item ``Type A'': At points $C_{16}$ and $E_{16}$ in 2D scan
@@ -158,12 +137,11 @@
 %	\end{itemize}
 %\end{frame}
 
-
 \begin{frame}{Bifurcation Analysis}
 	\vspace{-1em}
 	\begin{columns}
 		\begin{column}{.5 \textwidth}
-			At the boundaries of the ``type B'' period region with the cycles $\Cycle{\A^5\B^3\C^4\D^4}$ and $\Cycle{\A^4\B^4\C^5\D^3}$
+			At the boundaries of the ``type B'' parameter region with the cycles $\Cycle{\A^5\B^3\C^4\D^4}$ and $\Cycle{\A^4\B^4\C^5\D^3}$
 			\pause
 			\begin{itemize}
 				\item Always border collision bifurcations
@@ -207,25 +185,18 @@
 	\end{columns}
 \end{frame}
 
-\begin{frame}{Bifurcation Regularities}
-	\todo{List regularities}
-\end{frame}
-
 \begin{frame}{Overlapping Parameter Regions (1/2)}
-	\todo{Scrap?}
 	\vspace{-1em}
 	\begin{columns}
 		\begin{column}{.8 \textwidth}
-			\vspace{-3em}
 			\begin{figure}
 				\centering
-				\subfloat[``Type A'']{
-					\includegraphics[height=0.7 \textheight]{60_MinimalRepr/2D_Regions_E/result.png}
-				}
-				\subfloat[``Type B'']{
-					\includegraphics[height=0.7 \textheight]{60_MinimalRepr/2D_Regions_F/result.png}
-				}
-				\caption*{Overlapping period regions}
+				\stackunder[5pt]{
+					\includegraphics[height=0.65 \textheight]{../Figures/6/6.8a/result.png}
+				}{``Type A''}
+				\stackunder[5pt]{
+					\includegraphics[height=0.65 \textheight]{../Figures/6/6.8b/result.png}
+				}{``Type B''}
 			\end{figure}
 		\end{column}
 		\begin{column}{.2 \textwidth}
@@ -238,23 +209,20 @@
 \end{frame}
 
 \begin{frame}{Overlapping Period Regions (2/2)}
-	\todo{Scrap?}
 	\vspace{-1em}
 	\begin{columns}
 		\begin{column}{.5 \textwidth}
 			Coexistence scenarios:
 			\begin{itemize}
-				\item<1-> 1: ``Type A'' ($L$)
-				\item<1-> 2: Two different ``Type A'' \\ ($M, N, O,$ and $P$)
-				\item<2-> 2: ``Type B'' pair ($Q$)
-				\item<3-> 3: ``Type B'' pair and ``Type A'' \\ ($R, S, T,$ and $U$)
-				\item<4-> 4: ``Type B'' pair \\ and two different ``Type A'' \\ ($V, W, X,$ and $Y$)
+				\item 1: ``Type A'' ($L$)
+				\item 2: Two different ``Type A'' \\ ($M, N, O,$ and $P$)
+				\item 2: ``Type B'' pair ($Q$)
+				\item 3: ``Type B'' pair and ``Type A'' \\ ($R, S, T,$ and $U$)
+				\item 4: ``Type B'' pair \\ and two different ``Type A'' \\ ($V, W, X,$ and $Y$)
 			\end{itemize}
 
 			\vspace{.5em}
-			\onslide<4->{
-				The coexistence of 4 cycles was overlooked in the original model!
-			}
+			The coexistence of 4 cycles was overlooked in the original model!
 		\end{column}
 		\begin{column}{.5 \textwidth}
 			\vspace{-5em}
@@ -262,25 +230,75 @@
 				\centering
 				\subfloat{ \includegraphics[height=0.2 \textheight]{60_MinimalRepr/2D_Regions_E/result.png} }
 				\subfloat{ \includegraphics[height=0.2 \textheight]{60_MinimalRepr/2D_Regions_F/result.png} }
-				\only<1>{
-					\subfloat{\includegraphics[height=.7 \textheight]{60_MinimalRepr/Cobweb_M/Manual/result.png}}
-					\caption*{At point $M$}
-				}
-				\only<2>{
-					\subfloat{\includegraphics[height=.7 \textheight]{60_MinimalRepr/Cobweb_Q/Manual/result.png}}
-					\caption*{At point $Q$}
-				}
-				\only<3>{
-					\subfloat{\includegraphics[height=.7 \textheight]{60_MinimalRepr/Cobweb_U/Manual/result.png}}
-					\caption*{At point $U$}
-				}
-				\only<4>{
-					\subfloat{\includegraphics[height=.7 \textheight]{60_MinimalRepr/Cobweb_X/Manual/result.png}}
-					\caption*{At point $U$}
-				}
+				\\
+				%\only<1>{
+				%	\subfloat{\includegraphics[height=.7 \textheight]{60_MinimalRepr/Cobweb_M/Manual/result.png}}
+				%	\caption*{At point $M$}
+				%}
+				%\only<2>{
+				%	\subfloat{\includegraphics[height=.7 \textheight]{60_MinimalRepr/Cobweb_Q/Manual/result.png}}
+				%	\caption*{At point $Q$}
+				%}
+				%\only<3>{
+				%	\subfloat{\includegraphics[height=.7 \textheight]{60_MinimalRepr/Cobweb_U/Manual/result.png}}
+				%	\caption*{At point $U$}
+				%}
+				%\only<4>{
+				\stackunder[5pt]{
+					\includegraphics[height=.7 \textheight]{60_MinimalRepr/Cobweb_X/Manual/result.png}
+				}{At the point $X$}
+				%}
 			\end{figure}
 		\end{column}
 	\end{columns}
+\end{frame}
+
+\begin{frame}{Confirming the Coexistence of Four Cycles}
+	\vspace{-1em}
+	\begin{figure}
+		\subfloat{\includegraphics[width=.4 \textwidth]{../Figures/6/6.11a/result.png}}
+		\quad
+		\subfloat{\includegraphics[width=.4 \textwidth]{../Figures/6/6.11b/result.png}}
+	\end{figure}
+\end{frame}
+
+%\begin{frame}{Local Minima Essential for ``Type B'' Cycles}
+%	\begin{figure}
+%		\stackunder[5pt]{
+%			\includegraphics[width=.25 \textwidth]{../Figures/7/7.10a/result.png}
+%		}{Same number of points}
+%		\stackunder[5pt]{
+%%			\includegraphics[width=.25 \textwidth]{../Figures/7/7.10b/result.png}
+%		}{Number of points differing by one}
+%	\end{figure}
+%	\vspace{1em}
+%	``Type B'' cycles: $\A^a\B^b\C^c\D^d$ with $a = c + 1$ and $b = d - 1$
+%\end{frame}
+
+\begin{frame}{Confirmation of Archetypal Model}
+	\vspace{-1em}
+	We confirmed that the archetypal map approach works \\
+	\pause
+	\vspace{1em}
+	Identified characteristics important for the period-incrementing structure
+	\begin{itemize}
+		\item Symmetry
+		      \begin{itemize}
+			      \item $f\left(x + \frac{1}{2}\right) = f(x) + \frac{1}{2}$ for $x \in \left[0, \frac{1}{2}\right)$
+			      \item All border collision bifurcations double
+			      \item Coexistence of cycles
+		      \end{itemize} \pause
+		\item Quadratic branches $f_\A$ and $f_\C$
+		      \begin{itemize}
+			      \item Observed ``Type B'' cycles not possible without the local minima (proven in report)
+			      \item The other branches may be linear
+		      \end{itemize} \pause
+		\item Parameter effects similar to original model
+		      \begin{itemize}
+			      \item One parameter for the offset of $f_\A$ and $f_\C$
+			      \item One parameter for the values at the left borders of $f_\B$ and $f_\D$
+		      \end{itemize}
+	\end{itemize}
 \end{frame}
 
 %\begin{frame}{Summary of Results}
@@ -296,23 +314,23 @@
 %	This answers research questions 1 and 2
 %\end{frame}
 
-\begin{frame}{The Next Step}
-	\todo{Reformulate results, next step in next part of the presentation}
-	\vspace{-1em}
-	Research questions:
-	\begin{enumerate}
-		\item Is there a simple model exhibiting the same behavior? \hfill \checkmark
-		\item Was there something overlooked in the analysis of the original model? \hfill \checkmark
-		      \pause
-		\item What else can happen in the simplified model?
-	\end{enumerate}
-
-	\pause
-	\vspace{1em}
-	Hypothesis: Period Adding
-	\begin{itemize}
-		\item This is typical for models of power converters
-		\item This is typical for piecewise increasing discontinuous models
-		\item This is typical in between such chains of the same period
-	\end{itemize}
-\end{frame}
+%\begin{frame}{The Next Step}
+%	\todo{Reformulate results, next step in next part of the presentation}
+%	\vspace{-1em}
+%	Research questions:
+%	\begin{enumerate}
+%		\item Is there a simple model exhibiting the same behavior? \hfill \checkmark
+%		\item Was there something overlooked in the analysis of the original model? \hfill \checkmark
+%		      \pause
+%		\item What else can happen in the simplified model?
+%%	\end{enumerate}
+%
+%	\pause
+%	\vspace{1em}
+%	Hypothesis: Period Adding
+%	\begin{itemize}
+%		\item This is typical for models of power converters
+%		\item This is typical for piecewise increasing discontinuous models
+%		\item This is typical in between such chains of the same period
+%	\end{itemize}
+%\end{frame}

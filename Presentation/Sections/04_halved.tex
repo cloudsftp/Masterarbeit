@@ -18,17 +18,17 @@
 				\item Drop the model to $[0, \frac{1}{2})$ \pause
 			\end{itemize}
 			\begin{align*}
-				x    & \mapsto g(x) \mod \frac{1}{2}                                            \\
+				x    & \mapsto g(x) \mod \frac{1}{2}                                              \\
 				g(x) & = \begin{cases}
-					         l(x) = a_L \cdot x^2 + b_L \cdot x + c_L & \text{ if } x < \frac{1}{4} \\
-					         r(x) = b_R \cdot x + c_R                 & \text{ else}
+					         g_L(x) = a_L \cdot x^2 + b_L \cdot x + c_L & \text{ if } x < \frac{1}{4} \\
+					         g_R(x) = b_R \cdot x + c_R                 & \text{ else}
 				         \end{cases}
 			\end{align*}
 		\end{column}
 	\end{columns}
 \end{frame}
 
-\begin{frame}{Period-adding in the Halved Archetypal Model}
+\begin{frame}{Period-adding in the Halved Archetypal Model (1/2)}
 	\vspace{-1em}
 	\only<1>{
 		\includegraphics[width=.4 \textwidth]{63_MinimalRepr_Adding_Halved/1D_Period_larger_adding/Manual/result.png}
@@ -38,45 +38,45 @@
 	\only<2>{
 		\includegraphics[width=.6 \textwidth]{../../Report/Figures/FareyTrees/Minrep_Adding_larger_Halved_3/adding.png}
 	}
-	\only<3>{
-		\begin{columns}
-			\begin{column}{.7 \textwidth}
-				\begin{itemize}
-					\item Periods add up!
-					\item Symbolic sequences concatenate!
-				\end{itemize}
-				\pause
-				\begin{center}
-					\begin{tikzpicture}
-						\node (FM) at (0, 1) {Full model:};
-						\node (FC) at (2.5, 1) {Cycles};
-						\node (FB) at (7, 1) {Bifurcation Structure};
+\end{frame}
 
-						\node (HM) at (0, 0) {Halved model:};
-						\node (HC) at (2.5, 0) {Cycles};
-						\node (HA) at (7, 0) {Period-adding};
+\begin{frame}{Period-adding in the Halved Archetypal Model (2/2)}
+	\begin{columns}
+		\begin{column}{.7 \textwidth}
+			\begin{itemize}
+				\item Periods add up!
+				\item Symbolic sequences concatenate!
+			\end{itemize}
+			\pause
+			\begin{center}
+				\begin{tikzpicture}
+					\node (FM) at (0, 1) {Full model:};
+					\node (FC) at (2.5, 1) {Cycles};
+					\node (FB) at (7, 1) {Bifurcation Structure};
 
-						\draw[->] (FC) -- (HC);
-						\draw[->] (HC) -- (HA) node[midway,above] {\tiny explained};
-						\draw[->] (HA) -- (FB);
-						\draw[->] (FC) -- (FB) node[midway,above] {\tiny ???};
-					\end{tikzpicture}
-				\end{center}
-				\vspace{1em}
-				\pause
-				Allegory of the cave (``Höhlengleichnis'') type of situation
-			\end{column}
-			\begin{column}{.3 \textwidth}
-				\vspace{2em}
-				\only<3->{
-					\begin{figure}
-						\includegraphics[width=\textwidth]{Figs/allegory.jpeg}
-					\end{figure}
-				}
-			\end{column}
-		\end{columns}
+					\node (HM) at (0, 0) {Halved model:};
+					\node (HC) at (2.5, 0) {Cycles};
+					\node (HA) at (7, 0) {Period-adding};
 
-	}
+					\draw[->] (FC) -- (HC);
+					\draw[->] (HC) -- (HA) node[midway,above] {\tiny explained};
+					\draw[->] (HA) -- (FB);
+					\draw[->] (FC) -- (FB) node[midway,above] {\tiny ???};
+				\end{tikzpicture}
+			\end{center}
+			\vspace{1em}
+			\pause
+			Allegory of the cave (``Höhlengleichnis'') type of situation
+		\end{column}
+		\begin{column}{.3 \textwidth}
+			\vspace{2em}
+			\only<3->{
+				\begin{figure}
+					\includegraphics[width=\textwidth]{Figs/allegory.jpeg}
+				\end{figure}
+			}
+		\end{column}
+	\end{columns}
 \end{frame}
 
 \begin{frame}{Some Definitions}
@@ -157,7 +157,6 @@
 		\pause
 		\begin{itemize}
 			\item The third case does not appear in our adding structures
-			\item We will omit this case in following rules
 		\end{itemize}
 	}
 	\only<4>{
