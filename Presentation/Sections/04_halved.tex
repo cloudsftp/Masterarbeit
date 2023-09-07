@@ -28,16 +28,18 @@
 	\end{columns}
 \end{frame}
 
-\begin{frame}{Period-adding in the Halved Archetypal Model (1/2)}
+\begin{frame}{Period-adding in the Halved Archetypal Model}
 	\vspace{-1em}
-	\only<1>{
-		\includegraphics[width=.4 \textwidth]{63_MinimalRepr_Adding_Halved/1D_Period_larger_adding/Manual/result.png}
-		\qquad
-		\includegraphics[width=.25 \textwidth]{../../Report/Figures/FareyTrees/Minrep_Adding_larger_Halved_Period_3/adding.png}
-	}
-	\only<2>{
-		\includegraphics[width=.6 \textwidth]{../../Report/Figures/FareyTrees/Minrep_Adding_larger_Halved_3/adding.png}
-	}
+	\begin{figure}
+		\only<1>{
+			\includegraphics[width=.4 \textwidth]{63_MinimalRepr_Adding_Halved/2D_Period_add_zoom_hor/result.png}
+			\quad
+			\includegraphics[width=.4 \textwidth]{../Figures/7/7.19b/result.png}
+		}
+		\only<2>{
+			\includegraphics[width=.6 \textwidth]{../Figures/7/7.20/adding.png}
+		}
+	\end{figure}
 \end{frame}
 
 \begin{frame}{Period-adding in the Halved Archetypal Model (2/2)}
@@ -82,8 +84,8 @@
 \begin{frame}{Some Definitions}
 	\vspace{-1em}
 	\begin{definition}[Syllables]
-		A syllable is a maximal sequence of the same symbol. \\[1em]
-		A pair of syllables next to each other is called a 2-syllable.
+		A syllable is a subsequence of maximal length consisting of only one symbol. \\[1em]
+		A 2-syllable is a pair of syllables next to each other.
 		A 4-syllable is a quadrupel of syllables next to each other.
 	\end{definition}
 	\pause
@@ -91,13 +93,13 @@
 	\vspace{1em}
 	\begin{itemize}
 		\pause
-		\item One rotation in the halved model corresponds to one 2-syllable \pause
-		\item One rotation in the full model corresponds to one 4-syllable \pause
-		\item One rotation in the full model corresponds to 2 rotations in the halved model
+		\item One rotation in the halved model corresponds to one 2-syllable
+		\item One rotation in the full model corresponds to one 4-syllable
 	\end{itemize}
 \end{frame}
 
-\begin{frame}{Translating Symbolic Sequences}
+\begin{frame}{Translating Symbolic Sequences (1/2)}
+	\vspace{-1em}
 	\begin{definition}[Translating 4-syllables]
 		The function $t$ translates one 4-syllable from the halved model to one 4-syllable in the full model.
 		\begin{align*}
@@ -114,6 +116,16 @@
 	\end{itemize}
 	\pause
 	So if the cycle in the halved model has an odd number of rotations (2-syllables) we need to wrap around once while translating.
+\end{frame}
+
+\begin{frame}{Translating Symbolic Sequences (2/2)}
+	\begin{itemize}
+		\item Start at every 2-syllable of the original symbolic sequence
+		\item Ignore equivalent resulting symbolic sequences
+		      \pause \vspace{2em}
+		\item It turns out only the first two 2-syllables matter
+		\item And they are equivalent if the original symbolic sequence has an odd number of rotations
+	\end{itemize}
 \end{frame}
 
 \begin{frame}{The First Consequences}
@@ -155,9 +167,8 @@
 			\end{itemize}
 		\end{theorem}
 		\pause
-		\begin{itemize}
-			\item The third case does not appear in our adding structures
-		\end{itemize}
+		\vspace{1em}
+		The third case does not appear in our adding structures (proven in report)
 	}
 	\only<4>{
 		\begin{figure}
@@ -166,63 +177,42 @@
 	}
 \end{frame}
 
-%\begin{frame}{``Concatenation'' in the Full Model}
-%	\vspace{-1em}
-%	\begin{theorem}[Cycles in Child Nodes of two Nodes with Singular Cycles]
-%		The cycles $\pi^a$ and $\pi^b$ of a node with two parents with a singular cycle each, $\phi$ and $\psi$ are
-%		\begin{align*}
-%			\pi^a = \phi_1 \dots \phi_{\frac{n-1}{2}} \left[\phi_{\frac{n+1}{2}} \mid \psi_{\frac{m+1}{2}}\right] \psi_{\frac{m+3}{2}} \dots \psi_m
-%		\end{align*}
-%		and
-%		\begin{align*}
-%			\pi^b =  \phi_{\frac{n+3}{2}} \dots \phi_n \psi_1 \dots \psi_{\frac{m-1}{2}} \left[\psi_{\frac{m+1}{2}} \mid \phi_{\frac{n+1}{2}}\right]
-%		\end{align*}
-%	\end{theorem}
-%	\pause
-%	Example: \vspace{-2em} \begin{align*}
-%		\phi                    & = \A^4\B^3\C^4\D^3, \psi = \A^3\B^3\C^3\D^3  \\
-%		\Rightarrow \quad \pi^a & = \A^4\B^3\C^3\D^3, \pi^b = \A^3\B^3\C^4\D^3
-%	\end{align*}
+%\begin{frame}{Explained Bifurcation Structures}
+%	\begin{figure}
+%		\only<1>{
+%			\includegraphics[width=.4 \textwidth]{../Figures/7/7.14b/result.png}
+%			\qquad
+%			\includegraphics[width=.4 \textwidth]{../Figures/7/7.19b/result.png}
+%		}
+%		\only<2>{
+%			\includegraphics[width=.525 \textwidth]{../../Report/Figures/FareyTrees/Minrep_Adding_larger_Full_3/adding.png}
+%			\qquad
+%			\includegraphics[width=.4 \textwidth]{../../Report/Figures/FareyTrees/Minrep_Adding_larger_Halved_3/adding.png}
+%		}
+%	\end{figure}
 %\end{frame}
 
-%\begin{frame}{``Concatenation'' in the Full Model}
-%	\vspace{-1em}
-%	\begin{theorem}[Cycles in Child Nodes of Parent Nodes with Different Multiplicity]
-%		The cycle $\pi$ of a node with one parent with a single cycle $\phi$ and one parent with two coexisting cycles $\psi^a$ and $\psi^b$ is either
-%		\begin{itemize}
-%			\item If $\phi$ is associated with the left parent node
-%			      \begin{align*}
-%				      \pi = \phi_1 \dots \phi_{\frac{n-1}{2}} \left[\phi_{\frac{n+1}{2}} \mid \psi^b_m\right] \psi^b_1 \dots \psi^b_{m-1} \left[\psi^b_m \mid \phi_{\frac{n+1}{2}}\right] \phi_{\frac{n+3}{2}} \dots \phi_n \psi^a
-%			      \end{align*}
-%			\item If $\phi$ is associated with the right parent node
-%			      \begin{align*}
-%				      \pi = \psi^a \phi_1 \dots \phi_{\frac{n-1}{2}} \left[\phi_{\frac{n+1}{2}} \mid \psi^b_m\right] \psi^b_1 \dots \psi^b_{m-1} \left[\psi^b_m \mid \phi_{\frac{n+1}{2}}\right] \phi_{\frac{n+3}{2}} \dots \phi_n
-%			      \end{align*}
-%		\end{itemize}
-%	\end{theorem}
-%\end{frame}
-
-\begin{frame}{Explained Bifurcation Structures}
-	\begin{figure}
-		\only<1>{
-			\includegraphics[width=.4 \textwidth]{../Figures/7/7.14b/result.png}
-			\qquad
-			\includegraphics[width=.4 \textwidth]{../Figures/7/7.19b/result.png}
-		}
-		\only<2>{
-			\includegraphics[width=.525 \textwidth]{../../Report/Figures/FareyTrees/Minrep_Adding_larger_Full_3/adding.png}
-			\qquad
-			\includegraphics[width=.4 \textwidth]{../../Report/Figures/FareyTrees/Minrep_Adding_larger_Halved_3/adding.png}
-		}
-	\end{figure}
-\end{frame}
-
-\begin{frame}{More Rules for the Period-adding-like Structures}
-	Found different rules for
+\begin{frame}{Explanation of the Period-adding-like Structures}
 	\begin{itemize}
-		\item Non-existence of two parent nodes that both are associated with coexistence \pause
-		\item Symbolic sequences in child nodes \pause
-		\item Rotation tuples in child nodes \pause
-		\item Monotonicity of the elements of rotation tuples
+		\item Unusual bifurcation structures similar to period-adding structures
+		      \pause
+		\item Idea: Halved archetypal model
+		      \begin{itemize}
+			      \item Identified trivial translation from full $\to$ halved
+			      \item Identified standard period-adding rules for the structures in the halved model
+			      \item Constructed the translation halved $\to$ full
+		      \end{itemize}
+		      \pause
+		\item Explained Period-adding-like structures
+		      \begin{itemize}
+			      \item Derived rules for periods
+			      \item Derived rules for coexistence
+			      \item Derived further rules omitted here for brevity
+			            \begin{itemize}
+				            \item Combining symbolic sequences
+				            \item Rotation-tuples
+				            \item Monotonicity of rotation-tuples
+			            \end{itemize}
+		      \end{itemize}
 	\end{itemize}
 \end{frame}
