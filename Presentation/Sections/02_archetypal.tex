@@ -7,10 +7,10 @@
 	\pause
 	\begin{itemize}
 		\item Symmetry $F(\theta + \pi) = F(\theta) + \pi \mod 2\pi$ \hfill \cite{akyuz2022} \pause
-		\item $\chi_0$: Branches $F_{\A}$ and $F_{\C}$ move up \pause
-		\item $E_0$: The values at the left border of branches $F_{\B}$ and $F_{\D}$ move down \pause
-		\item Model branches $f_\A$ and $f_\C$ quadratic \pause
-		\item Model branches $f_\C$ and $f_\D$ simplified as linear
+		\item Model branches $f_\A$ and $f_\C$ quadratic
+		\item Model branches $f_\B$ and $f_\D$ simplified as linear \pause
+		\item $E_0$: The values at the left border of branches $F_{\B}$ and $F_{\D}$ move down
+		\item $\chi_0$: Branches $F_{\A}$ and $F_{\C}$ move up
 	\end{itemize}
 
 	\begin{figure}
@@ -187,38 +187,15 @@
 	\end{columns}
 \end{frame}
 
-%\begin{frame}{Overlapping Parameter Regions (1/2)}
-%	\vspace{-1em}
-%	\begin{columns}
-%		\begin{column}{.8 \textwidth}
-%			\begin{figure}
-%				\centering
-%				\stackunder[5pt]{
-%					\includegraphics[height=0.65 \textheight]{../Figures/6/6.8a/result.png}
-%				}{``Type A''}
-%				\stackunder[5pt]{
-%					\includegraphics[height=0.65 \textheight]{../Figures/6/6.8b/result.png}
-%				}{``Type B''}
-%			\end{figure}
-%		\end{column}
-%		\begin{column}{.2 \textwidth}
-%			\vspace{-4em}
-%			\begin{figure}
-%				\subfloat{ \includegraphics[height=.3 \textheight]{60_MinimalRepr/2D_Regions_Whole/Manual/EF/result.png} }
-%			\end{figure}
-%		\end{column}
-%	\end{columns}
-%\end{frame}
-
 \begin{frame}{Overlapping Parameter Regions}
 	\vspace{-1em}
 	\begin{columns}
 		\begin{column}{.5 \textwidth}
 			Coexistence scenarios:
 			\begin{itemize}
-				\item 1: ``Type A'' ($L$)
+				%\item 1: ``Type A'' ($L$)
 				\item 2: Two different ``Type A'' \\ ($M, N, O,$ and $P$)
-				\item 2: ``Type B'' pair ($Q$)
+				      %\item 2: ``Type B'' pair ($Q$)
 				\item 3: ``Type B'' pair and ``Type A'' \\ ($R, S, T,$ and $U$)
 				\item 4: ``Type B'' pair \\ and two different ``Type A'' \\ ($V, W, X,$ and $Y$)
 			\end{itemize}
@@ -249,20 +226,15 @@
 				}
 				\only<3>{
 					\stackunder[4pt]{
-						\includegraphics[height=.7 \textheight]{60_MinimalRepr/Cobweb_Q/Manual/result.png}
-					}{At the point $Q$}
-				}
-				\only<4>{
-					\stackunder[4pt]{
 						\includegraphics[height=.7 \textheight]{60_MinimalRepr/Cobweb_U/Manual/result.png}
 					}{At the point $U$}
 				}
-				\only<5>{
+				\only<4>{
 					\stackunder[5pt]{
 						\includegraphics[height=.7 \textheight]{60_MinimalRepr/Cobweb_X/Manual/result.png}
 					}{At the point $X$}
 				}
-				\only<6>{
+				\only<5>{
 					\stackunder[4pt]{
 						\includegraphics[width=.7 \textheight]{../Figures/6/6.11b/result.png}
 					}{Four coexisting cycles in the original model}
@@ -271,19 +243,6 @@
 		\end{column}
 	\end{columns}
 \end{frame}
-
-%\begin{frame}{Local Minima Essential for ``Type B'' Cycles}
-%	\begin{figure}
-%		\stackunder[5pt]{
-%			\includegraphics[width=.25 \textwidth]{../Figures/7/7.10a/result.png}
-%		}{Same number of points}
-%		\stackunder[5pt]{
-%%			\includegraphics[width=.25 \textwidth]{../Figures/7/7.10b/result.png}
-%		}{Number of points differing by one}
-%	\end{figure}
-%	\vspace{1em}
-%	``Type B'' cycles: $\A^a\B^b\C^c\D^d$ with $a = c + 1$ and $b = d - 1$
-%\end{frame}
 
 \begin{frame}{Development and Application of the Archetypal Model}
 	\vspace{-1em}
@@ -300,15 +259,15 @@
 		      \pause
 		\item Parameter effects similar to the original model
 		      \begin{itemize}
-			      \item One parameter for the offset of $f_\A$ and $f_\C$
-			      \item One parameter for the values at the left borders of $f_\B$ and $f_\D$
+			      \item $\alpha$ for the values at the left borders of $f_\B$ and $f_\D$
+			      \item $\beta$ for the offset of $f_\A$ and $f_\C$
 		      \end{itemize}
 		      \pause
 		\item Description and explanation of the period-incrementing structure
 		      \begin{itemize}
 			      \item Chain of alternating ``type A'' and ``type B'' parameter regions with the same period
-			      \item Coexistence of up to four cycles
 			      \item All border collision bifurcations double (because of the symmetry)
+			      \item Coexistence of up to four cycles
 		      \end{itemize}
 	\end{itemize}
 \end{frame}

@@ -43,41 +43,27 @@
 \end{frame}
 
 \begin{frame}{Period-adding in the Halved Archetypal Model (2/2)}
-	\begin{columns}
-		\begin{column}{.7 \textwidth}
-			This is period-adding
-			\begin{itemize}
-				\item Periods add up
-				\item Symbolic sequences concatenate
-			\end{itemize}
-			\pause
-			\begin{center}
-				\begin{tikzpicture}
-					\node (FC) at (0, 1) {Cycles in Full Model};
-					\node (FB) at (5, 1) {Bifurcation Structure};
+	This is period-adding
+	\begin{itemize}
+		\item Periods add up
+		\item Symbolic sequences concatenate
+	\end{itemize}
+	\pause
+	\vspace{1em}
+	\begin{center}
+		\begin{tikzpicture}
+			\node (FC) at (0, 1) {Cycles in Full Model};
+			\node (FB) at (6, 1) {Bifurcation Structure};
 
-					\node (HC) at (0, 0) {Cycles in Halved Model};
-					\node (HA) at (5, 0) {Period-adding};
+			\node (HC) at (0, 0) {Cycles in Halved Model};
+			\node (HA) at (6, 0) {Period-adding};
 
-					\draw[->] (FC) -- (HC);
-					\draw[->] (HC) -- (HA) node[midway,above] {\tiny explained};
-					\draw[->] (HA) -- (FB);
-					\draw[->] (FC) -- (FB) node[midway,above] {\tiny ???};
-				\end{tikzpicture}
-			\end{center}
-			\vspace{1em}
-			\pause
-			Allegory of the cave (``Höhlengleichnis'') type of situation
-		\end{column}
-		\begin{column}{.3 \textwidth}
-			\vspace{2em}
-			\only<3->{
-				\begin{figure}
-					\includegraphics[width=\textwidth]{Figs/allegory.jpeg}
-				\end{figure}
-			}
-		\end{column}
-	\end{columns}
+			\draw[->] (FC) -- (HC);
+			\draw[->] (HC) -- (HA) node[midway,above] {\tiny explained};
+			\draw[->] (HA) -- (FB);
+			\draw[->] (FC) -- (FB) node[midway,above] {\tiny ???};
+		\end{tikzpicture}
+	\end{center}
 \end{frame}
 
 \begin{frame}{Some Definitions}
@@ -108,7 +94,6 @@
 
 	\pause
 	From the ad-hoc method:
-	\pause
 	\begin{itemize}
 		\item We can only translate 4-syllables (two rotations in the halved model) at a time
 		\item Especially: We cannot translate a 2-syllable alone
@@ -129,6 +114,7 @@
 \end{frame}
 
 \begin{frame}{The First Consequences}
+	\vspace{3em}
 	\begin{theorem}[Periods and Coexistence in the Full Model]
 		An $n$-cycle in the halved model manifests as
 		\begin{itemize}
@@ -136,16 +122,16 @@
 			\item two coexisting $n$-cycles in the full model if it has an even number of 2-syllables
 		\end{itemize}
 	\end{theorem}
-	\pause
-	Examples:
-	\begin{itemize}
-		\item $\L^4\R^3$ (Period 7) manifests as a single cycle $\A^4\B^3\C^4\D^3$ (Period 14)
-		\item $\L^4\R^3\L^3\R^3$ (Period 13) manifests as two cycles
-		      \begin{itemize}
-			      \item $\A^4\B^3\C^3\D^3$ (Period 13) and
-			      \item $\A^3\B^3\C^4\D^3$ (Period 13)
-		      \end{itemize}
-	\end{itemize}
+	%	\pause
+	%	Examples:
+	%	\begin{itemize}
+	%		\item $\L^4\R^3$ (Period 7) manifests as a single cycle $\A^4\B^3\C^4\D^3$ (Period 14)
+	%		\item $\L^4\R^3\L^3\R^3$ (Period 13) manifests as two cycles
+	%		      \begin{itemize}
+	%			      \item $\A^4\B^3\C^3\D^3$ (Period 13) and
+	%			      \item $\A^3\B^3\C^4\D^3$ (Period 13)
+	%		      \end{itemize}
+	%	\end{itemize}
 \end{frame}
 
 \begin{frame}{The First Consequences}
@@ -189,11 +175,11 @@
 			      \item Derived rules for periods
 			      \item Derived rules for coexistence
 			      \item Derived further rules omitted here for brevity
-			            \begin{itemize}
-				            \item Combining symbolic sequences
-				            \item Rotation-tuples
-				            \item Monotonicity of rotation-tuples
-			            \end{itemize}
+			            %      \begin{itemize}
+			            %          \item Combining symbolic sequences
+			            %          \item Rotation-tuples
+			            %          \item Monotonicity of rotation-tuples
+			            %      \end{itemize}
 		      \end{itemize}
 	\end{itemize}
 \end{frame}

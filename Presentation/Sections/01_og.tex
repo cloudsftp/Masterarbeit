@@ -14,7 +14,7 @@
 
 \begin{frame}{Model Definition (1/2)}
 	\vspace{-2.0em}
-	\begin{align}
+	\begin{align*}
 		\theta_{n+1} & =  F(\theta_n) \mod 2 \pi
 		\\
 		F(\theta)    & = \begin{cases}
@@ -31,7 +31,7 @@
 			                 \theta + z_{R_+} + z_3 & \text{if } z_{R_+} < z_{R_0} \\
 			                 \theta + z_{R_0} + z_4 & \text{if } z_{R_+} > z_{R_0}
 		                 \end{cases}
-	\end{align}
+	\end{align*}
 
 	\pause
 	\vspace{2em}
@@ -45,7 +45,7 @@
 	\vspace{-1em}
 	The smallest non-negative solutions to the following implicit equations
 	\begin{subequations}
-		\begin{align}
+		\begin{align*}
 			(q \cdot \cos(\theta) + \mu \cdot \chi) \cdot e^{\lambda \cdot z_{L_+}}
 			 & = q \cdot \cos(\theta + z_{L_+}) + \chi \label{equ:setup.og.def.impl.1.A}                  \\
 			(q \cdot \cos(\theta) + \mu \cdot \chi) \cdot e^{\lambda \cdot z_{L_0}}
@@ -63,7 +63,7 @@
 			 & = q \cdot  \cos(\theta + z_{L_+} + z_1) + \mu \cdot \chi                                   \\
 			(q \cdot \cos(\theta + z_{R_0} + z_4) - \chi - 1) \cdot e^{\lambda \cdot z_4} + 1
 			 & = q \cdot  \cos(\theta + z_{R_0} + z_2) - \mu \cdot \chi \label{equ:setup.og.def.impl.2.D}
-		\end{align}
+		\end{align*}
 	\end{subequations}
 	\begin{flushright}
 		Definition from \cite{akyuz2022}
