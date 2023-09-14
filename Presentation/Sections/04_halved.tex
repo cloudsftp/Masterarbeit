@@ -51,12 +51,12 @@
 	\pause
 	\vspace{1em}
 	\begin{center}
-		\begin{tikzpicture}
-			\node (FC) at (0, 1) {Cycles in Full Model};
-			\node (FB) at (6, 1) {Bifurcation Structure};
+		\begin{tikzpicture}[every text node part/.style={align=center}]
+			\node (FC) at (0, 2) {Cycles in Full Model \\ $\A, \B, \C, \D$};
+			\node (FB) at (7, 2) {Bifurcation Structure};
 
-			\node (HC) at (0, 0) {Cycles in Halved Model};
-			\node (HA) at (6, 0) {Period-adding};
+			\node (HC) at (0, 0) {Cycles in Halved Model \\ $\L, \R$};
+			\node (HA) at (7, 0) {Period-adding Structure};
 
 			\draw[->] (FC) -- (HC);
 			\draw[->] (HC) -- (HA) node[midway,above] {\tiny explained};
